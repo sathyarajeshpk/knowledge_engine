@@ -2,7 +2,7 @@
 
 **Date:** 2026-07-31
 **Method:** Two probe rounds on a GitHub Actions runner — 22 candidates, real HTTP
-**Runs:** [#1](https://github.com/sathyarajeshpk/knowledge_engine/actions/runs/30661044908) · [#2](https://github.com/sathyarajeshpk/knowledge_engine/actions/runs/30661189485)
+**Runs:** [#1](https://github.com/sathyarajeshpk/knowledge_engine/actions/runs/30661044908) · [#2](https://github.com/sathyarajeshpk/knowledge_engine/actions/runs/30661189485) · [#3 HTML structure](https://github.com/sathyarajeshpk/knowledge_engine/actions/runs/30661717204)
 **Status:** Awaiting approval. No source is pinned to `pack.yml` yet.
 
 ---
@@ -155,10 +155,74 @@ primary one**, because the only high-signal source is a web page.
 
 ### Before adapters are written
 
-One more probe round should confirm the "What's New" page is actually parseable —
-whether it is server-rendered with dated, structured entries, or a JavaScript
-app like the roadmap page. If it is JS-rendered, the entire discovery strategy
-needs rethinking, and that must be known before any adapter is built.
+~~One more probe round should confirm the "What's New" page is actually
+parseable.~~ **Done — see round 3 below. It is parseable, and the HTML adapter is
+confirmed as M1's primary path.**
+
+---
+
+## Round 3: HTML structure — the deciding result
+
+The recommendation rested on an untested assumption: that the Learn "What's New"
+page is server-rendered. Round 3 tested it, with the roadmap page included as a
+**control** — a page already believed to be a JavaScript app. If the probe could
+not tell them apart, its verdicts would be worthless.
+
+| Page | Bytes | Visible text | Ratio | Scripts | H2 | Tables | Dates | Verdict |
+|---|---|---|---|---|---|---|---|---|
+| `learn-fabric-whats-new` | 308,301 | **131,730** | **0.427** | 6 | 21 | 23 | 177 | **Server-rendered, dated, structured** |
+| `learn-powerbi-whats-new` | 60,245 | 10,269 | 0.171 | 6 | 11 | 6 | 8 | **Server-rendered, dated, structured** |
+| `learn-fabric-known-issues` | 47,850 | 2,226 | 0.047 | 6 | 5 | 0 | 1 | Marginal — see below |
+| `fabric-roadmap-CONTROL` | 196,106 | 2,185 | **0.011** | **35** | 1 | 0 | **0** | **JS app shell — not parseable** |
+
+**The control separated cleanly.** The roadmap page ships 196 KB and yields
+2,185 characters of text, 35 script tags and zero dates. The What's New page
+ships 308 KB and yields 131,730 characters — a **38× difference in text ratio**.
+The probe distinguishes a real page from an app shell, so its verdicts can be
+relied on.
+
+### `learn-fabric-whats-new` is confirmed usable
+
+- `ms.date` metadata: **2026-07-30** — current, unlike the corporate blog feed.
+- **177 date matches** in `Month YYYY` form: July 2026, June 2026, May 2026,
+  March 2026, February 2026, December 2025, November 2025 — a real backlog to
+  backfill from.
+- **23 tables** and 730 links: the updates are laid out as tables, not prose.
+- H2 sections are **feature areas**, not months: `Features currently in preview`,
+  `Generally available features`, `Microsoft Fabric platform features`,
+  `Continuous Integration/Continuous Delivery (CI/CD)`, `Community`, and —
+  notably — **`Power BI`**.
+
+That last heading is independent confirmation of [ADR-0016](../adr/0016-single-fabric-pack-with-power-bi-as-category.md):
+**Microsoft puts Power BI inside the Fabric "What's New" page.** The decision to
+keep one pack mirrors how the source itself is organised.
+
+### Proposed parsing strategy
+
+```
+for each <h2>            → feature area  (becomes a `category` signal)
+  for each <table>       → the update rows for that area
+    for each <tr>        → one candidate RawItem
+       cell with Month YYYY → published_date  (ADR-0005 basis)
+       cell with <a>        → title + source_url
+```
+
+**One schema nuance to settle before implementation.** The page dates updates to
+a *month*, not a day. That is exactly what ADR-0005 needs for the Feature ID, so
+identifiers are unaffected. But `published_date` is typed as a full date.
+Recording `2026-07-01` for "July 2026" would be quietly false. Options: store the
+first of the month and treat `date_confidence: exact` as month-granular, or add
+an explicit granularity field. This should be decided in M1 rather than
+improvised inside the adapter.
+
+### `learn-fabric-known-issues` should not be trusted yet
+
+The probe labelled it parseable, but only just: 2,226 visible characters against
+a 2,000-character shell threshold, ratio 0.047, **zero tables**, and an `ms.date`
+of **2025-07-21 — a year stale**. That profile is closer to the roadmap control
+than to the What's New page, and suggests the issue list is loaded dynamically.
+It is excluded from the proposed source set. The verdict thresholds are a little
+too generous here and are worth tightening if this page is revisited.
 
 ---
 
@@ -178,4 +242,8 @@ Two further facts bear on this:
   *view* does not require a Power BI *pack* — indexes handle topics, packs handle
   sources and identity.
 
-This needs deciding before M2 mints an ID, because Feature IDs are permanent.
+**Resolved.** One Fabric pack covering Power BI, with `power-bi` as a first-class
+category and the `PBI` prefix reserved but unused. Recorded in
+[ADR-0016](../adr/0016-single-fabric-pack-with-power-bi-as-category.md), and
+independently corroborated by round 3: the Fabric What's New page contains a
+`Power BI` section, so the source is organised the same way.
