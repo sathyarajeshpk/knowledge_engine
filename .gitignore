@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+.coverage
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Generated context packs are transient by design: `ke generate` writes them for
+# pasting into an AI model. Anything worth keeping is attached to a knowledge
+# object under domain-packs/ with `--attach`.
+/out/

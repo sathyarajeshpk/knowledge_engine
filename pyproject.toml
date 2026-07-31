@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "knowledge-engine"
+version = "0.1.0"
+description = "AI-independent platform that builds and maintains structured knowledge repositories as Markdown."
+readme = "README.md"
+requires-python = ">=3.11"
+
+# Runtime dependencies are added only when a milestone actually needs them.
+# M0 needs YAML parsing and nothing else. M1 (discovery) will add
+# `feedparser` and `requests` for the source adapters.
+dependencies = [
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+ke = "ke.__main__:main"
+
+# The engine is packaged from `engine/` rather than the repository root so that
+# it can later be extracted into its own repository without moving any files.
+# Domain packs are pure data and are deliberately NOT part of the package.
+[tool.setuptools]
+package-dir = { "" = "engine" }
+
+[tool.setuptools.packages.find]
+where = ["engine"]
+include = ["ke*"]
+
+[tool.pytest.ini_options]
+testpaths = ["engine/tests"]
+pythonpath = ["engine"]
