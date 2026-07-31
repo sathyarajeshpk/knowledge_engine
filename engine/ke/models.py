@@ -21,6 +21,8 @@ from datetime import date, datetime, timezone
 from enum import IntEnum, StrEnum
 from typing import Any
 
+from ke.identity import IdentityBasis, ItemIdentity
+
 # ---------------------------------------------------------------------------
 # Controlled vocabularies
 # ---------------------------------------------------------------------------
@@ -183,6 +185,24 @@ class HealthState(StrEnum):
     DEGRADED = "degraded"  # reachable, but suspiciously few items, or fell back
     FAILED = "failed"  # last run could not fetch or parse it
     DISABLED = "disabled"  # taken out of rotation, by a human or by policy
+
+
+class SourceStatus(StrEnum):
+    """Lifecycle of a *source definition*, as distinct from its health.
+
+    Source definitions are **immutable and permanent**. A source is never
+    removed from `pack.yml`, because provenance on every object it ever produced
+    points at it -- deleting the definition would make historical knowledge
+    inexplicable. Same reasoning as Feature IDs (ADR-0005).
+
+    Health says "is it working right now?". Status says "should we still be
+    asking?".
+    """
+
+    ACTIVE = "active"  # in rotation
+    DEPRECATED = "deprecated"  # still polled, but superseded; expect retirement
+    DISABLED = "disabled"  # not polled; definition retained for provenance
+    REPLACED = "replaced"  # superseded by a named successor source
 
 
 class SourceRole(StrEnum):
@@ -628,6 +648,11 @@ class Provenance:
     discovered_at: datetime  # UTC, always timezone-aware
     extraction_method: ExtractionMethod
     parser_version: int
+    #: Which signal established this item's identity, and the key derived from
+    #: it. Recorded because the first question when investigating a duplicate or
+    #: a missed match is always "what were we matching on?".
+    identity_basis: IdentityBasis = IdentityBasis.CONTENT_FINGERPRINT
+    identity_key: str = ""
     #: The concrete selector, XPath, feed field or table column used. Free text
     #: because every adapter type addresses its document differently.
     selector: str | None = None
@@ -644,6 +669,8 @@ class Provenance:
             "discovered_at": self.discovered_at.isoformat(),
             "extraction_method": str(self.extraction_method),
             "parser_version": self.parser_version,
+            "identity_basis": str(self.identity_basis),
+            "identity_key": self.identity_key,
             "source_role": str(self.source_role),
         }
         for key in ("selector", "run_id"):
@@ -660,6 +687,10 @@ class Provenance:
             discovered_at=_coerce_datetime(raw["discovered_at"]),
             extraction_method=ExtractionMethod(raw["extraction_method"]),
             parser_version=int(raw["parser_version"]),
+            identity_basis=IdentityBasis(
+                raw.get("identity_basis", IdentityBasis.CONTENT_FINGERPRINT)
+            ),
+            identity_key=raw.get("identity_key", ""),
             selector=raw.get("selector"),
             run_id=raw.get("run_id"),
             source_role=SourceRole(raw.get("source_role", SourceRole.PRIMARY)),
@@ -684,6 +715,7 @@ class RawItem:
     summary: str
     discovered_date: date
     provenance: Provenance
+    identity: ItemIdentity
     published_date: date | None = None
     date_confidence: DateConfidence = DateConfidence.INFERRED
     date_precision: DatePrecision = DatePrecision.DAY

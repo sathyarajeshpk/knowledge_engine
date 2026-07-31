@@ -50,21 +50,101 @@ categories:
   - platform
 
 # --- Sources (M1) ----------------------------------------------------------
-# Intentionally empty.
+# Every URL below was verified on a GitHub Actions runner before being pinned.
+# See docs/reviews/M1_SOURCE_VALIDATION.md for the evidence, including the
+# candidates that were rejected and why.
 #
-# The feed URLs below are CANDIDATES, not verified endpoints. They could not be
-# reached from the planning environment, and pinning an unverified URL here
-# would be indistinguishable from a validated one. M1 issue #8 validates each
-# endpoint and only then moves it into this list with its real response format.
+# Source definitions are IMMUTABLE. Never delete one -- provenance on every
+# object it produced points at it. Retire a source by moving `status` to
+# deprecated, disabled or replaced (ADR-0024).
 #
-# Candidates to validate:
-#   - Microsoft Fabric blog feed        (official-microsoft)
-#   - Power BI blog feed                (official-microsoft)
-#   - Microsoft Learn "What's New"      (official-microsoft)
-#   - Fabric release plan / roadmap     (official-microsoft)
-#   - MicrosoftDocs/fabric-docs commits (official-microsoft)
-#   - Fabric Community blog             (microsoft-community)
-sources: []
+# `adapter.version` is the parser version stamped onto every item this source
+# produces. Increment it when the extraction strategy changes, so historical
+# objects stay attributable to the parser that made them.
+sources:
+  # The primary source. Validation: 131,730 chars of visible text, 23 tables,
+  # 177 dates, ms.date current. Contains a "Power BI" section, which is why one
+  # pack covers both products (ADR-0016).
+  - name: fabric-whats-new
+    url: https://learn.microsoft.com/en-us/fabric/fundamentals/whats-new
+    authority: official-microsoft
+    status: active
+    role: primary
+    adapter:
+      name: html
+      version: 1
+    notes: >-
+      Canonical curated list of Fabric updates. Highest-signal source available;
+      no purpose-built update feed is reachable from a runner.
+    fallback:
+      - name: fabric-docs-commits
+        url: https://github.com/MicrosoftDocs/fabric-docs/commits/main.atom
+        authority: official-microsoft
+        role: secondary
+        adapter:
+          name: github-commits
+          version: 1
+        notes: >-
+          Reliable and current, but merge-commit noise. A weak substitute --
+          hence degraded rather than healthy when it is used.
+      - name: fabric-whats-new-manual
+        url: https://learn.microsoft.com/en-us/fabric/fundamentals/whats-new
+        authority: official-microsoft
+        role: manual-review
+        adapter:
+          name: manual
+          version: 1
+        notes: Terminal link. Raises a review item rather than losing knowledge.
+
+  # Power BI Desktop monthly updates. Validation: server-rendered, 11 headings,
+  # 6 tables, ms.date current.
+  - name: powerbi-whats-new
+    url: https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-latest-update
+    authority: official-microsoft
+    status: active
+    role: primary
+    adapter:
+      name: html
+      version: 1
+    fallback:
+      - name: powerbi-docs-commits
+        url: https://github.com/MicrosoftDocs/powerbi-docs/commits/main.atom
+        authority: official-microsoft
+        role: secondary
+        adapter:
+          name: github-commits
+          version: 1
+      - name: powerbi-whats-new-manual
+        url: https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-latest-update
+        authority: official-microsoft
+        role: manual-review
+        adapter:
+          name: manual
+          version: 1
+
+  # Corporate blog. Low value and stale (newest entry a month old at validation)
+  # but it is a real blog feed. Ships 29,000-character full articles, so
+  # truncation at ingest is mandatory (ADR-0003).
+  - name: fabric-blog
+    url: https://www.microsoft.com/en-us/microsoft-fabric/blog/feed/
+    authority: official-microsoft
+    status: active
+    role: primary
+    adapter:
+      name: rss
+      version: 1
+
+# Rejected candidates, recorded so they are not re-proposed:
+#   learn.microsoft.com/api/search/rss (fabric, power bi, whats-new queries)
+#     -- returns documentation landing pages ranked by search relevance, not
+#        announcements. Mechanically perfect, semantically wrong.
+#   learn.microsoft.com/en-us/fabric/known-issues/
+#     -- 2,226 visible chars against a 2,000 shell threshold, zero tables,
+#        ms.date a year stale. Profile closer to a JavaScript app than a page.
+#   blog.fabric.microsoft.com/* and powerbi.microsoft.com/* feeds
+#     -- 403 from a runner, including with a browser User-Agent.
+#   roadmap.fabric.microsoft.com
+#     -- JavaScript app; 196 KB yields 2,185 chars and zero dates.
 
 # --- Deduplication (M2) ----------------------------------------------------
 dedupe:

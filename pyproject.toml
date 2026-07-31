@@ -10,10 +10,13 @@ readme = "README.md"
 requires-python = ">=3.11"
 
 # Runtime dependencies are added only when a milestone actually needs them.
-# M0 needs YAML parsing and nothing else. M1 (discovery) will add
-# `feedparser` and `requests` for the source adapters.
+# M1 adds feedparser, because real-world RSS and Atom are inconsistent in ways a
+# hand-rolled parser discovers slowly. HTTP uses urllib and HTML uses
+# html.parser, both standard library -- `requests` and BeautifulSoup were not
+# needed and so were not added.
 dependencies = [
     "PyYAML>=6.0",
+    "feedparser>=6.0",
 ]
 
 [project.optional-dependencies]

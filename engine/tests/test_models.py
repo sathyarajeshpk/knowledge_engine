@@ -40,6 +40,8 @@ from ke.models import (
     ownership_of,
 )
 
+from ke.identity import compute_identity
+
 from conftest import make_object, make_provenance
 
 # ---------------------------------------------------------------------------
@@ -279,6 +281,7 @@ def test_raw_item_mints_from_publication_month_when_date_is_exact():
         published_date=date(2026, 4, 15),
         date_confidence=DateConfidence.EXACT,
         provenance=make_provenance(),
+        identity=compute_identity(canonical_url="https://example.invalid/x"),
     )
     assert item.id_basis_date == date(2026, 4, 15)
 
@@ -294,6 +297,7 @@ def test_raw_item_falls_back_to_discovery_month_when_date_is_inferred():
         published_date=None,
         date_confidence=DateConfidence.INFERRED,
         provenance=make_provenance(),
+        identity=compute_identity(canonical_url="https://example.invalid/y"),
     )
     assert item.id_basis_date == date(2026, 8, 3)
 
@@ -380,6 +384,7 @@ def test_month_precision_still_mints_from_the_publication_month():
         date_confidence=DateConfidence.EXACT,
         date_precision=DatePrecision.MONTH,
         provenance=make_provenance(),
+        identity=compute_identity(canonical_url="https://example.invalid/z"),
     )
     assert item.id_basis_date == date(2026, 7, 1)
 

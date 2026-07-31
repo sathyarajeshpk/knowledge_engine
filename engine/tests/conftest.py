@@ -17,6 +17,7 @@ from typing import Any
 import pytest
 import yaml
 
+from ke.identity import IdentityBasis
 from ke.models import (
     AdapterType,
     ArtifactType,
@@ -58,7 +59,9 @@ def make_provenance(**overrides: Any) -> Provenance:
         "extraction_method": ExtractionMethod.HTML_TABLE_ROW,
         "parser_version": 1,
         "selector": "h2#generally-available-features + table tr",
-        "run_id": "run-2026-04-18T06:00:00Z",
+        "run_id": "run-2026-04-18T06-00-00Z",
+        "identity_basis": IdentityBasis.CANONICAL_URL,
+        "identity_key": "sha256:" + "c" * 64,
     }
     defaults.update(overrides)
     return Provenance(**defaults)

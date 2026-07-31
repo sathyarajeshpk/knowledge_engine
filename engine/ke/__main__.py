@@ -12,7 +12,8 @@ import sys
 from pathlib import Path
 
 from ke import __version__
-from ke.pack import PackError, find_repo_root
+from ke.clock import SystemClock
+from ke.pack import Pack, PackError, find_repo_root
 from ke.validate import Finding, Level, has_errors, scan_summary, validate_repo
 
 
@@ -49,6 +50,32 @@ def build_parser() -> argparse.ArgumentParser:
         help="treat warnings as errors",
     )
     validate.set_defaults(handler=_run_validate)
+
+    discover = subcommands.add_parser(
+        "discover",
+        help="fetch from configured sources and report what was found",
+        description=(
+            "Run every pollable source and its fallback chain, printing the "
+            "items discovered and the resulting source health. Writes nothing: "
+            "storage arrives in M2, so discovery can be verified before "
+            "anything permanent is created."
+        ),
+    )
+    discover.add_argument("--pack", metavar="NAME", help="pack to discover for")
+    discover.add_argument("--repo-root", metavar="PATH", type=Path)
+    discover.add_argument(
+        "--source", metavar="NAME", help="run only this source (and its fallbacks)"
+    )
+    discover.add_argument(
+        "--limit", type=int, default=15, help="items to print per source (default 15)"
+    )
+    discover.add_argument(
+        "--dry-run",
+        action="store_true",
+        default=True,
+        help="report only; the default and currently the only mode",
+    )
+    discover.set_defaults(handler=_run_discover)
     return parser
 
 
@@ -90,6 +117,79 @@ def _report(repo_root: Path, findings: list[Finding], *, strict: bool) -> None:
         f"{errors} error(s), {warnings} warning(s)"
         + (" (strict: warnings fail)" if strict else "")
     )
+
+
+def _run_discover(args: argparse.Namespace) -> int:
+    from ke.discover import discover_all, health_summary
+    from ke.models import HealthState
+
+    repo_root = args.repo_root or find_repo_root()
+    try:
+        packs = Pack.discover(repo_root)
+    except PackError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 2
+
+    if args.pack:
+        packs = [p for p in packs if args.pack in (p.name, p.root.name)]
+        if not packs:
+            print(f"error: no pack named {args.pack!r}", file=sys.stderr)
+            return 2
+
+    clock = SystemClock()
+    exit_code = 0
+
+    for pack in packs:
+        definitions = pack.source_definitions
+        if args.source:
+            definitions = [d for d in definitions if d.name == args.source]
+            if not definitions:
+                print(f"error: no source named {args.source!r}", file=sys.stderr)
+                return 2
+
+        print(f"\n=== {pack.name} — {len(definitions)} source(s) ===\n")
+        if not definitions:
+            print("  no sources configured")
+            continue
+
+        result = discover_all(
+            definitions,
+            clock=clock,
+            max_summary_words=pack.max_summary_words,
+        )
+
+        by_source: dict[str, list] = {}
+        for item in result.items:
+            by_source.setdefault(item.source_name, []).append(item)
+
+        for name in sorted(by_source):
+            items = by_source[name]
+            print(f"  {name}: {len(items)} item(s)")
+            for item in items[: args.limit]:
+                when = item.published_date or "undated"
+                print(
+                    f"    [{when} · {item.date_precision}/{item.date_confidence}] "
+                    f"{item.title[:80]}"
+                )
+                print(f"        identity: {item.identity.basis} · {item.source_url[:90]}")
+            if len(items) > args.limit:
+                print(f"    … and {len(items) - args.limit} more")
+            print()
+
+        print("  Source health:")
+        for state, names in health_summary(result.health).items():
+            if names:
+                print(f"    {state}: {', '.join(names)}")
+        for attempt in result.attempts:
+            if not attempt.ok:
+                print(f"    ! {attempt.source_name}: {attempt.failure_reason}")
+        for review in result.review_items:
+            print(f"    !! REVIEW NEEDED — {review.source_name}: {review.reason}")
+            exit_code = 1
+        if result.skipped:
+            print(f"    not polled (retained for provenance): {', '.join(result.skipped)}")
+
+    return exit_code
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -49,6 +49,11 @@ decision is a conscious act rather than a tidy-up.
 | [0018](0018-provenance-and-uniform-adapter-interface.md) | Provenance on every item, behind one adapter interface | Accepted |
 | [0019](0019-source-health-and-fallback.md) | Source health, fallback chains, and never failing silently | Accepted |
 | [0020](0020-knowledge-time-machine.md) | Capture history for a Knowledge Time Machine | Accepted (amends 0009) |
+| [0021](0021-injected-clock.md) | Time is injected, never read from the system clock | Accepted |
+| [0022](0022-deterministic-output.md) | Same inputs produce byte-identical outputs | Accepted |
+| [0023](0023-stable-item-identity.md) | A deterministic hierarchy for item identity | Accepted |
+| [0024](0024-immutable-source-definitions.md) | Source definitions are immutable and versioned | Accepted |
+| [0025](0025-design-for-replayability.md) | Design for replayability without building it yet | Accepted |
 
 ## Template
 
