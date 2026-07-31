@@ -583,6 +583,39 @@ def test_a_collapse_against_a_known_baseline_is_flagged_as_a_parser_break():
     assert "parser break" in health.last_failure_reason
 
 
+def test_a_disabled_fallback_is_skipped_rather_than_polled():
+    """Retiring a link in a chain must actually retire it.
+
+    Without this, `status: disabled` on a fallback is decorative: the chain would
+    still poll it, and a secondary deliberately taken out of service because
+    failing over to it *damages the pack* would fire anyway during the next
+    outage -- automatically, with no human present.
+    """
+
+    class PrimaryFails:
+        def __init__(self):
+            self.calls = []
+
+        def fetch(self, url):
+            self.calls.append(url)
+            raise SourceError("HTTP 403 Forbidden")
+
+    fetcher = PrimaryFails()
+    definition = html_definition(
+        fallbacks=(
+            markdown_definition(status=SourceStatus.DISABLED),
+            html_definition(name="manual", role=SourceRole.MANUAL_REVIEW),
+        )
+    )
+    result = discover_all([definition], clock=CLOCK, fetcher=fetcher)
+
+    assert "fabric-whats-new-markdown" in result.skipped
+    assert "fabric-whats-new-markdown" not in result.health
+    assert not any(".md" in url for url in fetcher.calls), "the disabled link was polled"
+    # The chain still fails loudly rather than silently reporting nothing.
+    assert len(result.review_items) == 1
+
+
 def test_non_pollable_sources_are_skipped_but_reported():
     result = discover_all(
         [html_definition(status=SourceStatus.DISABLED)],

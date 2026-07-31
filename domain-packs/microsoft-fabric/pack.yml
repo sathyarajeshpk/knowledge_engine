@@ -119,10 +119,24 @@ sources:
       name: html
       version: 1
     fallback:
+      # DISABLED pending the identity decision (docs/design/IDENTITY_MODEL.md).
+      #
+      # Retained, never deleted, per ADR-0024: provenance must stay resolvable.
+      #
+      # Measured against production, this secondary agrees with its primary on
+      # only 73% of item identities (Fabric's manages 96%), and carries zero
+      # publication dates. Failing over would therefore mint roughly 5 duplicate
+      # permanent Feature IDs out of 19 items -- automatically, during an outage,
+      # with no human present. A fallback whose activation damages the pack is
+      # worse than no fallback, because the chain fires it without asking.
+      #
+      # Re-enable when cross-representation identity agreement is comparable to
+      # the Fabric pair. `tools/fallback_probe.py` reports the number.
       - name: powerbi-whats-new-markdown
         url: https://raw.githubusercontent.com/MicrosoftDocs/powerbi-docs/main/powerbi-docs/fundamentals/whats-new.md
         authority: official-microsoft
         role: secondary
+        status: disabled
         adapter:
           name: markdown
           version: 1

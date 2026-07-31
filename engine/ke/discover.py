@@ -137,6 +137,14 @@ def _discover_chain(
     last_reason = "no source in the chain was attempted"
 
     for link in chain:
+        if not link.is_pollable:
+            # A retired link in a chain is skipped, not polled -- the same rule
+            # `discover_all` applies to top-level sources. Without this, marking
+            # a fallback `disabled` would have no effect and the link a human
+            # deliberately retired would still run.
+            result.skipped.append(link.name)
+            continue
+
         tried.append(link.role)
 
         if link.role is SourceRole.MANUAL_REVIEW:
