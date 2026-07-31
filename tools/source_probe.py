@@ -41,6 +41,15 @@ except ImportError:  # pragma: no cover - the workflow installs it
 TIMEOUT = 30
 USER_AGENT = "knowledge-engine-source-probe/0.1 (+https://github.com/sathyarajeshpk/knowledge_engine)"
 
+#: Microsoft fronts several properties with a CDN that rejects non-browser
+#: agents. A 403 therefore does not prove a URL is dead -- it may prove only
+#: that we introduced ourselves honestly. Every failure is retried with a
+#: browser agent so the report can distinguish "gone" from "blocked".
+BROWSER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+)
+
 #: Candidate endpoints. Nothing here is trusted until this probe says so.
 #: `kind` records what we hope it is; the probe reports what it actually is.
 CANDIDATES: list[dict[str, str]] = [
@@ -85,6 +94,23 @@ CANDIDATES: list[dict[str, str]] = [
     # --- Azure release communications ------------------------------------
     {"name": "azure-updates-rss", "kind": "feed", "topic": "azure",
      "url": "https://www.microsoft.com/releasecommunications/api/v2/azure/rss"},
+
+    # --- Round 2: no working Power BI blog feed was found in round 1, and the
+    #     release-plan URL redirected to a roadmap host worth probing directly.
+    {"name": "pbi-microsoft-com-feed", "kind": "feed", "topic": "power-bi",
+     "url": "https://www.microsoft.com/en-us/power-bi/blog/feed/"},
+    {"name": "pbi-blog-feed-noslash", "kind": "feed", "topic": "power-bi",
+     "url": "https://powerbi.microsoft.com/en-us/blog/feed"},
+    {"name": "learn-search-rss-powerbi", "kind": "feed", "topic": "power-bi",
+     "url": "https://learn.microsoft.com/api/search/rss?search=power+bi&locale=en-us"},
+    {"name": "learn-search-rss-fabric-whatsnew", "kind": "feed", "topic": "fabric",
+     "url": "https://learn.microsoft.com/api/search/rss?search=fabric+what%27s+new&locale=en-us"},
+    {"name": "fabric-roadmap-host", "kind": "html", "topic": "fabric",
+     "url": "https://roadmap.fabric.microsoft.com/"},
+    {"name": "fabric-roadmap-feed", "kind": "feed", "topic": "fabric",
+     "url": "https://roadmap.fabric.microsoft.com/feed"},
+    {"name": "powerbi-docs-api", "kind": "json", "topic": "power-bi",
+     "url": "https://api.github.com/repos/MicrosoftDocs/powerbi-docs/commits?per_page=5"},
 ]
 
 
@@ -110,6 +136,7 @@ class ProbeResult:
     oldest_entry: str | None = None
     max_content_chars: int = 0
     has_full_content: bool = False
+    needs_browser_agent: bool = False
     sample_titles: list[str] = field(default_factory=list)
 
     @property
@@ -126,10 +153,10 @@ class ProbeResult:
         return self.entries_with_dates == self.entries
 
 
-def fetch(url: str) -> tuple[bytes, ProbeResult]:
+def fetch(url: str, agent: str = USER_AGENT) -> tuple[bytes, ProbeResult]:
     result = ProbeResult(name="", url=url, kind="", topic="")
     started = time.monotonic()
-    request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "*/*"})
+    request = Request(url, headers={"User-Agent": agent, "Accept": "*/*"})
     try:
         with urlopen(request, timeout=TIMEOUT) as response:
             body = response.read()
@@ -188,6 +215,11 @@ def analyse_feed(body: bytes, result: ProbeResult) -> None:
 
 def probe(candidate: dict[str, str]) -> ProbeResult:
     body, result = fetch(candidate["url"])
+    if not result.ok:
+        body, retry = fetch(candidate["url"], BROWSER_AGENT)
+        if retry.ok:
+            retry.needs_browser_agent = True
+            result = retry
     result.name = candidate["name"]
     result.kind = candidate["kind"]
     result.topic = candidate["topic"]
@@ -197,11 +229,21 @@ def probe(candidate: dict[str, str]) -> ProbeResult:
         try:
             payload = json.loads(body)
             result.parsed_as = "json"
-            result.entries = len(payload) if isinstance(payload, list) else 1
-            result.entries_with_dates = result.entries  # GitHub commits are always dated
+            entries = payload if isinstance(payload, list) else [payload]
+            result.entries = len(entries)
+            result.entries_with_dates = sum(
+                1 for c in entries
+                if c.get("commit", {}).get("author", {}).get("date")
+            )
+            stamps = sorted(
+                c["commit"]["author"]["date"][:10] for c in entries
+                if c.get("commit", {}).get("author", {}).get("date")
+            )
+            if stamps:
+                result.oldest_entry, result.newest_entry = stamps[0], stamps[-1]
             result.sample_titles = [
                 (c.get("commit", {}).get("message") or "").splitlines()[0][:90]
-                for c in (payload if isinstance(payload, list) else [])[:3]
+                for c in entries[:3]
             ]
         except (json.JSONDecodeError, AttributeError, TypeError) as exc:
             result.parsed_as = f"invalid json: {exc}"
@@ -223,7 +265,8 @@ def render(results: list[ProbeResult]) -> str:
         lines.append(
             f"| `{r.name}` | {r.topic} | {status} | {r.parsed_as or '—'} | "
             f"{r.entries or '—'} | {r.date_coverage} | {r.newest_entry or '—'} | "
-            f"{r.max_content_chars or '—'} | **{verdict}** |"
+            f"{r.max_content_chars or '—'} | **{verdict}**"
+            f"{' (browser UA)' if r.needs_browser_agent else ''} |"
         )
 
     lines.append("\n### Detail\n")
