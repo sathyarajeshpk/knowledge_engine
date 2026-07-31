@@ -19,6 +19,7 @@ on:
       - "tools/html_structure_probe.py"
       - "tools/access_diagnostic.py"
       - "tools/fallback_probe.py"
+      - "tools/identity_experiment.py"
       - "engine/ke/sources/**"
       - "engine/ke/discover.py"
       - "domain-packs/**/pack.yml"
@@ -74,6 +75,12 @@ jobs:
         # item identity. Disagreement means failing over would mint duplicate
         # permanent Feature IDs (ADR-0023).
         run: python tools/fallback_probe.py
+
+      - name: Measure candidate identity schemes
+        # Analysis for the ADR-0023 amendment proposal. Implements nothing:
+        # it scores identity schemes against production so the decision rests
+        # on measurement rather than argument.
+        run: python tools/identity_experiment.py
 
       - name: Upload results
         uses: actions/upload-artifact@v4
