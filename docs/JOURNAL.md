@@ -20,7 +20,7 @@ decided under uncertainty, and what the next milestone should watch out for.
 An engine with no pipeline. Seven work items: package scaffold, core models,
 schema contract, pack skeleton, validator and CLI, CI, and the CLAUDE.md
 clarifications. Eight commits, ~1,100 lines of engine code, ~1,000 lines of
-tests, 91 tests running in 0.6 seconds.
+tests, 107 tests running in 0.6 seconds.
 
 Nothing fetches a feed. Nothing mints an ID. Nothing writes a knowledge object.
 That was the design: build the things that are nearly impossible to retrofit once
@@ -135,6 +135,29 @@ alongside them.
 **What happens when a source stops emitting dates.** The `inferred` fallback
 handles it, but a feed that silently drops dates would quietly shift every ID to
 the discovery month. Worth a health check.
+
+### Pre-merge architecture review
+
+M0 was reviewed cold before merge, and the claims the code makes about itself
+were tested rather than trusted. Five defects turned up, all reproduced:
+subdirectories that Git cannot store, a "copy" that shared mutable state,
+findings that collide across packs, one bad pack aborting all validation, and
+required directories that vanish on clone. All are fixed; the record is in
+`docs/reviews/M0_ARCHITECTURE_REVIEW.md`.
+
+**The lesson is one line: every defect was invisible in the state M0 ships in.**
+One pack, zero objects, nothing committed. The suite was strong and tested the
+world as it is today rather than as M2 and M8 will make it. Two of the five only
+appeared when a second pack existed; one only appeared after an actual
+commit-and-clone cycle.
+
+The standing `two_packs` fixture closes half that gap. The other half — nothing
+exercises a real commit and clone — is worth remembering when M2 starts writing
+objects for real.
+
+The secondary lesson: **fixing a defect is a good time to look for its
+siblings.** The fifth defect was the same mistake one level up, and it was only
+found because fixing the fourth meant simulating a clone.
 
 ### Metrics
 

@@ -37,9 +37,9 @@ exists.
 - [x] Field ownership registry, asserted at import time, enforced by `with_engine_fields()`
 - [x] `docs/SCHEMA.md` — the full contract
 - [x] Microsoft Fabric pack skeleton and state files
-- [x] `ke validate` — 25 checks across structure, schema, identity, ownership, registry, copyright
+- [x] `ke validate` — 31 checks across structure, schema, identity, ownership, registry, copyright
 - [x] CI: tests + validation + a guard that no scheduled workflow calls `ke generate`
-- [x] 91 tests
+- [x] 107 tests
 
 **Known gap carried into M1:** no source URL is verified. The planning
 environment blocked `*.microsoft.com`, so `sources: []` is empty with candidates

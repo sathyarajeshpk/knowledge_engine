@@ -109,8 +109,10 @@ def write_object(
         / (knowledge_subpath or obj.id.knowledge_subpath)
         / (directory_name or obj.directory_name)
     )
-    for subdir in ("artifacts", "images", "references"):
-        (obj_dir / subdir).mkdir(parents=True, exist_ok=True)
+    # No `artifacts/`, `images/` or `references/`: they are created on demand
+    # (ADR-0015). Creating them here would let tests pass against a state Git
+    # cannot actually reproduce after a clone.
+    obj_dir.mkdir(parents=True, exist_ok=True)
 
     (obj_dir / "metadata.yaml").write_text(
         yaml.safe_dump(metadata, sort_keys=False, allow_unicode=True),
@@ -142,8 +144,8 @@ def write_registry(pack_root: Path, counters: dict[str, int], paths: dict[str, s
 def pack_root(tmp_path: Path) -> Path:
     """An empty but structurally valid domain pack."""
     root = tmp_path / "domain-packs" / "test-pack"
-    for subdir in ("knowledge", "indexes", "digests", "state"):
-        (root / subdir).mkdir(parents=True, exist_ok=True)
+    # Only `state/` up front; the rest are created on demand (ADR-0015).
+    (root / "state").mkdir(parents=True, exist_ok=True)
     (root / "pack.yml").write_text(
         yaml.safe_dump(PACK_CONFIG, sort_keys=False), encoding="utf-8"
     )
@@ -164,3 +166,26 @@ def populated_pack(pack_root: Path) -> Path:
         paths={str(obj.id): obj.knowledge_subpath},
     )
     return pack_root
+
+
+def make_pack(packs_dir: Path, name: str, prefix: str) -> Path:
+    """Create an additional empty pack alongside an existing one."""
+    root = packs_dir / name
+    (root / "state").mkdir(parents=True, exist_ok=True)
+    (root / "pack.yml").write_text(
+        yaml.safe_dump({**PACK_CONFIG, "name": name, "id_prefix": prefix}, sort_keys=False),
+        encoding="utf-8",
+    )
+    write_registry(root, counters={}, paths={})
+    return root
+
+
+@pytest.fixture
+def two_packs(pack_root: Path) -> tuple[Path, Path]:
+    """Two packs side by side.
+
+    Three of the four defects found in the M0 architecture review were
+    invisible with a single pack, so multi-pack coverage is now a standing
+    fixture rather than something remembered at M8.
+    """
+    return pack_root, make_pack(pack_root.parent, "other-pack", "OTH")

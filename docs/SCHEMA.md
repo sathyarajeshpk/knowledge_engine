@@ -24,10 +24,15 @@ domain-packs/microsoft-fabric/knowledge/2026/04/MSF-2026-04-001-direct-lake-ga/
 └── references/       supporting notes and additional references
 ```
 
+The three subdirectories are **created on demand**, when something is first
+written into them ([ADR-0015](adr/0015-create-object-subdirectories-on-demand.md)).
+Git cannot track an empty directory, so creating them up front would mean they
+vanished on every clone. A freshly harvested object contains exactly two files.
+
 **Why a directory from day one.** The alternative — a flat file promoted to a
 directory when its first artifact appears — would rewrite the object's path,
-breaking every index entry, digest link and bookmark pointing at it. Uniformity
-costs an empty directory; promotion costs path stability, which is worth more.
+breaking every index entry, digest link and bookmark pointing at it. Promotion
+costs path stability, which is worth more than the file it would save.
 
 **Why knowledge and metadata are separate files.** `feature.md` stays clean for
 reading, and tools can read `metadata.yaml` without parsing Markdown. The cost
@@ -322,11 +327,12 @@ and `ke validate` enforces the word limit.
 
 | Area | Checks |
 |---|---|
-| Pack | `pack.yml` parses; required keys present |
-| Structure | `feature.md` and `metadata.yaml` exist; `artifacts/`, `images/`, `references/` present |
+| Pack | `pack.yml` parses; required keys present; `state/` exists. A pack that cannot be loaded is reported (`PACK005`) and the remaining packs are still validated. |
+| Structure | `feature.md` and `metadata.yaml` exist |
 | Identity | ID well-formed; matches pack prefix, directory name and `YYYY/MM` path; no duplicates |
 | Schema | Required fields present; enums and types valid; no unknown fields; supported `schema_version` |
 | Ownership | `overrides` names only engine-proposed fields |
+| Artifacts | Every artifact marked `generated`/`stale` records a path, inside a known subdirectory, and the file exists |
 | Registry | Per-month counters not lower than the highest sequence actually used; `id → path` entries resolve |
 | Consistency | `feature.md` heading matches `title` |
 | Copyright | Summary within `limits.max_summary_words` |

@@ -13,7 +13,7 @@ rules below exist to keep guarantees intact, not to create ceremony.
 ```bash
 git clone <repo> && cd knowledge_engine
 python -m pip install -e ".[dev]"     # Python 3.11+
-python -m pytest engine/tests -q      # 91 tests, ~0.6s
+python -m pytest engine/tests -q      # 107 tests, ~0.6s
 python -m ke validate                 # check every Domain Pack
 ```
 
@@ -263,7 +263,9 @@ Packs are **data**. Contributing to a pack never means changing engine code.
 
 Adding one (after M8):
 
-1. `mkdir -p domain-packs/<name>/{knowledge,indexes,digests,state}`
+1. `mkdir -p domain-packs/<name>/state` — only `state/` is created up front;
+   `knowledge/`, `indexes/` and `digests/` are created on demand, because Git
+   cannot store an empty directory ([ADR-0015](docs/adr/0015-create-object-subdirectories-on-demand.md))
 2. Write `pack.yml` with a **permanent** `id_prefix` — changing it later orphans
    every Feature ID minted under it.
 3. Initialise `state/id-registry.json` as `{"counters": {}, "paths": {}}`.

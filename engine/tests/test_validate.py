@@ -17,7 +17,7 @@ from pathlib import Path
 import pytest
 import yaml
 
-from ke.models import FeatureId, Revision
+from ke.models import ArtifactType, FeatureId, GenerationEntry, GenerationStatus, Revision
 from ke.pack import Pack, PackError
 from ke.validate import Level, has_errors, validate_pack, validate_repo
 
@@ -72,9 +72,22 @@ def test_malformed_id_prefix_is_reported(pack_root):
     assert "PACK003" in codes(check(pack_root))
 
 
-def test_missing_pack_directory_is_reported(pack_root):
-    (pack_root / "digests").rmdir()
+def test_missing_state_directory_is_reported(pack_root):
+    for leftover in (pack_root / "state").iterdir():
+        leftover.unlink()
+    (pack_root / "state").rmdir()
     assert "PACK004" in codes(check(pack_root))
+
+
+def test_generated_directories_are_not_required(pack_root):
+    """Git cannot store an empty directory, so requiring one fails every clone.
+
+    The fixture deliberately does not create them, which is exactly the state a
+    fresh clone of a new pack produces.
+    """
+    for generated in ("knowledge", "indexes", "digests"):
+        assert not (pack_root / generated).exists()
+    assert check(pack_root) == []
 
 
 def test_unparseable_pack_yml_raises(pack_root):
@@ -104,15 +117,6 @@ def test_unparseable_metadata_is_reported(populated_pack):
     obj_dir = next(Pack.load(populated_pack).iter_object_dirs())
     (obj_dir / "metadata.yaml").write_text("id: [unclosed\n")
     assert "OBJ004" in codes(check(populated_pack))
-
-
-def test_missing_object_subdirectory_is_a_warning(populated_pack):
-    obj_dir = next(Pack.load(populated_pack).iter_object_dirs())
-    (obj_dir / "images").rmdir()
-    findings = check(populated_pack)
-    assert "OBJ005" in codes(findings)
-    # A missing subdirectory is recoverable, so it must not fail the build.
-    assert not has_errors(findings)
 
 
 def test_directory_name_must_match_id_and_slug(pack_root):
@@ -370,7 +374,10 @@ def test_validate_repo_reports_an_unknown_pack_name(populated_pack):
 
 def test_strict_mode_turns_warnings_into_failures(populated_pack):
     obj_dir = next(Pack.load(populated_pack).iter_object_dirs())
-    (obj_dir / "images").rmdir()
+    metadata = yaml.safe_load((obj_dir / "metadata.yaml").read_text())
+    metadata["lerning_status"] = "learned"  # unknown field -> warning
+    (obj_dir / "metadata.yaml").write_text(yaml.safe_dump(metadata))
+
     findings = check(populated_pack)
     assert not has_errors(findings)
     assert has_errors(findings, strict=True)
@@ -387,3 +394,133 @@ def test_findings_render_readably(pack_root):
     assert "ERROR" in rendered
     assert "OWN001" in rendered
     assert finding.level is Level.ERROR
+
+
+# ---------------------------------------------------------------------------
+# Multi-pack behaviour
+#
+# Three of the four defects found in the M0 architecture review were invisible
+# with a single pack. These tests exist so that class of bug cannot recur.
+# ---------------------------------------------------------------------------
+
+
+def test_finding_locations_are_unique_across_packs(two_packs):
+    """Two packs, same relative path: the findings must be distinguishable."""
+    first, second = two_packs
+    for pack in (first, second):
+        (pack / "knowledge" / "2026" / "04" / "TST-2026-04-001-x").mkdir(parents=True)
+
+    findings = validate_repo(first.parent.parent)
+    locations = {f.location for f in findings if f.code == "OBJ002"}
+    assert len(locations) == 2, f"locations collided: {locations}"
+    assert all(loc.startswith("domain-packs/") for loc in locations)
+
+
+def test_locations_are_repository_relative(populated_pack):
+    """`Finding.location` documents itself as repo-relative; hold it to that."""
+    write_object(populated_pack, make_object(overrides=("title",), slug="other"))
+    finding = next(f for f in check(populated_pack) if f.code == "OWN001")
+    assert finding.location.startswith("domain-packs/test-pack/knowledge/")
+
+
+def test_a_broken_pack_does_not_stop_the_others(two_packs):
+    """One malformed pack.yml must not suppress every other pack's results."""
+    first, second = two_packs
+    (second / "pack.yml").write_text("name: [unclosed\n")
+    write_object(first, make_object(overrides=("title",)))
+
+    findings = validate_repo(first.parent.parent)
+    codes_found = codes(findings)
+    assert "PACK005" in codes_found          # the broken pack is reported
+    assert "OWN001" in codes_found           # the healthy pack was still checked
+
+
+def test_broken_pack_is_reported_at_its_own_location(two_packs):
+    _, second = two_packs
+    (second / "pack.yml").write_text("name: [unclosed\n")
+    finding = next(
+        f for f in validate_repo(second.parent.parent) if f.code == "PACK005"
+    )
+    assert finding.location == "domain-packs/other-pack/pack.yml"
+
+
+def test_pack_filter_selects_a_pack_whose_config_is_broken(two_packs):
+    """Selecting a broken pack by directory name must still report it."""
+    _, second = two_packs
+    (second / "pack.yml").write_text("name: [unclosed\n")
+    assert "PACK005" in codes(validate_repo(second.parent.parent, pack_name="other-pack"))
+
+
+def test_multiple_healthy_packs_validate_cleanly(two_packs):
+    assert validate_repo(two_packs[0].parent.parent) == []
+
+
+# ---------------------------------------------------------------------------
+# Object subdirectories are created on demand (ADR-0015)
+# ---------------------------------------------------------------------------
+
+
+def test_absent_artifact_subdirectories_are_not_a_finding(populated_pack):
+    """Git cannot store an empty directory, so their absence must be normal."""
+    obj_dir = next(Pack.load(populated_pack).iter_object_dirs())
+    for subdir in ("artifacts", "images", "references"):
+        assert not (obj_dir / subdir).exists()
+    assert check(populated_pack) == []
+
+
+def test_generated_artifact_must_have_a_path(pack_root):
+    obj = make_object(
+        generation={
+            ArtifactType.TUTORIAL: GenerationEntry(status=GenerationStatus.GENERATED)
+        }
+    )
+    write_object(pack_root, obj)
+    write_registry(pack_root, {"2026-04": 1}, {str(obj.id): obj.knowledge_subpath})
+    assert "GEN001" in codes(check(pack_root))
+
+
+def test_artifact_path_must_be_inside_a_known_subdirectory(pack_root):
+    obj = make_object(
+        generation={
+            ArtifactType.TUTORIAL: GenerationEntry(
+                status=GenerationStatus.GENERATED, path="tutorial.md"
+            )
+        }
+    )
+    write_object(pack_root, obj)
+    write_registry(pack_root, {"2026-04": 1}, {str(obj.id): obj.knowledge_subpath})
+    assert "GEN002" in codes(check(pack_root))
+
+
+def test_missing_artifact_file_is_reported(pack_root):
+    """Artifacts are marked stale, never deleted, so a missing file is a bug."""
+    obj = make_object(
+        generation={
+            ArtifactType.TUTORIAL: GenerationEntry(
+                status=GenerationStatus.GENERATED, path="artifacts/tutorial.md"
+            )
+        }
+    )
+    write_object(pack_root, obj)
+    write_registry(pack_root, {"2026-04": 1}, {str(obj.id): obj.knowledge_subpath})
+    assert "GEN003" in codes(check(pack_root))
+
+
+def test_present_artifact_file_passes(pack_root):
+    obj = make_object(
+        generation={
+            ArtifactType.TUTORIAL: GenerationEntry(
+                status=GenerationStatus.GENERATED, path="artifacts/tutorial.md"
+            )
+        }
+    )
+    obj_dir = write_object(pack_root, obj)
+    (obj_dir / "artifacts").mkdir()
+    (obj_dir / "artifacts" / "tutorial.md").write_text("# Tutorial\n")
+    write_registry(pack_root, {"2026-04": 1}, {str(obj.id): obj.knowledge_subpath})
+    assert check(pack_root) == []
+
+
+def test_unrequested_artifacts_need_no_file(populated_pack):
+    """`none`, `requested` and `rejected` have no file by definition."""
+    assert check(populated_pack) == []

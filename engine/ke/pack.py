@@ -58,21 +58,34 @@ class Pack:
         return cls(root=root, config=config)
 
     @classmethod
+    def find_roots(cls, repo_root: Path) -> list[Path]:
+        """Directories under `domain-packs/` that declare themselves a pack.
+
+        Never raises and never parses anything. Callers that must keep going
+        when one pack is broken -- `ke validate` across nine packs, say -- use
+        this and load each root themselves, so a single malformed `pack.yml`
+        cannot suppress every other pack's results.
+        """
+        packs_dir = Path(repo_root) / PACKS_DIRNAME
+        if not packs_dir.is_dir():
+            return []
+        return sorted(
+            child
+            for child in packs_dir.iterdir()
+            if child.is_dir() and (child / "pack.yml").is_file()
+        )
+
+    @classmethod
     def discover(cls, repo_root: Path) -> list[Pack]:
         """Load every pack under `<repo_root>/domain-packs`, sorted by name.
 
         The weekly workflow iterates over whatever this returns, so adding a
         pack is a matter of creating a directory -- no workflow edit required.
+
+        Raises `PackError` if any pack is unloadable. Use `find_roots()` when
+        one bad pack must not stop the others.
         """
-        packs_dir = Path(repo_root) / PACKS_DIRNAME
-        if not packs_dir.is_dir():
-            return []
-        found = [
-            cls.load(child)
-            for child in sorted(packs_dir.iterdir())
-            if child.is_dir() and (child / "pack.yml").is_file()
-        ]
-        return found
+        return [cls.load(root) for root in cls.find_roots(repo_root)]
 
     # -- configuration ---------------------------------------------------
 
@@ -145,11 +158,22 @@ class Pack:
                 yield from sorted(p for p in month_dir.iterdir() if p.is_dir())
 
     def relative(self, path: Path) -> str:
-        """Path relative to the pack root, for readable messages."""
+        """Path relative to the pack root."""
         try:
             return str(Path(path).relative_to(self.root))
         except ValueError:
             return str(path)
+
+    def location(self, path: Path) -> str:
+        """Repository-relative path, for use as a `Finding` location.
+
+        Includes the containing directory and the pack directory
+        (`domain-packs/microsoft-fabric/knowledge/...`) so that findings stay
+        **globally unique across packs**. A pack-relative path would render two
+        different files identically once a second pack exists, and would let a
+        reporter group unrelated findings together.
+        """
+        return f"{self.root.parent.name}/{self.root.name}/{self.relative(path)}"
 
 
 def find_repo_root(start: Path | None = None) -> Path:

@@ -5,10 +5,17 @@
 **Scope:** PR #1 — M0 Foundation, Schema and Guardrails (v0.1.0)
 **Method:** Read the code cold, then empirically tested the claims it makes about itself
 
-**Verdict: mergeable, but two defects should be fixed inside this PR.** See §7.
+**Original verdict: mergeable, but two defects should be fixed inside this PR.**
+**Status: all four defects fixed, plus a fifth the fixes exposed. See §8.**
 
 Every defect below was reproduced, not inferred. Commands are included so the
 findings can be independently verified.
+
+> **Resolution note (2026-07-31).** §2.1, §2.2, §2.3 and §2.4 are **fixed** and
+> verified by the same reproductions that found them. Fixing §2.1 exposed a
+> fifth defect of the same class, recorded as **§2.9**. The findings below are
+> left as written — an accurate record of what was wrong is more useful than a
+> tidied one. §8 records what changed.
 
 ---
 
@@ -184,6 +191,34 @@ corruption") is sound for engine-owned fields and wrong for user-owned ones,
 which have safe defaults and are exactly what humans touch. Splitting the
 requirement by ownership class would resolve the tension cleanly.
 
+### 2.9 CONFIRMED DEFECT — `PACK004` required directories Git cannot store
+
+**Severity: high. Found while fixing §2.1. Now fixed.**
+
+Exactly the same flaw one level up, and worse: `PACK004` **required**
+`knowledge/`, `indexes/`, `digests/` and `state/`. Three of those are empty in a
+new pack, so they are absent after a clone — producing hard **errors**, not
+warnings.
+
+Verified by committing a pack, cloning it, and validating the clone:
+
+```
+ERROR   PACK004  domain-packs/sim/digests: missing required pack directory
+ERROR   PACK004  domain-packs/sim/indexes: missing required pack directory
+```
+
+The Microsoft Fabric pack survived only because `.gitkeep` files had been added
+to it — a prop, not a design. And the pack-creation recipe in `CONTRIBUTING.md`
+(`mkdir -p domain-packs/<name>/{knowledge,indexes,digests,state}`) creates no
+`.gitkeep`, so **the documented way to add a pack produced a pack that failed
+validation after a clone.**
+
+Fixed by requiring only `state/`, the one pack directory that always holds
+committed files. The `.gitkeep` props are removed.
+
+This is the clearest vindication of §8's closing observation: the defect was
+invisible until something was actually committed and cloned, which no test did.
+
 ### 2.6 The documentation-to-code ratio is a maintenance liability
 
 | | Lines |
@@ -341,7 +376,7 @@ Recorded so they are visibly deferred rather than forgotten.
 
 ---
 
-## 7. Verdict
+## 7. Verdict (original)
 
 **M0 is architecturally sound and should be merged — after §5.1 and §5.2.**
 
@@ -370,3 +405,57 @@ ADRs hold up under scrutiny; I did not find one I would overturn.
 **Recommendation:** fix §5.1 and §5.2 in this PR, merge, then open a short
 pre-M1 cleanup for §5.4–§5.8. §5.3 is a conversation to have before M1 starts and
 is more important than any of the code changes above.
+
+
+---
+
+## 8. Resolution
+
+All five defects are fixed. Each was re-verified with the reproduction that found
+it.
+
+| Defect | Fix | Verified by |
+|---|---|---|
+| §2.1 subdirectories lost by Git | Created on demand; `OBJ005` retired, `GEN001`–`GEN003` added ([ADR-0015](../adr/0015-create-object-subdirectories-on-demand.md)) | Commit → clone → `ke validate --strict` on the clone: clean |
+| §2.2 shallow copy | `generation` copied explicitly; no shared mutable state | `o1.generation is o2.generation` → `False`; mutation no longer leaks |
+| §2.3 ambiguous locations | `Pack.location()` returns repository-relative paths | Two packs now produce two distinct locations |
+| §2.4 one bad pack aborts all | Unloadable packs become `PACK005`; the rest still validate | Broken `beta` reported, healthy `alpha` still checked |
+| §2.9 `PACK004` required untrackable dirs | Only `state/` required; `.gitkeep` props removed | Fresh clone validates clean under `--strict` |
+
+**Tests: 91 → 107.** The new coverage targets the blind spots rather than the
+symptoms:
+
+- A `two_packs` fixture, now standing rather than deferred to M8. Three of the
+  five defects were invisible with one pack.
+- `test_no_mutable_state_is_shared_after_an_engine_write` walks **every**
+  dataclass field, so a future mutable field cannot silently alias.
+- `test_generated_directories_are_not_required` and
+  `test_absent_artifact_subdirectories_are_not_a_finding` pin the new behaviour
+  against a well-meaning future "fix".
+- `GEN001`–`GEN003` are covered including the passing case.
+
+### What did not change
+
+Nothing in §5.3 (the Fabric/Power BI ID boundary) — it is a decision, not code,
+and remains the highest-severity open item in the project.
+
+§5.5–§5.8 are unaddressed by design: the ADR-0011 `grep` as a CI check, action
+SHA pinning, a PR template, and relaxing field requirements for user-owned
+fields. They are real but none threatens M1 or M2, and bundling them here would
+have obscured the diff that matters.
+
+§2.5–§2.8 stand as recorded. None is a defect; each is a judgement worth
+revisiting with more evidence.
+
+### Revised verdict
+
+**M0 is ready to merge.**
+
+The five defects shared one root cause worth naming, because it will recur:
+**every one was invisible in the state M0 ships in** — one pack, zero objects,
+nothing committed. The test suite was strong but tested the world as it is today
+rather than as M2 and M8 will make it.
+
+The two-pack fixture closes half of that gap. The other half — nothing exercised
+a real commit-and-clone cycle — is worth remembering when M2 starts writing
+objects for real.

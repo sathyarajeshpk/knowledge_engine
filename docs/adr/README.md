@@ -43,6 +43,7 @@ decision is a conscious act rather than a tidy-up.
 | [0012](0012-findings-over-exceptions.md) | Validation returns findings rather than raising | Accepted |
 | [0013](0013-pluggable-notifiers.md) | Pluggable notifier interface | Accepted |
 | [0014](0014-flag-near-duplicates-never-drop.md) | Flag near-duplicates, never drop them | Accepted |
+| [0015](0015-create-object-subdirectories-on-demand.md) | Create object and pack subdirectories on demand | Accepted (amends 0006) |
 
 ## Template
 

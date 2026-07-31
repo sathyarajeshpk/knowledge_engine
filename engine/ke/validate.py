@@ -19,7 +19,7 @@ import json
 import re
 from dataclasses import dataclass
 from enum import StrEnum
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any, Iterable
 
 import yaml
@@ -28,9 +28,10 @@ from ke import SCHEMA_VERSION
 from ke.models import (
     ALL_METADATA_FIELDS,
     ENGINE_PROPOSED_FIELDS,
+    GenerationStatus,
     KnowledgeObject,
 )
-from ke.pack import OBJECT_SUBDIRS, REQUIRED_PACK_KEYS, Pack
+from ke.pack import OBJECT_SUBDIRS, PACKS_DIRNAME, REQUIRED_PACK_KEYS, Pack, PackError
 
 #: Schema versions this build of the engine understands.
 SUPPORTED_SCHEMA_VERSIONS = frozenset({SCHEMA_VERSION})
@@ -91,23 +92,74 @@ def validate_pack(pack: Pack) -> list[Finding]:
 
 
 def validate_repo(repo_root: Path, pack_name: str | None = None) -> list[Finding]:
-    """Validate every pack in the repository, or just the one named."""
-    packs = Pack.discover(repo_root)
+    """Validate every pack in the repository, or just the one named.
+
+    A pack that cannot be loaded at all becomes a `PACK005` finding and the
+    remaining packs are still validated. One malformed `pack.yml` must not
+    suppress every other pack's results -- the same "fail fast within a unit,
+    continue across units" rule already applied to knowledge objects.
+    """
+    roots = Pack.find_roots(repo_root)
     if pack_name:
-        packs = [p for p in packs if p.name == pack_name or p.root.name == pack_name]
-        if not packs:
+        roots = [root for root in roots if _matches_pack_name(root, pack_name)]
+        if not roots:
             return [
                 Finding(
                     Level.ERROR,
                     "PACK000",
-                    "domain-packs",
+                    PACKS_DIRNAME,
                     f"no pack named {pack_name!r}",
                 )
             ]
+
     findings: list[Finding] = []
-    for pack in packs:
+    for root in roots:
+        try:
+            pack = Pack.load(root)
+        except PackError as exc:
+            # Parser errors are multi-line; collapse them so each finding stays
+            # one greppable line.
+            detail = " ".join(str(exc).split())
+            findings.append(
+                Finding(
+                    Level.ERROR,
+                    "PACK005",
+                    f"{root.parent.name}/{root.name}/pack.yml",
+                    f"pack could not be loaded, so it was skipped: {detail}",
+                )
+            )
+            continue
         findings.extend(validate_pack(pack))
     return findings
+
+
+def _matches_pack_name(root: Path, pack_name: str) -> bool:
+    """Match `--pack` against the directory name, falling back to `pack.yml`.
+
+    The directory name is checked first so that a pack whose `pack.yml` is
+    unparseable can still be selected -- and therefore still reported.
+    """
+    if root.name == pack_name:
+        return True
+    try:
+        return Pack.load(root).name == pack_name
+    except PackError:
+        return False
+
+
+def scan_summary(repo_root: Path) -> tuple[int, int]:
+    """`(pack count, knowledge object count)` for the run summary line.
+
+    Tolerates unloadable packs: they are counted but contribute no objects.
+    """
+    roots = Pack.find_roots(repo_root)
+    objects = 0
+    for root in roots:
+        try:
+            objects += sum(1 for _ in Pack.load(root).iter_object_dirs())
+        except PackError:
+            continue
+    return len(roots), objects
 
 
 def has_errors(findings: Iterable[Finding], strict: bool = False) -> bool:
@@ -129,7 +181,7 @@ def has_errors(findings: Iterable[Finding], strict: bool = False) -> bool:
 
 def _check_pack_config(pack: Pack) -> list[Finding]:
     findings: list[Finding] = []
-    location = pack.relative(pack.root / "pack.yml")
+    location = pack.location(pack.root / "pack.yml")
 
     for key in REQUIRED_PACK_KEYS:
         if not pack.config.get(key):
@@ -159,16 +211,19 @@ def _check_pack_config(pack: Pack) -> list[Finding]:
             )
         )
 
-    for required_dir in ("knowledge", "indexes", "digests", "state"):
-        if not (pack.root / required_dir).is_dir():
-            findings.append(
-                Finding(
-                    Level.ERROR,
-                    "PACK004",
-                    pack.relative(pack.root / required_dir),
-                    "missing required pack directory",
-                )
+    # Only `state/` is required. It is the one pack directory that always holds
+    # committed files, so it is the one Git can actually preserve. `knowledge/`,
+    # `indexes/` and `digests/` are created on demand (ADR-0015): requiring a
+    # directory Git cannot store would fail on every fresh clone.
+    if not pack.state_dir.is_dir():
+        findings.append(
+            Finding(
+                Level.ERROR,
+                "PACK004",
+                pack.location(pack.state_dir),
+                "missing required pack directory (must contain id-registry.json)",
             )
+        )
     return findings
 
 
@@ -185,7 +240,7 @@ def _check_object(pack: Pack, object_dir: Path) -> tuple[list[Finding], LoadedOb
     registry checks.
     """
     findings: list[Finding] = []
-    location = pack.relative(object_dir)
+    location = pack.location(object_dir)
 
     metadata_path = object_dir / "metadata.yaml"
     feature_path = object_dir / "feature.md"
@@ -193,16 +248,10 @@ def _check_object(pack: Pack, object_dir: Path) -> tuple[list[Finding], LoadedOb
     if not feature_path.is_file():
         findings.append(Finding(Level.ERROR, "OBJ003", location, "missing feature.md"))
 
-    for subdir in OBJECT_SUBDIRS:
-        if not (object_dir / subdir).is_dir():
-            findings.append(
-                Finding(
-                    Level.WARNING,
-                    "OBJ005",
-                    location,
-                    f"missing standard subdirectory {subdir}/",
-                )
-            )
+    # Note: `artifacts/`, `images/` and `references/` are created on demand, not
+    # up front (ADR-0015), so their absence is normal and is not checked. What
+    # is checked is that every artifact the metadata *claims* exists really
+    # does -- see `_check_generation`.
 
     if not metadata_path.is_file():
         findings.append(Finding(Level.ERROR, "OBJ002", location, "missing metadata.yaml"))
@@ -238,6 +287,7 @@ def _check_object(pack: Pack, object_dir: Path) -> tuple[list[Finding], LoadedOb
     findings.extend(_check_identity(pack, object_dir, obj))
     findings.extend(_check_ownership(location, obj))
     findings.extend(_check_category(pack, location, obj))
+    findings.extend(_check_generation(location, object_dir, obj))
     if feature_path.is_file():
         findings.extend(_check_feature_document(pack, feature_path, obj))
 
@@ -289,7 +339,7 @@ def _check_metadata_shape(location: str, metadata: dict[str, Any]) -> list[Findi
 def _check_identity(pack: Pack, object_dir: Path, obj: KnowledgeObject) -> list[Finding]:
     """The ID must agree with the pack, the directory name and the path."""
     findings: list[Finding] = []
-    location = pack.relative(object_dir)
+    location = pack.location(object_dir)
 
     if pack.id_prefix and obj.id.prefix != pack.id_prefix:
         findings.append(
@@ -359,6 +409,62 @@ def _check_ownership(location: str, obj: KnowledgeObject) -> list[Finding]:
     return findings
 
 
+def _check_generation(
+    location: str, object_dir: Path, obj: KnowledgeObject
+) -> list[Finding]:
+    """Every artifact the metadata claims exists must actually exist.
+
+    This replaces the old "missing standard subdirectory" warning. Checking for
+    empty scaffolding told us nothing -- Git cannot store an empty directory, so
+    it was guaranteed to fire on every object after a fresh clone (ADR-0015).
+    Checking that a `generated` artifact's file is really there is the integrity
+    property that was actually wanted.
+    """
+    findings: list[Finding] = []
+    present_statuses = (GenerationStatus.GENERATED, GenerationStatus.STALE)
+
+    for artifact_type, entry in sorted(obj.generation.items()):
+        if entry.status not in present_statuses:
+            # `none`, `requested` and `rejected` have no file by definition.
+            continue
+
+        if not entry.path:
+            findings.append(
+                Finding(
+                    Level.ERROR,
+                    "GEN001",
+                    location,
+                    f"{artifact_type} is marked {entry.status} but records no path",
+                )
+            )
+            continue
+
+        top_level = PurePosixPath(entry.path).parts[0] if entry.path else ""
+        if top_level not in OBJECT_SUBDIRS:
+            findings.append(
+                Finding(
+                    Level.ERROR,
+                    "GEN002",
+                    location,
+                    f"{artifact_type} path {entry.path!r} must live under one of "
+                    f"{list(OBJECT_SUBDIRS)}",
+                )
+            )
+            continue
+
+        if not (object_dir / entry.path).is_file():
+            findings.append(
+                Finding(
+                    Level.ERROR,
+                    "GEN003",
+                    location,
+                    f"{artifact_type} is marked {entry.status} but {entry.path} is missing; "
+                    "artifacts are marked stale, never deleted",
+                )
+            )
+    return findings
+
+
 def _check_category(pack: Pack, location: str, obj: KnowledgeObject) -> list[Finding]:
     if obj.category and pack.categories and obj.category not in pack.categories:
         return [
@@ -379,7 +485,7 @@ def _check_feature_document(pack: Pack, feature_path: Path, obj: KnowledgeObject
     the drift is checked here rather than hoped away.
     """
     findings: list[Finding] = []
-    location = pack.relative(feature_path)
+    location = pack.location(feature_path)
     text = feature_path.read_text(encoding="utf-8")
 
     match = H1_PATTERN.search(text)
@@ -432,8 +538,8 @@ def _check_duplicate_ids(pack: Pack, loaded: list[LoadedObject]) -> list[Finding
                 Finding(
                     Level.ERROR,
                     "ID003",
-                    pack.relative(entry.directory),
-                    f"duplicate Feature ID {key} (also at {pack.relative(seen[key])})",
+                    pack.location(entry.directory),
+                    f"duplicate Feature ID {key} (also at {pack.location(seen[key])})",
                 )
             )
         else:
@@ -449,7 +555,7 @@ def _check_registry(pack: Pack, loaded: list[LoadedObject]) -> list[Finding]:
     a future mint could reuse its number.
     """
     findings: list[Finding] = []
-    location = pack.relative(pack.registry_path)
+    location = pack.location(pack.registry_path)
 
     if not pack.registry_path.is_file():
         return [Finding(Level.ERROR, "REG001", location, "missing state/id-registry.json")]

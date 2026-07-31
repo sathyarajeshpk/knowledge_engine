@@ -1,8 +1,13 @@
 # ADR-0006: One directory per knowledge object
 
-**Status:** Accepted
+**Status:** Accepted · **Amended by [ADR-0015](0015-create-object-subdirectories-on-demand.md)**
 **Date:** 2026-07-31
 **Milestone:** M0
+
+> **Amendment note.** The core decision below — one directory per object, with a
+> path stable for its lifetime — stands unchanged. ADR-0015 amends one detail:
+> the three subdirectories are created *on demand* rather than up front, because
+> Git cannot track an empty directory and they would vanish on every clone.
 
 ## Context
 

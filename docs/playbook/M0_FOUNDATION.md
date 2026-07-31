@@ -52,20 +52,19 @@ knowledge_engine/
 │   │   ├── models.py         What a knowledge object IS
 │   │   ├── pack.py           Finding and loading Domain Packs on disk
 │   │   └── validate.py       Checking everything against the contract
-│   └── tests/                Test suite (91 tests)
+│   └── tests/                Test suite (107 tests)
 │       ├── conftest.py       Shared fixtures and builders
-│       ├── test_models.py    34 tests
-│       ├── test_validate.py  42 tests
+│       ├── test_models.py    37 tests
+│       ├── test_validate.py  54 tests
 │       ├── test_pack.py      9 tests
-│       └── test_cli.py       6 tests
+│       └── test_cli.py       7 tests
 │
 ├── domain-packs/             ← ALL DATA. Nothing here is code.
 │   └── microsoft-fabric/
 │       ├── pack.yml          Pack configuration
-│       ├── knowledge/        Knowledge objects (empty until M2)
-│       ├── indexes/          Generated indexes (empty until M3)
-│       ├── digests/          Weekly summaries (empty until M6)
 │       └── state/            Engine bookkeeping
+│           (knowledge/, indexes/ and digests/ appear when first written —
+│            Git cannot store an empty directory. See ADR-0015.)
 │           ├── id-registry.json
 │           ├── seen.json
 │           └── run-log.md
@@ -99,7 +98,7 @@ graph TD
     end
 
     subgraph Engine["engine/ke — the code"]
-        VALIDATE["validate.py<br/>25 checks → Findings"]
+        VALIDATE["validate.py<br/>31 checks → Findings"]
         PACK["pack.py<br/>find & load packs"]
         MODELS["models.py<br/>KnowledgeObject, FeatureId,<br/>ownership registry"]
     end
@@ -422,13 +421,14 @@ Checks **return** findings rather than raising or printing. Three consequences:
 
 | Family | Codes | Guards against |
 |---|---|---|
-| Pack | `PACK000`–`PACK004` | Missing keys, unsupported version, bad prefix, missing dirs |
-| Object | `OBJ001`–`OBJ005` | Wrong directory name, missing/unparseable files |
+| Pack | `PACK000`–`PACK005` | Missing keys, unsupported version, bad prefix, missing `state/`, unloadable pack |
+| Object | `OBJ001`–`OBJ004` | Wrong directory name, missing/unparseable files |
 | Schema | `SCHEMA001`–`SCHEMA005` | Bad version, missing/unknown fields, bad enums, undeclared category |
 | Identity | `ID002`–`ID004` | Wrong prefix, **duplicate IDs**, wrong month folder |
 | Ownership | `OWN001`–`OWN002` | `overrides` locking a field it may not lock |
 | Consistency | `CONS001`–`CONS002` | `feature.md` heading not matching `title` |
 | Copyright | `COPY001` | Summary over the word limit |
+| Artifacts | `GEN001`–`GEN003` | An artifact claimed by metadata that is missing or misplaced |
 | Registry | `REG001`–`REG005` | Counter collisions, unregistered or vanished objects |
 
 ### The registry checks are the subtle ones

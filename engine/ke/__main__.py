@@ -12,8 +12,8 @@ import sys
 from pathlib import Path
 
 from ke import __version__
-from ke.pack import Pack, PackError, find_repo_root
-from ke.validate import Finding, Level, has_errors, validate_repo
+from ke.pack import PackError, find_repo_root
+from ke.validate import Finding, Level, has_errors, scan_summary, validate_repo
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -67,11 +67,10 @@ def _run_validate(args: argparse.Namespace) -> int:
 
 def _report(repo_root: Path, findings: list[Finding], *, strict: bool) -> None:
     """Print findings grouped by location, errors first within each group."""
-    packs = Pack.discover(repo_root)
-    scanned = sum(1 for pack in packs for _ in pack.iter_object_dirs())
+    pack_count, scanned = scan_summary(repo_root)
 
     if not findings:
-        print(f"ok: {len(packs)} pack(s), {scanned} knowledge object(s), no findings")
+        print(f"ok: {pack_count} pack(s), {scanned} knowledge object(s), no findings")
         return
 
     by_location: dict[str, list[Finding]] = {}
@@ -87,7 +86,7 @@ def _report(repo_root: Path, findings: list[Finding], *, strict: bool) -> None:
     errors = sum(1 for f in findings if f.level is Level.ERROR)
     warnings = len(findings) - errors
     print(
-        f"\n{len(packs)} pack(s), {scanned} knowledge object(s): "
+        f"\n{pack_count} pack(s), {scanned} knowledge object(s): "
         f"{errors} error(s), {warnings} warning(s)"
         + (" (strict: warnings fail)" if strict else "")
     )

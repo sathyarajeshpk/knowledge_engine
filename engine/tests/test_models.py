@@ -283,3 +283,49 @@ def test_raw_item_falls_back_to_discovery_month_when_date_is_inferred():
         date_confidence=DateConfidence.INFERRED,
     )
     assert item.id_basis_date == date(2026, 8, 3)
+
+
+# ---------------------------------------------------------------------------
+# Copy independence
+#
+# `with_engine_fields` documents itself as returning a copy. dataclasses.replace
+# is shallow, so that promise has to be tested, not assumed.
+# ---------------------------------------------------------------------------
+
+
+def test_no_mutable_state_is_shared_after_an_engine_write():
+    """Walks every field, so a future mutable field cannot silently alias.
+
+    This is the guard: adding a list/dict/set field without copying it in
+    `with_engine_fields` fails here rather than in production.
+    """
+    from dataclasses import fields
+
+    original = make_object()
+    copy = original.with_engine_fields(title="Renamed by the source")
+
+    for f in fields(KnowledgeObject):
+        before, after = getattr(original, f.name), getattr(copy, f.name)
+        if isinstance(before, (dict, list, set)):
+            assert before is not after, (
+                f"{f.name!r} is shared mutable state; copy it in with_engine_fields"
+            )
+
+
+def test_mutating_a_copys_generation_does_not_touch_the_original():
+    original = make_object(
+        generation={ArtifactType.TUTORIAL: GenerationEntry(status=GenerationStatus.REQUESTED)}
+    )
+    copy = original.with_engine_fields(title="Renamed")
+    copy.generation[ArtifactType.QUIZ] = GenerationEntry(status=GenerationStatus.GENERATED)
+
+    assert ArtifactType.QUIZ in copy.generation
+    assert ArtifactType.QUIZ not in original.generation
+
+
+def test_an_explicit_generation_update_still_wins():
+    """The defensive copy must not shadow a deliberate engine write."""
+    original = make_object()
+    replacement = {ArtifactType.QUIZ: GenerationEntry(status=GenerationStatus.STALE)}
+    updated = original.with_engine_fields(generation=replacement)
+    assert updated.generation == replacement

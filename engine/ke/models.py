@@ -535,12 +535,22 @@ class KnowledgeObject:
         )
 
     def with_engine_fields(self, **updates: Any) -> KnowledgeObject:
-        """Return a copy with engine-writable updates applied.
+        """Return an independent copy with engine-writable updates applied.
 
         Any attempt to change a field the engine does not own raises
         `PermissionError`. `ke.store` (M5) routes every automated write through
         here, which is what makes "the weekly run cannot destroy your notes" a
         property of the code rather than a promise in the documentation.
+
+        The returned object shares **no mutable state** with the original.
+        `dataclasses.replace()` is shallow, so `generation` — the one mutable
+        container on this class — is copied explicitly. Its values are frozen
+        dataclasses, so a shallow dict copy is sufficient and a deep copy would
+        only cost time.
+
+        If a new mutable field is ever added, it must be copied here too;
+        `test_no_mutable_state_is_shared_after_an_engine_write` walks every
+        field and fails if one is missed.
         """
         locked = set(self.overrides)
         for name in updates:
@@ -550,7 +560,8 @@ class KnowledgeObject:
                     f"({ownership_of(name)}"
                     f"{', locked by overrides' if name in locked else ''})"
                 )
-        return replace(self, **updates)
+        # An explicit `generation` update wins over the defensive copy.
+        return replace(self, **{"generation": dict(self.generation), **updates})
 
     # -- serialisation ---------------------------------------------------
 

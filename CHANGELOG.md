@@ -83,7 +83,7 @@ identity rules, the field ownership model, the validator and CI.
   accessors with backward-compatible defaults.
 
 **Validation** (`ke.validate`)
-- `ke validate` with 25 checks across pack structure, metadata schema, Feature ID
+- `ke validate` with 31 checks across pack structure, metadata schema, Feature ID
   integrity, field ownership, file consistency, the copyright word limit and the
   ID registry.
 - Findings-based reporting with stable codes and error/warning severity
@@ -101,7 +101,7 @@ identity rules, the field ownership model, the validator and CI.
   architecture and sequence diagrams.
 - `docs/learning/M0_LEARNING_GUIDE.md` — the underlying Python and tooling
   concepts.
-- `docs/adr/` — 14 Architecture Decision Records.
+- `docs/adr/` — 15 Architecture Decision Records.
 - `CONTRIBUTING.md`, and a rewritten `README.md`.
 
 **Automation**
@@ -111,7 +111,7 @@ identity rules, the field ownership model, the validator and CI.
   before the weekly workflow it constrains exists.
 
 **Tests**
-- 91 tests across models, pack loading, validation and the CLI. Suite runs in
+- 107 tests across models, pack loading, validation and the CLI. Suite runs in
   under one second with no network access.
 
 ### Changed
@@ -123,10 +123,38 @@ identity rules, the field ownership model, the validator and CI.
   per-milestone development workflow.
 - `README.md` rewritten from a one-line placeholder.
 
+### Fixed
+
+Five defects found by the pre-merge architecture review
+([`docs/reviews/M0_ARCHITECTURE_REVIEW.md`](docs/reviews/M0_ARCHITECTURE_REVIEW.md)),
+each reproduced before being fixed. All were latent — none broke M0, which has no
+data yet — and all would have surfaced in M2, M5 or M8.
+
+- **Object and pack subdirectories could not survive Git.** Empty directories are
+  not tracked, so `artifacts/`, `images/`, `references/`, `indexes/` and
+  `digests/` vanished on every clone. They are now created on demand
+  ([ADR-0015](docs/adr/0015-create-object-subdirectories-on-demand.md)), the
+  `OBJ005` check is retired, and `GEN001`–`GEN003` check artifacts that actually
+  exist instead of empty scaffolding.
+- **`with_engine_fields()` returned a shallow copy**, sharing the `generation`
+  dict with the original and contradicting its own docstring. It now shares no
+  mutable state, guarded by a test that walks every field so a future mutable
+  field cannot silently alias.
+- **Finding locations were pack-relative**, so two packs produced identical,
+  ambiguous output that the reporter then merged into one group. They are now
+  repository-relative and globally unique.
+- **One malformed `pack.yml` aborted validation of every pack.** Unloadable packs
+  are now reported as `PACK005` and the remaining packs are still validated.
+- **`PACK004` required directories Git cannot store**, so the pack-creation
+  recipe in `CONTRIBUTING.md` produced a pack that failed validation after a
+  clone. Only `state/` is required now.
+
 ### Removed
 
 - `domain-packs/microsoft-fabric/.gitkeep` — redundant once `pack.yml` keeps the
   directory tracked. No knowledge was affected.
+- `.gitkeep` files in `knowledge/`, `indexes/` and `digests/` — they were
+  propping up a requirement that no longer exists.
 
 ### Known limitations
 
@@ -138,7 +166,8 @@ identity rules, the field ownership model, the validator and CI.
   detection land in M4. M0 validates only the schema of relationship fields, so a
   `prerequisites` entry pointing at a non-existent ID currently passes.
 - **CI is not `--strict`.** Warnings pass. This tightens once M2 populates the
-  first pack.
+  first pack; a fresh clone now validates cleanly under `--strict`, which the
+  subdirectory fix made possible.
 - **No linter or formatter** is configured.
 - **The package version is declared in two places** — `pyproject.toml` and
   `ke.__init__`. A candidate for `importlib.metadata` in a later milestone.

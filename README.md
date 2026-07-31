@@ -94,7 +94,7 @@ cd knowledge_engine
 
 python -m pip install -e ".[dev]"
 
-python -m pytest engine/tests -q     # 91 tests, ~0.6s
+python -m pytest engine/tests -q     # 107 tests, ~0.6s
 python -m ke validate                # check every Domain Pack
 ```
 
@@ -129,9 +129,9 @@ knowledge_engine/
 │   ├── ke/
 │   │   ├── models.py         What a knowledge object IS + field ownership
 │   │   ├── pack.py           Finding and loading Domain Packs
-│   │   ├── validate.py       25 checks against the schema contract
+│   │   ├── validate.py       31 checks against the schema contract
 │   │   └── __main__.py       CLI: python -m ke validate
-│   └── tests/                91 tests
+│   └── tests/                107 tests
 │
 ├── domain-packs/             ← ALL DATA. Contains no code.
 │   └── microsoft-fabric/
@@ -146,7 +146,7 @@ knowledge_engine/
 │   ├── VISION.md             Why this exists, and where it goes
 │   ├── ROADMAP.md            M0–M9 and the Domain Pack plan
 │   ├── JOURNAL.md            Development journal per milestone
-│   ├── adr/                  14 Architecture Decision Records
+│   ├── adr/                  15 Architecture Decision Records
 │   ├── playbook/             File-by-file developer guides
 │   └── learning/             Concept guides for each milestone
 │
@@ -182,6 +182,9 @@ knowledge/2026/04/MSF-2026-04-001-direct-lake-ga/
 ├── images/         infographics, diagrams
 └── references/     supporting notes
 ```
+
+The three subdirectories are created on demand — Git cannot store an empty
+directory, so a freshly harvested object is just the two files.
 
 ### Feature IDs
 
@@ -340,7 +343,7 @@ no running cost never needs a business case and never gets switched off.
 | [`docs/VISION.md`](docs/VISION.md) | Why this exists, goals, philosophy, long view |
 | [`docs/ROADMAP.md`](docs/ROADMAP.md) | M0–M9, Domain Packs, non-goals |
 | [`docs/SCHEMA.md`](docs/SCHEMA.md) | The data contract `ke validate` enforces |
-| [`docs/adr/`](docs/adr/) | 14 Architecture Decision Records |
+| [`docs/adr/`](docs/adr/) | 15 Architecture Decision Records |
 | [`docs/JOURNAL.md`](docs/JOURNAL.md) | Development journal per milestone |
 | [`docs/playbook/`](docs/playbook/) | File-by-file developer guides |
 | [`docs/learning/`](docs/learning/) | Concept guides per milestone |
