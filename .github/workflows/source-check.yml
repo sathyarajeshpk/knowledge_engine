@@ -1,0 +1,51 @@
+name: Source check
+
+# Validates candidate knowledge sources against the real internet.
+#
+# This exists because the development environment blocks `*.microsoft.com`, so
+# source URLs cannot be verified locally. M1 must not pin an unverified
+# endpoint: a guessed URL is indistinguishable from a validated one once it is
+# sitting in `pack.yml`.
+#
+# It is a diagnostic, not part of the pipeline. It writes nothing to any Domain
+# Pack and is never scheduled.
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/source-check.yml"
+      - "tools/source_probe.py"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    name: Probe candidate endpoints
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install feedparser
+        # Installed here only. It becomes a real dependency in `pyproject.toml`
+        # when the RSS adapter is written and approved -- not before.
+        run: python -m pip install --quiet feedparser
+
+      - name: Probe sources
+        run: python tools/source_probe.py
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-probe-results
+          path: source-probe-results.json
+          if-no-files-found: warn
