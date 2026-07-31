@@ -125,14 +125,19 @@ date_precision: day             # how precise?      day | month | year
 content_hash: sha256:...
 url_hash: sha256:...
 
-# Where this item came from and exactly how it was extracted (engine-owned)
+# Where this item came from and exactly how it was extracted (engine-owned).
+# Written in discovery-chain order: source → representation → adapter →
+# version → method → time → identity. See §10.
 provenance:
-  adapter_type: html
   source_name: learn-fabric-whats-new
-  discovered_at: 2026-08-03T06:00:00+00:00
-  extraction_method: html-table-row
+  source_representation: html
+  adapter_type: html
   parser_version: 1
-  selector: "h2#generally-available-features + table tr"
+  extraction_method: html-table-row
+  discovered_at: 2026-08-03T06:00:00+00:00
+  identity_basis: canonical-url
+  identity_key: sha256:...
+  selector: "h2#generally-available-features + table tr (date from cell 0)"
   run_id: run-2026-08-03T06:00:00Z
   source_role: primary
 
@@ -386,22 +391,52 @@ Graph checks (referential integrity, cycle detection) arrive in M4.
 Every discovered item carries a provenance record, and it travels with the stored
 object. It is engine-owned.
 
+### The discovery chain
+
+Provenance fields are stored in the order knowledge actually travelled, so the
+record reads as a chain rather than a bag of attributes:
+
+```
+Source → Representation → Adapter → Adapter version → Extraction method
+       → Identity basis → Date precision → Date confidence → Knowledge object
+```
+
+Every link answers a different question, and every link can break independently.
+`date_precision` and `date_confidence` are the tail of the same chain even though
+they live on the object rather than inside `provenance` — they describe how the
+publication date was arrived at, which is what ADR-0005 mints a permanent Feature
+ID from.
+
 | Field | Meaning |
 |---|---|
-| `adapter_type` | `rss` \| `atom` \| `html` \| `github-commits` \| `sitemap` \| `manual` |
 | `source_name` | Key of the source in `pack.yml` |
-| `discovered_at` | UTC ISO-8601 timestamp of the run that found it |
-| `extraction_method` | `feed-entry` \| `html-table-row` \| `html-heading-section` \| `html-list-item` \| `json-field` \| `commit-message` \| `manual-entry` |
+| `source_representation` | `html` \| `markdown` \| `rss` \| `atom` \| `api` — the format actually received |
+| `adapter_type` | `rss` \| `atom` \| `html` \| `markdown` \| `github-commits` \| `sitemap` \| `manual` |
 | `parser_version` | Version of the adapter's parser that produced it |
+| `extraction_method` | `feed-entry` \| `html-table-row` \| `markdown-table-row` \| `html-heading-section` \| `html-list-item` \| `json-field` \| `commit-message` \| `manual-entry` |
+| `discovered_at` | UTC ISO-8601 timestamp of the run that found it |
+| `identity_basis` | `canonical-url` \| `source-identifier` \| `normalised-title-hash` \| `content-fingerprint` — which signal the Feature ID rests on |
+| `identity_key` | The computed key itself |
 | `selector` | The concrete selector, XPath, feed field or column used |
 | `run_id` | Correlates the object with the run log and event log |
 | `source_role` | `primary` \| `secondary` \| `manual-review` — which link in the fallback chain produced it |
+
+**Representation is not adapter.** They are usually the same word and
+occasionally are not, which is exactly why both are stored. The Fabric updates
+exist as rendered `html` on Microsoft Learn *and* as `markdown` in the
+`MicrosoftDocs/fabric-docs` repository — same authoritative content, different
+hosts, different failure modes. That is what makes one a usable fallback for the
+other, and "was this object read from the rendered page or from the source file?"
+is a question that cannot be answered from the adapter name alone once a source
+grows a second adapter. See [ADR-0026](adr/0026-discovery-chain-provenance.md).
 
 **Why this is worth the bytes.** When a source changes its markup, the items
 produced afterwards are subtly *wrong* rather than absent — the failure mode no
 health check catches. `parser_version` and `selector` make it possible to find
 every object a given parser produced and re-examine exactly those, instead of
-re-verifying the whole pack.
+re-verifying the whole pack. `identity_basis` narrows it further: a duplicate
+investigation starts with "what were we matching on?", and objects resting on a
+title hash are the ones worth looking at first.
 
 ---
 

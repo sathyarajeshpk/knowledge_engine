@@ -34,6 +34,7 @@ from ke.sources.base import (
 )
 from ke.sources.feed import FeedSource
 from ke.sources.html_table import HtmlTableSource
+from ke.sources.markdown_table import MarkdownTableSource
 
 #: Adapter type -> implementation. Adding a source type is one entry here plus
 #: one module; nothing downstream changes (ADR-0018).
@@ -42,6 +43,7 @@ ADAPTERS = {
     AdapterType.RSS: FeedSource,
     AdapterType.ATOM: FeedSource,
     AdapterType.GITHUB_COMMITS: FeedSource,
+    AdapterType.MARKDOWN: MarkdownTableSource,
 }
 
 

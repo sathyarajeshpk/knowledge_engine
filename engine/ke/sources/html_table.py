@@ -35,6 +35,7 @@ from ke.models import (
     ExtractionMethod,
     Provenance,
     RawItem,
+    SourceRepresentation,
 )
 from ke.normalize import (
     canonical_url,
@@ -241,8 +242,9 @@ class HtmlTableSource:
             raw_tags=(row.section,) if row.section else (),
             identity=identity,
             provenance=Provenance(
-                adapter_type=AdapterType.HTML,
                 source_name=self.definition.name,
+                source_representation=SourceRepresentation.HTML,
+                adapter_type=AdapterType.HTML,
                 discovered_at=self._clock.now(),
                 extraction_method=ExtractionMethod.HTML_TABLE_ROW,
                 parser_version=self.definition.parser_version,

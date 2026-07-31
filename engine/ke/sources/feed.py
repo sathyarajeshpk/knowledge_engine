@@ -24,6 +24,7 @@ from ke.models import (
     ExtractionMethod,
     Provenance,
     RawItem,
+    SourceRepresentation,
 )
 from ke.normalize import canonical_url, html_to_text, truncate_summary
 from ke.sources.base import Fetcher, SourceDefinition, SourceError, sort_items
@@ -119,8 +120,13 @@ class FeedSource:
             ),
             identity=identity,
             provenance=Provenance(
-                adapter_type=adapter,
                 source_name=self.definition.name,
+                source_representation=(
+                    SourceRepresentation.ATOM
+                    if adapter in (AdapterType.ATOM, AdapterType.GITHUB_COMMITS)
+                    else SourceRepresentation.RSS
+                ),
+                adapter_type=adapter,
                 discovered_at=self._clock.now(),
                 extraction_method=ExtractionMethod.FEED_ENTRY,
                 parser_version=self.definition.parser_version,

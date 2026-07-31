@@ -77,16 +77,26 @@ sources:
       Canonical curated list of Fabric updates. Highest-signal source available;
       no purpose-built update feed is reachable from a runner.
     fallback:
-      - name: fabric-docs-commits
-        url: https://github.com/MicrosoftDocs/fabric-docs/commits/main.atom
+      # The Markdown source behind the same page: same authoritative content,
+      # different host, different failure mode. Replaces the docs-commit feed,
+      # which carried merge-commit noise rather than knowledge.
+      - name: fabric-whats-new-markdown
+        url: https://raw.githubusercontent.com/MicrosoftDocs/fabric-docs/main/docs/fundamentals/whats-new.md
         authority: official-microsoft
         role: secondary
         adapter:
-          name: github-commits
+          name: markdown
           version: 1
+        options:
+          # Needed to rebuild canonical URLs from relative .md links. Identity
+          # rests on those URLs, so this is configuration rather than a guess.
+          doc_path: docs/fundamentals/whats-new.md
+          docs_prefix: docs/
+          rendered_base_url: https://learn.microsoft.com/en-us/fabric
         notes: >-
-          Reliable and current, but merge-commit noise. A weak substitute --
-          hence degraded rather than healthy when it is used.
+          Verified 200, 189,900 bytes, 361 table rows, authoritative ms.date
+          front matter. Links are relative, so canonical URLs are reconstructed
+          -- which is why this is secondary rather than primary.
       - name: fabric-whats-new-manual
         url: https://learn.microsoft.com/en-us/fabric/fundamentals/whats-new
         authority: official-microsoft
@@ -109,13 +119,17 @@ sources:
       name: html
       version: 1
     fallback:
-      - name: powerbi-docs-commits
-        url: https://github.com/MicrosoftDocs/powerbi-docs/commits/main.atom
+      - name: powerbi-whats-new-markdown
+        url: https://raw.githubusercontent.com/MicrosoftDocs/powerbi-docs/main/powerbi-docs/fundamentals/whats-new.md
         authority: official-microsoft
         role: secondary
         adapter:
-          name: github-commits
+          name: markdown
           version: 1
+        options:
+          doc_path: powerbi-docs/fundamentals/whats-new.md
+          docs_prefix: powerbi-docs/
+          rendered_base_url: https://learn.microsoft.com/en-us/power-bi
       - name: powerbi-whats-new-manual
         url: https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new
         authority: official-microsoft

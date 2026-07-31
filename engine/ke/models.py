@@ -87,9 +87,32 @@ class AdapterType(StrEnum):
     RSS = "rss"
     ATOM = "atom"
     HTML = "html"
+    MARKDOWN = "markdown"
     GITHUB_COMMITS = "github-commits"
     SITEMAP = "sitemap"
     MANUAL = "manual"
+
+
+class SourceRepresentation(StrEnum):
+    """The **format we actually received**, as distinct from the adapter.
+
+    Deliberately separate from `AdapterType`. The same knowledge reaches us in
+    different representations from different infrastructure: the Fabric updates
+    exist as rendered `html` on Microsoft Learn and as `markdown` in the
+    MicrosoftDocs repository. Those have different hosts, different failure
+    modes and different fidelity -- which is precisely why one is a usable
+    fallback for the other.
+
+    Recording it makes an object's origin answerable without inferring it from
+    the adapter name: "was this item read from the rendered page or from the
+    source file?" is a question a future investigation will ask.
+    """
+
+    HTML = "html"
+    MARKDOWN = "markdown"
+    RSS = "rss"
+    ATOM = "atom"
+    API = "api"
 
 
 class ExtractionMethod(StrEnum):
@@ -102,6 +125,7 @@ class ExtractionMethod(StrEnum):
 
     FEED_ENTRY = "feed-entry"
     HTML_TABLE_ROW = "html-table-row"
+    MARKDOWN_TABLE_ROW = "markdown-table-row"
     HTML_HEADING_SECTION = "html-heading-section"
     HTML_LIST_ITEM = "html-list-item"
     JSON_FIELD = "json-field"
@@ -643,11 +667,12 @@ class Provenance:
     a given parser produced and re-examine exactly those.
     """
 
-    adapter_type: AdapterType
     source_name: str
-    discovered_at: datetime  # UTC, always timezone-aware
-    extraction_method: ExtractionMethod
+    source_representation: SourceRepresentation
+    adapter_type: AdapterType
     parser_version: int
+    extraction_method: ExtractionMethod
+    discovered_at: datetime  # UTC, always timezone-aware
     #: Which signal established this item's identity, and the key derived from
     #: it. Recorded because the first question when investigating a duplicate or
     #: a missed match is always "what were we matching on?".
@@ -663,14 +688,19 @@ class Provenance:
     source_role: SourceRole = SourceRole.PRIMARY
 
     def to_dict(self) -> dict[str, Any]:
+        # Emitted in discovery-chain order, so reading the block top to bottom
+        # retraces how the item came to exist:
+        #   source -> representation -> adapter -> version -> extraction
+        #   -> identity basis -> when -> which link of the chain
         out: dict[str, Any] = {
-            "adapter_type": str(self.adapter_type),
             "source_name": self.source_name,
-            "discovered_at": self.discovered_at.isoformat(),
-            "extraction_method": str(self.extraction_method),
+            "source_representation": str(self.source_representation),
+            "adapter_type": str(self.adapter_type),
             "parser_version": self.parser_version,
+            "extraction_method": str(self.extraction_method),
             "identity_basis": str(self.identity_basis),
             "identity_key": self.identity_key,
+            "discovered_at": self.discovered_at.isoformat(),
             "source_role": str(self.source_role),
         }
         for key in ("selector", "run_id"):
@@ -682,8 +712,9 @@ class Provenance:
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> Provenance:
         return cls(
-            adapter_type=AdapterType(raw["adapter_type"]),
             source_name=raw["source_name"],
+            source_representation=SourceRepresentation(raw["source_representation"]),
+            adapter_type=AdapterType(raw["adapter_type"]),
             discovered_at=_coerce_datetime(raw["discovered_at"]),
             extraction_method=ExtractionMethod(raw["extraction_method"]),
             parser_version=int(raw["parser_version"]),

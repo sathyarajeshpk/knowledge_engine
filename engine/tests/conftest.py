@@ -35,6 +35,7 @@ from ke.models import (
     Provenance,
     Revision,
     SourceAuthority,
+    SourceRepresentation,
     Tier,
     Workload,
 )
@@ -53,8 +54,9 @@ PACK_CONFIG: dict[str, Any] = {
 def make_provenance(**overrides: Any) -> Provenance:
     """Build a valid `Provenance` record."""
     defaults: dict[str, Any] = {
-        "adapter_type": AdapterType.HTML,
         "source_name": "fabric-blog",
+        "source_representation": SourceRepresentation.HTML,
+        "adapter_type": AdapterType.HTML,
         "discovered_at": datetime(2026, 4, 18, 6, 0, tzinfo=timezone.utc),
         "extraction_method": ExtractionMethod.HTML_TABLE_ROW,
         "parser_version": 1,

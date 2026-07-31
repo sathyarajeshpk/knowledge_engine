@@ -23,6 +23,7 @@ from ke.models import (
     HealthState,
     SourceAuthority,
     SourceHealth,
+    SourceRepresentation,
     SourceRole,
     SourceStatus,
 )
@@ -42,6 +43,11 @@ from ke.sources.base import (
     sort_items,
 )
 from ke.sources.html_table import HtmlTableSource
+from ke.sources.markdown_table import (
+    MarkdownTableSource,
+    resolve_doc_link,
+    strip_markdown,
+)
 
 CLOCK = FrozenClock(datetime(2026, 8, 2, 6, 0, tzinfo=timezone.utc))
 
@@ -676,3 +682,262 @@ def test_the_date_cell_is_excluded_from_the_summary_and_title():
 )
 def test_parse_date_cell_requires_the_cell_to_be_only_a_date(cell, expected):
     assert parse_date_cell(cell)[0] == expected
+
+
+# ---------------------------------------------------------------------------
+# The Markdown adapter - M1's secondary source
+#
+# Same authoritative content as the HTML primary, from different
+# infrastructure. The interesting risk is not parsing: it is that identity
+# rests on canonical URLs, and here those must be *reconstructed* from relative
+# document paths. Most of these tests are about that reconstruction.
+# ---------------------------------------------------------------------------
+
+#: Modelled on `MicrosoftDocs/fabric-docs/docs/fundamentals/whats-new.md`,
+#: including its real shapes: YAML front matter, a "## Section" heading, an
+#: alignment row, a date column in one table and none in another, a relative
+#: `../` link, a same-directory link, an absolute link and an anchor-only link.
+WHATS_NEW_MD = """---
+title: What's new in Microsoft Fabric?
+ms.date: 07/28/2026
+---
+
+# What's new in Microsoft Fabric?
+
+## In this article
+
+## Generally available features
+
+| Month | Feature | Description |
+|:------|:--------|:------------|
+| July 2026 | [Direct Lake general availability](../onelake/direct-lake-ga.md#modes) | Direct Lake mode is generally available. |
+| June 2026 | [Warehouse mirroring](mirroring.md) | Mirror an external warehouse. |
+
+## Features currently in preview
+
+| Feature | Description |
+|:--------|:------------|
+| **Fabric IQ Plan** | See the [Gateway December 2025 release](https://blog.fabric.microsoft.com/gateway-dec) notes. |
+| [Anchored only](#somewhere) | A link that goes nowhere resolvable. |
+"""
+
+
+def markdown_definition(**overrides) -> SourceDefinition:
+    defaults = dict(
+        name="fabric-whats-new-markdown",
+        adapter=AdapterType.MARKDOWN,
+        url=(
+            "https://raw.githubusercontent.com/MicrosoftDocs/fabric-docs/"
+            "main/docs/fundamentals/whats-new.md"
+        ),
+        authority=SourceAuthority.OFFICIAL_MICROSOFT,
+        parser_version=1,
+        role=SourceRole.SECONDARY,
+        options={
+            "doc_path": "docs/fundamentals/whats-new.md",
+            "docs_prefix": "docs/",
+            "rendered_base_url": "https://learn.microsoft.com/en-us/fabric",
+        },
+    )
+    defaults.update(overrides)
+    return SourceDefinition(**defaults)
+
+
+def markdown_items():
+    return MarkdownTableSource(
+        markdown_definition(), FakeFetcher(WHATS_NEW_MD), CLOCK
+    ).discover()
+
+
+def test_markdown_adapter_extracts_one_item_per_table_row():
+    titles = [item.title for item in markdown_items()]
+    assert "Direct Lake general availability" in titles
+    assert "Warehouse mirroring" in titles
+    assert "Fabric IQ Plan" in titles
+
+
+def test_markdown_alignment_rows_and_headers_are_not_updates():
+    titles = [item.title for item in markdown_items()]
+    assert not any(set(title) <= set(":- ") for title in titles)
+    assert "Feature" not in titles
+
+
+@pytest.mark.parametrize(
+    "target,expected",
+    [
+        # Up out of `fundamentals/`, into a sibling directory; anchor dropped.
+        (
+            "../onelake/direct-lake-ga.md#modes",
+            "https://learn.microsoft.com/en-us/fabric/onelake/direct-lake-ga",
+        ),
+        # Same directory as the document itself.
+        (
+            "mirroring.md",
+            "https://learn.microsoft.com/en-us/fabric/fundamentals/mirroring",
+        ),
+        # Already absolute: canonicalised, not rebuilt.
+        (
+            "https://blog.fabric.microsoft.com/x?utm_source=rss",
+            "https://blog.fabric.microsoft.com/x",
+        ),
+        ("#in-page-anchor", None),      # not a document
+        ("../../media/diagram.png", None),  # not Markdown
+        ("../../../outside.md", None),  # escapes the docs root
+        ("", None),
+    ],
+)
+def test_relative_document_links_resolve_to_the_url_they_render_as(target, expected):
+    assert (
+        resolve_doc_link(
+            target,
+            doc_path="docs/fundamentals/whats-new.md",
+            docs_prefix="docs/",
+            base_url="https://learn.microsoft.com/en-us/fabric",
+        )
+        == expected
+    )
+
+
+def test_an_unresolvable_link_yields_no_url_rather_than_a_guess():
+    """The property this adapter's design turns on.
+
+    A fabricated canonical URL would be worse than none: identity would look
+    durable (ADR-0023's strongest basis) while resting on an invention, and the
+    resulting Feature ID is permanent. Falling back to a weaker basis is honest.
+    """
+    item = next(i for i in markdown_items() if i.title == "Anchored only")
+    assert item.identity.basis is not IdentityBasis.CANONICAL_URL
+    assert item.source_url == markdown_definition().url
+
+
+def test_a_resolved_link_gives_the_same_identity_as_the_html_primary():
+    """What makes this a genuine fallback rather than a second source.
+
+    If the two representations produced different identities for the same
+    update, failing over would mint duplicate permanent Feature IDs -- the exact
+    outcome the fallback chain exists to avoid.
+    """
+    from_markdown = next(
+        i for i in markdown_items() if i.title == "Warehouse mirroring"
+    )
+    from_html = compute_identity(
+        canonical_url="https://learn.microsoft.com/en-us/fabric/fundamentals/mirroring"
+    )
+    assert from_markdown.identity.key == from_html.key
+
+
+def test_the_two_representations_agree_on_identity_even_when_titles_differ():
+    """A known and accepted divergence, pinned so it is not read as a bug.
+
+    The adapters title rows differently: HTML takes the first linked text,
+    Markdown takes the first content cell. On a row whose feature name is bold
+    text and whose only link sits in the description, they therefore disagree.
+
+    That is tolerable precisely because identity does *not* come from the title
+    here -- both resolve the same canonical URL, so failing over produces a
+    revision at worst, never a duplicate permanent Feature ID. If identity ever
+    stops agreeing across representations, the fallback chain is unsafe.
+    """
+    from_markdown = next(i for i in markdown_items() if i.title == "Fabric IQ Plan")
+    from_html = HtmlTableSource(
+        html_definition(), FakeFetcher(PROSE_MONTH_HTML), CLOCK
+    ).discover()[0]
+
+    assert from_markdown.title != from_html.title
+    assert from_markdown.identity.key == from_html.identity.key
+
+
+def test_markdown_link_syntax_does_not_leak_into_the_knowledge_text():
+    item = next(i for i in markdown_items() if i.title.startswith("Direct Lake"))
+    assert "[" not in item.title and "](" not in item.title
+    assert "**" not in item.summary
+
+
+def test_strip_markdown_keeps_the_label_and_falls_back_to_the_target():
+    assert strip_markdown("**[Direct Lake](../a.md)** is `GA`") == "Direct Lake is GA"
+    assert strip_markdown("[](../a.md)") == "../a.md"
+
+
+def test_markdown_dates_come_only_from_a_dedicated_cell():
+    """The same rule as the HTML adapter, for the same permanent-ID reason."""
+    dated = next(i for i in markdown_items() if i.title.startswith("Direct Lake"))
+    assert dated.published_date == date(2026, 7, 1)
+    assert dated.date_precision is DatePrecision.MONTH
+    assert dated.date_confidence is DateConfidence.EXACT
+    assert "date from cell 0" in dated.provenance.selector
+
+    prose = next(i for i in markdown_items() if i.title == "Fabric IQ Plan")
+    assert prose.published_date is None  # "December 2025" is inside a sentence
+    assert prose.date_confidence is DateConfidence.INFERRED
+    assert "no date cell" in prose.provenance.selector
+
+
+def test_the_markdown_section_heading_becomes_a_tag():
+    item = next(i for i in markdown_items() if i.title == "Fabric IQ Plan")
+    assert "Features currently in preview" in item.raw_tags
+
+
+def test_the_table_of_contents_heading_is_not_a_section():
+    assert all(
+        "In this article" not in item.raw_tags for item in markdown_items()
+    )
+
+
+def test_markdown_items_record_their_representation_and_adapter():
+    """The discovery chain, end to end on one item."""
+    provenance = markdown_items()[0].provenance
+    assert provenance.source_representation is SourceRepresentation.MARKDOWN
+    assert provenance.adapter_type is AdapterType.MARKDOWN
+    assert provenance.extraction_method is ExtractionMethod.MARKDOWN_TABLE_ROW
+    assert provenance.parser_version == 1
+    assert provenance.source_role is SourceRole.SECONDARY
+    assert provenance.run_id == "run-2026-08-02T06-00-00Z"
+
+
+def test_html_items_record_the_html_representation():
+    """The distinction is only useful if the two representations differ."""
+    items = HtmlTableSource(html_definition(), FakeFetcher(WHATS_NEW_HTML), CLOCK).discover()
+    assert items[0].provenance.source_representation is SourceRepresentation.HTML
+
+
+def test_a_markdown_source_without_a_base_url_refuses_to_run():
+    """Better to fail the source than to emit items with invented identities."""
+    source = MarkdownTableSource(
+        markdown_definition(options={"doc_path": "docs/x.md"}),
+        FakeFetcher(WHATS_NEW_MD),
+        CLOCK,
+    )
+    with pytest.raises(SourceError, match="rendered_base_url"):
+        source.discover()
+
+
+def test_an_empty_markdown_document_is_a_parser_break():
+    source = MarkdownTableSource(
+        markdown_definition(), FakeFetcher("# Heading only\n\nNo tables.\n"), CLOCK
+    )
+    with pytest.raises(SourceError, match="structure"):
+        source.discover()
+
+
+def test_markdown_output_is_deterministic():
+    assert [i.identity.key for i in markdown_items()] == [
+        i.identity.key for i in markdown_items()
+    ]
+
+
+def test_the_markdown_adapter_is_reachable_through_a_fallback_chain():
+    """Registration in `ADAPTERS`, proven rather than assumed."""
+
+    class HtmlFailsMarkdownWorks:
+        def fetch(self, url):
+            if url.endswith(".md"):
+                return FetchResult(WHATS_NEW_MD, 200, 5, url)
+            raise SourceError("HTTP 403 Forbidden")
+
+    definition = html_definition(fallbacks=(markdown_definition(),))
+    result = discover_all([definition], clock=CLOCK, fetcher=HtmlFailsMarkdownWorks())
+
+    assert result.review_items == []
+    assert result.items, "the Markdown secondary produced nothing"
+    assert result.health["fabric-whats-new"].state is HealthState.FAILED
+    assert result.health["fabric-whats-new-markdown"].state is HealthState.DEGRADED

@@ -54,6 +54,7 @@ decision is a conscious act rather than a tidy-up.
 | [0023](0023-stable-item-identity.md) | A deterministic hierarchy for item identity | Accepted |
 | [0024](0024-immutable-source-definitions.md) | Source definitions are immutable and versioned | Accepted |
 | [0025](0025-design-for-replayability.md) | Design for replayability without building it yet | Accepted |
+| [0026](0026-discovery-chain-provenance.md) | Record the full discovery chain; representation is not adapter | Accepted |
 
 ## Template
 
