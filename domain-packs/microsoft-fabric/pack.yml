@@ -12,9 +12,19 @@ name: microsoft-fabric
 display_name: Microsoft Fabric
 description: >-
   Knowledge about Microsoft Fabric: data engineering, data warehousing,
-  real-time intelligence, data science, and the Fabric platform itself.
+  real-time intelligence, data science, Power BI, and the Fabric platform
+  itself.
 
 # Permanent. Changing this would orphan every Feature ID already minted.
+#
+# This pack covers the whole Fabric platform *including Power BI*, which is a
+# Fabric workload rather than a separate product (ADR-0016). Power BI knowledge
+# is addressed by `category: power-bi` and tags, not by a separate pack -- packs
+# are source and identity boundaries, indexes handle topics.
+#
+# The `PBI` prefix stays reserved and unused in case Power BI later warrants its
+# own pack. Such a split would apply to new content only; existing MSF objects
+# keep their permanent identifiers.
 id_prefix: MSF
 
 schema_version: 1
@@ -34,7 +44,7 @@ categories:
   - data-science
   - real-time-intelligence
   - data-factory
-  - power-bi-integration
+  - power-bi
   - governance-security
   - administration
   - platform

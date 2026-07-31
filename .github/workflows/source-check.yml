@@ -16,6 +16,7 @@ on:
     paths:
       - ".github/workflows/source-check.yml"
       - "tools/source_probe.py"
+      - "tools/html_structure_probe.py"
 
 permissions:
   contents: read
@@ -43,9 +44,17 @@ jobs:
       - name: Probe sources
         run: python tools/source_probe.py
 
+      - name: Probe HTML page structure
+        # Decides whether a candidate page is server-rendered and parseable, or
+        # a JavaScript shell. The roadmap page is included as a control: if the
+        # probe cannot tell it apart from a real page, the probe is wrong.
+        run: python tools/html_structure_probe.py
+
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
           name: source-probe-results
-          path: source-probe-results.json
+          path: |
+            source-probe-results.json
+            html-structure-results.json
           if-no-files-found: warn
