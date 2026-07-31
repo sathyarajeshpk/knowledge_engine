@@ -45,3 +45,27 @@ summary and a link. This is a repository-size decision and a copyright one.
 **Feature IDs and object paths are permanent.** Once minted, a Feature ID never
 changes and is never reused, including for replaced objects. A knowledge
 object's directory path is stable for its entire lifetime.
+
+## Development workflow
+
+Every milestone follows the same cycle. Do not start the next milestone until the
+current one has been reviewed, merged, and explicitly approved.
+
+1. **Implement** only the milestone that was approved. Commit in small, logical
+   commits, each explaining the architectural decision behind it.
+2. **Stop and explain** if a design issue surfaces mid-implementation. Do not
+   change the agreed architecture unilaterally.
+3. **Deliver**, on completion and without being asked:
+   - A **PR review summary** written as a Senior Software Architect: what was
+     built, which decisions were made and why, limitations, assumptions.
+   - A **Developer Playbook** at `docs/playbook/M<n>_<NAME>.md` — every folder
+     and file, why it exists, how it interacts with the rest, its classes and
+     functions, execution flow, Mermaid architecture and sequence diagrams,
+     debugging tips, and a glossary.
+   - A **Learning Guide** at `docs/learning/M<n>_LEARNING_GUIDE.md` — the
+     concepts the milestone uses, taught from basic programming knowledge, with
+     simple worked examples.
+   - An **interactive code walkthrough**: one file at a time, explaining why it
+     exists, its important lines, and how it connects to the rest — pausing after
+     each file for confirmation before continuing.
+4. **Wait for approval** before the next milestone.
