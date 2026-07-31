@@ -18,6 +18,7 @@ on:
       - "tools/source_probe.py"
       - "tools/html_structure_probe.py"
       - "tools/access_diagnostic.py"
+      - "tools/fallback_probe.py"
       - "engine/ke/sources/**"
       - "engine/ke/discover.py"
       - "domain-packs/**/pack.yml"
@@ -59,9 +60,20 @@ jobs:
         run: python -m ke discover --pack microsoft-fabric --limit 6
 
       - name: Diagnose Learn access and look for a better source
+        run: python tools/access_diagnostic.py
+
+      - name: Compare each primary against its Markdown secondary
         # Runs last: this is the result worth reading, and a job log can only be
         # tailed cheaply from the end.
-        run: python tools/access_diagnostic.py
+        #
+        # `ke discover` above cannot exercise a fallback, because a fallback only
+        # runs when its primary fails -- so on a healthy day the secondary is
+        # never touched, and would first be exercised during an outage, which is
+        # the worst possible moment to find out it was broken. This step runs
+        # both representations side by side and reports whether they agree on
+        # item identity. Disagreement means failing over would mint duplicate
+        # permanent Feature IDs (ADR-0023).
+        run: python tools/fallback_probe.py
 
       - name: Upload results
         uses: actions/upload-artifact@v4
