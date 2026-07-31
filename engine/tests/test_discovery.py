@@ -31,6 +31,7 @@ from ke.normalize import (
     content_hash,
     html_to_text,
     parse_date,
+    parse_date_cell,
     slugify,
     truncate_summary,
 )
@@ -600,3 +601,78 @@ def test_health_summary_groups_every_state():
 def test_sort_items_is_stable_across_input_order():
     items = HtmlTableSource(html_definition(), FakeFetcher(WHATS_NEW_HTML), CLOCK).discover()
     assert sort_items(list(reversed(items))) == sort_items(items)
+
+
+# ---------------------------------------------------------------------------
+# Date extraction: only a dedicated date cell is trusted
+#
+# Found by measuring the real Microsoft Learn source, not by reasoning. The
+# adapter originally searched the whole row for a date, which stamped a
+# prose-mentioned month as an EXACT publication date -- and ADR-0005 mints a
+# PERMANENT Feature ID from that month.
+# ---------------------------------------------------------------------------
+
+#: A verbatim row from the production page, reduced to its structure. There is
+#: no date column; "December 2025" appears only inside a link title.
+PROSE_MONTH_HTML = """
+<html><h2>Data Factory in Microsoft Fabric</h2><table>
+  <tr>
+    <td><b>Data Factory On-premises data gateway manual update option (Preview)</b></td>
+    <td>The <a href="https://blog.fabric.microsoft.com/gateway-dec">Gateway December 2025 release</a>
+        adds a manual update option.</td>
+  </tr>
+</table></html>
+"""
+
+#: The other real shape: a three-column table whose first cell is only a date.
+DATE_CELL_HTML = """
+<html><h2>Fabric IQ</h2><table>
+  <tr><td>July 2026</td><td><b>Plan (Generally Available)</b></td>
+      <td><a href="/en-us/fabric/iq/plan">Plan in Fabric IQ</a> is now GA.</td></tr>
+</table></html>
+"""
+
+
+def test_a_month_mentioned_in_prose_is_not_treated_as_a_publication_date():
+    """The defect: a permanent ID minted from a date scraped out of a sentence."""
+    items = HtmlTableSource(html_definition(), FakeFetcher(PROSE_MONTH_HTML), CLOCK).discover()
+    assert len(items) == 1
+    item = items[0]
+    assert item.published_date is None
+    assert item.date_confidence is DateConfidence.INFERRED
+    # Falls back to the discovery month, which is honest (ADR-0005).
+    assert item.id_basis_date == CLOCK.today()
+    assert "no date cell" in item.provenance.selector
+
+
+def test_a_dedicated_date_cell_is_trusted():
+    items = HtmlTableSource(html_definition(), FakeFetcher(DATE_CELL_HTML), CLOCK).discover()
+    item = items[0]
+    assert item.published_date == date(2026, 7, 1)
+    assert item.date_precision is DatePrecision.MONTH
+    assert item.date_confidence is DateConfidence.EXACT
+    assert "date from cell 0" in item.provenance.selector
+
+
+def test_the_date_cell_is_excluded_from_the_summary_and_title():
+    """A bare month must not leak into the knowledge text."""
+    item = HtmlTableSource(html_definition(), FakeFetcher(DATE_CELL_HTML), CLOCK).discover()[0]
+    assert "July 2026" not in item.summary
+    assert "July 2026" not in item.title
+
+
+@pytest.mark.parametrize(
+    "cell,expected",
+    [
+        ("July 2026", date(2026, 7, 1)),
+        ("  July 2026  ", date(2026, 7, 1)),
+        ("2026-07-15", date(2026, 7, 15)),
+        ("July 15, 2026", date(2026, 7, 15)),
+        ("The Gateway December 2025 release", None),  # prose
+        ("Released in July 2026", None),  # prose
+        ("July 2026 update notes", None),  # prose
+        ("", None),
+    ],
+)
+def test_parse_date_cell_requires_the_cell_to_be_only_a_date(cell, expected):
+    assert parse_date_cell(cell)[0] == expected

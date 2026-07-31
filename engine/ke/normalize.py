@@ -124,6 +124,39 @@ def truncate_summary(text: str, max_words: int) -> str:
     return " ".join(words[:max_words]).rstrip(",;:") + "…"
 
 
+#: A cell that is *only* a date, e.g. `July 2026`. Anchored deliberately: a
+#: month mentioned inside a description is not a publication date.
+DATE_ONLY_CELL = re.compile(
+    r"^\s*(?:(?P<iso>\d{4}-\d{2}-\d{2})"
+    r"|(?P<mdy>(?:January|February|March|April|May|June|July|August|September|"
+    r"October|November|December)\s+\d{1,2},?\s+\d{4})"
+    r"|(?P<my>(?:January|February|March|April|May|June|July|August|September|"
+    r"October|November|December)\s+\d{4}))\s*$",
+    re.IGNORECASE,
+)
+
+
+def parse_date_cell(cell: str) -> tuple[date | None, DatePrecision, DateConfidence]:
+    """Read a date from a cell that must contain *nothing but* a date.
+
+    This exists because `parse_date` searching a whole table row is unsafe. Real
+    measurement of the Microsoft Learn source found rows like::
+
+        |**Data Factory gateway manual update (Preview)** | The [Gateway
+        December 2025 release](...) adds ...|
+
+    Searching that row yields "December 2025" and, worse, labels it
+    `EXACT` -- so the item would be stamped with a publication month scraped
+    from prose, and ADR-0005 would mint a **permanent** Feature ID from it.
+
+    Only a dedicated date cell is trusted. Anything else returns no date, and
+    the caller falls back to the discovery month, which is honest.
+    """
+    if not DATE_ONLY_CELL.match(cell or ""):
+        return None, DatePrecision.DAY, DateConfidence.INFERRED
+    return parse_date(cell)
+
+
 def parse_date(text: str) -> tuple[date | None, DatePrecision, DateConfidence]:
     """Read the most precise date present, reporting how precise it is.
 

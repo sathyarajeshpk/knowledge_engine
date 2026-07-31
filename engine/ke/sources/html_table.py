@@ -30,6 +30,8 @@ from ke.clock import Clock
 from ke.identity import compute_identity
 from ke.models import (
     AdapterType,
+    DateConfidence,
+    DatePrecision,
     ExtractionMethod,
     Provenance,
     RawItem,
@@ -37,7 +39,7 @@ from ke.models import (
 from ke.normalize import (
     canonical_url,
     html_to_text,
-    parse_date,
+    parse_date_cell,
     truncate_summary,
 )
 from ke.sources.base import Fetcher, SourceDefinition, SourceError, sort_items
@@ -172,7 +174,21 @@ class HtmlTableSource:
         here -- unlike dropping a *duplicate*, a header row carries no knowledge
         that could be lost.
         """
-        published, precision, confidence = parse_date(row.text)
+        # Only a dedicated date cell is trusted. Searching the whole row would
+        # pick up months mentioned in prose ("the Gateway December 2025
+        # release") and stamp them as exact publication dates -- from which
+        # ADR-0005 would mint a permanent, wrong Feature ID. Measured against
+        # the real page, that affected 1 row in 361: rare, silent, unfixable
+        # afterwards.
+        published = None
+        precision, confidence = DatePrecision.DAY, DateConfidence.INFERRED
+        date_cell_index = None
+        for index, cell in enumerate(row.cells):
+            parsed, cell_precision, cell_confidence = parse_date_cell(cell)
+            if parsed is not None:
+                published, precision, confidence = parsed, cell_precision, cell_confidence
+                date_cell_index = index
+                break
 
         # The first link with visible text is the update; later links are
         # usually "learn more" pointers to the same or related docs.
@@ -185,7 +201,9 @@ class HtmlTableSource:
         if not title:
             # No linked title: fall back to the longest non-date cell.
             candidates = [
-                cell for cell in row.cells if cell and not parse_date(cell)[0]
+                cell
+                for index, cell in enumerate(row.cells)
+                if cell and index != date_cell_index
             ]
             if not candidates:
                 return None
@@ -194,7 +212,11 @@ class HtmlTableSource:
         if len(title.split()) < 2:
             return None  # a stray cell, not an update
 
-        summary_source = " ".join(cell for cell in row.cells if cell != title)
+        summary_source = " ".join(
+            cell
+            for index, cell in enumerate(row.cells)
+            if cell and cell != title and index != date_cell_index
+        )
         summary = truncate_summary(
             html_to_text(summary_source) or title, self._max_summary_words
         )
@@ -226,7 +248,11 @@ class HtmlTableSource:
                 parser_version=self.definition.parser_version,
                 identity_basis=identity.basis,
                 identity_key=identity.key,
-                selector=f"h2[{row.section}] > table > tr",
+                selector=(
+                    f"h2[{row.section}] > table > tr"
+                    + (f" (date from cell {date_cell_index})" if date_cell_index is not None
+                       else " (no date cell)")
+                ),
                 run_id=self._clock.run_id(),
                 source_role=self.definition.role,
             ),
