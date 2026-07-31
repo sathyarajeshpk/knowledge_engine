@@ -42,6 +42,7 @@ Nothing yet. M1 (Discovery) begins after M0 is reviewed and merged.
 ## [0.1.0] — 2026-07-31
 
 First milestone: **M0 — Foundation, Schema and Guardrails**.
+Release notes: [`docs/releases/v0.1.0.md`](docs/releases/v0.1.0.md).
 
 Ships no pipeline by design. M0 builds only the things that are difficult or
 impossible to retrofit once knowledge objects exist on disk: the schema, the
