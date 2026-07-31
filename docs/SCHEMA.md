@@ -120,9 +120,21 @@ source_url: https://blog.fabric.microsoft.com/...
 source_authority: official-microsoft
 published_date: 2026-04-15
 discovered_date: 2026-08-03
-date_confidence: exact
+date_confidence: exact          # do we trust it?   exact | inferred
+date_precision: day             # how precise?      day | month | year
 content_hash: sha256:...
 url_hash: sha256:...
+
+# Where this item came from and exactly how it was extracted (engine-owned)
+provenance:
+  adapter_type: html
+  source_name: learn-fabric-whats-new
+  discovered_at: 2026-08-03T06:00:00+00:00
+  extraction_method: html-table-row
+  parser_version: 1
+  selector: "h2#generally-available-features + table tr"
+  run_id: run-2026-08-03T06:00:00Z
+  source_role: primary
 
 # --- Classification (engine-proposed, user-overridable) ---
 tier: 1
@@ -183,7 +195,9 @@ generation:
 | `source_authority` | enum | yes | `official-microsoft` \| `microsoft-community` \| `third-party` |
 | `published_date` | date \| null | yes | Null only when `date_confidence` is `inferred`. |
 | `discovered_date` | date | yes | When the engine first saw it. |
-| `date_confidence` | enum | yes | `exact` \| `inferred` |
+| `date_confidence` | enum | yes | `exact` \| `inferred`. Do we trust the date at all? |
+| `date_precision` | enum | yes | `day` \| `month` \| `year`. How precise is it? **Independent of confidence** — see below. |
+| `provenance` | map | yes | Adapter, source, timestamp, extraction method, parser version, selector, run. See §10. |
 | `content_hash` | string | yes | `sha256:…` of normalised title + summary. Drives change detection. |
 | `url_hash` | string | yes | `sha256:…` of the canonical URL. Drives exact-duplicate detection. |
 | `tier` | int | yes | `1` act now \| `2` learn soon \| `3` awareness. Operational impact. |
@@ -204,8 +218,18 @@ generation:
 | `status` | enum | yes | `active` \| `replaced` \| `deprecated`. There is no `deleted`. |
 | `needs_review` | bool | yes | Engine could not classify confidently, or flagged a near-duplicate. |
 | `overrides` | list[string] | yes | Engine-proposed fields the user has locked. |
-| `revisions` | list[Revision] | yes | Append-only. See §5. |
+| `revisions` | list[Revision] | yes | Append-only, with content hash and snapshots. See §5. |
 | `generation` | map | yes | Artifact tracking. See §6. |
+
+**Date confidence and date precision are independent.** They answer different
+questions, and overloading one to carry both loses information. The Microsoft
+Learn "What's New" page dates updates to a *month*: that is an exactly known
+month, so `date_confidence: exact` with `date_precision: month`. Marking it
+`inferred` would wrongly suggest we guessed; recording day precision would be
+quietly false. `published_date` always holds a real date — the first of the month
+or of the year — so sorting stays deterministic; `date_precision` says how much
+of it to believe. Feature ID minting is unaffected: ADR-0005 needs the month, and
+month precision supplies exactly that.
 
 **Tier and learning priority are independent.** A Tier 3 item can be high
 learning priority (an excellent deep dive), and a Tier 1 item can be low (a
@@ -225,11 +249,24 @@ revisions:
     date: 2026-08-03
     changed_fields: []
     summary: Initial ingestion
+    content_hash: sha256:aaa...
+    title_snapshot: Direct Lake mode enters preview
+    summary_snapshot: Direct Lake is available in preview for...
+    run_id: run-2026-08-03T06:00:00Z
   - revision: 2
     date: 2026-09-14
     changed_fields: [title, content_hash]
     summary: Source article retitled and expanded
+    content_hash: sha256:bbb...
+    title_snapshot: Direct Lake mode reaches general availability
+    summary_snapshot: Direct Lake is now generally available for...
+    run_id: run-2026-09-14T06:00:00Z
 ```
+
+The snapshots make the object **self-describing over time**: "how did Direct Lake
+evolve?" is answerable by reading one file, deterministically and without Git or
+an AI model. They are cheap because §8 already caps stored summaries at a short
+paragraph. See [`docs/design/TIME_MACHINE.md`](design/TIME_MACHINE.md).
 
 - Revision 1 is always the initial ingestion.
 - A revision is appended **only** when an engine-owned field actually changed;
@@ -340,3 +377,44 @@ and `ke validate` enforces the word limit.
 Errors fail the build. Warnings are reported and pass, unless `--strict`.
 
 Graph checks (referential integrity, cycle detection) arrive in M4.
+
+
+---
+
+## 10. Provenance
+
+Every discovered item carries a provenance record, and it travels with the stored
+object. It is engine-owned.
+
+| Field | Meaning |
+|---|---|
+| `adapter_type` | `rss` \| `atom` \| `html` \| `github-commits` \| `sitemap` \| `manual` |
+| `source_name` | Key of the source in `pack.yml` |
+| `discovered_at` | UTC ISO-8601 timestamp of the run that found it |
+| `extraction_method` | `feed-entry` \| `html-table-row` \| `html-heading-section` \| `html-list-item` \| `json-field` \| `commit-message` \| `manual-entry` |
+| `parser_version` | Version of the adapter's parser that produced it |
+| `selector` | The concrete selector, XPath, feed field or column used |
+| `run_id` | Correlates the object with the run log and event log |
+| `source_role` | `primary` \| `secondary` \| `manual-review` — which link in the fallback chain produced it |
+
+**Why this is worth the bytes.** When a source changes its markup, the items
+produced afterwards are subtly *wrong* rather than absent — the failure mode no
+health check catches. `parser_version` and `selector` make it possible to find
+every object a given parser produced and re-examine exactly those, instead of
+re-verifying the whole pack.
+
+---
+
+## 11. Source health
+
+Health state lives in `state/source-health.json`, outside any knowledge object,
+because it describes the *source* rather than the knowledge. Full design in
+[`docs/design/SOURCE_HEALTH.md`](design/SOURCE_HEALTH.md).
+
+States: `healthy` · `degraded` · `failed` · `disabled`.
+
+The one worth understanding is **`degraded`**: reachable and returning items, but
+either falling back to a secondary source or returning far fewer items than its
+historical median. A source that always returns twenty items and suddenly
+returns zero has probably broken — treating that as "no news this week" is how a
+pipeline dies without anyone noticing.

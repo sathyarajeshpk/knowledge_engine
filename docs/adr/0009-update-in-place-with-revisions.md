@@ -1,8 +1,13 @@
 # ADR-0009: Update in place with a revision history
 
-**Status:** Accepted
+**Status:** Accepted · **Amended by [ADR-0020](0020-knowledge-time-machine.md)**
 **Date:** 2026-07-31
 **Milestone:** M0
+
+> **Amendment note.** The core decision below — corrections are revisions, not
+> rewrites — stands unchanged. ADR-0020 amends one consequence: revisions now
+> also carry a content hash and title/summary snapshots, because "Git already has
+> the old values" makes history transportable but not queryable.
 
 ## Context
 

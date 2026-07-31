@@ -17,7 +17,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field, replace
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from enum import IntEnum, StrEnum
 from typing import Any
 
@@ -42,6 +42,30 @@ class DateConfidence(StrEnum):
     INFERRED = "inferred"
 
 
+class DatePrecision(StrEnum):
+    """How precise `published_date` actually is.
+
+    Deliberately **independent of `DateConfidence`**. They answer different
+    questions and overloading one to mean both loses information:
+
+    * `date_confidence` - do we trust this date at all? (`exact` | `inferred`)
+    * `date_precision`  - how precise is it? (`day` | `month` | `year`)
+
+    The Microsoft Learn "What's New" page dates updates to a month, not a day.
+    That is an *exactly known month*, so `confidence: exact` with
+    `precision: month`. Recording it as `2026-07-01` with day precision would be
+    quietly false; recording it as `inferred` would wrongly suggest we guessed.
+
+    `published_date` always stores a real date so sorting stays deterministic -
+    the first of the month for month precision, the first of January for year
+    precision. `date_precision` says how much of it to believe.
+    """
+
+    DAY = "day"
+    MONTH = "month"
+    YEAR = "year"
+
+
 class SourceAuthority(StrEnum):
     """Where the knowledge came from. Purely a property of the source, so it
     needs no heuristics - it is configured per source in pack.yml."""
@@ -49,6 +73,38 @@ class SourceAuthority(StrEnum):
     OFFICIAL_MICROSOFT = "official-microsoft"
     MICROSOFT_COMMUNITY = "microsoft-community"
     THIRD_PARTY = "third-party"
+
+
+class AdapterType(StrEnum):
+    """Which kind of adapter produced an item.
+
+    Recorded per item so that a parser break can be traced to the code that
+    caused it, and so a source that changes format leaves an audit trail.
+    """
+
+    RSS = "rss"
+    ATOM = "atom"
+    HTML = "html"
+    GITHUB_COMMITS = "github-commits"
+    SITEMAP = "sitemap"
+    MANUAL = "manual"
+
+
+class ExtractionMethod(StrEnum):
+    """*How* a field was pulled out of the source document.
+
+    The difference between `html-table-row` and `html-heading` is the
+    difference between two extraction strategies that break independently. When
+    one of them stops returning items, this field says which.
+    """
+
+    FEED_ENTRY = "feed-entry"
+    HTML_TABLE_ROW = "html-table-row"
+    HTML_HEADING_SECTION = "html-heading-section"
+    HTML_LIST_ITEM = "html-list-item"
+    JSON_FIELD = "json-field"
+    COMMIT_MESSAGE = "commit-message"
+    MANUAL_ENTRY = "manual-entry"
 
 
 class Tier(IntEnum):
@@ -109,6 +165,37 @@ class ObjectStatus(StrEnum):
     ACTIVE = "active"
     REPLACED = "replaced"
     DEPRECATED = "deprecated"
+
+
+class HealthState(StrEnum):
+    """Operational state of one configured source.
+
+    The engine must never silently stop collecting knowledge, so a source is
+    always in exactly one of these and the state is always written down.
+
+    `DEGRADED` is the important one. A source that returns *fewer items than its
+    historical baseline* is not healthy just because it returned HTTP 200 - that
+    is what a broken parser looks like from the outside. Treating "zero items"
+    as "no news this week" is precisely how a pipeline dies quietly.
+    """
+
+    HEALTHY = "healthy"  # last run succeeded and item count looks normal
+    DEGRADED = "degraded"  # reachable, but suspiciously few items, or fell back
+    FAILED = "failed"  # last run could not fetch or parse it
+    DISABLED = "disabled"  # taken out of rotation, by a human or by policy
+
+
+class SourceRole(StrEnum):
+    """Position of a source within its fallback chain.
+
+    If the primary fails the engine tries the secondary. If both fail it raises
+    a review item rather than recording "no updates" -- an empty result and a
+    broken source must never look the same.
+    """
+
+    PRIMARY = "primary"
+    SECONDARY = "secondary"
+    MANUAL_REVIEW = "manual-review"
 
 
 class ArtifactType(StrEnum):
@@ -250,6 +337,8 @@ ENGINE_OWNED_FIELDS = frozenset(
         "published_date",
         "discovered_date",
         "date_confidence",
+        "date_precision",
+        "provenance",
         "content_hash",
         "url_hash",
         "reading_time",
@@ -338,20 +427,42 @@ class Revision:
     """One recorded change to a knowledge object's engine-owned fields.
 
     Revisions are append-only. Revision 1 is always the initial ingestion.
+
+    `content_hash` and `title_snapshot`/`summary_snapshot` are what make the
+    **Knowledge Time Machine** possible. Without them a revision records only
+    *that* something changed; with them the object carries its own history and
+    "how did Direct Lake evolve over two years?" is answerable by reading one
+    file, deterministically and without invoking Git or an AI model.
+
+    The snapshots are cheap because ADR-0003 already caps stored summaries at a
+    short original paragraph. We are keeping a bounded amount of text we were
+    already allowed to store.
     """
 
     revision: int
     date: date
     changed_fields: tuple[str, ...] = ()
     summary: str = ""
+    #: Content hash produced by this revision, forming a verifiable chain.
+    content_hash: str | None = None
+    #: Title and summary as of this revision, so earlier states are readable.
+    title_snapshot: str | None = None
+    summary_snapshot: str | None = None
+    #: Run that produced this revision; correlates with the run and event logs.
+    run_id: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
-        return {
+        out: dict[str, Any] = {
             "revision": self.revision,
             "date": self.date,
             "changed_fields": list(self.changed_fields),
             "summary": self.summary,
         }
+        for key in ("content_hash", "title_snapshot", "summary_snapshot", "run_id"):
+            value = getattr(self, key)
+            if value is not None:
+                out[key] = value
+        return out
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> Revision:
@@ -360,6 +471,80 @@ class Revision:
             date=_coerce_date(raw["date"]),
             changed_fields=tuple(raw.get("changed_fields") or ()),
             summary=raw.get("summary") or "",
+            content_hash=raw.get("content_hash"),
+            title_snapshot=raw.get("title_snapshot"),
+            summary_snapshot=raw.get("summary_snapshot"),
+            run_id=raw.get("run_id"),
+        )
+
+
+class EventType(StrEnum):
+    """What happened to a knowledge object, for the append-only event log."""
+
+    DISCOVERED = "discovered"  # first ingestion
+    REVISED = "revised"  # source changed; engine fields updated
+    RECLASSIFIED = "reclassified"  # tier / priority / category changed
+    REPLACED = "replaced"  # superseded by a new object
+    DEPRECATED = "deprecated"
+    ARTIFACT_GENERATED = "artifact-generated"
+    ARTIFACT_STALE = "artifact-stale"
+
+
+@dataclass(frozen=True)
+class KnowledgeEvent:
+    """One entry in the pack's append-only event log.
+
+    Knowledge objects answer "what is true now?". The event log answers "what
+    happened, and when?" -- and it is the difference between a knowledge base
+    and a **Knowledge Time Machine**:
+
+    * *What changed in Fabric during July 2026?* → filter by month.
+    * *Show everything since I last studied.* → filter by timestamp.
+    * *Compare this month with last month.* → two ranges.
+    * *What happened before feature X shipped?* → filter by timestamp < X.
+
+    Answering these by walking every object and replaying its revisions would
+    work but scales with the pack rather than with the answer. A single
+    time-ordered log makes every one of those queries a scan of one file, in
+    chronological order, with no index and no database (ADR-0003).
+
+    Stored as JSON Lines in `state/events.jsonl`: append-only, diff-friendly,
+    and readable one line at a time without parsing the whole file.
+    """
+
+    occurred_at: datetime
+    event_type: EventType
+    feature_id: str
+    run_id: str
+    revision: int | None = None
+    changed_fields: tuple[str, ...] = ()
+    detail: str = ""
+
+    def to_dict(self) -> dict[str, Any]:
+        out: dict[str, Any] = {
+            "occurred_at": self.occurred_at.isoformat(),
+            "event_type": str(self.event_type),
+            "feature_id": self.feature_id,
+            "run_id": self.run_id,
+        }
+        if self.revision is not None:
+            out["revision"] = self.revision
+        if self.changed_fields:
+            out["changed_fields"] = list(self.changed_fields)
+        if self.detail:
+            out["detail"] = self.detail
+        return out
+
+    @classmethod
+    def from_dict(cls, raw: dict[str, Any]) -> KnowledgeEvent:
+        return cls(
+            occurred_at=_coerce_datetime(raw["occurred_at"]),
+            event_type=EventType(raw["event_type"]),
+            feature_id=raw["feature_id"],
+            run_id=raw["run_id"],
+            revision=raw.get("revision"),
+            changed_fields=tuple(raw.get("changed_fields") or ()),
+            detail=raw.get("detail") or "",
         )
 
 
@@ -421,11 +606,75 @@ class GenerationEntry:
 
 
 @dataclass(frozen=True)
+class Provenance:
+    """Where an item came from and exactly how it was extracted.
+
+    Recorded on **every** discovered item, and carried through to the stored
+    knowledge object. It answers questions that are impossible to reconstruct
+    afterwards:
+
+    * Which adapter produced this, and which version of its parser?
+    * Which selector inside the document did it come from?
+    * Which run, at what moment?
+
+    The practical payoff is parser-break forensics. When a source changes its
+    markup, the items it produced afterwards are subtly wrong rather than
+    absent. `parser_version` and `selector` make it possible to find every item
+    a given parser produced and re-examine exactly those.
+    """
+
+    adapter_type: AdapterType
+    source_name: str
+    discovered_at: datetime  # UTC, always timezone-aware
+    extraction_method: ExtractionMethod
+    parser_version: int
+    #: The concrete selector, XPath, feed field or table column used. Free text
+    #: because every adapter type addresses its document differently.
+    selector: str | None = None
+    #: Identifier of the run that produced this item; correlates the object with
+    #: the run log and the event log.
+    run_id: str | None = None
+    #: Set when this item came from a fallback rather than the primary source.
+    source_role: SourceRole = SourceRole.PRIMARY
+
+    def to_dict(self) -> dict[str, Any]:
+        out: dict[str, Any] = {
+            "adapter_type": str(self.adapter_type),
+            "source_name": self.source_name,
+            "discovered_at": self.discovered_at.isoformat(),
+            "extraction_method": str(self.extraction_method),
+            "parser_version": self.parser_version,
+            "source_role": str(self.source_role),
+        }
+        for key in ("selector", "run_id"):
+            value = getattr(self, key)
+            if value is not None:
+                out[key] = value
+        return out
+
+    @classmethod
+    def from_dict(cls, raw: dict[str, Any]) -> Provenance:
+        return cls(
+            adapter_type=AdapterType(raw["adapter_type"]),
+            source_name=raw["source_name"],
+            discovered_at=_coerce_datetime(raw["discovered_at"]),
+            extraction_method=ExtractionMethod(raw["extraction_method"]),
+            parser_version=int(raw["parser_version"]),
+            selector=raw.get("selector"),
+            run_id=raw.get("run_id"),
+            source_role=SourceRole(raw.get("source_role", SourceRole.PRIMARY)),
+        )
+
+
+@dataclass(frozen=True)
 class RawItem:
     """A normalised item from a source, before it has an identity.
 
-    This is the hand-off between discovery (M1) and identity/dedupe (M2). It
-    gains hash fields in M1 once `ke.normalize` exists.
+    This is the hand-off between discovery (M1) and identity/dedupe (M2), and
+    the **only** type a discovery adapter may return. Every adapter implements
+    the same `discover() -> list[RawItem]` signature, which is what keeps every
+    downstream stage completely source-agnostic: dedupe, minting, storage and
+    classification never learn whether an item came from RSS or a table row.
     """
 
     source_name: str
@@ -434,8 +683,10 @@ class RawItem:
     title: str
     summary: str
     discovered_date: date
+    provenance: Provenance
     published_date: date | None = None
     date_confidence: DateConfidence = DateConfidence.INFERRED
+    date_precision: DatePrecision = DatePrecision.DAY
     raw_tags: tuple[str, ...] = ()
 
     @property
@@ -443,6 +694,10 @@ class RawItem:
         """The date whose month the Feature ID is minted from.
 
         Publication month when we trust it, discovery month otherwise.
+
+        `date_precision` does not enter into this: month precision is *exactly*
+        what minting needs (ADR-0005), so a month-precise date is fully usable
+        here. Only `date_confidence` decides whether we trust it at all.
         """
         if self.published_date is not None and self.date_confidence is DateConfidence.EXACT:
             return self.published_date
@@ -476,7 +731,9 @@ class KnowledgeObject:
     date_confidence: DateConfidence
     content_hash: str
     url_hash: str
+    provenance: Provenance
     published_date: date | None = None
+    date_precision: DatePrecision = DatePrecision.DAY
 
     # --- Classification (engine-proposed, user-overridable) ---
     tier: Tier = Tier.AWARENESS
@@ -582,7 +839,9 @@ class KnowledgeObject:
             "published_date": self.published_date,
             "discovered_date": self.discovered_date,
             "date_confidence": str(self.date_confidence),
+            "date_precision": str(self.date_precision),
             "content_hash": self.content_hash,
+            "provenance": self.provenance.to_dict(),
             "url_hash": self.url_hash,
             "tier": int(self.tier),
             "learning_priority": str(self.learning_priority),
@@ -628,7 +887,9 @@ class KnowledgeObject:
             published_date=_coerce_date(published) if published else None,
             discovered_date=_coerce_date(raw["discovered_date"]),
             date_confidence=DateConfidence(raw["date_confidence"]),
+            date_precision=DatePrecision(raw.get("date_precision", DatePrecision.DAY)),
             content_hash=raw["content_hash"],
+            provenance=Provenance.from_dict(raw["provenance"]),
             url_hash=raw["url_hash"],
             tier=Tier(int(raw.get("tier", Tier.AWARENESS))),
             learning_priority=LearningPriority(
@@ -668,18 +929,199 @@ class KnowledgeObject:
 
 
 @dataclass
-class SourceHealth:
-    """Outcome of polling one source during a run.
+class SourceAttempt:
+    """One attempt to fetch one source during one run.
 
-    Recorded per run so that a source which quietly stops returning items shows
-    up in the weekly digest instead of causing silent data loss.
+    This is the raw observation. `SourceHealth` is the running state derived
+    from a series of these.
     """
 
     source_name: str
+    run_id: str
+    attempted_at: datetime
     ok: bool
-    items_found: int = 0
-    duration_seconds: float = 0.0
-    error: str | None = None
+    role: SourceRole = SourceRole.PRIMARY
+    http_status: int | None = None
+    response_ms: int = 0
+    items_discovered: int = 0
+    failure_reason: str | None = None
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "source_name": self.source_name,
+            "run_id": self.run_id,
+            "attempted_at": self.attempted_at.isoformat(),
+            "ok": self.ok,
+            "role": str(self.role),
+            "http_status": self.http_status,
+            "response_ms": self.response_ms,
+            "items_discovered": self.items_discovered,
+            "failure_reason": self.failure_reason,
+        }
+
+    @classmethod
+    def from_dict(cls, raw: dict[str, Any]) -> SourceAttempt:
+        return cls(
+            source_name=raw["source_name"],
+            run_id=raw["run_id"],
+            attempted_at=_coerce_datetime(raw["attempted_at"]),
+            ok=bool(raw["ok"]),
+            role=SourceRole(raw.get("role", SourceRole.PRIMARY)),
+            http_status=raw.get("http_status"),
+            response_ms=int(raw.get("response_ms", 0)),
+            items_discovered=int(raw.get("items_discovered", 0)),
+            failure_reason=raw.get("failure_reason"),
+        )
+
+
+#: Consecutive failures before a source is escalated to a GitHub Issue (M6).
+FAILURE_ALERT_THRESHOLD = 3
+
+#: A run returning fewer than this fraction of a source's historical median is
+#: treated as a suspected parser break rather than "no news". Deliberately
+#: generous: a false "possible parser break" costs a glance at the digest, while
+#: a missed one costs weeks of silently lost knowledge.
+PARSER_BREAK_RATIO = 0.34
+
+#: Attempts needed before a baseline means anything. Below this the engine has
+#: no opinion and will not cry parser break.
+BASELINE_MIN_OBSERVATIONS = 3
+
+
+@dataclass
+class SourceHealth:
+    """Running health state of one configured source.
+
+    Persisted in `state/source-health.json` and updated every run, so a source
+    that quietly stops producing knowledge is visible in the weekly digest, in
+    `ke health`, and eventually in a GitHub Issue -- never silently absent.
+    """
+
+    source_name: str
+    state: HealthState = HealthState.HEALTHY
+    last_success_at: datetime | None = None
+    last_attempt_at: datetime | None = None
+    consecutive_failures: int = 0
+    last_http_status: int | None = None
+    last_failure_reason: str | None = None
+    last_items_discovered: int = 0
+    #: Item counts from previous *successful* runs, oldest first. Bounded, since
+    #: this file is committed on every run and must not grow without limit.
+    recent_item_counts: tuple[int, ...] = ()
+    #: Set when a human disables a source; the engine never clears it.
+    disabled_reason: str | None = None
+    #: Issue number of the currently-open health alert, so the engine does not
+    #: open a duplicate while one remains open.
+    open_alert_issue: int | None = None
+
+    MAX_HISTORY = 26  # roughly six months of weekly runs
+
+    @property
+    def baseline_items(self) -> float | None:
+        """Median item count over recent successful runs.
+
+        Median rather than mean: one anomalous week should not move the
+        baseline enough to mask a genuine break the following week.
+        """
+        counts = sorted(self.recent_item_counts)
+        if len(counts) < BASELINE_MIN_OBSERVATIONS:
+            return None
+        middle = len(counts) // 2
+        if len(counts) % 2:
+            return float(counts[middle])
+        return (counts[middle - 1] + counts[middle]) / 2
+
+    def looks_like_parser_break(self, items_discovered: int) -> bool:
+        """Whether this run's yield is suspiciously low for this source.
+
+        A source that has historically returned updates and suddenly returns
+        (almost) nothing has probably broken, not gone quiet. Assuming the
+        latter is how a pipeline dies without anyone noticing.
+        """
+        baseline = self.baseline_items
+        if baseline is None or baseline <= 0:
+            return False
+        return items_discovered < baseline * PARSER_BREAK_RATIO
+
+    @property
+    def needs_alert(self) -> bool:
+        """Whether this source warrants a GitHub Issue right now."""
+        if self.state is HealthState.DISABLED or self.open_alert_issue is not None:
+            return False
+        return self.consecutive_failures >= FAILURE_ALERT_THRESHOLD
+
+    def record(self, attempt: SourceAttempt) -> SourceHealth:
+        """Fold one attempt into the running state, returning a new copy.
+
+        Never mutates: like `KnowledgeObject.with_engine_fields`, callers get an
+        independent object so a partially-applied update is impossible.
+        """
+        if self.state is HealthState.DISABLED:
+            return replace(self, last_attempt_at=attempt.attempted_at)
+
+        if not attempt.ok:
+            return replace(
+                self,
+                state=HealthState.FAILED,
+                last_attempt_at=attempt.attempted_at,
+                consecutive_failures=self.consecutive_failures + 1,
+                last_http_status=attempt.http_status,
+                last_failure_reason=attempt.failure_reason,
+                last_items_discovered=0,
+            )
+
+        suspicious = self.looks_like_parser_break(attempt.items_discovered)
+        history = (*self.recent_item_counts, attempt.items_discovered)[-self.MAX_HISTORY:]
+        degraded = suspicious or attempt.role is not SourceRole.PRIMARY
+        return replace(
+            self,
+            state=HealthState.DEGRADED if degraded else HealthState.HEALTHY,
+            last_success_at=attempt.attempted_at,
+            last_attempt_at=attempt.attempted_at,
+            consecutive_failures=0,
+            last_http_status=attempt.http_status,
+            last_failure_reason=(
+                "possible parser break: item count far below historical baseline"
+                if suspicious else None
+            ),
+            last_items_discovered=attempt.items_discovered,
+            recent_item_counts=history,
+        )
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "source_name": self.source_name,
+            "state": str(self.state),
+            "last_success_at": self.last_success_at.isoformat() if self.last_success_at else None,
+            "last_attempt_at": self.last_attempt_at.isoformat() if self.last_attempt_at else None,
+            "consecutive_failures": self.consecutive_failures,
+            "last_http_status": self.last_http_status,
+            "last_failure_reason": self.last_failure_reason,
+            "last_items_discovered": self.last_items_discovered,
+            "recent_item_counts": list(self.recent_item_counts),
+            "disabled_reason": self.disabled_reason,
+            "open_alert_issue": self.open_alert_issue,
+        }
+
+    @classmethod
+    def from_dict(cls, raw: dict[str, Any]) -> SourceHealth:
+        return cls(
+            source_name=raw["source_name"],
+            state=HealthState(raw.get("state", HealthState.HEALTHY)),
+            last_success_at=(
+                _coerce_datetime(raw["last_success_at"]) if raw.get("last_success_at") else None
+            ),
+            last_attempt_at=(
+                _coerce_datetime(raw["last_attempt_at"]) if raw.get("last_attempt_at") else None
+            ),
+            consecutive_failures=int(raw.get("consecutive_failures", 0)),
+            last_http_status=raw.get("last_http_status"),
+            last_failure_reason=raw.get("last_failure_reason"),
+            last_items_discovered=int(raw.get("last_items_discovered", 0)),
+            recent_item_counts=tuple(raw.get("recent_item_counts") or ()),
+            disabled_reason=raw.get("disabled_reason"),
+            open_alert_issue=raw.get("open_alert_issue"),
+        )
 
 
 @dataclass
@@ -693,17 +1135,39 @@ class RunReport:
     """
 
     pack: str
+    run_id: str
     started_at: datetime
     finished_at: datetime | None = None
-    sources: list[SourceHealth] = field(default_factory=list)
+    attempts: list[SourceAttempt] = field(default_factory=list)
+    health: list[SourceHealth] = field(default_factory=list)
+    events: list[KnowledgeEvent] = field(default_factory=list)
     created: list[str] = field(default_factory=list)
     revised: list[str] = field(default_factory=list)
     duplicates_skipped: int = 0
     needs_review: list[str] = field(default_factory=list)
 
     @property
-    def unhealthy_sources(self) -> list[SourceHealth]:
-        return [source for source in self.sources if not source.ok]
+    def failed_attempts(self) -> list[SourceAttempt]:
+        return [attempt for attempt in self.attempts if not attempt.ok]
+
+    def by_state(self, state: HealthState) -> list[SourceHealth]:
+        """Sources currently in a given state, for the digest and `ke health`."""
+        return [source for source in self.health if source.state is state]
+
+    @property
+    def alerts_needed(self) -> list[SourceHealth]:
+        """Sources that have failed enough consecutive runs to warrant an Issue."""
+        return [source for source in self.health if source.needs_alert]
+
+    @property
+    def succeeded_overall(self) -> bool:
+        """Whether the run itself is a success.
+
+        **A failed source never fails the run.** Harvesting continues from every
+        healthy source and the failure is recorded in the run log, the digest
+        and the health file. The run only fails if it could not complete at all.
+        """
+        return self.finished_at is not None
 
     @property
     def is_empty(self) -> bool:
@@ -713,6 +1177,24 @@ class RunReport:
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
+
+def _coerce_datetime(value: Any) -> datetime:
+    """Read a timestamp, always returning an aware UTC `datetime`.
+
+    Every timestamp the engine writes is UTC ISO-8601. Naive values are treated
+    as UTC rather than as local time, because a run log that means different
+    instants depending on which machine wrote it is worse than useless.
+    """
+    if isinstance(value, datetime):
+        parsed = value
+    elif isinstance(value, str):
+        parsed = datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
+    else:
+        raise ValueError(f"cannot read {value!r} as a timestamp")
+    return parsed.replace(tzinfo=timezone.utc) if parsed.tzinfo is None else parsed.astimezone(
+        timezone.utc
+    )
 
 
 def _coerce_date(value: Any) -> date:

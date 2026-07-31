@@ -44,6 +44,11 @@ decision is a conscious act rather than a tidy-up.
 | [0013](0013-pluggable-notifiers.md) | Pluggable notifier interface | Accepted |
 | [0014](0014-flag-near-duplicates-never-drop.md) | Flag near-duplicates, never drop them | Accepted |
 | [0015](0015-create-object-subdirectories-on-demand.md) | Create object and pack subdirectories on demand | Accepted (amends 0006) |
+| [0016](0016-single-fabric-pack-with-power-bi-as-category.md) | One Fabric pack, with Power BI as a first-class category | Accepted |
+| [0017](0017-date-precision-separate-from-confidence.md) | `date_precision` separate from `date_confidence` | Accepted |
+| [0018](0018-provenance-and-uniform-adapter-interface.md) | Provenance on every item, behind one adapter interface | Accepted |
+| [0019](0019-source-health-and-fallback.md) | Source health, fallback chains, and never failing silently | Accepted |
+| [0020](0020-knowledge-time-machine.md) | Capture history for a Knowledge Time Machine | Accepted (amends 0009) |
 
 ## Template
 
