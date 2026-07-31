@@ -88,6 +88,8 @@ def write_object(
     feature_title: str | None = None,
     metadata_patch: dict[str, Any] | None = None,
     drop_fields: tuple[str, ...] = (),
+    knowledge_subpath: str | None = None,
+    body: str | None = None,
 ) -> Path:
     """Write a knowledge object into `pack_root`, optionally corrupted.
 
@@ -104,7 +106,7 @@ def write_object(
     obj_dir = (
         pack_root
         / "knowledge"
-        / obj.id.knowledge_subpath
+        / (knowledge_subpath or obj.id.knowledge_subpath)
         / (directory_name or obj.directory_name)
     )
     for subdir in ("artifacts", "images", "references"):
@@ -116,8 +118,11 @@ def write_object(
     )
     (obj_dir / "feature.md").write_text(
         f"# {feature_title or obj.title}\n\n"
-        "Direct Lake mode is now generally available for production workloads.\n\n"
-        f"Source: {obj.source_url}\n",
+        + (
+            body
+            or "Direct Lake mode is now generally available for production workloads.\n"
+        )
+        + f"\nSource: {obj.source_url}\n",
         encoding="utf-8",
     )
     return obj_dir
