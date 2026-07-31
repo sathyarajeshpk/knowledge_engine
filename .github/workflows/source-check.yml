@@ -45,17 +45,17 @@ jobs:
       - name: Probe sources
         run: python tools/source_probe.py
 
-      - name: Run discovery against the real sources
-        # The development environment blocks *.microsoft.com, so this is the
-        # only place the adapters meet the pages they were written for.
-        # `ke discover` writes nothing -- storage arrives in M2.
-        run: python -m ke discover --pack microsoft-fabric --limit 8
-
       - name: Probe HTML page structure
         # Decides whether a candidate page is server-rendered and parseable, or
         # a JavaScript shell. The roadmap page is included as a control: if the
         # probe cannot tell it apart from a real page, the probe is wrong.
         run: python tools/html_structure_probe.py
+
+      - name: Run discovery against the real sources
+        # The development environment blocks *.microsoft.com, so this is the
+        # only place the adapters meet the pages they were written for.
+        # `ke discover` writes nothing -- storage arrives in M2.
+        run: python -m ke discover --pack microsoft-fabric --limit 6
 
       - name: Upload results
         uses: actions/upload-artifact@v4
