@@ -1,0 +1,77 @@
+# Microsoft Fabric Domain Pack
+#
+# A Domain Pack is pure data. Adding a new pack must never require changing the
+# engine -- that property is proven in M8 by adding the Power BI pack and
+# confirming `git diff engine/` is empty.
+#
+# Sections are annotated with the milestone that activates them. `ke validate`
+# in M0 requires only `name`, `id_prefix` and `schema_version`; everything else
+# is checked when present and becomes required as its milestone lands.
+
+name: microsoft-fabric
+display_name: Microsoft Fabric
+description: >-
+  Knowledge about Microsoft Fabric: data engineering, data warehousing,
+  real-time intelligence, data science, and the Fabric platform itself.
+
+# Permanent. Changing this would orphan every Feature ID already minted.
+id_prefix: MSF
+
+schema_version: 1
+
+# --- Limits (M0) -----------------------------------------------------------
+limits:
+  # Copyright guard. We store a short original summary and a link, never the
+  # full text of a third-party article. Enforced by `ke validate`.
+  max_summary_words: 120
+
+# --- Categories (M3) -------------------------------------------------------
+# The `category` field must be one of these. Kept deliberately coarse; finer
+# distinctions belong in `tags`.
+categories:
+  - data-engineering
+  - data-warehouse
+  - data-science
+  - real-time-intelligence
+  - data-factory
+  - power-bi-integration
+  - governance-security
+  - administration
+  - platform
+
+# --- Sources (M1) ----------------------------------------------------------
+# Intentionally empty.
+#
+# The feed URLs below are CANDIDATES, not verified endpoints. They could not be
+# reached from the planning environment, and pinning an unverified URL here
+# would be indistinguishable from a validated one. M1 issue #8 validates each
+# endpoint and only then moves it into this list with its real response format.
+#
+# Candidates to validate:
+#   - Microsoft Fabric blog feed        (official-microsoft)
+#   - Power BI blog feed                (official-microsoft)
+#   - Microsoft Learn "What's New"      (official-microsoft)
+#   - Fabric release plan / roadmap     (official-microsoft)
+#   - MicrosoftDocs/fabric-docs commits (official-microsoft)
+#   - Fabric Community blog             (microsoft-community)
+sources: []
+
+# --- Deduplication (M2) ----------------------------------------------------
+dedupe:
+  # Titles above this Jaccard similarity are flagged as possible duplicates.
+  # They are stored with `needs_review: true` and surfaced in the digest --
+  # never dropped, because a silent drop would violate "never delete
+  # existing knowledge" in spirit.
+  near_duplicate_jaccard: 0.85
+
+# --- Classification rules (M3) ---------------------------------------------
+# Rules live here as data, not in engine code, so the vocabulary can be tuned
+# without a code change. Anything that matches no rule becomes tier 3 with
+# `needs_review: true` -- never a silent guess.
+classification: {}
+
+# --- Notifications (M6) ----------------------------------------------------
+# The GitHub Issue is the durable audit trail; SMTP is the inbox copy. Both go
+# through the same pluggable Notifier interface, so Telegram, Slack, Discord or
+# Teams can be added later without touching the core engine.
+notifiers: []
