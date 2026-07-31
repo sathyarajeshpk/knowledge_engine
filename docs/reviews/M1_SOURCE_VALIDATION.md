@@ -247,3 +247,109 @@ category and the `PBI` prefix reserved but unused. Recorded in
 [ADR-0016](../adr/0016-single-fabric-pack-with-power-bi-as-category.md), and
 independently corroborated by round 3: the Fabric What's New page contains a
 `Power BI` section, so the source is organised the same way.
+
+
+---
+
+# Part 2 — Access diagnostic and the search for a better source
+
+**Date:** 2026-07-31 · [run](https://github.com/sathyarajeshpk/knowledge_engine/actions/runs/30664653569)
+
+## The adapter works against production markup
+
+`ke discover` on a GitHub runner, against the live pages:
+
+```
+fabric-whats-new:   336 items
+powerbi-whats-new:   25 items
+Source health: healthy: fabric-blog, fabric-whats-new, powerbi-whats-new
+```
+
+Real extraction with month precision, e.g.
+`[2026-05-01 · month/exact] OneLake security and OneLake data access roles are generally available`.
+No fallback was triggered and no review item was raised.
+
+**Microsoft Learn is not blocked from GitHub Actions.** The earlier suspicion
+was mine, not the evidence's — I misread a job log.
+
+## Access characteristics
+
+| Question | Answer |
+|---|---|
+| Reachable from a runner? | **Yes.** `ke discover` uses the plain bot User-Agent and fetched 336 items. |
+| Header-dependent? | **No.** The production configuration sends only `User-Agent` and `Accept` and works. |
+| CDN challenge? | **None detected.** No challenge markers in any response. |
+| robots.txt | 765 bytes, 19 `Disallow` rules for `*`. **None matches `/en-us/fabric/fundamentals/whats-new`.** Path permitted. |
+| Redirects | The Power BI URL **redirects**: `/power-bi/fundamentals/desktop-latest-update` → `/power-bi/fundamentals/whats-new`. Now pinned to the final URL. |
+| IP-range blocking | No evidence. Learn answers from both a GitHub runner and a restricted container. |
+
+## Structured alternatives
+
+| Source | Result |
+|---|---|
+| `fabric-docs` raw Markdown | **200** · 189,900 bytes · 57 ms |
+| `fabric-docs` contents API | **200** · carries `sha: ae3df076…` for change detection |
+| `fabric-docs` commit history for that one file | **200** · a ready-made change feed |
+| `powerbi-docs` raw Markdown | 200 at `main/powerbi-docs/fundamentals/whats-new.md` (the probe's guessed path 404'd) |
+| Learn sitemap | **404** — not published |
+| Learn `toc.json` | **404** — not published |
+
+### The Markdown source is real and good
+
+`learn.microsoft.com/fabric` is generated from the public
+`MicrosoftDocs/fabric-docs` repository, and the source file is fetchable:
+
+- 189,836 characters, YAML front matter with an authoritative `ms.date: 07/30/2026`
+- 18 `##` feature-area sections — the same structure as the rendered page
+- 361 table rows, 163 with a dedicated date cell
+
+It has genuine advantages: no CDN, no JavaScript, no markup churn, and Git
+history supplies change detection and the Time Machine for free.
+
+### But it is not strictly better
+
+Markdown links are **relative document paths**:
+
+```markdown
+[Use Iceberg tables with OneLake](../onelake/onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg)
+```
+
+Identity's strongest signal is the canonical URL (ADR-0023). The rendered HTML
+supplies those already resolved and absolute. Markdown would require
+reconstructing every URL from a relative path — a deterministic transform, but a
+new failure mode sitting directly on top of the mechanism that prevents
+duplicate permanent Feature IDs.
+
+Also measured: the **Power BI Markdown has 0 of 31 rows with a date cell**, the
+same as its rendered page. The undated Power BI items are a property of the
+source, not of the parser.
+
+## Recommendation
+
+**Keep HTML as primary.** It is proven, permitted, unchallenged, and supplies
+resolved URLs for identity.
+
+**Promote the raw Markdown to secondary fallback**, replacing the docs-commit
+Atom feed. Today's fallback is merge-commit noise carrying no knowledge; the
+Markdown carries *the same content as the primary*, from a different host with a
+different failure mode. That is what a fallback should be.
+
+## Defect found by this investigation
+
+The adapter searched the whole table row for a date. Row:
+
+```
+|**Data Factory gateway manual update (Preview)** | The [Gateway December 2025 release](...) adds ...|
+```
+
+That yielded `December 2025`, labelled `EXACT`. ADR-0005 mints a **permanent**
+Feature ID from the publication month, so the item would have been filed under
+2025-12 forever on the strength of a date scraped out of a sentence.
+
+Measured on the production page: **163 rows have a dedicated date cell, 197 have
+no month at all, 1 has a month only in prose.** One row in 361 — rare, silent,
+and unfixable afterwards.
+
+Fixed: only a cell containing *nothing but* a date is trusted. Everything else
+falls back to the discovery month, which is honest. Both real table shapes are
+now pinned by tests.

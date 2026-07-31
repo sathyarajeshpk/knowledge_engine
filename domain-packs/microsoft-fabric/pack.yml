@@ -98,8 +98,10 @@ sources:
 
   # Power BI Desktop monthly updates. Validation: server-rendered, 11 headings,
   # 6 tables, ms.date current.
+  # Note: /desktop-latest-update redirects here. Pinned to the final URL so the
+  # canonical URL used for identity does not depend on a redirect being followed.
   - name: powerbi-whats-new
-    url: https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-latest-update
+    url: https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new
     authority: official-microsoft
     status: active
     role: primary
@@ -115,7 +117,7 @@ sources:
           name: github-commits
           version: 1
       - name: powerbi-whats-new-manual
-        url: https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-latest-update
+        url: https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new
         authority: official-microsoft
         role: manual-review
         adapter:
