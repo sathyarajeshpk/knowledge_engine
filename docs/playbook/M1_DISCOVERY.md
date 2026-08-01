@@ -44,17 +44,19 @@ Everything M1 added or changed:
 ```
 engine/ke/
 ├── clock.py                  NEW  injected time — the replayability seam
-├── identity.py               NEW  the four-level identity hierarchy
-├── confidence.py             NEW  is this identity safe to mint from yet?
 ├── normalize.py              NEW  pure text/URL/date functions
-├── discover.py               NEW  orchestration: chains, health, confidence
-├── models.py                 GREW provenance, health, date precision, events
-└── sources/
-    ├── __init__.py           NEW  (empty — a package, not a module)
-    ├── base.py               NEW  SourceDefinition, Fetcher, sort_items
-    ├── html_table.py         NEW  PRIMARY adapter — Microsoft Learn pages
-    ├── markdown_table.py     NEW  SECONDARY adapter — MicrosoftDocs repo
-    └── feed.py               NEW  RSS/Atom adapter
+├── models.py                 GREW identity types, provenance, health,
+│                                  confidence, lifecycle
+└── acquisition/              NEW  ← the subsystem (ADR-0030)
+    ├── __init__.py           NEW  the public surface: the two ports
+    ├── identity.py           NEW  the four-level identity hierarchy
+    ├── confidence.py         NEW  is this identity safe to mint from yet?
+    ├── discover.py           NEW  orchestration: chains, health, grading
+    └── sources/
+        ├── base.py           NEW  SourceDefinition, Fetcher, sort_items
+        ├── html_table.py     NEW  PRIMARY adapter — Microsoft Learn pages
+        ├── markdown_table.py NEW  SECONDARY adapter — MicrosoftDocs repo
+        └── feed.py           NEW  RSS/Atom adapter
 
 tools/                        diagnostics, deliberately outside engine/
 ├── source_probe.py           is this URL real and usable?
@@ -64,8 +66,37 @@ tools/                        diagnostics, deliberately outside engine/
 └── identity_experiment.py    NEW  scoring candidate identity schemes (analysis)
 
 domain-packs/microsoft-fabric/pack.yml   sources pinned, with fallback chains
-docs/adr/0017–0028                       the decisions behind all of the above
+docs/adr/0017–0030                       the decisions behind all of the above
 ```
+
+### Why `acquisition/` is a package and not just a folder
+
+Everything inside it is **one reusable subsystem**: getting knowledge from a
+source to an identified, graded item. When knowledge starts arriving from an
+API, a PDF or a video, the intent is that it needs *a new adapter and nothing
+else*.
+
+That only holds if the boundary is real, so it is enforced rather than
+documented:
+
+```python
+# engine/tests/test_architecture.py
+def test_acquisition_never_imports_a_downstream_module(): ...
+def test_adapters_do_not_import_the_orchestrator(): ...
+def test_the_grading_stage_knows_nothing_about_any_particular_source(): ...
+```
+
+The forbidden list names modules that **do not exist yet** (`store`, `classify`,
+`indexer`…). That is deliberate: the rule is cheapest to enforce before the code
+that would break it is written. Each guard was verified to fail when a violation
+is introduced — a test that cannot trip is decoration.
+
+The two ports:
+
+| Direction | Contract |
+|---|---|
+| **In** | `discover() -> list[RawItem]` — one method, any source type |
+| **Out** | `DiscoveryResult` — `.mintable`, `.needs_review`, `.collisions`, `.health` |
 
 ### Why `tools/` is not in `engine/`
 
@@ -697,6 +728,8 @@ needs the `Source check` workflow.
 | **Feature** | The unit of knowledge; owns the permanent Feature ID |
 | **Collision** | One identity claimed by several distinct Features. Queued, never merged |
 | **Mint gate** | High confidence **and** an authoritative source |
+| **Lifecycle** | Acquisition stage: discovered → queued → approved → minted → superseded → archived |
+| **Acquisition** | The reusable subsystem: fetch → parse → identify → grade → gate |
 | **Durable identity** | Basis is `canonical-url` or `source-identifier` |
 | **Fallback chain** | Ordered primary → secondary → manual-review links for one source |
 | **Review item** | Produced when every link in a chain failed; never an empty list |

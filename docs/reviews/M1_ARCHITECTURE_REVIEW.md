@@ -38,8 +38,10 @@ Feature IDs are permanent (ADR-0005) and identity is what they are minted from
 | Health | `healthy`/`degraded`/`failed`/`disabled`, median-based parser-break detection |
 | Provenance | Full discovery chain, in chain order (ADR-0026) |
 | Identity confidence | `high`/`medium`/`low`, collisions surfaced never merged (ADR-0027/0028) |
-| Tests | 227, all offline, ~1s |
-| ADRs | 0017–0028 |
+| Lifecycle | `discovered`→`queued`→`approved`→`minted`→`superseded`→`archived`, orthogonal to `status` (ADR-0029) |
+| Subsystem boundary | `ke.acquisition` with enforced import rules (ADR-0030) |
+| Tests | 247, all offline, ~0.8s |
+| ADRs | 0017–0030 |
 
 ---
 
@@ -75,7 +77,7 @@ it happened before adapters were written rather than after.
 
 **The two injected seams are real, not decorative.** Clock and fetcher are
 injected everywhere, and the clock rule is enforced by a test that walks every
-module looking for `datetime.now(`. All 227 tests run offline in about a second.
+module looking for `datetime.now(`. All 247 tests run offline in about a second.
 An engine whose tests need the internet is an engine that becomes untestable on
 the day a source goes down — which is exactly the day you need to change it.
 
@@ -126,7 +128,18 @@ when a baseline is passed in by hand. The capability exists; the memory does not
 This is scheduled, not forgotten, but it means the single most valuable health
 check is currently inert in production.
 
-**W4 — `tools/` has grown to four probes with overlapping concerns.** They were
+**W4a — The acquisition boundary is currently one-sided.** Nothing downstream
+exists yet to respect it, so the enforcement tests pass trivially today. The real
+proof is M2: if `store.py` can be written without reaching into acquisition's
+internals, the contract held. Until then this is a well-founded bet, not a
+demonstrated property.
+
+**W4b — The package move landed late.** Files moved after the milestone's
+substance was written, so `git log --follow` is needed to trace history through
+the rename and the M1 diff is larger than the behaviour it contains. The
+alternative — moving four modules now and three more in M2 — was churn twice.
+
+**W4 — `tools/` has grown to five probes with overlapping concerns.** They were
 written one question at a time and it shows. They are deliberately outside
 `engine/`, untested and throwaway-grade, so this is low-cost — but
 `fallback_probe.py` has outgrown that category: it measures a safety property
