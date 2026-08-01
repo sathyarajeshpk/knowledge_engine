@@ -506,6 +506,60 @@ def test_the_scheduled_pipeline_never_invokes_a_model():
         assert word not in text.lower()
 
 
+def test_the_scheduled_harvest_installs_from_the_lockfile():
+    """M6 finding S-1, closed in M7.
+
+    The weekly job holds a repository write token. Resolving dependencies at
+    workflow time means a compromised release executes there; `--require-hashes`
+    means it fails the install instead.
+    """
+    text = (WORKFLOWS / "weekly-harvest.yml").read_text(encoding="utf-8")
+
+    assert "--require-hashes" in text
+    assert "requirements.lock" in text
+
+
+def test_the_lockfile_pins_every_package_with_a_version_and_a_hash():
+    """A line without `==` or without a hash is a hole in the guarantee."""
+    text = (REPO_ROOT / "requirements.lock").read_text(encoding="utf-8")
+    requirements = [
+        line for line in text.splitlines()
+        if line and not line.startswith(("#", " ", "\t"))
+    ]
+
+    assert requirements, "the lockfile pins nothing"
+    for line in requirements:
+        assert "==" in line, f"unpinned version: {line}"
+    assert text.count("--hash=sha256:") >= len(requirements)
+
+
+def test_the_lockfile_covers_the_whole_dependency_graph():
+    """`--require-hashes` applies transitively, so a partial lockfile is unusable.
+
+    This caught a real mistake: the first lockfile was written by hand and
+    pinned `sgmllib3k`, which feedparser used to depend on and no longer does.
+    The real transitive dependency is `feedparser-sgmllib`, and pip rejected the
+    file outright — the good failure. `tools/lock_dependencies.py` now discovers
+    the closure with pip's own resolver rather than asserting it.
+    """
+    text = (REPO_ROOT / "requirements.lock").read_text(encoding="utf-8").lower()
+
+    for package in ("pyyaml", "feedparser", "feedparser-sgmllib"):
+        assert f"{package}==" in text, f"{package} is not pinned"
+
+
+def test_dependency_and_action_updates_are_watched():
+    """M6 finding S-4. Nothing was alerting on advisories."""
+    import yaml as _yaml
+
+    config = _yaml.safe_load(
+        (REPO_ROOT / ".github" / "dependabot.yml").read_text(encoding="utf-8")
+    )
+    ecosystems = {entry["package-ecosystem"] for entry in config["updates"]}
+
+    assert {"pip", "github-actions"} <= ecosystems
+
+
 def test_the_pipeline_cannot_reach_the_generation_code():
     """ADR-0004 as a code boundary, not only a workflow assertion.
 
