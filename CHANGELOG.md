@@ -39,6 +39,43 @@ Nothing yet. M1 (Discovery) begins after M0 is reviewed and merged.
 
 ---
 
+## [0.4.0] — 2026-08-01
+
+Fourth milestone: **M3 — The update path**.
+Release notes: [`docs/releases/v0.4.0.md`](docs/releases/v0.4.0.md).
+
+The engine can now revisit objects it already wrote **without destroying the work
+their owner added by hand** — the promise ADR-0008 made in M0, tested for the
+first time by deliberately trying to break it against production data.
+
+**Schema version:** 1 (unchanged)
+
+### Added
+
+- `revisions.py` — change detection over engine-owned fields, with revisions
+  appended only on material change. Reflowed whitespace is not a revision, and
+  neither is `identity_confidence` moving on its own.
+- `store.load_object` and `store.update_object` — read a stored object; rewrite
+  only when the rendered bytes actually differ.
+- The update stage in `harvest_pack`, plus `updated`/`unchanged` in the report,
+  the CLI output and the run log.
+- `test_regressions.py` — 11 tests, one per bug that reached a running system,
+  each recording why the existing suite could not see it.
+- `test_update_path.py` — 21 tests covering detection, preservation, revisions,
+  ID permanence and multi-run idempotency.
+- [ADR-0033](docs/adr/0033-update-scope.md) — an update refreshes a subset of
+  engine-owned fields, not all of them.
+
+### Fixed
+
+- Two sources reporting the same feature both ran the update, so the object
+  flipped between their renderings twice per harvest — 70 phantom "updates" on
+  an unchanged run and a permanently dirty git diff. Now one sighting per
+  identity.
+- `update_object`'s byte-comparison was unreachable from the pipeline and
+  therefore untested; deleting it left every test green. It now has a direct
+  test, and the end-to-end test states which guard it actually exercises.
+
 ## [0.3.0] — 2026-08-01
 
 Third milestone: **M2 — Identity, dedupe, storage and the first working

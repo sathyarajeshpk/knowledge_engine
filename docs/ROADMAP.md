@@ -82,7 +82,10 @@ Decide whether Power BI content in the Fabric feed belongs to `MSF` or `PBI`
 
 ---
 
-### M3 — Classification and learning metadata · **planned**
+### M3 — The update path · **done** (v0.4.0)
+
+Re-scoped from classification: exercising the update path took priority over
+expanding functionality. Classification moves to M4.
 
 - [ ] Rule sets in `pack.yml` for tier, learning priority, category, difficulty, workload
 - [ ] `classify.py` — unmatched → tier 3 + `needs_review`, never a silent guess
