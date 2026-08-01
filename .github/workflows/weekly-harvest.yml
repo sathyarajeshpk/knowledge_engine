@@ -43,7 +43,7 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           # Full history: the push at the end rebases onto whatever landed while
           # the harvest was running, and a shallow clone cannot rebase.
