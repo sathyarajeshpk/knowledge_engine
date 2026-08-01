@@ -65,6 +65,15 @@ decision is a conscious act rather than a tidy-up.
 | [0034](0034-classification-writes-once.md) | Classification proposes once and never churns | Accepted |
 | [0035](0035-supersession-is-status-not-lifecycle.md) | Supersession is a status, not an acquisition stage | Accepted (amends 0029) |
 | [0036](0036-unified-review-workflow.md) | One review workflow over many kinds of pending decision | Accepted |
+| [0037](0037-a-digest-every-week-even-an-empty-one.md) | A digest every week, even an empty one | Accepted |
+| [0038](0038-redact-what-looks-like-a-secret.md) | Redact what looks like a secret, not only what we know is one | Accepted |
+| [0039](0039-a-lock-file-around-minting.md) | A lock file around minting | Accepted |
+| [0040](0040-context-packs-instead-of-api-calls.md) | Context packs instead of API calls | Accepted |
+| [0041](0041-search-scans-rather-than-indexes.md) | Search scans the objects rather than maintaining an index | Accepted |
+| [0042](0042-artifact-content-is-user-owned.md) | Artifact content is user-owned; only its tracking is not | Accepted |
+| [0043](0043-power-bi-is-a-category-not-a-pack.md) | Power BI is a category within the Fabric pack, not a pack of its own | Accepted |
+| [0044](0044-cross-pack-duplicates-are-reported-never-resolved.md) | Cross-pack duplicates are detected and reported, never merged, dropped or blocked | Accepted |
+| [0045](0045-a-pack-may-name-web-sources-and-match-strings.md) | A pack may name web sources and match strings, and nothing else | Accepted |
 
 ## Template
 
