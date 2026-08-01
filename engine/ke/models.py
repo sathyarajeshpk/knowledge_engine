@@ -505,6 +505,8 @@ ENGINE_OWNED_FIELDS = frozenset(
         "title",
         "source_name",
         "source_url",
+        "announcement_url",
+        "identity_confidence",
         "source_authority",
         "published_date",
         "discovered_date",
@@ -979,6 +981,13 @@ class KnowledgeObject:
     provenance: Provenance
     published_date: date | None = None
     date_precision: DatePrecision = DatePrecision.DAY
+    #: The Announcement this Feature was reported in, or None (ADR-0027).
+    #: Deliberately not defaulted to `source_url`, which falls back to the
+    #: document being read -- and a document is not an announcement.
+    announcement_url: str | None = None
+    #: What the mint gate decided at the moment this object was created
+    #: (ADR-0028). Recorded so an object can explain why it exists.
+    identity_confidence: IdentityConfidence = IdentityConfidence.HIGH
 
     # --- Classification (engine-proposed, user-overridable) ---
     tier: Tier = Tier.AWARENESS
@@ -1087,6 +1096,8 @@ class KnowledgeObject:
             "title": self.title,
             "source_name": self.source_name,
             "source_url": self.source_url,
+            "announcement_url": self.announcement_url,
+            "identity_confidence": str(self.identity_confidence),
             "source_authority": str(self.source_authority),
             "published_date": self.published_date,
             "discovered_date": self.discovered_date,
@@ -1163,6 +1174,10 @@ class KnowledgeObject:
             related_topics=tuple(raw.get("related_topics") or ()),
             replaced_by=raw.get("replaced_by"),
             replaces=raw.get("replaces"),
+            announcement_url=raw.get("announcement_url"),
+            identity_confidence=IdentityConfidence(
+                raw.get("identity_confidence", IdentityConfidence.HIGH)
+            ),
             lifecycle=Lifecycle(raw.get("lifecycle", Lifecycle.MINTED)),
             status=ObjectStatus(raw.get("status", ObjectStatus.ACTIVE)),
             needs_review=bool(raw.get("needs_review", False)),

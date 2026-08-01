@@ -25,14 +25,6 @@ from ke.models import IdentityBasis, ItemIdentity
 
 #: Tracking and session parameters that change per visit and never identify an
 #: article. Stripping them is what makes the canonical URL stable.
-TRACKING_PARAMS = frozenset(
-    {
-        "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
-        "wt.mc_id", "ocid", "cid", "culture", "country", "fbclid", "gclid",
-        "msclkid", "src", "ref", "referrer", "s_cid", "epi", "irgwc", "irclickid",
-    }
-)
-
 #: Words dropped before hashing a title. Microsoft rewords announcements
 #: constantly ("Announcing X" -> "X is now generally available"), and a title
 #: hash that moves on rewording defeats the purpose of having one.

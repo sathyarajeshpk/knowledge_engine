@@ -13,8 +13,22 @@ from datetime import date
 from html.parser import HTMLParser
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
-from ke.acquisition.identity import TRACKING_PARAMS
 from ke.models import DateConfidence, DatePrecision
+
+TRACKING_PARAMS = frozenset(
+    {
+        "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
+        "wt.mc_id", "ocid", "cid", "culture", "country", "fbclid", "gclid",
+        "msclkid", "src", "ref", "referrer", "s_cid", "epi", "irgwc", "irclickid",
+    }
+)
+#: Query parameters that identify a *campaign*, not an article. Stripped before
+#: a URL is used for identity, so the same page shared two ways is one item.
+#:
+#: Lives here rather than in `identity.py` because it is a URL-cleaning concern
+#: and `normalize` is core: core must never import the acquisition subsystem
+#: (ADR-0030), and doing so created a genuine import cycle.
+
 
 MONTHS = {
     name.lower(): index
