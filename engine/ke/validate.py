@@ -324,6 +324,29 @@ def _check_pack_config(pack: Pack) -> list[Finding]:
                 "missing required pack directory (must contain id-registry.json)",
             )
         )
+
+    # SEC002 -- force the source definitions to be built.
+    #
+    # `Pack.source_definitions` is a lazy property, so the scheme allowlist in
+    # `SourceDefinition.from_config` only fires when something asks for the
+    # sources. Validation never did, which meant a pack declaring
+    # `url: file:///etc/hostname` reported "no findings" in CI and failed at
+    # 03:00 on Sunday instead -- inside the process holding the write token,
+    # which is the one place it must not first be discovered.
+    #
+    # Found by running the installed CLI rather than the library: the guard was
+    # real, the path to it was not.
+    try:
+        pack.source_definitions
+    except Exception as exc:  # noqa: BLE001 - any malformed source is a finding
+        findings.append(
+            Finding(
+                Level.ERROR,
+                "SEC002",
+                location,
+                " ".join(str(exc).split()) or f"{type(exc).__name__} while reading sources",
+            )
+        )
     return findings
 
 

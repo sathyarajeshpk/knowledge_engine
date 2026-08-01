@@ -524,3 +524,75 @@ def test_present_artifact_file_passes(pack_root):
 def test_unrequested_artifacts_need_no_file(populated_pack):
     """`none`, `requested` and `rejected` have no file by definition."""
     assert check(populated_pack) == []
+
+
+# ---------------------------------------------------------------------------
+# SEC002 — a malformed source must fail CI, not Sunday's harvest (M8)
+# ---------------------------------------------------------------------------
+
+
+def _pack_with_source(root: Path, url: str) -> Path:
+    pack = root / "domain-packs" / "alpha"
+    (pack / "state").mkdir(parents=True)
+    (pack / "pack.yml").write_text(
+        "name: alpha\nid_prefix: ALF\nschema_version: 1\n"
+        "limits:\n  max_summary_words: 120\n"
+        f"sources:\n  - name: s\n    adapter: rss\n    url: {url}\n"
+        "    authority: official-microsoft\n",
+        encoding="utf-8",
+    )
+    (pack / "state" / "id-registry.json").write_text('{"prefix": "ALF"}\n')
+    return root
+
+
+def test_a_file_url_source_is_an_error(tmp_path: Path) -> None:
+    """The scheme allowlist has to be *reachable* from validation, not just exist.
+
+    `Pack.source_definitions` is a lazy property. The guard in
+    `SourceDefinition.from_config` fires only when something asks for the
+    sources, and validation never did — so a pack declaring
+    `url: file:///etc/hostname` reported "no findings" in CI and would have
+    failed at 03:00 on Sunday instead, inside the process holding the
+    repository write token.
+
+    That is the one place it must not first be discovered. Found by running the
+    installed CLI rather than the library: the guard was real, the path to it
+    was not.
+    """
+    repo = _pack_with_source(tmp_path, "file:///etc/hostname")
+
+    findings = validate_repo(repo)
+    sec = [f for f in findings if f.code == "SEC002"]
+    assert len(sec) == 1
+    assert sec[0].level is Level.ERROR
+    assert "file:///etc/hostname" in sec[0].message
+
+
+def test_a_normal_https_source_produces_no_finding(tmp_path: Path) -> None:
+    """Forcing the lazy property must not invent findings for valid packs."""
+    repo = _pack_with_source(tmp_path, "https://example.invalid/feed.xml")
+
+    assert not [f for f in validate_repo(repo) if f.code == "SEC002"]
+
+
+def test_an_unparseable_source_entry_is_reported_rather_than_raised(
+    tmp_path: Path,
+) -> None:
+    """Any malformed source is a finding, not a traceback.
+
+    Validation exists to report problems across every pack; one pack whose
+    source block is nonsense must not abort the run before the others are seen.
+    """
+    repo = tmp_path
+    pack = repo / "domain-packs" / "alpha"
+    (pack / "state").mkdir(parents=True)
+    (pack / "pack.yml").write_text(
+        "name: alpha\nid_prefix: ALF\nschema_version: 1\n"
+        "sources:\n  - name: s\n    adapter: not-a-real-adapter\n"
+        "    url: https://example.invalid/f\n    authority: official-microsoft\n",
+        encoding="utf-8",
+    )
+    (pack / "state" / "id-registry.json").write_text('{"prefix": "ALF"}\n')
+
+    findings = validate_repo(repo)
+    assert any(f.code == "SEC002" for f in findings)

@@ -62,12 +62,24 @@ line among dozens in a file nobody reads as code.
 **Fix.** An allowlist of `http://` and `https://`, checked in two places for two
 different reasons:
 
-* `SourceDefinition.from_config` — fails at **pack load**, so `ke validate`
-  catches it in CI on the pull request that introduces it, rather than at 03:00
-  on Sunday.
+* `SourceDefinition.from_config` — rejects the URL when the source is built.
 * `HttpFetcher.fetch` — checked again, because the fetcher is reachable directly
   from adapters and any future caller. A guard living only at the configuration
   boundary protects only the configuration boundary.
+* `ke validate` → **SEC002**, ERROR — see below.
+
+**The third layer exists because the first two were not enough, and the first
+draft of this review said they were.** `Pack.source_definitions` is a *lazy
+property*: the allowlist fires only when something asks for the sources.
+Validation never did. So a pack declaring `file:///etc/hostname` reported
+`ok: 1 pack(s), 0 knowledge object(s), no findings` and would have failed at
+03:00 on Sunday instead — inside the process holding the write token, which is
+the single place it must not first be discovered.
+
+This was found by an installation-level test running the real console script,
+after the in-process tests were green and this document already claimed CI
+caught it. The guard was real; the path to it was not. `_check_pack_config` now
+forces the property and reports any failure as SEC002.
 
 An allowlist rather than a denylist: the set of schemes this engine legitimately
 needs is two, and it will stay two. Comparison is case-insensitive, because
@@ -245,7 +257,7 @@ pure-Python packages, hash-pinned via `requirements.lock` and installed with
 
 | ID | Finding | Severity | Status |
 |---|---|---|---|
-| S-1 | A pack source could name `file://` and read local files into stored, committed knowledge | **Critical** | Fixed — http/https allowlist at two layers, mutation-verified |
+| S-1 | A pack source could name `file://` and read local files into stored, committed knowledge | **Critical** | Fixed — http/https allowlist at three layers (config, fetcher, SEC002 in CI), mutation-verified |
 | S-2 | A symlink in a pack could redirect every automated write | **High** | Fixed — containment at load, at write, and SEC001 in CI |
 | S-3 | Stored third-party prose sits in the same document as the task in a context pack | Low | Mitigated with an explicit data boundary; architecturally contained |
 | S-4 | SSRF to internal addresses remains possible via an `http://` URL | Informational | Accepted — no metadata service worth reaching on a GitHub runner |
@@ -261,9 +273,18 @@ precisely because "reviewed as data" and "cannot act like code" had not been
 made the same statement.
 
 They are now closer, and the mechanism is checkable: `ke validate` runs on every
-pull request and refuses a pack that names a non-web URL or links outside its own
-tree. That is what makes the abstraction's promise something a reviewer can rely
-on rather than something they have to personally verify.
+pull request and refuses a pack that names a non-web URL (SEC002) or links
+outside its own tree (SEC001). That is what makes the abstraction's promise
+something a reviewer can rely on rather than something they have to personally
+verify.
+
+One methodological note that changed a finding rather than confirming one. Both
+S-1 and S-2 were fixed, tested and written up before an installation-level test
+ran the real console script — and that test found the S-1 fix was unreachable
+from `ke validate`, the exact path this document claimed protected it. The
+lesson generalises past M7's packaging bug: **a guard that is never invoked and
+a guard that does not exist are the same guard.** Testing the library proves the
+former; only testing the shipped command distinguishes them.
 
 **Recommendation for M9:** when `docs/ADDING-A-PACK.md` is written, state the
 trust boundary explicitly — a pack may name web sources and match strings, and

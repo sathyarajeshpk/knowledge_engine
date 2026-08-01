@@ -19,6 +19,11 @@ from ke.validate import Finding, Level, has_errors, scan_summary, validate_repo
 
 
 def build_parser() -> argparse.ArgumentParser:
+    # Imported here rather than at module scope to keep `ke --help` from pulling
+    # in the review machinery's dependencies, matching how every command handler
+    # in this file imports what it needs.
+    from ke.reviewq import TaskKind
+
     parser = argparse.ArgumentParser(
         prog="ke",
         description="Knowledge Engine - build and maintain Domain Packs.",
@@ -133,7 +138,13 @@ def build_parser() -> argparse.ArgumentParser:
     review.add_argument("key", nargs="?", help="task key (a short prefix is enough)")
     review.add_argument(
         "--kind",
-        choices=("queued", "unclassified", "revision"),
+        # Derived from the enum rather than repeated. M8 added
+        # `TaskKind.CROSS_PACK`, wired up a provider for it and rendered it in
+        # the queue -- and this hard-coded tuple was the one place that did not
+        # follow, so `ke review --kind cross-pack` was rejected by argparse for
+        # a kind the engine was producing. Listing the enum makes the next kind
+        # impossible to half-add.
+        choices=tuple(str(kind) for kind in TaskKind),
         help="restrict to one kind",
     )
     review.add_argument(
