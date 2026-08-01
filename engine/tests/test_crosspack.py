@@ -489,3 +489,36 @@ def test_a_reference_to_nothing_is_still_caught(two_packs, monkeypatch):
 
     problems = dangling_references([alpha, beta])
     assert problems == [(str(obj.id), "prerequisites", "BET-1999-01-999")]
+
+
+# ---------------------------------------------------------------------------
+# Cost of the report
+# ---------------------------------------------------------------------------
+
+
+def test_render_report_scans_the_other_packs_once(two_packs, monkeypatch) -> None:
+    """`render_report` must not run the cross-pack scan twice.
+
+    It needs both the task list and a tally of it, and the first version got the
+    tally by calling `collect()` a second time -- running every provider again,
+    including the one that reads every object in every pack. Measured on a
+    ten-pack repository, that duplicate scan was half of a 147-second index
+    rebuild, spent recomputing an answer it already had.
+
+    Counting calls rather than timing them: a timing assertion on a shared
+    runner is a flake, and the property here is exactly "how many times", not
+    "how fast".
+    """
+    from ke import crosspack
+    from ke.reviewq import render_report
+
+    pack, _ = two_packs
+
+    calls = []
+    real = crosspack.find_duplicates
+    monkeypatch.setattr(
+        crosspack, "find_duplicates", lambda packs: (calls.append(1), real(packs))[1]
+    )
+
+    render_report(pack)
+    assert len(calls) == 1

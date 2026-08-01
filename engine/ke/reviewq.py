@@ -314,9 +314,17 @@ def find(pack: Pack, needle: str) -> ReviewTask:
     return matches[0]
 
 
-def counts(pack: Pack) -> dict[TaskKind, int]:
+def counts(pack: Pack, tasks: list[ReviewTask] | None = None) -> dict[TaskKind, int]:
+    """Tally by kind, over `tasks` if the caller already has them.
+
+    The parameter exists because counting is never the only thing a caller
+    wants. `render_report` needs both the list and the tally, and calling
+    `collect()` twice ran every provider twice -- including the cross-pack one,
+    which reads every object in every pack. On a ten-pack repository that was
+    half of a 147-second index rebuild, spent recomputing an identical answer.
+    """
     tally = {kind: 0 for kind in TaskKind}
-    for task in collect(pack):
+    for task in collect(pack) if tasks is None else tasks:
         tally[task.kind] += 1
     return tally
 
@@ -426,7 +434,7 @@ def render_report(pack: Pack) -> str:
     A backlog only gets worked if somebody can see it without running a command.
     """
     tasks = collect(pack)
-    tally = counts(pack)
+    tally = counts(pack, tasks)
     lines = [
         f"# {pack.name} — review queue",
         "",
