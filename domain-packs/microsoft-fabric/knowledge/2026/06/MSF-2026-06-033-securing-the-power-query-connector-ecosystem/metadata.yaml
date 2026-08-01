@@ -26,12 +26,15 @@ provenance:
     cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:8fa745ddb799d801fbadeeca3165b2cf1e567f1d1332fb7369c9977484f538db
-tier: 3
+tier: 1
 learning_priority: low
 category: null
-tags: []
+tags:
+- deprecation
+- ga
+- preview
 difficulty: intermediate
-workload: light
+workload: heavy
 version: null
 reading_time: 1
 learning_status: not-started
@@ -43,7 +46,7 @@ replaced_by: null
 replaces: null
 lifecycle: minted
 status: active
-needs_review: false
+needs_review: true
 overrides: []
 revisions:
 - revision: 1

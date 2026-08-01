@@ -25,12 +25,15 @@ provenance:
   selector: '## Features currently in preview > table row (no date cell)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:75cec2c6efb3cba5f4f9ab5bd8f21d8cadc5dd6b40de9799821ae57866640b31
-tier: 3
-learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
-workload: light
+tier: 2
+learning_priority: medium
+category: data-science
+tags:
+- api
+- preview
+- spark
+difficulty: advanced
+workload: moderate
 version: null
 reading_time: 1
 learning_status: not-started

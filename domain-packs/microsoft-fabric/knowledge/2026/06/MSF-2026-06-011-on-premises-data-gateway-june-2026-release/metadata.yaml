@@ -26,9 +26,11 @@ provenance:
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:23d8939050d4545b37cea590de898ba76f9f7a069a1226afe9dc8efa37424e2d
 tier: 3
-learning_priority: low
-category: null
-tags: []
+learning_priority: medium
+category: data-factory
+tags:
+- dataflow
+- power-bi
 difficulty: intermediate
 workload: light
 version: null
@@ -42,7 +44,7 @@ replaced_by: null
 replaces: null
 lifecycle: minted
 status: active
-needs_review: false
+needs_review: true
 overrides: []
 revisions:
 - revision: 1

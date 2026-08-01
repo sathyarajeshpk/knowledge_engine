@@ -25,12 +25,13 @@ provenance:
   selector: '## Microsoft Fabric platform features > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:17ba573dada035163ca1d25ea436726bbe55279f4ce640358199203ceaf3c83e
-tier: 3
+tier: 2
 learning_priority: low
-category: null
-tags: []
+category: power-bi
+tags:
+- preview
 difficulty: intermediate
-workload: light
+workload: moderate
 version: null
 reading_time: 1
 learning_status: not-started

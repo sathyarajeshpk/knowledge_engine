@@ -26,12 +26,14 @@ provenance:
     cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:bd712b0a0addfc54aabf5d4bcc11913f0f00a57455596d5ce677ece3e709cba3
-tier: 3
-learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
-workload: light
+tier: 1
+learning_priority: high
+category: real-time-intelligence
+tags:
+- ga
+- onelake
+difficulty: advanced
+workload: heavy
 version: null
 reading_time: 1
 learning_status: not-started

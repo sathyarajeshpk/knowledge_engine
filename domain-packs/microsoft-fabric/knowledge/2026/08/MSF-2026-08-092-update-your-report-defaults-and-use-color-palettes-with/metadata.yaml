@@ -25,11 +25,13 @@ provenance:
   selector: '## Reporting > table row (no date cell)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:e0cf729b5409157bd5088ef412e6ee48739e0b74753868c26618a8abd26ac2b4
-tier: 3
+tier: 2
 learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
+category: power-bi
+tags:
+- power-bi
+- preview
+difficulty: advanced
 workload: light
 version: null
 reading_time: 1

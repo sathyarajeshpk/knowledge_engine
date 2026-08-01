@@ -39,6 +39,48 @@ Nothing yet. M1 (Discovery) begins after M0 is reviewed and merged.
 
 ---
 
+## [0.5.0] — 2026-08-01
+
+Fifth milestone: **M4 — Orchestration and classification**.
+Release notes: [`docs/releases/v0.5.0.md`](docs/releases/v0.5.0.md).
+
+Every knowledge object now carries a tier, priority, category, difficulty,
+workload and tags, decided by 51 rules living in `pack.yml` as data. The
+milestone opened by paying down TD-1, and the classification stage then slotted
+into the refactored pipeline as one line.
+
+**Schema version:** 1 (unchanged)
+
+### Added
+
+- `pipeline.py` — the harvest as an ordered tuple of nine named stages, each
+  documenting its own ordering constraint. Adding a stage is one entry plus one
+  function.
+- `report.py` — `HarvestReport`, extracted so stages and the CLI need not depend
+  on each other. Still re-exported from `ke.harvest`.
+- `classify.py` — deterministic proposals for tier, learning priority, category,
+  difficulty, workload, tags and release wave. No AI, no scoring, no thresholds.
+- 51 classification rules in `domain-packs/microsoft-fabric/pack.yml`.
+- `Pack.classification_rules`.
+- [ADR-0034](docs/adr/0034-classification-writes-once.md) — classification
+  proposes once and never churns.
+
+### Changed
+
+- `harvest_pack` is now an 89-line facade over `pipeline.STAGES` (TD-1 closed).
+- `HarvestReport` gained `classified`, surfaced in the CLI and summary line.
+
+### Fixed
+
+- Classification wrote nothing while reporting success. `applicable` tested
+  falsiness, but `tier` defaults to `AWARENESS` and `difficulty` to
+  `INTERMEDIATE` — both truthy — so every enum field looked already-decided and
+  all 222 objects came back at their defaults. Now compares against the
+  dataclass default.
+- Classification read `category` and `tags`, which it writes, so a second
+  harvest reclassified four more objects than the first. It is now a pure
+  function of the knowledge.
+
 ## [0.4.0] — 2026-08-01
 
 Fourth milestone: **M3 — The update path**.

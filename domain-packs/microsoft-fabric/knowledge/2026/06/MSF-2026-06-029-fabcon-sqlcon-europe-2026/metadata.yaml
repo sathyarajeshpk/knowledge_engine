@@ -26,9 +26,10 @@ provenance:
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:6efa03a477ad7d0092e54a898e0f1f4f41738aef2ed9fe1ef8836ee79c77707b
 tier: 3
-learning_priority: low
-category: null
-tags: []
+learning_priority: medium
+category: power-bi
+tags:
+- power-bi
 difficulty: intermediate
 workload: light
 version: null
@@ -42,7 +43,7 @@ replaced_by: null
 replaces: null
 lifecycle: minted
 status: active
-needs_review: false
+needs_review: true
 overrides: []
 revisions:
 - revision: 1

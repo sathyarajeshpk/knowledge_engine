@@ -373,11 +373,11 @@ def harvestable_pack(tmp_path) -> Pack:
 
 def _harvest_with(pack, items, monkeypatch):
     """Run the pipeline with discovery replaced by a fixed item list."""
-    import ke.harvest as harvest_module
+    import ke.pipeline as pipeline_module
     from ke.acquisition import DiscoveryResult
 
     monkeypatch.setattr(
-        harvest_module, "discover_all",
+        pipeline_module, "discover_all",
         lambda *a, **k: DiscoveryResult(items=list(items)),
     )
     return harvest_pack(pack, clock=CLOCK)
@@ -452,9 +452,9 @@ def test_the_run_log_is_appended_even_when_nothing_is_found(harvestable_pack, mo
 
 
 def test_one_bad_item_does_not_lose_the_others(harvestable_pack, monkeypatch):
-    import ke.harvest as harvest_module
+    import ke.pipeline as pipeline_module
 
-    real_build = harvest_module.build_object
+    real_build = pipeline_module.build_object
     calls = {"n": 0}
 
     def flaky(item, feature_id, **kwargs):
@@ -463,7 +463,7 @@ def test_one_bad_item_does_not_lose_the_others(harvestable_pack, monkeypatch):
             raise RuntimeError("bad item")
         return real_build(item, feature_id, **kwargs)
 
-    monkeypatch.setattr(harvest_module, "build_object", flaky)
+    monkeypatch.setattr(pipeline_module, "build_object", flaky)
     report = _harvest_with(
         harvestable_pack,
         [make_item(title="Bad one"), make_item(title="Good two")],

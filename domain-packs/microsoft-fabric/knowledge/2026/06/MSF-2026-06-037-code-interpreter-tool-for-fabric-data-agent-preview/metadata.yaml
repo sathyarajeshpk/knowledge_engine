@@ -25,10 +25,12 @@ provenance:
   selector: '## Fabric IQ > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:a7d5f81faeae0b5d6aaa779dffbfae51a084e5104c2d414f3e326c40a5966a86
-tier: 3
+tier: 2
 learning_priority: low
-category: null
-tags: []
+category: power-bi
+tags:
+- ai
+- preview
 difficulty: intermediate
 workload: light
 version: null

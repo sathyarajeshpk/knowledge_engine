@@ -25,12 +25,15 @@ provenance:
   selector: '## Microsoft Fabric platform features > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:e4222334d2720c4103782164c7f2be40a7f19229cf9a4269ea6e5ccbdf90e7a2
-tier: 3
-learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
-workload: light
+tier: 1
+learning_priority: high
+category: governance-security
+tags:
+- onelake
+- preview
+- security
+difficulty: beginner
+workload: moderate
 version: null
 reading_time: 1
 learning_status: not-started

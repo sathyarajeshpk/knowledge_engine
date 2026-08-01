@@ -26,11 +26,12 @@ provenance:
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:bc1a3e968be88993239cf0aa8c17caff2c475c63552fbd6828917d39ae9ffe7c
 tier: 3
-learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
-workload: light
+learning_priority: high
+category: governance-security
+tags:
+- onelake
+difficulty: advanced
+workload: heavy
 version: null
 reading_time: 1
 learning_status: not-started
@@ -42,7 +43,7 @@ replaced_by: null
 replaces: null
 lifecycle: minted
 status: active
-needs_review: false
+needs_review: true
 overrides: []
 revisions:
 - revision: 1

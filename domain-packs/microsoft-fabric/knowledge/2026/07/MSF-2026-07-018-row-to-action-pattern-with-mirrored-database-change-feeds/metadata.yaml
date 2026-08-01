@@ -26,9 +26,11 @@ provenance:
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:d570ffedbc4baabce9a46e141e53c9d7926f1773946cf0a458acf7571df5fc15
 tier: 3
-learning_priority: low
-category: null
-tags: []
+learning_priority: high
+category: real-time-intelligence
+tags:
+- onelake
+- real-time
 difficulty: intermediate
 workload: light
 version: null
@@ -42,7 +44,7 @@ replaced_by: null
 replaces: null
 lifecycle: minted
 status: active
-needs_review: false
+needs_review: true
 overrides: []
 revisions:
 - revision: 1

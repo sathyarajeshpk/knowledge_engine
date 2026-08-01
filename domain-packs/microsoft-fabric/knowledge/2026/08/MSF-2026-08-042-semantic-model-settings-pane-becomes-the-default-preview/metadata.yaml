@@ -25,12 +25,15 @@ provenance:
   selector: '## Modeling > table row (no date cell)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:678c7e53933d98abfd7f858feca20543423d23ad79e031f617f91b3ec65286a3
-tier: 3
-learning_priority: low
-category: null
-tags: []
+tier: 2
+learning_priority: high
+category: power-bi
+tags:
+- power-bi
+- preview
+- semantic-model
 difficulty: intermediate
-workload: light
+workload: moderate
 version: null
 reading_time: 1
 learning_status: not-started

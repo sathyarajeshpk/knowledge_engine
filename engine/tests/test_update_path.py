@@ -18,7 +18,7 @@ from datetime import date
 import pytest
 import yaml
 
-import ke.harvest as harvest_module
+import ke.pipeline as pipeline_module
 from ke.acquisition import DiscoveryResult
 from ke.harvest import harvest_pack
 from ke.models import (
@@ -56,7 +56,7 @@ def pack(tmp_path) -> Pack:
 
 def run(pack, items, monkeypatch, clock=CLOCK):
     monkeypatch.setattr(
-        harvest_module, "discover_all", lambda *a, **k: DiscoveryResult(items=list(items))
+        pipeline_module, "discover_all", lambda *a, **k: DiscoveryResult(items=list(items))
     )
     return harvest_pack(pack, clock=clock)
 

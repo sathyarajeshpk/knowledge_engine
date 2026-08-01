@@ -25,11 +25,12 @@ provenance:
   selector: '## Generally available features > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:0cc78c070a34fde0bc1248047719bc8e3509a3ccbb5a0b1f3514057095d52a24
-tier: 3
+tier: 1
 learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
+category: power-bi
+tags:
+- ga
+difficulty: beginner
 workload: light
 version: null
 reading_time: 1

@@ -27,8 +27,9 @@ provenance:
 url_hash: sha256:5a4c92e22417ba3b172a9072525311a1c484d7cc1636046757d1918b225a8574
 tier: 3
 learning_priority: low
-category: null
-tags: []
+category: real-time-intelligence
+tags:
+- ai
 difficulty: intermediate
 workload: light
 version: null
@@ -42,7 +43,7 @@ replaced_by: null
 replaces: null
 lifecycle: minted
 status: active
-needs_review: false
+needs_review: true
 overrides: []
 revisions:
 - revision: 1

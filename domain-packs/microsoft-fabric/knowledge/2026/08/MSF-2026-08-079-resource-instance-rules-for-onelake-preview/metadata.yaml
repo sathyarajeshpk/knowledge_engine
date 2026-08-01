@@ -25,12 +25,15 @@ provenance:
   selector: '## Features currently in preview > table row (no date cell)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:baf0ec20ab5c8e140b70254469764c1f9d45941255ca26b25a4f35bbba75d3cf
-tier: 3
-learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
-workload: light
+tier: 1
+learning_priority: high
+category: governance-security
+tags:
+- onelake
+- preview
+- security
+difficulty: advanced
+workload: heavy
 version: null
 reading_time: 1
 learning_status: not-started

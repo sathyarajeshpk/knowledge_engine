@@ -27,7 +27,7 @@ provenance:
 url_hash: sha256:c8cf1a010a871975195debbed5e7ca998fc3b33b8d903ea52cd60fd692ea46b9
 tier: 3
 learning_priority: low
-category: null
+category: platform
 tags: []
 difficulty: intermediate
 workload: light
@@ -42,7 +42,7 @@ replaced_by: null
 replaces: null
 lifecycle: minted
 status: active
-needs_review: false
+needs_review: true
 overrides: []
 revisions:
 - revision: 1

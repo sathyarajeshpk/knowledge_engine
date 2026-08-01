@@ -145,6 +145,12 @@ class Pack:
         return self.root / "state"
 
     @property
+    def classification_rules(self) -> dict:
+        """Rules as data. Absent means classification proposes nothing."""
+        rules = self.config.get("classification") or {}
+        return rules if isinstance(rules, dict) else {}
+
+    @property
     def near_duplicate_jaccard(self) -> float:
         """Title-similarity threshold above which items are flagged, never dropped.
 
