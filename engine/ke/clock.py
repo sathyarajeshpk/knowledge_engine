@@ -59,14 +59,27 @@ def _run_id_for(moment: datetime) -> str:
 class SystemClock:
     """Reads the real clock. The only place in the engine that does."""
 
+    def __init__(self) -> None:
+        # Fixed once, at construction. A run ID identifies *one process
+        # invocation*, not the moment somebody asked for it.
+        #
+        # This used to recompute on every call, which meant a harvest crossing a
+        # second boundary stamped its items with two different run IDs -- and the
+        # whole point of the field is that every object a run touched can be
+        # joined back to it. The bug was invisible because runs usually finish
+        # inside one second, and because `FrozenClock` is stable by nature, so no
+        # test could ever see it.
+        self._run_id = _run_id_for(datetime.now(timezone.utc))
+
     def now(self) -> datetime:
+        """The real current instant -- this *does* advance, deliberately."""
         return datetime.now(timezone.utc)
 
     def today(self) -> date:
         return self.now().date()
 
     def run_id(self) -> str:
-        return _run_id_for(self.now())
+        return self._run_id
 
 
 @dataclass(frozen=True)

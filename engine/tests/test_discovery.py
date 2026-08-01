@@ -142,6 +142,55 @@ def test_system_clock_is_utc():
     assert SystemClock().now().tzinfo is timezone.utc
 
 
+def test_run_id_is_stable_across_a_second_boundary(monkeypatch):
+    """One process invocation, one run ID — regardless of how long it takes.
+
+    The regression this pins: `run_id()` used to recompute from the wall clock
+    on every call, so a harvest that crossed a second boundary stamped its items
+    with two different run IDs. Every object a run touched must join back to that
+    run, and half of them silently would not have.
+
+    It stayed invisible for two reasons worth remembering. Runs usually finish
+    inside one second, so it did not reproduce; and `FrozenClock` is stable by
+    construction, so no existing test could ever have caught it — the test clock
+    did not have the bug.
+
+    The wall clock is advanced rather than slept through, so this stays fast and
+    deterministic while still crossing a real boundary.
+    """
+    from datetime import timedelta
+
+    import ke.clock as clock_module
+
+    clock = SystemClock()
+    first = clock.run_id()
+
+    later = datetime.now(timezone.utc) + timedelta(seconds=90)
+
+    class AdvancedDatetime:
+        @staticmethod
+        def now(tz=None):
+            return later
+
+    monkeypatch.setattr(clock_module, "datetime", AdvancedDatetime)
+
+    # The wall clock really has moved on...
+    assert clock.now() == later
+    # ...and the run ID has not.
+    assert clock.run_id() == first
+    assert clock.run_id() == clock.run_id()
+
+
+def test_every_item_in_a_run_shares_one_run_id():
+    """The property the run ID exists for, asserted end to end."""
+    result = discover_all(
+        [html_definition()], clock=SystemClock(), fetcher=FakeFetcher(WHATS_NEW_HTML)
+    )
+    run_ids = {item.provenance.run_id for item in result.items}
+    run_ids |= {attempt.run_id for attempt in result.attempts}
+    assert len(run_ids) == 1, f"one harvest produced {len(run_ids)} run IDs"
+
+
 def test_no_engine_module_reads_the_clock_directly():
     """The injected-clock rule, enforced rather than trusted (ADR-0021)."""
     import pathlib
