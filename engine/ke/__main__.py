@@ -111,24 +111,62 @@ def build_parser() -> argparse.ArgumentParser:
 
     review = subcommands.add_parser(
         "review",
-        help="work the queue of items held back from minting",
+        help="work the unified review queue",
         description=(
-            "Items whose identity could not be trusted enough to mint a "
-            "permanent Feature ID are queued rather than dropped. This is how "
-            "they get through."
+            "One workflow over every kind of pending decision: items held back "
+            "from minting, objects no rule could classify, and items a source "
+            "retitled. Three backlogs growing in parallel is how a review queue "
+            "becomes permanent."
         ),
     )
     review.add_argument(
         "action",
-        choices=("list", "approve", "archive"),
-        help="list the queue, or approve/archive one entry",
+        choices=("list", "next", "show", "approve", "archive", "resolve"),
+        help="list/next/show to inspect; approve/archive/resolve to decide",
+    )
+    review.add_argument("key", nargs="?", help="task key (a short prefix is enough)")
+    review.add_argument(
+        "--kind",
+        choices=("queued", "unclassified", "revision"),
+        help="restrict to one kind",
     )
     review.add_argument(
-        "key", nargs="?", help="identity key prefix of the entry to act on"
+        "--all",
+        action="store_true",
+        help="apply the action to every matching task (use with --kind)",
     )
     review.add_argument("--pack", metavar="NAME")
     review.add_argument("--repo-root", metavar="PATH", type=Path)
     review.set_defaults(handler=_run_review)
+
+    history = subcommands.add_parser(
+        "history",
+        help="show what an object looked like at each revision",
+        description=(
+            "Reconstructs an object's past from the snapshots it carries. No "
+            "Git archaeology and no AI: the object holds its own history."
+        ),
+    )
+    history.add_argument("id", help="Feature ID, e.g. MSF-2026-07-001")
+    history.add_argument("--at", type=int, metavar="N", help="show one revision")
+    history.add_argument("--pack", metavar="NAME")
+    history.add_argument("--repo-root", metavar="PATH", type=Path)
+    history.set_defaults(handler=_run_history)
+
+    supersede = subcommands.add_parser(
+        "supersede",
+        help="record that one feature replaced another",
+        description=(
+            "Marks the old object `replaced` and links both directions. Nothing "
+            "is deleted: the old object keeps its Feature ID, its history and "
+            "its place in the repository."
+        ),
+    )
+    supersede.add_argument("old", help="the Feature ID being replaced")
+    supersede.add_argument("--by", required=True, metavar="ID", help="its replacement")
+    supersede.add_argument("--pack", metavar="NAME")
+    supersede.add_argument("--repo-root", metavar="PATH", type=Path)
+    supersede.set_defaults(handler=_run_supersede)
     return parser
 
 
@@ -209,52 +247,147 @@ def _run_index(args: argparse.Namespace) -> int:
     for pack in packs:
         queue = ReviewQueue.load(pack.state_dir / "review-queue.json")
         written = write_indexes(
-            pack.indexes_dir, load_existing_objects(pack), queue.pending, pack.name
+            pack.indexes_dir, load_existing_objects(pack), queue.pending,
+            pack.name, pack,
         )
         print(f"{pack.name}: rebuilt {len(written)} index file(s)")
     return 0
 
 
 def _run_review(args: argparse.Namespace) -> int:
-    from ke.review import ReviewQueue
+    from ke.reviewq import Action, TaskKind, apply_action, collect, counts, find
 
     _, packs = _packs_for(args)
     if packs is None:
         return 2
 
+    kinds = {TaskKind(args.kind)} if args.kind else None
+
     for pack in packs:
-        queue_path = pack.state_dir / "review-queue.json"
-        queue = ReviewQueue.load(queue_path)
-
-        if args.action == "list":
-            pending = queue.pending
-            print(f"\n=== {pack.name}: {len(pending)} item(s) awaiting review ===\n")
-            for entry in pending:
-                print(f"  {entry.identity_key[7:19]}  {entry.title[:64]}")
-                print(f"      first seen {entry.first_discovered_date} · {entry.reason}")
-            counts = queue.counts()
-            if counts:
-                print("\n  " + ", ".join(f"{k}: {v}" for k, v in sorted(counts.items())))
-            continue
-
-        if not args.key:
-            print(f"error: `{args.action}` needs an identity key", file=sys.stderr)
-            return 2
-        try:
-            entry = (
-                queue.approve(args.key)
-                if args.action == "approve"
-                else queue.archive(args.key)
-            )
-        except (KeyError, ValueError) as exc:
-            print(f"error: {exc}", file=sys.stderr)
-            return 2
-        queue.save(queue_path)
-        print(f"{args.action}d: {entry.title}")
-        if args.action == "approve":
-            print("  It will be minted on the next `ke harvest`, using its "
-                  f"original discovery date ({entry.first_discovered_date}).")
+        if args.action in ("list", "next"):
+            _print_queue(pack, kinds, only_first=args.action == "next")
+        elif args.action == "show":
+            if not args.key:
+                print("error: `show` needs a key", file=sys.stderr)
+                return 2
+            try:
+                _print_task(find(pack, args.key))
+            except KeyError as exc:
+                print(f"error: {exc}", file=sys.stderr)
+                return 2
+        else:
+            code = _decide(pack, args, Action(args.action), kinds)
+            if code:
+                return code
     return 0
+
+
+def _print_queue(pack, kinds, *, only_first: bool) -> None:
+    from ke.reviewq import collect, counts
+
+    tasks = collect(pack, kinds)
+    tally = counts(pack)
+    print(f"\n=== {pack.name}: {sum(tally.values())} pending ===")
+    print("    " + " · ".join(f"{k}: {v}" for k, v in tally.items() if v))
+    print()
+    if not tasks:
+        print("  Nothing pending.\n")
+        return
+    for task in tasks[:1] if only_first else tasks:
+        seen = task.first_seen.isoformat() if task.first_seen else "—"
+        print(f"  [{task.kind}] {task.short_key}  {task.title[:62]}")
+        print(f"      first seen {seen} · {task.reason[:88]}")
+        print(f"      actions: {', '.join(task.actions)}")
+    print()
+    if only_first:
+        first = tasks[0]
+        print(f"  Decide with: ke review {first.actions[0]} {first.short_key}\n")
+
+
+def _print_task(task) -> None:
+    print(f"\n{task.kind}  {task.short_key}")
+    print(f"  {task.title}")
+    print(f"  reason: {task.reason}")
+    if task.feature_id:
+        print(f"  feature: {task.feature_id}")
+    for name, value in sorted(task.detail.items()):
+        print(f"  {name}: {value}")
+    print(f"  actions: {', '.join(task.actions)}\n")
+
+
+def _decide(pack, args, action, kinds) -> int:
+    from ke.reviewq import apply_action, collect, find
+
+    if args.all:
+        targets = [t for t in collect(pack, kinds) if action in t.actions]
+        if not targets:
+            print(f"{pack.name}: nothing to {action}")
+            return 0
+        done = 0
+        for task in targets:
+            try:
+                apply_action(pack, task, action)
+                done += 1
+            except Exception as exc:  # noqa: BLE001
+                print(f"  ! {task.short_key}: {exc}", file=sys.stderr)
+        print(f"{pack.name}: {action}d {done} task(s)")
+        return 0
+
+    if not args.key:
+        print(f"error: `{action}` needs a key, or --all with --kind", file=sys.stderr)
+        return 2
+    try:
+        print(apply_action(pack, find(pack, args.key), action))
+    except (KeyError, ValueError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 2
+    return 0
+
+
+def _run_history(args: argparse.Namespace) -> int:
+    from ke.history import HistoryError, at_revision, find_object, render_timeline
+
+    _, packs = _packs_for(args)
+    if packs is None:
+        return 2
+    for pack in packs:
+        try:
+            obj, _ = find_object(pack, args.id)
+        except HistoryError:
+            continue
+        if args.at is not None:
+            try:
+                snapshot = at_revision(obj, args.at)
+            except HistoryError as exc:
+                print(f"error: {exc}", file=sys.stderr)
+                return 2
+            print(f"\n{obj.id} at revision {snapshot.revision} ({snapshot.date})")
+            print(f"  title:   {snapshot.title}")
+            print(f"  summary: {snapshot.summary[:400]}")
+            print(f"  note:    {snapshot.note}\n")
+        else:
+            print(render_timeline(obj))
+        return 0
+    print(f"error: no object {args.id!r} in any pack", file=sys.stderr)
+    return 2
+
+
+def _run_supersede(args: argparse.Namespace) -> int:
+    from ke.clock import SystemClock
+    from ke.history import HistoryError, supersede
+
+    _, packs = _packs_for(args)
+    if packs is None:
+        return 2
+    for pack in packs:
+        try:
+            for line in supersede(pack, args.old, args.by, today=SystemClock().today()):
+                print(line)
+            return 0
+        except HistoryError as exc:
+            last = exc
+    print(f"error: {last}", file=sys.stderr)
+    return 2
 
 
 def _run_validate(args: argparse.Namespace) -> int:

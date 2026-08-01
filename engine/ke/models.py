@@ -148,6 +148,13 @@ class Lifecycle(StrEnum):
     finished processing this" indistinguishable from "this is out of date",
     which are different problems with different remedies.
 
+    There is deliberately no `SUPERSEDED` stage. One was defined speculatively in
+    M3 and ADR-0029 flagged the name as the softest part of that design;
+    building supersession settled it. An object whose *feature* was replaced has
+    still been fully acquired, so its lifecycle stays `MINTED` and the
+    replacement is recorded in `status` and `replaced_by`, which already meant
+    exactly that (ADR-0035).
+
     Stages move forward only. Nothing ever returns to `DISCOVERED`, because
     acquisition history is append-only like everything else here.
     """
@@ -161,8 +168,6 @@ class Lifecycle(StrEnum):
     APPROVED = "approved"
     #: A permanent Feature ID exists and a knowledge object was written.
     MINTED = "minted"
-    #: A later acquisition of the same feature replaced this record.
-    SUPERSEDED = "superseded"
     #: Retired from the working set. Retained forever, never deleted.
     ARCHIVED = "archived"
 
@@ -174,8 +179,7 @@ LIFECYCLE_TRANSITIONS: dict[Lifecycle, frozenset[Lifecycle]] = {
     Lifecycle.DISCOVERED: frozenset({Lifecycle.QUEUED, Lifecycle.APPROVED}),
     Lifecycle.QUEUED: frozenset({Lifecycle.APPROVED, Lifecycle.ARCHIVED}),
     Lifecycle.APPROVED: frozenset({Lifecycle.MINTED, Lifecycle.ARCHIVED}),
-    Lifecycle.MINTED: frozenset({Lifecycle.SUPERSEDED, Lifecycle.ARCHIVED}),
-    Lifecycle.SUPERSEDED: frozenset({Lifecycle.ARCHIVED}),
+    Lifecycle.MINTED: frozenset({Lifecycle.ARCHIVED}),
     Lifecycle.ARCHIVED: frozenset(),
 }
 

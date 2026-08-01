@@ -263,6 +263,7 @@ def rebuild_indexes(ctx: HarvestContext) -> None:
             load_existing_objects(ctx.pack),
             ctx.queue.pending,
             ctx.pack.name,
+            ctx.pack,
         )
     ]
 

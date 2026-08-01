@@ -134,14 +134,27 @@ def write_indexes(
     objects: list[tuple[KnowledgeObject, str]],
     pending: list,
     pack_name: str,
+    pack=None,
 ) -> list[Path]:
-    """Rebuild every index. Returns the paths written."""
+    """Rebuild every index. Returns the paths written.
+
+    `review-queue.md` comes from the unified review workflow when a pack is
+    supplied, so the file shows every kind of pending decision rather than only
+    the items held back from minting.
+    """
     indexes_dir.mkdir(parents=True, exist_ok=True)
+    if pack is not None:
+        from ke.reviewq import render_report
+
+        queue_document = render_report(pack)
+    else:
+        queue_document = render_review_queue(pending, pack_name)
+
     documents = {
         "INDEX.md": render_index(objects, pack_name),
         "by-source.md": render_by_source(objects, pack_name),
         "by-month.md": render_by_month(objects, pack_name),
-        "review-queue.md": render_review_queue(pending, pack_name),
+        "review-queue.md": queue_document,
     }
     written = []
     for name, text in documents.items():

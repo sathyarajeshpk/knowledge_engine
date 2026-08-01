@@ -13,7 +13,7 @@ Design rules that hold across the whole package:
   checkable ownership registry that enforces this.
 """
 
-__version__ = "0.5.0"
+__version__ = "0.6.0"
 
 # The metadata.yaml layout this build of the engine reads and writes.
 # `ke migrate` (M9) upgrades objects written by older versions.
