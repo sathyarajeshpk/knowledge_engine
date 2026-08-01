@@ -25,12 +25,13 @@ provenance:
   selector: '## Fabric Data Engineering > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:495a855b15ee42f36c8f2510a24bc73d96541405cd4c1abba2f18631bf65ecb4
-tier: 3
-learning_priority: low
-category: null
-tags: []
+tier: 2
+learning_priority: medium
+category: data-warehouse
+tags:
+- preview
 difficulty: intermediate
-workload: light
+workload: moderate
 version: null
 reading_time: 1
 learning_status: not-started

@@ -27,8 +27,9 @@ provenance:
 url_hash: sha256:8e99acfdc0a71b5cab62f0fa86db19d71f34b50f8ec15075655d5d577a54daa9
 tier: 3
 learning_priority: low
-category: null
-tags: []
+category: power-bi
+tags:
+- power-bi
 difficulty: intermediate
 workload: light
 version: null
@@ -42,7 +43,7 @@ replaced_by: null
 replaces: null
 lifecycle: minted
 status: active
-needs_review: false
+needs_review: true
 overrides: []
 revisions:
 - revision: 1

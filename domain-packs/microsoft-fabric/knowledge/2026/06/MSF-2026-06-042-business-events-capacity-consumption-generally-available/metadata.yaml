@@ -25,11 +25,13 @@ provenance:
   selector: '## Generally available features > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:ca20533eecf794ede7a06fe98f391e242d31d9c853af52f0ed30f4dd19159ad1
-tier: 3
-learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
+tier: 2
+learning_priority: high
+category: administration
+tags:
+- ga
+- preview
+difficulty: beginner
 workload: light
 version: null
 reading_time: 1

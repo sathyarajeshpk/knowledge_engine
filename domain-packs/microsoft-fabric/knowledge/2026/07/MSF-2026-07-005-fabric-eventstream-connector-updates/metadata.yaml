@@ -25,11 +25,14 @@ provenance:
   selector: '## Real-Time Intelligence in Microsoft Fabric > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:341b1048fcada65672d7cc4b1b97930a7346e4425bfb4c639eb00f7f28377009
-tier: 3
-learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
+tier: 2
+learning_priority: medium
+category: real-time-intelligence
+tags:
+- ga
+- preview
+- real-time
+difficulty: advanced
 workload: light
 version: null
 reading_time: 1

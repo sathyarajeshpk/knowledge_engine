@@ -25,11 +25,14 @@ provenance:
   selector: '## Real-Time Intelligence samples and guidance > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:0c9a08ca2a74e7a0145ea08611f87acda6e5d4fc3a2c2f009dadc703cbbcdeac
-tier: 3
-learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
+tier: 2
+learning_priority: medium
+category: real-time-intelligence
+tags:
+- pipeline
+- preview
+- real-time
+difficulty: beginner
 workload: light
 version: null
 reading_time: 1

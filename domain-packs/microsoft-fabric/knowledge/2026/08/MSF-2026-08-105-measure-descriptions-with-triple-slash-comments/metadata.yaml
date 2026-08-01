@@ -27,10 +27,11 @@ provenance:
 url_hash: sha256:fdd10a4920a2ce0b9574966e463de3db97a8f3728c6c9e6610349126f2573f38
 tier: 3
 learning_priority: low
-category: null
-tags: []
+category: power-bi
+tags:
+- power-bi
 difficulty: intermediate
-workload: light
+workload: moderate
 version: null
 reading_time: 1
 learning_status: not-started
@@ -42,7 +43,7 @@ replaced_by: null
 replaces: null
 lifecycle: minted
 status: active
-needs_review: false
+needs_review: true
 overrides: []
 revisions:
 - revision: 1

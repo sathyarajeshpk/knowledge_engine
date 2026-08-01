@@ -26,10 +26,11 @@ provenance:
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:195552b81a317f7acecf5b50b704a82a6bc1a6f7bfca44763eca5d9c694414c2
 tier: 3
-learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
+learning_priority: high
+category: real-time-intelligence
+tags:
+- lakehouse
+difficulty: beginner
 workload: light
 version: null
 reading_time: 1
@@ -42,7 +43,7 @@ replaced_by: null
 replaces: null
 lifecycle: minted
 status: active
-needs_review: false
+needs_review: true
 overrides: []
 revisions:
 - revision: 1

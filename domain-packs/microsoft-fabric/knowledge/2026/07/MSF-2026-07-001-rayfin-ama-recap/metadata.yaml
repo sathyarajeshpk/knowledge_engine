@@ -25,11 +25,14 @@ provenance:
   selector: '## Fabric Apps samples and guidance > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:1250b7c2232ebbf0c1aec00464ab13c9b95bec920a09eb750c021cc55a0789d7
-tier: 3
-learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
+tier: 1
+learning_priority: high
+category: power-bi
+tags:
+- api
+- security
+- semantic-model
+difficulty: advanced
 workload: light
 version: null
 reading_time: 1

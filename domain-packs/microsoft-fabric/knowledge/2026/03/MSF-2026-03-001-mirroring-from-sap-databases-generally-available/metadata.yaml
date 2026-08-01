@@ -25,12 +25,14 @@ provenance:
   selector: '## Fabric Mirroring > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:e59c2791af1efa5be271629e64e849823a06921f930c5dc3e7dfa3cdbc341f6f
-tier: 3
-learning_priority: low
-category: null
-tags: []
+tier: 1
+learning_priority: high
+category: data-factory
+tags:
+- ga
+- onelake
 difficulty: intermediate
-workload: light
+workload: moderate
 version: null
 reading_time: 1
 learning_status: not-started

@@ -25,10 +25,13 @@ provenance:
   selector: '## Fabric Data Science > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:1174e41c090d76948de81a479d7dcf0c206d31f52f2fff710081eaf343b0575b
-tier: 3
-learning_priority: low
-category: null
-tags: []
+tier: 2
+learning_priority: medium
+category: real-time-intelligence
+tags:
+- ai
+- preview
+- real-time
 difficulty: intermediate
 workload: light
 version: null

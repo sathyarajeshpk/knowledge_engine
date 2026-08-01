@@ -25,12 +25,13 @@ provenance:
   selector: '## Data Factory in Microsoft Fabric > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:f3f976e9a5ca6be5997733b82736e4dc272eb12d969a11b9dfb334d3febdc0c2
-tier: 3
+tier: 2
 learning_priority: low
-category: null
-tags: []
+category: data-factory
+tags:
+- preview
 difficulty: intermediate
-workload: light
+workload: moderate
 version: null
 reading_time: 1
 learning_status: not-started

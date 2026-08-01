@@ -25,12 +25,16 @@ provenance:
   selector: '## Fabric IQ > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:e41d7f9660380f12245a91e6e2774d02a454d19a01f73bb515a3ffae08885eef
-tier: 3
-learning_priority: low
-category: null
-tags: []
+tier: 2
+learning_priority: high
+category: data-warehouse
+tags:
+- ai
+- lakehouse
+- preview
+- warehouse
 difficulty: intermediate
-workload: light
+workload: moderate
 version: null
 reading_time: 1
 learning_status: not-started

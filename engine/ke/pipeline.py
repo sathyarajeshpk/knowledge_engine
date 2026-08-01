@@ -183,6 +183,59 @@ def gate_and_mint(ctx: HarvestContext) -> None:
         _mint_one(ctx, item, needs_review)
 
 
+def classify_objects(ctx: HarvestContext) -> None:
+    """Propose tier, priority, category, difficulty, workload and tags.
+
+    **After minting and updating**, because it classifies what is on disk rather
+    than what was discovered — so an object added by hand, or one whose rules
+    have since been written, gets classified on the next run without needing to
+    be re-discovered.
+
+    Engine-*proposed* fields are written only when absent and never when locked
+    by `overrides` (ADR-0008). That is what stops a rule tweak rewriting every
+    object in the pack: classification lands once, and changing your mind later
+    is a deliberate act rather than a side effect of editing `pack.yml`.
+    """
+    if ctx.dry_run:
+        return
+    rules = ctx.pack.classification_rules
+    if not rules:
+        return
+
+    from ke.classify import applicable, propose, unmatched_fields
+    from ke.harvest import load_existing_objects
+
+    for obj, _ in load_existing_objects(ctx.pack):
+        try:
+            proposals = propose(obj, rules)
+            updates = applicable(obj, proposals)
+            missing = unmatched_fields(proposals)
+            if missing and not obj.needs_review:
+                # Never a silent guess: an object no rule could place is flagged
+                # rather than given a plausible default (ADR-0010).
+                updates["needs_review"] = True
+            if not updates:
+                continue
+
+            classified = obj.with_engine_fields(**updates)
+            directory = ctx.pack.knowledge_dir / obj.knowledge_subpath
+            latest = obj.revisions[-1] if obj.revisions else None
+            summary = latest.summary_snapshot if latest else obj.title
+            if update_object(
+                directory,
+                classified,
+                summary,
+                max_summary_words=ctx.pack.max_summary_words,
+            ):
+                ctx.report.classified.append(
+                    f"{obj.id} ({', '.join(sorted(updates))})"
+                )
+        except PermissionError as exc:
+            ctx.report.errors.append(f"{obj.id}: classification violated ownership: {exc}")
+        except Exception as exc:  # noqa: BLE001 - one object must not lose the rest
+            ctx.report.errors.append(f"{obj.id}: {type(exc).__name__}: {exc}")
+
+
 def persist_state(ctx: HarvestContext) -> None:
     """Write the registry, dedup index and queue.
 
@@ -235,6 +288,7 @@ STAGES: tuple[Stage, ...] = (
     deduplicate,
     update_existing,
     gate_and_mint,
+    classify_objects,
     persist_state,
     rebuild_indexes,
     append_run_log,

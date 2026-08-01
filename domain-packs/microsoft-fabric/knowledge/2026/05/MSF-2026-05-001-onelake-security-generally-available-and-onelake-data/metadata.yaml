@@ -25,12 +25,15 @@ provenance:
   selector: '## Generally available features > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:10e20039b0fe1fb4a753aaa7fb1cffcdca08d9f616cfb89f0458fd30c7288156
-tier: 3
-learning_priority: low
-category: null
-tags: []
+tier: 1
+learning_priority: high
+category: governance-security
+tags:
+- ga
+- onelake
+- security
 difficulty: intermediate
-workload: light
+workload: moderate
 version: null
 reading_time: 1
 learning_status: not-started

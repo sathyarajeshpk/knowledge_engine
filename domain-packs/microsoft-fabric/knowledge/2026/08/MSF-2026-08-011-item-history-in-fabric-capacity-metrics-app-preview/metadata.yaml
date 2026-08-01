@@ -25,10 +25,11 @@ provenance:
   selector: '## Features currently in preview > table row (no date cell)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:207649edffe93f320cd5410fcb50ec8e9e6459664111f539bc9bff12173a12d2
-tier: 3
-learning_priority: low
-category: null
-tags: []
+tier: 2
+learning_priority: high
+category: power-bi
+tags:
+- preview
 difficulty: intermediate
 workload: light
 version: null

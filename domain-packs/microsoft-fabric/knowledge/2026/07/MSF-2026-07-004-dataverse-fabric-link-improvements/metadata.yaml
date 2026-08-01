@@ -25,9 +25,9 @@ provenance:
   selector: '## Microsoft Fabric platform features > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:2cca0d19e3885bfdc2d561c01020e5cfe35d788d60d9fb16a58b3a7b6e0f5a47
-tier: 3
+tier: 2
 learning_priority: low
-category: null
+category: administration
 tags: []
 difficulty: intermediate
 workload: light

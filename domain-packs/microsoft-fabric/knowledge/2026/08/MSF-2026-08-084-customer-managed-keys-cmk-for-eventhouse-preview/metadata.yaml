@@ -25,12 +25,15 @@ provenance:
   selector: '## Features currently in preview > table row (no date cell)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:d1e7eeccbec60f9c93e6775c72727e8368d22617e5b55476cf26afc842a3cb30
-tier: 3
-learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
-workload: light
+tier: 1
+learning_priority: medium
+category: real-time-intelligence
+tags:
+- preview
+- real-time
+- security
+difficulty: advanced
+workload: heavy
 version: null
 reading_time: 1
 learning_status: not-started

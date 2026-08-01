@@ -25,10 +25,14 @@ provenance:
   selector: '## Microsoft Fabric platform features > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:f454b6817e77e483efebc412128b4f97650f4f8a0f4632d89f075f80932597ec
-tier: 3
-learning_priority: low
-category: null
-tags: []
+tier: 1
+learning_priority: high
+category: data-warehouse
+tags:
+- lakehouse
+- security
+- semantic-model
+- warehouse
 difficulty: intermediate
 workload: light
 version: null

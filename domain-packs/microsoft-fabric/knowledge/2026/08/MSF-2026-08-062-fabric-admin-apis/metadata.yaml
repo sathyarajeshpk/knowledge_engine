@@ -27,9 +27,10 @@ provenance:
 url_hash: sha256:93cd7343152efe053013050baca82836cdf0ff069da12f4dd3d1ac1789af3b80
 tier: 3
 learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
+category: administration
+tags:
+- api
+difficulty: advanced
 workload: light
 version: null
 reading_time: 1
@@ -42,7 +43,7 @@ replaced_by: null
 replaces: null
 lifecycle: minted
 status: active
-needs_review: false
+needs_review: true
 overrides: []
 revisions:
 - revision: 1

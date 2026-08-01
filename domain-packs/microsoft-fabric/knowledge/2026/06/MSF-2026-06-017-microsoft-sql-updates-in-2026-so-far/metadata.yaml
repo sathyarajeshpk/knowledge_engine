@@ -26,12 +26,14 @@ provenance:
     cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:43ba278557c2a5c4ecb5c2482ec7a3817d998954e172b18a015ee4a2d1535682
-tier: 3
-learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
-workload: light
+tier: 2
+learning_priority: medium
+category: data-warehouse
+tags:
+- ga
+- preview
+difficulty: beginner
+workload: heavy
 version: null
 reading_time: 1
 learning_status: not-started

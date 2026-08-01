@@ -25,12 +25,14 @@ provenance:
   selector: '## Fabric Data Warehouse samples and guidance > table row (date from cell 0)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:e00086e5cae203482e7c6b8a6a3289f47dcef8b5451a05b40d2f1fbf83ad778b
-tier: 3
-learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
-workload: light
+tier: 2
+learning_priority: high
+category: data-warehouse
+tags:
+- direct-lake
+- warehouse
+difficulty: advanced
+workload: heavy
 version: null
 reading_time: 1
 learning_status: not-started

@@ -26,11 +26,12 @@ provenance:
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:7148ce8d69a807e046c82e762dd686d6dde83fcd6848114b19f804d652d078e8
 tier: 3
-learning_priority: low
-category: null
-tags: []
+learning_priority: medium
+category: data-factory
+tags:
+- pipeline
 difficulty: intermediate
-workload: light
+workload: moderate
 version: null
 reading_time: 1
 learning_status: not-started
@@ -42,7 +43,7 @@ replaced_by: null
 replaces: null
 lifecycle: minted
 status: active
-needs_review: false
+needs_review: true
 overrides: []
 revisions:
 - revision: 1

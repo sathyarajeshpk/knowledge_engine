@@ -25,12 +25,13 @@ provenance:
   selector: '## Reporting > table row (no date cell)'
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:cb6c786ffe4e43c5848ff18bfb7a1fd76ac0e0b8c5ae5a3d4d30aeacd0a77559
-tier: 3
+tier: 1
 learning_priority: low
 category: null
-tags: []
+tags:
+- ga
 difficulty: intermediate
-workload: light
+workload: moderate
 version: null
 reading_time: 1
 learning_status: not-started
@@ -42,7 +43,7 @@ replaced_by: null
 replaces: null
 lifecycle: minted
 status: active
-needs_review: false
+needs_review: true
 overrides: []
 revisions:
 - revision: 1

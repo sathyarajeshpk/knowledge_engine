@@ -187,7 +187,109 @@ dedupe:
 # Rules live here as data, not in engine code, so the vocabulary can be tuned
 # without a code change. Anything that matches no rule becomes tier 3 with
 # `needs_review: true` -- never a silent guess.
-classification: {}
+classification:
+  # Operational impact. 1 = act now, 2 = learn soon, 3 = awareness.
+  tier:
+    - name: breaking-or-deprecated
+      any: [deprecat, breaking change, end of support, retirement, will be removed]
+      value: 1
+    - name: security-and-governance
+      any: [security, private link, encryption, customer managed key, compliance,
+            purview, sensitivity label, access control]
+      value: 1
+    - name: generally-available
+      any: [generally available, "(ga)", general availability, now available]
+      none: [preview]
+      value: 1
+    - name: preview-features
+      any: [preview, public preview, coming soon]
+      value: 2
+    - name: enhancements
+      any: [improvement, enhanced, faster, performance, optimiz, optimis]
+      value: 2
+
+  learning_priority:
+    - name: core-platform
+      any: [onelake, direct lake, semantic model, lakehouse, warehouse, capacity]
+      value: high
+    - name: workload-features
+      any: [notebook, pipeline, dataflow, eventstream, eventhouse, spark, sql]
+      value: medium
+    - name: peripheral
+      any: [blog, recap, community, event, announcement, ama]
+      value: low
+
+  # Must be one of the `categories` list above.
+  category:
+    - name: real-time
+      any: [eventstream, eventhouse, kql, real-time, realtime, activator]
+      value: real-time-intelligence
+    - name: data-factory
+      any: [data factory, pipeline, dataflow, copy job, mirroring, gateway]
+      value: data-factory
+    - name: warehouse
+      any: [warehouse, sql analytics endpoint, t-sql, sql database]
+      value: data-warehouse
+    - name: data-science
+      any: [notebook, spark, machine learning, ml model, data science, ai function]
+      value: data-science
+    - name: power-bi
+      any: [power bi, report, dashboard, visual, dax, semantic model]
+      value: power-bi
+    - name: governance
+      any: [security, governance, purview, sensitivity, private link, encryption]
+      value: governance-security
+    - name: admin
+      any: [admin, tenant, capacity, monitoring, workspace setting, quota]
+      value: administration
+    - name: engineering
+      any: [lakehouse, onelake, delta, shortcut, data engineering]
+      value: data-engineering
+    - name: platform
+      any: [fabric, platform, git integration, deployment pipeline, api]
+      value: platform
+
+  difficulty:
+    - name: advanced-topics
+      any: [api, sdk, private link, encryption, custom, advanced, architecture]
+      value: advanced
+    - name: beginner-topics
+      any: [getting started, introduction, overview, tutorial, announcement, recap]
+      value: beginner
+    - name: default-intermediate
+      any: [preview, generally available, support, new, improvement]
+      value: intermediate
+
+  workload:
+    - name: heavy
+      any: [migration, architecture, private link, encryption, capacity planning]
+      value: heavy
+    - name: light
+      any: [recap, announcement, blog, community, event, visual]
+      value: light
+    - name: moderate
+      any: [preview, generally available, support, feature, new]
+      value: moderate
+
+  # Every matching tag rule contributes; the result is sorted.
+  tags:
+    - {any: [direct lake], value: direct-lake}
+    - {any: [onelake], value: onelake}
+    - {any: [lakehouse], value: lakehouse}
+    - {any: [warehouse], value: warehouse}
+    - {any: [semantic model], value: semantic-model}
+    - {any: [notebook], value: notebook}
+    - {any: [spark], value: spark}
+    - {any: [pipeline], value: pipeline}
+    - {any: [dataflow], value: dataflow}
+    - {any: [eventstream, eventhouse], value: real-time}
+    - {any: [power bi], value: power-bi}
+    - {any: [copilot, ai function, data agent], value: ai}
+    - {any: [security, private link, encryption], value: security}
+    - {any: [api, rest api, sdk], value: api}
+    - {any: [preview], value: preview}
+    - {any: [generally available, "(ga)"], value: ga}
+    - {any: [deprecat, retirement], value: deprecation}
 
 # --- Notifications (M6) ----------------------------------------------------
 # The GitHub Issue is the durable audit trail; SMTP is the inbox copy. Both go

@@ -26,10 +26,11 @@ provenance:
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:360e2e98fd46571438713d70eba67d27d66ef4ea699a9fa1ea1c17e5b3611672
 tier: 3
-learning_priority: low
-category: null
-tags: []
-difficulty: intermediate
+learning_priority: medium
+category: real-time-intelligence
+tags:
+- real-time
+difficulty: beginner
 workload: light
 version: null
 reading_time: 1
@@ -42,7 +43,7 @@ replaced_by: null
 replaces: null
 lifecycle: minted
 status: active
-needs_review: false
+needs_review: true
 overrides: []
 revisions:
 - revision: 1

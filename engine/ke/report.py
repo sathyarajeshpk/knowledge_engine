@@ -20,6 +20,7 @@ class HarvestReport:
     already_known: int = 0
     updated: list[str] = field(default_factory=list)
     unchanged: int = 0
+    classified: list[str] = field(default_factory=list)
     near_duplicates: int = 0
     written_paths: list[str] = field(default_factory=list)
     index_paths: list[str] = field(default_factory=list)
@@ -34,6 +35,7 @@ class HarvestReport:
         return (
             f"{self.pack_name}: {self.discovered} discovered, "
             f"{len(self.minted)} minted, {len(self.updated)} updated, "
-            f"{self.unchanged} unchanged, {self.queued} queued, "
+            f"{self.unchanged} unchanged, {len(self.classified)} classified, "
+            f"{self.queued} queued, "
             f"{self.near_duplicates} near-duplicate(s)"
         )

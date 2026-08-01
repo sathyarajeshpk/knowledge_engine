@@ -26,8 +26,8 @@ provenance:
   run_id: run-2026-08-01T06-14-25Z
 url_hash: sha256:f082c2ee63f1f9f4f9c4554050b4280db5b7345bded9b652ee170aef2154cd80
 tier: 3
-learning_priority: low
-category: null
+learning_priority: medium
+category: platform
 tags: []
 difficulty: intermediate
 workload: light
@@ -42,7 +42,7 @@ replaced_by: null
 replaces: null
 lifecycle: minted
 status: active
-needs_review: false
+needs_review: true
 overrides: []
 revisions:
 - revision: 1
