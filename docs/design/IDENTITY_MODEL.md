@@ -1,8 +1,17 @@
-# Design proposal — Announcement, Feature, Knowledge Object
+# Design — Announcement, Feature, Knowledge Object
 
-**Status:** Proposal for review. **Nothing here is implemented.**
-**Decides:** whether ADR-0023 should be amended before M2
+**Status:** Revision 2. The three-level model and Recommendation C are
+**approved**; Identity Confidence is added here for review before any code that
+affects permanent Feature IDs is written.
+**Decides:** how identity is modelled, and when it is trusted enough to mint
 **Date:** 2026-07-31
+
+## Revision history
+
+| Rev | Change |
+|---|---|
+| 1 | Three-level model, component evaluation, options A–D |
+| 2 | **Identity Confidence** (§6); Power BI gated rather than excluded (§8.3); the Recommendation-B threshold left open and evidence-driven (§7.2) |
 
 ---
 
@@ -25,8 +34,10 @@ four proposed identity components, **two must be included and two must be
 excluded** — and the reasons for exclusion are empirical, not aesthetic.
 
 But the measurements also surfaced a constraint that changes the sequencing: the
-obvious fix is not currently safe to apply, and there is a prerequisite that has
-to land first. §6 is the important section.
+obvious fix is not currently safe to apply yet (§5). The approved answer is to
+anchor identity as it is today, refuse to merge silently, and gate minting on
+**Identity Confidence** (§6) — so that no permanent Feature ID is created while
+identity uncertainty exists.
 
 ---
 
@@ -259,12 +270,140 @@ composite identity should not be adopted and Option C below becomes the answer.
 
 ---
 
-## 6. Options
+## 6. Identity Confidence
+
+Approved as an architectural concept; the rules below are the proposal.
+
+The three-level model says *what* identity is. It does not say **how much we
+trust a particular identity** — and that turns out to be the question that
+actually gates minting. `identity_basis` already records what the identity rests
+on, but a basis alone cannot distinguish "this URL identifies exactly this
+feature" from "this URL identifies a post covering eleven features".
+
+### 6.1 The distinction that makes this work
+
+> **Identity is permanent and run-independent. Confidence is a per-run
+> assessment of whether minting is safe yet.**
+
+This resolves a tension from Revision 1. Run-scoped evidence — *how many distinct
+features share this announcement in this run* — was rejected as an input to
+**identity**, because an identity that changes when a row stops appearing is not
+permanent (§8, "no run-time cardinality rules"). That rejection stands.
+
+But the same evidence is entirely legitimate for **confidence**, because
+confidence never becomes part of the ID. It decides *whether to mint now*.
+Once minted, the identity is fixed forever regardless of what confidence does
+afterwards.
+
+So:
+
+- Confidence **may** use run-scoped evidence. Identity **may not**.
+- Confidence is recomputed every run. Identity is computed once, ever.
+- A change in confidence never changes an existing Feature ID.
+
+### 6.2 The evidence
+
+All four signals are deterministic — derived from the item and the run, with no
+model, no randomness, no wall clock.
+
+| Signal | Question it answers |
+|---|---|
+| **Basis durability** | Is the identity anchored on a canonical URL / source identifier, or on a title hash / content fingerprint? |
+| **Announcement exclusivity** | Within this run, how many *distinct normalised feature titles* share this announcement URL? |
+| **Title substance** | Is there a usable normalised title at all? |
+| **Anchor resolution** | Did we resolve a real announcement URL, or fall back to the source document? (§3.1) |
+
+### 6.3 The rules
+
+```
+HIGH    durable basis  AND  the announcement resolves to exactly one
+        distinct feature in this run
+        → the URL identifies this feature. Mint automatically.
+
+MEDIUM  durable basis  BUT  the announcement is shared by several distinct
+        features                                    (the merging case)
+        OR weak basis (title hash) with a substantive title
+        → identifiable but ambiguous. Queue for review; never auto-mint.
+
+LOW     content-fingerprint basis, or no usable title, or no resolvable anchor
+        → nothing durable to rest on. Never auto-mint, under any setting.
+```
+
+Deliberately **not** a numeric score. A score invites a tunable threshold, and a
+tunable threshold is a dial someone eventually turns to make a backlog go away.
+Three named states with stated reasons cannot be quietly relaxed.
+
+### 6.4 Measured against production
+
+| | High | Medium | Low |
+|---|---|---|---|
+| **Fabric** (315 items) | 251 (**79%**) | 64 (20%) | 0 |
+| **Power BI** (19 items) | 14 (**73%**) | 5 (26%) | 0 |
+
+Medium decomposes cleanly, which is the sign the rules are targeting the right
+thing rather than just being cautious:
+
+| Reason | Fabric | Power BI |
+|---|---|---|
+| Durable basis, announcement shared by several features | 57 | 0 |
+| Weak basis (title hash), no resolvable URL | 7 | 5 |
+
+**~79% of knowledge mints automatically; ~20% is queued for a human.** That is a
+usable ratio — a gate that queued most of the pack would be a gate nobody uses.
+
+**Low is currently empty, and that is reported honestly rather than presented as
+a success.** No current source produces titleless rows. Low is a safety floor for
+sources not yet onboarded — feeds without titles, malformed rows, future packs —
+not a level that does work today.
+
+### 6.5 What confidence does *not* fold in
+
+`identity_confidence` answers one question: how much do we trust this
+**identity**. It deliberately does not absorb two neighbouring facts, for the
+same reason `date_precision` was separated from `date_confidence`: a field asked
+two questions has to lie about one of them.
+
+- **`date_confidence`** — whether the publication date is exact or inferred. It
+  matters for minting because the Feature ID *contains the month*, but it is
+  evidence about the date, not the identity.
+- **`source_authority`** — official / community / third-party. A property of the
+  source, not of this item's identity.
+
+They are combined at the **mint gate**, which is a separate, explicit rule:
+
+```
+mint automatically  ⟺  identity_confidence is HIGH
+                       AND source_authority is OFFICIAL
+otherwise           →  review queue (never silently dropped)
+LOW confidence      →  never minted automatically, regardless of authority
+```
+
+Keeping these separate means the gate can be tightened or loosened without
+rewriting what any single field means.
+
+### 6.6 The consequence that must be handled: review latency
+
+An item queued as Medium may become High in a later run and mint then. If its ID
+month came from *that* run's discovery date, review latency would silently shift
+the Feature ID — an item found in July but approved in September would be filed
+under September, permanently.
+
+**Therefore:** a queued item must record its **first** discovery date, and
+minting must use that, not the date approval happened. The ID reflects when the
+knowledge appeared, never how long a human took to look at it.
+
+This is a small detail with a permanent consequence, and it only becomes visible
+once minting is gated — which is why it belongs in this proposal rather than
+being discovered during M2.
+
+---
+
+## 7. Options
 
 | | Merging fixed? | Stability | Failover safe? | Reversible? |
 |---|---|---|---|---|
 | **A.** Composite now | Yes | 35% | **No** | No — IDs are permanent |
-| **B.** Unify titles, then composite | Yes | to be measured | Yes, if ≥90% | No, but validated first |
+| **B.** Unify titles, then composite | Yes | to be measured | Only above a threshold | No, but validated first |
 | **C.** Keep URL identity, flag collisions | No — deferred | 98% | Yes | **Yes** |
 | **D.** Host-class rule | ~80% | mixed | Partly | No |
 
@@ -287,46 +426,127 @@ M1 review. The measurements weakened it: 3 of 16 merging groups are
 75% of the pack onto title-derived identity. It buys most of B's risk for less
 than B's benefit. Withdrawn.
 
-### Recommendation
+### 7.1 Decision
 
-**C now, B before M2 mints anything.**
+**C, with Identity Confidence. B deferred until the evidence justifies it.**
 
-1. Adopt the three-level model as the vocabulary (Announcement / Feature /
-   Knowledge Object), and make `announcement_url` a separate nullable field.
-2. Ship **C** so no distinct feature is ever silently merged — collisions become
-   review items.
-3. Unify title extraction across adapters and re-measure agreement.
-4. If agreement ≥90%, amend ADR-0023 and adopt composite identity (**B**), and
-   retire C's review path to a validation check.
-5. If agreement cannot reach 90%, keep C permanently: visible, human-resolved
-   merging is better than automated duplication.
+1. Adopt the three-level model as permanent architecture, and make
+   `announcement_url` a separate nullable field.
+2. Ship **C**: identity stays URL-anchored, and a collision — one identity
+   resolving to several distinct normalised titles — becomes a review item
+   instead of a silent merge.
+3. Add **Identity Confidence** (§6) as the gate on minting.
+4. Keep measuring cross-representation agreement on every source-check run.
+5. Revisit **B** only when the accumulated evidence supports a threshold (§7.2).
 
-This sequence has the property that matters most here: **every step is safe to
-take before the next one is decided**, and none of them mints a permanent ID that
-a later step would regret.
+No permanent Feature ID is created while identity uncertainty exists — which is
+the property that makes every step above reversible.
+
+### 7.2 The Recommendation-B threshold is deliberately not set
+
+Revision 1 proposed ≥90%. **That number is withdrawn**: it was chosen for
+plausibility, not derived from anything.
+
+What exists today is a **single observation** — 98% for URL-only against 35% for
+composite, measured once, on one day, on two sources, where the disagreement is
+known to be dominated by a defect of ours (inconsistent title extraction) rather
+than by source behaviour. That is enough to reject Option A. It is nowhere near
+enough to calibrate a threshold that will gate permanent identifiers.
+
+**What would justify a threshold:**
+
+| Evidence needed | Why |
+|---|---|
+| Agreement measured across **many runs over time**, not one snapshot | Distinguishes real week-to-week churn from a one-off difference between two renderings |
+| Agreement measured **after** title extraction is unified | The current 35% mostly measures our own inconsistency, so it is a bound on the wrong quantity |
+| The **observed rate of genuine rewording** on the live page between runs | This is the quantity a threshold should actually be set against |
+| Agreement on **more than two sources** | Two sources cannot show whether a threshold generalises |
+
+`tools/identity_experiment.py` runs on every source-check, so the series
+accumulates without further work. The threshold should be proposed from that
+series, with the reasoning recorded — not asserted in advance and then defended.
+
+Until then, **C plus Identity Confidence is the standing answer**, and it is a
+stable place to stay: it loses no knowledge, mints no doubtful IDs, and queues
+what it cannot decide.
 
 ---
 
-## 7. Impact on ADR-0023
+## 8. Power BI
+
+**Power BI knowledge is not excluded.** The mint gate handles it, and the gate is
+strictly better than a source-level switch because it discriminates per item
+rather than per source.
+
+### 8.1 What the gate does to Power BI
+
+Measured on the Power BI source: **14 of 19 items (73%) are High confidence** and
+would mint automatically; **5 are Medium** — all of them weak-basis items with no
+resolvable URL — and queue for review. Nothing is dropped.
+
+### 8.2 Power BI has no publication dates
+
+Zero of 19 rows carry a date. Every Power BI Feature ID would take its month from
+the *discovery* date with `date_confidence: inferred`, so an item announced in
+March but first harvested in August is filed under August, permanently.
+
+This is a source property, not a parser defect, and it is a separate axis from
+identity — which is exactly why §6.5 keeps `date_confidence` out of
+`identity_confidence`. It is recorded here so the mint gate's date clause can be
+decided deliberately rather than inherited by accident (§11, Q2).
+
+### 8.3 The Markdown fallback should now be re-enabled — pending confirmation
+
+It was disabled last revision because failing over would mint ~5 duplicate
+permanent Feature IDs out of 19. **Identity Confidence removes that reason**: the
+5 items concerned are precisely the weak-basis ones the gate now classifies as
+Medium, so they would queue rather than mint.
+
+The disable and the gate are two mechanisms for one risk, and the gate is the
+better one — per item, not per source. Recommendation: **re-enable
+`powerbi-whats-new-markdown`** once the gate is implemented, so Power BI keeps a
+fallback if Learn becomes unreachable.
+
+Left disabled in the meantime, because it was disabled by explicit approval and
+reversing that is the maintainer's call, not an implementation detail (§11, Q1).
+
+---
+
+## 9. Impact on ADR-0023
 
 ADR-0023 is **not wrong**; it is under-specified. It says identity comes from the
 most durable signal available and ranks four bases. What it does not say is *what
 identity is of* — and it silently assumes one URL identifies one feature.
 
-Proposed amendment, as a new ADR superseding parts of 0023:
+Under the approved plan (C, not B) **ADR-0023's computation is unchanged** —
+identity stays anchored on the canonical URL. What changes is what surrounds it.
+Two new ADRs rather than a rewrite:
+
+**ADR-0027 — Announcement, Feature, Knowledge Object.**
 
 1. **State the unit.** Identity identifies a **Feature**, not a document. An
    announcement URL identifies an Announcement, which may contain many Features.
 2. **Keep the hierarchy** for choosing the announcement anchor — canonical URL,
    source identifier, title hash, content fingerprint, in that order. That part
    has held up: 98% agreement is a strong result.
-3. **Add the feature key** as a second dimension, composed with the anchor.
-4. **Record what identity was computed from** in provenance — `identity_basis`
-   already exists; it gains a `feature_key_basis` companion so an object can
-   explain its own ID years later.
-5. **Rule out category and content** from identity explicitly, with the
+3. **Rule out category and content** from identity explicitly, with the
    measurements above as the recorded justification. Without this, both will be
    proposed again.
+4. **A collision is never a merge.** One anchor resolving to several distinct
+   normalised titles produces a review item.
+
+**ADR-0028 — Identity Confidence and the mint gate.**
+
+5. Confidence is a per-run assessment; identity is permanent. Confidence may use
+   run-scoped evidence precisely because it never enters the ID (§6.1).
+6. Only High confidence from an authoritative source mints automatically. Low
+   never mints automatically.
+7. A queued item carries its **first** discovery date, so review latency cannot
+   shift a Feature ID (§6.6).
+
+**Deferred, not decided:** adding a feature key to the identity computation
+(Option B). That is the change that would genuinely supersede ADR-0023, and it
+waits on the evidence in §7.2.
 
 ADR-0009 (one ID per concept, GA as a revision) is **reinforced**, not changed —
 it is the main reason category must stay out.
@@ -338,7 +558,7 @@ argument for Option C.
 
 ---
 
-## 8. What is not being proposed
+## 10. What is not being proposed
 
 - **No AI.** Deciding whether two rows are the same feature by model inference
   would be non-deterministic and is forbidden by ADR-0004.
@@ -350,11 +570,18 @@ argument for Option C.
 
 ---
 
-## 9. Open questions for the maintainer
+## 11. Open questions for the maintainer
 
-1. **Is the 90% agreement threshold the right bar** for adopting composite
-   identity, or should it be higher given that IDs are permanent?
-2. **Should Option C's review items block a run** or simply queue? My assumption
-   is queue — blocking would let one ambiguous row stop a weekly harvest.
-3. **Power BI**: with 5% agreement and no dates, should its objects be minted at
-   all in M2, or should the pack wait until a better source exists?
+1. **Re-enable the Power BI Markdown fallback?** Identity Confidence supersedes
+   the reason it was disabled (§8.3). Recommended, but it reverses an explicit
+   approval, so it is not being done unilaterally.
+2. **Should the mint gate also require an exact publication date?** No Power BI
+   item has one, so requiring it would queue that entire source. My assumption is
+   **no** — an inferred month is honest and recorded, and ADR-0005 already defines
+   the fallback — but the Feature ID does embed the month permanently, so this
+   deserves an explicit decision rather than a default.
+3. **Should review items block a run** or simply queue? My assumption is queue —
+   blocking would let one ambiguous row stop a weekly harvest.
+4. **Who resolves the queue, and how?** M2 needs a `ke review` path for a human to
+   promote a Medium item to minted, or reject it. Scope check: is that M2, or does
+   it wait for M9's `ke review`?

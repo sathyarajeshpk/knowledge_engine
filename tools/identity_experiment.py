@@ -118,6 +118,56 @@ def evaluate(name, key_of, primary, secondary) -> None:
     )
 
 
+# ---------------------------------------------------------------------------
+# Identity confidence — candidate rules, measured before being proposed.
+#
+# Confidence answers "how much do we trust this identity *right now*?", which is
+# a different question from "what is this item's identity?". Identity must be
+# permanent and run-independent. Confidence is a per-run assessment used to
+# decide whether minting is safe yet, so it may legitimately use evidence that
+# identity may not -- notably how many distinct features share an announcement
+# in this run.
+# ---------------------------------------------------------------------------
+
+DOC_HOSTS = ("learn.microsoft.com", "docs.microsoft.com")
+
+
+def confidence_of(item, titles_per_announcement) -> str:
+    """Deterministic. No AI, no thresholds, no randomness."""
+    durable = item.identity.basis.value in ("canonical-url", "source-identifier")
+    title = normalise_title(item.title)
+    shared = titles_per_announcement.get(item.source_url, 1)
+
+    if not title and not durable:
+        return "low"
+    if item.identity.basis.value == "content-fingerprint":
+        return "low"
+    if durable and shared == 1:
+        return "high"
+    return "medium"
+
+
+def measure_confidence(label, items) -> None:
+    titles_per_announcement = defaultdict(set)
+    for i in items:
+        titles_per_announcement[i.source_url].add(normalise_title(i.title))
+    counts = {u: len(t) for u, t in titles_per_announcement.items()}
+
+    tally = defaultdict(int)
+    doc_high = 0
+    for i in items:
+        c = confidence_of(i, counts)
+        tally[c] += 1
+        if c == "high" and any(h in i.source_url for h in DOC_HOSTS):
+            doc_high += 1
+
+    total = len(items) or 1
+    print(f"\n  identity confidence — {label} ({total} items)")
+    for level in ("high", "medium", "low"):
+        print(f"    {level:7} {tally[level]:4}  ({tally[level] * 100 // total:3}%)")
+    print(f"    of the high-confidence items, {doc_high} cite a documentation host")
+
+
 def main() -> int:
     clock = SystemClock()
     repo_root = Path(__file__).resolve().parents[1]
@@ -143,6 +193,10 @@ def main() -> int:
             )
             for name, key_of in SCHEMES.items():
                 evaluate(name, key_of, primary, secondary)
+
+            if primary:
+                measure_confidence(f"{definition.name} (primary)", primary)
+            measure_confidence(f"{secondaries[0].name} (secondary)", secondary)
 
     print("\nagreement  = share of secondary identities the primary also produced")
     print("             (proxy for stability under rewording — higher is safer)")
