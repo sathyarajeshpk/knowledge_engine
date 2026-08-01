@@ -45,10 +45,18 @@ import yaml
 from ke.models import ArtifactType, KnowledgeObject
 from ke.pack import Pack
 
-#: Where the templates live. Packaged with the engine rather than with a domain
-#: pack: a prompt is engine behaviour, not knowledge, and every pack should get
-#: the same instruction for the same artifact type.
-PROMPTS_DIR = Path(__file__).resolve().parent.parent / "prompts"
+#: Where the templates live: **inside the package**, not beside it.
+#:
+#: Packaged with the engine rather than with a domain pack because a prompt is
+#: engine behaviour, not knowledge — every pack should get the same instruction
+#: for the same artifact type.
+#:
+#: Inside `ke/` rather than at `engine/prompts/` because anything outside the
+#: package is not installed with it. The first version of this pointed one level
+#: up; it worked under `pip install -e .` and shipped **zero templates** in a
+#: real install, where `ke generate` would have failed for every artifact type
+#: with "no prompt template". `test_packaging.py` installs the wheel and checks.
+PROMPTS_DIR = Path(__file__).resolve().parent / "prompts"
 
 #: Related objects are included as a summary line each, not in full. Enough for a
 #: model to see the neighbourhood, not so much that the instruction competes with

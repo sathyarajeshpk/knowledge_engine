@@ -37,6 +37,18 @@ package-dir = { "" = "engine" }
 where = ["engine"]
 include = ["ke*"]
 
+# The prompt templates are data the engine cannot work without: `ke generate`
+# reads them at runtime, and a build that omits them produces a package whose
+# every artifact type fails with "no prompt template".
+#
+# What actually makes them ship is that they live *inside* `ke/`. Current
+# setuptools includes them without this declaration, but that is a default, and
+# a default is a weaker guarantee than a statement. Declared explicitly so the
+# requirement survives a build-backend change; `test_packaging.py` installs the
+# package and verifies it either way.
+[tool.setuptools.package-data]
+ke = ["prompts/*.md"]
+
 [tool.pytest.ini_options]
 testpaths = ["engine/tests"]
 pythonpath = ["engine"]
