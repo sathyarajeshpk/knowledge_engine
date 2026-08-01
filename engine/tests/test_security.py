@@ -649,3 +649,101 @@ def test_the_cli_never_writes_outside_a_pack(tmp_path):
     )
     assert result.returncode != 0
     assert not list(tmp_path.rglob("*.yaml"))
+
+
+# ---------------------------------------------------------------------------
+# Pack definitions as a supply chain (M8)
+# ---------------------------------------------------------------------------
+
+
+def test_a_source_cannot_name_a_file_url() -> None:
+    """A pack.yml is data, reviewed as data. It must not be able to read a file.
+
+    `urlopen` speaks `file:`, `ftp:` and `data:` as happily as `http:`. Before
+    this guard, a source declaring `url: file:///etc/hostname` fetched the file,
+    the pipeline stored its contents as a knowledge object, and the weekly
+    workflow committed and pushed it — a local-file read reachable from a
+    change that a reviewer would scan as configuration.
+
+    Verified against the real fetcher before the guard was written: it returned
+    the file's contents.
+    """
+    from ke.acquisition.sources.base import SourceDefinition
+
+    with pytest.raises(ValueError) as caught:
+        SourceDefinition.from_config(
+            {
+                "name": "hostile",
+                "adapter": "rss",
+                "url": "file:///etc/hostname",
+                "authority": "third-party",
+            }
+        )
+    assert "file:///etc/hostname" in str(caught.value)
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "file:///etc/passwd",
+        "FILE:///etc/passwd",
+        "ftp://example.invalid/x",
+        "data:text/plain,hello",
+        "/etc/passwd",
+        "",
+    ],
+)
+def test_only_http_and_https_are_fetchable(url: str) -> None:
+    """The allowlist covers the schemes urlopen would otherwise accept."""
+    from ke.acquisition.sources.base import HttpFetcher
+
+    with pytest.raises(ValueError):
+        HttpFetcher().fetch(url)
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "http://example.invalid/f",
+        "https://example.invalid/f",
+        # Schemes are case-insensitive per RFC 3986, and a pack may reasonably
+        # paste one in. Rejecting these would be a false positive that makes a
+        # legitimate source look hostile — the failure mode that gets a security
+        # guard removed rather than fixed.
+        "HTTPS://example.invalid/f",
+        "Http://example.invalid/f",
+    ],
+)
+def test_http_and_https_are_still_allowed(url: str) -> None:
+    """The guard must not break the only two schemes the engine actually uses.
+
+    Asserts on `require_web_url` rather than on a real fetch: the point is the
+    allowlist, and reaching the network in a unit test would be a different
+    (worse) test.
+    """
+    from ke.acquisition.sources.base import require_web_url
+
+    assert require_web_url(url, "s") == url
+
+
+def test_the_fetcher_guards_itself_not_only_its_configuration() -> None:
+    """`HttpFetcher` is reachable without going through `SourceDefinition`.
+
+    Adapters, tests and future callers can construct one directly, so a check
+    that lives only at the configuration boundary protects only the
+    configuration boundary.
+    """
+    import inspect
+
+    from ke.acquisition.sources.base import HttpFetcher
+
+    assert "require_web_url" in inspect.getsource(HttpFetcher.fetch)
+
+
+def test_every_configured_source_in_every_real_pack_is_a_web_url() -> None:
+    """The shipped packs comply — the guard is not retroactively breaking them."""
+    from ke.pack import Pack, find_repo_root
+
+    for pack in Pack.discover(find_repo_root(Path(__file__))):
+        for definition in pack.source_definitions:
+            assert definition.url.lower().startswith(("http://", "https://"))
