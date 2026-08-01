@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-057
+slug: entity-diagram-in-eventhouse-kql-database-preview
+title: Entity diagram in Eventhouse KQL database (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/entity-diagram-in-eventhouse-kql-database-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/entity-diagram-in-eventhouse-kql-database-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:b5e2f17813802cf736592417a041d6f025e93a60b26b3070eb0bc1101471968f
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:87bba55f63d8d7abea4a904fcad1655b0e0a7c09b966bdbdea41035cf1076293
+  discovered_at: '2026-08-01T06:14:26.667103+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:87bba55f63d8d7abea4a904fcad1655b0e0a7c09b966bdbdea41035cf1076293
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:b5e2f17813802cf736592417a041d6f025e93a60b26b3070eb0bc1101471968f
+  title_snapshot: Entity diagram in Eventhouse KQL database (Preview)
+  summary_snapshot: Entity diagram in Eventhouse KQL database (Preview) adds a visual entity
+    diagram for exploring tables, relationships, data flow, and schema violations in Eventhouse
+    KQL databases. For more information, see View an entity diagram in KQL database (preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

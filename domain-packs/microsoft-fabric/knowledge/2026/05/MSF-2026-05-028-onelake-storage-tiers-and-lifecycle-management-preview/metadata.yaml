@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-05-028
+slug: onelake-storage-tiers-and-lifecycle-management-preview
+title: OneLake storage tiers and lifecycle management (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Optimize-your-storage-costs-with-OneLake-storage-tiers-and/ba-p/5179295
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Optimize-your-storage-costs-with-OneLake-storage-tiers-and/ba-p/5179295
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:583ee8084bf14e0ecfc03669c6cba10a014d0e7a06c258a872f58ccdfa43cf0b
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:df88ffb293f8c9fc7090dd15c03c9c963a3523b63cedfb9b9ae671a54cad1322
+  discovered_at: '2026-08-01T06:14:26.679306+00:00'
+  source_role: secondary
+  selector: '## Microsoft Fabric platform features > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:df88ffb293f8c9fc7090dd15c03c9c963a3523b63cedfb9b9ae671a54cad1322
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:583ee8084bf14e0ecfc03669c6cba10a014d0e7a06c258a872f58ccdfa43cf0b
+  title_snapshot: OneLake storage tiers and lifecycle management (Preview)
+  summary_snapshot: OneLake now supports hot, cool, and cold storage tiers, and lifecycle
+    management policies automatically move files between tiers based on creation time, last
+    modification, or last access, so you trade higher transaction and retrieval costs for
+    lower storage cost on infrequently accessed data.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

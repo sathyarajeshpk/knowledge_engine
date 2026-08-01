@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-034
+slug: conditional-formatting-for-line-charts-and-legends
+title: Conditional formatting for line charts and legends (Generally Available)
+source_name: powerbi-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-conditional-formatting
+announcement_url: https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-conditional-formatting
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:5dcddcff186d3ef29ff5be3f0307165d0e185a5df2c7e56369c0ef15ca44e3a6
+provenance:
+  source_name: powerbi-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:50e08164ada75372b8971bc6dd4c25dc8324a06556a18895c4381efadd23fbd2
+  discovered_at: '2026-08-01T06:14:27.249781+00:00'
+  source_role: secondary
+  selector: '## Reporting > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:50e08164ada75372b8971bc6dd4c25dc8324a06556a18895c4381efadd23fbd2
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:5dcddcff186d3ef29ff5be3f0307165d0e185a5df2c7e56369c0ef15ca44e3a6
+  title_snapshot: Conditional formatting for line charts and legends (Generally Available)
+  summary_snapshot: Conditional formatting now extends to line charts and visuals with legends,
+    including bar charts, column charts, pie charts, donut charts, and line charts. Format
+    line colors using a gradient based on total value or category, or ensure consistent colors
+    across your report using a single DAX measure. For more information, see Conditional formatting
+    in Power BI visuals.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

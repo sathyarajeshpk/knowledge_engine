@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-096
+slug: sql-database-data-virtualization-preview
+title: SQL database data virtualization (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/database/sql/data-virtualization
+announcement_url: https://learn.microsoft.com/en-us/fabric/database/sql/data-virtualization
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:3a7d5af31baa721c440441826713a0a789d4a5850d766bb19dbdba1791d3a48b
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:f1853e0022746811efe4eaa476dee5e27bda0fb3199c90f8e0c03b2fc65feac7
+  discovered_at: '2026-08-01T06:14:26.674488+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:f1853e0022746811efe4eaa476dee5e27bda0fb3199c90f8e0c03b2fc65feac7
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:3a7d5af31baa721c440441826713a0a789d4a5850d766bb19dbdba1791d3a48b
+  title_snapshot: SQL database data virtualization (Preview)
+  summary_snapshot: Data virtualization (preview) in SQL database enables querying external
+    data stored in OneLake using T-SQL. With data virtualization syntax, you can execute Transact-SQL
+    (T-SQL) queries on files that store data in common data formats in OneLake. You can combine
+    this data with locally stored relational data by using joins.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

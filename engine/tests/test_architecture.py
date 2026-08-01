@@ -87,6 +87,41 @@ def test_models_does_not_import_acquisition():
     assert not [m for m in imported_modules(ENGINE / "models.py") if "acquisition" in m]
 
 
+CORE_MODULES = ("models.py", "normalize.py", "clock.py")
+
+
+@pytest.mark.parametrize("module", CORE_MODULES)
+def test_core_modules_do_not_import_acquisition(module):
+    """Core must not depend on the subsystem built on top of it.
+
+    This is the mirror of `test_acquisition_never_imports_a_downstream_module`,
+    and it is not theoretical: `normalize` briefly imported `TRACKING_PARAMS`
+    from `acquisition.identity`, which created a genuine import cycle — the
+    acquisition package's `__init__` pulls in the adapters, which import
+    `normalize`, which was still initialising.
+
+    It only surfaced when a new module imported `normalize` first. Tests passed
+    because their import order happened to avoid it.
+    """
+    offenders = [m for m in imported_modules(ENGINE / module) if "acquisition" in m]
+    assert not offenders, f"{module} must not import acquisition: {offenders}"
+
+
+def test_the_package_imports_cleanly_from_a_cold_start():
+    """A cycle that only appears for one entry point is still a cycle."""
+    import subprocess
+    import sys
+
+    for entry in ("ke.normalize", "ke.store", "ke.acquisition", "ke.models"):
+        result = subprocess.run(
+            [sys.executable, "-c", f"import {entry}"],
+            capture_output=True,
+            text=True,
+            cwd=str(ENGINE.parent),
+        )
+        assert result.returncode == 0, f"importing {entry} first fails:\n{result.stderr}"
+
+
 @pytest.mark.parametrize("adapter_type,adapter", sorted(ADAPTERS.items()))
 def test_every_registered_adapter_satisfies_the_source_contract(adapter_type, adapter):
     """One interface, so downstream never learns where knowledge came from."""

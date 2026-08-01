@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-022
+slug: warehouse-identity-columns-preview
+title: Warehouse IDENTITY columns (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/identity-columns-in-fabric-data-warehouse-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/identity-columns-in-fabric-data-warehouse-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:fe1cad50514acfdef4bb74fe95661ea7b790d668bf6ec6a34da7b437e56b6b5a
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:348f0b0c680124c027f9166a785a95d7b95ac28405dea1ea01e6c7fdb171a0e7
+  discovered_at: '2026-08-01T06:14:26.675200+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:348f0b0c680124c027f9166a785a95d7b95ac28405dea1ea01e6c7fdb171a0e7
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:fe1cad50514acfdef4bb74fe95661ea7b790d668bf6ec6a34da7b437e56b6b5a
+  title_snapshot: Warehouse IDENTITY columns (Preview)
+  summary_snapshot: IDENTITY columns automatically produce unique values for each new row,
+    eliminating the need for manual key assignments and eliminating the risk of key duplication
+    and key integrity issues. For more information and to get started, see IDENTITY columns
+    (Preview) and Use IDENTITY columns to create surrogate keys. You can also learn how to
+    Migrate to IDENTITY columns in Fabric Data Warehouse.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

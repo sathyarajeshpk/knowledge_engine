@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-06-007
+slug: extended-iot-hub-source-eventstream-connector-preview
+title: Extended IoT Hub source Eventstream connector (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://aka.ms/iothubextendedconn
+announcement_url: https://aka.ms/iothubextendedconn
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:64cb9eaa654b86b19a50490ff0fec8c5310eefa4030b19a56016c70fb63e5fad
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:0e21dc0ca53eb9c1bfd88143a0361ab2976d869f0b76e168b2dad6dc9d000242
+  discovered_at: '2026-08-01T06:14:26.686701+00:00'
+  source_role: secondary
+  selector: '## Real-Time Intelligence in Microsoft Fabric > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:0e21dc0ca53eb9c1bfd88143a0361ab2976d869f0b76e168b2dad6dc9d000242
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:64cb9eaa654b86b19a50490ff0fec8c5310eefa4030b19a56016c70fb63e5fad
+  title_snapshot: Extended IoT Hub source Eventstream connector (Preview)
+  summary_snapshot: Extended Azure IoT Hub source connector (Preview) in Fabric Eventstream
+    preserves all event metadata, including system properties (prefixed with src) and user-defined
+    application properties, so you can join device identity with telemetry, compute ingestion
+    latency, and route events by device. For more information, see Add Azure IoT Hub source
+    to an eventstream.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

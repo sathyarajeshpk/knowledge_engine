@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-06-043
+slug: ssms-22-7-schema-compare-and-sql-formatter-preview
+title: SSMS 22.7 schema compare and SQL formatter (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Power-up-in-SSMS-22-7-Schema-compare-and-SQL-formatting/ba-p/5193417
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Power-up-in-SSMS-22-7-Schema-compare-and-SQL-formatting/ba-p/5193417
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:288b902caf8ca0442b60f7f876cde763a4ff60417703bc6b164ed50ac40c7569
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:cbc193839ff6529658c707e9f6afbe957c8682462eba55c0918af06e69fc5a5f
+  discovered_at: '2026-08-01T06:14:26.683898+00:00'
+  source_role: secondary
+  selector: '## SQL database in Microsoft Fabric > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:cbc193839ff6529658c707e9f6afbe957c8682462eba55c0918af06e69fc5a5f
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:288b902caf8ca0442b60f7f876cde763a4ff60417703bc6b164ed50ac40c7569
+  title_snapshot: SSMS 22.7 schema compare and SQL formatter (Preview)
+  summary_snapshot: Schema compare and a built-in SQL formatter in SSMS 22.7 (Preview) let
+    you diff two database definitions—a connected database, SQL project, or .dacpac—and selectively
+    apply changes, format T-SQL from the editor context menu or on save, and set SQLCMD variables
+    in the publish dialog for SQL projects. For more information, see Schema comparison and
+    SQL formatter.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-06-010
+slug: fabric-skills-for-ai-coding-tools
+title: Fabric Skills for AI coding tools
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Skills-for-GitHub-Copilot-Claude-and-CLI-built-by/ba-p/5190188
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Skills-for-GitHub-Copilot-Claude-and-CLI-built-by/ba-p/5190188
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:31072e44420471daa567af8e41fe4777ebb0151bea9ea65e0de9ee7b9982a116
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:22d6eb17064bffa1a3db73e1cc02b1e527b5f92a8324ba08d7f1f0b6ddf9f634
+  discovered_at: '2026-08-01T06:14:26.678795+00:00'
+  source_role: secondary
+  selector: '## Microsoft Fabric platform features > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:22d6eb17064bffa1a3db73e1cc02b1e527b5f92a8324ba08d7f1f0b6ddf9f634
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:31072e44420471daa567af8e41fe4777ebb0151bea9ea65e0de9ee7b9982a116
+  title_snapshot: Fabric Skills for AI coding tools
+  summary_snapshot: Fabric Skills is an open-source, MIT-licensed library of Microsoft-authored
+    AI skills that teach GitHub Copilot, Claude Code, Cursor, Windsurf, and other AI coding
+    tools the right APIs, token audiences, query patterns, and end-to-end recipes for Fabric
+    workloads. Install the full fabric-skills bundle or focused fabric-authoring, fabric-consumption,
+    or fabric-operations bundles from the skills-for-fabric repository.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

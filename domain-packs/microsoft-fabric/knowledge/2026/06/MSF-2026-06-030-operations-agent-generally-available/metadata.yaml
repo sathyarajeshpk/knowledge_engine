@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-06-030
+slug: operations-agent-generally-available
+title: Operations agent (Generally Available)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Advancing-autonomous-action-with-operations-agent-Generally/ba-p/5192046
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Advancing-autonomous-action-with-operations-agent-Generally/ba-p/5192046
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:1f5be83e2f88ec1801572f4265988183c19910688de1793f9d2072acfb0c0393
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:71678ea94c6379e690a3173be8dc7b4ac2ff5ea7d2da2037b2a342173fb77399
+  discovered_at: '2026-08-01T06:14:26.676134+00:00'
+  source_role: secondary
+  selector: '## Generally available features > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:71678ea94c6379e690a3173be8dc7b4ac2ff5ea7d2da2037b2a342173fb77399
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:1f5be83e2f88ec1801572f4265988183c19910688de1793f9d2072acfb0c0393
+  title_snapshot: Operations agent (Generally Available)
+  summary_snapshot: Operations agent (Generally Available) is an autonomous agent that monitors
+    your data with Real-Time Intelligence, reasons over your Fabric IQ ontology, and, with
+    your approval, runs pipelines, notebooks, user data functions, and Power Automate flows,
+    with Teams notifications, full tracing and audit, and Microsoft Agent 365 and Microsoft
+    Entra ID governance. For more information, see Create and configure operations agents.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

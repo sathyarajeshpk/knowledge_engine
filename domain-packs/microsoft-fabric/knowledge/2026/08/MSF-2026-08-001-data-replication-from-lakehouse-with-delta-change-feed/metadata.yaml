@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-001
+slug: data-replication-from-lakehouse-with-delta-change-feed
+title: Data replication from Lakehouse with Delta Change Feed (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/september-2025-fabric-feature-summary?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/september-2025-fabric-feature-summary?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:c175ce92d28c4e8174b65349329edb10fb0bf4e2caf7a3963a0a1ba8e7a024da
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:014fe512e8d2aaac1f199c80b41a71172d736f53b231b71d343b0c7230bac34c
+  discovered_at: '2026-08-01T06:14:26.666465+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:014fe512e8d2aaac1f199c80b41a71172d736f53b231b71d343b0c7230bac34c
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:c175ce92d28c4e8174b65349329edb10fb0bf4e2caf7a3963a0a1ba8e7a024da
+  title_snapshot: Data replication from Lakehouse with Delta Change Feed (Preview)
+  summary_snapshot: The Fabric Lakehouse Table connector provides changed data from a Fabric
+    Lakehouse via Delta Change Data Feed (CDF), to supported destinations. For more information,
+    see Data Replication from Fabric Lakehouse with Delta Change Data Feed (Preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

@@ -1,0 +1,64 @@
+schema_version: 1
+id: MSF-2026-06-052
+slug: fabcon-europe-2026-the-sessions-we-re-most-excited-to-bring
+title: 'FabCon Europe 2026: The sessions we’re most excited to bring to Barcelona'
+source_name: fabric-blog
+source_url: https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/06/25/fabcon-europe-2026-the-sessions-were-most-excited-to-bring-to-barcelona
+announcement_url: https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/06/25/fabcon-europe-2026-the-sessions-were-most-excited-to-bring-to-barcelona
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-25
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:91f77e4deee5532d5d9f42b30cabfb7eddd66077d40ee49fc0c50894431bda3f
+provenance:
+  source_name: fabric-blog
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:d07f3cd121e589d8e952d294ee2a9818f18e2811eeca432112df8fa103222bfd
+  discovered_at: '2026-08-01T06:14:27.772893+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:d07f3cd121e589d8e952d294ee2a9818f18e2811eeca432112df8fa103222bfd
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:91f77e4deee5532d5d9f42b30cabfb7eddd66077d40ee49fc0c50894431bda3f
+  title_snapshot: 'FabCon Europe 2026: The sessions we’re most excited to bring to Barcelona'
+  summary_snapshot: There’s nothing quite like a room full of people who love data as much
+    as you do. We can’t wait to reconnect with this community in Barcelona. The European Microsoft
+    Fabric + SQL Community Conference (FabCon and SQLCon Europe) returns September 28-October
+    1, 2026, at the Centre de Convencions Internacional de Barcelona. After a year of incredible
+    innovation across Microsoft Fabric and SQL, this conference is shaping up to be something
+    special. We have a lot to share—and even more to learn from each other. Following our
+    record-breaking gathering of more than 4,000 data professionals in Vienna last year, FabCon
+    Europe is back and bigger—with 130+ expert-led sessions, 100+ speakers, and 10+ hands-on
+    tutorials spanning the entire Fabric and SQL…
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

@@ -1,0 +1,63 @@
+schema_version: 1
+id: MSF-2026-05-014
+slug: fabric-data-warehouse-as-the-modernization-path-for-synapse
+title: Fabric Data Warehouse as the modernization path for Synapse Dedicated SQL Pool
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Why-Fabric-Data-Warehouse-is-the-Modernization-Path-for-Synapse/ba-p/5178874
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Why-Fabric-Data-Warehouse-is-the-Modernization-Path-for-Synapse/ba-p/5178874
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:456c0dd8a29ef19056f9c20218f90ee4bd4346164dab077adc2581f2068de29f
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:65e1cafebc7ad91385cc824ae48d6f9b03fa10bd500671ad7f7d7ef08055ab54
+  discovered_at: '2026-08-01T06:14:26.685588+00:00'
+  source_role: secondary
+  selector: '## Fabric Data Warehouse samples and guidance > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:65e1cafebc7ad91385cc824ae48d6f9b03fa10bd500671ad7f7d7ef08055ab54
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:456c0dd8a29ef19056f9c20218f90ee4bd4346164dab077adc2581f2068de29f
+  title_snapshot: Fabric Data Warehouse as the modernization path for Synapse Dedicated SQL
+    Pool
+  summary_snapshot: Modernizing Synapse Dedicated SQL Pool to Fabric Data Warehouse outlines
+    how Fabric Data Warehouse addresses common Synapse pain points (pause/resume scaling,
+    hard concurrency limits, manual hash/replicated distribution, architectural sprawl) with
+    non-disruptive online scaling, autonomous workload management, intelligent data distribution,
+    OneLake-based open Delta storage, true data virtualization, near real-time mirroring,
+    and the AI-assisted Migration Assistant. For more information, see What is Fabric Data
+    Warehouse? and Scale your Fabric capacity.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

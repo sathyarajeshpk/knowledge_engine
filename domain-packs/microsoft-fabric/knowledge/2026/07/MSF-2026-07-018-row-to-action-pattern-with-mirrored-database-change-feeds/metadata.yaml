@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-07-018
+slug: row-to-action-pattern-with-mirrored-database-change-feeds
+title: Row-to-action pattern with Mirrored Database change feeds
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/From-Mirrored-Database-to-Real-Time-Action-A-Fabric-Eventstreams/ba-p/5274750
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/From-Mirrored-Database-to-Real-Time-Action-A-Fabric-Eventstreams/ba-p/5274750
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:88071e9fd3b2cfeead6d7495a292fcc860c98089442913c1cdf7fab9f026887b
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:d570ffedbc4baabce9a46e141e53c9d7926f1773946cf0a458acf7571df5fc15
+  discovered_at: '2026-08-01T06:14:26.685931+00:00'
+  source_role: secondary
+  selector: '## Fabric Mirroring samples and guidance > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:d570ffedbc4baabce9a46e141e53c9d7926f1773946cf0a458acf7571df5fc15
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:88071e9fd3b2cfeead6d7495a292fcc860c98089442913c1cdf7fab9f026887b
+  title_snapshot: Row-to-action pattern with Mirrored Database change feeds
+  summary_snapshot: Turning Mirrored Database change feeds into real-time action walks through
+    a manufacturing quality scenario that mirrors an operational database into OneLake, streams
+    Delta Change Data Feed changes into an Eventstream, filters and windows failed inspections
+    with SQL operators, then routes them to Activator for alerts and to Eventhouse for live
+    KQL dashboards. For more information, see Add Mirrored Database (Change Feed) source to
+    an eventstream.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

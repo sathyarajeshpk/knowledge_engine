@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-030
+slug: centralized-data-governance-in-the-onelake-catalog-preview
+title: Centralized data governance in the OneLake catalog (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/fabric-february-2025-feature-summary?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/fabric-february-2025-feature-summary?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:de909e6dd3a206be647a3d90333876eef0546ab6d367a04875dca1d360686bce
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:42bced5368f83c964ada95afb156609a630fd10c70af66d952d2e421ab09caea
+  discovered_at: '2026-08-01T06:14:26.664375+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:42bced5368f83c964ada95afb156609a630fd10c70af66d952d2e421ab09caea
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:de909e6dd3a206be647a3d90333876eef0546ab6d367a04875dca1d360686bce
+  title_snapshot: Centralized data governance in the OneLake catalog (Preview)
+  summary_snapshot: A new centralized data governance experience in the OneLake catalog is
+    in preview. Data owners can view aggregated insights on the items they created, consider
+    improving their governance by taking recommended actions, and access more information
+    along with all available tools in Fabric.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

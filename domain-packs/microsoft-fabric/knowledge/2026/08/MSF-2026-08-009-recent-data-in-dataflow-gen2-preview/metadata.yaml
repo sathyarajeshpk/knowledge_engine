@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-009
+slug: recent-data-in-dataflow-gen2-preview
+title: Recent data in Dataflow Gen2 (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/recent-data-get-back-to-your-data-faster-in-fabric-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/recent-data-get-back-to-your-data-faster-in-fabric-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:4907806916ace78ed0936e0fc3c85b12f9352cb6e6fb582881a17e481f9279ee
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:17bfdcded9e891afcc58347a524e80bbe0aae1c1c954b12b87b04f20bc43e338
+  discovered_at: '2026-08-01T06:14:26.673514+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:17bfdcded9e891afcc58347a524e80bbe0aae1c1c954b12b87b04f20bc43e338
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:4907806916ace78ed0936e0fc3c85b12f9352cb6e6fb582881a17e481f9279ee
+  title_snapshot: Recent data in Dataflow Gen2 (Preview)
+  summary_snapshot: Recent data in Dataflow Gen2 (Preview) provides quick access to your most
+    frequently used data items in the Power Query ribbon and Modern Get Data, letting you
+    jump directly to recently used tables, files, folders, and databases without navigation.
+    For more information, see Get data experience and What is Dataflow Gen2?
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

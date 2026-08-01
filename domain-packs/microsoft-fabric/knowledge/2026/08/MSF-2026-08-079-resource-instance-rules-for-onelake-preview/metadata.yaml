@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-079
+slug: resource-instance-rules-for-onelake-preview
+title: Resource Instance Rules for OneLake (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Resource-instance-rules-for-OneLake-in-Microsoft-Fabric-Preview/ba-p/5171998
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Resource-instance-rules-for-OneLake-in-Microsoft-Fabric-Preview/ba-p/5171998
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:2039e50f6f0f95d8ba049235f29a86e5e70b2da797e89333c6118044bdb4aef0
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:baf0ec20ab5c8e140b70254469764c1f9d45941255ca26b25a4f35bbba75d3cf
+  discovered_at: '2026-08-01T06:14:26.673660+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:baf0ec20ab5c8e140b70254469764c1f9d45941255ca26b25a4f35bbba75d3cf
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:2039e50f6f0f95d8ba049235f29a86e5e70b2da797e89333c6118044bdb4aef0
+  title_snapshot: Resource Instance Rules for OneLake (Preview)
+  summary_snapshot: Resource Instance Rules for OneLake (Preview) let workspace admins allow
+    inbound access to OneLake from explicitly trusted Azure resource instances by identity,
+    complementing Private Link and IP firewall rules for service-to-service scenarios without
+    requiring IP allow lists or private networking. For more information, see Manage inbound
+    access to OneLake with Resource Instance Rules (preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

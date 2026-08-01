@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-090
+slug: workspace-level-surge-protection-preview
+title: Workspace-level surge protection (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/surge-protection-gets-smarter-introducing-workspace-level-controls-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/surge-protection-gets-smarter-introducing-workspace-level-controls-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:875c888e6f96ad78ee08e7cd3b7ebd9717b8041aa95cfee24110a57cb2ca4379
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:dd373b44730fc1b73ddef5ffe0a15dbba96de41f8881bfb22c199fd8188e5f7a
+  discovered_at: '2026-08-01T06:14:26.675362+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:dd373b44730fc1b73ddef5ffe0a15dbba96de41f8881bfb22c199fd8188e5f7a
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:875c888e6f96ad78ee08e7cd3b7ebd9717b8041aa95cfee24110a57cb2ca4379
+  title_snapshot: Workspace-level surge protection (Preview)
+  summary_snapshot: Workspace-level surge protection controls (Preview) enable per-workspace
+    CU percentage limits over a rolling 24-hour period, automatic blocking of workspaces exceeding
+    thresholds, and mission critical mode to exempt high-priority workspaces from surge protection
+    rules. For more information, see Surge protection.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

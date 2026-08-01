@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-05-030
+slug: warehouse-connection-string-changes-generally-available
+title: Warehouse connection string changes (Generally Available)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Connection-string-changes-in-Fabric-Warehouse-What-to-expect-for/ba-p/5185022
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Connection-string-changes-in-Fabric-Warehouse-What-to-expect-for/ba-p/5185022
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:cd8005ebb6cd1f0b8d4327e3da0017cc9b5aa03500797eb18dc08a0be8be39f8
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:e1a0764294f0fc6571c3bd274512d3160eac473f3c4f7a83a54b76df41fa815c
+  discovered_at: '2026-08-01T06:14:26.677170+00:00'
+  source_role: secondary
+  selector: '## Generally available features > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:e1a0764294f0fc6571c3bd274512d3160eac473f3c4f7a83a54b76df41fa815c
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:cd8005ebb6cd1f0b8d4327e3da0017cc9b5aa03500797eb18dc08a0be8be39f8
+  title_snapshot: Warehouse connection string changes (Generally Available)
+  summary_snapshot: Connection behavior changes in Fabric Data Warehouse make connections
+    deterministic when the InitialCatalog connection string value is ambiguous or missing,
+    improving predictability for downstream auditing. For more information, see Fabric Data
+    Warehouse connectivity and Operation list.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

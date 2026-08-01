@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-043
+slug: dbt-job-in-fabric-data-factory-preview
+title: dbt Job in Fabric Data Factory (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/dbt-job-in-microsoft-fabric-ship-trustworthy-sql-models-faster-preview
+announcement_url: https://blog.fabric.microsoft.com/blog/dbt-job-in-microsoft-fabric-ship-trustworthy-sql-models-faster-preview
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:55e4e947c4a541826b304bd1ff973f50c2ec66946470071bbf7b0cff486ba3ad
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:67fcb6aa3b77b17a9c998be254926ed90a492b298922dc044df0a11966ea7ab0
+  discovered_at: '2026-08-01T06:14:26.666528+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:67fcb6aa3b77b17a9c998be254926ed90a492b298922dc044df0a11966ea7ab0
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:55e4e947c4a541826b304bd1ff973f50c2ec66946470071bbf7b0cff486ba3ad
+  title_snapshot: dbt Job in Fabric Data Factory (Preview)
+  summary_snapshot: A dbt Job in Fabric Data Factory lets you author, schedule, and monitor
+    dbt projects natively with serverless execution, integrated testing and documentation,
+    and governance via Entra ID and SQL security policies. For more information, see dbt job
+    in Microsoft Fabric (preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-06-036
+slug: gpu-accelerated-fabric-data-warehouse-early-access-preview
+title: GPU-accelerated Fabric Data Warehouse (Early Access Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/A-new-analytics-frontier-GPU-accelerated-Fabric-Data-Warehouse/ba-p/5191598
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/A-new-analytics-frontier-GPU-accelerated-Fabric-Data-Warehouse/ba-p/5191598
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:4e171b1dc55f8bb565799ed166243294a1ee4e32ef949b65ea64e7e6a92d8b55
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:a1932e0947bae4fee276a7afc8c30bfb816f1ac9a489a1b1c292d29539400350
+  discovered_at: '2026-08-01T06:14:26.684498+00:00'
+  source_role: secondary
+  selector: '## Fabric Data Warehouse > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:a1932e0947bae4fee276a7afc8c30bfb816f1ac9a489a1b1c292d29539400350
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:4e171b1dc55f8bb565799ed166243294a1ee4e32ef949b65ea64e7e6a92d8b55
+  title_snapshot: GPU-accelerated Fabric Data Warehouse (Early Access Preview)
+  summary_snapshot: GPU-accelerated Fabric Data Warehouse (Early Access Preview) uses NVIDIA
+    accelerated computing to run eligible T-SQL queries on GPUs with no query rewrites, delivering
+    up to 7x faster performance at high concurrency across all SQL analytics endpoints and
+    warehouses in a workspace once you enable it from workspace settings.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

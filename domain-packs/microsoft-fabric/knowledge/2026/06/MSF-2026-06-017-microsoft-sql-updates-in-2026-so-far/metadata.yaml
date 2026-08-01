@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-06-017
+slug: microsoft-sql-updates-in-2026-so-far
+title: Microsoft SQL updates in 2026 so far
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/What-s-new-across-Microsoft-SQL-in-2026-so-far-SQL-Server-Azure/ba-p/5221163
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/What-s-new-across-Microsoft-SQL-in-2026-so-far-SQL-Server-Azure/ba-p/5221163
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:2d68bc9d18f4b115d06bdfff39fcdfad82f0b511bbaed5f3938d2a254028d58c
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:43ba278557c2a5c4ecb5c2482ec7a3817d998954e172b18a015ee4a2d1535682
+  discovered_at: '2026-08-01T06:14:26.684082+00:00'
+  source_role: secondary
+  selector: '## SQL database in Microsoft Fabric samples and guidance > table row (date from
+    cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:43ba278557c2a5c4ecb5c2482ec7a3817d998954e172b18a015ee4a2d1535682
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:2d68bc9d18f4b115d06bdfff39fcdfad82f0b511bbaed5f3938d2a254028d58c
+  title_snapshot: Microsoft SQL updates in 2026 so far
+  summary_snapshot: A mid-year recap of Microsoft SQL updates collects Preview and Generally
+    Available changes across SQL Server, Azure SQL, and SQL database in Fabric. Highlights
+    include regex support for large object (LOB) types, Microsoft Entra server-level logins,
+    AIGENERATEEMBEDDINGS, SQL Server 2025 RTM, and SQL database in Fabric updates such as
+    full collation support and the migration assistant.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

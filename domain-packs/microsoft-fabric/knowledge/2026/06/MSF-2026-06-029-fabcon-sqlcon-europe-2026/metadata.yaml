@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-06-029
+slug: fabcon-sqlcon-europe-2026
+title: FabCon+SQLCon Europe 2026
+source_name: fabric-whats-new-markdown
+source_url: https://aka.ms/fabconeu
+announcement_url: https://aka.ms/fabconeu
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:1d9b13c119080dc7c9453681c8167ff16c8f664651df77a8b6fe33f3d9d51afb
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:6efa03a477ad7d0092e54a898e0f1f4f41738aef2ed9fe1ef8836ee79c77707b
+  discovered_at: '2026-08-01T06:14:26.677838+00:00'
+  source_role: secondary
+  selector: '## Community > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:6efa03a477ad7d0092e54a898e0f1f4f41738aef2ed9fe1ef8836ee79c77707b
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:1d9b13c119080dc7c9453681c8167ff16c8f664651df77a8b6fe33f3d9d51afb
+  title_snapshot: FabCon+SQLCon Europe 2026
+  summary_snapshot: Europe's largest Microsoft Fabric and SQL event lands in Barcelona, September
+    28 – October 1, 2026. From 130 sessions and 4 keynotes to workshops, the expo, community
+    spaces, and the Power BI DataViz World Championships, this is where the data community
+    comes together. Register now and save &euro;200 with code FABCMTY200.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

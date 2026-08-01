@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-06-023
+slug: fabric-spark-operations-skill-for-failure-diagnosis-preview
+title: Fabric Spark Operations Skill for failure diagnosis (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Simplify-Spark-failure-diagnosis-in-Fabric-Preview/ba-p/5196959
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Simplify-Spark-failure-diagnosis-in-Fabric-Preview/ba-p/5196959
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:82b1b93cc673bb6884cba8952f0e08c6bcda4dbbc5e46cec89b839dc79b2ddb5
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:5ee694541f54fb5057bc9ce8b0cf63e41e52454eb3f056289e3c529f17b8027d
+  discovered_at: '2026-08-01T06:14:26.682059+00:00'
+  source_role: secondary
+  selector: '## Fabric Data Engineering > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:5ee694541f54fb5057bc9ce8b0cf63e41e52454eb3f056289e3c529f17b8027d
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:82b1b93cc673bb6884cba8952f0e08c6bcda4dbbc5e46cec89b839dc79b2ddb5
+  title_snapshot: Fabric Spark Operations Skill for failure diagnosis (Preview)
+  summary_snapshot: 'The Fabric Spark Operations Skill (Preview) brings AI-assisted, read-only
+    Spark diagnostics to Microsoft Fabric: describe a notebook, pipeline, or workspace in
+    plain language and the open-source skill resolves IDs, queries the Spark monitoring APIs,
+    and returns a severity-ranked report with root-cause explanations and fix recommendations
+    instead of raw logs. For more information, see Apache Spark monitoring overview and Monitor
+    Spark applications using Spark monitoring APIs.'
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

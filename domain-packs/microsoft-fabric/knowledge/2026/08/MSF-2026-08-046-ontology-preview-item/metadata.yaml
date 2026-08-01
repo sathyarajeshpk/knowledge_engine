@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-046
+slug: ontology-preview-item
+title: Ontology (preview) item
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/iq/ontology/overview
+announcement_url: https://learn.microsoft.com/en-us/fabric/iq/ontology/overview
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:9a75d6a2c22c159efbe68a9be6b5c9139907c0b8e8f79366f7b1f15a2a1a0e00
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:71437b8726a1e7c5bb82fe772f8f47f9c354ff50a720d954946f0a46338550c2
+  discovered_at: '2026-08-01T06:14:26.672479+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:71437b8726a1e7c5bb82fe772f8f47f9c354ff50a720d954946f0a46338550c2
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:9a75d6a2c22c159efbe68a9be6b5c9139907c0b8e8f79366f7b1f15a2a1a0e00
+  title_snapshot: Ontology (preview) item
+  summary_snapshot: Ontology (preview) in Fabric IQ lets you define entity types, relationships,
+    properties, and other constraints to organize data according to your business vocabulary.
+    For more information, see What is ontology (preview)?
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

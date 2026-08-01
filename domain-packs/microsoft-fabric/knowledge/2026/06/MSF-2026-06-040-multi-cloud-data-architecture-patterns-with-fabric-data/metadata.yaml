@@ -1,0 +1,63 @@
+schema_version: 1
+id: MSF-2026-06-040
+slug: multi-cloud-data-architecture-patterns-with-fabric-data
+title: Multi-cloud data architecture patterns with Fabric Data Factory (Generally Available)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Multi-cloud-data-architecture-patterns-using-Fabric-Data-Factory/ba-p/5217279
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Multi-cloud-data-architecture-patterns-using-Fabric-Data-Factory/ba-p/5217279
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:68e379c1c7ead1d7d1449ba46c212b3e6bc274de38af16130031553ed83010c6
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:bd712b0a0addfc54aabf5d4bcc11913f0f00a57455596d5ce677ece3e709cba3
+  discovered_at: '2026-08-01T06:14:26.681469+00:00'
+  source_role: secondary
+  selector: '## Data Factory in Microsoft Fabric samples and guidance > table row (date from
+    cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:bd712b0a0addfc54aabf5d4bcc11913f0f00a57455596d5ce677ece3e709cba3
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:68e379c1c7ead1d7d1449ba46c212b3e6bc274de38af16130031553ed83010c6
+  title_snapshot: Multi-cloud data architecture patterns with Fabric Data Factory (Generally
+    Available)
+  summary_snapshot: Multi-cloud data architecture patterns show how Fabric Data Factory uses
+    native connectors and orchestration activities such as If-Condition, Until, and ForEach
+    with event-based triggers to coordinate workflows across Snowflake, Databricks, Google
+    BigQuery, and Salesforce, and how OneLake shortcuts and mirroring enable zero-copy, near
+    real-time access with Purview lineage. For more information, see Activity overview and
+    Connector overview.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

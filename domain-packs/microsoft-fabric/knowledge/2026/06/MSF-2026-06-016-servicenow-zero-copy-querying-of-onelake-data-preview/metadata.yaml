@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-06-016
+slug: servicenow-zero-copy-querying-of-onelake-data-preview
+title: ServiceNow zero-copy querying of OneLake data (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/ServiceNow-Zero-Copy-Querying-of-Enterprise-Data-in-Microsoft/ba-p/5198369
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/ServiceNow-Zero-Copy-Querying-of-Enterprise-Data-in-Microsoft/ba-p/5198369
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:95a311542bfb995a9f54f1ec2767a09cb7c6738e782bcb1f66394819cde1f862
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:4002ae1454807303d02eedc3ca8cc0a4529b48a2c33eddaa96d8ea4daf7543f0
+  discovered_at: '2026-08-01T06:14:26.678522+00:00'
+  source_role: secondary
+  selector: '## Microsoft Fabric platform features > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:4002ae1454807303d02eedc3ca8cc0a4529b48a2c33eddaa96d8ea4daf7543f0
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:95a311542bfb995a9f54f1ec2767a09cb7c6738e782bcb1f66394819cde1f862
+  title_snapshot: ServiceNow zero-copy querying of OneLake data (Preview)
+  summary_snapshot: The ServiceNow OneLake connector (Preview) lets ServiceNow Workflow Data
+    Fabric query governed OneLake data in place through the OneLake Table APIs and the Apache
+    Iceberg REST Catalog standard, so ServiceNow workflows, analytics, and AI agents use enterprise
+    data without ETL pipelines or copies. For more information, see OneLake overview and Iceberg
+    table APIs overview.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

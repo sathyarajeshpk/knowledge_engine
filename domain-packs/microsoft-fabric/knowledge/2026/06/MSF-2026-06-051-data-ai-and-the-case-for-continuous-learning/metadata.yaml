@@ -1,0 +1,64 @@
+schema_version: 1
+id: MSF-2026-06-051
+slug: data-ai-and-the-case-for-continuous-learning
+title: Data, AI, and the case for continuous learning
+source_name: fabric-blog
+source_url: https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/06/15/data-ai-and-the-case-for-continuous-learning
+announcement_url: https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/06/15/data-ai-and-the-case-for-continuous-learning
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-15
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:f439431027c60c4115e7d009ced9f1c70e9ff1f9a4c0dafc62a358792dce8e47
+provenance:
+  source_name: fabric-blog
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:6185792c764b6cb81198270f0a00d4a9caaad417378f70e08c1aaa3b4514fab8
+  discovered_at: '2026-08-01T06:14:27.774066+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:6185792c764b6cb81198270f0a00d4a9caaad417378f70e08c1aaa3b4514fab8
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:f439431027c60c4115e7d009ced9f1c70e9ff1f9a4c0dafc62a358792dce8e47
+  title_snapshot: Data, AI, and the case for continuous learning
+  summary_snapshot: Learning has never been more important for data and AI professionals.
+    As AI rapidly shapes how organizations build, analyze and act on data, staying current
+    is no longer optional; it’s essential for both career growth and business success. Data
+    professionals have always worked in a fast-moving field, but the pace today is fundamentally
+    different. Every day, the world generates roughly 400 million terabytes of data, and nearly
+    90% of the world’s data has been created in just the last two years. This shift is also
+    changing how data professionals work across platforms like Microsoft Fabric , Azure Databases
+    , and SQL-based applications, where analytics, operational data, and AI development are
+    increasingly connected. For data engineers, analysts, and developers working across…
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

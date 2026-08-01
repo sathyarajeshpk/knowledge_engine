@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-05-024
+slug: incremental-liquid-clustering-in-fabric-runtime-2-0
+title: Incremental Liquid Clustering in Fabric Runtime 2.0
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Incremental-Liquid-Clustering-in-Microsoft-Fabric-Faster-smarter/ba-p/5189122
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Incremental-Liquid-Clustering-in-Microsoft-Fabric-Faster-smarter/ba-p/5189122
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:039a5799e6d393ef7c88ce8341a181733d8da4adcacca0f0e6022ddf8b46f83a
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:af814ed01e2444c1156a60e0c870c34b92ef0cff555e0616513244e241e2ff4a
+  discovered_at: '2026-08-01T06:14:26.682499+00:00'
+  source_role: secondary
+  selector: '## Fabric Data Engineering > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:af814ed01e2444c1156a60e0c870c34b92ef0cff555e0616513244e241e2ff4a
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:039a5799e6d393ef7c88ce8341a181733d8da4adcacca0f0e6022ddf8b46f83a
+  title_snapshot: Incremental Liquid Clustering in Fabric Runtime 2.0
+  summary_snapshot: Incremental Liquid Clustering in Fabric Runtime 2.0 is a new OPTIMIZE
+    algorithm that processes only unclustered, small, or deletion-vector-heavy files instead
+    of rewriting entire 100-GB groups, with Auto Reclustering to keep layout quality high—delivering
+    up to 8.9x faster clustering and constant-time cost that scales with new data, not table
+    size. Enabled by default with no configuration changes; use OPTIMIZE table FULL for a
+    full recluster. For more information, see Apply liquid clustering on Delta tables.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

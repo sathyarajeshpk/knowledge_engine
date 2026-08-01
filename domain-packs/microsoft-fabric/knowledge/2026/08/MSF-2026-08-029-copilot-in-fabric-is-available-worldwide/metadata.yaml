@@ -1,0 +1,57 @@
+schema_version: 1
+id: MSF-2026-08-029
+slug: copilot-in-fabric-is-available-worldwide
+title: Copilot in Fabric is available worldwide
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/copilot-in-fabric-preview-is-available-worldwide
+announcement_url: https://blog.fabric.microsoft.com/blog/copilot-in-fabric-preview-is-available-worldwide
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:2ea1a436036aa2f39eee18e4bfed5bd4ef548516f07a9687aff86725a9fc0b04
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:4118003bc66ce7b0345c9d8f0f8d9c039e8cd423dc2caf90ce4ff0c04495c798
+  discovered_at: '2026-08-01T06:14:26.664900+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:4118003bc66ce7b0345c9d8f0f8d9c039e8cd423dc2caf90ce4ff0c04495c798
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:2ea1a436036aa2f39eee18e4bfed5bd4ef548516f07a9687aff86725a9fc0b04
+  title_snapshot: Copilot in Fabric is available worldwide
+  summary_snapshot: Copilot in Fabric is now available to all customers. For more information
+    on release status, see Release status of AI and Copilot experiences in Fabric.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

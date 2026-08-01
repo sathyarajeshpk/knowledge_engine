@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-06-015
+slug: real-time-weather-monitoring-with-eventstream-ai-skills
+title: Real-time weather monitoring with Eventstream AI Skills
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Monitoring-weather-conditions-in-real-time-using-AI-and-Fabric/ba-p/5197906
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Monitoring-weather-conditions-in-real-time-using-AI-and-Fabric/ba-p/5197906
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:e9ff35e0acc86ae4440f11f0dcd336dd26b396182587393ace3565d73286c2d0
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:360e2e98fd46571438713d70eba67d27d66ef4ea699a9fa1ea1c17e5b3611672
+  discovered_at: '2026-08-01T06:14:26.687411+00:00'
+  source_role: secondary
+  selector: '## Real-Time Intelligence samples and guidance > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:360e2e98fd46571438713d70eba67d27d66ef4ea699a9fa1ea1c17e5b3611672
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:e9ff35e0acc86ae4440f11f0dcd336dd26b396182587393ace3565d73286c2d0
+  title_snapshot: Real-time weather monitoring with Eventstream AI Skills
+  summary_snapshot: Building a real-time weather monitoring system with AI and Fabric Eventstream
+    walks through using Eventstream AI Skills to generate an 11-source eventstream from a
+    single natural-language prompt that ingests real-time weather, filters for heat-stress
+    conditions, and lands events in an Eventhouse KQL database for cross-venue KQL analysis.
+    For more information, see Overview of Microsoft Fabric eventstreams and Eventhouse overview.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

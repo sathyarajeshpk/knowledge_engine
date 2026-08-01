@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-056
+slug: dataflow-gen2-diagnostics-download-preview
+title: Dataflow Gen2 diagnostics download (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/dataflow-gen2-dataflow-diagnostics-download-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/dataflow-gen2-dataflow-diagnostics-download-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:46329a1b53bd8818b81f17de5d55318aaad0be5a32ab3985ba0008f8183eabda
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:85bf29b98c8ccc20cb102fe2b2b84713f0be2bc5ac857770c519eca927166703
+  discovered_at: '2026-08-01T06:14:26.666397+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:85bf29b98c8ccc20cb102fe2b2b84713f0be2bc5ac857770c519eca927166703
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:46329a1b53bd8818b81f17de5d55318aaad0be5a32ab3985ba0008f8183eabda
+  title_snapshot: Dataflow Gen2 diagnostics download (Preview)
+  summary_snapshot: Dataflow Gen2 diagnostics download (Preview) lets you download run-level
+    diagnostic packages with structured logs and execution details for faster root-cause analysis
+    and support collaboration. For more information, see View refresh history and monitor
+    your dataflows.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

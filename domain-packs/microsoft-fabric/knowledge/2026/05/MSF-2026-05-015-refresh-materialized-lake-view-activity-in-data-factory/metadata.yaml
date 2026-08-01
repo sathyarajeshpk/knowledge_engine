@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-05-015
+slug: refresh-materialized-lake-view-activity-in-data-factory
+title: Refresh Materialized Lake View activity in Data Factory pipelines (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/data-factory/refresh-materialized-lake-view-activity
+announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/refresh-materialized-lake-view-activity
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:1da364c91c7ffadbe061076b5b9e3672a5769be37bd1fb826a3e20978f3488a3
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:7253b067775f8af96e5c3b51dd7ab8a8a0c32f627dab6c3059fb7a7d84995001
+  discovered_at: '2026-08-01T06:14:26.680934+00:00'
+  source_role: secondary
+  selector: '## Data Factory in Microsoft Fabric > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:7253b067775f8af96e5c3b51dd7ab8a8a0c32f627dab6c3059fb7a7d84995001
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:1da364c91c7ffadbe061076b5b9e3672a5769be37bd1fb826a3e20978f3488a3
+  title_snapshot: Refresh Materialized Lake View activity in Data Factory pipelines (Preview)
+  summary_snapshot: The new Refresh Materialized Lake View activity in Fabric Data Factory
+    pipelines lets you refresh materialized lake views on demand or on a schedule within your
+    pipeline orchestration.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

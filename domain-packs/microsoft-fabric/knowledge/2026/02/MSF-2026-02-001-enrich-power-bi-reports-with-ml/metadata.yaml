@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-02-001
+slug: enrich-power-bi-reports-with-ml
+title: Enrich Power BI reports with ML
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/enrich-power-bi-reports-with-machine-learning-in-microsoft-fabric?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/enrich-power-bi-reports-with-machine-learning-in-microsoft-fabric?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-02-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:c0cabaeccf9add21c938a1a0ccb2e0e179e921468f11d725fdfa62546d9c42f7
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:1ef21a1b2bdd42d2cbcd9153002a5dedecca301abd37bd48a19dcc7db6a5d7de
+  discovered_at: '2026-08-01T06:14:26.683551+00:00'
+  source_role: secondary
+  selector: '## Fabric Data Science samples and guidance > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:1ef21a1b2bdd42d2cbcd9153002a5dedecca301abd37bd48a19dcc7db6a5d7de
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:c0cabaeccf9add21c938a1a0ccb2e0e179e921468f11d725fdfa62546d9c42f7
+  title_snapshot: Enrich Power BI reports with ML
+  summary_snapshot: Machine learning can enrich Power BI reports. Learn how with this end-to-end
+    pattern that uses Semantic Link to query a governed semantic model, trains a churn-prediction
+    model with Fabric ML, applies batch and real-time scoring, and surfaces predictions in
+    Power BI through Dataflow Gen2.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

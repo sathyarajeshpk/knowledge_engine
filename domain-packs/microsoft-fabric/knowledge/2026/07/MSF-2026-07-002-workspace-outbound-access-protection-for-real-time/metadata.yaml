@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-07-002
+slug: workspace-outbound-access-protection-for-real-time
+title: Workspace outbound access protection for Real-Time Intelligence (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Workspace-Outbound-Access-Protection-OAP-for-Real-Time/ba-p/5241179
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Workspace-Outbound-Access-Protection-OAP-for-Real-Time/ba-p/5241179
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:ed22dbdd69c0d58ff5098e416ecbd45dd676b4815c9a625896b0166bbec5d6d9
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:17e83f3713f19f9e04f307bb2cddcb8b7238be506bfa0a7f85cbc64cb0ac2121
+  discovered_at: '2026-08-01T06:14:26.686169+00:00'
+  source_role: secondary
+  selector: '## Real-Time Intelligence in Microsoft Fabric > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:17e83f3713f19f9e04f307bb2cddcb8b7238be506bfa0a7f85cbc64cb0ac2121
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:ed22dbdd69c0d58ff5098e416ecbd45dd676b4815c9a625896b0166bbec5d6d9
+  title_snapshot: Workspace outbound access protection for Real-Time Intelligence (Preview)
+  summary_snapshot: Workspace outbound access protection (OAP) for Real-Time Intelligence
+    (Preview) extends workspace-level outbound network controls to Eventstream, Eventhouse,
+    KQL QuerySet, Activator, Real-Time Dashboards, and Azure and Fabric events, so admins
+    block unwanted outbound connections by default and allow only approved destinations through
+    data connection rules. For more information, see Workspace outbound access protection.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

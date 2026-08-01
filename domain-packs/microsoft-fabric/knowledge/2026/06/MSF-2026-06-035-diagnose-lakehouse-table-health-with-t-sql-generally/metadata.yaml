@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-06-035
+slug: diagnose-lakehouse-table-health-with-t-sql-generally
+title: Diagnose Lakehouse table health with T-SQL (Generally Available)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Know-before-you-optimize-Diagnose-Lakehouse-table-health-with-a/ba-p/5228076
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Know-before-you-optimize-Diagnose-Lakehouse-table-health-with-a/ba-p/5228076
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:297096a673259ef3a586634cd029c9954b30cb75b72615d77877c28aed48f4b0
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:968ef39c612ae20195284d3570973c16d25514809ebd63e8c264c8597636b0af
+  discovered_at: '2026-08-01T06:14:26.676208+00:00'
+  source_role: secondary
+  selector: '## Generally available features > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:968ef39c612ae20195284d3570973c16d25514809ebd63e8c264c8597636b0af
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:297096a673259ef3a586634cd029c9954b30cb75b72615d77877c28aed48f4b0
+  title_snapshot: Diagnose Lakehouse table health with T-SQL (Generally Available)
+  summary_snapshot: Lakehouse table health diagnostics (Generally Available) add the built-in
+    sys.spgettablehealthmetrics stored procedure to the SQL analytics endpoint, returning
+    anomaly indicators and storage metrics such as small-file counts, deleted-row counts,
+    and checkpoint versions so you can run OPTIMIZE only when needed. For more information,
+    see Optimize Lakehouse tables based on health checks.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

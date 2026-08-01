@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-089
+slug: model-options-now-available-in-power-bi-service
+title: Model Options now available in Power BI Service
+source_name: powerbi-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/power-bi/transform-model/service-model-options
+announcement_url: https://learn.microsoft.com/en-us/power-bi/transform-model/service-model-options
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:a84cca94f311186e1e8163b09e8772f4c5de7febcdce81d738e545a51ee88e66
+provenance:
+  source_name: powerbi-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:dd08c7fca9aea6c9bb503cb192742ade192d2e6e60e1033ff2e767bad80c7373
+  discovered_at: '2026-08-01T06:14:27.250374+00:00'
+  source_role: secondary
+  selector: '## Modeling > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:dd08c7fca9aea6c9bb503cb192742ade192d2e6e60e1033ff2e767bad80c7373
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:a84cca94f311186e1e8163b09e8772f4c5de7febcdce81d738e545a51ee88e66
+  title_snapshot: Model Options now available in Power BI Service
+  summary_snapshot: The Model options dialog is now available directly in web modeling, providing
+    control over type detection, relationships, time intelligence, parallel loading, locale
+    settings, DirectQuery connections, and maximum connections per data source. For more information,
+    see Model options in the Power BI Service.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-024
+slug: real-time-intelligence-cribl-source-preview
+title: Real-Time Intelligence Cribl source (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/expanding-real-time-intelligence-data-sources-with-cribl-source-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/expanding-real-time-intelligence-data-sources-with-cribl-source-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:eeebcb67cc0b69c8be474c1bb13a983a8fca435cea407c59544e51400d090df0
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:3c57a72aaf23ae4e0d7d7eddb614a4d87fdf42842eaa46e214878273254696c9
+  discovered_at: '2026-08-01T06:14:26.673434+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:3c57a72aaf23ae4e0d7d7eddb614a4d87fdf42842eaa46e214878273254696c9
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:eeebcb67cc0b69c8be474c1bb13a983a8fca435cea407c59544e51400d090df0
+  title_snapshot: Real-Time Intelligence Cribl source (Preview)
+  summary_snapshot: Cribl source (Preview) enables real-time data to flow into Fabric Eventstream
+    from diverse telemetry and log sources through Cribl Stream, including Syslog, Datadog
+    Agent, Splunk, Open Telemetry, and edge-based sources, with simplified Kafka endpoint
+    configuration in Real-Time Hub. For more information, see Add Cribl source to an eventstream
+    (preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

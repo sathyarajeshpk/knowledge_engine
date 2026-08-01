@@ -1,0 +1,65 @@
+schema_version: 1
+id: MSF-2026-02-002
+slug: top-sessions-you-won-t-want-to-miss-at-the-microsoft-fabric
+title: Top sessions you won’t want to miss at the Microsoft Fabric Community Conference 2026
+source_name: fabric-blog
+source_url: https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/02/03/top-sessions-you-wont-want-to-miss-at-the-microsoft-fabric-community-conference-2026
+announcement_url: https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/02/03/top-sessions-you-wont-want-to-miss-at-the-microsoft-fabric-community-conference-2026
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-02-03
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:71f131d7e0f807b1e857e3913950e677a7a985929757970d4d8060018c47e9ee
+provenance:
+  source_name: fabric-blog
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:f2eed38df332c3d2fb11e29beec42faafe87cea2e4d308c6da13b5b426ff92d5
+  discovered_at: '2026-08-01T06:14:27.779562+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:f2eed38df332c3d2fb11e29beec42faafe87cea2e4d308c6da13b5b426ff92d5
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:71f131d7e0f807b1e857e3913950e677a7a985929757970d4d8060018c47e9ee
+  title_snapshot: Top sessions you won’t want to miss at the Microsoft Fabric Community Conference
+    2026
+  summary_snapshot: The Microsoft Fabric Community Conference (FabCon) is returning stateside
+    in just a few weeks, taking place at the Georgia World Congress Center in Atlanta, March
+    16 – 20, and it’s shaping up to be our biggest event yet! For the third year, thousands
+    of data professionals from all over the world will be joining us for a week packed with
+    workshops, keynotes, networking, and sessions curated to help attendees accelerate their
+    data strategies. Save your seat and register for FabCon in Atlanta With more than 200
+    sessions across every Fabric workload, attendees will gain practical skills, learn about
+    the latest product announcements, connect with like-minded community members, and gain
+    insights directly from the Microsoft teams building the Fabric platform. Additionally…
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

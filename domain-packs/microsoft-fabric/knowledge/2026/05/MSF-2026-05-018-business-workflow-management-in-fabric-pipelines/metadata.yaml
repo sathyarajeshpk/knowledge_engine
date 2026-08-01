@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-05-018
+slug: business-workflow-management-in-fabric-pipelines
+title: Business Workflow Management in Fabric Pipelines
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/data-factory/business-workflow-management
+announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/business-workflow-management
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:61afd410484f14b71d57e37938d0bc3c0bcf6561ef11e3f5afab52abacfa9443
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:808d3e7e46f9cd523d52e75c3dba570592490c944f62e3f901a5249ecb664885
+  discovered_at: '2026-08-01T06:14:26.680747+00:00'
+  source_role: secondary
+  selector: '## Data Factory in Microsoft Fabric > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:808d3e7e46f9cd523d52e75c3dba570592490c944f62e3f901a5249ecb664885
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:61afd410484f14b71d57e37938d0bc3c0bcf6561ef11e3f5afab52abacfa9443
+  title_snapshot: Business Workflow Management in Fabric Pipelines
+  summary_snapshot: Business workflow management with pipelines in Fabric Data Factory in
+    Fabric Data Factory pipelines enables end-to-end business workflows that orchestrate work
+    across systems with built-in process tracking and status management.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

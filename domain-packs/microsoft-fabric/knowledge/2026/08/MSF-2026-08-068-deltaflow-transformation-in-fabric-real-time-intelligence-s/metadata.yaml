@@ -1,0 +1,63 @@
+schema_version: 1
+id: MSF-2026-08-068
+slug: deltaflow-transformation-in-fabric-real-time-intelligence-s
+title: DeltaFlow transformation in Fabric Real-Time Intelligence's Eventstream (preview)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/delta-flow-output-transformation
+announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/delta-flow-output-transformation
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:0349731defcf0e0b5495ee4a69593dea9d232d5d6e3e720cd62d9fb9fdf38b8b
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:a3e2988f28aa7a682264401dfe85569b983fac26165391029b3f514af415dc4d
+  discovered_at: '2026-08-01T06:14:26.666781+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:a3e2988f28aa7a682264401dfe85569b983fac26165391029b3f514af415dc4d
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:0349731defcf0e0b5495ee4a69593dea9d232d5d6e3e720cd62d9fb9fdf38b8b
+  title_snapshot: DeltaFlow transformation in Fabric Real-Time Intelligence's Eventstream
+    (preview)
+  summary_snapshot: 'DeltaFlow is a capability in Fabric Eventstream that transforms raw Change
+    Data Capture (CDC) events into a flattened, analytics-ready format. Instead of working
+    with deeply nested Debezium JSON payloads, DeltaFlow produces tabular rows that closely
+    mirror the structure of the source database tables, enriched with metadata columns that
+    describe each change. Eventstream supports DeltaFlow transformations, which are currently
+    in preview. For more information, see DeltaFlow output transformation (preview) and Blog:
+    Business Events in Microsoft Fabric (Preview).'
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

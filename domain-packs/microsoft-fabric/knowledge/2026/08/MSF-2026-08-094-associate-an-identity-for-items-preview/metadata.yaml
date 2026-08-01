@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-094
+slug: associate-an-identity-for-items-preview
+title: Associate an identity for items (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/associated-identities-for-items-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/associated-identities-for-items-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:b85f1efaa941ccae5eaff2d19cc47c2ce6cf34af496c7d94b6e8c963fc4f9e1e
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:ee7b184003fb46a77c08f28f2baa308316fcb9a91e06e6728eb7314b4b73137e
+  discovered_at: '2026-08-01T06:14:26.663599+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:ee7b184003fb46a77c08f28f2baa308316fcb9a91e06e6728eb7314b4b73137e
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:b85f1efaa941ccae5eaff2d19cc47c2ce6cf34af496c7d94b6e8c963fc4f9e1e
+  title_snapshot: Associate an identity for items (Preview)
+  summary_snapshot: Associated identities for items (Preview) let you associate a user, service
+    principal, or managed identity with Fabric Lakehouses and Eventstreams via REST API, removing
+    the dependency on the item owner. For more information, see Manage identities associated
+    with Fabric items.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

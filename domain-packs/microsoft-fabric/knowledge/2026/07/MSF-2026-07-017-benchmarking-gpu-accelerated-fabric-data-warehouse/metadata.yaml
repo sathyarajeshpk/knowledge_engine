@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-07-017
+slug: benchmarking-gpu-accelerated-fabric-data-warehouse
+title: Benchmarking GPU-accelerated Fabric Data Warehouse
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/We-Put-a-GPU-Behind-Fabric-DW/ba-p/5262382
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/We-Put-a-GPU-Behind-Fabric-DW/ba-p/5262382
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:93d71b341620d4268f6ff99dbc1a5aaac6dab37f53b99fb7b5e877141de4f127
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:cea4cca5b16dcfa78aad44c25508f60774c5180090e8abd1a543ea3e622c7123
+  discovered_at: '2026-08-01T06:14:26.685513+00:00'
+  source_role: secondary
+  selector: '## Fabric Data Warehouse samples and guidance > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:cea4cca5b16dcfa78aad44c25508f60774c5180090e8abd1a543ea3e622c7123
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:93d71b341620d4268f6ff99dbc1a5aaac6dab37f53b99fb7b5e877141de4f127
+  title_snapshot: Benchmarking GPU-accelerated Fabric Data Warehouse
+  summary_snapshot: Benchmarking GPU-accelerated Fabric Data Warehouse shares a TPC-H benchmark
+    at 100 GB scale factor on a Fabric F64 Trial capacity that compares CPU and GPU query
+    acceleration across single-user and high-concurrency workloads up to 1,000 concurrent
+    users, and reports roughly 6x throughput and 6–7x lower p95 latency on GPU with query
+    acceleration enabled from workspace settings.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

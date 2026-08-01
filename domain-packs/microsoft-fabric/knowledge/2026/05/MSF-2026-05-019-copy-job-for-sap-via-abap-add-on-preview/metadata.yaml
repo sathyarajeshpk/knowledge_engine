@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-05-019
+slug: copy-job-for-sap-via-abap-add-on-preview
+title: Copy job for SAP via ABAP Add-On (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/data-factory/copy-job-tutorial-sap-abap
+announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/copy-job-tutorial-sap-abap
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:4e48c2030eee36789a536f0ebc9cdc55e8702d6b6767e9c01b085ca2d1b2f328
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:821a8a286e21d7e88be667d3f3a3d95e5ee8c05f792e119365d15afe0d2646c0
+  discovered_at: '2026-08-01T06:14:26.680819+00:00'
+  source_role: secondary
+  selector: '## Data Factory in Microsoft Fabric > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:821a8a286e21d7e88be667d3f3a3d95e5ee8c05f792e119365d15afe0d2646c0
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:4e48c2030eee36789a536f0ebc9cdc55e8702d6b6767e9c01b085ca2d1b2f328
+  title_snapshot: Copy job for SAP via ABAP Add-On (Preview)
+  summary_snapshot: Copy job for SAP via ABAP Add-On (preview) extends SAP connectors in Fabric
+    with a Microsoft Data Integration ABAP Add-On that extracts data from SAP S/4HANA and
+    ECC systems, supporting full and incremental copy modes for tables, views, and CDS views.
+    For more information, see Copy job for SAP via ABAP Add-On (preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

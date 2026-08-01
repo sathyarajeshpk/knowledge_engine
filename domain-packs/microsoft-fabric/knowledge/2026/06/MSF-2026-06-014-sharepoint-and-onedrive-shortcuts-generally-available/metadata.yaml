@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-06-014
+slug: sharepoint-and-onedrive-shortcuts-generally-available
+title: SharePoint and OneDrive shortcuts (Generally Available)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/onelake/create-onedrive-sharepoint-shortcut
+announcement_url: https://learn.microsoft.com/en-us/fabric/onelake/create-onedrive-sharepoint-shortcut
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:2705bec0fd4d666ebb3f92f9dd97cba51407d9e7b3ac5f8e552a1189c480ef8c
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:35623088de64ecc1584c91b0ec675f0da1facbe13e2bad04ae4736d02dc1e25b
+  discovered_at: '2026-08-01T06:14:26.676819+00:00'
+  source_role: secondary
+  selector: '## Generally available features > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:35623088de64ecc1584c91b0ec675f0da1facbe13e2bad04ae4736d02dc1e25b
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:2705bec0fd4d666ebb3f92f9dd97cba51407d9e7b3ac5f8e552a1189c480ef8c
+  title_snapshot: SharePoint and OneDrive shortcuts (Generally Available)
+  summary_snapshot: Create shortcuts to SharePoint or OneDrive locations, with support for
+    workspace identity and service principal authentication. For more information, see Create
+    a OneDrive or SharePoint shortcut and Workspace identity.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

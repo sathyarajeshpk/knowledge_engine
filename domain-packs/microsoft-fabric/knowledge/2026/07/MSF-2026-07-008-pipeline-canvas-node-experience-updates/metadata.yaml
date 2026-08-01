@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-07-008
+slug: pipeline-canvas-node-experience-updates
+title: Pipeline canvas node experience updates
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-canvas-experience
+announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-canvas-experience
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:83136ee4bbca9dfca83537c46a6fec61661c9bf0beb922958584da2ef6a97d91
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:7148ce8d69a807e046c82e762dd686d6dde83fcd6848114b19f804d652d078e8
+  discovered_at: '2026-08-01T06:14:26.680881+00:00'
+  source_role: secondary
+  selector: '## Data Factory in Microsoft Fabric > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:7148ce8d69a807e046c82e762dd686d6dde83fcd6848114b19f804d652d078e8
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:83136ee4bbca9dfca83537c46a6fec61661c9bf0beb922958584da2ef6a97d91
+  title_snapshot: Pipeline canvas node experience updates
+  summary_snapshot: The refreshed pipeline canvas in Fabric Data Factory has new node designs
+    for improved readability and usability when building and monitoring Fabric Data Factory
+    pipelines.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

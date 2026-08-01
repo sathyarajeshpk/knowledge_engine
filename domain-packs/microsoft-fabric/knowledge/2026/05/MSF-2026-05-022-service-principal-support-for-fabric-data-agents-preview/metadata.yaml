@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-05-022
+slug: service-principal-support-for-fabric-data-agents-preview
+title: Service principal support for Fabric data agents (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Service-Principal-Support-for-Data-Agents-in-Fabric-Preview/ba-p/5181634
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Service-Principal-Support-for-Data-Agents-in-Fabric-Preview/ba-p/5181634
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:f8c7e1db92dd60924d1b248d3be35bf72157896ac7e8adc727d967dab8c7c3ab
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:98aa97033ba2fee8bb6cb77b3725dcb7946e3550995cbef00b018848e4409996
+  discovered_at: '2026-08-01T06:14:26.688223+00:00'
+  source_role: secondary
+  selector: '## Fabric IQ > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:98aa97033ba2fee8bb6cb77b3725dcb7946e3550995cbef00b018848e4409996
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:f8c7e1db92dd60924d1b248d3be35bf72157896ac7e8adc727d967dab8c7c3ab
+  title_snapshot: Service principal support for Fabric data agents (Preview)
+  summary_snapshot: Fabric data agents now support service principal (SPN) authentication,
+    so custom apps and Microsoft Foundry agents call the data agent API with an application
+    identity instead of a delegated user token. The data agent inherits workspace permissions;
+    KQL database support is coming soon.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

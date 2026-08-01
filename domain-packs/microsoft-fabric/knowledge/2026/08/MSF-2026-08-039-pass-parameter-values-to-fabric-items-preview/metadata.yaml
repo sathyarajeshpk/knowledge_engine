@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-039
+slug: pass-parameter-values-to-fabric-items-preview
+title: Pass Parameter Values to Fabric Items (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/fabric-july-2025-feature-summary
+announcement_url: https://blog.fabric.microsoft.com/blog/fabric-july-2025-feature-summary
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:941d781ad2a0cd872c34b92e0b1a886128363af93889c25cd441de93377ce1da
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:61dde5b6bada4a6744f43332de47025a90e033e47e7e6e08c9273f666bffad06
+  discovered_at: '2026-08-01T06:14:26.672916+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:61dde5b6bada4a6744f43332de47025a90e033e47e7e6e08c9273f666bffad06
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:941d781ad2a0cd872c34b92e0b1a886128363af93889c25cd441de93377ce1da
+  title_snapshot: Pass Parameter Values to Fabric Items (Preview)
+  summary_snapshot: Activator enables you to automatically activate Fabric items like pipeline
+    and notebook whenever certain data conditions are met. You can not only activate and execute
+    Fabric items but also pass values to the parameters defined in your Fabric items.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

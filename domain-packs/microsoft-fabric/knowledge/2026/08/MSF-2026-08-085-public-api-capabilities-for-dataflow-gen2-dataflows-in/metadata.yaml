@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-085
+slug: public-api-capabilities-for-dataflow-gen2-dataflows-in
+title: Public API capabilities for Dataflow Gen2 dataflows in Fabric Data Factory (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/data-factory/dataflow-gen2-public-apis
+announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/dataflow-gen2-public-apis
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:cafad2c3623cd247b814c4896122983b13bdd58ac381c2999269a1812a4d32f4
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:d6d062b80f761e7bf3d753fdc503e3a563aace33a59fc9989185790b11e70467
+  discovered_at: '2026-08-01T06:14:26.673119+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:d6d062b80f761e7bf3d753fdc503e3a563aace33a59fc9989185790b11e70467
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:cafad2c3623cd247b814c4896122983b13bdd58ac381c2999269a1812a4d32f4
+  title_snapshot: Public API capabilities for Dataflow Gen2 dataflows in Fabric Data Factory
+    (Preview)
+  summary_snapshot: This preview of the Dataflows Gen 2 public APIs enables users to create,
+    update, and monitor their data workflows programmatically. The APIs support a wide range
+    of operations including dataflows CRUD (Create, Read, Update, and Delete), scheduling,
+    and monitoring, making it easier for users to manage their data integration processes.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-06-031
+slug: bulk-copy-api-for-faster-ingestion-preview
+title: Bulk Copy API for faster ingestion (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Using-Bulk-Copy-API-for-faster-ingestion-in-Fabric-Data/ba-p/5195627
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Using-Bulk-Copy-API-for-faster-ingestion-in-Fabric-Data/ba-p/5195627
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:87a101f03d0e7b4667efd135d3c6a9d8c1e6d158f3de73c411beff8dc23e89c3
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:75819ad79c5a0acedbb2495184597288faa8e04ccc94c66101c6a4281f648c41
+  discovered_at: '2026-08-01T06:14:26.684567+00:00'
+  source_role: secondary
+  selector: '## Fabric Data Warehouse > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:75819ad79c5a0acedbb2495184597288faa8e04ccc94c66101c6a4281f648c41
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:87a101f03d0e7b4667efd135d3c6a9d8c1e6d158f3de73c411beff8dc23e89c3
+  title_snapshot: Bulk Copy API for faster ingestion (Preview)
+  summary_snapshot: Bulk Copy API (Preview) writes data directly to Fabric Data Warehouse
+    tables from application code without first staging files, replacing row-by-row INSERT
+    statements to improve ingestion throughput. You can use it through SqlBulkCopy for C#,
+    SQLServerBulkCopy for Java, the bcp utility, and tools such as SSIS, Azure Data Factory,
+    and Informatica. For more information, see Ingest data into your warehouse by using BCP
+    API (Preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

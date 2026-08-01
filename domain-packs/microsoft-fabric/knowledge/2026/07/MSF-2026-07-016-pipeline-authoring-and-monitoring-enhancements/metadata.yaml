@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-07-016
+slug: pipeline-authoring-and-monitoring-enhancements
+title: Pipeline authoring and monitoring enhancements
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Streamlining-orchestration-with-smarter-pipelines-and-deeper/ba-p/5280154
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Streamlining-orchestration-with-smarter-pipelines-and-deeper/ba-p/5280154
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:12408e475975605d72c30ace1fef4fcfada9b808094bd9f0a8180616e1ffb7ee
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:bd68e65c7404435b2db1c9171270d1aab05ec0468408d5d0638fc6f4e1ac8070
+  discovered_at: '2026-08-01T06:14:26.679614+00:00'
+  source_role: secondary
+  selector: '## Data Factory in Microsoft Fabric > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:bd68e65c7404435b2db1c9171270d1aab05ec0468408d5d0638fc6f4e1ac8070
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:12408e475975605d72c30ace1fef4fcfada9b808094bd9f0a8180616e1ffb7ee
+  title_snapshot: Pipeline authoring and monitoring enhancements
+  summary_snapshot: New Fabric Data Factory pipeline enhancements auto-populate base parameters
+    for the Notebook activity and add activity-level (L2) workspace monitoring (Preview),
+    so you drill from a pipeline run into individual failed activities for root-cause analysis.
+    For more information, see Transform data by running a notebook and Enable workspace monitoring
+    in Microsoft Fabric.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

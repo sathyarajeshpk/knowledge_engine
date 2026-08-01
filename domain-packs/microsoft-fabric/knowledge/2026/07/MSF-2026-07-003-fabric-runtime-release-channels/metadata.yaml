@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-07-003
+slug: fabric-runtime-release-channels
+title: Fabric Runtime Release Channels
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Runtime-Release-Channels/ba-p/5240330
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Runtime-Release-Channels/ba-p/5240330
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:3783a885f0f1517f102b627a6f152011564dd980ed25e724964c7d926be52a4a
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:218e40bc3149a747fc25e331a4c30092a136b812e92d2fa4a6f714684b7d014e
+  discovered_at: '2026-08-01T06:14:26.681905+00:00'
+  source_role: secondary
+  selector: '## Fabric Data Engineering > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:218e40bc3149a747fc25e331a4c30092a136b812e92d2fa4a6f714684b7d014e
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:3783a885f0f1517f102b627a6f152011564dd980ed25e724964c7d926be52a4a
+  title_snapshot: Fabric Runtime Release Channels
+  summary_snapshot: Fabric Runtime Release Channels give each Spark runtime a Default and
+    Early Access channel, so you preview library upgrades, dependency changes, security patches,
+    and operating system updates on your workloads before they roll out as the new default.
+    You opt in by setting two Spark configuration properties on your Environment. For more
+    information, see Fabric runtime release channels (Preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

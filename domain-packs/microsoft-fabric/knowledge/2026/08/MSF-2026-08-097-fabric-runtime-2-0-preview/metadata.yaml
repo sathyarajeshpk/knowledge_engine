@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-097
+slug: fabric-runtime-2-0-preview
+title: Fabric Runtime 2.0 (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/fabric-runtime-2-0-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/fabric-runtime-2-0-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:253aa60b31592accf96e108f160a2ce9f3a7b74589bdc2693da4652e97da4f8a
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:f3a5598a9264c8879274de92007f58c191142e7723f0eca3f7aeac7653938aaf
+  discovered_at: '2026-08-01T06:14:26.668920+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:f3a5598a9264c8879274de92007f58c191142e7723f0eca3f7aeac7653938aaf
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:253aa60b31592accf96e108f160a2ce9f3a7b74589bdc2693da4652e97da4f8a
+  title_snapshot: Fabric Runtime 2.0 (Preview)
+  summary_snapshot: Fabric Runtime 2.0 (Preview) includes Apache Spark 4.0, Delta Lake 4.0,
+    Java 21, Scala 2.13, and Python 3.12 on Azure Linux 3.0. For more information, see Fabric
+    Runtime 2.0 (Preview) and Apache Spark Runtimes in Fabric.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

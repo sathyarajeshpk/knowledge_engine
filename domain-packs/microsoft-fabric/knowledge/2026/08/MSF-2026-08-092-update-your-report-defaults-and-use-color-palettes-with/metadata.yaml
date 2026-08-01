@@ -1,0 +1,63 @@
+schema_version: 1
+id: MSF-2026-08-092
+slug: update-your-report-defaults-and-use-color-palettes-with
+title: Update your report defaults and use color palettes with modern visual defaults (Preview)
+source_name: powerbi-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/power-bi/create-reports/power-bi-reports-visual-defaults
+announcement_url: https://learn.microsoft.com/en-us/power-bi/create-reports/power-bi-reports-visual-defaults
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:3cd781dd17df797b43142e1a0181880847b9b48016010fe3dc9d55cae47bd2fb
+provenance:
+  source_name: powerbi-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:e0cf729b5409157bd5088ef412e6ee48739e0b74753868c26618a8abd26ac2b4
+  discovered_at: '2026-08-01T06:14:27.249704+00:00'
+  source_role: secondary
+  selector: '## Reporting > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:e0cf729b5409157bd5088ef412e6ee48739e0b74753868c26618a8abd26ac2b4
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:3cd781dd17df797b43142e1a0181880847b9b48016010fe3dc9d55cae47bd2fb
+  title_snapshot: Update your report defaults and use color palettes with modern visual defaults
+    (Preview)
+  summary_snapshot: Modern Visual Defaults now includes a Customize current theme experience
+    in the Format pane. Adjust report-wide defaults for visuals, choose color palettes, and
+    control visual elements like background, border, header icons, tooltips, and shadow across
+    your entire report. Update page size, background color, and wallpaper across all pages
+    at once. When finished, export your custom theme for use in other reports or add it to
+    organizational themes. For more information, see Visual defaults in Power BI reports.
+    ✔️
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

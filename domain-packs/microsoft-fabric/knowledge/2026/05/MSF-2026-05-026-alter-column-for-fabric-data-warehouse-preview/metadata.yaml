@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-05-026
+slug: alter-column-for-fabric-data-warehouse-preview
+title: ALTER COLUMN for Fabric Data Warehouse (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Simplify-Schema-Changes-in-Fabric-Data-Warehouse-with-ALTER/ba-p/5177593
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Simplify-Schema-Changes-in-Fabric-Data-Warehouse-with-ALTER/ba-p/5177593
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:2966f31e396fb9ed63a677f78aa914db5146e958b48d30a2e44528b5044885de
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:ca7130a41b2139dd5c607411a1c279519558c93db69a2d7ab11fc69e2c0d8b33
+  discovered_at: '2026-08-01T06:14:26.685343+00:00'
+  source_role: secondary
+  selector: '## Fabric Data Warehouse > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:ca7130a41b2139dd5c607411a1c279519558c93db69a2d7ab11fc69e2c0d8b33
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:2966f31e396fb9ed63a677f78aa914db5146e958b48d30a2e44528b5044885de
+  title_snapshot: ALTER COLUMN for Fabric Data Warehouse (Preview)
+  summary_snapshot: ALTER TABLE ... ALTER COLUMN (Preview) lets you make supported schema
+    changes directly on warehouse tables using familiar T-SQL syntax. Supported scenarios
+    complete as metadata-only updates without rewriting Parquet files. For more information,
+    see ALTER TABLE (Transact-SQL) syntax for warehouse in Fabric.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

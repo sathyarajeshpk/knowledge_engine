@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-07-005
+slug: fabric-eventstream-connector-updates
+title: Fabric Eventstream connector updates
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Supercharge-your-real-time-data-ingestion-What-s-new-in-Fabric/ba-p/5260314
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Supercharge-your-real-time-data-ingestion-What-s-new-in-Fabric/ba-p/5260314
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:aa60a5829e1425e2a44626f991c73d3b8444c494556a2c795027ce7aaf9cdcb1
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:341b1048fcada65672d7cc4b1b97930a7346e4425bfb4c639eb00f7f28377009
+  discovered_at: '2026-08-01T06:14:26.686242+00:00'
+  source_role: secondary
+  selector: '## Real-Time Intelligence in Microsoft Fabric > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:341b1048fcada65672d7cc4b1b97930a7346e4425bfb4c639eb00f7f28377009
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:aa60a5829e1425e2a44626f991c73d3b8444c494556a2c795027ce7aaf9cdcb1
+  title_snapshot: Fabric Eventstream connector updates
+  summary_snapshot: Fabric Eventstream connectors mark private network (vNet/On-Prem) support,
+    the Apache Kafka and Azure Service Bus source connectors, and custom CA and mTLS support
+    across MQTT, Apache Kafka, AWS MSK, and Confluent Cloud for Apache Kafka as Generally
+    Available, and introduce Preview support for enhanced IoT Hub connector metadata, an Oracle
+    Database change data capture (CDC) source, and HTTP connector pagination. For more information,
+    see Add and manage an event source in an eventstream.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

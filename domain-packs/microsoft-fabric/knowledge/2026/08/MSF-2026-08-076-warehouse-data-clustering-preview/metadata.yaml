@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-076
+slug: warehouse-data-clustering-preview
+title: Warehouse data clustering (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/data-warehouse/data-clustering
+announcement_url: https://learn.microsoft.com/en-us/fabric/data-warehouse/data-clustering
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:6406815bc1d163493c85e91c232637974eb193013363d2b690c35eebd121b02a
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:b4b63fe40326e3b8ae555bfcf161648f3de8bde8bde1356a2dee961353527843
+  discovered_at: '2026-08-01T06:14:26.675096+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:b4b63fe40326e3b8ae555bfcf161648f3de8bde8bde1356a2dee961353527843
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:6406815bc1d163493c85e91c232637974eb193013363d2b690c35eebd121b02a
+  title_snapshot: Warehouse data clustering (Preview)
+  summary_snapshot: Data clustering is a technique used to organize and store data based on
+    similarity. Data clustering improves query performance and reduces compute and storage
+    access costs for queries by grouping similar records together. For more information and
+    to get started, see Data clustering in Fabric Data Warehouse and Use data clustering in
+    Fabric Data Warehouse (Preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

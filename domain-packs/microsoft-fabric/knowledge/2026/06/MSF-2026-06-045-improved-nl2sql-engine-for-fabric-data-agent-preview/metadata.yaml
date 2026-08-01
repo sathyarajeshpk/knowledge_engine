@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-06-045
+slug: improved-nl2sql-engine-for-fabric-data-agent-preview
+title: Improved NL2SQL Engine for Fabric Data Agent (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://aka.ms/data-agent-nl2sql
+announcement_url: https://aka.ms/data-agent-nl2sql
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:5a0d7dfa8eecbaa225093c604c1570e55aa6f674536bc86a807937aee9337197
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:e41d7f9660380f12245a91e6e2774d02a454d19a01f73bb515a3ffae08885eef
+  discovered_at: '2026-08-01T06:14:26.688093+00:00'
+  source_role: secondary
+  selector: '## Fabric IQ > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:e41d7f9660380f12245a91e6e2774d02a454d19a01f73bb515a3ffae08885eef
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:5a0d7dfa8eecbaa225093c604c1570e55aa6f674536bc86a807937aee9337197
+  title_snapshot: Improved NL2SQL Engine for Fabric Data Agent (Preview)
+  summary_snapshot: Improved NL2SQL Engine (Preview) for Fabric Data Agent improves accuracy,
+    transparency, and resilience when translating natural language to SQL across lakehouses,
+    warehouses, and mirrored databases. It uses example queries to follow patterns, asks clarifying
+    questions when intent is ambiguous, and surfaces structured diagnostics. For more information,
+    see Fabric data agent concepts.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

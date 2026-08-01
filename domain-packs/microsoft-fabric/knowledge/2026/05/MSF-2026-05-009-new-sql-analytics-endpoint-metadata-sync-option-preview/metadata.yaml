@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-05-009
+slug: new-sql-analytics-endpoint-metadata-sync-option-preview
+title: New SQL analytics endpoint metadata sync option (preview)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/data-engineering/sql-analytics-endpoint-metadata-sync
+announcement_url: https://learn.microsoft.com/en-us/fabric/data-engineering/sql-analytics-endpoint-metadata-sync
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:24cda437b1e0aade1cf012b77abab8153f39d8cbd08cbab816d02c2be36dc38f
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:495a855b15ee42f36c8f2510a24bc73d96541405cd4c1abba2f18631bf65ecb4
+  discovered_at: '2026-08-01T06:14:26.682697+00:00'
+  source_role: secondary
+  selector: '## Fabric Data Engineering > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:495a855b15ee42f36c8f2510a24bc73d96541405cd4c1abba2f18631bf65ecb4
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:24cda437b1e0aade1cf012b77abab8153f39d8cbd08cbab816d02c2be36dc38f
+  title_snapshot: New SQL analytics endpoint metadata sync option (preview)
+  summary_snapshot: You can now opt in to the new SQL analytics endpoint metadata sync option,
+    a preview feature. The new option, which is currently opt-in only and currently applies
+    only to new SQL analytics endpoints, is faster, provides a new manual metadata sync option,
+    and provides time travel querying.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

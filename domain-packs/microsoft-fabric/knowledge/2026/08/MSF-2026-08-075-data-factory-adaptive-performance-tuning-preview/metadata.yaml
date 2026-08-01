@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-075
+slug: data-factory-adaptive-performance-tuning-preview
+title: Data Factory Adaptive performance tuning (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/data-factory/copy-data-activity
+announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/copy-data-activity
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:571249c0e086271e9ec77f505aab872199f6337762b2ff903cb0dc02c4c4c660
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:b3c60d99a3ec371ff1dbbee94be3d4a8c8959ed024ab1cf8721c244c30692d5c
+  discovered_at: '2026-08-01T06:14:26.665741+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:b3c60d99a3ec371ff1dbbee94be3d4a8c8959ed024ab1cf8721c244c30692d5c
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:571249c0e086271e9ec77f505aab872199f6337762b2ff903cb0dc02c4c4c660
+  title_snapshot: Data Factory Adaptive performance tuning (Preview)
+  summary_snapshot: Adaptive Performance Tuning is designed to intelligently optimize data
+    movement performance based on your configuration and runtime context. This preview feature
+    makes tuning Data Factory simpler, safer, and more effective without requiring deep manual
+    expertise or trial-and-error adjustments. To enable, see the adaptivePerformanceTuning
+    property when using copy activity.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

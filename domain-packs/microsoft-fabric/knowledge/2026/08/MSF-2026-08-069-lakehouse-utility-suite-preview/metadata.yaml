@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-069
+slug: lakehouse-utility-suite-preview
+title: Lakehouse utility suite (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/modernizing-pipelines-new-activities-and-innovations-in-fabric-data-factory-pipelines?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/modernizing-pipelines-new-activities-and-innovations-in-fabric-data-factory-pipelines?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:436346428daf3407d7b478d6c516241a781eaa5df0bc6f2d94d381059e870a0e
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:a5718085fc02b99fbd96ae705bd4938a19bdbe7bf5b599ae176e0ddd963bd18a
+  discovered_at: '2026-08-01T06:14:26.670126+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:a5718085fc02b99fbd96ae705bd4938a19bdbe7bf5b599ae176e0ddd963bd18a
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:436346428daf3407d7b478d6c516241a781eaa5df0bc6f2d94d381059e870a0e
+  title_snapshot: Lakehouse utility suite (Preview)
+  summary_snapshot: The Lakehouse Utility Suite now includes the Lakehouse maintenance activity
+    (Preview), to automate routine Lakehouse upkeep tasks, and the Refresh SQL endpoint activity
+    (Preview), to refresh the Lakehouse SQL analytics endpoint on demand or on a schedule
+    within Fabric pipelines.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

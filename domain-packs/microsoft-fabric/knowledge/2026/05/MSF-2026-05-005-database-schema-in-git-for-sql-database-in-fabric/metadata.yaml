@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-05-005
+slug: database-schema-in-git-for-sql-database-in-fabric
+title: Database schema in Git for SQL database in Fabric
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Why-your-database-schema-belongs-in-Git/ba-p/5179521
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Why-your-database-schema-belongs-in-Git/ba-p/5179521
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:d2201975cbc918bf801f81797533962ba62b4736bf6514da8b340facb6c17f96
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:195cfe9ee5524feb4e19507184e4d7f980fe7976891d5f97b9e02f1279b9523e
+  discovered_at: '2026-08-01T06:14:26.684332+00:00'
+  source_role: secondary
+  selector: '## SQL database in Microsoft Fabric samples and guidance > table row (date from
+    cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:195cfe9ee5524feb4e19507184e4d7f980fe7976891d5f97b9e02f1279b9523e
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:d2201975cbc918bf801f81797533962ba62b4736bf6514da8b340facb6c17f96
+  title_snapshot: Database schema in Git for SQL database in Fabric
+  summary_snapshot: SQL database in Microsoft Fabric ships with built-in Git integration,
+    so you commit schema as SQL files alongside application code in GitHub or Azure DevOps,
+    review changes through pull requests, and deploy them to Fabric workspaces with the same
+    workflow you already use for app code. For more information, see SQL database source control
+    integration in Microsoft Fabric and SQL Database Projects documentation.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

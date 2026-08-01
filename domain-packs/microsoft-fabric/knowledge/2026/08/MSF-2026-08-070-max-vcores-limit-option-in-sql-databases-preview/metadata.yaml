@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-070
+slug: max-vcores-limit-option-in-sql-databases-preview
+title: Max vCores limit option in SQL databases (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/compute-auto-scaling-choices-to-better-optimize-price-performance-for-sql-databases-in-microsoft-fabric-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/compute-auto-scaling-choices-to-better-optimize-price-performance-for-sql-databases-in-microsoft-fabric-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:a0d8ae84301a0e8f10d0f7854721cfc7ec83ba5d65cf950600ccdf4abc14f666
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:a6e13ff4939e39edfcf2d31ae97b9243a051a0ec102adb423a6f91215d5b4994
+  discovered_at: '2026-08-01T06:14:26.670685+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:a6e13ff4939e39edfcf2d31ae97b9243a051a0ec102adb423a6f91215d5b4994
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:a0d8ae84301a0e8f10d0f7854721cfc7ec83ba5d65cf950600ccdf4abc14f666
+  title_snapshot: Max vCores limit option in SQL databases (Preview)
+  summary_snapshot: The Max vCores limit option (Preview) lets you cap SQL database compute
+    at 4 or 32 vCores to control costs and protect shared capacities from noisy-neighbor scenarios.
+    For more information, see Control compute usage.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

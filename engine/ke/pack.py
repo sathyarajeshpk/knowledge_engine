@@ -145,6 +145,19 @@ class Pack:
         return self.root / "state"
 
     @property
+    def near_duplicate_jaccard(self) -> float:
+        """Title-similarity threshold above which items are flagged, never dropped.
+
+        Configuration rather than a constant because the right value depends on
+        how a vendor words its announcements, and that is pack knowledge.
+        """
+        dedupe = self.config.get("dedupe") or {}
+        try:
+            return float(dedupe.get("near_duplicate_jaccard", 0.85))
+        except (TypeError, ValueError):
+            return 0.85
+
+    @property
     def registry_path(self) -> Path:
         return self.state_dir / "id-registry.json"
 

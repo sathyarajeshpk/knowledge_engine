@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-06-020
+slug: secure-mqtt-broker-and-eventstream-connector-with-mtls
+title: Secure MQTT broker and Eventstream connector with mTLS (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/add-source-mqtt
+announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/add-source-mqtt
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:f450e79d097532ab1913ad6a6efb1c9e4897bf59d418a433f24bcd17d6bc488a
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:4f8f29dca51e18b1fb8e5d0d3cc7ad2ee03683a65d2b326a2bbd3bb1407ded12
+  discovered_at: '2026-08-01T06:14:26.686630+00:00'
+  source_role: secondary
+  selector: '## Real-Time Intelligence in Microsoft Fabric > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:4f8f29dca51e18b1fb8e5d0d3cc7ad2ee03683a65d2b326a2bbd3bb1407ded12
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:f450e79d097532ab1913ad6a6efb1c9e4897bf59d418a433f24bcd17d6bc488a
+  title_snapshot: Secure MQTT broker and Eventstream connector with mTLS (Preview)
+  summary_snapshot: mTLS for the Eventstream MQTT source connector (Preview) lets you specify
+    your own CA and client certificates stored in Azure Key Vault, so Eventstream can establish
+    a mutually authenticated, encrypted connection with an MQTT broker for secure IoT data
+    ingestion across untrusted networks.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}
