@@ -266,12 +266,16 @@ def test_the_stage_list_is_in_the_documented_order():
     assert names == [
         "discover", "load_state", "deduplicate", "update_existing",
         "gate_and_mint", "classify_objects", "persist_state",
-        "rebuild_indexes", "append_run_log",
+        "rebuild_indexes", "write_digest", "append_run_log",
+        "send_notifications",
     ]
     assert names.index("deduplicate") < names.index("gate_and_mint")
     assert names.index("update_existing") < names.index("gate_and_mint")
     assert names.index("gate_and_mint") < names.index("persist_state")
     assert names.index("classify_objects") < names.index("rebuild_indexes")
+    # Notification is last: everything must already be on disk, so a dead SMTP
+    # server cannot cost a harvest.
+    assert names[-1] == "send_notifications"
 
 
 def test_a_stage_that_raises_stops_the_run_rather_than_half_building(pack):
@@ -334,3 +338,4 @@ def test_a_classified_pack_still_validates(pack, monkeypatch, tmp_path):
 def test_indexes_are_rebuilt_after_classification(pack, monkeypatch):
     run(pack, [make_item(title="Direct Lake is generally available")], monkeypatch)
     assert (pack.indexes_dir / "INDEX.md").exists()
+

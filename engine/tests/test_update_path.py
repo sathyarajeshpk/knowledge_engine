@@ -439,9 +439,13 @@ def test_a_no_op_harvest_touches_only_the_run_log(pack, monkeypatch):
     changed = [
         path for path, content in stamps.items() if path.read_bytes() != content
     ]
-    assert [p.name for p in changed] == ["run-log.md"], (
+    # Two files, both deliberate. The run log keeps the cron alive; the digest
+    # is written every week so that "no updates" and "the harvest did not run"
+    # stay distinguishable. Neither is a knowledge object.
+    assert sorted(p.name for p in changed) == ["2026-W31.md", "run-log.md"], (
         f"a no-op harvest changed {[p.name for p in changed]}"
     )
+    assert not any("knowledge" in str(p) for p in changed)
 
 
 def test_an_updated_pack_still_validates(pack, monkeypatch, tmp_path):

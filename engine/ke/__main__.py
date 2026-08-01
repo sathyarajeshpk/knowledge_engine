@@ -91,6 +91,11 @@ def build_parser() -> argparse.ArgumentParser:
     harvest.add_argument("--pack", metavar="NAME", help="pack to harvest")
     harvest.add_argument("--repo-root", metavar="PATH", type=Path)
     harvest.add_argument(
+        "--notify",
+        action="store_true",
+        help="send the digest through configured channels (off by default)",
+    )
+    harvest.add_argument(
         "--dry-run",
         action="store_true",
         help="report what would be minted without writing anything",
@@ -194,7 +199,22 @@ def _run_harvest(args: argparse.Namespace) -> int:
 
     exit_code = 0
     for pack in packs:
-        report = harvest_pack(pack, clock=SystemClock(), dry_run=args.dry_run)
+        from ke.lock import LockError, pack_lock
+
+        try:
+            # Two harvests minting at once would both allocate the same ID, and
+            # a duplicate Feature ID is permanent. The workflow's concurrency
+            # group covers scheduled runs; this covers everything else.
+            with pack_lock(pack.state_dir, holder="ke harvest"):
+                report = harvest_pack(
+                    pack,
+                    clock=SystemClock(),
+                    dry_run=args.dry_run,
+                    notify=getattr(args, "notify", False),
+                )
+        except LockError as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 2
         print(f"\n=== {report.summary_line()} ===\n")
 
         if report.minted:
@@ -221,7 +241,16 @@ def _run_harvest(args: argparse.Namespace) -> int:
                   "(nothing was dropped) — see indexes/review-queue.md\n")
 
         if report.index_paths:
-            print(f"  Rebuilt {len(report.index_paths)} index file(s)\n")
+            print(f"  Rebuilt {len(report.index_paths)} index file(s)")
+        if report.digest_path:
+            print(f"  Digest: {report.digest_path}")
+        for line in report.notifications:
+            print(f"  Notified {line}")
+        for line in report.notification_failures:
+            # Already redacted by `notify_all`; a notifier failure is never
+            # allowed to fail the run.
+            print(f"  ! notification failed — {line}")
+        print()
 
         for message in report.review_items:
             print(f"    !! SOURCE UNREACHABLE — {message}")

@@ -47,6 +47,7 @@ def harvest_pack(
     clock: Clock | None = None,
     fetcher=None,
     dry_run: bool = False,
+    notify: bool = False,
 ) -> HarvestReport:
     """Run the pipeline for one pack.
 
@@ -62,6 +63,7 @@ def harvest_pack(
             report=HarvestReport(pack_name=pack.name),
             fetcher=fetcher,
             dry_run=dry_run,
+            notify=notify,
         )
     )
 

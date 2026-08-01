@@ -1,0 +1,144 @@
+name: Weekly harvest
+
+# The first time this engine runs with nobody watching.
+#
+# Everything before M6 was executed by hand, where a failure was visible
+# immediately. On a schedule, failure is silent by default -- so most of the
+# care in this file is about making it observable, and about making sure a
+# harvest can never damage the pack when something goes wrong halfway.
+
+on:
+  schedule:
+    # 06:00 UTC every Sunday. GitHub runs scheduled jobs on a best-effort basis
+    # and may delay them under load; nothing here depends on the exact minute.
+    - cron: "0 6 * * 0"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Report what would change without writing anything"
+        type: boolean
+        default: false
+
+# Least privilege. `contents: write` is needed to commit the harvest; `issues:
+# write` to post the digest. Nothing else is granted, so a compromised
+# dependency cannot open a pull request, publish a package or edit a workflow.
+permissions:
+  contents: write
+  issues: write
+
+# Two harvests minting at once would both read the same ID counter and both
+# allocate the same number -- and a duplicate Feature ID is permanent. This is
+# the first line of defence; `ke.lock` covers manual runs the scheduler cannot
+# see. `cancel-in-progress: false` because cancelling a half-written harvest is
+# worse than queueing behind it.
+concurrency:
+  group: weekly-harvest
+  cancel-in-progress: false
+
+jobs:
+  harvest:
+    name: Harvest, validate and publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+        with:
+          # Full history: the push at the end rebases onto whatever landed while
+          # the harvest was running, and a shallow clone cannot rebase.
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install the engine
+        run: python -m pip install --quiet -e "."
+
+      - name: Validate before harvesting
+        # A pack that is already broken must not be harvested into. Better to
+        # fail with the damage untouched than to write good knowledge on top of
+        # a corrupt registry.
+        run: python -m ke validate
+
+      - name: Harvest
+        id: harvest
+        env:
+          KE_SMTP_HOST: ${{ secrets.KE_SMTP_HOST }}
+          KE_SMTP_USER: ${{ secrets.KE_SMTP_USER }}
+          KE_SMTP_PASSWORD: ${{ secrets.KE_SMTP_PASSWORD }}
+          KE_SMTP_TO: ${{ secrets.KE_SMTP_TO }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python -m ke harvest --dry-run
+          else
+            python -m ke harvest --notify
+          fi
+
+      - name: Validate after harvesting
+        # The harvest is only a success if what it wrote is valid. A green
+        # pipeline says nothing about the correctness of its output -- this
+        # repository has learned that four times.
+        run: python -m ke validate
+
+      - name: Commit and push
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          set -euo pipefail
+          git config user.name  "knowledge-engine[bot]"
+          git config user.email "knowledge-engine[bot]@users.noreply.github.com"
+
+          # Only pack data. A harvest must never be able to commit a change to
+          # the engine, a workflow or a dependency pin.
+          git add domain-packs/
+
+          if git diff --cached --quiet; then
+            echo "Nothing to commit — this should not happen: the run log is"
+            echo "appended on every run, including empty ones."
+            exit 1
+          fi
+
+          git commit -m "Weekly harvest $(date -u +%Y-%m-%d)" \
+                     -m "Automated. See the digest under domain-packs/*/digests/."
+
+          # Rebase onto anything that landed while we were harvesting -- a
+          # hand-edit to learning state, most likely. Ours are appends and
+          # new files, so a rebase is nearly always clean; if it is not, fail
+          # rather than resolve a conflict in someone's notes unattended.
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin "${GITHUB_REF_NAME}"; then
+              break
+            fi
+            if [ "$attempt" = "3" ]; then
+              git rebase --abort || true
+              echo "::error::could not rebase onto origin; leaving the harvest uncommitted"
+              exit 1
+            fi
+            sleep $((attempt * 5))
+          done
+
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            sleep $((attempt * 5))
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+          done
+          echo "::error::push failed after 3 attempts"
+          exit 1
+
+      - name: Report
+        if: always()
+        run: |
+          echo "### Weekly harvest" >> "$GITHUB_STEP_SUMMARY"
+          echo "Status: ${{ steps.harvest.outcome }}" >> "$GITHUB_STEP_SUMMARY"
+          for digest in domain-packs/*/digests/*.md; do
+            [ -f "$digest" ] || continue
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            head -40 "$digest" >> "$GITHUB_STEP_SUMMARY"
+          done

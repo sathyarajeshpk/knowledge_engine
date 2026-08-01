@@ -21,6 +21,9 @@ class HarvestReport:
     updated: list[str] = field(default_factory=list)
     unchanged: int = 0
     classified: list[str] = field(default_factory=list)
+    digest_path: str = ""
+    notifications: list[str] = field(default_factory=list)
+    notification_failures: list[str] = field(default_factory=list)
     near_duplicates: int = 0
     written_paths: list[str] = field(default_factory=list)
     index_paths: list[str] = field(default_factory=list)
