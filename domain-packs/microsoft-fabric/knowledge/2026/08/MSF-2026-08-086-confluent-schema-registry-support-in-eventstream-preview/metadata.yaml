@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-086
+slug: confluent-schema-registry-support-in-eventstream-preview
+title: Confluent Schema Registry Support in Eventstream (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/decoding-data-with-confluent-schema-registry-support-in-eventstream-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/decoding-data-with-confluent-schema-registry-support-in-eventstream-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:97a1a3cb0d7ce9b34400c191b40911c93de7e162199c73d90ca9cd069155128f
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:d703daaeb756f4f089d86f838146a7137df85eaa77c1bd2d9769666ee3bdc971
+  discovered_at: '2026-08-01T06:14:26.664762+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:d703daaeb756f4f089d86f838146a7137df85eaa77c1bd2d9769666ee3bdc971
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:97a1a3cb0d7ce9b34400c191b40911c93de7e162199c73d90ca9cd069155128f
+  title_snapshot: Confluent Schema Registry Support in Eventstream (Preview)
+  summary_snapshot: Eventstream's Confluent Cloud for Apache Kafka streaming connector now
+    supports decoding data from topics associated with a data contract in Confluent Schema
+    Registry, enabling seamless ingestion, preview, and routing of schema-encoded streaming
+    data in Fabric Real-Time Intelligence. For more information, see Add Confluent Cloud for
+    Apache Kafka source to an eventstream.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

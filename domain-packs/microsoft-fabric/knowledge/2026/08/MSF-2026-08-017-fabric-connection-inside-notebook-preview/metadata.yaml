@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-017
+slug: fabric-connection-inside-notebook-preview
+title: Fabric Connection inside Notebook (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/32822?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/32822?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:c8f4d400e0c282359ffce2fe87f2670e279a3395b1923e69019f1157d3a922fd
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:28afc26460bab35dc5dfce6e085e93dd6b7d89e0eb7f8f08a1bfa137f51af5ba
+  discovered_at: '2026-08-01T06:14:26.668322+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:28afc26460bab35dc5dfce6e085e93dd6b7d89e0eb7f8f08a1bfa137f51af5ba
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:c8f4d400e0c282359ffce2fe87f2670e279a3395b1923e69019f1157d3a922fd
+  title_snapshot: Fabric Connection inside Notebook (Preview)
+  summary_snapshot: Fabric Connection inside Notebook (Preview) enables you to create and
+    manage cloud data source connections directly within notebooks. For more information,
+    see What is Fabric Connection in notebooks?
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-037
+slug: report-page-tab-navigation-improvements-generally-available
+title: Report page tab navigation improvements (Generally Available)
+source_name: powerbi-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-report-view
+announcement_url: https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-report-view
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:a5de4ff2668913fd115901d0a6646ac63a099cec0b91ed20ea994d73266329f3
+provenance:
+  source_name: powerbi-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:5f4b07f86dae69ea4972ca2263bdb2cc0b39764a673db71f538c0500e811cd1d
+  discovered_at: '2026-08-01T06:14:27.249836+00:00'
+  source_role: secondary
+  selector: '## Reporting > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:5f4b07f86dae69ea4972ca2263bdb2cc0b39764a673db71f538c0500e811cd1d
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:a5de4ff2668913fd115901d0a6646ac63a099cec0b91ed20ea994d73266329f3
+  title_snapshot: Report page tab navigation improvements (Generally Available)
+  summary_snapshot: When dragging a page tab to reorder it, tabs continue to scroll until
+    you reach the desired position, making it easier to move pages from the end to the beginning
+    of your report. Arrow buttons for paging through tabs are more precise, ensuring you see
+    each report page tab as you navigate. For more information, see Report view in Power BI
+    Desktop.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-06-024
+slug: efficient-scaledown-for-spark-jobs-preview
+title: Efficient Scaledown for Spark jobs (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/More-resilient-Spark-jobs-with-Efficient-Scaledown-Preview/ba-p/5212071
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/More-resilient-Spark-jobs-with-Efficient-Scaledown-Preview/ba-p/5212071
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:44b447501d3a3480c01d9e6a1c8db13f97fa134942f69da251a40731ac20644a
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:646b28990fb6071d29386ba460b063aee1a0b69582c565fb87e98ce80a7b620b
+  discovered_at: '2026-08-01T06:14:26.682214+00:00'
+  source_role: secondary
+  selector: '## Fabric Data Engineering > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:646b28990fb6071d29386ba460b063aee1a0b69582c565fb87e98ce80a7b620b
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:44b447501d3a3480c01d9e6a1c8db13f97fa134942f69da251a40731ac20644a
+  title_snapshot: Efficient Scaledown for Spark jobs (Preview)
+  summary_snapshot: Efficient Scaledown (Preview) decouples Spark shuffle data from executor
+    lifetime by routing shuffle output to Azure Blob Storage, so clusters scale down faster
+    and tolerate executor loss with no notebook or query changes. It combines a Remote Shuffle
+    Manager, shuffle migration, a per-stage decision layer, and adaptive query execution (AQE)
+    optimization. For more information, see Efficient scaledown and remote shuffle manager
+    and Native execution engine for Fabric Data Engineering.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

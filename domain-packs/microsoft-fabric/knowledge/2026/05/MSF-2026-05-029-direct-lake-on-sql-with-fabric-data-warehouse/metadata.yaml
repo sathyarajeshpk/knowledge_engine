@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-05-029
+slug: direct-lake-on-sql-with-fabric-data-warehouse
+title: Direct Lake on SQL with Fabric Data Warehouse
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Direct-Lake-on-SQL-with-Fabric-Data-Warehouse/ba-p/5177641
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Direct-Lake-on-SQL-with-Fabric-Data-Warehouse/ba-p/5177641
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:6ff94e00bdb41d987c29241321e5e78cf1ff0f30e2c6e99bb63b706528f3208c
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:e00086e5cae203482e7c6b8a6a3289f47dcef8b5451a05b40d2f1fbf83ad778b
+  discovered_at: '2026-08-01T06:14:26.685679+00:00'
+  source_role: secondary
+  selector: '## Fabric Data Warehouse samples and guidance > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:e00086e5cae203482e7c6b8a6a3289f47dcef8b5451a05b40d2f1fbf83ad778b
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:6ff94e00bdb41d987c29241321e5e78cf1ff0f30e2c6e99bb63b706528f3208c
+  title_snapshot: Direct Lake on SQL with Fabric Data Warehouse
+  summary_snapshot: Direct Lake on SQL with Fabric Data Warehouse kicks off a multi-part Direct
+    Lake best practices series, explaining how Direct Lake transcodes Delta Parquet data on
+    demand, why Fabric Data Warehouse automates file consolidation, statistics, V-Order, and
+    clustering for guardrail-compliant Direct Lake workloads, and how to optimize cardinality,
+    star schema, relationships, and cache state. For more information, see Direct Lake overview
+    and Architecture.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-06-042
+slug: business-events-capacity-consumption-generally-available
+title: Business Events Capacity Consumption (Generally Available)
+source_name: fabric-whats-new-markdown
+source_url: https://aka.ms/fabric-capacity-metrics
+announcement_url: https://aka.ms/fabric-capacity-metrics
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:520c43ad3e67006846fc4f5fd5a3960c9d05d199051ec0df083d0e919b6a49af
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:ca20533eecf794ede7a06fe98f391e242d31d9c853af52f0ed30f4dd19159ad1
+  discovered_at: '2026-08-01T06:14:26.676615+00:00'
+  source_role: secondary
+  selector: '## Generally available features > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:ca20533eecf794ede7a06fe98f391e242d31d9c853af52f0ed30f4dd19159ad1
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:520c43ad3e67006846fc4f5fd5a3960c9d05d199051ec0df083d0e919b6a49af
+  title_snapshot: Business Events Capacity Consumption (Generally Available)
+  summary_snapshot: Business Events capacity consumption is now metered through the standard
+    Fabric capacity model, so publishing, routing, and consuming business events bills against
+    your existing capacity SKU with no separate license. For more information, see Microsoft
+    Fabric Capacity Metrics app and Business events overview (Preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

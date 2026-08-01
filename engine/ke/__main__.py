@@ -76,7 +76,174 @@ def build_parser() -> argparse.ArgumentParser:
         help="report only; the default and currently the only mode",
     )
     discover.set_defaults(handler=_run_discover)
+
+    harvest = subcommands.add_parser(
+        "harvest",
+        help="discover, deduplicate, mint Feature IDs and store knowledge objects",
+        description=(
+            "The full pipeline. Discovers from every configured source, "
+            "deduplicates against what is already stored, mints permanent "
+            "Feature IDs for items that clear the confidence gate, writes "
+            "knowledge objects, rebuilds indexes and appends the run log. "
+            "Items that do not clear the gate are queued, never dropped."
+        ),
+    )
+    harvest.add_argument("--pack", metavar="NAME", help="pack to harvest")
+    harvest.add_argument("--repo-root", metavar="PATH", type=Path)
+    harvest.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="report what would be minted without writing anything",
+    )
+    harvest.set_defaults(handler=_run_harvest)
+
+    index = subcommands.add_parser(
+        "index",
+        help="rebuild pack indexes from the stored knowledge objects",
+        description=(
+            "Indexes are derived data and are always rebuilt in full, never "
+            "patched, so they cannot drift from the objects they describe."
+        ),
+    )
+    index.add_argument("--pack", metavar="NAME")
+    index.add_argument("--repo-root", metavar="PATH", type=Path)
+    index.set_defaults(handler=_run_index)
+
+    review = subcommands.add_parser(
+        "review",
+        help="work the queue of items held back from minting",
+        description=(
+            "Items whose identity could not be trusted enough to mint a "
+            "permanent Feature ID are queued rather than dropped. This is how "
+            "they get through."
+        ),
+    )
+    review.add_argument(
+        "action",
+        choices=("list", "approve", "archive"),
+        help="list the queue, or approve/archive one entry",
+    )
+    review.add_argument(
+        "key", nargs="?", help="identity key prefix of the entry to act on"
+    )
+    review.add_argument("--pack", metavar="NAME")
+    review.add_argument("--repo-root", metavar="PATH", type=Path)
+    review.set_defaults(handler=_run_review)
     return parser
+
+
+def _packs_for(args: argparse.Namespace) -> tuple[Path, list[Pack]] | tuple[Path, None]:
+    repo_root = args.repo_root or find_repo_root()
+    try:
+        packs = Pack.discover(repo_root)
+    except PackError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return repo_root, None
+    if getattr(args, "pack", None):
+        packs = [p for p in packs if args.pack in (p.name, p.root.name)]
+        if not packs:
+            print(f"error: no pack named {args.pack!r}", file=sys.stderr)
+            return repo_root, None
+    return repo_root, packs
+
+
+def _run_harvest(args: argparse.Namespace) -> int:
+    from ke.harvest import harvest_pack
+
+    _, packs = _packs_for(args)
+    if packs is None:
+        return 2
+
+    exit_code = 0
+    for pack in packs:
+        report = harvest_pack(pack, clock=SystemClock(), dry_run=args.dry_run)
+        print(f"\n=== {report.summary_line()} ===\n")
+
+        if report.minted:
+            print(f"  Minted {len(report.minted)} Feature ID(s):")
+            for feature_id in report.minted[:20]:
+                print(f"    {feature_id}")
+            if len(report.minted) > 20:
+                print(f"    … and {len(report.minted) - 20} more")
+            print()
+
+        if report.queued:
+            print(f"  {report.queued} item(s) queued for review "
+                  "(nothing was dropped) — see indexes/review-queue.md\n")
+
+        if report.index_paths:
+            print(f"  Rebuilt {len(report.index_paths)} index file(s)\n")
+
+        for message in report.review_items:
+            print(f"    !! SOURCE UNREACHABLE — {message}")
+            exit_code = 1
+        for message in report.errors:
+            print(f"    !! ERROR — {message}")
+            exit_code = 1
+
+        if args.dry_run:
+            print("  (dry run: nothing was written)")
+    return exit_code
+
+
+def _run_index(args: argparse.Namespace) -> int:
+    from ke.harvest import load_existing_objects
+    from ke.indexer import write_indexes
+    from ke.review import ReviewQueue
+
+    _, packs = _packs_for(args)
+    if packs is None:
+        return 2
+
+    for pack in packs:
+        queue = ReviewQueue.load(pack.state_dir / "review-queue.json")
+        written = write_indexes(
+            pack.indexes_dir, load_existing_objects(pack), queue.pending, pack.name
+        )
+        print(f"{pack.name}: rebuilt {len(written)} index file(s)")
+    return 0
+
+
+def _run_review(args: argparse.Namespace) -> int:
+    from ke.review import ReviewQueue
+
+    _, packs = _packs_for(args)
+    if packs is None:
+        return 2
+
+    for pack in packs:
+        queue_path = pack.state_dir / "review-queue.json"
+        queue = ReviewQueue.load(queue_path)
+
+        if args.action == "list":
+            pending = queue.pending
+            print(f"\n=== {pack.name}: {len(pending)} item(s) awaiting review ===\n")
+            for entry in pending:
+                print(f"  {entry.identity_key[7:19]}  {entry.title[:64]}")
+                print(f"      first seen {entry.first_discovered_date} · {entry.reason}")
+            counts = queue.counts()
+            if counts:
+                print("\n  " + ", ".join(f"{k}: {v}" for k, v in sorted(counts.items())))
+            continue
+
+        if not args.key:
+            print(f"error: `{args.action}` needs an identity key", file=sys.stderr)
+            return 2
+        try:
+            entry = (
+                queue.approve(args.key)
+                if args.action == "approve"
+                else queue.archive(args.key)
+            )
+        except (KeyError, ValueError) as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 2
+        queue.save(queue_path)
+        print(f"{args.action}d: {entry.title}")
+        if args.action == "approve":
+            print("  It will be minted on the next `ke harvest`, using its "
+                  f"original discovery date ({entry.first_discovered_date}).")
+    return 0
 
 
 def _run_validate(args: argparse.Namespace) -> int:

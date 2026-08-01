@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-023
+slug: fabric-iq-preview-workload
+title: Fabric IQ (Preview) workload
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/iq/overview
+announcement_url: https://learn.microsoft.com/en-us/fabric/iq/overview
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:4e0ce0c760c920fd3ccae5ba1bb59bcb4ef389479e6d3cc185e64225332d8208
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:365110d2b5b2ec8913d8a63dfacef23939faa6ab457d3132e14392bf759db8aa
+  discovered_at: '2026-08-01T06:14:26.668691+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:365110d2b5b2ec8913d8a63dfacef23939faa6ab457d3132e14392bf759db8aa
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:4e0ce0c760c920fd3ccae5ba1bb59bcb4ef389479e6d3cc185e64225332d8208
+  title_snapshot: Fabric IQ (Preview) workload
+  summary_snapshot: Fabric IQ (preview) is a new workload for unifying business semantics
+    across data, models, and systems to power intelligent agents and decisions grounded in
+    a live, holistic view of the business.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

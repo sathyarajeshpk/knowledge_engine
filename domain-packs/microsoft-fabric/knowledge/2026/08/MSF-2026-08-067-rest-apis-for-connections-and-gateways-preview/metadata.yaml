@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-067
+slug: rest-apis-for-connections-and-gateways-preview
+title: REST APIs for connections and gateways (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/announcing-the-availability-of-rest-apis-for-connections-and-gateways-in-microsoft-fabric?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/announcing-the-availability-of-rest-apis-for-connections-and-gateways-in-microsoft-fabric?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:376730c8864a764645833d7e9ff3e1276ee7cb45744ef4a9fbed2a4742e7b9c6
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:a14b9f94d54dc6e1acd7bc72d121f9a4ac7de869bfd97871907405bc9cb1d2d5
+  discovered_at: '2026-08-01T06:14:26.673840+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:a14b9f94d54dc6e1acd7bc72d121f9a4ac7de869bfd97871907405bc9cb1d2d5
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:376730c8864a764645833d7e9ff3e1276ee7cb45744ef4a9fbed2a4742e7b9c6
+  title_snapshot: REST APIs for connections and gateways (Preview)
+  summary_snapshot: REST APIs for connections and gateways are now in preview. These new APIs
+    allow developers to programmatically manage and interact with connections and gateways
+    within Fabric.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

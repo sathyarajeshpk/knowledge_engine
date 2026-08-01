@@ -1,0 +1,62 @@
+schema_version: 1
+id: MSF-2026-06-039
+slug: power-bi-in-report-alerts-with-translytical-task-flows
+title: Power BI in-report alerts with translytical task flows
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Solving-Power-BI-in-report-alerts-with-translytical-task-flows/ba-p/5190667
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Solving-Power-BI-in-report-alerts-with-translytical-task-flows/ba-p/5190667
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:dbe1b05f9efc0a6d129037ad19eb5ef408b4722055f127a8ae2b034549b4eca3
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:bba57acae274db396e86593d5660110671c1d63970d8800b9ef1e200e7720e1b
+  discovered_at: '2026-08-01T06:14:26.684259+00:00'
+  source_role: secondary
+  selector: '## SQL database in Microsoft Fabric samples and guidance > table row (date from
+    cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:bba57acae274db396e86593d5660110671c1d63970d8800b9ef1e200e7720e1b
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:dbe1b05f9efc0a6d129037ad19eb5ef408b4722055f127a8ae2b034549b4eca3
+  title_snapshot: Power BI in-report alerts with translytical task flows
+  summary_snapshot: A translytical task flow pattern for in-report alerts uses a SQL database
+    in Fabric to store notifications, a User Data Function to write them back, and a Lakehouse
+    shortcut to a Direct Lake semantic model to surface them as a per-report badge and detail
+    panel inside Power BI reports—replacing email distribution lists with in-report alerts
+    that any author can wire up. For more information, see Set up alerts directly in Power
+    BI reports using translytical task flows.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

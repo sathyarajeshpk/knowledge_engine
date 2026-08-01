@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-035
+slug: migration-assistant-to-sql-database-preview
+title: Migration Assistant to SQL database (preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/introducing-migration-assistant-for-sql-database-in-fabric-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/introducing-migration-assistant-for-sql-database-in-fabric-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:8a3a06cc6bb9ea00b3ecd2236eb885c715155be5bd7318f7560dddccb96ce339
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:563942ebfdb285bf68609d6f71e2ab5c8dac697b2b5e43df91c1977b12545630
+  discovered_at: '2026-08-01T06:14:26.671298+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:563942ebfdb285bf68609d6f71e2ab5c8dac697b2b5e43df91c1977b12545630
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:8a3a06cc6bb9ea00b3ecd2236eb885c715155be5bd7318f7560dddccb96ce339
+  title_snapshot: Migration Assistant to SQL database (preview)
+  summary_snapshot: The new Migration Assistant for SQL database simplifies moving SQL Server
+    on-premises workloads into Fabric. Designed for SQL developers, it imports schema via
+    DACPACs, identifies compatibility issues, and provides clear, actionable guidance before
+    migration. For more information, see Fabric Migration Assistant for SQL database (Preview)
+    and Introducing the Migration Assistant to SQL database in Fabric (preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

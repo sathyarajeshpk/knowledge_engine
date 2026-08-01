@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-05-017
+slug: onelake-catalog-natively-available-in-microsoft-foundry
+title: OneLake catalog natively available in Microsoft Foundry (Generally Available)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/OneLake-catalog-is-now-natively-available-in-Foundry-Generally/ba-p/5178376
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/OneLake-catalog-is-now-natively-available-in-Foundry-Generally/ba-p/5178376
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:59eb066792c945b23e6e981dfce9b7df0c1b2c140e4978dde39b5c72be87fcd9
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:7f93dc50d0bb142699ef1076fe5de6a9a7f189edd71a4b0b5672a6d423f2d74a
+  discovered_at: '2026-08-01T06:14:26.677445+00:00'
+  source_role: secondary
+  selector: '## Generally available features > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:7f93dc50d0bb142699ef1076fe5de6a9a7f189edd71a4b0b5672a6d423f2d74a
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:59eb066792c945b23e6e981dfce9b7df0c1b2c140e4978dde39b5c72be87fcd9
+  title_snapshot: OneLake catalog natively available in Microsoft Foundry (Generally Available)
+  summary_snapshot: The OneLake catalog is now natively available in Microsoft Foundry, so
+    AI builders can browse and select OneLake data directly inside Foundry, evaluate ownership,
+    endorsement, sensitivity, and location signals in place, and turn governed assets into
+    knowledge sources without leaving the project. For more information, see OneLake for Microsoft
+    Foundry.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

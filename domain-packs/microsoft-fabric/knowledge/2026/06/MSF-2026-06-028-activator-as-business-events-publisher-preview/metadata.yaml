@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-06-028
+slug: activator-as-business-events-publisher-preview
+title: Activator as business events publisher (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-introduction
+announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-introduction
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:27bfcbde273a37dc727225261e232d7411ef8be282a3f3ea91393390f284d12e
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:6d6b708583ea1335226cdf81c0a633ecf6c2340a1ef48a46f9852810037a0e86
+  discovered_at: '2026-08-01T06:14:26.686880+00:00'
+  source_role: secondary
+  selector: '## Real-Time Intelligence in Microsoft Fabric > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:6d6b708583ea1335226cdf81c0a633ecf6c2340a1ef48a46f9852810037a0e86
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:27bfcbde273a37dc727225261e232d7411ef8be282a3f3ea91393390f284d12e
+  title_snapshot: Activator as business events publisher (Preview)
+  summary_snapshot: Activator provides a no-code way to publish business events in Microsoft
+    Fabric. When Activator detects that a condition is met in your data, it can emit a structured
+    business event into Real-Time hub, making that signal discoverable, routable, and consumable
+    by your entire organization. For more information, see What is Fabric Activator? and Business
+    events overview (Preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

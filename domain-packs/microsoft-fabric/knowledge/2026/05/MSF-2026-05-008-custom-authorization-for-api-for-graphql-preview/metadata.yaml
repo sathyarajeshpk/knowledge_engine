@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-05-008
+slug: custom-authorization-for-api-for-graphql-preview
+title: Custom authorization for API for GraphQL (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Custom-authorization-for-API-for-GraphQL-in-Microsoft-Fabric/ba-p/5182352
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Custom-authorization-for-API-for-GraphQL-in-Microsoft-Fabric/ba-p/5182352
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:d5e7358ad73098b4d7690f57d86d5066caa3f0978aa867e0fb263d8309b1ce9b
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:456e59c58436d2736485bb496d83b0229c60a1e0810ef33b7cb47a1c63baffe9
+  discovered_at: '2026-08-01T06:14:26.682826+00:00'
+  source_role: secondary
+  selector: '## Fabric Data Engineering > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:456e59c58436d2736485bb496d83b0229c60a1e0810ef33b7cb47a1c63baffe9
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:d5e7358ad73098b4d7690f57d86d5066caa3f0978aa867e0fb263d8309b1ce9b
+  title_snapshot: Custom authorization for API for GraphQL (Preview)
+  summary_snapshot: Authorizer User Data Functions for API for GraphQL (Preview) let you attach
+    a User Data Function that runs before each GraphQL operation and evaluates request context
+    such as tenant ID, role, or token claims to allow, restrict, or deny access based on your
+    own policy logic. For more information, see What is Microsoft Fabric API for GraphQL?
+    and Create a Fabric User data functions item.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

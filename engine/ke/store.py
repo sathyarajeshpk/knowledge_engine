@@ -143,8 +143,17 @@ def render_metadata(obj: KnowledgeObject) -> str:
     a human reads them (identity, provenance, classification, learning state)
     rather than alphabetically. That ordering is part of the on-disk format.
     """
-    return yaml.safe_dump(
-        obj.to_dict(),
+    # Aliases OFF. PyYAML emits `&id001` / `*id001` anchors when the same
+    # object appears twice -- and it does, because a date is shared between
+    # `discovered_date` and the revision that recorded it. The file must be
+    # readable by a human in the GitHub UI without knowing YAML anchor syntax.
+    class _NoAliases(yaml.SafeDumper):
+        def ignore_aliases(self, data):  # noqa: ARG002
+            return True
+
+    return yaml.dump(
+        obj.to_metadata_dict(),
+        Dumper=_NoAliases,
         sort_keys=False,
         allow_unicode=True,
         default_flow_style=False,
@@ -175,14 +184,35 @@ def write_object(
     """
     directory = object_dir(pack_knowledge_dir, obj)
     metadata_path = directory / "metadata.yaml"
+    feature_path = directory / "feature.md"
     if metadata_path.exists():
         raise FileExistsError(
             f"{metadata_path} already exists; refusing to overwrite a minted object"
         )
 
-    _atomic_write(directory / "feature.md",
-                  render_feature_document(obj, summary, max_summary_words))
-    _atomic_write(metadata_path, render_metadata(obj))
+    # Render BOTH documents before writing EITHER. An object is a pair of files,
+    # so a failure between them leaves a half-object sitting at a
+    # permanent-looking path -- which is exactly what happened the first time
+    # this ran: a serialisation error produced 222 orphaned `feature.md` files
+    # with no metadata. Rendering first turns that class of failure into "no
+    # files written" instead of "half an object written".
+    feature_text = render_feature_document(obj, summary, max_summary_words)
+    metadata_text = render_metadata(obj)
+
+    written: list[Path] = []
+    try:
+        _atomic_write(feature_path, feature_text)
+        written.append(feature_path)
+        _atomic_write(metadata_path, metadata_text)
+        written.append(metadata_path)
+    except BaseException:
+        # A disk-level failure between the two writes is still possible. Leave
+        # nothing behind rather than a directory that looks like an object.
+        for path in written:
+            path.unlink(missing_ok=True)
+        if directory.exists() and not any(directory.iterdir()):
+            directory.rmdir()
+        raise
     return directory
 
 

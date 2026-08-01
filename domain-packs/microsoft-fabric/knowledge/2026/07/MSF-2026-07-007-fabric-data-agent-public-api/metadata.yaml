@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-07-007
+slug: fabric-data-agent-public-api
+title: Fabric data agent public API
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-data-agent-API-is-now-public-Build-Fabric-data-agents/ba-p/5230588
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-data-agent-API-is-now-public-Build-Fabric-data-agents/ba-p/5230588
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:5d91de2da17fdcd97b8f129ba703ef2e5412772514e5e39935ec8b7c676c7495
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:61c7f06062309b63c1623fa963eb505eb430d0de711c262bd1e1300b099cd3bc
+  discovered_at: '2026-08-01T06:14:26.687684+00:00'
+  source_role: secondary
+  selector: '## Fabric IQ > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:61c7f06062309b63c1623fa963eb505eb430d0de711c262bd1e1300b099cd3bc
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:5d91de2da17fdcd97b8f129ba703ef2e5412772514e5e39935ec8b7c676c7495
+  title_snapshot: Fabric data agent public API
+  summary_snapshot: The Fabric data agent public API lets you manage data sources and data
+    agents programmatically from local development, CI/CD pipelines, internal portals, containers,
+    Azure Functions, and backend services. For more information, see Fabric data agent concepts
+    and Fabric data agent SDK.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

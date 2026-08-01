@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-05-016
+slug: mapping-data-flow-transforms-in-dataflow-gen2-preview
+title: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/data-factory/dataflow-gen2-mapping-data-flows-transforms
+announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/dataflow-gen2-mapping-data-flows-transforms
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:cdcdf663fd9064395a8e6eba8940f0c4c1ad7e2c1d9486eebdbf5754af6423db
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:7a436f1494db65cfb04fa37a87f8a6341bedcdf453904436cd7088d3612fa237
+  discovered_at: '2026-08-01T06:14:26.681064+00:00'
+  source_role: secondary
+  selector: '## Data Factory in Microsoft Fabric > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:7a436f1494db65cfb04fa37a87f8a6341bedcdf453904436cd7088d3612fa237
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:cdcdf663fd9064395a8e6eba8940f0c4c1ad7e2c1d9486eebdbf5754af6423db
+  title_snapshot: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
+  summary_snapshot: Mapping data flow transforms in dataflow gen2 (Preview) introduces Spark-based
+    transformation capabilities directly in the Dataflow Gen2 creation experience, enabling
+    large-scale data transformations with Spark compute. For more information, see Mapping
+    data flow transforms in Dataflow Gen2 (Preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

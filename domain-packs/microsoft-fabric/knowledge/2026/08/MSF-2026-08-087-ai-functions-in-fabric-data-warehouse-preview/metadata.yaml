@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-087
+slug: ai-functions-in-fabric-data-warehouse-preview
+title: AI functions in Fabric Data Warehouse (preview)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/data-warehouse/ai-functions
+announcement_url: https://learn.microsoft.com/en-us/fabric/data-warehouse/ai-functions
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:bc9edd3f65565799b372b2af8ea09755ee23426d0672dee388c93e8ccf46a7a4
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:da9aa379f84168e2b4bde1eb336f06c3f36d3d2f90702e0a16cafe6a019de530
+  discovered_at: '2026-08-01T06:14:26.662987+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:da9aa379f84168e2b4bde1eb336f06c3f36d3d2f90702e0a16cafe6a019de530
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:bc9edd3f65565799b372b2af8ea09755ee23426d0672dee388c93e8ccf46a7a4
+  title_snapshot: AI functions in Fabric Data Warehouse (preview)
+  summary_snapshot: Fabric Data Warehouse now brings AI directly into T-SQL, enabling you
+    to categorize and classify text, analyze sentiment, extract structured information, translate
+    text across languages, and even correct grammar - all using built-in AI functions. To
+    get started, see Use AI functions in Fabric Data Warehouse (preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

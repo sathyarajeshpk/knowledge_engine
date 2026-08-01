@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-072
+slug: invoke-ssis-package-activity-in-data-factory-pipelines
+title: Invoke SSIS Package activity in Data Factory pipelines (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/data-factory/invoke-ssis-package-activity
+announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/invoke-ssis-package-activity
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:ebad3451b9c4d078ff1ecc3bd7ad9af844cfd0158c80ceef6e159d50ad7dc9ab
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:aac0c9adb4335d9c80d252b6b1b0f9177f0e2502f27908349748b08adbb7390e
+  discovered_at: '2026-08-01T06:14:26.669541+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:aac0c9adb4335d9c80d252b6b1b0f9177f0e2502f27908349748b08adbb7390e
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:ebad3451b9c4d078ff1ecc3bd7ad9af844cfd0158c80ceef6e159d50ad7dc9ab
+  title_snapshot: Invoke SSIS Package activity in Data Factory pipelines (Preview)
+  summary_snapshot: 'The Invoke SSIS Package activity (preview) enables package execution
+    from pipeline orchestration in Fabric. For more information, read Blog: Invoke SSIS Package
+    Activity in Microsoft Fabric (preview).'
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-03-001
+slug: mirroring-from-sap-databases-generally-available
+title: Mirroring from SAP databases (Generally Available)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/mirroring/sap
+announcement_url: https://learn.microsoft.com/en-us/fabric/mirroring/sap
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-03-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:6367a3a0e3b55b9b0683b873c61d98700b5f68405cbf45ca9cc8de274b6dbf7e
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:e59c2791af1efa5be271629e64e849823a06921f930c5dc3e7dfa3cdbc341f6f
+  discovered_at: '2026-08-01T06:14:26.685843+00:00'
+  source_role: secondary
+  selector: '## Fabric Mirroring > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:e59c2791af1efa5be271629e64e849823a06921f930c5dc3e7dfa3cdbc341f6f
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:6367a3a0e3b55b9b0683b873c61d98700b5f68405cbf45ca9cc8de274b6dbf7e
+  title_snapshot: Mirroring from SAP databases (Generally Available)
+  summary_snapshot: You can continuously replicate your SAP data directly into Fabric's OneLake.
+    Once in Fabric, you can take advantage of powerful capabilities for business intelligence,
+    AI, data engineering, data science, and data sharing. For more information, see Mirroring
+    SAP.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

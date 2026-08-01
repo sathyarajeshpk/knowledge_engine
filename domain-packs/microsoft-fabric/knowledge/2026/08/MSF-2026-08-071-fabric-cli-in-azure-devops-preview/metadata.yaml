@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-071
+slug: fabric-cli-in-azure-devops-preview
+title: Fabric CLI in Azure DevOps (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/fabric-cli-in-azure-devops-automation-without-friction-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/fabric-cli-in-azure-devops-automation-without-friction-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:cbbe007117eb69eb69dff93d6fd0f8554f740f35e8523e1e5b5f5966f87e4cd2
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:a798e07ef8245eeb2b1945500d2f6fcd9ee7a4c0c74261a0496e63dc397da1c8
+  discovered_at: '2026-08-01T06:14:26.668251+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:a798e07ef8245eeb2b1945500d2f6fcd9ee7a4c0c74261a0496e63dc397da1c8
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:cbbe007117eb69eb69dff93d6fd0f8554f740f35e8523e1e5b5f5966f87e4cd2
+  title_snapshot: Fabric CLI in Azure DevOps (Preview)
+  summary_snapshot: The Fabric CLI in Azure DevOps (Preview) provides the Fabric CLI (fab)
+    as a built-in Azure DevOps pipeline task for automating workspace and item management
+    without manual tool installation. Get started with the Fabric CLI (generally available)
+    at https://aka.ms/FabCLI.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-052
+slug: workspace-customer-managed-keys-for-byok-preview
+title: Workspace customer-managed keys for BYOK (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/workspace-customer-managed-keys-for-byok-in-microsoft-fabric-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/workspace-customer-managed-keys-for-byok-in-microsoft-fabric-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:ac90c4ea75acc80e987977aa6d1139b40e65b42a2b3c71fea06b9732ef577430
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:7c380248392efc8db11f76196549717f341c8c8c9e4811828e6639b8bb1f458e
+  discovered_at: '2026-08-01T06:14:26.675438+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:7c380248392efc8db11f76196549717f341c8c8c9e4811828e6639b8bb1f458e
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:ac90c4ea75acc80e987977aa6d1139b40e65b42a2b3c71fea06b9732ef577430
+  title_snapshot: Workspace customer-managed keys for BYOK (Preview)
+  summary_snapshot: Workspace CMK for BYOK (Preview) enables workspace-level customer-managed
+    key encryption in BYOK-enabled Fabric capacities, so you can use the same or separate
+    Azure Key Vault keys without dedicated capacities. For more information, see Customer-managed
+    keys for Fabric workspaces.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

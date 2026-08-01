@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-077
+slug: git-developer-experiences-preview
+title: Git developer experiences (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/introducing-new-git-developer-experiences-in-microsoft-fabric-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/introducing-new-git-developer-experiences-in-microsoft-fabric-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:2d5e51b59abf797be3e371d2a287f672bba925ddd85ed1548360c0202a9acc22
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:b50a55c066185f72b0fc85cedfd4ef46b467e2108bc181e39b4a49512d4427e6
+  discovered_at: '2026-08-01T06:14:26.669249+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:b50a55c066185f72b0fc85cedfd4ef46b467e2108bc181e39b4a49512d4427e6
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:2d5e51b59abf797be3e371d2a287f672bba925ddd85ed1548360c0202a9acc22
+  title_snapshot: Git developer experiences (Preview)
+  summary_snapshot: New Git developer experiences (Preview) add branched workspaces for formal
+    source-to-feature workspace relationships, selective branching to branch out with only
+    the items you need, and the ability to Compare Code Changes for rich diff review before
+    committing or syncing.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

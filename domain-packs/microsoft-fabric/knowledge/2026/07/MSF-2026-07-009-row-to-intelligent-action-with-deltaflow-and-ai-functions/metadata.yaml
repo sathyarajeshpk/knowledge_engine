@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-07-009
+slug: row-to-intelligent-action-with-deltaflow-and-ai-functions
+title: Row-to-intelligent-action with DeltaFlow and AI functions
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Intelligent-streaming-Real-time-game-day-operations-with-Fabric/ba-p/5287533
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Intelligent-streaming-Real-time-game-day-operations-with-Fabric/ba-p/5287533
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:4d6b3721a92b8649d4c98ef8f5aa1394eb302cd418bafe510af0fb7c711d4bc8
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:7a1f920578a21b35826aaa3fc08e436d8bdbd69d020df56626a42640925860a4
+  discovered_at: '2026-08-01T06:14:26.687283+00:00'
+  source_role: secondary
+  selector: '## Real-Time Intelligence samples and guidance > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:7a1f920578a21b35826aaa3fc08e436d8bdbd69d020df56626a42640925860a4
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:4d6b3721a92b8649d4c98ef8f5aa1394eb302cd418bafe510af0fb7c711d4bc8
+  title_snapshot: Row-to-intelligent-action with DeltaFlow and AI functions
+  summary_snapshot: Real-time game-day operations with Eventstreams, Spark, and AI functions
+    walks through a stadium operations scenario that captures database changes with a CDC
+    source, reshapes them with DeltaFlow (Preview), and uses AI functions in a Spark Structured
+    Streaming notebook to classify each request by meaning and route actionable items to the
+    right team in seconds. For more information, see DeltaFlow output transformation (preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

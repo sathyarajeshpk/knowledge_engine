@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-06-047
+slug: built-in-fabric-data-protection-for-ai-readiness
+title: Built-in Fabric data protection for AI readiness
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Use-built-in-Fabric-data-protection-to-get-your-data-AI-ready/ba-p/5237428
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Use-built-in-Fabric-data-protection-to-get-your-data-AI-ready/ba-p/5237428
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:e7e2cb85836d05560b116a1e69fcd18aaf826cb3922a07088123b7c18500bafa
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:f454b6817e77e483efebc412128b4f97650f4f8a0f4632d89f075f80932597ec
+  discovered_at: '2026-08-01T06:14:26.678726+00:00'
+  source_role: secondary
+  selector: '## Microsoft Fabric platform features > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:f454b6817e77e483efebc412128b4f97650f4f8a0f4632d89f075f80932597ec
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:e7e2cb85836d05560b116a1e69fcd18aaf826cb3922a07088123b7c18500bafa
+  title_snapshot: Built-in Fabric data protection for AI readiness
+  summary_snapshot: Built-in Fabric data protection applies Microsoft Purview sensitivity
+    labels, protection policies, data loss prevention (DLP), and Data Security Posture Management
+    (DSPM) directly to lakehouses, warehouses, semantic models, and reports, and labels persist
+    when you export to Excel, PowerPoint, PDF, or .pbix. For more information, see Information
+    protection in Microsoft Fabric and Protection policies in Microsoft Fabric.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

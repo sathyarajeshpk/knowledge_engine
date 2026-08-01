@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-020
+slug: warehouse-custom-sql-pools-preview
+title: Warehouse custom SQL pools (preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/custom-sql-pools-for-fabric-data-warehouse-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/custom-sql-pools-for-fabric-data-warehouse-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:bdd7962139cbb030a67dc194b22d6c0ce91f9c4b76952128feb4e1b93662526b
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:2c6b12649f45fb83c9d05255a6be53fdf95d1c5d1990b4e76532f32e2c7385fc
+  discovered_at: '2026-08-01T06:14:26.674985+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:2c6b12649f45fb83c9d05255a6be53fdf95d1c5d1990b4e76532f32e2c7385fc
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:bdd7962139cbb030a67dc194b22d6c0ce91f9c4b76952128feb4e1b93662526b
+  title_snapshot: Warehouse custom SQL pools (preview)
+  summary_snapshot: Custom SQL pools (Preview) give workspace administrators fine-grained
+    control over SQL compute resource allocation, enabling you to define pools, assign percentage-based
+    compute, and route queries by application name. For more information, see Custom SQL pools.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

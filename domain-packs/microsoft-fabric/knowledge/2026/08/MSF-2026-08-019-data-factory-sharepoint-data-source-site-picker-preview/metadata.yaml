@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-019
+slug: data-factory-sharepoint-data-source-site-picker-preview
+title: Data Factory SharePoint data source site picker (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/sharepoint-site-picker-for-easily-connecting-sharepoint-data-in-microsoft-fabric-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/sharepoint-site-picker-for-easily-connecting-sharepoint-data-in-microsoft-fabric-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:a380882adb5ee40791967a0f1e2f9ff5e81b3a4fe0b9f96202765d56d2594a76
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:2b86d4d92ba40e68e32081074cff133a2b3c1b3d676abbaea31a8ca1407036f4
+  discovered_at: '2026-08-01T06:14:26.666067+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:2b86d4d92ba40e68e32081074cff133a2b3c1b3d676abbaea31a8ca1407036f4
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:a380882adb5ee40791967a0f1e2f9ff5e81b3a4fe0b9f96202765d56d2594a76
+  title_snapshot: Data Factory SharePoint data source site picker (Preview)
+  summary_snapshot: The SharePoint Site Picker (Preview) replaces manual URL entry with a
+    browsable, searchable dropdown for selecting SharePoint sites across Dataflow Gen2, Pipelines,
+    Copy job, and Lakehouse shortcuts. For more information, see SharePoint Folder connector.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

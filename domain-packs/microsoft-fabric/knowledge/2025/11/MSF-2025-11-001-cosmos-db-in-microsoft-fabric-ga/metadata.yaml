@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2025-11-001
+slug: cosmos-db-in-microsoft-fabric-ga
+title: Cosmos DB in Microsoft Fabric (GA)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/database/cosmos-db/overview
+announcement_url: https://learn.microsoft.com/en-us/fabric/database/cosmos-db/overview
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2025-11-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:7a376927e7cff72b508dbb09218c4a95e21bd13de474ea0e248ce2561ee85ae3
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:0a363df08d68222fb5ec42a7443447fa63ee99b132403273b32b91877d653f8e
+  discovered_at: '2026-08-01T06:14:26.683700+00:00'
+  source_role: secondary
+  selector: '## Cosmos DB in Microsoft Fabric > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:0a363df08d68222fb5ec42a7443447fa63ee99b132403273b32b91877d653f8e
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:7a376927e7cff72b508dbb09218c4a95e21bd13de474ea0e248ce2561ee85ae3
+  title_snapshot: Cosmos DB in Microsoft Fabric (GA)
+  summary_snapshot: 'Cosmos DB in Microsoft Fabric is now generally available to all users.
+    Since its announcement at Microsoft Build 2025, Microsoft added several new capabilities,
+    including vector indexing and search. For more information, see Announcing Cosmos DB in
+    Microsoft Fabric. To get started, see Quickstart: Create a Cosmos DB database in Microsoft
+    Fabric.'
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

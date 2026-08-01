@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-07-012
+slug: secure-zero-copy-distribution-with-onelake-security-and
+title: Secure zero-copy distribution with OneLake security and shortcuts
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Securing-zero-copy-distribution-patterns-with-OneLake-security/ba-p/5227853
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Securing-zero-copy-distribution-patterns-with-OneLake-security/ba-p/5227853
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:119ef8f784848a222001db3247938dd8d7d9c542c0f76d8907d6762459a32959
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:9080d414965f20c4e9f09a0ce4db754a1b1ea9849f08c0c71b41aaf4e7ac5275
+  discovered_at: '2026-08-01T06:14:26.678323+00:00'
+  source_role: secondary
+  selector: '## Microsoft Fabric platform features > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:9080d414965f20c4e9f09a0ce4db754a1b1ea9849f08c0c71b41aaf4e7ac5275
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:119ef8f784848a222001db3247938dd8d7d9c542c0f76d8907d6762459a32959
+  title_snapshot: Secure zero-copy distribution with OneLake security and shortcuts
+  summary_snapshot: Zero-copy distribution patterns with OneLake security and shortcuts explains
+    how passthrough shortcuts evaluate permissions on the target for source-managed authorization,
+    and how delegated shortcuts—including delegated OneLake shortcuts—use an intermediate
+    identity so central teams delegate access management at scale and share data across Fabric
+    tenants, with security combined via intersection. For more information, see OneLake security
+    access control model and Secure and manage OneLake shortcuts.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

@@ -1,0 +1,64 @@
+schema_version: 1
+id: MSF-2026-03-004
+slug: advancing-agentic-ai-with-microsoft-databases-across-a
+title: Advancing agentic AI with Microsoft databases across a unified data estate
+source_name: fabric-blog
+source_url: https://www.microsoft.com/en-us/sql-server/blog/2026/03/18/advancing-agentic-ai-with-microsoft-databases-across-a-unified-data-estate
+announcement_url: https://www.microsoft.com/en-us/sql-server/blog/2026/03/18/advancing-agentic-ai-with-microsoft-databases-across-a-unified-data-estate
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-03-18
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:fd73f556f15e4c1dd8f2925bf89994e561fc30888dacdba4d8a3982b11febcc4
+provenance:
+  source_name: fabric-blog
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:88638b1aa6368b20e94617de4fb8c252342a01e7b3ec53e3adda6c86a2e40b98
+  discovered_at: '2026-08-01T06:14:27.778298+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:88638b1aa6368b20e94617de4fb8c252342a01e7b3ec53e3adda6c86a2e40b98
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:fd73f556f15e4c1dd8f2925bf89994e561fc30888dacdba4d8a3982b11febcc4
+  title_snapshot: Advancing agentic AI with Microsoft databases across a unified data estate
+  summary_snapshot: This week, we are excited to kick off SQLCon 2026 alongside FabCon in
+    Atlanta. Bringing these SQL and Fabric communities together creates a unique opportunity
+    to learn, connect, and share what’s next across the Microsoft databases portfolio. This
+    year is especially meaningful, as it marks the return of a Microsoft‑led SQL community
+    event, while also showcasing how SQL continues to evolve as a critical part of Fabric.
+    It is not just about new technology, but about reconnecting with each other and building
+    the future of SQL together. It’s inspiring to see the Microsoft SQL community continue
+    to grow and engage, with user groups worldwide keeping conversations active across the
+    SQL portfolio and a lot of customers using Microsoft SQL to…
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

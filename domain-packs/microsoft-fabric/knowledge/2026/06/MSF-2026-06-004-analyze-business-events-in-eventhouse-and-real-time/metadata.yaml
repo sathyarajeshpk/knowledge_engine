@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-06-004
+slug: analyze-business-events-in-eventhouse-and-real-time
+title: Analyze Business Events in Eventhouse and Real-Time Dashboards (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Analyze-Your-Business-Events-in-Eventhouse-and-Real-Time/ba-p/5190245
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Analyze-Your-Business-Events-in-Eventhouse-and-Real-Time/ba-p/5190245
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:8bdc24cf2373cd94d387fc52f3247169ee992dde69201715e4b8565622c7bb64
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:0c9a08ca2a74e7a0145ea08611f87acda6e5d4fc3a2c2f009dadc703cbbcdeac
+  discovered_at: '2026-08-01T06:14:26.687472+00:00'
+  source_role: secondary
+  selector: '## Real-Time Intelligence samples and guidance > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:0c9a08ca2a74e7a0145ea08611f87acda6e5d4fc3a2c2f009dadc703cbbcdeac
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:8bdc24cf2373cd94d387fc52f3247169ee992dde69201715e4b8565622c7bb64
+  title_snapshot: Analyze Business Events in Eventhouse and Real-Time Dashboards (Preview)
+  summary_snapshot: Analyzing Business Events in Eventhouse and Real-Time Dashboards (Preview)
+    walks through how every published business event lands in a dedicated KQL table in Eventhouse
+    by default, so you can run historical KQL queries, correlate signals across event types,
+    and connect a Real-Time Dashboard for live operational monitoring without extra pipelines.
+    For more information, see Business events overview (Preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

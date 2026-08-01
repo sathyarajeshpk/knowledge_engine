@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-06-026
+slug: activator-as-a-business-event-publisher-preview
+title: Activator as a Business Event Publisher (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Turn-insights-into-signals-with-Activator-as-a-Business-Event/ba-p/5190248
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Turn-insights-into-signals-with-Activator-as-a-Business-Event/ba-p/5190248
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:457c71b37106c84a15c90611375b62ad135bfe07a707abe144173e032f272aed
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:6c9b760ab939497f1a22191da331764ee2c0161caf208aa65cd9af5eec31d0a4
+  discovered_at: '2026-08-01T06:14:26.687533+00:00'
+  source_role: secondary
+  selector: '## Real-Time Intelligence samples and guidance > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:6c9b760ab939497f1a22191da331764ee2c0161caf208aa65cd9af5eec31d0a4
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:457c71b37106c84a15c90611375b62ad135bfe07a707abe144173e032f272aed
+  title_snapshot: Activator as a Business Event Publisher (Preview)
+  summary_snapshot: Using Activator as a Business Event publisher (Preview) shows how Activator
+    rules in Power BI reports, Real-Time Dashboards, KQL queries, and Fabric Warehouse SQL
+    queries emit structured, governed business events into Real-Time hub, so signals are persistent,
+    discoverable, and consumable across your organization. For more information, see What
+    is Fabric Activator? and Business events overview (Preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

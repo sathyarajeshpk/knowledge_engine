@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-07-021
+slug: autoscaling-for-virtual-network-data-gateway-preview
+title: Autoscaling for Virtual Network Data Gateway (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/VNET-Data-Gateway-Autoscaling-Preview/ba-p/5281553
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/VNET-Data-Gateway-Autoscaling-Preview/ba-p/5281553
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:eee1e184f9e0c1e1c6be61f78bbad3ee265330361b269416d9b455ada839ff85
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:f3f976e9a5ca6be5997733b82736e4dc272eb12d969a11b9dfb334d3febdc0c2
+  discovered_at: '2026-08-01T06:14:26.679708+00:00'
+  source_role: secondary
+  selector: '## Data Factory in Microsoft Fabric > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:f3f976e9a5ca6be5997733b82736e4dc272eb12d969a11b9dfb334d3febdc0c2
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:eee1e184f9e0c1e1c6be61f78bbad3ee265330361b269416d9b455ada839ff85
+  title_snapshot: Autoscaling for Virtual Network Data Gateway (Preview)
+  summary_snapshot: Autoscaling for Virtual Network Data Gateway (Preview) automatically adjusts
+    the number of active gateway nodes within admin-defined minimum and maximum limits based
+    on workload demand, so the gateway absorbs spikes without manual intervention and scales
+    down to reduce cost during idle periods. For more information, see Download logs on the
+    virtual network data gateway.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

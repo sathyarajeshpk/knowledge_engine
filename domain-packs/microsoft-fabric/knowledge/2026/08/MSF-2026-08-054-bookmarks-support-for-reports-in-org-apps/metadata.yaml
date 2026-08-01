@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-054
+slug: bookmarks-support-for-reports-in-org-apps
+title: Bookmarks support for reports in org apps
+source_name: powerbi-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/power-bi/explore-reports/end-user-bookmarks
+announcement_url: https://learn.microsoft.com/en-us/power-bi/explore-reports/end-user-bookmarks
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:65291fed17d462b1c79df9421eedd24e7aeac4797a3ee097fb2635ef132bd7b0
+provenance:
+  source_name: powerbi-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:7fafb567e5b67ade19f266ef7f8c0e4d28b9eb241f4b995e2ca192f3bc13b525
+  discovered_at: '2026-08-01T06:14:27.250088+00:00'
+  source_role: secondary
+  selector: '## Reporting > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:7fafb567e5b67ade19f266ef7f8c0e4d28b9eb241f4b995e2ca192f3bc13b525
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:65291fed17d462b1c79df9421eedd24e7aeac4797a3ee097fb2635ef132bd7b0
+  title_snapshot: Bookmarks support for reports in org apps
+  summary_snapshot: Users can access both report bookmarks created by authors and personal
+    bookmarks when viewing interactive reports in org apps, making it easy to return to saved
+    report views with filters, selections, and visual state. For more information, see Bookmarks
+    in the Power BI service.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

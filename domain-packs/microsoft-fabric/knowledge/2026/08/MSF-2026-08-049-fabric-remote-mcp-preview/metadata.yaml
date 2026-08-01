@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-049
+slug: fabric-remote-mcp-preview
+title: Fabric Remote MCP (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Agentic-Fabric-How-MCP-is-turning-your-data-platform-into-an-AI/ba-p/5172009
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Agentic-Fabric-How-MCP-is-turning-your-data-platform-into-an-AI/ba-p/5172009
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:5af26ff6958364b8e4dc57658cb8e6c425748a25aafde19d5526eadaa6bb0e07
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:786ce509352b6a96193987f9f6d15f49d4a001e197ad57642dbfa162805e5221
+  discovered_at: '2026-08-01T06:14:26.668849+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:786ce509352b6a96193987f9f6d15f49d4a001e197ad57642dbfa162805e5221
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:5af26ff6958364b8e4dc57658cb8e6c425748a25aafde19d5526eadaa6bb0e07
+  title_snapshot: Fabric Remote MCP (Preview)
+  summary_snapshot: Fabric Remote MCP (Preview) is a cloud-hosted Model Context Protocol server
+    that lets AI agents perform real, authenticated operations against Fabric workspaces,
+    items, search, permissions, connections, and OneLake through Microsoft Entra ID with full
+    audit logging, with no local install. For more information, see Get started with Fabric
+    Core MCP Server.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

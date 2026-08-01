@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-05-004
+slug: fabric-jumpstart
+title: Fabric Jumpstart
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Jumpstart-Discover-what-s-possible-with-Microsoft-Fabric/ba-p/5182277
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Jumpstart-Discover-what-s-possible-with-Microsoft-Fabric/ba-p/5182277
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:3e740b32038ee2b5aa1be93c1912928bbd025585ddb93c370f51e421e133526a
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:195552b81a317f7acecf5b50b704a82a6bc1a6f7bfca44763eca5d9c694414c2
+  discovered_at: '2026-08-01T06:14:26.677961+00:00'
+  source_role: secondary
+  selector: '## Community > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:195552b81a317f7acecf5b50b704a82a6bc1a6f7bfca44763eca5d9c694414c2
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:3e740b32038ee2b5aa1be93c1912928bbd025585ddb93c370f51e421e133526a
+  title_snapshot: Fabric Jumpstart
+  summary_snapshot: Fabric Jumpstart is a catalog of Microsoft-sponsored and community-contributed
+    accelerators, tutorials, and demos for Microsoft Fabric that you install with a single
+    Python command (fabricjumpstart.install) to deploy end-to-end scenarios such as a real-time
+    healthcare billing system or a stateful streaming lakehouse without building from scratch.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

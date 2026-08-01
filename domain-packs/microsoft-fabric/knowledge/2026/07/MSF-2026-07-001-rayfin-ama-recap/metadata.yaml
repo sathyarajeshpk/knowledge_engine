@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-07-001
+slug: rayfin-ama-recap
+title: Rayfin AMA recap
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Rayfin-AMA-Your-top-questions-answered/ba-p/5258804
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Rayfin-AMA-Your-top-questions-answered/ba-p/5258804
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:fd7dabdb65827c6966560c2b497d48e945fbcde15100d43eb868ca344a1d1c30
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:1250b7c2232ebbf0c1aec00464ab13c9b95bec920a09eb750c021cc55a0789d7
+  discovered_at: '2026-08-01T06:14:26.681808+00:00'
+  source_role: secondary
+  selector: '## Fabric Apps samples and guidance > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:1250b7c2232ebbf0c1aec00464ab13c9b95bec920a09eb750c021cc55a0789d7
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:fd7dabdb65827c6966560c2b497d48e945fbcde15100d43eb868ca344a1d1c30
+  title_snapshot: Rayfin AMA recap
+  summary_snapshot: The Rayfin AMA recap summarizes the community's top questions from a recent
+    Reddit AMA, covering how to combine analytics, writeback, and operational workflows on
+    Fabric data; upcoming Functions and connector investments for external APIs, email, and
+    Work IQ; row-level security enforcement through semantic models; and planned first-class
+    TypeScript Functions, secret management, version control, and Entra ID group support.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-099
+slug: tmdl-view-on-the-web
+title: TMDL View on the web
+source_name: powerbi-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-tmdl-view
+announcement_url: https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-tmdl-view
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:9006ed0888f3a6d359830ebf0e2f583ad8ec5a99ae0e20cf2cfe969660b043b3
+provenance:
+  source_name: powerbi-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:f6248c46a71110a7319ba5e05add014426c12fe348be3ef4fbf7876e6249d48f
+  discovered_at: '2026-08-01T06:14:27.250497+00:00'
+  source_role: secondary
+  selector: '## Modeling > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:f6248c46a71110a7319ba5e05add014426c12fe348be3ef4fbf7876e6249d48f
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:9006ed0888f3a6d359830ebf0e2f583ad8ec5a99ae0e20cf2cfe969660b043b3
+  title_snapshot: TMDL View on the web
+  summary_snapshot: Developers can script, modify, and apply changes to model objects directly
+    in a code editor using Tabular Model Definition Language without switching to Desktop
+    or downloading model files. Provides code-level visibility into semantic model metadata
+    for bulk edits, automation, and reusable definitions. For more information, see Use Tabular
+    Model Definition Language view in Power BI Desktop.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

@@ -1,0 +1,65 @@
+schema_version: 1
+id: MSF-2026-03-005
+slug: highlights-from-fabcon-and-sqlcon-2026-where-databases-and
+title: 'Highlights from FabCon and SQLCon 2026: Where databases and Fabric come together'
+source_name: fabric-blog
+source_url: https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/03/30/highlights-from-fabcon-and-sqlcon-2026-where-databases-and-fabric-come-together
+announcement_url: https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/03/30/highlights-from-fabcon-and-sqlcon-2026-where-databases-and-fabric-come-together
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-03-30
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:682531f8585d89a1d45feac5b694b9c6ff02e13010b337ae923154183cff2a0c
+provenance:
+  source_name: fabric-blog
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:f082c2ee63f1f9f4f9c4554050b4280db5b7345bded9b652ee170aef2154cd80
+  discovered_at: '2026-08-01T06:14:27.776794+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:f082c2ee63f1f9f4f9c4554050b4280db5b7345bded9b652ee170aef2154cd80
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:682531f8585d89a1d45feac5b694b9c6ff02e13010b337ae923154183cff2a0c
+  title_snapshot: 'Highlights from FabCon and SQLCon 2026: Where databases and Fabric come
+    together'
+  summary_snapshot: FabCon is back for its third year, and this time it’s different. For the
+    first time, SQLCon joined the event, bringing the Microsoft Fabric and SQL communities
+    together in Atlanta for an unforgettable week of learning, growing, and connecting. More
+    than 8,000 attendees gathered across nearly 300 sessions to explore the latest in Fabric
+    and SQL. Some of the most valuable moments did not happen on stage. They happened through
+    conversations and shared experiences across the community. That is what makes FabCon special.
+    It is not just what you learn. It is who you learn it with. From packed sessions to impromptu
+    discussions in the hallways, FabCon and SQLCon 2026 reflected the growing energy and momentum
+    behind the Fabric and…
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

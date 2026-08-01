@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-078
+slug: mssql-extension-for-vs-code-fabric-integration-preview
+title: MSSQL extension for VS Code Fabric integration (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/mssql-extension-for-vs-code-fabric-integration-public-preview
+announcement_url: https://blog.fabric.microsoft.com/blog/mssql-extension-for-vs-code-fabric-integration-public-preview
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:5d93db8da93a6a343e747aad87afc77bf77f1fcdd6125a7fb3df0576a850a90c
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:b888c5222e728eb3e3a564931a35d495d568059299c2110701fcf3322e422de1
+  discovered_at: '2026-08-01T06:14:26.671699+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:b888c5222e728eb3e3a564931a35d495d568059299c2110701fcf3322e422de1
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:5d93db8da93a6a343e747aad87afc77bf77f1fcdd6125a7fb3df0576a850a90c
+  title_snapshot: MSSQL extension for VS Code Fabric integration (Preview)
+  summary_snapshot: MSSQL extension for VS Code Fabric integration (Preview) adds support
+    for connecting, running queries, and managing objects in SQL databases in Fabric directly
+    from Visual Studio Code. Download the extension at MSSQL extension at marketplace.visualstudio.com.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

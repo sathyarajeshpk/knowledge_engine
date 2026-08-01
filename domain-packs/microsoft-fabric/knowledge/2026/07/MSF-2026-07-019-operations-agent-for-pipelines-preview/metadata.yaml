@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-07-019
+slug: operations-agent-for-pipelines-preview
+title: Operations Agent for Pipelines (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://learn.microsoft.com/en-us/fabric/data-factory/operations-agent-for-pipelines
+announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/operations-agent-for-pipelines
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:8d7068843b145bca38db7279b85fb75b8002d3e118ff784db1e895d354984bc2
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:df75f7b08597c96b033952c211245c5c7309779563d4f7a87f6204ad804de57e
+  discovered_at: '2026-08-01T06:14:26.679785+00:00'
+  source_role: secondary
+  selector: '## Data Factory in Microsoft Fabric > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:df75f7b08597c96b033952c211245c5c7309779563d4f7a87f6204ad804de57e
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:8d7068843b145bca38db7279b85fb75b8002d3e118ff784db1e895d354984bc2
+  title_snapshot: Operations Agent for Pipelines (Preview)
+  summary_snapshot: Operations Agent for Pipelines is an AI-powered monitoring agent that
+    continuously watches your pipeline runs and proactively notifies you through Microsoft
+    Teams when failures or anomalies occur. Configure the agent to monitor specific scenarios
+    such as all pipeline failures or runs exceeding expected durations. For more information,
+    see Operations Agent for Pipelines (preview).
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

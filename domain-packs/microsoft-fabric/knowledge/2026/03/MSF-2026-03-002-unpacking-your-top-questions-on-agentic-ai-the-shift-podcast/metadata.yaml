@@ -1,0 +1,63 @@
+schema_version: 1
+id: MSF-2026-03-002
+slug: unpacking-your-top-questions-on-agentic-ai-the-shift-podcast
+title: 'Unpacking your top questions on agentic AI: The Shift podcast'
+source_name: fabric-blog
+source_url: https://azure.microsoft.com/en-us/blog/unpacking-your-top-questions-on-agentic-ai-the-shift-podcast
+announcement_url: https://azure.microsoft.com/en-us/blog/unpacking-your-top-questions-on-agentic-ai-the-shift-podcast
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-03-09
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:529c98d287dec5301df2f23a4bc17b0a88912e56de6b4e6ee794cad241b1a6d1
+provenance:
+  source_name: fabric-blog
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:65a9104eff72787639ef275189075f2b4173be783210d860acd9133fccdb3531
+  discovered_at: '2026-08-01T06:14:27.778821+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:65a9104eff72787639ef275189075f2b4173be783210d860acd9133fccdb3531
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:529c98d287dec5301df2f23a4bc17b0a88912e56de6b4e6ee794cad241b1a6d1
+  title_snapshot: 'Unpacking your top questions on agentic AI: The Shift podcast'
+  summary_snapshot: Every day in the hallways at Microsoft, I hear product teams discussing
+    where agents are headed and how software is forever changed. Many of us come into the
+    office more now, and I didn’t realize how much I missed the in-between moments where natural
+    chat gives us energy—coffee and hot takes on the way to meetings and debating at a lunch
+    no one scheduled, but somehow nobody wants to leave. The people who work on Microsoft
+    Azure , Microsoft Foundry , and Microsoft Fabric care deeply about what they’re building—about
+    how cloud and AI platforms can be better for those with hands on keyboards—it’s when we’re
+    unscripted that some of our best insights surface. How could we bottle up this…
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

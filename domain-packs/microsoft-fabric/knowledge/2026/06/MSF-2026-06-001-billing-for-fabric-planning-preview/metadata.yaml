@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-06-001
+slug: billing-for-fabric-planning-preview
+title: Billing for Fabric Planning (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Billing-for-Microsoft-Fabric-Planning-Preview/ba-p/5207643
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Billing-for-Microsoft-Fabric-Planning-Preview/ba-p/5207643
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:b6fc3983e1ee344eba6df0dadf74075fc35a25bec351bfebca43c1a738b8a48b
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:0702c2e6c4988c4eb34c96aa8d405865204f4a50ce83dfa7e80de22e6a581e22
+  discovered_at: '2026-08-01T06:14:26.687817+00:00'
+  source_role: secondary
+  selector: '## Fabric IQ > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:0702c2e6c4988c4eb34c96aa8d405865204f4a50ce83dfa7e80de22e6a581e22
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:b6fc3983e1ee344eba6df0dadf74075fc35a25bec351bfebca43c1a738b8a48b
+  title_snapshot: Billing for Fabric Planning (Preview)
+  summary_snapshot: Billing for Fabric Planning (Preview) uses a hybrid model that combines
+    role-based and session-based pricing for Planners, Stakeholders, and Viewers with job-based
+    pricing for automated operations such as data sync and Planning sheet updates. A session
+    ties a user, role, and capacity to a 30-day window, and all usage meters against the unified
+    Fabric capacity-unit (CU) model.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

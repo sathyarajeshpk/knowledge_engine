@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-05-020
+slug: create-support-tickets-from-within-microsoft-fabric
+title: Create support tickets from within Microsoft Fabric (Generally Available)
+source_name: fabric-whats-new-markdown
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Create-support-tickets-from-within-Microsoft-Fabric-Generally/ba-p/5183100
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Create-support-tickets-from-within-Microsoft-Fabric-Generally/ba-p/5183100
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: month
+content_hash: sha256:ead7a953eb7ed50789732ca557ed0218913fc386d066563b2af15fbbf31a2648
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:8873612fa669e94984b8353efd387848fe953bce7b513791b772c2bbdfb54cd7
+  discovered_at: '2026-08-01T06:14:26.677298+00:00'
+  source_role: secondary
+  selector: '## Generally available features > table row (date from cell 0)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:8873612fa669e94984b8353efd387848fe953bce7b513791b772c2bbdfb54cd7
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:ead7a953eb7ed50789732ca557ed0218913fc386d066563b2af15fbbf31a2648
+  title_snapshot: Create support tickets from within Microsoft Fabric (Generally Available)
+  summary_snapshot: Ticket creation from within Microsoft Fabric (Generally Available) lets
+    eligible Fabric and Power BI users open support cases from the Help Pane, which collects
+    session metadata such as tenant location and item identifiers and routes them to support
+    engineers without leaving Fabric. Admins control availability through the Publish "Get
+    Help" information tenant setting. For more information, see Create a Fabric and Power
+    BI support ticket and Publish "Get Help" information.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

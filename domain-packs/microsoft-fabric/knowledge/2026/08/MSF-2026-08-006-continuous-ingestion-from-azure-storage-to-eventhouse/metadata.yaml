@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-006
+slug: continuous-ingestion-from-azure-storage-to-eventhouse
+title: Continuous ingestion from Azure Storage to Eventhouse (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/continuous-ingestion-from-azure-storage-to-eventhouse-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/continuous-ingestion-from-azure-storage-to-eventhouse-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:06537b5047e2c908fe3bce1c1e44870e92346fa8df99d04cc16ddba8f7a689df
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:097e610660f1999f0441d179751df76d22a28b708286428b54027c2835680267
+  discovered_at: '2026-08-01T06:14:26.664843+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:097e610660f1999f0441d179751df76d22a28b708286428b54027c2835680267
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:06537b5047e2c908fe3bce1c1e44870e92346fa8df99d04cc16ddba8f7a689df
+  title_snapshot: Continuous ingestion from Azure Storage to Eventhouse (Preview)
+  summary_snapshot: You can now use continuous ingestion from Azure Storage to Eventhouse
+    (preview) to automatically and efficiently ingest data from Azure Storage into Eventhouse.
+    For more information, see Get data from Azure Storage.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

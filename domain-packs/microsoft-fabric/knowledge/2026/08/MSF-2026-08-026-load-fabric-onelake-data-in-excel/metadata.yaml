@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-026
+slug: load-fabric-onelake-data-in-excel
+title: Load Fabric OneLake Data in Excel
+source_name: fabric-whats-new-markdown
+source_url: https://blog.fabric.microsoft.com/blog/easily-load-fabric-onelake-data-into-excel-onelake-catalog-and-modern-get-data-are-integrated-into-excel-for-windows-preview?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/easily-load-fabric-onelake-data-into-excel-onelake-catalog-and-modern-get-data-are-integrated-into-excel-for-windows-preview?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:cb05221507ac6b9b93b9668b232c4b1550da3cfd8c0bbab9df975fd799d4a927
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:3d2fed9f60ea087f74c63f2bf8886e2548685595c098794596a3e70d90851435
+  discovered_at: '2026-08-01T06:14:26.670205+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:3d2fed9f60ea087f74c63f2bf8886e2548685595c098794596a3e70d90851435
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:cb05221507ac6b9b93b9668b232c4b1550da3cfd8c0bbab9df975fd799d4a927
+  title_snapshot: Load Fabric OneLake Data in Excel
+  summary_snapshot: Easily load Fabric OneLake data into Excel with integrated OneLake catalog
+    and modern Get Data experience (preview). For more information and steps to get started,
+    see OneLake catalog and Get Data are integrated into Excel for Windows.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}

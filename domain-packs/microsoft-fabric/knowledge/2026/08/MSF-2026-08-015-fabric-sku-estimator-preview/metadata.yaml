@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-015
+slug: fabric-sku-estimator-preview
+title: Fabric SKU estimator (Preview)
+source_name: fabric-whats-new-markdown
+source_url: https://www.microsoft.com/microsoft-fabric/capacity-estimator
+announcement_url: https://www.microsoft.com/microsoft-fabric/capacity-estimator
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-01
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:94c2ec38b4a62e2ea07c379e506a2a0cbcfa4013fcf51c8ad83e143af8b10248
+provenance:
+  source_name: fabric-whats-new-markdown
+  source_representation: markdown
+  adapter_type: markdown
+  parser_version: 1
+  extraction_method: markdown-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:250c75a4846f71e73af5138310b7726149215c1b151f1af1289f5f1fb17d819f
+  discovered_at: '2026-08-01T06:14:26.668993+00:00'
+  source_role: secondary
+  selector: '## Features currently in preview > table row (no date cell)'
+  run_id: run-2026-08-01T06-14-25Z
+url_hash: sha256:250c75a4846f71e73af5138310b7726149215c1b151f1af1289f5f1fb17d819f
+tier: 3
+learning_priority: low
+category: null
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:94c2ec38b4a62e2ea07c379e506a2a0cbcfa4013fcf51c8ad83e143af8b10248
+  title_snapshot: Fabric SKU estimator (Preview)
+  summary_snapshot: The Microsoft Fabric SKU estimator, now available in preview, is an enhanced
+    version of the previously introduced Microsoft Fabric Capacity Calculator. For more information,
+    see Introducing the Microsoft Fabric SKU estimator (preview) and Mastering SKU Estimations
+    with the Microsoft Fabric SKU Estimator.
+  run_id: run-2026-08-01T06-14-25Z
+generation: {}
