@@ -105,7 +105,7 @@ expanding functionality. Classification moves to M4.
 
 ---
 
-### M5 — Revisions, in-place updates, staleness · **planned**
+### M5 — Review workflow, revisions and supersession · **done** (v0.6.0)
 
 Must land before the cron, because every run after the first is an update run.
 

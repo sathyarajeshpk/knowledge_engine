@@ -39,6 +39,43 @@ Nothing yet. M1 (Discovery) begins after M0 is reviewed and merged.
 
 ---
 
+## [0.6.0] — 2026-08-01
+
+Sixth milestone: **M5 — Review workflow, revisions and supersession**.
+Release notes: [`docs/releases/v0.6.0.md`](docs/releases/v0.6.0.md).
+
+Two independent review backlogs became one workflow, and the Time Machine got
+its first reader — which immediately found it polluted.
+
+**Schema version:** 1 (unchanged)
+
+### Added
+
+- `reviewq.py` and a rewritten `ke review` — one workflow over queued items,
+  unclassifiable objects and revisions, with `list`, `next`, `show`, and
+  `approve`/`archive`/`resolve` including `--all --kind` bulk actions
+  ([ADR-0036](docs/adr/0036-unified-review-workflow.md)).
+- `history.py`, `ke history <id> [--at N]` — reconstruct an object's past from
+  the snapshots it carries.
+- `ke supersede <old> --by <new>` — links both directions; nothing is deleted.
+- `REV001` / `REV002` validation: revision numbering, chronology, object-vs-
+  snapshot agreement, revisions recording no change, and repeated identical
+  revisions as the flip-flop signature.
+- `indexes/review-queue.md` now shows every kind with counts.
+
+### Changed
+
+- `Lifecycle.SUPERSEDED` removed. An object whose feature was replaced has still
+  been fully acquired, so supersession is `status: replaced`
+  ([ADR-0035](docs/adr/0035-supersession-is-status-not-lifecycle.md), amends
+  ADR-0029). Safe: nothing referenced it and no stored object carried it.
+
+### Known
+
+- 35 objects carry 11 revisions each recording the identical change — residue
+  from the M3 flip-flop, produced before it was fixed. Reported as warnings
+  rather than rewritten: the revisions truthfully record what the engine did.
+
 ## [0.5.0] — 2026-08-01
 
 Fifth milestone: **M4 — Orchestration and classification**.
