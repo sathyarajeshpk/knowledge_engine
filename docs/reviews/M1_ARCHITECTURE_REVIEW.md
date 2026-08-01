@@ -4,8 +4,16 @@
 **Date:** 2026-07-31
 **Scope:** everything M1 added — clock, identity, normalisation, three adapters,
 orchestration, source health, fallback chains, provenance
-**Verdict:** **Ready to merge, with one finding that must be resolved before M2
-mints a single Feature ID.**
+**Verdict:** **Ready to merge.** The identity finding below (F1) was raised,
+decided and mitigated within this milestone; the residual work is recorded and
+scoped.
+
+> **Update, post-review.** F1 was resolved by adopting the three-level
+> Announcement/Feature/Knowledge Object model (ADR-0027) and gating minting on
+> Identity Confidence (ADR-0028). The full analysis is in
+> `docs/design/IDENTITY_MODEL.md`. F1 is retained below as written, because the
+> reasoning that produced it is the useful part of this review; §7 records what
+> was actually done.
 
 ---
 
@@ -29,8 +37,9 @@ Feature IDs are permanent (ADR-0005) and identity is what they are minted from
 | Orchestration | Fallback chains, per-source failure isolation, `ReviewItem` on total failure |
 | Health | `healthy`/`degraded`/`failed`/`disabled`, median-based parser-break detection |
 | Provenance | Full discovery chain, in chain order (ADR-0026) |
-| Tests | 215, all offline, ~0.9s |
-| ADRs | 0017–0026 |
+| Identity confidence | `high`/`medium`/`low`, collisions surfaced never merged (ADR-0027/0028) |
+| Tests | 227, all offline, ~1s |
+| ADRs | 0017–0028 |
 
 ---
 
@@ -66,7 +75,7 @@ it happened before adapters were written rather than after.
 
 **The two injected seams are real, not decorative.** Clock and fetcher are
 injected everywhere, and the clock rule is enforced by a test that walks every
-module looking for `datetime.now(`. All 215 tests run offline in under a second.
+module looking for `datetime.now(`. All 227 tests run offline in about a second.
 An engine whose tests need the internet is an engine that becomes untestable on
 the day a source goes down — which is exactly the day you need to change it.
 
@@ -79,7 +88,7 @@ end the run and suppress the run-log commit that keeps the weekly cron alive.
 are structurally distinguishable. Weeks of silent data loss is the failure mode
 this engine exists to prevent, and this is where that is enforced.
 
-**Two defects were found by measuring rather than reasoning.** The prose-date
+**Three defects were found by measuring rather than reasoning.** The prose-date
 defect (1 row in 361: a month scraped from a sentence, labelled `EXACT`, destined
 to become a permanent Feature ID) was invisible in the fixture and obvious in
 production. So was the identity finding in §5. The lesson is now written into the
@@ -207,8 +216,9 @@ seed Power BI history before the first live run rather than after.
 
 | Risk | Severity | Mitigation |
 |---|---|---|
-| Distinct features merged under one permanent ID (F1) | **High** | Resolve before M2 mints anything. M1 writes nothing, so the window is open and free. |
-| Power BI failover mints duplicates (W2) | Medium | R2 — gate the weak secondary, or accept and monitor |
+| Distinct features merged under one permanent ID (F1) | ~~High~~ **Resolved** | ADR-0027/0028: collisions are surfaced, not merged; minting is gated on confidence |
+| A review queue nobody drains | **Medium — new** | ~20% of knowledge now waits on a human. M2 needs a drain path; the digest must surface queue depth so neglect is visible |
+| Power BI failover mints duplicates (W2) | Resolved | Per-item mint gate replaces the per-source switch |
 | Parser break undetected until health persists (W3) | Medium | M6; `fallback_probe` in CI narrows the gap meanwhile |
 | Learn changes markup silently | Medium | `parser_version` + `selector` make affected objects findable rather than requiring a full re-verify |
 | Learn begins blocking runner IPs | Medium | The Markdown secondary is now a genuine fallback — this risk is materially lower than it was |
@@ -218,21 +228,41 @@ seed Power BI history before the first live run rather than after.
 
 ## 7. Recommendations
 
-### Before M2
+### Resolved within M1
 
-**R1 — Decide F1.** Blocking. My recommendation is option B. Whatever is chosen
-becomes an ADR amending ADR-0023, and M2's dedupe design follows from it.
+**R1 — F1 decided. Done.** Not by amending ADR-0023's computation, which measured
+well (98% agreement), but by correcting what surrounds it:
 
-**R2 — Decide the Power BI secondary's status.** Either mark it
-`status: disabled` until identity agreement improves (safe, loses the fallback),
-or keep it and accept ~5 duplicate IDs on failover (fast, permanent cost). I lean
-towards disabling it: a fallback whose activation damages the pack is worse than
-no fallback, because it fires automatically and without a human present.
+- **ADR-0027** — Announcement, Feature and Knowledge Object are three things. An
+  announcement URL is a citation, not an identity. A collision is never a merge.
+- **ADR-0028** — Identity Confidence (`high`/`medium`/`low`) gates minting. Only
+  a high-confidence identity from an authoritative source mints automatically;
+  everything else queues. Nothing is dropped.
 
-**R3 — Promote the identity-agreement check from probe to assertion.** It is a
-safety property, so it should fail rather than print. Adding a threshold to
-`fallback_probe.py` and running it on a schedule converts "someone looked once" into
-"the engine notices". Cheap, and it is what would have caught F1 automatically.
+Against production: 251 of 315 Fabric items mint automatically, 64 queue across
+15 collisions. Category and normalised content were **evaluated and rejected on
+measurement** as identity components — category is many-to-many (28% of features
+span multiple sections) and time-varying with lifecycle, which would contradict
+ADR-0009; content is the same signal `content_hash` uses for revisions.
+
+Adding the feature title to identity — the change that fixes merging outright —
+is **deferred, not rejected**: it drops cross-representation agreement from 98%
+to 35%, which would turn failover into a mass duplicate-ID generator. That is
+dominated by inconsistent title extraction between our own adapters and is
+fixable. The threshold for adopting it is deliberately unset until there is a
+series of measurements rather than one (`IDENTITY_MODEL.md` §7.2).
+
+**R2 — Power BI. Superseded by R1.** A source-level switch was the wrong
+instrument: it discards the 73% of Power BI items that are fine to avoid the 27%
+that are not. The per-item mint gate does this properly. The Markdown fallback
+remains disabled pending confirmation, and disabling it exposed a real bug —
+`_discover_chain` never checked `is_pollable` on fallback links, so `disabled` on
+a fallback was decorative. Fixed and pinned by a test.
+
+**R3 — Still open, and still worth doing.** The identity-agreement check remains
+a printed probe rather than an assertion. It should fail CI below a threshold —
+but the threshold is exactly what §7.2 says there is not yet evidence for, so
+this waits on that series rather than on effort.
 
 ### After M2, before v1
 

@@ -29,6 +29,7 @@ against production and break nothing.** Use that.
 |---|---|
 | Fetch, parse, normalise | Store anything |
 | Compute item identity | Mint Feature IDs |
+| Grade identity confidence | Act on the grade (M2 does) |
 | Record provenance | Write `metadata.yaml` |
 | Track source health in memory | Persist health to disk (M6) |
 | Fall back on failure | Retry or back off |
@@ -44,8 +45,9 @@ Everything M1 added or changed:
 engine/ke/
 ├── clock.py                  NEW  injected time — the replayability seam
 ├── identity.py               NEW  the four-level identity hierarchy
+├── confidence.py             NEW  is this identity safe to mint from yet?
 ├── normalize.py              NEW  pure text/URL/date functions
-├── discover.py               NEW  orchestration: chains, health, failure isolation
+├── discover.py               NEW  orchestration: chains, health, confidence
 ├── models.py                 GREW provenance, health, date precision, events
 └── sources/
     ├── __init__.py           NEW  (empty — a package, not a module)
@@ -58,10 +60,11 @@ tools/                        diagnostics, deliberately outside engine/
 ├── source_probe.py           is this URL real and usable?
 ├── html_structure_probe.py   is this page server-rendered or a JS shell?
 ├── access_diagnostic.py      why is Learn refusing us, and is there an API?
-└── fallback_probe.py         NEW  do primary and secondary agree on identity?
+├── fallback_probe.py         NEW  do primary and secondary agree on identity?
+└── identity_experiment.py    NEW  scoring candidate identity schemes (analysis)
 
 domain-packs/microsoft-fabric/pack.yml   sources pinned, with fallback chains
-docs/adr/0017–0026                       the decisions behind all of the above
+docs/adr/0017–0028                       the decisions behind all of the above
 ```
 
 ### Why `tools/` is not in `engine/`
@@ -502,7 +505,94 @@ Median-based, so one quiet week does not trip it.
 
 ---
 
-## 12. Execution flow
+## 12. `engine/ke/confidence.py` — is this safe to mint from? (150 lines)
+
+### Why it exists
+
+`identity.py` says *what* an identity rests on. It cannot say whether that is good
+enough to mint a **permanent** Feature ID from — and those are different
+questions. Measured against the live source:
+
+```
+…/Fabric-June-2026-Feature-Summary/…   ← cited by 18 rows, 11 distinct features
+```
+
+A canonical URL identifying one feature and a canonical URL identifying a blog
+post covering eleven are both `canonical-url`. Under ADR-0023 alone, both look
+equally durable — and M2 would have minted **one** Feature ID, leaving ten
+features silently absent.
+
+### The rule
+
+> **A collision is never a merge.**
+
+### The distinction that makes it work
+
+```
+Identity is permanent and run-independent.
+Confidence is a per-run assessment of whether minting is safe yet.
+```
+
+This is the part to understand before changing anything here. ADR-0027 forbids
+run-scoped evidence in *identity* — an identity that changes when a row stops
+appearing is not permanent. Confidence may use it, because confidence **never
+enters the ID**. It only decides whether to mint now; once minted, identity is
+fixed forever.
+
+That is also why confidence is computed in `discover_all` and not in an adapter:
+exclusivity is only knowable with the whole run in view, and an adapter sees one
+source at a time. Adapters leave the field at its default, by construction.
+
+There is a test pinning this exact property:
+
+```python
+def test_confidence_never_changes_an_items_identity():
+    # grading an item alongside others must not alter its identity key
+```
+
+### The levels
+
+| Level | Condition | Effect |
+|---|---|---|
+| `high` | Durable anchor **and** the announcement reports exactly one feature | Mints automatically |
+| `medium` | Durable anchor but shared announcement, **or** a weak anchor | Review queue |
+| `low` | Content fingerprint, or no title and no durable anchor | Never auto-mints |
+
+Named, not scored — deliberately. A numeric score invites a tunable threshold,
+and a tunable threshold is a dial someone eventually turns to make a backlog go
+away.
+
+### The gate
+
+```python
+@property
+def mints_automatically(self) -> bool:
+    return (self.identity_confidence is IdentityConfidence.HIGH
+            and self.source_authority is SourceAuthority.OFFICIAL_MICROSOFT)
+```
+
+A **combination**, not one field. Same reasoning as ADR-0017 separating
+`date_precision` from `date_confidence`: a field asked two questions has to lie
+about one of them.
+
+### Measured against production
+
+251 of 315 Fabric items mint automatically; 64 queue across 15 collisions.
+`low` currently matches nothing — no present source produces titleless rows. It
+is a floor for sources not yet onboarded, not a level doing work today.
+
+### How to modify it safely
+
+- Everything here is **pure**. Keep it that way — no clock, no network, no model.
+- `Collision.titles` holds **published** titles, not normalised ones. Normalised
+  titles decide *whether* it is a collision; a human triaging needs to read the
+  real ones.
+- Loosening a rule makes more knowledge mint permanently and unrecoverably.
+  Tightening one only grows a queue. The two directions are not symmetric.
+
+---
+
+## 13. Execution flow
 
 ```mermaid
 sequenceDiagram
@@ -557,7 +647,7 @@ sequenceDiagram
 
 ---
 
-## 13. Debugging tips
+## 14. Debugging tips
 
 **Discovery prints nothing for a source.**
 Check `is_pollable` first — a `disabled` or `replaced` status is a silent skip by
@@ -594,7 +684,7 @@ needs the `Source check` workflow.
 
 ---
 
-## 14. Glossary
+## 15. Glossary
 
 | Term | Meaning |
 |---|---|
@@ -602,6 +692,11 @@ needs the `Source check` workflow.
 | **Representation** | The format actually received (`html`, `markdown`, `rss`…) — *not* the same as the adapter |
 | **Discovery chain** | Source → Representation → Adapter → Version → Method → Identity basis → Date precision/confidence |
 | **Identity basis** | Which of the four signals a Feature ID will rest on |
+| **Identity confidence** | `high`/`medium`/`low` — whether that identity is safe to mint from *in this run* |
+| **Announcement** | A published artifact reporting one or more Features. A citation, not an identity |
+| **Feature** | The unit of knowledge; owns the permanent Feature ID |
+| **Collision** | One identity claimed by several distinct Features. Queued, never merged |
+| **Mint gate** | High confidence **and** an authoritative source |
 | **Durable identity** | Basis is `canonical-url` or `source-identifier` |
 | **Fallback chain** | Ordered primary → secondary → manual-review links for one source |
 | **Review item** | Produced when every link in a chain failed; never an empty list |
@@ -613,7 +708,7 @@ needs the `Source check` workflow.
 
 ---
 
-## 15. Where M2 plugs in
+## 16. Where M2 plugs in
 
 M1 hands M2 a `DiscoveryResult`. M2 turns `RawItem`s into permanent knowledge
 objects:
@@ -623,9 +718,22 @@ objects:
 - `store.py` writes the object directory and `metadata.yaml`, carrying `Provenance`
   through unchanged
 
-**Read before starting M2:** the open identity question in
-`docs/reviews/M1_ARCHITECTURE_REVIEW.md` §Findings. Measured against production,
-75% of discovered items resolve to announcement blog posts rather than doc pages,
-and one announcement post routinely covers several distinct features — so several
-distinct updates can share one canonical URL and therefore one identity. Nothing
-is lost in M1 because M1 writes nothing. M2 is where it would become permanent.
+**Read before starting M2:** `docs/design/IDENTITY_MODEL.md`, and ADR-0027 and
+ADR-0028.
+
+M2 must honour the mint gate. `DiscoveryResult` already separates the two piles:
+
+```python
+result.mintable      # high confidence, authoritative — mint a Feature ID
+result.needs_review  # everything else — queue, never drop
+result.collisions    # one identity, several distinct features
+```
+
+Two obligations M2 inherits, both easy to get wrong:
+
+1. **A queued item must keep its first discovery date.** If a Medium item is
+   approved weeks later and the ID month comes from *that* run, review latency
+   silently shifts the Feature ID. The ID records when knowledge appeared, never
+   how long a human took to look at it.
+2. **The queue needs a way to be drained.** A queue nobody works through is a
+   slower kind of data loss than the merging it replaced.
