@@ -228,6 +228,70 @@ def build_parser() -> argparse.ArgumentParser:
     get.add_argument("--pack", metavar="NAME")
     get.add_argument("--repo-root", metavar="PATH", type=Path)
     get.set_defaults(handler=_run_get)
+
+    generate = subcommands.add_parser(
+        "generate",
+        help="assemble a context pack to paste into any AI model",
+        description=(
+            "Prints a self-contained document — instruction, knowledge, "
+            "provenance — that produces a usable artifact when pasted into a "
+            "fresh model session with no other context. The engine never calls "
+            "a model itself: that is what keeps this free and vendor-neutral."
+        ),
+    )
+    generate.add_argument(
+        "type",
+        help="artifact type (`ke generate list` shows them all)",
+    )
+    generate.add_argument("--id", metavar="FEATURE_ID", help="the knowledge object")
+    generate.add_argument(
+        "--attach",
+        metavar="FILE",
+        help="store the model's answer from FILE (or `-` for stdin)",
+    )
+    generate.add_argument(
+        "--request",
+        action="store_true",
+        help="record that this artifact is wanted, without generating it",
+    )
+    generate.add_argument(
+        "--model",
+        metavar="NAME",
+        help="record which model produced it (provenance only; never read)",
+    )
+    generate.add_argument(
+        "--force",
+        action="store_true",
+        help="replace an existing, current artifact",
+    )
+    generate.add_argument("--pack", metavar="NAME")
+    generate.add_argument("--repo-root", metavar="PATH", type=Path)
+    generate.set_defaults(handler=_run_generate)
+
+    status = subcommands.add_parser(
+        "status",
+        help="artifact coverage across the pack",
+        description=(
+            "What has been generated, what was requested and never produced, "
+            "and what has gone stale because the source changed underneath it."
+        ),
+    )
+    status.add_argument(
+        "--stale", action="store_true", help="list only the stale artifacts"
+    )
+    status.add_argument(
+        "--requested",
+        action="store_true",
+        help="list only artifacts requested but not generated",
+    )
+    status.add_argument(
+        "--refresh",
+        action="store_true",
+        help="write computed staleness into metadata (never regenerates)",
+    )
+    status.add_argument("--pack", metavar="NAME")
+    status.add_argument("--repo-root", metavar="PATH", type=Path)
+    status.set_defaults(handler=_run_status)
     return parser
 
 
@@ -572,6 +636,92 @@ def _run_get(args: argparse.Namespace) -> int:
         print(f"error: {exc.args[0] if exc.args else exc}", file=sys.stderr)
         return 2
     print(render_object(obj, directory))
+    return 0
+
+
+def _run_generate(args: argparse.Namespace) -> int:
+    from ke.generate import GenerateError, available_templates, build_pack, load_template
+    from ke.models import ArtifactType
+
+    if args.type == "list":
+        print("\nArtifact types:\n")
+        for template in available_templates():
+            print(f"  {str(template.artifact_type):<26} v{template.prompt_version}  "
+                  f"{template.description}")
+        print("\n  ke generate tutorial --id MSF-2026-05-029\n")
+        return 0
+
+    try:
+        artifact_type = ArtifactType(args.type)
+    except ValueError:
+        names = ", ".join(str(t) for t in ArtifactType)
+        print(f"error: unknown artifact type {args.type!r}\n  try: {names}",
+              file=sys.stderr)
+        return 2
+
+    if not args.id:
+        print("error: --id is required (which knowledge object?)", file=sys.stderr)
+        return 2
+
+    _, packs = _packs_for(args)
+    if packs is None:
+        return 2
+
+    from ke.retrieve import resolve
+
+    try:
+        pack, obj, directory = resolve(packs, args.id)
+        template = load_template(artifact_type)
+    except (KeyError, GenerateError) as exc:
+        print(f"error: {exc.args[0] if exc.args else exc}", file=sys.stderr)
+        return 2
+
+    from ke.attach import AttachError, attach, read_content, request
+
+    if args.request:
+        try:
+            request(pack, obj, directory, template)
+        except AttachError as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 2
+        print(f"recorded: {obj.id} wants a {artifact_type}")
+        print("  it will appear in `ke status` and the weekly digest")
+        return 0
+
+    if args.attach:
+        try:
+            content = read_content(args.attach)
+            _, path = attach(
+                pack, obj, directory, template, content,
+                today=SystemClock().today(), model=args.model, force=args.force,
+            )
+        except (AttachError, OSError) as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 2
+        print(f"attached: {pack.relative(path)}")
+        print(f"  generated from revision {obj.current_revision}; "
+              f"prompt v{template.prompt_version}")
+        print("  the file is yours — the engine will never rewrite it")
+        return 0
+
+    print(build_pack(pack, obj, directory, template))
+    return 0
+
+
+def _run_status(args: argparse.Namespace) -> int:
+    from ke.artifacts import Coverage, refresh_pack, render_status
+
+    _, packs = _packs_for(args)
+    if packs is None:
+        return 2
+
+    for pack in packs:
+        if args.refresh:
+            changed = refresh_pack(pack)
+            print(f"{pack.name}: marked {changed} artifact(s) stale")
+        coverage = Coverage.of(pack)
+        print(render_status(coverage, stale_only=args.stale,
+                            requested_only=args.requested))
     return 0
 
 

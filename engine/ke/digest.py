@@ -48,6 +48,11 @@ class DigestData:
     review_total: int
     review_breakdown: dict[str, int]
     unhealthy_sources: list[str]
+    #: Artifacts the source has moved past since they were generated. Reported
+    #: weekly because nothing else will notice: a stale tutorial reads exactly
+    #: like a current one.
+    stale_artifacts: int = 0
+    requested_artifacts: int = 0
 
     @property
     def has_problems(self) -> bool:
@@ -68,6 +73,10 @@ def gather(pack: Pack, report: HarvestReport, run_id: str, today: date) -> Diges
     new_objects.sort(key=lambda row: (row[2], row[0]))
 
     tally = counts(pack)
+
+    from ke.artifacts import Coverage
+
+    coverage = Coverage.of(pack)
     return DigestData(
         pack_name=pack.name,
         week=iso_week(today),
@@ -77,6 +86,8 @@ def gather(pack: Pack, report: HarvestReport, run_id: str, today: date) -> Diges
         review_total=sum(tally.values()),
         review_breakdown={str(k): v for k, v in tally.items() if v},
         unhealthy_sources=[m.split(":")[0] for m in report.review_items],
+        stale_artifacts=len(coverage.stale),
+        requested_artifacts=len(coverage.requested),
     )
 
 
@@ -146,6 +157,25 @@ def render(data: DigestData) -> str:
             "Work them with `ke review next`. See `indexes/review-queue.md`.",
             "",
         ]
+
+    # Artifacts, when there are any to talk about. Placed after the backlog and
+    # before the new items: a stale artifact is a quiet wrongness -- it reads
+    # exactly like a current one -- so it needs a weekly reminder, but it is
+    # less urgent than a decision nobody has made.
+    if data.stale_artifacts or data.requested_artifacts:
+        lines += ["## Artifacts", ""]
+        if data.stale_artifacts:
+            lines.append(
+                f"- ⚠️ **{data.stale_artifacts} stale** — the knowledge was "
+                "revised after these were generated. Nothing was deleted; "
+                "`ke status --stale` lists them."
+            )
+        if data.requested_artifacts:
+            lines.append(
+                f"- 📋 {data.requested_artifacts} requested and not yet made "
+                "(`ke status --requested`)."
+            )
+        lines.append("")
 
     if data.new_objects:
         lines += ["## New this week", "", "| ID | Tier | Title |", "|---|---|---|"]

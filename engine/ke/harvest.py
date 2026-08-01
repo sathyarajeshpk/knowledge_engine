@@ -14,19 +14,22 @@ from ke.models import KnowledgeObject
 from ke.pack import Pack
 from ke.report import HarvestReport
 
-__all__ = ["HarvestReport", "harvest_pack", "load_existing_objects"]
+__all__ = [
+    "HarvestReport",
+    "harvest_pack",
+    "load_existing_objects",
+    "load_objects_with_dirs",
+]
 
 
-def load_existing_objects(pack: Pack) -> list[tuple[KnowledgeObject, str]]:
-    """Every stored object, with its path relative to the indexes directory.
+def _iter_stored(pack: Pack):
+    """Every readable object on disk, with the directory it lives in.
 
-    Read from disk rather than tracked in state: the repository is the source of
-    truth (ADR-0002), so an index rebuild reflects what is actually there --
-    including anything a human added or edited by hand.
+    One walk, two callers. A malformed object is skipped rather than raised on:
+    one damaged `metadata.yaml` must not cost the other 221 (ADR-0032).
     """
-    found: list[tuple[KnowledgeObject, str]] = []
     if not pack.knowledge_dir.exists():
-        return found
+        return
 
     import yaml
 
@@ -36,9 +39,39 @@ def load_existing_objects(pack: Pack) -> list[tuple[KnowledgeObject, str]]:
             obj = KnowledgeObject.from_metadata_dict(raw)
         except Exception:  # noqa: BLE001 - a malformed object must not stop indexing
             continue
-        relative = Path("..") / metadata_path.parent.relative_to(pack.root)
-        found.append((obj, relative.as_posix()))
-    return found
+        yield obj, metadata_path.parent
+
+
+def load_existing_objects(pack: Pack) -> list[tuple[KnowledgeObject, str]]:
+    """Every stored object, with its **link path relative to `indexes/`**.
+
+    The second element is a Markdown link target, not a filesystem directory —
+    it starts with `../` and is meant to be written into an index page. Anything
+    that needs to *read or write* the object wants `load_objects_with_dirs`
+    instead.
+
+    The distinction has bitten once already: M7 passed one of these strings to
+    `update_object` and got `TypeError: unsupported operand type(s) for /`.
+    That was the lucky version of the mistake — a string that happened to be a
+    valid relative path would have written the object somewhere else entirely.
+
+    Read from disk rather than tracked in state: the repository is the source of
+    truth (ADR-0002), so an index rebuild reflects what is actually there --
+    including anything a human added or edited by hand.
+    """
+    return [
+        (obj, (Path("..") / directory.relative_to(pack.root)).as_posix())
+        for obj, directory in _iter_stored(pack)
+    ]
+
+
+def load_objects_with_dirs(pack: Pack) -> list[tuple[KnowledgeObject, Path]]:
+    """Every stored object, with the directory it actually lives in.
+
+    What you want for reading `feature.md`, writing an artifact, or handing to
+    `update_object`. See `load_existing_objects` for the index-link variant.
+    """
+    return list(_iter_stored(pack))
 
 
 def harvest_pack(

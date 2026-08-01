@@ -506,6 +506,27 @@ def test_the_scheduled_pipeline_never_invokes_a_model():
         assert word not in text.lower()
 
 
+def test_the_pipeline_cannot_reach_the_generation_code():
+    """ADR-0004 as a code boundary, not only a workflow assertion.
+
+    The workflow check catches `ke generate` being *invoked* on a schedule. This
+    catches the subtler version: a pipeline stage importing `ke.generate` or
+    `ke.attach` directly and producing artifacts inside the harvest. That would
+    reintroduce a per-run cost and a vendor dependency to a system whose entire
+    design exists to avoid both, and it would do so without touching the
+    workflow file at all.
+
+    `ke.artifacts` is deliberately *not* on this list. Counting artifacts and
+    reporting staleness is exactly what the scheduled run should do; making
+    them is what it must not.
+    """
+    pipeline_source = (REPO_ROOT / "engine" / "ke" / "pipeline.py").read_text(
+        encoding="utf-8"
+    )
+    for forbidden in ("ke.generate", "ke.attach", "from ke import generate"):
+        assert forbidden not in pipeline_source, forbidden
+
+
 def test_the_runtime_dependency_surface_stays_small():
     """Every dependency is attack surface in a process holding a write token."""
     pyproject = (REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8")
