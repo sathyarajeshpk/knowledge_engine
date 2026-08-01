@@ -39,6 +39,75 @@ Nothing yet. M1 (Discovery) begins after M0 is reviewed and merged.
 
 ---
 
+## [0.2.0] — 2026-08-01
+
+Second milestone: **M1 — Discovery**.
+Release notes: [`docs/releases/v0.2.0.md`](docs/releases/v0.2.0.md).
+
+Discovery against live sources, with identity graded before anything can become
+permanent. **Still writes nothing** — no knowledge objects, no Feature IDs. That
+is what made it affordable to change the architecture twice on measurement.
+
+**Schema version:** 1 (unchanged)
+
+### Added
+
+**Acquisition subsystem** (`ke.acquisition`, [ADR-0030](docs/adr/0030-acquisition-subsystem.md))
+- Three adapters behind one interface — `html_table` (primary), `markdown_table`
+  (secondary), `feed` (RSS/Atom) — so nothing downstream learns where knowledge
+  came from.
+- Fallback chains with per-source failure isolation: a failed source never fails
+  the run ([ADR-0019](docs/adr/0019-source-health-and-fallback.md)).
+- Source health: `healthy`/`degraded`/`failed`/`disabled`, with median-based
+  parser-break detection.
+- Boundary enforced by import scanning in `engine/tests/test_architecture.py`,
+  against a forbidden list naming modules that do not exist yet.
+
+**Identity and confidence**
+- Four-level identity hierarchy ([ADR-0023](docs/adr/0023-stable-item-identity.md)).
+- Announcement / Feature / Knowledge Object as three distinct concepts
+  ([ADR-0027](docs/adr/0027-announcement-feature-knowledge-object.md)). A
+  collision is surfaced for review, never merged.
+- `IdentityConfidence` (`high`/`medium`/`low`) gating minting
+  ([ADR-0028](docs/adr/0028-identity-confidence.md)). Identity is permanent and
+  run-independent; confidence is a per-run judgement that never enters the ID.
+- `Lifecycle` — `discovered → queued → approved → minted → superseded →
+  archived` — orthogonal to `status`
+  ([ADR-0029](docs/adr/0029-knowledge-lifecycle.md)).
+
+**Infrastructure**
+- Injected `Clock` ([ADR-0021](docs/adr/0021-injected-clock.md)) and `Fetcher`,
+  making every adapter testable offline and a run replayable.
+- Pure normalisation: canonical URLs, HTML→text, date parsing with precision and
+  confidence, summary truncation enforcing the copyright rule.
+- `ke discover`, reporting items, confidence, collisions and source health.
+- `feedparser` runtime dependency.
+- Four diagnostic probes under `tools/`.
+
+### Changed
+
+- `date_precision` separated from `date_confidence`
+  ([ADR-0017](docs/adr/0017-date-precision-separate-from-confidence.md)).
+- Provenance stored in discovery-chain order, with `source_representation`
+  distinct from `adapter_type`
+  ([ADR-0026](docs/adr/0026-discovery-chain-provenance.md)).
+- `ItemIdentity` and `IdentityBasis` moved from `ke.identity` to `ke.models`, so
+  core types do not depend on the subsystem that computes them.
+- `ke.identity`, `ke.confidence`, `ke.discover` and `ke.sources` moved under
+  `ke.acquisition`.
+- `ke review` promoted from M9 to M2: once items are queued there must be a
+  supported way to process them.
+
+### Fixed
+
+- Publication dates were read from anywhere in a table row, so a month mentioned
+  in prose ("the Gateway December 2025 release") was labelled `exact` and would
+  have minted a permanent Feature ID from it. Only a dedicated date cell is
+  trusted now. Affected 1 row in 361 on the live page.
+- `status: disabled` was ignored on fallback links — `_discover_chain` checked
+  `is_pollable` only for top-level sources, so a deliberately retired source
+  would still be polled on the next failure.
+
 ## [0.1.0] — 2026-07-31
 
 First milestone: **M0 — Foundation, Schema and Guardrails**.
