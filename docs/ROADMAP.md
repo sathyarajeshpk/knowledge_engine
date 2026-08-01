@@ -47,7 +47,7 @@ in comments.
 
 ---
 
-### M1 — Discovery · **planned**
+### M1 — Discovery · **done** (v0.2.0)
 
 Fetch from real sources and print what was found. No writes.
 
