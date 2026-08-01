@@ -56,4 +56,144 @@ revisions:
     modification, or last access, so you trade higher transaction and retrieval costs for
     lower storage cost on infrequently accessed data.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:583ee8084bf14e0ecfc03669c6cba10a014d0e7a06c258a872f58ccdfa43cf0b
+  title_snapshot: OneLake storage tiers and lifecycle management (Preview)
+  summary_snapshot: OneLake now supports hot, cool, and cold storage tiers, and lifecycle
+    management policies automatically move files between tiers based on creation time, last
+    modification, or last access, so you trade higher transaction and retrieval costs for
+    lower storage cost on infrequently accessed data.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:583ee8084bf14e0ecfc03669c6cba10a014d0e7a06c258a872f58ccdfa43cf0b
+  title_snapshot: OneLake storage tiers and lifecycle management (Preview)
+  summary_snapshot: OneLake now supports hot, cool, and cold storage tiers, and lifecycle
+    management policies automatically move files between tiers based on creation time, last
+    modification, or last access, so you trade higher transaction and retrieval costs for
+    lower storage cost on infrequently accessed data.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:583ee8084bf14e0ecfc03669c6cba10a014d0e7a06c258a872f58ccdfa43cf0b
+  title_snapshot: OneLake storage tiers and lifecycle management (Preview)
+  summary_snapshot: OneLake now supports hot, cool, and cold storage tiers, and lifecycle
+    management policies automatically move files between tiers based on creation time, last
+    modification, or last access, so you trade higher transaction and retrieval costs for
+    lower storage cost on infrequently accessed data.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:583ee8084bf14e0ecfc03669c6cba10a014d0e7a06c258a872f58ccdfa43cf0b
+  title_snapshot: OneLake storage tiers and lifecycle management (Preview)
+  summary_snapshot: OneLake now supports hot, cool, and cold storage tiers, and lifecycle
+    management policies automatically move files between tiers based on creation time, last
+    modification, or last access, so you trade higher transaction and retrieval costs for
+    lower storage cost on infrequently accessed data.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:583ee8084bf14e0ecfc03669c6cba10a014d0e7a06c258a872f58ccdfa43cf0b
+  title_snapshot: OneLake storage tiers and lifecycle management (Preview)
+  summary_snapshot: OneLake now supports hot, cool, and cold storage tiers, and lifecycle
+    management policies automatically move files between tiers based on creation time, last
+    modification, or last access, so you trade higher transaction and retrieval costs for
+    lower storage cost on infrequently accessed data.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:583ee8084bf14e0ecfc03669c6cba10a014d0e7a06c258a872f58ccdfa43cf0b
+  title_snapshot: OneLake storage tiers and lifecycle management (Preview)
+  summary_snapshot: OneLake now supports hot, cool, and cold storage tiers, and lifecycle
+    management policies automatically move files between tiers based on creation time, last
+    modification, or last access, so you trade higher transaction and retrieval costs for
+    lower storage cost on infrequently accessed data.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:583ee8084bf14e0ecfc03669c6cba10a014d0e7a06c258a872f58ccdfa43cf0b
+  title_snapshot: OneLake storage tiers and lifecycle management (Preview)
+  summary_snapshot: OneLake now supports hot, cool, and cold storage tiers, and lifecycle
+    management policies automatically move files between tiers based on creation time, last
+    modification, or last access, so you trade higher transaction and retrieval costs for
+    lower storage cost on infrequently accessed data.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:583ee8084bf14e0ecfc03669c6cba10a014d0e7a06c258a872f58ccdfa43cf0b
+  title_snapshot: OneLake storage tiers and lifecycle management (Preview)
+  summary_snapshot: OneLake now supports hot, cool, and cold storage tiers, and lifecycle
+    management policies automatically move files between tiers based on creation time, last
+    modification, or last access, so you trade higher transaction and retrieval costs for
+    lower storage cost on infrequently accessed data.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:583ee8084bf14e0ecfc03669c6cba10a014d0e7a06c258a872f58ccdfa43cf0b
+  title_snapshot: OneLake storage tiers and lifecycle management (Preview)
+  summary_snapshot: OneLake now supports hot, cool, and cold storage tiers, and lifecycle
+    management policies automatically move files between tiers based on creation time, last
+    modification, or last access, so you trade higher transaction and retrieval costs for
+    lower storage cost on infrequently accessed data.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:583ee8084bf14e0ecfc03669c6cba10a014d0e7a06c258a872f58ccdfa43cf0b
+  title_snapshot: OneLake storage tiers and lifecycle management (Preview)
+  summary_snapshot: OneLake now supports hot, cool, and cold storage tiers, and lifecycle
+    management policies automatically move files between tiers based on creation time, last
+    modification, or last access, so you trade higher transaction and retrieval costs for
+    lower storage cost on infrequently accessed data.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

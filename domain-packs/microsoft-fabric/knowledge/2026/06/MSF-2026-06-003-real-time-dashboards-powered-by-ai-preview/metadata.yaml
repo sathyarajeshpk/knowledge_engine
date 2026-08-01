@@ -56,4 +56,164 @@ revisions:
     and Copilot generates the visualization for review without requiring KQL expertise. For
     more information, see Create a Real-Time Dashboard.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:bcea7a0a7301241fb9efa27fdab7350191c25182a959bf46082b971a311df71f
+  title_snapshot: Real-Time Dashboards powered by AI (Preview)
+  summary_snapshot: The redesigned Real-Time Dashboard tile editor (Preview) is an AI-first
+    experience where you choose a visual type and describe what you need in natural language,
+    and Copilot generates the visualization for review without requiring KQL expertise. Every
+    Copilot-generated iteration is preserved in a per-visual chat history, and you can switch
+    seamlessly between AI-assisted and manual editing. For more information, see Create a
+    Real-Time Dashboard.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:38d6d0a99cc0e7729857890a5ea9c3fd28431b2f21e6b5d1fedd484509e2de92
+  title_snapshot: Real-Time Dashboards powered by AI (Preview)
+  summary_snapshot: The redesigned Real-Time Dashboard tile editor (Preview) is an AI-first
+    experience where you choose a visual type and describe what you need in natural language,
+    and Copilot generates the visualization for review without requiring KQL expertise. For
+    more information, see Create a Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:bcea7a0a7301241fb9efa27fdab7350191c25182a959bf46082b971a311df71f
+  title_snapshot: Real-Time Dashboards powered by AI (Preview)
+  summary_snapshot: The redesigned Real-Time Dashboard tile editor (Preview) is an AI-first
+    experience where you choose a visual type and describe what you need in natural language,
+    and Copilot generates the visualization for review without requiring KQL expertise. Every
+    Copilot-generated iteration is preserved in a per-visual chat history, and you can switch
+    seamlessly between AI-assisted and manual editing. For more information, see Create a
+    Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:38d6d0a99cc0e7729857890a5ea9c3fd28431b2f21e6b5d1fedd484509e2de92
+  title_snapshot: Real-Time Dashboards powered by AI (Preview)
+  summary_snapshot: The redesigned Real-Time Dashboard tile editor (Preview) is an AI-first
+    experience where you choose a visual type and describe what you need in natural language,
+    and Copilot generates the visualization for review without requiring KQL expertise. For
+    more information, see Create a Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:bcea7a0a7301241fb9efa27fdab7350191c25182a959bf46082b971a311df71f
+  title_snapshot: Real-Time Dashboards powered by AI (Preview)
+  summary_snapshot: The redesigned Real-Time Dashboard tile editor (Preview) is an AI-first
+    experience where you choose a visual type and describe what you need in natural language,
+    and Copilot generates the visualization for review without requiring KQL expertise. Every
+    Copilot-generated iteration is preserved in a per-visual chat history, and you can switch
+    seamlessly between AI-assisted and manual editing. For more information, see Create a
+    Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:38d6d0a99cc0e7729857890a5ea9c3fd28431b2f21e6b5d1fedd484509e2de92
+  title_snapshot: Real-Time Dashboards powered by AI (Preview)
+  summary_snapshot: The redesigned Real-Time Dashboard tile editor (Preview) is an AI-first
+    experience where you choose a visual type and describe what you need in natural language,
+    and Copilot generates the visualization for review without requiring KQL expertise. For
+    more information, see Create a Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:bcea7a0a7301241fb9efa27fdab7350191c25182a959bf46082b971a311df71f
+  title_snapshot: Real-Time Dashboards powered by AI (Preview)
+  summary_snapshot: The redesigned Real-Time Dashboard tile editor (Preview) is an AI-first
+    experience where you choose a visual type and describe what you need in natural language,
+    and Copilot generates the visualization for review without requiring KQL expertise. Every
+    Copilot-generated iteration is preserved in a per-visual chat history, and you can switch
+    seamlessly between AI-assisted and manual editing. For more information, see Create a
+    Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:38d6d0a99cc0e7729857890a5ea9c3fd28431b2f21e6b5d1fedd484509e2de92
+  title_snapshot: Real-Time Dashboards powered by AI (Preview)
+  summary_snapshot: The redesigned Real-Time Dashboard tile editor (Preview) is an AI-first
+    experience where you choose a visual type and describe what you need in natural language,
+    and Copilot generates the visualization for review without requiring KQL expertise. For
+    more information, see Create a Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:bcea7a0a7301241fb9efa27fdab7350191c25182a959bf46082b971a311df71f
+  title_snapshot: Real-Time Dashboards powered by AI (Preview)
+  summary_snapshot: The redesigned Real-Time Dashboard tile editor (Preview) is an AI-first
+    experience where you choose a visual type and describe what you need in natural language,
+    and Copilot generates the visualization for review without requiring KQL expertise. Every
+    Copilot-generated iteration is preserved in a per-visual chat history, and you can switch
+    seamlessly between AI-assisted and manual editing. For more information, see Create a
+    Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:38d6d0a99cc0e7729857890a5ea9c3fd28431b2f21e6b5d1fedd484509e2de92
+  title_snapshot: Real-Time Dashboards powered by AI (Preview)
+  summary_snapshot: The redesigned Real-Time Dashboard tile editor (Preview) is an AI-first
+    experience where you choose a visual type and describe what you need in natural language,
+    and Copilot generates the visualization for review without requiring KQL expertise. For
+    more information, see Create a Real-Time Dashboard.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

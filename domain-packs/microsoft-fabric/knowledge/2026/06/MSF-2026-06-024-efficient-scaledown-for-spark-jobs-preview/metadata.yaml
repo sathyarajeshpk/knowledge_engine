@@ -58,4 +58,169 @@ revisions:
     optimization. For more information, see Efficient scaledown and remote shuffle manager
     and Native execution engine for Fabric Data Engineering.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:731fc90322ff541198a54d776bb863a51a7af3f8e76d155ceaf2d8a1512737f8
+  title_snapshot: Efficient Scaledown for Spark jobs (Preview)
+  summary_snapshot: Efficient Scaledown (Preview) decouples Spark shuffle data from executor
+    lifetime by routing shuffle output to Azure Blob Storage, so clusters scale down faster
+    and tolerate executor loss with no notebook or query changes. It requires the Native Execution
+    Engine on Fabric Spark Runtime 3.5 or later. For more information, see Efficient scaledown
+    and Native execution engine for Fabric Data Engineering.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:44b447501d3a3480c01d9e6a1c8db13f97fa134942f69da251a40731ac20644a
+  title_snapshot: Efficient Scaledown for Spark jobs (Preview)
+  summary_snapshot: Efficient Scaledown (Preview) decouples Spark shuffle data from executor
+    lifetime by routing shuffle output to Azure Blob Storage, so clusters scale down faster
+    and tolerate executor loss with no notebook or query changes. It combines a Remote Shuffle
+    Manager, shuffle migration, a per-stage decision layer, and adaptive query execution (AQE)
+    optimization. For more information, see Efficient scaledown and remote shuffle manager
+    and Native execution engine for Fabric Data Engineering.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:731fc90322ff541198a54d776bb863a51a7af3f8e76d155ceaf2d8a1512737f8
+  title_snapshot: Efficient Scaledown for Spark jobs (Preview)
+  summary_snapshot: Efficient Scaledown (Preview) decouples Spark shuffle data from executor
+    lifetime by routing shuffle output to Azure Blob Storage, so clusters scale down faster
+    and tolerate executor loss with no notebook or query changes. It requires the Native Execution
+    Engine on Fabric Spark Runtime 3.5 or later. For more information, see Efficient scaledown
+    and Native execution engine for Fabric Data Engineering.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:44b447501d3a3480c01d9e6a1c8db13f97fa134942f69da251a40731ac20644a
+  title_snapshot: Efficient Scaledown for Spark jobs (Preview)
+  summary_snapshot: Efficient Scaledown (Preview) decouples Spark shuffle data from executor
+    lifetime by routing shuffle output to Azure Blob Storage, so clusters scale down faster
+    and tolerate executor loss with no notebook or query changes. It combines a Remote Shuffle
+    Manager, shuffle migration, a per-stage decision layer, and adaptive query execution (AQE)
+    optimization. For more information, see Efficient scaledown and remote shuffle manager
+    and Native execution engine for Fabric Data Engineering.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:731fc90322ff541198a54d776bb863a51a7af3f8e76d155ceaf2d8a1512737f8
+  title_snapshot: Efficient Scaledown for Spark jobs (Preview)
+  summary_snapshot: Efficient Scaledown (Preview) decouples Spark shuffle data from executor
+    lifetime by routing shuffle output to Azure Blob Storage, so clusters scale down faster
+    and tolerate executor loss with no notebook or query changes. It requires the Native Execution
+    Engine on Fabric Spark Runtime 3.5 or later. For more information, see Efficient scaledown
+    and Native execution engine for Fabric Data Engineering.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:44b447501d3a3480c01d9e6a1c8db13f97fa134942f69da251a40731ac20644a
+  title_snapshot: Efficient Scaledown for Spark jobs (Preview)
+  summary_snapshot: Efficient Scaledown (Preview) decouples Spark shuffle data from executor
+    lifetime by routing shuffle output to Azure Blob Storage, so clusters scale down faster
+    and tolerate executor loss with no notebook or query changes. It combines a Remote Shuffle
+    Manager, shuffle migration, a per-stage decision layer, and adaptive query execution (AQE)
+    optimization. For more information, see Efficient scaledown and remote shuffle manager
+    and Native execution engine for Fabric Data Engineering.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:731fc90322ff541198a54d776bb863a51a7af3f8e76d155ceaf2d8a1512737f8
+  title_snapshot: Efficient Scaledown for Spark jobs (Preview)
+  summary_snapshot: Efficient Scaledown (Preview) decouples Spark shuffle data from executor
+    lifetime by routing shuffle output to Azure Blob Storage, so clusters scale down faster
+    and tolerate executor loss with no notebook or query changes. It requires the Native Execution
+    Engine on Fabric Spark Runtime 3.5 or later. For more information, see Efficient scaledown
+    and Native execution engine for Fabric Data Engineering.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:44b447501d3a3480c01d9e6a1c8db13f97fa134942f69da251a40731ac20644a
+  title_snapshot: Efficient Scaledown for Spark jobs (Preview)
+  summary_snapshot: Efficient Scaledown (Preview) decouples Spark shuffle data from executor
+    lifetime by routing shuffle output to Azure Blob Storage, so clusters scale down faster
+    and tolerate executor loss with no notebook or query changes. It combines a Remote Shuffle
+    Manager, shuffle migration, a per-stage decision layer, and adaptive query execution (AQE)
+    optimization. For more information, see Efficient scaledown and remote shuffle manager
+    and Native execution engine for Fabric Data Engineering.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:731fc90322ff541198a54d776bb863a51a7af3f8e76d155ceaf2d8a1512737f8
+  title_snapshot: Efficient Scaledown for Spark jobs (Preview)
+  summary_snapshot: Efficient Scaledown (Preview) decouples Spark shuffle data from executor
+    lifetime by routing shuffle output to Azure Blob Storage, so clusters scale down faster
+    and tolerate executor loss with no notebook or query changes. It requires the Native Execution
+    Engine on Fabric Spark Runtime 3.5 or later. For more information, see Efficient scaledown
+    and Native execution engine for Fabric Data Engineering.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:44b447501d3a3480c01d9e6a1c8db13f97fa134942f69da251a40731ac20644a
+  title_snapshot: Efficient Scaledown for Spark jobs (Preview)
+  summary_snapshot: Efficient Scaledown (Preview) decouples Spark shuffle data from executor
+    lifetime by routing shuffle output to Azure Blob Storage, so clusters scale down faster
+    and tolerate executor loss with no notebook or query changes. It combines a Remote Shuffle
+    Manager, shuffle migration, a per-stage decision layer, and adaptive query execution (AQE)
+    optimization. For more information, see Efficient scaledown and remote shuffle manager
+    and Native execution engine for Fabric Data Engineering.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

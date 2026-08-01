@@ -57,4 +57,164 @@ revisions:
     manual tuning of dozens of Spark properties. For more information, see Configure Resource
     Profile Configurations in Microsoft Fabric.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:20e87ca456f47888b9a3d4706629fb8a2e2592987605ea98000f14813caf09d2
+  title_snapshot: Resource Profiles in Fabric Data Engineering (Preview)
+  summary_snapshot: Resource Profiles in Fabric Data Engineering (Preview) are preconfigured
+    Spark compute profiles—write-heavy, read-heavy for Spark, and read-heavy for Power BI—that
+    you select per environment so Fabric applies workload-aware settings automatically without
+    manual tuning of dozens of Spark properties. For more information, see Configure Resource
+    Profile Configurations.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:0ef468f67a34d717c6fa017cf7ce5df150edcf6447ef0d44fe6d3207026772dd
+  title_snapshot: Resource Profiles in Fabric Data Engineering (Preview)
+  summary_snapshot: Resource Profiles in Fabric Data Engineering (Preview) are preconfigured
+    Spark compute profiles—write-heavy, read-heavy for Spark, and read-heavy for Power BI—that
+    you select per environment so Fabric applies workload-aware settings automatically without
+    manual tuning of dozens of Spark properties. For more information, see Configure Resource
+    Profile Configurations in Microsoft Fabric.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:20e87ca456f47888b9a3d4706629fb8a2e2592987605ea98000f14813caf09d2
+  title_snapshot: Resource Profiles in Fabric Data Engineering (Preview)
+  summary_snapshot: Resource Profiles in Fabric Data Engineering (Preview) are preconfigured
+    Spark compute profiles—write-heavy, read-heavy for Spark, and read-heavy for Power BI—that
+    you select per environment so Fabric applies workload-aware settings automatically without
+    manual tuning of dozens of Spark properties. For more information, see Configure Resource
+    Profile Configurations.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:0ef468f67a34d717c6fa017cf7ce5df150edcf6447ef0d44fe6d3207026772dd
+  title_snapshot: Resource Profiles in Fabric Data Engineering (Preview)
+  summary_snapshot: Resource Profiles in Fabric Data Engineering (Preview) are preconfigured
+    Spark compute profiles—write-heavy, read-heavy for Spark, and read-heavy for Power BI—that
+    you select per environment so Fabric applies workload-aware settings automatically without
+    manual tuning of dozens of Spark properties. For more information, see Configure Resource
+    Profile Configurations in Microsoft Fabric.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:20e87ca456f47888b9a3d4706629fb8a2e2592987605ea98000f14813caf09d2
+  title_snapshot: Resource Profiles in Fabric Data Engineering (Preview)
+  summary_snapshot: Resource Profiles in Fabric Data Engineering (Preview) are preconfigured
+    Spark compute profiles—write-heavy, read-heavy for Spark, and read-heavy for Power BI—that
+    you select per environment so Fabric applies workload-aware settings automatically without
+    manual tuning of dozens of Spark properties. For more information, see Configure Resource
+    Profile Configurations.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:0ef468f67a34d717c6fa017cf7ce5df150edcf6447ef0d44fe6d3207026772dd
+  title_snapshot: Resource Profiles in Fabric Data Engineering (Preview)
+  summary_snapshot: Resource Profiles in Fabric Data Engineering (Preview) are preconfigured
+    Spark compute profiles—write-heavy, read-heavy for Spark, and read-heavy for Power BI—that
+    you select per environment so Fabric applies workload-aware settings automatically without
+    manual tuning of dozens of Spark properties. For more information, see Configure Resource
+    Profile Configurations in Microsoft Fabric.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:20e87ca456f47888b9a3d4706629fb8a2e2592987605ea98000f14813caf09d2
+  title_snapshot: Resource Profiles in Fabric Data Engineering (Preview)
+  summary_snapshot: Resource Profiles in Fabric Data Engineering (Preview) are preconfigured
+    Spark compute profiles—write-heavy, read-heavy for Spark, and read-heavy for Power BI—that
+    you select per environment so Fabric applies workload-aware settings automatically without
+    manual tuning of dozens of Spark properties. For more information, see Configure Resource
+    Profile Configurations.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:0ef468f67a34d717c6fa017cf7ce5df150edcf6447ef0d44fe6d3207026772dd
+  title_snapshot: Resource Profiles in Fabric Data Engineering (Preview)
+  summary_snapshot: Resource Profiles in Fabric Data Engineering (Preview) are preconfigured
+    Spark compute profiles—write-heavy, read-heavy for Spark, and read-heavy for Power BI—that
+    you select per environment so Fabric applies workload-aware settings automatically without
+    manual tuning of dozens of Spark properties. For more information, see Configure Resource
+    Profile Configurations in Microsoft Fabric.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:20e87ca456f47888b9a3d4706629fb8a2e2592987605ea98000f14813caf09d2
+  title_snapshot: Resource Profiles in Fabric Data Engineering (Preview)
+  summary_snapshot: Resource Profiles in Fabric Data Engineering (Preview) are preconfigured
+    Spark compute profiles—write-heavy, read-heavy for Spark, and read-heavy for Power BI—that
+    you select per environment so Fabric applies workload-aware settings automatically without
+    manual tuning of dozens of Spark properties. For more information, see Configure Resource
+    Profile Configurations.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:0ef468f67a34d717c6fa017cf7ce5df150edcf6447ef0d44fe6d3207026772dd
+  title_snapshot: Resource Profiles in Fabric Data Engineering (Preview)
+  summary_snapshot: Resource Profiles in Fabric Data Engineering (Preview) are preconfigured
+    Spark compute profiles—write-heavy, read-heavy for Spark, and read-heavy for Power BI—that
+    you select per environment so Fabric applies workload-aware settings automatically without
+    manual tuning of dozens of Spark properties. For more information, see Configure Resource
+    Profile Configurations in Microsoft Fabric.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

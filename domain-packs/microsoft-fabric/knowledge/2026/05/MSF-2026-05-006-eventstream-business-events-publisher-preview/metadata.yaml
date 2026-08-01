@@ -55,4 +55,134 @@ revisions:
     you filter, aggregate, threshold, and emit governed, discoverable business signals from
     the Eventstream canvas with no code.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:3316cfdacdd6f1e94c250b3fc73082a2139d17b6793ed09193cda22b9b96c981
+  title_snapshot: Eventstream Business Events publisher (Preview)
+  summary_snapshot: Eventstream now publishes Business Events as a built-in destination, so
+    you filter, aggregate, threshold, and emit governed, discoverable business signals from
+    the Eventstream canvas with no code.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:3316cfdacdd6f1e94c250b3fc73082a2139d17b6793ed09193cda22b9b96c981
+  title_snapshot: Eventstream Business Events publisher (Preview)
+  summary_snapshot: Eventstream now publishes Business Events as a built-in destination, so
+    you filter, aggregate, threshold, and emit governed, discoverable business signals from
+    the Eventstream canvas with no code.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:3316cfdacdd6f1e94c250b3fc73082a2139d17b6793ed09193cda22b9b96c981
+  title_snapshot: Eventstream Business Events publisher (Preview)
+  summary_snapshot: Eventstream now publishes Business Events as a built-in destination, so
+    you filter, aggregate, threshold, and emit governed, discoverable business signals from
+    the Eventstream canvas with no code.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:3316cfdacdd6f1e94c250b3fc73082a2139d17b6793ed09193cda22b9b96c981
+  title_snapshot: Eventstream Business Events publisher (Preview)
+  summary_snapshot: Eventstream now publishes Business Events as a built-in destination, so
+    you filter, aggregate, threshold, and emit governed, discoverable business signals from
+    the Eventstream canvas with no code.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:3316cfdacdd6f1e94c250b3fc73082a2139d17b6793ed09193cda22b9b96c981
+  title_snapshot: Eventstream Business Events publisher (Preview)
+  summary_snapshot: Eventstream now publishes Business Events as a built-in destination, so
+    you filter, aggregate, threshold, and emit governed, discoverable business signals from
+    the Eventstream canvas with no code.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:3316cfdacdd6f1e94c250b3fc73082a2139d17b6793ed09193cda22b9b96c981
+  title_snapshot: Eventstream Business Events publisher (Preview)
+  summary_snapshot: Eventstream now publishes Business Events as a built-in destination, so
+    you filter, aggregate, threshold, and emit governed, discoverable business signals from
+    the Eventstream canvas with no code.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:3316cfdacdd6f1e94c250b3fc73082a2139d17b6793ed09193cda22b9b96c981
+  title_snapshot: Eventstream Business Events publisher (Preview)
+  summary_snapshot: Eventstream now publishes Business Events as a built-in destination, so
+    you filter, aggregate, threshold, and emit governed, discoverable business signals from
+    the Eventstream canvas with no code.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:3316cfdacdd6f1e94c250b3fc73082a2139d17b6793ed09193cda22b9b96c981
+  title_snapshot: Eventstream Business Events publisher (Preview)
+  summary_snapshot: Eventstream now publishes Business Events as a built-in destination, so
+    you filter, aggregate, threshold, and emit governed, discoverable business signals from
+    the Eventstream canvas with no code.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:3316cfdacdd6f1e94c250b3fc73082a2139d17b6793ed09193cda22b9b96c981
+  title_snapshot: Eventstream Business Events publisher (Preview)
+  summary_snapshot: Eventstream now publishes Business Events as a built-in destination, so
+    you filter, aggregate, threshold, and emit governed, discoverable business signals from
+    the Eventstream canvas with no code.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:3316cfdacdd6f1e94c250b3fc73082a2139d17b6793ed09193cda22b9b96c981
+  title_snapshot: Eventstream Business Events publisher (Preview)
+  summary_snapshot: Eventstream now publishes Business Events as a built-in destination, so
+    you filter, aggregate, threshold, and emit governed, discoverable business signals from
+    the Eventstream canvas with no code.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

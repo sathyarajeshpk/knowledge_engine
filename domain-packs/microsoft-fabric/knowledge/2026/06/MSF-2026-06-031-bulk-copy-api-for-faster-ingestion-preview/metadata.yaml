@@ -58,4 +58,164 @@ revisions:
     and Informatica. For more information, see Ingest data into your warehouse by using BCP
     API (Preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:87a101f03d0e7b4667efd135d3c6a9d8c1e6d158f3de73c411beff8dc23e89c3
+  title_snapshot: Bulk Copy API for faster ingestion (Preview)
+  summary_snapshot: Bulk Copy API (Preview) writes data directly to Fabric Data Warehouse
+    tables from application code without first staging files, replacing row-by-row INSERT
+    statements to improve ingestion throughput. You can use it through SqlBulkCopy for C#,
+    SQLServerBulkCopy for Java, the bcp utility, and tools such as SSIS, Azure Data Factory,
+    and Informatica. For more information, see Ingest data into your warehouse by using BCP
+    API (Preview).
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:87a101f03d0e7b4667efd135d3c6a9d8c1e6d158f3de73c411beff8dc23e89c3
+  title_snapshot: Bulk Copy API for faster ingestion (Preview)
+  summary_snapshot: Bulk Copy API (Preview) writes data directly to Fabric Data Warehouse
+    tables from application code without first staging files, replacing row-by-row INSERT
+    statements to improve ingestion throughput. You can use it through SqlBulkCopy for C#,
+    SQLServerBulkCopy for Java, the bcp utility, and tools such as SSIS, Azure Data Factory,
+    and Informatica. For more information, see Ingest data into your warehouse by using BCP
+    API (Preview).
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:87a101f03d0e7b4667efd135d3c6a9d8c1e6d158f3de73c411beff8dc23e89c3
+  title_snapshot: Bulk Copy API for faster ingestion (Preview)
+  summary_snapshot: Bulk Copy API (Preview) writes data directly to Fabric Data Warehouse
+    tables from application code without first staging files, replacing row-by-row INSERT
+    statements to improve ingestion throughput. You can use it through SqlBulkCopy for C#,
+    SQLServerBulkCopy for Java, the bcp utility, and tools such as SSIS, Azure Data Factory,
+    and Informatica. For more information, see Ingest data into your warehouse by using BCP
+    API (Preview).
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:87a101f03d0e7b4667efd135d3c6a9d8c1e6d158f3de73c411beff8dc23e89c3
+  title_snapshot: Bulk Copy API for faster ingestion (Preview)
+  summary_snapshot: Bulk Copy API (Preview) writes data directly to Fabric Data Warehouse
+    tables from application code without first staging files, replacing row-by-row INSERT
+    statements to improve ingestion throughput. You can use it through SqlBulkCopy for C#,
+    SQLServerBulkCopy for Java, the bcp utility, and tools such as SSIS, Azure Data Factory,
+    and Informatica. For more information, see Ingest data into your warehouse by using BCP
+    API (Preview).
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:87a101f03d0e7b4667efd135d3c6a9d8c1e6d158f3de73c411beff8dc23e89c3
+  title_snapshot: Bulk Copy API for faster ingestion (Preview)
+  summary_snapshot: Bulk Copy API (Preview) writes data directly to Fabric Data Warehouse
+    tables from application code without first staging files, replacing row-by-row INSERT
+    statements to improve ingestion throughput. You can use it through SqlBulkCopy for C#,
+    SQLServerBulkCopy for Java, the bcp utility, and tools such as SSIS, Azure Data Factory,
+    and Informatica. For more information, see Ingest data into your warehouse by using BCP
+    API (Preview).
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:87a101f03d0e7b4667efd135d3c6a9d8c1e6d158f3de73c411beff8dc23e89c3
+  title_snapshot: Bulk Copy API for faster ingestion (Preview)
+  summary_snapshot: Bulk Copy API (Preview) writes data directly to Fabric Data Warehouse
+    tables from application code without first staging files, replacing row-by-row INSERT
+    statements to improve ingestion throughput. You can use it through SqlBulkCopy for C#,
+    SQLServerBulkCopy for Java, the bcp utility, and tools such as SSIS, Azure Data Factory,
+    and Informatica. For more information, see Ingest data into your warehouse by using BCP
+    API (Preview).
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:87a101f03d0e7b4667efd135d3c6a9d8c1e6d158f3de73c411beff8dc23e89c3
+  title_snapshot: Bulk Copy API for faster ingestion (Preview)
+  summary_snapshot: Bulk Copy API (Preview) writes data directly to Fabric Data Warehouse
+    tables from application code without first staging files, replacing row-by-row INSERT
+    statements to improve ingestion throughput. You can use it through SqlBulkCopy for C#,
+    SQLServerBulkCopy for Java, the bcp utility, and tools such as SSIS, Azure Data Factory,
+    and Informatica. For more information, see Ingest data into your warehouse by using BCP
+    API (Preview).
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:87a101f03d0e7b4667efd135d3c6a9d8c1e6d158f3de73c411beff8dc23e89c3
+  title_snapshot: Bulk Copy API for faster ingestion (Preview)
+  summary_snapshot: Bulk Copy API (Preview) writes data directly to Fabric Data Warehouse
+    tables from application code without first staging files, replacing row-by-row INSERT
+    statements to improve ingestion throughput. You can use it through SqlBulkCopy for C#,
+    SQLServerBulkCopy for Java, the bcp utility, and tools such as SSIS, Azure Data Factory,
+    and Informatica. For more information, see Ingest data into your warehouse by using BCP
+    API (Preview).
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:87a101f03d0e7b4667efd135d3c6a9d8c1e6d158f3de73c411beff8dc23e89c3
+  title_snapshot: Bulk Copy API for faster ingestion (Preview)
+  summary_snapshot: Bulk Copy API (Preview) writes data directly to Fabric Data Warehouse
+    tables from application code without first staging files, replacing row-by-row INSERT
+    statements to improve ingestion throughput. You can use it through SqlBulkCopy for C#,
+    SQLServerBulkCopy for Java, the bcp utility, and tools such as SSIS, Azure Data Factory,
+    and Informatica. For more information, see Ingest data into your warehouse by using BCP
+    API (Preview).
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:87a101f03d0e7b4667efd135d3c6a9d8c1e6d158f3de73c411beff8dc23e89c3
+  title_snapshot: Bulk Copy API for faster ingestion (Preview)
+  summary_snapshot: Bulk Copy API (Preview) writes data directly to Fabric Data Warehouse
+    tables from application code without first staging files, replacing row-by-row INSERT
+    statements to improve ingestion throughput. You can use it through SqlBulkCopy for C#,
+    SQLServerBulkCopy for Java, the bcp utility, and tools such as SSIS, Azure Data Factory,
+    and Informatica. For more information, see Ingest data into your warehouse by using BCP
+    API (Preview).
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

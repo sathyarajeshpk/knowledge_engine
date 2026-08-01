@@ -57,4 +57,154 @@ revisions:
     12c and later. For more information, see Add Oracle Database CDC source to an eventstream
     (preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:a4c40275054775efff19a63155e678cd94b32a703f78926b9eeade9018c259e0
+  title_snapshot: Oracle Database CDC source connector for Fabric Eventstream (Preview)
+  summary_snapshot: The Oracle Database CDC source connector for Eventstream (Preview) streams
+    changes from an Oracle database into Fabric as a structured change event with before and
+    after values, using Oracle LogMiner for on-premises or cloud databases running Oracle
+    12c and later. For more information, see Add Oracle Database CDC source to an eventstream
+    (preview).
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:a4c40275054775efff19a63155e678cd94b32a703f78926b9eeade9018c259e0
+  title_snapshot: Oracle Database CDC source connector for Fabric Eventstream (Preview)
+  summary_snapshot: The Oracle Database CDC source connector for Eventstream (Preview) streams
+    changes from an Oracle database into Fabric as a structured change event with before and
+    after values, using Oracle LogMiner for on-premises or cloud databases running Oracle
+    12c and later. For more information, see Add Oracle Database CDC source to an eventstream
+    (preview).
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:a4c40275054775efff19a63155e678cd94b32a703f78926b9eeade9018c259e0
+  title_snapshot: Oracle Database CDC source connector for Fabric Eventstream (Preview)
+  summary_snapshot: The Oracle Database CDC source connector for Eventstream (Preview) streams
+    changes from an Oracle database into Fabric as a structured change event with before and
+    after values, using Oracle LogMiner for on-premises or cloud databases running Oracle
+    12c and later. For more information, see Add Oracle Database CDC source to an eventstream
+    (preview).
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:a4c40275054775efff19a63155e678cd94b32a703f78926b9eeade9018c259e0
+  title_snapshot: Oracle Database CDC source connector for Fabric Eventstream (Preview)
+  summary_snapshot: The Oracle Database CDC source connector for Eventstream (Preview) streams
+    changes from an Oracle database into Fabric as a structured change event with before and
+    after values, using Oracle LogMiner for on-premises or cloud databases running Oracle
+    12c and later. For more information, see Add Oracle Database CDC source to an eventstream
+    (preview).
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:a4c40275054775efff19a63155e678cd94b32a703f78926b9eeade9018c259e0
+  title_snapshot: Oracle Database CDC source connector for Fabric Eventstream (Preview)
+  summary_snapshot: The Oracle Database CDC source connector for Eventstream (Preview) streams
+    changes from an Oracle database into Fabric as a structured change event with before and
+    after values, using Oracle LogMiner for on-premises or cloud databases running Oracle
+    12c and later. For more information, see Add Oracle Database CDC source to an eventstream
+    (preview).
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:a4c40275054775efff19a63155e678cd94b32a703f78926b9eeade9018c259e0
+  title_snapshot: Oracle Database CDC source connector for Fabric Eventstream (Preview)
+  summary_snapshot: The Oracle Database CDC source connector for Eventstream (Preview) streams
+    changes from an Oracle database into Fabric as a structured change event with before and
+    after values, using Oracle LogMiner for on-premises or cloud databases running Oracle
+    12c and later. For more information, see Add Oracle Database CDC source to an eventstream
+    (preview).
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:a4c40275054775efff19a63155e678cd94b32a703f78926b9eeade9018c259e0
+  title_snapshot: Oracle Database CDC source connector for Fabric Eventstream (Preview)
+  summary_snapshot: The Oracle Database CDC source connector for Eventstream (Preview) streams
+    changes from an Oracle database into Fabric as a structured change event with before and
+    after values, using Oracle LogMiner for on-premises or cloud databases running Oracle
+    12c and later. For more information, see Add Oracle Database CDC source to an eventstream
+    (preview).
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:a4c40275054775efff19a63155e678cd94b32a703f78926b9eeade9018c259e0
+  title_snapshot: Oracle Database CDC source connector for Fabric Eventstream (Preview)
+  summary_snapshot: The Oracle Database CDC source connector for Eventstream (Preview) streams
+    changes from an Oracle database into Fabric as a structured change event with before and
+    after values, using Oracle LogMiner for on-premises or cloud databases running Oracle
+    12c and later. For more information, see Add Oracle Database CDC source to an eventstream
+    (preview).
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:a4c40275054775efff19a63155e678cd94b32a703f78926b9eeade9018c259e0
+  title_snapshot: Oracle Database CDC source connector for Fabric Eventstream (Preview)
+  summary_snapshot: The Oracle Database CDC source connector for Eventstream (Preview) streams
+    changes from an Oracle database into Fabric as a structured change event with before and
+    after values, using Oracle LogMiner for on-premises or cloud databases running Oracle
+    12c and later. For more information, see Add Oracle Database CDC source to an eventstream
+    (preview).
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:a4c40275054775efff19a63155e678cd94b32a703f78926b9eeade9018c259e0
+  title_snapshot: Oracle Database CDC source connector for Fabric Eventstream (Preview)
+  summary_snapshot: The Oracle Database CDC source connector for Eventstream (Preview) streams
+    changes from an Oracle database into Fabric as a structured change event with before and
+    after values, using Oracle LogMiner for on-premises or cloud databases running Oracle
+    12c and later. For more information, see Add Oracle Database CDC source to an eventstream
+    (preview).
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

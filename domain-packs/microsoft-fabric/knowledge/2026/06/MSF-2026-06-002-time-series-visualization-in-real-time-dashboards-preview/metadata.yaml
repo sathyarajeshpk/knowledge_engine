@@ -56,4 +56,144 @@ revisions:
     search bar, pin-and-overlay for series comparison, multiple aligned-time panels, flexible
     Y-axis scaling, color assignment, and zoom with a time slider.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:0fd8575df28c878bc5dc9f255c9fd281f9c46d3e2de8f783ea3e79ac5089655e
+  title_snapshot: Time Series Visualization in Real-Time Dashboards (Preview)
+  summary_snapshot: Real-Time Dashboard-specific visuals in Real-Time Dashboards adds dedicated
+    capabilities for navigating, comparing, and customizing time-based data, including a legend
+    search bar, pin-and-overlay for series comparison, multiple aligned-time panels, flexible
+    Y-axis scaling, color assignment, and zoom with a time slider.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:0fd8575df28c878bc5dc9f255c9fd281f9c46d3e2de8f783ea3e79ac5089655e
+  title_snapshot: Time Series Visualization in Real-Time Dashboards (Preview)
+  summary_snapshot: Real-Time Dashboard-specific visuals in Real-Time Dashboards adds dedicated
+    capabilities for navigating, comparing, and customizing time-based data, including a legend
+    search bar, pin-and-overlay for series comparison, multiple aligned-time panels, flexible
+    Y-axis scaling, color assignment, and zoom with a time slider.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:0fd8575df28c878bc5dc9f255c9fd281f9c46d3e2de8f783ea3e79ac5089655e
+  title_snapshot: Time Series Visualization in Real-Time Dashboards (Preview)
+  summary_snapshot: Real-Time Dashboard-specific visuals in Real-Time Dashboards adds dedicated
+    capabilities for navigating, comparing, and customizing time-based data, including a legend
+    search bar, pin-and-overlay for series comparison, multiple aligned-time panels, flexible
+    Y-axis scaling, color assignment, and zoom with a time slider.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:0fd8575df28c878bc5dc9f255c9fd281f9c46d3e2de8f783ea3e79ac5089655e
+  title_snapshot: Time Series Visualization in Real-Time Dashboards (Preview)
+  summary_snapshot: Real-Time Dashboard-specific visuals in Real-Time Dashboards adds dedicated
+    capabilities for navigating, comparing, and customizing time-based data, including a legend
+    search bar, pin-and-overlay for series comparison, multiple aligned-time panels, flexible
+    Y-axis scaling, color assignment, and zoom with a time slider.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:0fd8575df28c878bc5dc9f255c9fd281f9c46d3e2de8f783ea3e79ac5089655e
+  title_snapshot: Time Series Visualization in Real-Time Dashboards (Preview)
+  summary_snapshot: Real-Time Dashboard-specific visuals in Real-Time Dashboards adds dedicated
+    capabilities for navigating, comparing, and customizing time-based data, including a legend
+    search bar, pin-and-overlay for series comparison, multiple aligned-time panels, flexible
+    Y-axis scaling, color assignment, and zoom with a time slider.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:0fd8575df28c878bc5dc9f255c9fd281f9c46d3e2de8f783ea3e79ac5089655e
+  title_snapshot: Time Series Visualization in Real-Time Dashboards (Preview)
+  summary_snapshot: Real-Time Dashboard-specific visuals in Real-Time Dashboards adds dedicated
+    capabilities for navigating, comparing, and customizing time-based data, including a legend
+    search bar, pin-and-overlay for series comparison, multiple aligned-time panels, flexible
+    Y-axis scaling, color assignment, and zoom with a time slider.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:0fd8575df28c878bc5dc9f255c9fd281f9c46d3e2de8f783ea3e79ac5089655e
+  title_snapshot: Time Series Visualization in Real-Time Dashboards (Preview)
+  summary_snapshot: Real-Time Dashboard-specific visuals in Real-Time Dashboards adds dedicated
+    capabilities for navigating, comparing, and customizing time-based data, including a legend
+    search bar, pin-and-overlay for series comparison, multiple aligned-time panels, flexible
+    Y-axis scaling, color assignment, and zoom with a time slider.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:0fd8575df28c878bc5dc9f255c9fd281f9c46d3e2de8f783ea3e79ac5089655e
+  title_snapshot: Time Series Visualization in Real-Time Dashboards (Preview)
+  summary_snapshot: Real-Time Dashboard-specific visuals in Real-Time Dashboards adds dedicated
+    capabilities for navigating, comparing, and customizing time-based data, including a legend
+    search bar, pin-and-overlay for series comparison, multiple aligned-time panels, flexible
+    Y-axis scaling, color assignment, and zoom with a time slider.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:0fd8575df28c878bc5dc9f255c9fd281f9c46d3e2de8f783ea3e79ac5089655e
+  title_snapshot: Time Series Visualization in Real-Time Dashboards (Preview)
+  summary_snapshot: Real-Time Dashboard-specific visuals in Real-Time Dashboards adds dedicated
+    capabilities for navigating, comparing, and customizing time-based data, including a legend
+    search bar, pin-and-overlay for series comparison, multiple aligned-time panels, flexible
+    Y-axis scaling, color assignment, and zoom with a time slider.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:0fd8575df28c878bc5dc9f255c9fd281f9c46d3e2de8f783ea3e79ac5089655e
+  title_snapshot: Time Series Visualization in Real-Time Dashboards (Preview)
+  summary_snapshot: Real-Time Dashboard-specific visuals in Real-Time Dashboards adds dedicated
+    capabilities for navigating, comparing, and customizing time-based data, including a legend
+    search bar, pin-and-overlay for series comparison, multiple aligned-time panels, flexible
+    Y-axis scaling, color assignment, and zoom with a time slider.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

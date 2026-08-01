@@ -57,4 +57,154 @@ revisions:
     latency, and route events by device. For more information, see Add Azure IoT Hub source
     to an eventstream.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:64cb9eaa654b86b19a50490ff0fec8c5310eefa4030b19a56016c70fb63e5fad
+  title_snapshot: Extended IoT Hub source Eventstream connector (Preview)
+  summary_snapshot: Extended Azure IoT Hub source connector (Preview) in Fabric Eventstream
+    preserves all event metadata, including system properties (prefixed with src) and user-defined
+    application properties, so you can join device identity with telemetry, compute ingestion
+    latency, and route events by device. For more information, see Add Azure IoT Hub source
+    to an eventstream.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:64cb9eaa654b86b19a50490ff0fec8c5310eefa4030b19a56016c70fb63e5fad
+  title_snapshot: Extended IoT Hub source Eventstream connector (Preview)
+  summary_snapshot: Extended Azure IoT Hub source connector (Preview) in Fabric Eventstream
+    preserves all event metadata, including system properties (prefixed with src) and user-defined
+    application properties, so you can join device identity with telemetry, compute ingestion
+    latency, and route events by device. For more information, see Add Azure IoT Hub source
+    to an eventstream.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:64cb9eaa654b86b19a50490ff0fec8c5310eefa4030b19a56016c70fb63e5fad
+  title_snapshot: Extended IoT Hub source Eventstream connector (Preview)
+  summary_snapshot: Extended Azure IoT Hub source connector (Preview) in Fabric Eventstream
+    preserves all event metadata, including system properties (prefixed with src) and user-defined
+    application properties, so you can join device identity with telemetry, compute ingestion
+    latency, and route events by device. For more information, see Add Azure IoT Hub source
+    to an eventstream.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:64cb9eaa654b86b19a50490ff0fec8c5310eefa4030b19a56016c70fb63e5fad
+  title_snapshot: Extended IoT Hub source Eventstream connector (Preview)
+  summary_snapshot: Extended Azure IoT Hub source connector (Preview) in Fabric Eventstream
+    preserves all event metadata, including system properties (prefixed with src) and user-defined
+    application properties, so you can join device identity with telemetry, compute ingestion
+    latency, and route events by device. For more information, see Add Azure IoT Hub source
+    to an eventstream.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:64cb9eaa654b86b19a50490ff0fec8c5310eefa4030b19a56016c70fb63e5fad
+  title_snapshot: Extended IoT Hub source Eventstream connector (Preview)
+  summary_snapshot: Extended Azure IoT Hub source connector (Preview) in Fabric Eventstream
+    preserves all event metadata, including system properties (prefixed with src) and user-defined
+    application properties, so you can join device identity with telemetry, compute ingestion
+    latency, and route events by device. For more information, see Add Azure IoT Hub source
+    to an eventstream.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:64cb9eaa654b86b19a50490ff0fec8c5310eefa4030b19a56016c70fb63e5fad
+  title_snapshot: Extended IoT Hub source Eventstream connector (Preview)
+  summary_snapshot: Extended Azure IoT Hub source connector (Preview) in Fabric Eventstream
+    preserves all event metadata, including system properties (prefixed with src) and user-defined
+    application properties, so you can join device identity with telemetry, compute ingestion
+    latency, and route events by device. For more information, see Add Azure IoT Hub source
+    to an eventstream.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:64cb9eaa654b86b19a50490ff0fec8c5310eefa4030b19a56016c70fb63e5fad
+  title_snapshot: Extended IoT Hub source Eventstream connector (Preview)
+  summary_snapshot: Extended Azure IoT Hub source connector (Preview) in Fabric Eventstream
+    preserves all event metadata, including system properties (prefixed with src) and user-defined
+    application properties, so you can join device identity with telemetry, compute ingestion
+    latency, and route events by device. For more information, see Add Azure IoT Hub source
+    to an eventstream.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:64cb9eaa654b86b19a50490ff0fec8c5310eefa4030b19a56016c70fb63e5fad
+  title_snapshot: Extended IoT Hub source Eventstream connector (Preview)
+  summary_snapshot: Extended Azure IoT Hub source connector (Preview) in Fabric Eventstream
+    preserves all event metadata, including system properties (prefixed with src) and user-defined
+    application properties, so you can join device identity with telemetry, compute ingestion
+    latency, and route events by device. For more information, see Add Azure IoT Hub source
+    to an eventstream.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:64cb9eaa654b86b19a50490ff0fec8c5310eefa4030b19a56016c70fb63e5fad
+  title_snapshot: Extended IoT Hub source Eventstream connector (Preview)
+  summary_snapshot: Extended Azure IoT Hub source connector (Preview) in Fabric Eventstream
+    preserves all event metadata, including system properties (prefixed with src) and user-defined
+    application properties, so you can join device identity with telemetry, compute ingestion
+    latency, and route events by device. For more information, see Add Azure IoT Hub source
+    to an eventstream.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:64cb9eaa654b86b19a50490ff0fec8c5310eefa4030b19a56016c70fb63e5fad
+  title_snapshot: Extended IoT Hub source Eventstream connector (Preview)
+  summary_snapshot: Extended Azure IoT Hub source connector (Preview) in Fabric Eventstream
+    preserves all event metadata, including system properties (prefixed with src) and user-defined
+    application properties, so you can join device identity with telemetry, compute ingestion
+    latency, and route events by device. For more information, see Add Azure IoT Hub source
+    to an eventstream.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

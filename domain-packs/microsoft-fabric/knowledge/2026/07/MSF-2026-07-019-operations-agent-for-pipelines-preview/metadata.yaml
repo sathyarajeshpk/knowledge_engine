@@ -57,4 +57,169 @@ revisions:
     such as all pipeline failures or runs exceeding expected durations. For more information,
     see Operations Agent for Pipelines (preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:aa955a37607c9c9e7ca193e7ee3e33602b80993da2a09740ba494acbbfb1accf
+  title_snapshot: Operations Agent for Pipelines (Preview)
+  summary_snapshot: Operations Agent for Pipelines is an AI-powered monitoring agent in Data
+    Factory that continuously watches your pipeline runs and proactively notifies you through
+    Microsoft Teams when failures or anomalies occur. You can configure the agent to monitor
+    specific scenarios such as all pipeline failures or runs exceeding expected durations,
+    without writing custom alerting logic. For more information, see Operations Agent for
+    Pipelines (preview).
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:8d7068843b145bca38db7279b85fb75b8002d3e118ff784db1e895d354984bc2
+  title_snapshot: Operations Agent for Pipelines (Preview)
+  summary_snapshot: Operations Agent for Pipelines is an AI-powered monitoring agent that
+    continuously watches your pipeline runs and proactively notifies you through Microsoft
+    Teams when failures or anomalies occur. Configure the agent to monitor specific scenarios
+    such as all pipeline failures or runs exceeding expected durations. For more information,
+    see Operations Agent for Pipelines (preview).
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:aa955a37607c9c9e7ca193e7ee3e33602b80993da2a09740ba494acbbfb1accf
+  title_snapshot: Operations Agent for Pipelines (Preview)
+  summary_snapshot: Operations Agent for Pipelines is an AI-powered monitoring agent in Data
+    Factory that continuously watches your pipeline runs and proactively notifies you through
+    Microsoft Teams when failures or anomalies occur. You can configure the agent to monitor
+    specific scenarios such as all pipeline failures or runs exceeding expected durations,
+    without writing custom alerting logic. For more information, see Operations Agent for
+    Pipelines (preview).
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:8d7068843b145bca38db7279b85fb75b8002d3e118ff784db1e895d354984bc2
+  title_snapshot: Operations Agent for Pipelines (Preview)
+  summary_snapshot: Operations Agent for Pipelines is an AI-powered monitoring agent that
+    continuously watches your pipeline runs and proactively notifies you through Microsoft
+    Teams when failures or anomalies occur. Configure the agent to monitor specific scenarios
+    such as all pipeline failures or runs exceeding expected durations. For more information,
+    see Operations Agent for Pipelines (preview).
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:aa955a37607c9c9e7ca193e7ee3e33602b80993da2a09740ba494acbbfb1accf
+  title_snapshot: Operations Agent for Pipelines (Preview)
+  summary_snapshot: Operations Agent for Pipelines is an AI-powered monitoring agent in Data
+    Factory that continuously watches your pipeline runs and proactively notifies you through
+    Microsoft Teams when failures or anomalies occur. You can configure the agent to monitor
+    specific scenarios such as all pipeline failures or runs exceeding expected durations,
+    without writing custom alerting logic. For more information, see Operations Agent for
+    Pipelines (preview).
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:8d7068843b145bca38db7279b85fb75b8002d3e118ff784db1e895d354984bc2
+  title_snapshot: Operations Agent for Pipelines (Preview)
+  summary_snapshot: Operations Agent for Pipelines is an AI-powered monitoring agent that
+    continuously watches your pipeline runs and proactively notifies you through Microsoft
+    Teams when failures or anomalies occur. Configure the agent to monitor specific scenarios
+    such as all pipeline failures or runs exceeding expected durations. For more information,
+    see Operations Agent for Pipelines (preview).
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:aa955a37607c9c9e7ca193e7ee3e33602b80993da2a09740ba494acbbfb1accf
+  title_snapshot: Operations Agent for Pipelines (Preview)
+  summary_snapshot: Operations Agent for Pipelines is an AI-powered monitoring agent in Data
+    Factory that continuously watches your pipeline runs and proactively notifies you through
+    Microsoft Teams when failures or anomalies occur. You can configure the agent to monitor
+    specific scenarios such as all pipeline failures or runs exceeding expected durations,
+    without writing custom alerting logic. For more information, see Operations Agent for
+    Pipelines (preview).
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:8d7068843b145bca38db7279b85fb75b8002d3e118ff784db1e895d354984bc2
+  title_snapshot: Operations Agent for Pipelines (Preview)
+  summary_snapshot: Operations Agent for Pipelines is an AI-powered monitoring agent that
+    continuously watches your pipeline runs and proactively notifies you through Microsoft
+    Teams when failures or anomalies occur. Configure the agent to monitor specific scenarios
+    such as all pipeline failures or runs exceeding expected durations. For more information,
+    see Operations Agent for Pipelines (preview).
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:aa955a37607c9c9e7ca193e7ee3e33602b80993da2a09740ba494acbbfb1accf
+  title_snapshot: Operations Agent for Pipelines (Preview)
+  summary_snapshot: Operations Agent for Pipelines is an AI-powered monitoring agent in Data
+    Factory that continuously watches your pipeline runs and proactively notifies you through
+    Microsoft Teams when failures or anomalies occur. You can configure the agent to monitor
+    specific scenarios such as all pipeline failures or runs exceeding expected durations,
+    without writing custom alerting logic. For more information, see Operations Agent for
+    Pipelines (preview).
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:8d7068843b145bca38db7279b85fb75b8002d3e118ff784db1e895d354984bc2
+  title_snapshot: Operations Agent for Pipelines (Preview)
+  summary_snapshot: Operations Agent for Pipelines is an AI-powered monitoring agent that
+    continuously watches your pipeline runs and proactively notifies you through Microsoft
+    Teams when failures or anomalies occur. Configure the agent to monitor specific scenarios
+    such as all pipeline failures or runs exceeding expected durations. For more information,
+    see Operations Agent for Pipelines (preview).
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

@@ -55,4 +55,144 @@ revisions:
     pipelines lets you refresh materialized lake views on demand or on a schedule within your
     pipeline orchestration.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:d85f87e96897b2777f9b0753590e5fdd00d9b460f552a5145fcca1fc58530591
+  title_snapshot: Refresh Materialized Lake View activity in Data Factory pipelines (Preview)
+  summary_snapshot: The new Refresh Materialized Lake View activity in Fabric Data Factory
+    pipelines in Fabric Data Factory pipelines lets you refresh materialized lake views on
+    demand or on a schedule within your pipeline orchestration.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:1da364c91c7ffadbe061076b5b9e3672a5769be37bd1fb826a3e20978f3488a3
+  title_snapshot: Refresh Materialized Lake View activity in Data Factory pipelines (Preview)
+  summary_snapshot: The new Refresh Materialized Lake View activity in Fabric Data Factory
+    pipelines lets you refresh materialized lake views on demand or on a schedule within your
+    pipeline orchestration.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:d85f87e96897b2777f9b0753590e5fdd00d9b460f552a5145fcca1fc58530591
+  title_snapshot: Refresh Materialized Lake View activity in Data Factory pipelines (Preview)
+  summary_snapshot: The new Refresh Materialized Lake View activity in Fabric Data Factory
+    pipelines in Fabric Data Factory pipelines lets you refresh materialized lake views on
+    demand or on a schedule within your pipeline orchestration.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:1da364c91c7ffadbe061076b5b9e3672a5769be37bd1fb826a3e20978f3488a3
+  title_snapshot: Refresh Materialized Lake View activity in Data Factory pipelines (Preview)
+  summary_snapshot: The new Refresh Materialized Lake View activity in Fabric Data Factory
+    pipelines lets you refresh materialized lake views on demand or on a schedule within your
+    pipeline orchestration.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:d85f87e96897b2777f9b0753590e5fdd00d9b460f552a5145fcca1fc58530591
+  title_snapshot: Refresh Materialized Lake View activity in Data Factory pipelines (Preview)
+  summary_snapshot: The new Refresh Materialized Lake View activity in Fabric Data Factory
+    pipelines in Fabric Data Factory pipelines lets you refresh materialized lake views on
+    demand or on a schedule within your pipeline orchestration.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:1da364c91c7ffadbe061076b5b9e3672a5769be37bd1fb826a3e20978f3488a3
+  title_snapshot: Refresh Materialized Lake View activity in Data Factory pipelines (Preview)
+  summary_snapshot: The new Refresh Materialized Lake View activity in Fabric Data Factory
+    pipelines lets you refresh materialized lake views on demand or on a schedule within your
+    pipeline orchestration.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:d85f87e96897b2777f9b0753590e5fdd00d9b460f552a5145fcca1fc58530591
+  title_snapshot: Refresh Materialized Lake View activity in Data Factory pipelines (Preview)
+  summary_snapshot: The new Refresh Materialized Lake View activity in Fabric Data Factory
+    pipelines in Fabric Data Factory pipelines lets you refresh materialized lake views on
+    demand or on a schedule within your pipeline orchestration.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:1da364c91c7ffadbe061076b5b9e3672a5769be37bd1fb826a3e20978f3488a3
+  title_snapshot: Refresh Materialized Lake View activity in Data Factory pipelines (Preview)
+  summary_snapshot: The new Refresh Materialized Lake View activity in Fabric Data Factory
+    pipelines lets you refresh materialized lake views on demand or on a schedule within your
+    pipeline orchestration.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:d85f87e96897b2777f9b0753590e5fdd00d9b460f552a5145fcca1fc58530591
+  title_snapshot: Refresh Materialized Lake View activity in Data Factory pipelines (Preview)
+  summary_snapshot: The new Refresh Materialized Lake View activity in Fabric Data Factory
+    pipelines in Fabric Data Factory pipelines lets you refresh materialized lake views on
+    demand or on a schedule within your pipeline orchestration.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:1da364c91c7ffadbe061076b5b9e3672a5769be37bd1fb826a3e20978f3488a3
+  title_snapshot: Refresh Materialized Lake View activity in Data Factory pipelines (Preview)
+  summary_snapshot: The new Refresh Materialized Lake View activity in Fabric Data Factory
+    pipelines lets you refresh materialized lake views on demand or on a schedule within your
+    pipeline orchestration.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

@@ -56,4 +56,124 @@ revisions:
     improving predictability for downstream auditing. For more information, see Fabric Data
     Warehouse connectivity and Operation list.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:edf0842f411c07b85e0ef582cdfb069f239e6f5067d23da1b9e51d560ce6eecd
+  title_snapshot: Warehouse connection string changes (Generally Available)
+  summary_snapshot: Connection string behavior changes in Fabric Data Warehouse make connections
+    deterministic when the Initial Catalog value is ambiguous or missing, improving predictability
+    for downstream auditing. For more information, see Fabric Data Warehouse connectivity
+    and Operation list.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:cd8005ebb6cd1f0b8d4327e3da0017cc9b5aa03500797eb18dc08a0be8be39f8
+  title_snapshot: Warehouse connection string changes (Generally Available)
+  summary_snapshot: Connection behavior changes in Fabric Data Warehouse make connections
+    deterministic when the InitialCatalog connection string value is ambiguous or missing,
+    improving predictability for downstream auditing. For more information, see Fabric Data
+    Warehouse connectivity and Operation list.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:edf0842f411c07b85e0ef582cdfb069f239e6f5067d23da1b9e51d560ce6eecd
+  title_snapshot: Warehouse connection string changes (Generally Available)
+  summary_snapshot: Connection string behavior changes in Fabric Data Warehouse make connections
+    deterministic when the Initial Catalog value is ambiguous or missing, improving predictability
+    for downstream auditing. For more information, see Fabric Data Warehouse connectivity
+    and Operation list.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:cd8005ebb6cd1f0b8d4327e3da0017cc9b5aa03500797eb18dc08a0be8be39f8
+  title_snapshot: Warehouse connection string changes (Generally Available)
+  summary_snapshot: Connection behavior changes in Fabric Data Warehouse make connections
+    deterministic when the InitialCatalog connection string value is ambiguous or missing,
+    improving predictability for downstream auditing. For more information, see Fabric Data
+    Warehouse connectivity and Operation list.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:edf0842f411c07b85e0ef582cdfb069f239e6f5067d23da1b9e51d560ce6eecd
+  title_snapshot: Warehouse connection string changes (Generally Available)
+  summary_snapshot: Connection string behavior changes in Fabric Data Warehouse make connections
+    deterministic when the Initial Catalog value is ambiguous or missing, improving predictability
+    for downstream auditing. For more information, see Fabric Data Warehouse connectivity
+    and Operation list.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:cd8005ebb6cd1f0b8d4327e3da0017cc9b5aa03500797eb18dc08a0be8be39f8
+  title_snapshot: Warehouse connection string changes (Generally Available)
+  summary_snapshot: Connection behavior changes in Fabric Data Warehouse make connections
+    deterministic when the InitialCatalog connection string value is ambiguous or missing,
+    improving predictability for downstream auditing. For more information, see Fabric Data
+    Warehouse connectivity and Operation list.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:edf0842f411c07b85e0ef582cdfb069f239e6f5067d23da1b9e51d560ce6eecd
+  title_snapshot: Warehouse connection string changes (Generally Available)
+  summary_snapshot: Connection string behavior changes in Fabric Data Warehouse make connections
+    deterministic when the Initial Catalog value is ambiguous or missing, improving predictability
+    for downstream auditing. For more information, see Fabric Data Warehouse connectivity
+    and Operation list.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:cd8005ebb6cd1f0b8d4327e3da0017cc9b5aa03500797eb18dc08a0be8be39f8
+  title_snapshot: Warehouse connection string changes (Generally Available)
+  summary_snapshot: Connection behavior changes in Fabric Data Warehouse make connections
+    deterministic when the InitialCatalog connection string value is ambiguous or missing,
+    improving predictability for downstream auditing. For more information, see Fabric Data
+    Warehouse connectivity and Operation list.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:edf0842f411c07b85e0ef582cdfb069f239e6f5067d23da1b9e51d560ce6eecd
+  title_snapshot: Warehouse connection string changes (Generally Available)
+  summary_snapshot: Connection string behavior changes in Fabric Data Warehouse make connections
+    deterministic when the Initial Catalog value is ambiguous or missing, improving predictability
+    for downstream auditing. For more information, see Fabric Data Warehouse connectivity
+    and Operation list.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:cd8005ebb6cd1f0b8d4327e3da0017cc9b5aa03500797eb18dc08a0be8be39f8
+  title_snapshot: Warehouse connection string changes (Generally Available)
+  summary_snapshot: Connection behavior changes in Fabric Data Warehouse make connections
+    deterministic when the InitialCatalog connection string value is ambiguous or missing,
+    improving predictability for downstream auditing. For more information, see Fabric Data
+    Warehouse connectivity and Operation list.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

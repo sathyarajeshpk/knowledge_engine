@@ -57,4 +57,159 @@ revisions:
     down to reduce cost during idle periods. For more information, see Download logs on the
     virtual network data gateway.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:04e40d822dd7c163590310557dccc44b537a30550cac5239beb7683087b0f566
+  title_snapshot: Autoscaling for Virtual Network Data Gateway (Preview)
+  summary_snapshot: Autoscaling for Virtual Network Data Gateway (Preview) automatically adjusts
+    the number of active gateway nodes within admin-defined minimum and maximum limits based
+    on workload demand, so the gateway absorbs spikes without manual intervention and scales
+    down to reduce cost during idle periods.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:eee1e184f9e0c1e1c6be61f78bbad3ee265330361b269416d9b455ada839ff85
+  title_snapshot: Autoscaling for Virtual Network Data Gateway (Preview)
+  summary_snapshot: Autoscaling for Virtual Network Data Gateway (Preview) automatically adjusts
+    the number of active gateway nodes within admin-defined minimum and maximum limits based
+    on workload demand, so the gateway absorbs spikes without manual intervention and scales
+    down to reduce cost during idle periods. For more information, see Download logs on the
+    virtual network data gateway.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:04e40d822dd7c163590310557dccc44b537a30550cac5239beb7683087b0f566
+  title_snapshot: Autoscaling for Virtual Network Data Gateway (Preview)
+  summary_snapshot: Autoscaling for Virtual Network Data Gateway (Preview) automatically adjusts
+    the number of active gateway nodes within admin-defined minimum and maximum limits based
+    on workload demand, so the gateway absorbs spikes without manual intervention and scales
+    down to reduce cost during idle periods.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:eee1e184f9e0c1e1c6be61f78bbad3ee265330361b269416d9b455ada839ff85
+  title_snapshot: Autoscaling for Virtual Network Data Gateway (Preview)
+  summary_snapshot: Autoscaling for Virtual Network Data Gateway (Preview) automatically adjusts
+    the number of active gateway nodes within admin-defined minimum and maximum limits based
+    on workload demand, so the gateway absorbs spikes without manual intervention and scales
+    down to reduce cost during idle periods. For more information, see Download logs on the
+    virtual network data gateway.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:04e40d822dd7c163590310557dccc44b537a30550cac5239beb7683087b0f566
+  title_snapshot: Autoscaling for Virtual Network Data Gateway (Preview)
+  summary_snapshot: Autoscaling for Virtual Network Data Gateway (Preview) automatically adjusts
+    the number of active gateway nodes within admin-defined minimum and maximum limits based
+    on workload demand, so the gateway absorbs spikes without manual intervention and scales
+    down to reduce cost during idle periods.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:eee1e184f9e0c1e1c6be61f78bbad3ee265330361b269416d9b455ada839ff85
+  title_snapshot: Autoscaling for Virtual Network Data Gateway (Preview)
+  summary_snapshot: Autoscaling for Virtual Network Data Gateway (Preview) automatically adjusts
+    the number of active gateway nodes within admin-defined minimum and maximum limits based
+    on workload demand, so the gateway absorbs spikes without manual intervention and scales
+    down to reduce cost during idle periods. For more information, see Download logs on the
+    virtual network data gateway.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:04e40d822dd7c163590310557dccc44b537a30550cac5239beb7683087b0f566
+  title_snapshot: Autoscaling for Virtual Network Data Gateway (Preview)
+  summary_snapshot: Autoscaling for Virtual Network Data Gateway (Preview) automatically adjusts
+    the number of active gateway nodes within admin-defined minimum and maximum limits based
+    on workload demand, so the gateway absorbs spikes without manual intervention and scales
+    down to reduce cost during idle periods.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:eee1e184f9e0c1e1c6be61f78bbad3ee265330361b269416d9b455ada839ff85
+  title_snapshot: Autoscaling for Virtual Network Data Gateway (Preview)
+  summary_snapshot: Autoscaling for Virtual Network Data Gateway (Preview) automatically adjusts
+    the number of active gateway nodes within admin-defined minimum and maximum limits based
+    on workload demand, so the gateway absorbs spikes without manual intervention and scales
+    down to reduce cost during idle periods. For more information, see Download logs on the
+    virtual network data gateway.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:04e40d822dd7c163590310557dccc44b537a30550cac5239beb7683087b0f566
+  title_snapshot: Autoscaling for Virtual Network Data Gateway (Preview)
+  summary_snapshot: Autoscaling for Virtual Network Data Gateway (Preview) automatically adjusts
+    the number of active gateway nodes within admin-defined minimum and maximum limits based
+    on workload demand, so the gateway absorbs spikes without manual intervention and scales
+    down to reduce cost during idle periods.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:eee1e184f9e0c1e1c6be61f78bbad3ee265330361b269416d9b455ada839ff85
+  title_snapshot: Autoscaling for Virtual Network Data Gateway (Preview)
+  summary_snapshot: Autoscaling for Virtual Network Data Gateway (Preview) automatically adjusts
+    the number of active gateway nodes within admin-defined minimum and maximum limits based
+    on workload demand, so the gateway absorbs spikes without manual intervention and scales
+    down to reduce cost during idle periods. For more information, see Download logs on the
+    virtual network data gateway.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

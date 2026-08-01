@@ -56,4 +56,119 @@ revisions:
     visualizations for operational monitoring and live analytics scenarios. For more information,
     see Create a Real-Time Dashboard.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:a5a8c68f4d66496e44d92a74ff223d793254d5bb7d1fd0dfca0fe94eca0a8c41
+  title_snapshot: Real-Time Dashboards Live Refresh (Generally Available)
+  summary_snapshot: Live Refresh for Real-Time Dashboards (Generally Available) pushes new
+    data to dashboard tiles as soon as it lands, replacing periodic refresh polling with always-current
+    visualizations. For more information, see Create a Real-Time Dashboard.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:07a2d597473d45db18654ab108596aa38962f519851671e8f5b60d07f958e523
+  title_snapshot: Real-Time Dashboards Live Refresh (Generally Available)
+  summary_snapshot: Live Refresh for Real-Time Dashboards (Generally Available) pushes new
+    data to dashboard tiles as soon as it lands, replacing periodic refresh polling with always-current
+    visualizations for operational monitoring and live analytics scenarios. For more information,
+    see Create a Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:a5a8c68f4d66496e44d92a74ff223d793254d5bb7d1fd0dfca0fe94eca0a8c41
+  title_snapshot: Real-Time Dashboards Live Refresh (Generally Available)
+  summary_snapshot: Live Refresh for Real-Time Dashboards (Generally Available) pushes new
+    data to dashboard tiles as soon as it lands, replacing periodic refresh polling with always-current
+    visualizations. For more information, see Create a Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:07a2d597473d45db18654ab108596aa38962f519851671e8f5b60d07f958e523
+  title_snapshot: Real-Time Dashboards Live Refresh (Generally Available)
+  summary_snapshot: Live Refresh for Real-Time Dashboards (Generally Available) pushes new
+    data to dashboard tiles as soon as it lands, replacing periodic refresh polling with always-current
+    visualizations for operational monitoring and live analytics scenarios. For more information,
+    see Create a Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:a5a8c68f4d66496e44d92a74ff223d793254d5bb7d1fd0dfca0fe94eca0a8c41
+  title_snapshot: Real-Time Dashboards Live Refresh (Generally Available)
+  summary_snapshot: Live Refresh for Real-Time Dashboards (Generally Available) pushes new
+    data to dashboard tiles as soon as it lands, replacing periodic refresh polling with always-current
+    visualizations. For more information, see Create a Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:07a2d597473d45db18654ab108596aa38962f519851671e8f5b60d07f958e523
+  title_snapshot: Real-Time Dashboards Live Refresh (Generally Available)
+  summary_snapshot: Live Refresh for Real-Time Dashboards (Generally Available) pushes new
+    data to dashboard tiles as soon as it lands, replacing periodic refresh polling with always-current
+    visualizations for operational monitoring and live analytics scenarios. For more information,
+    see Create a Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:a5a8c68f4d66496e44d92a74ff223d793254d5bb7d1fd0dfca0fe94eca0a8c41
+  title_snapshot: Real-Time Dashboards Live Refresh (Generally Available)
+  summary_snapshot: Live Refresh for Real-Time Dashboards (Generally Available) pushes new
+    data to dashboard tiles as soon as it lands, replacing periodic refresh polling with always-current
+    visualizations. For more information, see Create a Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:07a2d597473d45db18654ab108596aa38962f519851671e8f5b60d07f958e523
+  title_snapshot: Real-Time Dashboards Live Refresh (Generally Available)
+  summary_snapshot: Live Refresh for Real-Time Dashboards (Generally Available) pushes new
+    data to dashboard tiles as soon as it lands, replacing periodic refresh polling with always-current
+    visualizations for operational monitoring and live analytics scenarios. For more information,
+    see Create a Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:a5a8c68f4d66496e44d92a74ff223d793254d5bb7d1fd0dfca0fe94eca0a8c41
+  title_snapshot: Real-Time Dashboards Live Refresh (Generally Available)
+  summary_snapshot: Live Refresh for Real-Time Dashboards (Generally Available) pushes new
+    data to dashboard tiles as soon as it lands, replacing periodic refresh polling with always-current
+    visualizations. For more information, see Create a Real-Time Dashboard.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:07a2d597473d45db18654ab108596aa38962f519851671e8f5b60d07f958e523
+  title_snapshot: Real-Time Dashboards Live Refresh (Generally Available)
+  summary_snapshot: Live Refresh for Real-Time Dashboards (Generally Available) pushes new
+    data to dashboard tiles as soon as it lands, replacing periodic refresh polling with always-current
+    visualizations for operational monitoring and live analytics scenarios. For more information,
+    see Create a Real-Time Dashboard.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

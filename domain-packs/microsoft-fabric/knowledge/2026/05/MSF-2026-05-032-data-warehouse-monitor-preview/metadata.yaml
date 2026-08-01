@@ -57,4 +57,154 @@ revisions:
     lets you cancel long-running queries with one click. For more information, see Monitor
     T-SQL queries (Preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:1a5d574506d0980baa406c331f1a9ab8cde63a28347496e7d254a7cabf3ab601
+  title_snapshot: Data Warehouse Monitor (Preview)
+  summary_snapshot: Data Warehouse Monitor (Preview) (previously Query Activity) is a unified
+    monitoring UI for Fabric Data Warehouse that shows active and historical queries side
+    by side, supports cross-execution performance analysis powered by Query Insights, and
+    lets you cancel long-running queries with one click. For more information, see Monitor
+    T-SQL queries (Preview).
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:1a5d574506d0980baa406c331f1a9ab8cde63a28347496e7d254a7cabf3ab601
+  title_snapshot: Data Warehouse Monitor (Preview)
+  summary_snapshot: Data Warehouse Monitor (Preview) (previously Query Activity) is a unified
+    monitoring UI for Fabric Data Warehouse that shows active and historical queries side
+    by side, supports cross-execution performance analysis powered by Query Insights, and
+    lets you cancel long-running queries with one click. For more information, see Monitor
+    T-SQL queries (Preview).
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:1a5d574506d0980baa406c331f1a9ab8cde63a28347496e7d254a7cabf3ab601
+  title_snapshot: Data Warehouse Monitor (Preview)
+  summary_snapshot: Data Warehouse Monitor (Preview) (previously Query Activity) is a unified
+    monitoring UI for Fabric Data Warehouse that shows active and historical queries side
+    by side, supports cross-execution performance analysis powered by Query Insights, and
+    lets you cancel long-running queries with one click. For more information, see Monitor
+    T-SQL queries (Preview).
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:1a5d574506d0980baa406c331f1a9ab8cde63a28347496e7d254a7cabf3ab601
+  title_snapshot: Data Warehouse Monitor (Preview)
+  summary_snapshot: Data Warehouse Monitor (Preview) (previously Query Activity) is a unified
+    monitoring UI for Fabric Data Warehouse that shows active and historical queries side
+    by side, supports cross-execution performance analysis powered by Query Insights, and
+    lets you cancel long-running queries with one click. For more information, see Monitor
+    T-SQL queries (Preview).
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:1a5d574506d0980baa406c331f1a9ab8cde63a28347496e7d254a7cabf3ab601
+  title_snapshot: Data Warehouse Monitor (Preview)
+  summary_snapshot: Data Warehouse Monitor (Preview) (previously Query Activity) is a unified
+    monitoring UI for Fabric Data Warehouse that shows active and historical queries side
+    by side, supports cross-execution performance analysis powered by Query Insights, and
+    lets you cancel long-running queries with one click. For more information, see Monitor
+    T-SQL queries (Preview).
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:1a5d574506d0980baa406c331f1a9ab8cde63a28347496e7d254a7cabf3ab601
+  title_snapshot: Data Warehouse Monitor (Preview)
+  summary_snapshot: Data Warehouse Monitor (Preview) (previously Query Activity) is a unified
+    monitoring UI for Fabric Data Warehouse that shows active and historical queries side
+    by side, supports cross-execution performance analysis powered by Query Insights, and
+    lets you cancel long-running queries with one click. For more information, see Monitor
+    T-SQL queries (Preview).
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:1a5d574506d0980baa406c331f1a9ab8cde63a28347496e7d254a7cabf3ab601
+  title_snapshot: Data Warehouse Monitor (Preview)
+  summary_snapshot: Data Warehouse Monitor (Preview) (previously Query Activity) is a unified
+    monitoring UI for Fabric Data Warehouse that shows active and historical queries side
+    by side, supports cross-execution performance analysis powered by Query Insights, and
+    lets you cancel long-running queries with one click. For more information, see Monitor
+    T-SQL queries (Preview).
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:1a5d574506d0980baa406c331f1a9ab8cde63a28347496e7d254a7cabf3ab601
+  title_snapshot: Data Warehouse Monitor (Preview)
+  summary_snapshot: Data Warehouse Monitor (Preview) (previously Query Activity) is a unified
+    monitoring UI for Fabric Data Warehouse that shows active and historical queries side
+    by side, supports cross-execution performance analysis powered by Query Insights, and
+    lets you cancel long-running queries with one click. For more information, see Monitor
+    T-SQL queries (Preview).
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:1a5d574506d0980baa406c331f1a9ab8cde63a28347496e7d254a7cabf3ab601
+  title_snapshot: Data Warehouse Monitor (Preview)
+  summary_snapshot: Data Warehouse Monitor (Preview) (previously Query Activity) is a unified
+    monitoring UI for Fabric Data Warehouse that shows active and historical queries side
+    by side, supports cross-execution performance analysis powered by Query Insights, and
+    lets you cancel long-running queries with one click. For more information, see Monitor
+    T-SQL queries (Preview).
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:1a5d574506d0980baa406c331f1a9ab8cde63a28347496e7d254a7cabf3ab601
+  title_snapshot: Data Warehouse Monitor (Preview)
+  summary_snapshot: Data Warehouse Monitor (Preview) (previously Query Activity) is a unified
+    monitoring UI for Fabric Data Warehouse that shows active and historical queries side
+    by side, supports cross-execution performance analysis powered by Query Insights, and
+    lets you cancel long-running queries with one click. For more information, see Monitor
+    T-SQL queries (Preview).
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}
