@@ -113,6 +113,7 @@ def validate_repo(repo_root: Path, pack_name: str | None = None) -> list[Finding
             ]
 
     findings: list[Finding] = []
+    loaded: list[Pack] = []
     for root in roots:
         try:
             pack = Pack.load(root)
@@ -130,6 +131,57 @@ def validate_repo(repo_root: Path, pack_name: str | None = None) -> list[Finding
             )
             continue
         findings.extend(validate_pack(pack))
+        loaded.append(pack)
+
+    # Whole-repository checks. These cannot be done per pack by definition: a
+    # reference from one pack into another resolves only when both are in view,
+    # and a duplicate spanning two packs belongs to neither.
+    #
+    # Only run when the whole repository was validated. Under `--pack` the
+    # other packs were deliberately not loaded, and reporting every cross-pack
+    # reference as dangling because the target was filtered out would be a
+    # false alarm caused by the flag rather than by the data.
+    if pack_name is None and len(loaded) > 1:
+        findings.extend(_validate_across_packs(loaded))
+    return findings
+
+
+def _validate_across_packs(packs: list[Pack]) -> list[Finding]:
+    """Referential integrity and duplicate reporting across the whole repository.
+
+    Cross-pack duplicates are a **warning**, never an error. Two packs holding
+    the same canonical URL is often correct -- the same announcement filed under
+    two taxonomies, useful to two different questions -- and the engine has no
+    way to tell that from a true duplicate. Failing CI over it would make a
+    judgement the engine is not entitled to make (ADR-0044).
+    """
+    from ke.crosspack import dangling_references, find_duplicates
+
+    findings: list[Finding] = []
+
+    for feature_id, field, missing in dangling_references(packs):
+        findings.append(
+            Finding(
+                Level.ERROR,
+                "REF001",
+                PACKS_DIRNAME,
+                f"{feature_id}: {field} references {missing}, which exists in no pack",
+            )
+        )
+
+    for pair in find_duplicates(packs):
+        where = " and ".join(
+            f"{side.pack_name}:{side.feature_id}" for side in pair.sides
+        )
+        findings.append(
+            Finding(
+                Level.WARNING,
+                "XPK001",
+                PACKS_DIRNAME,
+                f"the same {pair.basis} is held by {where}; both are kept — "
+                "review with `ke review --kind cross-pack`",
+            )
+        )
     return findings
 
 
