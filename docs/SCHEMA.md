@@ -78,7 +78,7 @@ ownership class, declared in `engine/ke/models.py` and asserted at import time.
 
 | Class | Engine behaviour | Fields |
 |---|---|---|
-| **Engine-owned** | Rewritten freely on every run | `schema_version`, `id`, `slug`, `title`, `source_name`, `source_url`, `source_authority`, `published_date`, `discovered_date`, `date_confidence`, `content_hash`, `url_hash`, `reading_time`, `status`, `needs_review`, `revisions`, `generation` |
+| **Engine-owned** | Rewritten freely on every run | `schema_version`, `id`, `slug`, `title`, `source_name`, `source_url`, `announcement_url`, `identity_confidence`, `source_authority`, `published_date`, `discovered_date`, `date_confidence`, `content_hash`, `url_hash`, `reading_time`, `status`, `needs_review`, `revisions`, `generation` |
 | **Engine-proposed** | Written **only** if absent, or if not named in `overrides` | `tier`, `learning_priority`, `category`, `tags`, `difficulty`, `workload`, `version` |
 | **User-owned** | **Never written by the engine** | `learning_status`, `notes`, `prerequisites`, `builds_on`, `related_topics`, `replaced_by`, `replaces`, `overrides` |
 
@@ -117,6 +117,11 @@ title: Direct Lake mode reaches general availability
 # --- Provenance (engine-owned) ---
 source_name: fabric-blog
 source_url: https://blog.fabric.microsoft.com/...
+# The Announcement this Feature was reported in. Nullable, and NOT defaulted to
+# source_url: an announcement may report many features, and a source document is
+# not an announcement (ADR-0027).
+announcement_url: https://blog.fabric.microsoft.com/...
+identity_confidence: high       # high | medium | low — see §10.1 (ADR-0028)
 source_authority: official-microsoft
 published_date: 2026-04-15
 discovered_date: 2026-08-03
@@ -197,6 +202,8 @@ generation:
 | `title` | string | yes | Must match the `# ` heading in `feature.md`. |
 | `source_name` | string | yes | Key of a source defined in `pack.yml`. |
 | `source_url` | string | yes | Canonical URL, tracking parameters stripped. |
+| `announcement_url` | string \| null | yes | The Announcement this Feature was reported in, or `null` when none could be resolved. Never defaulted to `source_url`. |
+| `identity_confidence` | enum | yes | `high` \| `medium` \| `low`. Whether this identity was trusted enough to mint from. See §10.1. |
 | `source_authority` | enum | yes | `official-microsoft` \| `microsoft-community` \| `third-party` |
 | `published_date` | date \| null | yes | Null only when `date_confidence` is `inferred`. |
 | `discovered_date` | date | yes | When the engine first saw it. |
@@ -437,6 +444,38 @@ every object a given parser produced and re-examine exactly those, instead of
 re-verifying the whole pack. `identity_basis` narrows it further: a duplicate
 investigation starts with "what were we matching on?", and objects resting on a
 title hash are the ones worth looking at first.
+
+### 10.1 Identity confidence
+
+`identity_basis` says what an identity rests on. It cannot say whether that is
+good enough to mint from — a canonical URL that identifies one feature and a
+canonical URL that identifies a blog post covering eleven features are both
+`canonical-url`.
+
+`identity_confidence` answers that second question
+([ADR-0028](adr/0028-identity-confidence.md)).
+
+| Level | Meaning | Effect |
+|---|---|---|
+| `high` | Durable anchor, and the announcement reports exactly one feature | Mints automatically |
+| `medium` | Durable anchor but a shared announcement, **or** a weak anchor | Review queue |
+| `low` | Content fingerprint, or no usable title and no durable anchor | Never minted automatically |
+
+The mint gate is a **combination**, not one field:
+
+```
+mint automatically  ⟺  identity_confidence is high
+                       AND source_authority is official-microsoft
+```
+
+**Identity is permanent; confidence is a per-run assessment.** Confidence may use
+run-scoped evidence — how many features shared this announcement in this run —
+precisely because it never enters the Feature ID. Read a stored value as "as of
+that run"; it never retroactively changes an ID that already exists.
+
+Note the name collision with `date_confidence`. They are unrelated:
+`date_confidence` grades the publication date, `identity_confidence` grades the
+identity. They are combined at the gate, never merged into one field.
 
 ---
 

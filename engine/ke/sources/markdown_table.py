@@ -202,6 +202,10 @@ class MarkdownTableSource:
         return RawItem(
             source_name=self.definition.name,
             source_url=target or self.definition.url,
+            # `target` is None when `resolve_doc_link` refused to guess. That is
+            # a feature with no resolvable announcement, and it must stay
+            # distinguishable from one that has a real citation (ADR-0027).
+            announcement_url=target,
             source_authority=self.definition.authority,
             title=title,
             summary=summary,

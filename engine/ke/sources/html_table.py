@@ -232,6 +232,9 @@ class HtmlTableSource:
         return RawItem(
             source_name=self.definition.name,
             source_url=canonical or canonical_url(base_url),
+            # Only a genuinely resolved link is an Announcement. Falling back to
+            # the page we are reading would invent a citation (ADR-0027).
+            announcement_url=canonical,
             source_authority=self.definition.authority,
             title=title,
             summary=summary,

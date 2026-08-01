@@ -16,7 +16,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
+from ke import confidence
 from ke.clock import Clock
+from ke.confidence import Collision
 from ke.models import (
     AdapterType,
     HealthState,
@@ -71,6 +73,18 @@ class DiscoveryResult:
     health: dict[str, SourceHealth] = field(default_factory=dict)
     review_items: list[ReviewItem] = field(default_factory=list)
     skipped: list[str] = field(default_factory=list)
+    #: Identities claimed by several distinct features. Surfaced, never merged.
+    collisions: list[Collision] = field(default_factory=list)
+
+    @property
+    def mintable(self) -> list[RawItem]:
+        """Items M2 may mint a permanent Feature ID from without a human."""
+        return [item for item in self.items if item.mints_automatically]
+
+    @property
+    def needs_review(self) -> list[RawItem]:
+        """Items held back from minting. Queued, never dropped."""
+        return [item for item in self.items if not item.mints_automatically]
 
     @property
     def failed_sources(self) -> list[str]:
@@ -119,7 +133,12 @@ def discover_all(
             definition, result, clock, fetcher, known_health, max_summary_words
         )
 
-    result.items = sort_items(result.items)
+    # Confidence and collisions need the whole run in view: whether an
+    # announcement reports one feature or eleven cannot be seen from one item,
+    # and an adapter only ever sees its own source. This is also the reason
+    # confidence is assigned here rather than at parse time.
+    result.items = confidence.apply(sort_items(result.items))
+    result.collisions = confidence.collisions(result.items)
     return result
 
 

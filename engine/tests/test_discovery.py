@@ -21,6 +21,7 @@ from ke.models import (
     DatePrecision,
     ExtractionMethod,
     HealthState,
+    IdentityConfidence,
     SourceAuthority,
     SourceHealth,
     SourceRepresentation,
@@ -956,6 +957,152 @@ def test_markdown_output_is_deterministic():
     assert [i.identity.key for i in markdown_items()] == [
         i.identity.key for i in markdown_items()
     ]
+
+
+# ---------------------------------------------------------------------------
+# Identity confidence and collisions — Recommendation C
+#
+# The rule these tests exist to protect:
+#
+#     A collision is never a merge.
+#
+# Measured against production, one announcement URL is cited by 18 rows covering
+# 11 genuinely different features. Under the old behaviour those collapsed into
+# one identity, and M2 would have minted ONE permanent Feature ID with the other
+# ten features silently absent — not flagged, not queued, absent.
+# ---------------------------------------------------------------------------
+
+#: Two independent features announced in one blog post — the production shape.
+SHARED_ANNOUNCEMENT_HTML = """
+<html><h2>Data Factory in Microsoft Fabric</h2><table>
+  <tr><td>July 2026</td>
+      <td><a href="https://blog.example.invalid/copy-job">Edit Copy job via JSON payloads</a></td>
+      <td>Edit a Copy job by posting JSON.</td></tr>
+  <tr><td>July 2026</td>
+      <td><a href="https://blog.example.invalid/copy-job">Switch between full and incremental copy</a></td>
+      <td>Choose a copy mode per run.</td></tr>
+  <tr><td>July 2026</td>
+      <td><a href="https://learn.microsoft.com/en-us/fabric/solo">A feature of its own</a></td>
+      <td>This one has its own documentation page.</td></tr>
+</table></html>
+"""
+
+
+def shared_announcement_result():
+    return discover_all(
+        [html_definition()], clock=CLOCK, fetcher=FakeFetcher(SHARED_ANNOUNCEMENT_HTML)
+    )
+
+
+def test_a_shared_announcement_is_never_silently_merged():
+    """The defect this milestone exists to prevent."""
+    result = shared_announcement_result()
+
+    assert len(result.collisions) == 1
+    collision = result.collisions[0]
+    assert collision.feature_count == 2
+    assert collision.announcement_url == "https://blog.example.invalid/copy-job"
+    # Both features survive as items; neither is dropped.
+    assert len(result.items) == 3
+
+
+def test_a_shared_announcement_yields_medium_confidence_and_is_not_minted():
+    result = shared_announcement_result()
+    shared = [i for i in result.items if "copy" in i.title.lower()]
+
+    assert len(shared) == 2
+    for item in shared:
+        assert item.identity_confidence is IdentityConfidence.MEDIUM
+        assert item.mints_automatically is False
+        assert "distinct features" in item.confidence_reason
+
+
+def test_an_exclusive_announcement_is_high_confidence_and_mints():
+    result = shared_announcement_result()
+    solo = next(i for i in result.items if i.title == "A feature of its own")
+
+    assert solo.identity_confidence is IdentityConfidence.HIGH
+    assert solo.mints_automatically is True
+    assert result.mintable == [solo]
+    assert len(result.needs_review) == 2
+
+
+def test_collision_titles_are_published_not_normalised():
+    """The review queue is read by a person, not by the matcher."""
+    collision = shared_announcement_result().collisions[0]
+    assert "Edit Copy job via JSON payloads" in collision.titles
+
+
+def test_an_unresolvable_link_is_medium_never_high():
+    """A weak anchor may be identifiable, but it must not mint on its own."""
+    item = next(i for i in markdown_items() if i.title == "Anchored only")
+    assert item.identity.basis is IdentityBasis.TITLE_HASH
+    assert item.identity_confidence is IdentityConfidence.MEDIUM
+    assert item.mints_automatically is False
+    assert item.announcement_url is None
+
+
+def test_announcement_url_is_null_rather_than_the_document_we_read():
+    """`source_url` falls back; `announcement_url` must not (ADR-0027).
+
+    Recording the page we were reading as this feature's announcement would
+    invent a citation that does not exist.
+    """
+    item = next(i for i in markdown_items() if i.title == "Anchored only")
+    assert item.source_url.endswith(".md")  # the fallback, for provenance
+    assert item.announcement_url is None  # but no announcement is claimed
+
+
+def test_a_non_official_source_never_mints_even_at_high_confidence():
+    """The gate is identity confidence AND authority, deliberately both."""
+    result = discover_all(
+        [html_definition(authority=SourceAuthority.THIRD_PARTY)],
+        clock=CLOCK,
+        fetcher=FakeFetcher(WHATS_NEW_HTML),
+    )
+    high = [i for i in result.items if i.identity_confidence is IdentityConfidence.HIGH]
+    assert high, "expected some high-confidence items"
+    assert result.mintable == []
+
+
+def test_confidence_never_changes_an_items_identity():
+    """Confidence gates minting; it must not leak into the ID.
+
+    If grading changed identity, an item's permanent Feature ID would depend on
+    what else happened to be discovered in the same run.
+    """
+    alone = HtmlTableSource(
+        html_definition(), FakeFetcher(SHARED_ANNOUNCEMENT_HTML), CLOCK
+    ).discover()
+    graded = shared_announcement_result().items
+
+    assert sorted(i.identity.key for i in alone) == sorted(
+        i.identity.key for i in graded
+    )
+
+
+def test_confidence_is_deterministic():
+    first = shared_announcement_result()
+    second = shared_announcement_result()
+    assert [
+        (i.identity.key, i.identity_confidence) for i in first.items
+    ] == [(i.identity.key, i.identity_confidence) for i in second.items]
+
+
+def test_every_item_carries_a_reason_for_its_confidence():
+    """A person triaging must not have to re-derive the rule."""
+    for item in shared_announcement_result().items:
+        assert item.confidence_reason
+
+
+def test_collisions_are_ordered_worst_first():
+    """Triage should meet the announcement hiding the most knowledge first."""
+    from ke.confidence import collisions as find_collisions
+
+    items = markdown_items() + shared_announcement_result().items
+    found = find_collisions(items)
+    counts = [c.feature_count for c in found]
+    assert counts == sorted(counts, reverse=True)
 
 
 def test_the_markdown_adapter_is_reachable_through_a_fallback_chain():

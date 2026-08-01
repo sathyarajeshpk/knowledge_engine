@@ -120,6 +120,7 @@ def _report(repo_root: Path, findings: list[Finding], *, strict: bool) -> None:
 
 
 def _run_discover(args: argparse.Namespace) -> int:
+    from ke.confidence import summarise as confidence_summary
     from ke.discover import discover_all, health_summary
     from ke.models import HealthState
 
@@ -167,14 +168,47 @@ def _run_discover(args: argparse.Namespace) -> int:
             print(f"  {name}: {len(items)} item(s)")
             for item in items[: args.limit]:
                 when = item.published_date or "undated"
+                gate = "mint" if item.mints_automatically else "REVIEW"
                 print(
                     f"    [{when} · {item.date_precision}/{item.date_confidence}] "
                     f"{item.title[:80]}"
                 )
-                print(f"        identity: {item.identity.basis} · {item.source_url[:90]}")
+                print(
+                    f"        identity: {item.identity.basis} "
+                    f"· confidence: {item.identity_confidence} ({gate}) "
+                    f"· {item.source_url[:70]}"
+                )
             if len(items) > args.limit:
                 print(f"    … and {len(items) - args.limit} more")
             print()
+
+        # The gate is only useful if the queue is visible. A held-back item that
+        # nobody ever sees is indistinguishable from one that was dropped.
+        tally = confidence_summary(result.items)
+        print("  Identity confidence:")
+        for level, count in tally.items():
+            if count:
+                print(f"    {level}: {count}")
+        print(
+            f"    → {len(result.mintable)} would mint automatically, "
+            f"{len(result.needs_review)} queued for review"
+        )
+
+        if result.collisions:
+            print(
+                f"\n  Collisions — {len(result.collisions)} announcement(s) cited by "
+                "several distinct features (queued, never merged):"
+            )
+            for collision in result.collisions[: args.limit]:
+                print(f"    {collision.feature_count} features share one identity:")
+                print(f"      {(collision.announcement_url or '(no announcement)')[:88]}")
+                for title in collision.titles[:4]:
+                    print(f"        · {title[:76]}")
+                if collision.feature_count > 4:
+                    print(f"        … and {collision.feature_count - 4} more")
+            if len(result.collisions) > args.limit:
+                print(f"    … and {len(result.collisions) - args.limit} more")
+        print()
 
         print("  Source health:")
         for state, names in health_summary(result.health).items():

@@ -108,6 +108,9 @@ class FeedSource:
         return RawItem(
             source_name=self.definition.name,
             source_url=canonical or self.definition.url,
+            # A feed entry's link is its own permalink: one entry, one
+            # announcement. This is why feeds never produced the merging defect.
+            announcement_url=canonical,
             source_authority=self.definition.authority,
             title=title or link,
             summary=summary,

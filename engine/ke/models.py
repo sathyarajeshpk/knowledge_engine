@@ -93,6 +93,38 @@ class AdapterType(StrEnum):
     MANUAL = "manual"
 
 
+class IdentityConfidence(StrEnum):
+    """How much this item's identity can be trusted **in this run**.
+
+    Distinct from `identity_basis`, which says *what the identity rests on*.
+    Confidence says whether that is good enough to mint a permanent Feature ID
+    from yet.
+
+    The distinction that makes this safe (docs/design/IDENTITY_MODEL.md §6.1):
+
+        Identity is permanent and run-independent.
+        Confidence is a per-run assessment of whether minting is safe yet.
+
+    Confidence may therefore use evidence that identity may not -- notably how
+    many distinct features share one announcement in this run. That evidence is
+    forbidden in identity because an identity that changes when a row stops
+    appearing is not permanent. It is fine here precisely because confidence
+    never enters the ID: it only decides whether to mint, and once minted the
+    identity is fixed forever no matter what confidence does afterwards.
+
+    Named rather than scored, deliberately. A numeric score invites a tunable
+    threshold, and a tunable threshold is a dial someone eventually turns to make
+    a review backlog go away.
+    """
+
+    #: Durable anchor, and the announcement resolves to exactly one feature.
+    HIGH = "high"
+    #: Identifiable but ambiguous: a shared announcement, or a weak anchor.
+    MEDIUM = "medium"
+    #: Nothing durable to rest on. Never minted automatically, ever.
+    LOW = "low"
+
+
 class SourceRepresentation(StrEnum):
     """The **format we actually received**, as distinct from the adapter.
 
@@ -751,6 +783,38 @@ class RawItem:
     date_confidence: DateConfidence = DateConfidence.INFERRED
     date_precision: DatePrecision = DatePrecision.DAY
     raw_tags: tuple[str, ...] = ()
+
+    #: The Announcement this Feature was reported in, if one could be resolved.
+    #:
+    #: Explicitly nullable and deliberately *not* defaulted to `source_url`.
+    #: `source_url` falls back to the source document when a link cannot be
+    #: resolved, and the document being read is not an announcement -- recording
+    #: it as one would invent a citation that does not exist. "This feature has
+    #: no announcement" is a fact worth representing (IDENTITY_MODEL.md §3.1).
+    announcement_url: str | None = None
+
+    #: Assigned by `discover_all` once the whole run is visible, because
+    #: announcement exclusivity cannot be known from one item alone. Adapters
+    #: leave this at its default; they cannot see the other items.
+    identity_confidence: IdentityConfidence = IdentityConfidence.MEDIUM
+
+    #: Why the confidence is what it is, in words, for the review queue. A
+    #: person triaging a Medium item should not have to re-derive the rule.
+    confidence_reason: str = ""
+
+    @property
+    def mints_automatically(self) -> bool:
+        """Whether M2 may mint a permanent Feature ID without a human.
+
+        The gate is deliberately a *combination* rather than one overloaded
+        field: identity confidence and source authority answer different
+        questions, and folding them together would mean neither could be
+        changed without redefining the other (IDENTITY_MODEL.md §6.5).
+        """
+        return (
+            self.identity_confidence is IdentityConfidence.HIGH
+            and self.source_authority is SourceAuthority.OFFICIAL_MICROSOFT
+        )
 
     @property
     def id_basis_date(self) -> date:
