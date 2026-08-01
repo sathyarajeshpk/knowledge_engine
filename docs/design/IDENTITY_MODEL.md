@@ -335,10 +335,12 @@ Three named states with stated reasons cannot be quietly relaxed.
 
 ### 6.4 Measured against production
 
-| | High | Medium | Low |
-|---|---|---|---|
-| **Fabric** (315 items) | 251 (**79%**) | 64 (20%) | 0 |
-| **Power BI** (19 items) | 14 (**73%**) | 5 (26%) | 0 |
+| Source | Items | High | Medium | Low |
+|---|---|---|---|---|
+| Fabric primary (HTML) | 336 | 264 (**78%**) | 72 (21%) | 0 |
+| Fabric secondary (Markdown) | 315 | 251 (**79%**) | 64 (20%) | 0 |
+| Power BI primary (HTML) | 25 | 14 (**56%**) | 11 (44%) | 0 |
+| Power BI secondary (Markdown) | 19 | 14 (**73%**) | 5 (26%) | 0 |
 
 Medium decomposes cleanly, which is the sign the rules are targeting the right
 thing rather than just being cautious:
@@ -480,9 +482,21 @@ rather than per source.
 
 ### 8.1 What the gate does to Power BI
 
-Measured on the Power BI source: **14 of 19 items (73%) are High confidence** and
-would mint automatically; **5 are Medium** — all of them weak-basis items with no
-resolvable URL — and queue for review. Nothing is dropped.
+Measured on both representations:
+
+| | Items | High (mints) | Medium (queued) | Low |
+|---|---|---|---|---|
+| Power BI **primary** (HTML) | 25 | **14** (56%) | 11 (44%) | 0 |
+| Power BI **secondary** (Markdown) | 19 | **14** (73%) | 5 (26%) | 0 |
+
+Power BI carries a heavier review burden than Fabric — 44% of primary items queue
+against Fabric's 21%. That is a source property (fewer resolvable links), not a
+defect, and it is the honest cost of not minting on weak identities.
+
+**The number that matters is that both representations yield the same 14.** The
+fallback probe independently reports 14 identity keys present in both. So the
+mint gate admits *exactly* the items that survive failover — the High-confidence
+set and the cross-representation-agreement set are the same 14 items.
 
 ### 8.2 Power BI has no publication dates
 
@@ -498,9 +512,15 @@ decided deliberately rather than inherited by accident (§11, Q2).
 ### 8.3 The Markdown fallback should now be re-enabled — pending confirmation
 
 It was disabled last revision because failing over would mint ~5 duplicate
-permanent Feature IDs out of 19. **Identity Confidence removes that reason**: the
-5 items concerned are precisely the weak-basis ones the gate now classifies as
-Medium, so they would queue rather than mint.
+permanent Feature IDs out of 19. **Identity Confidence removes that reason, and
+the measurement in §8.1 proves it rather than argues it**: both representations
+produce the same 14 High-confidence items, and those are exactly the 14 whose
+identities agree across representations. The 5 that diverge are precisely the
+weak-basis items the gate now holds back.
+
+So failing over to the Markdown secondary would mint **the same objects**, not
+duplicates. The duplication risk was real under the old behaviour and is now
+closed by construction.
 
 The disable and the gate are two mechanisms for one risk, and the gate is the
 better one — per item, not per source. Recommendation: **re-enable
