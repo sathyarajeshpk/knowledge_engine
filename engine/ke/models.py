@@ -863,6 +863,22 @@ class Provenance:
         )
 
 
+def single_line(text: str) -> str:
+    """Collapse a string onto one line.
+
+    Titles are rendered as the `# ` heading of `feature.md`. A title carrying a
+    newline could therefore introduce a *second* heading into the article, and a
+    source that can forge structure in the stored document can make an object
+    claim to be a different feature than its `metadata.yaml` says it is.
+
+    Enforced on the type rather than in each adapter, so it holds for every
+    adapter that has ever existed and every one that has not been written yet.
+    A title that is already one line is unchanged, so this cannot cause churn in
+    stored objects.
+    """
+    return " ".join(text.split())
+
+
 @dataclass(frozen=True)
 class RawItem:
     """A normalised item from a source, before it has an identity.
@@ -920,6 +936,10 @@ class RawItem:
     #: case. M2 populates it from the review queue when re-discovering.
     first_discovered_date: date | None = None
 
+    def __post_init__(self) -> None:
+        # See `single_line`. Frozen, so this goes through `object.__setattr__`.
+        object.__setattr__(self, "title", single_line(self.title))
+
     @property
     def mints_automatically(self) -> bool:
         """Whether M2 may mint a permanent Feature ID without a human.
@@ -972,6 +992,9 @@ class KnowledgeObject:
     # --- Identity (engine-owned, immutable after minting) ---
     id: FeatureId
     slug: str
+    #: Rendered as the article's `# ` heading, so it is forced onto one line.
+    #: See `single_line` -- enforced here as well as on `RawItem` because an
+    #: object can also be constructed by reading a hand-edited `metadata.yaml`.
     title: str
 
     # --- Provenance (engine-owned) ---
@@ -1031,6 +1054,9 @@ class KnowledgeObject:
     generation: dict[ArtifactType, GenerationEntry] = field(default_factory=dict)
 
     schema_version: int = 1
+
+    def __post_init__(self) -> None:
+        self.title = single_line(self.title)
 
     # -- derived ---------------------------------------------------------
 

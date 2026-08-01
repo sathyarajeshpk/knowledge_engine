@@ -91,6 +91,11 @@ def build_parser() -> argparse.ArgumentParser:
     harvest.add_argument("--pack", metavar="NAME", help="pack to harvest")
     harvest.add_argument("--repo-root", metavar="PATH", type=Path)
     harvest.add_argument(
+        "--notify",
+        action="store_true",
+        help="send the digest through configured channels (off by default)",
+    )
+    harvest.add_argument(
         "--dry-run",
         action="store_true",
         help="report what would be minted without writing anything",
@@ -177,6 +182,17 @@ def _packs_for(args: argparse.Namespace) -> tuple[Path, list[Pack]] | tuple[Path
     except PackError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return repo_root, None
+    if not packs:
+        # Finding nothing is an error, not an empty success. A mistyped
+        # `--repo-root` -- or a checkout that did not include `domain-packs/` --
+        # would otherwise make every command exit 0 having done nothing, and the
+        # weekly workflow would report a green run week after week while the
+        # engine harvested nothing at all.
+        print(
+            f"error: no domain packs found under {repo_root / 'domain-packs'}",
+            file=sys.stderr,
+        )
+        return repo_root, None
     if getattr(args, "pack", None):
         packs = [p for p in packs if args.pack in (p.name, p.root.name)]
         if not packs:
@@ -194,7 +210,22 @@ def _run_harvest(args: argparse.Namespace) -> int:
 
     exit_code = 0
     for pack in packs:
-        report = harvest_pack(pack, clock=SystemClock(), dry_run=args.dry_run)
+        from ke.lock import LockError, pack_lock
+
+        try:
+            # Two harvests minting at once would both allocate the same ID, and
+            # a duplicate Feature ID is permanent. The workflow's concurrency
+            # group covers scheduled runs; this covers everything else.
+            with pack_lock(pack.state_dir, holder="ke harvest"):
+                report = harvest_pack(
+                    pack,
+                    clock=SystemClock(),
+                    dry_run=args.dry_run,
+                    notify=getattr(args, "notify", False),
+                )
+        except LockError as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 2
         print(f"\n=== {report.summary_line()} ===\n")
 
         if report.minted:
@@ -221,7 +252,22 @@ def _run_harvest(args: argparse.Namespace) -> int:
                   "(nothing was dropped) — see indexes/review-queue.md\n")
 
         if report.index_paths:
-            print(f"  Rebuilt {len(report.index_paths)} index file(s)\n")
+            print(f"  Rebuilt {len(report.index_paths)} index file(s)")
+        if report.digest_path:
+            print(f"  Digest: {report.digest_path}")
+        for line in report.notifications:
+            print(f"  Notified {line}")
+        for line in report.notification_failures:
+            # Already redacted by `notify_all`; a notifier failure is never
+            # allowed to fail the run.
+            print(f"  ! notification failed — {line}")
+        print()
+
+        for message in report.warnings:
+            # Not an error, so the exit code is untouched: the run worked. It is
+            # printed anyway because the result is not what the reader would
+            # otherwise assume.
+            print(f"    ! {message}")
 
         for message in report.review_items:
             print(f"    !! SOURCE UNREACHABLE — {message}")

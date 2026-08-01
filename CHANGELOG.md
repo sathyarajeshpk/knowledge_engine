@@ -35,7 +35,66 @@ it protects data rather than commands.
 
 ## [Unreleased]
 
-Nothing yet. M1 (Discovery) begins after M0 is reviewed and merged.
+Nothing yet. M7 (Retrieval and on-demand generation) begins after M6 is reviewed
+and merged.
+
+---
+
+## [0.7.0] — 2026-08-01
+
+Seventh milestone: **M6 — Weekly automation**.
+Release notes: [`docs/releases/v0.7.0.md`](docs/releases/v0.7.0.md).
+
+The engine runs itself. First milestone with nobody watching, which is also the
+first milestone where it holds credentials and a write token — so it ships with
+a security review.
+
+**Schema version:** 1 (unchanged)
+
+### Added
+
+- `digest.py` and the `write_digest` stage — one Markdown digest per ISO week at
+  `digests/YYYY-Www.md`, written even when the run found nothing
+  ([ADR-0037](docs/adr/0037-a-digest-every-week-even-an-empty-one.md)).
+- `notify/` — the pluggable notifier protocol from ADR-0013, with GitHub Issue
+  and SMTP email channels. Unconfigured channels are skipped, never failed; a
+  notifier can never fail the harvest.
+- Pattern-based secret redaction, catching credentials the engine never held
+  ([ADR-0038](docs/adr/0038-redact-what-looks-like-a-secret.md)).
+- `lock.py` — `O_CREAT | O_EXCL` around minting, with stale-lock reclamation
+  ([ADR-0039](docs/adr/0039-a-lock-file-around-minting.md)).
+- `.github/workflows/weekly-harvest.yml` — Sunday 06:00 UTC, least privilege,
+  validates before *and* after harvesting, commits only `domain-packs/`.
+- `ke harvest --notify` (off by default).
+- `HarvestReport.warnings` — the run worked and you should still know something.
+  Rendered in the digest below errors, above the summary; does not change the
+  exit code.
+- `docs/reviews/M6_SECURITY_REVIEW.md` — threat model, ten review areas, six
+  findings, none high severity. A standing deliverable from M6 onward.
+- 99 tests: `test_security.py` (56), `test_workflow_push.py` (9),
+  `test_digest.py` (30), plus regressions. 366 → 465.
+
+### Fixed
+
+- **A source-supplied title could forge structure in the stored article.** A
+  title carrying a newline followed by `# ` produced a second heading in
+  `feature.md`, letting a source make an object appear to be a different feature
+  than its `metadata.yaml` says. Titles are now single-line by type invariant.
+  Found by the security suite.
+- **A pack with no classification rules silently defaulted every object.**
+  `classify_objects` returned early when rules were absent, storing every object
+  with `category: None` and `needs_review: False` — invisible in the review queue
+  and reported as a clean run. It is the state every new pack starts in.
+  Microsoft Fabric was unaffected only because it has rules.
+- **A command finding no packs exited 0 having done nothing.** A mistyped
+  `--repo-root` would have produced a green weekly run, every week, forever.
+
+### Known
+
+- Dependencies are not pinned by hash and Actions are pinned by tag rather than
+  SHA (TD-6, TD-8). Both are supply-chain hardening scheduled for M7.
+- The 35 objects with polluted revision history from M3 remain, still surfaced
+  as `REV002` warnings rather than rewritten.
 
 ---
 

@@ -14,16 +14,26 @@ Status legend: **done** · **in progress** · **planned**
 
 | # | Milestone | Status | Delivers |
 |---|---|---|---|
+Scope moved as the project met reality. Where a milestone delivered something
+other than what was first planned, the table records what was **built**; the
+original intent is preserved in the section for that milestone below.
+
+| # | Milestone | Status | Delivered |
+|---|---|---|---|
 | M0 | Foundation, schema, guardrails | **done** | Schema contract, Feature IDs, field ownership, `ke validate`, CI |
-| M1 | Discovery | **planned** | Source adapters, normalisation, `ke discover` |
-| M2 | Identity, dedupe, storage | **planned** | ID minting, 3-layer dedupe, `ke harvest` |
-| M3 | Classification and learning metadata | **planned** | Tier/priority/difficulty rules, indexes |
-| M4 | Relationships and knowledge graph | **planned** | Prerequisite DAG, learning paths |
-| M5 | Revisions, updates, staleness | **planned** | In-place updates, revision history |
-| M6 | Weekly automation | **planned** | Digest, notifications, Sunday cron |
-| M7 | Retrieval and on-demand generation | **planned** | `ke search`, context packs |
+| M1 | Discovery and acquisition | **done** | Source adapters, normalisation, identity, confidence gate, `ke discover` |
+| M2 | Identity, dedupe, storage | **done** | ID minting, 3-layer dedupe, `ke harvest` end to end |
+| M3 | The update path | **done** | In-place updates, revision detection, idempotency, preservation |
+| M4 | Orchestration and classification | **done** | Staged pipeline, deterministic classification, override handling |
+| M5 | Review workflow and history | **done** | Unified `ke review`, `ke history`, `ke supersede`, chain validation |
+| M6 | Weekly automation | **done** | Digest, notifications, lock, Sunday cron, security review |
+| M7 | Retrieval and on-demand generation | **planned** | `ke search`, context packs, supply-chain hardening |
 | M8 | Second pack (Power BI) | **planned** | Proof the engine is pack-agnostic |
 | M9 | Hardening and split-readiness | **planned** | Migrations, runbook, extraction guide |
+
+Relationships and the knowledge graph — originally M4 — were deferred rather
+than dropped. The engine has produced 222 objects and no curated relationships,
+so the graph has nothing to order yet; it lands once there is a reason for it.
 
 ---
 
@@ -118,14 +128,17 @@ Must land before the cron, because every run after the first is an update run.
 
 ---
 
-### M6 — Weekly automation · **planned**
+### M6 — Weekly automation · **done**
 
-- [ ] `digest.py` — one digest per ISO week
-- [ ] `notify/base.py` — pluggable Notifier protocol
-- [ ] `notify/github_issue.py` — durable audit trail, no secrets needed
-- [ ] `notify/smtp_email.py` — inbox copy; failure must not fail the run
-- [ ] Sunday cron with a `concurrency` group and `git pull --rebase`
-- [ ] **Always append to `run-log.md`**, so a commit lands weekly and GitHub cannot disable the cron after 60 quiet days
+- [x] `digest.py` — one digest per ISO week, written even on an empty run ([ADR-0037](adr/0037-a-digest-every-week-even-an-empty-one.md))
+- [x] `notify/base.py` — pluggable Notifier protocol, with pattern-based redaction ([ADR-0038](adr/0038-redact-what-looks-like-a-secret.md))
+- [x] `notify/github_issue.py` — durable audit trail, no secrets needed
+- [x] `notify/smtp_email.py` — inbox copy; failure must not fail the run
+- [x] Sunday cron with a `concurrency` group and `git pull --rebase`
+- [x] **Always append to `run-log.md`**, so a commit lands weekly and GitHub cannot disable the cron after 60 quiet days
+- [x] `lock.py` — exclusive lock around minting ([ADR-0039](adr/0039-a-lock-file-around-minting.md)) — *added in scope*
+- [x] Security & Vulnerability Review ([M6_SECURITY_REVIEW.md](reviews/M6_SECURITY_REVIEW.md)) — *standing deliverable from M6 onward*
+- [x] The workflow's push script tested by executing it, not by reading it
 
 ---
 
@@ -136,6 +149,10 @@ Must land before the cron, because every run after the first is an update run.
 - [ ] `generate.py` — context packs including prerequisites
 - [ ] `--attach` — write artifacts and update the generation block
 - [ ] `ke status` + `generation-status.md`
+- [ ] **Supply-chain hardening carried from M6:** pin dependencies by hash
+      (TD-6), enable Dependabot alerts (TD-7), pin Actions to commit SHAs
+      (TD-8). See [M6_SECURITY_REVIEW.md](reviews/M6_SECURITY_REVIEW.md) S-1,
+      S-2, S-4.
 
 ---
 

@@ -56,6 +56,8 @@ class HarvestContext:
     report: HarvestReport
     fetcher: object | None = None
     dry_run: bool = False
+    #: Off by default so tests and manual runs never send anything.
+    notify: bool = False
 
     # Filled in by stages, in order.
     discovery: DiscoveryResult | None = None
@@ -66,6 +68,9 @@ class HarvestContext:
     approved_dates: dict[str, object] = field(default_factory=dict)
     #: Objects created or updated this run, for stages that follow.
     touched: list[str] = field(default_factory=list)
+
+    #: The digest, once `write_digest` has run. Notification reads it.
+    digest: object | None = None
 
     #: Set by a stage to end the run early without treating it as a failure.
     stop: bool = False
@@ -195,12 +200,25 @@ def classify_objects(ctx: HarvestContext) -> None:
     by `overrides` (ADR-0008). That is what stops a rule tweak rewriting every
     object in the pack: classification lands once, and changing your mind later
     is a deliberate act rather than a side effect of editing `pack.yml`.
+
+    A pack with **no** rules is not a reason to skip this stage. Returning early
+    used to look like a harmless optimisation, but it meant every object in such
+    a pack was stored with `category: None` and `needs_review: False` — silently
+    unclassified, invisible in the review queue, and reported as a clean run.
+    That is precisely the silent guess ADR-0010 forbids, and it would have hit
+    the first new pack added with its `rules:` section not yet written. No rules
+    means everything is unmatched, so everything gets flagged.
     """
     if ctx.dry_run:
         return
     rules = ctx.pack.classification_rules
     if not rules:
-        return
+        # Said once, at run level. Flagging two hundred objects without naming
+        # the cause tells the reader what, but never why.
+        ctx.report.warnings.append(
+            f"{ctx.pack.name}: no classification rules are defined in pack.yml, "
+            "so every object will be flagged for review"
+        )
 
     from ke.classify import applicable, propose, unmatched_fields
     from ke.harvest import load_existing_objects
@@ -268,6 +286,22 @@ def rebuild_indexes(ctx: HarvestContext) -> None:
     ]
 
 
+def write_digest(ctx: HarvestContext) -> None:
+    """Write the weekly digest, **even when nothing was found**.
+
+    "No updates this week" and "the harvest did not run" must be
+    distinguishable, and the only way to tell them apart is that one produced a
+    file. On a cron, with nobody watching, that distinction is the whole point.
+    """
+    if ctx.dry_run:
+        return
+    from ke.digest import gather, write
+
+    data = gather(ctx.pack, ctx.report, ctx.clock.run_id(), ctx.clock.today())
+    ctx.digest = data
+    ctx.report.digest_path = str(write(ctx.pack, data).relative_to(ctx.pack.root))
+
+
 def append_run_log(ctx: HarvestContext) -> None:
     """Append one line, **always** — including on a run that found nothing.
 
@@ -281,6 +315,45 @@ def append_run_log(ctx: HarvestContext) -> None:
     _append_run_log(ctx.pack, ctx.clock, ctx.report)
 
 
+def send_notifications(ctx: HarvestContext) -> None:
+    """Tell a human. **Last**, and unable to fail the run.
+
+    Everything is already on disk by now, so a dead SMTP server or an expired
+    token is an inconvenience rather than a lost harvest. `notify_all` never
+    raises, and every failure message is redacted before it is recorded --
+    an SMTP library will happily put the connection URL, password included, in
+    an exception.
+    """
+    if ctx.dry_run or ctx.digest is None or not ctx.notify:
+        return
+    from ke.digest import render, subject
+    from ke.notify import Notification, notify_all
+    from ke.notify.github_issue import GitHubIssueNotifier
+    from ke.notify.smtp_email import SmtpNotifier
+
+    channels = [
+        channel
+        for channel in (
+            GitHubIssueNotifier.from_environment(),
+            SmtpNotifier.from_environment(),
+        )
+        if channel is not None
+    ]
+    if not channels:
+        return
+
+    delivered, failures = notify_all(
+        channels,
+        Notification(
+            subject=subject(ctx.digest),
+            body=render(ctx.digest),
+            pack_name=ctx.pack.name,
+        ),
+    )
+    ctx.report.notifications = delivered
+    ctx.report.notification_failures = failures
+
+
 #: The pipeline. Adding a stage is one entry here plus one function; the
 #: ordering constraints are documented on the stages themselves.
 STAGES: tuple[Stage, ...] = (
@@ -292,7 +365,9 @@ STAGES: tuple[Stage, ...] = (
     classify_objects,
     persist_state,
     rebuild_indexes,
+    write_digest,
     append_run_log,
+    send_notifications,
 )
 
 
