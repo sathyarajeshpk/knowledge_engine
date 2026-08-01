@@ -113,6 +113,15 @@ def validate_repo(repo_root: Path, pack_name: str | None = None) -> list[Finding
             ]
 
     findings: list[Finding] = []
+
+    # Runs whatever `--pack` says. A symlink out of `domain-packs/` is a fact
+    # about the repository, not about one pack, and a security check that a flag
+    # can switch off is a security check that will be switched off. It also has
+    # to run here rather than inside `validate_pack`, because a symlinked pack
+    # *root* is skipped by `find_roots` and would otherwise be reported by
+    # nothing at all.
+    findings.extend(_check_escaping_links(repo_root))
+
     loaded: list[Pack] = []
     for root in roots:
         try:
@@ -144,6 +153,45 @@ def validate_repo(repo_root: Path, pack_name: str | None = None) -> list[Finding
     if pack_name is None and len(loaded) > 1:
         findings.extend(_validate_across_packs(loaded))
     return findings
+
+
+def _check_escaping_links(repo_root: Path) -> list[Finding]:
+    """SEC001 -- a symlink under `domain-packs/` that points outside it.
+
+    ADR-0016 makes a pack pure data so that adding one needs no engine change
+    and therefore no engine review. A symlink is the one thing a data-only
+    change can contain that reaches back out at engine-owned files: the weekly
+    workflow writes state, knowledge and indexes under the pack root while
+    holding a repository write token, so a redirected component sends those
+    writes wherever the link points.
+
+    The boundary is `domain-packs/`, not the repository root, and the difference
+    is the whole point. `domain-packs/x/state -> ../../.git` never leaves the
+    repository and is exactly the attack: engine-owned paths are *inside* the
+    repository, so a check that only caught escapes from it would catch nothing
+    that matters.
+
+    ERROR, not warning. Every other cross-pack finding in this module is a
+    warning because the engine is not entitled to judge the knowledge; this one
+    judges the *filesystem*, where a pack has no legitimate reason to reach
+    outside its own tree and no ambiguity about what it means when it does.
+    """
+    from ke.paths import escaping_links, resolved
+
+    packs_dir = resolved(Path(repo_root) / PACKS_DIRNAME)
+    if not packs_dir.is_dir():
+        return []
+    return [
+        Finding(
+            Level.ERROR,
+            "SEC001",
+            f"{PACKS_DIRNAME}/{link.relative_to(packs_dir)}",
+            f"symlink points outside {PACKS_DIRNAME}/, to {target}. Packs are "
+            "data and are reviewed as data; a link out of one redirects "
+            "automated writes to a path nobody reviewed.",
+        )
+        for link, target in escaping_links(packs_dir)
+    ]
 
 
 def _validate_across_packs(packs: list[Pack]) -> list[Finding]:

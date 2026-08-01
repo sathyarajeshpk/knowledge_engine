@@ -40,6 +40,7 @@ from ke.models import (
     Revision,
 )
 from ke.normalize import canonical_url, content_hash, slugify, truncate_summary, url_hash
+from ke.paths import ensure_contained
 
 #: Words reserved in `feature.md` for everything that is not the summary -- the
 #: heading is excluded from the count, but the source link line is not. Measured
@@ -162,10 +163,29 @@ def render_metadata(obj: KnowledgeObject) -> str:
 
 
 def object_dir(pack_knowledge_dir: Path, obj: KnowledgeObject) -> Path:
-    return (
+    """Where an object lives. Every new-object write is rooted here.
+
+    The containment check closes the case where the path is entirely
+    engine-derived but a *component* of it is a symlink: `knowledge/` or
+    `knowledge/2026` pointing elsewhere makes every path built under it well
+    formed and wrong (see `ke.paths`).
+
+    The boundary is the **pack root**, `pack_knowledge_dir.parent`, not the
+    knowledge directory. Checking a path against the very argument it was built
+    from proves only that `..` does not appear in a Feature ID -- which the ID
+    grammar already guarantees -- and would pass a symlinked `knowledge/`
+    unharmed. That was the first version of this guard, and the test above it
+    caught it.
+
+    It cannot catch a symlinked pack root, for the same reason one level up.
+    `Pack.find_roots` refuses those, and `ke validate` reports both as SEC001.
+    """
+    return ensure_contained(
         pack_knowledge_dir
         / obj.id.knowledge_subpath
-        / obj.id.directory_name(obj.slug)
+        / obj.id.directory_name(obj.slug),
+        pack_knowledge_dir.parent,
+        what=f"object directory for {obj.id}",
     )
 
 

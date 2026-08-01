@@ -14,6 +14,8 @@ from typing import Any, Iterator
 
 import yaml
 
+from ke.paths import contained
+
 #: Directory under the repository root where packs live.
 PACKS_DIRNAME = "domain-packs"
 
@@ -65,6 +67,16 @@ class Pack:
         when one pack is broken -- `ke validate` across nine packs, say -- use
         this and load each root themselves, so a single malformed `pack.yml`
         cannot suppress every other pack's results.
+
+        A directory that resolves outside `domain-packs/` is **not a pack**. A
+        pack root is the base of every path the engine subsequently writes --
+        state, knowledge, indexes, digests -- so admitting a symlinked one would
+        redirect all of them at once, in a process that holds a repository write
+        token every Sunday. The boundary is `domain-packs/` rather than the
+        repository, because a link to `../../.git` never leaves the repository
+        and is the case worth stopping. Skipping it here is not silent:
+        `ke validate` reports the same link as SEC001 on the pull request that
+        introduces it (see `ke.paths`).
         """
         packs_dir = Path(repo_root) / PACKS_DIRNAME
         if not packs_dir.is_dir():
@@ -72,7 +84,9 @@ class Pack:
         return sorted(
             child
             for child in packs_dir.iterdir()
-            if child.is_dir() and (child / "pack.yml").is_file()
+            if child.is_dir()
+            and (child / "pack.yml").is_file()
+            and contained(child, packs_dir)
         )
 
     @classmethod
