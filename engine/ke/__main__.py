@@ -182,6 +182,17 @@ def _packs_for(args: argparse.Namespace) -> tuple[Path, list[Pack]] | tuple[Path
     except PackError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return repo_root, None
+    if not packs:
+        # Finding nothing is an error, not an empty success. A mistyped
+        # `--repo-root` -- or a checkout that did not include `domain-packs/` --
+        # would otherwise make every command exit 0 having done nothing, and the
+        # weekly workflow would report a green run week after week while the
+        # engine harvested nothing at all.
+        print(
+            f"error: no domain packs found under {repo_root / 'domain-packs'}",
+            file=sys.stderr,
+        )
+        return repo_root, None
     if getattr(args, "pack", None):
         packs = [p for p in packs if args.pack in (p.name, p.root.name)]
         if not packs:
