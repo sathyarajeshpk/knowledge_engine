@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from datetime import date
 from pathlib import Path
 
 from ke import __version__
@@ -172,6 +173,61 @@ def build_parser() -> argparse.ArgumentParser:
     supersede.add_argument("--pack", metavar="NAME")
     supersede.add_argument("--repo-root", metavar="PATH", type=Path)
     supersede.set_defaults(handler=_run_supersede)
+
+    search = subcommands.add_parser(
+        "search",
+        help="find stored knowledge objects",
+        description=(
+            "Filters compose by AND: every option you give must match. There is "
+            "no query language and no relevance ranking — a wrong ranking hides "
+            "things convincingly, which is worse than no ranking at all."
+        ),
+    )
+    search.add_argument("text", nargs="?", help="substring of title, category or tags")
+    search.add_argument("--tier", type=int, choices=(1, 2, 3))
+    search.add_argument("--priority", choices=("high", "medium", "low"))
+    search.add_argument(
+        "--difficulty", choices=("beginner", "intermediate", "advanced")
+    )
+    search.add_argument(
+        "--learning-status",
+        choices=("not-started", "in-progress", "learned", "revisit"),
+    )
+    search.add_argument("--status", choices=("active", "replaced", "deprecated"))
+    search.add_argument("--category", metavar="NAME")
+    search.add_argument("--tag", metavar="TAG")
+    search.add_argument("--source", metavar="NAME")
+    search.add_argument("--since", metavar="YYYY-MM-DD")
+    search.add_argument("--until", metavar="YYYY-MM-DD")
+    search.add_argument(
+        "--needs-review", action="store_true", help="only objects flagged for review"
+    )
+    search.add_argument(
+        "--stale", action="store_true", help="only objects with a stale artifact"
+    )
+    search.add_argument("--limit", type=int, metavar="N")
+    search.add_argument(
+        "--ids-only",
+        action="store_true",
+        help="print bare Feature IDs, one per line, for piping",
+    )
+    search.add_argument("--pack", metavar="NAME")
+    search.add_argument("--repo-root", metavar="PATH", type=Path)
+    search.set_defaults(handler=_run_search)
+
+    get = subcommands.add_parser(
+        "get",
+        help="show one knowledge object in full",
+        description=(
+            "Everything the object records about itself, including artifact "
+            "status. The article text is a file on disk and is deliberately not "
+            "duplicated here."
+        ),
+    )
+    get.add_argument("id", help="Feature ID, e.g. MSF-2026-07-001")
+    get.add_argument("--pack", metavar="NAME")
+    get.add_argument("--repo-root", metavar="PATH", type=Path)
+    get.set_defaults(handler=_run_get)
     return parser
 
 
@@ -434,6 +490,89 @@ def _run_supersede(args: argparse.Namespace) -> int:
             last = exc
     print(f"error: {last}", file=sys.stderr)
     return 2
+
+
+def _parse_day(raw: str | None, flag: str) -> "date | None":
+    """Parse a `--since` / `--until` value, or explain why it will not parse.
+
+    Raises rather than silently ignoring an unparseable date: a filter that
+    quietly does nothing returns confidently wrong results, which is the worst
+    behaviour available to a search command.
+    """
+    if raw is None:
+        return None
+    try:
+        return date.fromisoformat(raw)
+    except ValueError as exc:
+        raise ValueError(f"{flag} must be YYYY-MM-DD, not {raw!r}") from exc
+
+
+def _query_from(args: argparse.Namespace) -> "Query":
+    from ke.models import Difficulty, LearningPriority, LearningStatus, ObjectStatus, Tier
+    from ke.retrieve import Query
+
+    return Query(
+        text=args.text,
+        tier=Tier(args.tier) if args.tier else None,
+        learning_priority=LearningPriority(args.priority) if args.priority else None,
+        difficulty=Difficulty(args.difficulty) if args.difficulty else None,
+        learning_status=(
+            LearningStatus(args.learning_status) if args.learning_status else None
+        ),
+        status=ObjectStatus(args.status) if args.status else None,
+        category=args.category,
+        tag=args.tag,
+        source=args.source,
+        since=_parse_day(args.since, "--since"),
+        until=_parse_day(args.until, "--until"),
+        # `store_true` gives False when absent, but False means "only objects
+        # NOT flagged", which is a different question. Absent must stay None.
+        needs_review=True if args.needs_review else None,
+        stale=True if args.stale else None,
+    )
+
+
+def _run_search(args: argparse.Namespace) -> int:
+    from ke.retrieve import render_results, search
+
+    _, packs = _packs_for(args)
+    if packs is None:
+        return 2
+
+    try:
+        query = _query_from(args)
+    except ValueError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 2
+
+    for pack in packs:
+        found = search(pack, query)
+        shown = found[: args.limit] if args.limit else found
+        if args.ids_only:
+            for obj in shown:
+                print(obj.id)
+            continue
+        if len(packs) > 1:
+            print(f"\n=== {pack.name} ===")
+        print(render_results(shown, total=len(found)))
+    return 0
+
+
+def _run_get(args: argparse.Namespace) -> int:
+    from ke.retrieve import render_object, resolve
+
+    _, packs = _packs_for(args)
+    if packs is None:
+        return 2
+    try:
+        _, obj, directory = resolve(packs, args.id)
+    except KeyError as exc:
+        # `str(KeyError)` is the repr of its argument, quotes and all. Reaching
+        # for args[0] keeps the message readable rather than 'like this'.
+        print(f"error: {exc.args[0] if exc.args else exc}", file=sys.stderr)
+        return 2
+    print(render_object(obj, directory))
+    return 0
 
 
 def _run_validate(args: argparse.Namespace) -> int:

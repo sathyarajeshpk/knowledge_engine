@@ -1073,8 +1073,19 @@ class KnowledgeObject:
     def knowledge_subpath(self) -> str:
         return f"{self.id.knowledge_subpath}/{self.directory_name}"
 
+    @property
     def stale_artifacts(self) -> tuple[ArtifactType, ...]:
-        """Artifact types generated from a superseded revision."""
+        """Artifact types generated from a superseded revision.
+
+        A **property**, like every other derived accessor above it. It was a
+        plain method until M7, which is a distinction with a nasty edge: a bound
+        method is always truthy, so `if obj.stale_artifacts:` was silently true
+        for every object in the pack, including the 222 with no artifacts at
+        all. The first code to read it got that wrong immediately.
+
+        Nothing about this value is expensive or side-effecting, so there was
+        never a reason for it to look like a call.
+        """
         current = self.current_revision
         return tuple(
             artifact_type
