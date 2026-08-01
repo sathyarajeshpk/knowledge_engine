@@ -95,7 +95,7 @@ expanding functionality. Classification moves to M4.
 
 ---
 
-### M4 — Relationships and knowledge graph · **planned**
+### M4 — Orchestration and classification · **done** (v0.5.0)
 
 - [ ] `graph.py` — referential integrity, DAG cycle detection
 - [ ] Inverse consistency for `replaced_by`/`replaces`

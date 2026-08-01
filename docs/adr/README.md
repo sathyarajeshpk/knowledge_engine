@@ -62,6 +62,7 @@ decision is a conscious act rather than a tidy-up.
 | [0031](0031-harvest-ordering.md) | The order of pipeline stages is a safety property | Accepted |
 | [0032](0032-state-failure-policies.md) | Each state file gets its own failure policy | Accepted |
 | [0033](0033-update-scope.md) | An update refreshes a subset of engine-owned fields | Accepted |
+| [0034](0034-classification-writes-once.md) | Classification proposes once and never churns | Accepted |
 
 ## Template
 
