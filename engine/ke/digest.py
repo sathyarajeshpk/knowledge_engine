@@ -110,6 +110,17 @@ def render(data: DigestData) -> str:
             lines.append(f"- … and {len(report.errors) - 20} more")
         lines.append("")
 
+    # Below errors, above the summary. A warning means the run *worked* and the
+    # result is still not what you would assume -- which is easy to miss if it
+    # sits under a headline count, and easy to dismiss if it is dressed as an
+    # error.
+    if report.warnings:
+        lines += ["## Worth knowing", ""]
+        lines += [f"- {message}" for message in report.warnings[:20]]
+        if len(report.warnings) > 20:
+            lines.append(f"- … and {len(report.warnings) - 20} more")
+        lines.append("")
+
     lines += [
         "## Summary",
         "",

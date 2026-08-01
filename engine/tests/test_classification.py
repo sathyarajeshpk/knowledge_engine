@@ -339,3 +339,74 @@ def test_indexes_are_rebuilt_after_classification(pack, monkeypatch):
     run(pack, [make_item(title="Direct Lake is generally available")], monkeypatch)
     assert (pack.indexes_dir / "INDEX.md").exists()
 
+
+# ---------------------------------------------------------------------------
+# A pack with no rules at all
+# ---------------------------------------------------------------------------
+
+
+@pytest.fixture
+def ruleless_pack(tmp_path) -> Pack:
+    """A pack whose `rules:` section has not been written yet.
+
+    Not a hypothetical: this is the state every new domain pack starts in, and
+    M8 exists to add one.
+    """
+    root = tmp_path / "domain-packs" / "new-pack"
+    (root / "state").mkdir(parents=True)
+    (root / "pack.yml").write_text(
+        "name: new-pack\nid_prefix: NEW\nschema_version: 1\n"
+        "limits:\n  max_summary_words: 120\nsources: []\n",
+        encoding="utf-8",
+    )
+    (root / "state" / "id-registry.json").write_text('{"prefix": "NEW"}\n')
+    return Pack.load(root)
+
+
+def test_a_pack_with_no_rules_flags_its_objects_rather_than_defaulting_them(
+    ruleless_pack, monkeypatch
+):
+    """Regression: the classify stage used to return early when rules were empty.
+
+    The object was still minted, still stored, and still reported as a clean
+    run — but with `category: None`, a default `tier`, and `needs_review: False`,
+    so it never appeared in the review queue and nothing anywhere said it had
+    not been classified. That is the silent guess ADR-0010 forbids, wearing the
+    costume of a successful harvest.
+    """
+    run(ruleless_pack, [make_item()], monkeypatch)
+    obj = load_existing_objects(ruleless_pack)[0][0]
+
+    assert obj.category is None
+    assert obj.needs_review is True, (
+        "an object no rule could place must be flagged, not silently defaulted"
+    )
+
+
+def test_an_unclassifiable_object_reaches_the_review_queue(ruleless_pack, monkeypatch):
+    """The flag is only worth anything if it surfaces where a human looks."""
+    from ke.reviewq import TaskKind, counts
+
+    run(ruleless_pack, [make_item()], monkeypatch)
+
+    assert counts(ruleless_pack)[TaskKind.UNCLASSIFIED] == 1
+
+
+def test_a_pack_with_no_rules_says_so_once(ruleless_pack, monkeypatch):
+    """Naming the cause, not just the symptom.
+
+    Flagging every object without explaining why would leave the reader with a
+    backlog and no idea that one missing config section produced all of it.
+    """
+    report = run(ruleless_pack, [make_item(title=f"Feature {n}") for n in range(3)], monkeypatch)
+
+    assert len(report.warnings) == 1
+    assert "no classification rules" in report.warnings[0]
+
+
+def test_a_missing_rules_section_is_a_warning_not_an_error(ruleless_pack, monkeypatch):
+    """The run genuinely worked. Calling it an error trains people to ignore errors."""
+    report = run(ruleless_pack, [make_item()], monkeypatch)
+
+    assert report.errors == []
+    assert report.warnings != []

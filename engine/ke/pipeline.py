@@ -200,12 +200,25 @@ def classify_objects(ctx: HarvestContext) -> None:
     by `overrides` (ADR-0008). That is what stops a rule tweak rewriting every
     object in the pack: classification lands once, and changing your mind later
     is a deliberate act rather than a side effect of editing `pack.yml`.
+
+    A pack with **no** rules is not a reason to skip this stage. Returning early
+    used to look like a harmless optimisation, but it meant every object in such
+    a pack was stored with `category: None` and `needs_review: False` — silently
+    unclassified, invisible in the review queue, and reported as a clean run.
+    That is precisely the silent guess ADR-0010 forbids, and it would have hit
+    the first new pack added with its `rules:` section not yet written. No rules
+    means everything is unmatched, so everything gets flagged.
     """
     if ctx.dry_run:
         return
     rules = ctx.pack.classification_rules
     if not rules:
-        return
+        # Said once, at run level. Flagging two hundred objects without naming
+        # the cause tells the reader what, but never why.
+        ctx.report.warnings.append(
+            f"{ctx.pack.name}: no classification rules are defined in pack.yml, "
+            "so every object will be flagged for review"
+        )
 
     from ke.classify import applicable, propose, unmatched_fields
     from ke.harvest import load_existing_objects

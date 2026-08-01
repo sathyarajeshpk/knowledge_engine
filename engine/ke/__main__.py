@@ -263,6 +263,12 @@ def _run_harvest(args: argparse.Namespace) -> int:
             print(f"  ! notification failed — {line}")
         print()
 
+        for message in report.warnings:
+            # Not an error, so the exit code is untouched: the run worked. It is
+            # printed anyway because the result is not what the reader would
+            # otherwise assume.
+            print(f"    ! {message}")
+
         for message in report.review_items:
             print(f"    !! SOURCE UNREACHABLE — {message}")
             exit_code = 1

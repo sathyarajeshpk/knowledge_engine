@@ -28,6 +28,11 @@ class HarvestReport:
     written_paths: list[str] = field(default_factory=list)
     index_paths: list[str] = field(default_factory=list)
     review_items: list[str] = field(default_factory=list)
+    #: The run completed, but something about the pack's configuration means the
+    #: result is not what the reader would assume. Kept separate from `errors`
+    #: because conflating "this run failed" with "this run succeeded and you
+    #: should know something" makes both easier to ignore.
+    warnings: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
 
     @property
