@@ -129,7 +129,7 @@ def test_a_freshly_harvested_pack_validates(tmp_path, monkeypatch):
 
     Root cause worth remembering: **two independent computations of one path.**
     """
-    import ke.harvest as harvest_module
+    import ke.pipeline as pipeline_module
     from ke.acquisition import DiscoveryResult
     from ke.harvest import harvest_pack
     from ke.pack import Pack
@@ -146,7 +146,7 @@ def test_a_freshly_harvested_pack_validates(tmp_path, monkeypatch):
 
     items = [make_item(title=f"Feature alpha {n}") for n in range(3)]
     monkeypatch.setattr(
-        harvest_module, "discover_all", lambda *a, **k: DiscoveryResult(items=items)
+        pipeline_module, "discover_all", lambda *a, **k: DiscoveryResult(items=items)
     )
     report = harvest_pack(Pack.load(pack_root), clock=CLOCK)
     assert len(report.minted) == 3
@@ -237,7 +237,7 @@ def test_a_maximum_length_summary_still_validates(tmp_path, monkeypatch):
     different modules and will drift again.
     """
     from ke.acquisition import DiscoveryResult
-    import ke.harvest as harvest_module
+    import ke.pipeline as pipeline_module
     from ke.harvest import harvest_pack
     from ke.pack import Pack
 
@@ -252,7 +252,7 @@ def test_a_maximum_length_summary_still_validates(tmp_path, monkeypatch):
 
     item = make_item(summary=" ".join(["word"] * 120))  # exactly at the limit
     monkeypatch.setattr(
-        harvest_module, "discover_all", lambda *a, **k: DiscoveryResult(items=[item])
+        pipeline_module, "discover_all", lambda *a, **k: DiscoveryResult(items=[item])
     )
     harvest_pack(Pack.load(pack_root), clock=CLOCK)
 
