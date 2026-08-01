@@ -57,6 +57,8 @@ decision is a conscious act rather than a tidy-up.
 | [0026](0026-discovery-chain-provenance.md) | Record the full discovery chain; representation is not adapter | Accepted |
 | [0027](0027-announcement-feature-knowledge-object.md) | Announcement, Feature and Knowledge Object are three things | Accepted |
 | [0028](0028-identity-confidence.md) | Identity Confidence gates minting | Accepted |
+| [0029](0029-knowledge-lifecycle.md) | Knowledge Lifecycle is separate from status | Accepted |
+| [0030](0030-acquisition-subsystem.md) | Acquisition is a subsystem with an enforced boundary | Accepted |
 
 ## Template
 

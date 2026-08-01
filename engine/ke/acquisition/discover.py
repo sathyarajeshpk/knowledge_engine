@@ -16,9 +16,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from ke import confidence
+from ke.acquisition import confidence
 from ke.clock import Clock
-from ke.confidence import Collision
+from ke.acquisition.confidence import Collision
 from ke.models import (
     AdapterType,
     HealthState,
@@ -27,16 +27,16 @@ from ke.models import (
     SourceHealth,
     SourceRole,
 )
-from ke.sources.base import (
+from ke.acquisition.sources.base import (
     Fetcher,
     HttpFetcher,
     SourceDefinition,
     SourceError,
     sort_items,
 )
-from ke.sources.feed import FeedSource
-from ke.sources.html_table import HtmlTableSource
-from ke.sources.markdown_table import MarkdownTableSource
+from ke.acquisition.sources.feed import FeedSource
+from ke.acquisition.sources.html_table import HtmlTableSource
+from ke.acquisition.sources.markdown_table import MarkdownTableSource
 
 #: Adapter type -> implementation. Adding a source type is one entry here plus
 #: one module; nothing downstream changes (ADR-0018).
@@ -83,7 +83,12 @@ class DiscoveryResult:
 
     @property
     def needs_review(self) -> list[RawItem]:
-        """Items held back from minting. Queued, never dropped."""
+        """Items held back from minting. Queued, never dropped.
+
+        Queuing never blocks: every high-confidence item in the same run is
+        still returned in `mintable`. One ambiguous row must not be able to
+        stall a weekly harvest (ADR-0029).
+        """
         return [item for item in self.items if not item.mints_automatically]
 
     @property

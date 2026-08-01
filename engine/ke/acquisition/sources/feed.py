@@ -16,7 +16,7 @@ from __future__ import annotations
 from datetime import date, datetime, timezone
 
 from ke.clock import Clock
-from ke.identity import compute_identity
+from ke.acquisition.identity import compute_identity
 from ke.models import (
     AdapterType,
     DateConfidence,
@@ -27,7 +27,7 @@ from ke.models import (
     SourceRepresentation,
 )
 from ke.normalize import canonical_url, html_to_text, truncate_summary
-from ke.sources.base import Fetcher, SourceDefinition, SourceError, sort_items
+from ke.acquisition.sources.base import Fetcher, SourceDefinition, SourceError, sort_items
 
 DEFAULT_MAX_SUMMARY_WORDS = 120
 

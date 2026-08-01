@@ -41,11 +41,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "engine"))
 
 from ke.clock import SystemClock  # noqa: E402
-from ke.discover import build_source  # noqa: E402
-from ke.identity import IdentityBasis  # noqa: E402
+from ke.acquisition.discover import build_source  # noqa: E402
+from ke.acquisition.identity import IdentityBasis  # noqa: E402
 from ke.models import SourceRole  # noqa: E402
 from ke.pack import Pack  # noqa: E402
-from ke.sources.base import HttpFetcher, SourceError  # noqa: E402
+from ke.acquisition.sources.base import HttpFetcher, SourceError  # noqa: E402
 
 FETCHER = HttpFetcher()
 

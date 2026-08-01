@@ -78,7 +78,7 @@ ownership class, declared in `engine/ke/models.py` and asserted at import time.
 
 | Class | Engine behaviour | Fields |
 |---|---|---|
-| **Engine-owned** | Rewritten freely on every run | `schema_version`, `id`, `slug`, `title`, `source_name`, `source_url`, `announcement_url`, `identity_confidence`, `source_authority`, `published_date`, `discovered_date`, `date_confidence`, `content_hash`, `url_hash`, `reading_time`, `status`, `needs_review`, `revisions`, `generation` |
+| **Engine-owned** | Rewritten freely on every run | `schema_version`, `id`, `slug`, `title`, `source_name`, `source_url`, `announcement_url`, `identity_confidence`, `source_authority`, `published_date`, `discovered_date`, `date_confidence`, `content_hash`, `url_hash`, `reading_time`, `lifecycle`, `status`, `needs_review`, `revisions`, `generation` |
 | **Engine-proposed** | Written **only** if absent, or if not named in `overrides` | `tier`, `learning_priority`, `category`, `tags`, `difficulty`, `workload`, `version` |
 | **User-owned** | **Never written by the engine** | `learning_status`, `notes`, `prerequisites`, `builds_on`, `related_topics`, `replaced_by`, `replaces`, `overrides` |
 
@@ -170,6 +170,10 @@ replaced_by: null
 replaces: null
 
 # --- Lifecycle (engine-owned) ---
+# Two orthogonal axes (ADR-0029):
+#   lifecycle — how far through ACQUISITION this got
+#   status    — whether the KNOWLEDGE is still current
+lifecycle: minted               # discovered|queued|approved|minted|superseded|archived
 status: active
 needs_review: false
 overrides: []
@@ -227,6 +231,7 @@ generation:
 | `related_topics` | list[FeatureId] | yes | Symmetric in meaning; declared one-way (see §6). |
 | `replaced_by` | FeatureId \| null | yes | Set when this object is superseded. |
 | `replaces` | FeatureId \| null | yes | Inverse of `replaced_by`. |
+| `lifecycle` | enum | yes | Acquisition stage. `discovered` \| `queued` \| `approved` \| `minted` \| `superseded` \| `archived`. Orthogonal to `status` — see ADR-0029. |
 | `status` | enum | yes | `active` \| `replaced` \| `deprecated`. There is no `deleted`. |
 | `needs_review` | bool | yes | Engine could not classify confidently, or flagged a near-duplicate. |
 | `overrides` | list[string] | yes | Engine-proposed fields the user has locked. |

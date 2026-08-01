@@ -26,8 +26,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass, replace
 
-from ke.identity import IdentityBasis, normalise_title
-from ke.models import IdentityConfidence, RawItem
+from ke.acquisition.identity import IdentityBasis, normalise_title
+from ke.models import IdentityConfidence, Lifecycle, RawItem
 
 #: Bases durable enough to anchor a permanent identifier (ADR-0023 ranks 1-2).
 DURABLE_BASES = (IdentityBasis.CANONICAL_URL, IdentityBasis.SOURCE_IDENTIFIER)
@@ -111,17 +111,31 @@ def assess(item: RawItem, seen: dict[str, set[str]]) -> tuple[IdentityConfidence
 
 
 def apply(items: list[RawItem]) -> list[RawItem]:
-    """Return the items with confidence and reason filled in.
+    """Grade every item, and advance it out of `DISCOVERED`.
 
     Adapters cannot do this themselves: exclusivity is only knowable once the
     whole run is visible, and an adapter sees one source at a time.
+
+    Grading is the moment acquisition branches. An item either clears the gate
+    and becomes `APPROVED`, or it becomes `QUEUED` — never dropped, and never
+    left ambiguous. `discover_all` calls this on every run.
     """
     seen = census(items)
     graded = []
     for item in items:
         level, reason = assess(item, seen)
+        assessed = replace(
+            item, identity_confidence=level, confidence_reason=reason
+        )
         graded.append(
-            replace(item, identity_confidence=level, confidence_reason=reason)
+            replace(
+                assessed,
+                lifecycle=(
+                    Lifecycle.APPROVED
+                    if assessed.mints_automatically
+                    else Lifecycle.QUEUED
+                ),
+            )
         )
     return graded
 

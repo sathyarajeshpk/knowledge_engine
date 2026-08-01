@@ -17,7 +17,7 @@ from typing import Any
 import pytest
 import yaml
 
-from ke.identity import IdentityBasis
+from ke.acquisition.identity import IdentityBasis
 from ke.models import (
     AdapterType,
     ArtifactType,

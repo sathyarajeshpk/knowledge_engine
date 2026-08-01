@@ -110,7 +110,7 @@ class Pack:
         Imported lazily so `ke.pack` stays free of adapter dependencies -- the
         validator loads packs without ever needing feedparser.
         """
-        from ke.sources.base import SourceDefinition
+        from ke.acquisition.sources.base import SourceDefinition
 
         return [
             SourceDefinition.from_config(entry)

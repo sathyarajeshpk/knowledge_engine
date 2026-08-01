@@ -21,7 +21,6 @@ from datetime import date, datetime, timezone
 from enum import IntEnum, StrEnum
 from typing import Any
 
-from ke.identity import IdentityBasis, ItemIdentity
 
 # ---------------------------------------------------------------------------
 # Controlled vocabularies
@@ -91,6 +90,103 @@ class AdapterType(StrEnum):
     GITHUB_COMMITS = "github-commits"
     SITEMAP = "sitemap"
     MANUAL = "manual"
+
+
+class IdentityBasis(StrEnum):
+    """Which signal established an item's identity, strongest first.
+
+    Recorded on every item. When a duplicate or a miss is investigated later,
+    the first question is always "what were we matching on?" -- and without this
+    field the answer requires re-deriving the whole pipeline from memory.
+    """
+
+    #: The canonical target URL. Strongest: survives rewording, reordering and
+    #: complete markup changes.
+    CANONICAL_URL = "canonical-url"
+    #: A stable identifier published by the source itself.
+    SOURCE_IDENTIFIER = "source-identifier"
+    #: Hash of the normalised title. Survives markup changes, not rewording.
+    TITLE_HASH = "normalised-title-hash"
+    #: Hash of normalised title plus summary. Last resort: survives nothing but
+    #: an unchanged item, so it is the weakest guarantee we offer.
+    CONTENT_FINGERPRINT = "content-fingerprint"
+
+
+@dataclass(frozen=True)
+class ItemIdentity:
+    """What an item is, and how we decided."""
+
+    basis: IdentityBasis
+    #: `sha256:...` over `raw_value`. What dedupe actually compares.
+    key: str
+    #: The exact string that was hashed. Kept for debugging: it turns "why did
+    #: these two not match?" into a diff rather than an investigation.
+    raw_value: str
+
+    @property
+    def is_durable(self) -> bool:
+        """Whether this identity survives a presentation-layer change.
+
+        URL and source-identifier bases do. Title and content hashes do not, so
+        items resting on them warrant closer attention when a source's markup
+        changes.
+        """
+        return self.basis in (IdentityBasis.CANONICAL_URL, IdentityBasis.SOURCE_IDENTIFIER)
+
+
+class Lifecycle(StrEnum):
+    """How far a piece of knowledge has travelled through **acquisition**.
+
+    Deliberately separate from `status`, and the distinction is worth stating
+    plainly because the two will otherwise be confused::
+
+        Lifecycle  answers  "how far through acquisition is this?"
+        status     answers  "is this knowledge still current?"
+
+    An object can be `MINTED` and `replaced` at the same time: fully acquired,
+    and superseded as knowledge. Collapsing them would make "we have not
+    finished processing this" indistinguishable from "this is out of date",
+    which are different problems with different remedies.
+
+    Stages move forward only. Nothing ever returns to `DISCOVERED`, because
+    acquisition history is append-only like everything else here.
+    """
+
+    #: Seen in a run. Not yet graded.
+    DISCOVERED = "discovered"
+    #: Graded and held: identity confidence was not high enough to mint.
+    QUEUED = "queued"
+    #: Cleared for minting -- automatically when the gate passes, or by a human
+    #: working the review queue.
+    APPROVED = "approved"
+    #: A permanent Feature ID exists and a knowledge object was written.
+    MINTED = "minted"
+    #: A later acquisition of the same feature replaced this record.
+    SUPERSEDED = "superseded"
+    #: Retired from the working set. Retained forever, never deleted.
+    ARCHIVED = "archived"
+
+
+#: The only transitions the engine may make. Anything else is a bug, and
+#: `is_valid_transition` exists so that it fails loudly rather than silently
+#: rewriting acquisition history.
+LIFECYCLE_TRANSITIONS: dict[Lifecycle, frozenset[Lifecycle]] = {
+    Lifecycle.DISCOVERED: frozenset({Lifecycle.QUEUED, Lifecycle.APPROVED}),
+    Lifecycle.QUEUED: frozenset({Lifecycle.APPROVED, Lifecycle.ARCHIVED}),
+    Lifecycle.APPROVED: frozenset({Lifecycle.MINTED, Lifecycle.ARCHIVED}),
+    Lifecycle.MINTED: frozenset({Lifecycle.SUPERSEDED, Lifecycle.ARCHIVED}),
+    Lifecycle.SUPERSEDED: frozenset({Lifecycle.ARCHIVED}),
+    Lifecycle.ARCHIVED: frozenset(),
+}
+
+
+def is_valid_transition(current: Lifecycle, proposed: Lifecycle) -> bool:
+    """Whether acquisition may move from one stage to another.
+
+    A no-op transition is allowed: re-running discovery over an already-queued
+    item must not be an error, or the weekly run could never be idempotent.
+    """
+    return proposed is current or proposed in LIFECYCLE_TRANSITIONS[current]
 
 
 class IdentityConfidence(StrEnum):
@@ -419,6 +515,7 @@ ENGINE_OWNED_FIELDS = frozenset(
         "url_hash",
         "reading_time",
         "status",
+        "lifecycle",
         "needs_review",
         "revisions",
         "generation",
@@ -802,6 +899,21 @@ class RawItem:
     #: person triaging a Medium item should not have to re-derive the rule.
     confidence_reason: str = ""
 
+    #: Where this item sits in acquisition. Adapters produce `DISCOVERED`;
+    #: `discover_all` moves it to `APPROVED` or `QUEUED` once the gate has run.
+    lifecycle: Lifecycle = Lifecycle.DISCOVERED
+
+    #: When this item was **first** seen, across all runs.
+    #:
+    #: Not the same as `discovered_date`, which is this run's date. A queued item
+    #: approved weeks later must mint its Feature ID from the date the knowledge
+    #: appeared, not the date a human got round to it -- otherwise review latency
+    #: silently shifts the ID's month, permanently (ADR-0028).
+    #:
+    #: `None` means "first seen in this run", so a fresh item needs no special
+    #: case. M2 populates it from the review queue when re-discovering.
+    first_discovered_date: date | None = None
+
     @property
     def mints_automatically(self) -> bool:
         """Whether M2 may mint a permanent Feature ID without a human.
@@ -820,15 +932,21 @@ class RawItem:
     def id_basis_date(self) -> date:
         """The date whose month the Feature ID is minted from.
 
-        Publication month when we trust it, discovery month otherwise.
+        Publication month when we trust it, else the month this item was
+        **first** seen.
 
         `date_precision` does not enter into this: month precision is *exactly*
         what minting needs (ADR-0005), so a month-precise date is fully usable
-        here. Only `date_confidence` decides whether we trust it at all.
+        here, and an exact date is deliberately **not** required to mint --
+        month-precision knowledge is still knowledge. Only `date_confidence`
+        decides whether the publication date is trusted at all.
+
+        The fallback uses `first_discovered_date` when present so that time
+        spent in the review queue cannot move a permanent identifier.
         """
         if self.published_date is not None and self.date_confidence is DateConfidence.EXACT:
             return self.published_date
-        return self.discovered_date
+        return self.first_discovered_date or self.discovered_date
 
 
 @dataclass
@@ -886,6 +1004,13 @@ class KnowledgeObject:
     replaces: str | None = None
 
     # --- Lifecycle ---
+    #
+    # Two orthogonal axes, deliberately not merged:
+    #   `lifecycle` — how far through ACQUISITION this got
+    #   `status`    — whether the KNOWLEDGE is still current
+    # An object is routinely `minted` + `active`, and may be `minted` +
+    # `replaced`. See ADR-0029.
+    lifecycle: Lifecycle = Lifecycle.MINTED
     status: ObjectStatus = ObjectStatus.ACTIVE
     needs_review: bool = False
     overrides: tuple[str, ...] = ()  # proposed-class fields the user has locked
@@ -985,6 +1110,7 @@ class KnowledgeObject:
             "related_topics": list(self.related_topics),
             "replaced_by": self.replaced_by,
             "replaces": self.replaces,
+            "lifecycle": str(self.lifecycle),
             "status": str(self.status),
             "needs_review": self.needs_review,
             "overrides": list(self.overrides),
@@ -1037,6 +1163,7 @@ class KnowledgeObject:
             related_topics=tuple(raw.get("related_topics") or ()),
             replaced_by=raw.get("replaced_by"),
             replaces=raw.get("replaces"),
+            lifecycle=Lifecycle(raw.get("lifecycle", Lifecycle.MINTED)),
             status=ObjectStatus(raw.get("status", ObjectStatus.ACTIVE)),
             needs_review=bool(raw.get("needs_review", False)),
             overrides=tuple(raw.get("overrides") or ()),

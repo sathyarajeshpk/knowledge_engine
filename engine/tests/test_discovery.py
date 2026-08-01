@@ -13,8 +13,8 @@ from datetime import date, datetime, timezone
 import pytest
 
 from ke.clock import FrozenClock, SystemClock
-from ke.discover import ReviewItem, discover_all, health_summary
-from ke.identity import IdentityBasis, compute_identity, normalise_title
+from ke.acquisition.discover import ReviewItem, discover_all, health_summary
+from ke.acquisition.identity import IdentityBasis, compute_identity, normalise_title
 from ke.models import (
     AdapterType,
     DateConfidence,
@@ -22,6 +22,7 @@ from ke.models import (
     ExtractionMethod,
     HealthState,
     IdentityConfidence,
+    Lifecycle,
     SourceAuthority,
     SourceHealth,
     SourceRepresentation,
@@ -37,14 +38,14 @@ from ke.normalize import (
     slugify,
     truncate_summary,
 )
-from ke.sources.base import (
+from ke.acquisition.sources.base import (
     FetchResult,
     SourceDefinition,
     SourceError,
     sort_items,
 )
-from ke.sources.html_table import HtmlTableSource
-from ke.sources.markdown_table import (
+from ke.acquisition.sources.html_table import HtmlTableSource
+from ke.acquisition.sources.markdown_table import (
     MarkdownTableSource,
     resolve_doc_link,
     strip_markdown,
@@ -1097,12 +1098,138 @@ def test_every_item_carries_a_reason_for_its_confidence():
 
 def test_collisions_are_ordered_worst_first():
     """Triage should meet the announcement hiding the most knowledge first."""
-    from ke.confidence import collisions as find_collisions
+    from ke.acquisition.confidence import collisions as find_collisions
 
     items = markdown_items() + shared_announcement_result().items
     found = find_collisions(items)
     counts = [c.feature_count for c in found]
     assert counts == sorted(counts, reverse=True)
+
+
+# ---------------------------------------------------------------------------
+# Knowledge Lifecycle — the acquisition axis (ADR-0029)
+# ---------------------------------------------------------------------------
+
+
+def test_grading_moves_items_out_of_discovered():
+    result = shared_announcement_result()
+    assert all(i.lifecycle is not Lifecycle.DISCOVERED for i in result.items)
+
+
+def test_the_gate_decides_approved_versus_queued():
+    result = shared_announcement_result()
+    for item in result.items:
+        expected = Lifecycle.APPROVED if item.mints_automatically else Lifecycle.QUEUED
+        assert item.lifecycle is expected
+
+
+def test_queuing_never_blocks_the_rest_of_the_run():
+    """One ambiguous row must not stall a weekly harvest."""
+    result = shared_announcement_result()
+    assert len(result.needs_review) == 2
+    assert len(result.mintable) == 1, "high-confidence items still came through"
+
+
+def test_lifecycle_transitions_move_forward_only():
+    from ke.models import is_valid_transition
+
+    assert is_valid_transition(Lifecycle.QUEUED, Lifecycle.APPROVED)
+    assert is_valid_transition(Lifecycle.APPROVED, Lifecycle.MINTED)
+    assert is_valid_transition(Lifecycle.MINTED, Lifecycle.SUPERSEDED)
+    # Backwards is a bug, not a state change.
+    assert not is_valid_transition(Lifecycle.MINTED, Lifecycle.DISCOVERED)
+    assert not is_valid_transition(Lifecycle.QUEUED, Lifecycle.MINTED)
+    assert not is_valid_transition(Lifecycle.ARCHIVED, Lifecycle.APPROVED)
+
+
+def test_a_repeated_transition_is_allowed():
+    """Re-running discovery over a queued item must not be an error.
+
+    Without this the weekly run could never be idempotent.
+    """
+    from ke.models import is_valid_transition
+
+    assert is_valid_transition(Lifecycle.QUEUED, Lifecycle.QUEUED)
+
+
+def test_lifecycle_is_independent_of_object_status():
+    """An object can be fully acquired and no longer current."""
+    from ke.models import ObjectStatus
+
+    assert Lifecycle.MINTED is not ObjectStatus.REPLACED
+    assert set(Lifecycle) & {str(s) for s in ObjectStatus} == set()
+
+
+# ---------------------------------------------------------------------------
+# Minting rules the maintainer decided explicitly
+# ---------------------------------------------------------------------------
+
+
+def test_an_exact_date_is_not_required_to_mint():
+    """Month-precision knowledge is still knowledge.
+
+    Date precision is metadata, not an identity requirement — so an item with a
+    month-precise or even inferred date still mints, provided its identity is
+    trustworthy.
+    """
+    items = HtmlTableSource(
+        html_definition(), FakeFetcher(PROSE_MONTH_HTML), CLOCK
+    ).discover()
+    graded = discover_all(
+        [html_definition()], clock=CLOCK, fetcher=FakeFetcher(PROSE_MONTH_HTML)
+    )
+    undated = graded.items[0]
+
+    assert items[0].published_date is None
+    assert undated.date_confidence is DateConfidence.INFERRED
+    assert undated.identity_confidence is IdentityConfidence.HIGH
+    assert undated.mints_automatically is True
+
+
+def test_review_latency_cannot_shift_a_feature_id():
+    """A queued item minted later keeps the month it was first seen."""
+    from dataclasses import replace as replace_item
+
+    item = markdown_items()[0]
+    first_seen = date(2026, 3, 9)
+    requeued = replace_item(
+        item,
+        published_date=None,
+        date_confidence=DateConfidence.INFERRED,
+        discovered_date=date(2026, 9, 20),   # approved months later
+        first_discovered_date=first_seen,
+    )
+    assert requeued.id_basis_date == first_seen
+
+
+def test_fallback_execution_is_independent_of_minting():
+    """Where knowledge came from must not change what is safe to mint.
+
+    The chain decides the source; the gate decides trust. If falling back
+    changed grading, an outage would quietly alter which knowledge became
+    permanent.
+    """
+
+    class PrimaryFailsMarkdownWorks:
+        def fetch(self, url):
+            if url.endswith(".md"):
+                return FetchResult(WHATS_NEW_MD, 200, 5, url)
+            raise SourceError("HTTP 403 Forbidden")
+
+    direct = discover_all(
+        [markdown_definition(role=SourceRole.PRIMARY)],
+        clock=CLOCK,
+        fetcher=FakeFetcher(WHATS_NEW_MD),
+    )
+    via_fallback = discover_all(
+        [html_definition(fallbacks=(markdown_definition(),))],
+        clock=CLOCK,
+        fetcher=PrimaryFailsMarkdownWorks(),
+    )
+
+    assert [(i.identity.key, i.identity_confidence) for i in direct.items] == [
+        (i.identity.key, i.identity_confidence) for i in via_fallback.items
+    ]
 
 
 def test_the_markdown_adapter_is_reachable_through_a_fallback_chain():

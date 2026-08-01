@@ -120,8 +120,8 @@ def _report(repo_root: Path, findings: list[Finding], *, strict: bool) -> None:
 
 
 def _run_discover(args: argparse.Namespace) -> int:
-    from ke.confidence import summarise as confidence_summary
-    from ke.discover import discover_all, health_summary
+    from ke.acquisition.confidence import summarise as confidence_summary
+    from ke.acquisition.discover import discover_all, health_summary
     from ke.models import HealthState
 
     repo_root = args.repo_root or find_repo_root()

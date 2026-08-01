@@ -13,7 +13,7 @@ from datetime import date
 from html.parser import HTMLParser
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
-from ke.identity import TRACKING_PARAMS
+from ke.acquisition.identity import TRACKING_PARAMS
 from ke.models import DateConfidence, DatePrecision
 
 MONTHS = {

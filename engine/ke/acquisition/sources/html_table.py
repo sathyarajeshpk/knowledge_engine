@@ -27,7 +27,7 @@ from html.parser import HTMLParser
 from urllib.parse import urljoin
 
 from ke.clock import Clock
-from ke.identity import compute_identity
+from ke.acquisition.identity import compute_identity
 from ke.models import (
     AdapterType,
     DateConfidence,
@@ -43,7 +43,7 @@ from ke.normalize import (
     parse_date_cell,
     truncate_summary,
 )
-from ke.sources.base import Fetcher, SourceDefinition, SourceError, sort_items
+from ke.acquisition.sources.base import Fetcher, SourceDefinition, SourceError, sort_items
 
 DEFAULT_MAX_SUMMARY_WORDS = 120
 

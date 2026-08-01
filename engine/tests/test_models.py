@@ -40,7 +40,7 @@ from ke.models import (
     ownership_of,
 )
 
-from ke.identity import compute_identity
+from ke.acquisition.identity import compute_identity
 
 from conftest import make_object, make_provenance
 

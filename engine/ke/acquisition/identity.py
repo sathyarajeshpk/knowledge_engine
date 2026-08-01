@@ -20,8 +20,8 @@ from __future__ import annotations
 
 import hashlib
 import re
-from dataclasses import dataclass
-from enum import StrEnum
+
+from ke.models import IdentityBasis, ItemIdentity
 
 #: Tracking and session parameters that change per visit and never identify an
 #: article. Stripping them is what makes the canonical URL stable.
@@ -58,48 +58,6 @@ TITLE_NOISE = frozenset(
 )
 
 _NON_WORD = re.compile(r"[^a-z0-9]+")
-
-
-class IdentityBasis(StrEnum):
-    """Which signal established an item's identity, strongest first.
-
-    Recorded on every item. When a duplicate or a miss is investigated later,
-    the first question is always "what were we matching on?" -- and without this
-    field the answer requires re-deriving the whole pipeline from memory.
-    """
-
-    #: The canonical target URL. Strongest: survives rewording, reordering and
-    #: complete markup changes.
-    CANONICAL_URL = "canonical-url"
-    #: A stable identifier published by the source itself.
-    SOURCE_IDENTIFIER = "source-identifier"
-    #: Hash of the normalised title. Survives markup changes, not rewording.
-    TITLE_HASH = "normalised-title-hash"
-    #: Hash of normalised title plus summary. Last resort: survives nothing but
-    #: an unchanged item, so it is the weakest guarantee we offer.
-    CONTENT_FINGERPRINT = "content-fingerprint"
-
-
-@dataclass(frozen=True)
-class ItemIdentity:
-    """What an item is, and how we decided."""
-
-    basis: IdentityBasis
-    #: `sha256:...` over `raw_value`. What dedupe actually compares.
-    key: str
-    #: The exact string that was hashed. Kept for debugging: it turns "why did
-    #: these two not match?" into a diff rather than an investigation.
-    raw_value: str
-
-    @property
-    def is_durable(self) -> bool:
-        """Whether this identity survives a presentation-layer change.
-
-        URL and source-identifier bases do. Title and content hashes do not, so
-        items resting on them warrant closer attention when a source's markup
-        changes.
-        """
-        return self.basis in (IdentityBasis.CANONICAL_URL, IdentityBasis.SOURCE_IDENTIFIER)
 
 
 def _digest(value: str) -> str:

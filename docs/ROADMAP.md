@@ -71,6 +71,12 @@ Decide whether Power BI content in the Fabric feed belongs to `MSF` or `PBI`
 - [ ] `dedupe.py` — URL hash, content fingerprint, near-duplicate Jaccard
 - [ ] `store.py` (create path) — build the object directory, atomic writes
 - [ ] `ke harvest`
+- [ ] **`ke review`** — work the queue: list, inspect and approve or archive
+      queued items. Promoted from M9: the moment items are queued there must be
+      a supported way to process them, or the gate becomes a quiet backlog
+      (ADR-0029)
+- [ ] Minting honours the gate: only `approved` items mint; queued items keep
+      `first_discovered_date` so review latency cannot shift a Feature ID
 - [ ] Idempotency: two consecutive harvests produce zero new objects
 - [ ] Backfill with correctly dated historical IDs
 
@@ -143,7 +149,7 @@ Must land before the cron, because every run after the first is an update run.
 ### M9 — Hardening and split-readiness · **planned**
 
 - [ ] `ke migrate` — `schema_version` upgrades
-- [ ] `ke review` — work through the review queue
+- [ ] Relationship-proposal review (`ke review` itself landed in M2)
 - [ ] `docs/SPLITTING-REPOS.md`
 - [ ] `docs/RUNBOOK.md` — re-enable a disabled cron, rotate secrets, repair state
 - [ ] Tighten CI to `--strict`
