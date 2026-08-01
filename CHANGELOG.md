@@ -39,6 +39,61 @@ Nothing yet. M1 (Discovery) begins after M0 is reviewed and merged.
 
 ---
 
+## [0.3.0] — 2026-08-01
+
+Third milestone: **M2 — Identity, dedupe, storage and the first working
+pipeline**. Release notes: [`docs/releases/v0.3.0.md`](docs/releases/v0.3.0.md).
+
+**The engine now produces knowledge.** `ke harvest` runs discover → dedupe →
+gate → mint → store → index in one pass and, against the live Microsoft sources,
+produced 222 knowledge objects. A second harvest mints nothing and leaves the ID
+registry byte-identical.
+
+**Schema version:** 1 (unchanged)
+
+### Added
+
+- `ids.py` — date-based Feature ID minting with per-month counters and a
+  registry that validates its own consistency on load.
+- `dedupe.py` — three layers: identity key, content fingerprint, near-duplicate
+  Jaccard. The first two resolve silently; the third only flags
+  ([ADR-0014](docs/adr/0014-flag-near-duplicates-never-drop.md)).
+- `store.py` — object directories, atomic paired writes, deterministic bytes.
+- `review.py` and `ke review list|approve|archive` — the supported way to drain
+  the queue. An approved item mints under its **original** discovery date.
+- `indexer.py` — `INDEX.md`, `by-source.md`, `by-month.md`, `review-queue.md`,
+  fully rebuilt every run.
+- `harvest.py` and `ke harvest` — the pipeline.
+- `ke index` — rebuild indexes without harvesting.
+- `KnowledgeObject.announcement_url` and `.identity_confidence`, documented in
+  `SCHEMA.md` since v0.2.0 and added before any object existed.
+- [ADR-0031](docs/adr/0031-harvest-ordering.md) — stage ordering is a safety
+  property. [ADR-0032](docs/adr/0032-state-failure-policies.md) — each state file
+  gets its own failure policy.
+
+### Changed
+
+- `TRACKING_PARAMS` moved from `ke.acquisition.identity` to `ke.normalize`. Core
+  must not import the acquisition subsystem, and the previous arrangement was a
+  real import cycle that surfaced only for certain entry points. Guarded by a
+  mirror-image boundary test and a cold-start import test.
+- `metadata.yaml` is written with YAML aliases disabled — PyYAML emitted
+  `&id001` anchors where a date is shared between `discovered_date` and the
+  revision recording it, and the file is read by humans in the GitHub UI.
+
+### Fixed
+
+- `write_object` wrote `feature.md` before `metadata.yaml`, so a failure between
+  them left half an object at a permanent-looking path. It did: the first run
+  produced 222 orphaned `feature.md` files. Both documents are now rendered
+  before either is written.
+- The ID registry recorded object paths relative to the pack root while
+  `ke validate` expects them relative to `knowledge/`, failing every object. Now
+  uses `KnowledgeObject.knowledge_subpath`, the form the validator checks.
+- `ke review approve` could not accept the key printed in `review-queue.md`: the
+  report strips the `sha256:` prefix and the lookup did not, making the
+  documented workflow impossible.
+
 ## [0.2.0] — 2026-08-01
 
 Second milestone: **M1 — Discovery**.

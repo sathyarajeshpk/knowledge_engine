@@ -65,7 +65,7 @@ Decide whether Power BI content in the Fabric feed belongs to `MSF` or `PBI`
 
 ---
 
-### M2 — Identity, dedupe, storage · **planned**
+### M2 — Identity, dedupe, storage · **done** (v0.3.0)
 
 - [ ] `ids.py` — date-based minting, per-month counters, publication/discovery fallback
 - [ ] `dedupe.py` — URL hash, content fingerprint, near-duplicate Jaccard
