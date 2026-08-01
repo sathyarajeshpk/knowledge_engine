@@ -106,6 +106,21 @@ def _split_front_matter(text: str, source: Path) -> tuple[dict, str]:
     return meta, body.strip()
 
 
+#: The only two places an artifact may be written, both inside the object's own
+#: directory. `references/` is excluded deliberately: it is for the user's own
+#: supporting notes and nothing generated belongs there.
+ARTIFACT_ROOTS = ("artifacts/", "images/")
+
+
+def _is_safe_output(output: str) -> bool:
+    """Whether a template's `output` stays inside the object's directory."""
+    if output.startswith("/") or "\\" in output:
+        return False
+    if ".." in Path(output).parts:
+        return False
+    return output.startswith(ARTIFACT_ROOTS)
+
+
 def load_template(artifact_type: ArtifactType, *, prompts_dir: Path | None = None) -> Template:
     """Read one template, or explain precisely what is wrong with it."""
     directory = prompts_dir or PROMPTS_DIR
@@ -131,6 +146,15 @@ def load_template(artifact_type: ArtifactType, *, prompts_dir: Path | None = Non
     output = meta.get("output")
     if not isinstance(output, str) or not output:
         raise GenerateError(f"{path.name}: front matter needs an `output` path")
+    if not _is_safe_output(output):
+        # `--attach` writes to this path inside the object's directory. Templates
+        # are engine code and go through review, so this is code integrity rather
+        # than input validation -- but the check is one line and its absence was
+        # a finding in the M7 security review (S-7).
+        raise GenerateError(
+            f"{path.name}: output must be a relative path under artifacts/ or "
+            f"images/, got {output!r}"
+        )
     if not body:
         raise GenerateError(f"{path.name}: the instruction body is empty")
 

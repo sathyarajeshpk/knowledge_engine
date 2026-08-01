@@ -27,8 +27,8 @@ original intent is preserved in the section for that milestone below.
 | M4 | Orchestration and classification | **done** | Staged pipeline, deterministic classification, override handling |
 | M5 | Review workflow and history | **done** | Unified `ke review`, `ke history`, `ke supersede`, chain validation |
 | M6 | Weekly automation | **done** | Digest, notifications, lock, Sunday cron, security review |
-| M7 | Retrieval and on-demand generation | **planned** | `ke search`, context packs, supply-chain hardening |
-| M8 | Second pack (Power BI) | **planned** | Proof the engine is pack-agnostic |
+| M7 | Retrieval and on-demand generation | **done** | `ke search`, `ke generate`, context packs, hash-pinned deps |
+| M8 | Second pack (Power BI) | **next** | Proof the engine is pack-agnostic |
 | M9 | Hardening and split-readiness | **planned** | Migrations, runbook, extraction guide |
 
 Relationships and the knowledge graph — originally M4 — were deferred rather
@@ -142,22 +142,28 @@ Must land before the cron, because every run after the first is an update run.
 
 ---
 
-### M7 — Retrieval and on-demand generation · **planned**
+### M7 — Retrieval and on-demand generation · **done**
 
-- [ ] `retrieve.py` — `ke search`, `ke get`, filters
-- [ ] Seven prompt templates, each versioned
-- [ ] `generate.py` — context packs including prerequisites
-- [ ] `--attach` — write artifacts and update the generation block
-- [ ] `ke status` + `generation-status.md`
-- [ ] **Supply-chain hardening carried from M6:** pin dependencies by hash
-      (TD-6), enable Dependabot alerts (TD-7), pin Actions to commit SHAs
-      (TD-8). See [M6_SECURITY_REVIEW.md](reviews/M6_SECURITY_REVIEW.md) S-1,
-      S-2, S-4.
+- [x] `retrieve.py` — `ke search`, `ke get`, 12 filters ([ADR-0041](adr/0041-search-scans-rather-than-indexes.md))
+- [x] Seven prompt templates, each versioned, all model-agnostic
+- [x] `generate.py` — self-contained context packs ([ADR-0040](adr/0040-context-packs-instead-of-api-calls.md))
+- [x] `--attach` / `--request` — artifacts and the generation block ([ADR-0042](adr/0042-artifact-content-is-user-owned.md))
+- [x] `ke status` + `indexes/generation-status.md`, surfaced in the weekly digest
+- [x] The copy-paste workflow documented in the README
+- [x] **Supply-chain hardening carried from M6:** dependencies hash-pinned
+      (TD-6 ✔), Dependabot enabled (TD-7 ✔). Actions SHA pinning (TD-8) is
+      **carried to M8** — resolving the SHAs needs repository access this
+      environment does not have, and unverified hashes would break the build.
+- [x] **Operational Readiness Review** ([M7_OPERATIONAL_READINESS.md](reviews/M7_OPERATIONAL_READINESS.md)) — *new standing deliverable*
+- [x] `test_packaging.py` — tests the package that ships, not the source tree
 
 ---
 
-### M8 — Second pack · **planned**
+### M8 — Second pack · **next**
 
+- [ ] **Carried from M7:** pin Actions to commit SHAs (TD-8, security S-2)
+- [ ] **Carried from M7:** `ke repair --registry` and the minting/persistence
+      ordering question (TD-10, readiness O-1)
 - [ ] `domain-packs/power-bi/` — **data only**
 - [ ] Workflow loops over all discovered packs
 - [ ] Cross-pack relationships

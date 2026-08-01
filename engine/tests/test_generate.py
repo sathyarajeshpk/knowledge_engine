@@ -144,6 +144,37 @@ def test_a_malformed_template_says_what_is_wrong(tmp_path, text, problem):
         load_template(ArtifactType.QUIZ, prompts_dir=tmp_path)
 
 
+@pytest.mark.parametrize(
+    "hostile",
+    [
+        "../../../../etc/passwd",
+        "/etc/passwd",
+        "artifacts/../../../escape.md",
+        "notes/tutorial.md",
+        "references/tutorial.md",
+        "..\\..\\windows",
+    ],
+)
+def test_a_template_cannot_write_outside_the_object_directory(tmp_path, hostile):
+    """M7 security review, S-7.
+
+    `--attach` writes to whatever path the template declares. Templates are
+    engine code and go through review, so this is code integrity rather than
+    input validation — but a one-line check is cheaper than the assumption.
+
+    `references/` is refused along with the traversals: it holds the user's own
+    supporting notes, and nothing generated belongs there.
+    """
+    (tmp_path / "quiz.md").write_text(
+        f"---\nprompt_version: 1\nartifact_type: quiz\n"
+        f"output: {hostile}\n---\n\nBody.\n",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(GenerateError, match="artifacts/ or images/"):
+        load_template(ArtifactType.QUIZ, prompts_dir=tmp_path)
+
+
 def test_no_template_uses_vendor_specific_syntax():
     """ADR-0004 in executable form.
 
