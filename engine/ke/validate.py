@@ -290,6 +290,7 @@ def _check_object(pack: Pack, object_dir: Path) -> tuple[list[Finding], LoadedOb
     findings.extend(_check_generation(location, object_dir, obj))
     if feature_path.is_file():
         findings.extend(_check_feature_document(pack, feature_path, obj))
+        findings.extend(_check_revision_history(pack, feature_path, obj))
 
     return findings, LoadedObject(directory=object_dir, obj=obj)
 
@@ -476,6 +477,43 @@ def _check_category(pack: Pack, location: str, obj: KnowledgeObject) -> list[Fin
             )
         ]
     return []
+
+
+def _check_revision_history(pack: Pack, path: Path, obj: KnowledgeObject) -> list[Finding]:
+    """Check an object's history for the ways it can be wrong.
+
+    A history that cannot be believed is worse than no history, because nothing
+    about it looks broken. `ke history` reads these snapshots to reconstruct the
+    past; if the chain is misnumbered, undated or self-contradicting, it will
+    answer confidently and wrongly.
+
+    Also catches **repeated identical revisions**, which is not a schema error
+    but a real symptom: it means something rewrote the object with the same
+    change over and over. That is exactly what the M3 flip-flop bug produced —
+    35 objects with 11 revisions each, all recording the same field change —
+    and it went unnoticed because every individual revision was well-formed.
+    """
+    from ke.history import verify_chain
+
+    location = pack.location(path)
+    findings = [
+        Finding(Level.ERROR, "REV001", location, problem)
+        for problem in verify_chain(obj)
+    ]
+
+    changes = [tuple(rev.changed_fields) for rev in obj.revisions[1:]]
+    if len(changes) >= 3 and len(set(changes)) == 1:
+        findings.append(
+            Finding(
+                Level.WARNING,
+                "REV002",
+                location,
+                f"{len(changes)} consecutive revisions all record the same change "
+                f"({', '.join(changes[0])}); this is the signature of a value "
+                "flip-flopping between runs rather than genuine edits",
+            )
+        )
+    return findings
 
 
 def _check_feature_document(pack: Pack, feature_path: Path, obj: KnowledgeObject) -> list[Finding]:

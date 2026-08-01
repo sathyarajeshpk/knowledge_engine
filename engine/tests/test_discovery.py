@@ -1184,7 +1184,10 @@ def test_lifecycle_transitions_move_forward_only():
 
     assert is_valid_transition(Lifecycle.QUEUED, Lifecycle.APPROVED)
     assert is_valid_transition(Lifecycle.APPROVED, Lifecycle.MINTED)
-    assert is_valid_transition(Lifecycle.MINTED, Lifecycle.SUPERSEDED)
+    assert is_valid_transition(Lifecycle.MINTED, Lifecycle.ARCHIVED)
+    # There is no SUPERSEDED stage: an object whose feature was replaced has
+    # still been fully acquired, so that is `status`, not lifecycle (ADR-0035).
+    assert not hasattr(Lifecycle, "SUPERSEDED")
     # Backwards is a bug, not a state change.
     assert not is_valid_transition(Lifecycle.MINTED, Lifecycle.DISCOVERED)
     assert not is_valid_transition(Lifecycle.QUEUED, Lifecycle.MINTED)

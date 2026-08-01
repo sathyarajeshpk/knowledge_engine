@@ -63,6 +63,8 @@ decision is a conscious act rather than a tidy-up.
 | [0032](0032-state-failure-policies.md) | Each state file gets its own failure policy | Accepted |
 | [0033](0033-update-scope.md) | An update refreshes a subset of engine-owned fields | Accepted |
 | [0034](0034-classification-writes-once.md) | Classification proposes once and never churns | Accepted |
+| [0035](0035-supersession-is-status-not-lifecycle.md) | Supersession is a status, not an acquisition stage | Accepted (amends 0029) |
+| [0036](0036-unified-review-workflow.md) | One review workflow over many kinds of pending decision | Accepted |
 
 ## Template
 
