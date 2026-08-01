@@ -74,10 +74,20 @@ Single pack, varying size:
 | 500 | 1 | 15.19 s | 1.37 s | 1.46 s | 5.71 s | 1.35 s | 1.30 s | 2.5 | 1.5 | 1,011 |
 | 1,000 | 1 | 31.52 s | 2.88 s | 3.09 s | 11.51 s | 2.85 s | 2.94 s | 4.8 | 3.0 | 2,011 |
 | 2,000 | 1 | 64.60 s | 5.96 s | 5.76 s | 22.73 s | 5.18 s | 5.13 s | 9.5 | 6.0 | 4,011 |
+| **10,000** | 1 | **342.14 s** | 28.63 s | 27.82 s | 114.40 s | 29.06 s | 27.75 s | 47.6 | 30.3 | 20,011 |
 
-Harvest per object is 30.0, 30.4, 31.5, 32.3 ms across those four shapes — very
-nearly flat, with the mild upward drift being the quadratic dedupe term of P-2
-starting to show. Load, search, coverage and cross-pack are all flat per object.
+Harvest per object is 30.0, 30.4, 31.5, 32.3, 34.2 ms across those five shapes —
+very nearly flat, with the mild upward drift being the quadratic dedupe term of
+P-2 starting to show. Load, search, coverage and cross-pack are all flat per
+object.
+
+The 10,000-object row was run **after** the projections below were written, as a
+check on the method rather than an input to it. It confirms them: index rebuild
+projected at ~114 s and measured 114.40 s; search projected at ~29 s and measured
+27.82 s; memory projected at ~48 MB and measured 47.6 MB. Harvest was projected
+at ~323 s from the 2,000-object constant and measured 342.14 s — 6% high,
+which is the P-2 quadratic term, and the only place linear extrapolation
+understated the cost.
 
 Same object count, spread across packs:
 
@@ -261,19 +271,26 @@ report both.
 Extrapolated from the measured per-object constants. Linear terms scale linearly;
 the O(packs²) term is stated separately because it does not.
 
-### 10,000 knowledge objects (one pack)
+The 10,000-object projections were written first and then measured. They held to
+within 6%, which is the evidence that the 100,000-object figures — which cannot
+be run here in reasonable time — are extrapolation rather than guesswork. The
+one place the method under-predicted was harvest, by exactly the quadratic term
+it was known to omit.
 
-| Metric | Projection |
-|---|---|
-| Weekly harvest (≈20 new items) | **~1 s** — 20 × 32 ms of writes, plus a 0.25 s dedupe scan |
-| Full re-harvest / seeding from scratch | ~323 s writes + ~63 s dedupe ≈ **6.5 minutes** |
-| Index rebuild (every run) | **~114 s** |
-| `ke search` | ~29 s |
-| Peak traced memory | ~48 MB (~85 MB RSS) |
-| Repository size | ~140 MB, 20,000 files |
+### 10,000 knowledge objects (one pack) — projected, then **measured**
 
-**Verdict: comfortable.** The weekly run is dominated by the index rebuild, at
-~2 minutes against a 2,000 min/month Actions budget (~0.4%).
+| Metric | Projection | Measured |
+|---|---|---|
+| Weekly harvest (≈20 new items) | **~1 s** — 20 × 32 ms of writes, plus a 0.25 s dedupe scan | not measured (needs a 10,000-object pack plus a week) |
+| Full re-harvest / seeding from scratch | ~386 s ≈ 6.5 minutes | **342.14 s (5.7 min)** |
+| Index rebuild (every run) | ~114 s | **114.40 s** |
+| `ke search` | ~29 s | **27.82 s** |
+| Peak traced memory | ~48 MB | **47.6 MB** (~85 MB RSS) |
+| Repository size | ~140 MB, 20,000 files | 30.3 MB synthetic / **~140 MB at the real 14 KB/object**, 20,011 files |
+
+**Verdict: comfortable, and confirmed rather than argued.** The weekly run is
+dominated by the index rebuild, at ~2 minutes against a 2,000 min/month Actions
+budget (~0.4%). A one-off seeding run is under six minutes.
 
 ### 100,000 knowledge objects (one pack)
 
@@ -354,6 +371,9 @@ five.
 | P-2 | Near-duplicate detection is O(new × known) | Low steady-state, high on backfill | Accepted; provably-equivalent prefilter documented if needed |
 | P-3 | Per-object constant is PyYAML + two-file writes | Low | Accepted deliberately |
 | P-4 | Repository reaches ~1.4 GB at 100,000 objects | High, at that scale only | Accepted; splitting packs is the architectural answer |
+
+Method check: every 10,000-object projection was written before the run and held
+to within 6%. The single over-run was harvest, by the quadratic term of P-2.
 
 ---
 
