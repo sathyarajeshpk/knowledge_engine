@@ -55,4 +55,134 @@ revisions:
     REST API responses through page-based or cursor-based pagination, eliminating custom orchestration
     when bringing activity logs, audit records, or operational events into Eventstream.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:9e9cd426b03b980df9d1d639e066e045fcf2c049e8177c26437c7619705a0170
+  title_snapshot: Pagination support for Eventstream HTTP connector (Preview)
+  summary_snapshot: You can add an HTTP source to an eventstream (preview) to ingest paginated
+    REST API responses through page-based or cursor-based pagination, eliminating custom orchestration
+    when bringing activity logs, audit records, or operational events into Eventstream.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:9e9cd426b03b980df9d1d639e066e045fcf2c049e8177c26437c7619705a0170
+  title_snapshot: Pagination support for Eventstream HTTP connector (Preview)
+  summary_snapshot: You can add an HTTP source to an eventstream (preview) to ingest paginated
+    REST API responses through page-based or cursor-based pagination, eliminating custom orchestration
+    when bringing activity logs, audit records, or operational events into Eventstream.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:9e9cd426b03b980df9d1d639e066e045fcf2c049e8177c26437c7619705a0170
+  title_snapshot: Pagination support for Eventstream HTTP connector (Preview)
+  summary_snapshot: You can add an HTTP source to an eventstream (preview) to ingest paginated
+    REST API responses through page-based or cursor-based pagination, eliminating custom orchestration
+    when bringing activity logs, audit records, or operational events into Eventstream.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:9e9cd426b03b980df9d1d639e066e045fcf2c049e8177c26437c7619705a0170
+  title_snapshot: Pagination support for Eventstream HTTP connector (Preview)
+  summary_snapshot: You can add an HTTP source to an eventstream (preview) to ingest paginated
+    REST API responses through page-based or cursor-based pagination, eliminating custom orchestration
+    when bringing activity logs, audit records, or operational events into Eventstream.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:9e9cd426b03b980df9d1d639e066e045fcf2c049e8177c26437c7619705a0170
+  title_snapshot: Pagination support for Eventstream HTTP connector (Preview)
+  summary_snapshot: You can add an HTTP source to an eventstream (preview) to ingest paginated
+    REST API responses through page-based or cursor-based pagination, eliminating custom orchestration
+    when bringing activity logs, audit records, or operational events into Eventstream.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:9e9cd426b03b980df9d1d639e066e045fcf2c049e8177c26437c7619705a0170
+  title_snapshot: Pagination support for Eventstream HTTP connector (Preview)
+  summary_snapshot: You can add an HTTP source to an eventstream (preview) to ingest paginated
+    REST API responses through page-based or cursor-based pagination, eliminating custom orchestration
+    when bringing activity logs, audit records, or operational events into Eventstream.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:9e9cd426b03b980df9d1d639e066e045fcf2c049e8177c26437c7619705a0170
+  title_snapshot: Pagination support for Eventstream HTTP connector (Preview)
+  summary_snapshot: You can add an HTTP source to an eventstream (preview) to ingest paginated
+    REST API responses through page-based or cursor-based pagination, eliminating custom orchestration
+    when bringing activity logs, audit records, or operational events into Eventstream.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:9e9cd426b03b980df9d1d639e066e045fcf2c049e8177c26437c7619705a0170
+  title_snapshot: Pagination support for Eventstream HTTP connector (Preview)
+  summary_snapshot: You can add an HTTP source to an eventstream (preview) to ingest paginated
+    REST API responses through page-based or cursor-based pagination, eliminating custom orchestration
+    when bringing activity logs, audit records, or operational events into Eventstream.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:9e9cd426b03b980df9d1d639e066e045fcf2c049e8177c26437c7619705a0170
+  title_snapshot: Pagination support for Eventstream HTTP connector (Preview)
+  summary_snapshot: You can add an HTTP source to an eventstream (preview) to ingest paginated
+    REST API responses through page-based or cursor-based pagination, eliminating custom orchestration
+    when bringing activity logs, audit records, or operational events into Eventstream.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:9e9cd426b03b980df9d1d639e066e045fcf2c049e8177c26437c7619705a0170
+  title_snapshot: Pagination support for Eventstream HTTP connector (Preview)
+  summary_snapshot: You can add an HTTP source to an eventstream (preview) to ingest paginated
+    REST API responses through page-based or cursor-based pagination, eliminating custom orchestration
+    when bringing activity logs, audit records, or operational events into Eventstream.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

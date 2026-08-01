@@ -167,6 +167,17 @@ def _run_harvest(args: argparse.Namespace) -> int:
                 print(f"    … and {len(report.minted) - 20} more")
             print()
 
+        if report.updated:
+            print(f"  Updated {len(report.updated)} existing object(s):")
+            for entry in report.updated[:20]:
+                print(f"    {entry}")
+            if len(report.updated) > 20:
+                print(f"    … and {len(report.updated) - 20} more")
+            print()
+
+        if report.unchanged:
+            print(f"  {report.unchanged} object(s) unchanged — nothing rewritten\n")
+
         if report.queued:
             print(f"  {report.queued} item(s) queued for review "
                   "(nothing was dropped) — see indexes/review-queue.md\n")

@@ -56,4 +56,154 @@ revisions:
     as it looked at any prior point in time by adding OPTION (FOR TIMESTAMP AS OF '...') once
     at the T-SQL statement level.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:f0b1e0975e97777436560d2b3f443eed0709437ae0b2fecb6cff40ed0ea16d5a
+  title_snapshot: Time Travel using SQL analytics endpoint (Preview)
+  summary_snapshot: Time Travel using SQL analytics endpoint (Preview) extends the Fabric
+    Data Warehouse time travel experience to the SQL analytics endpoint so you can query Lakehouse
+    data exactly as it looked at any prior point in time by adding OPTION (FOR TIMESTAMP AS
+    OF '...') once at the T-SQL statement level.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:e52d79e150cb352853704f7bd06852d9952a8fbbbc541faed77433590f986cfa
+  title_snapshot: Time Travel using SQL analytics endpoint (Preview)
+  summary_snapshot: Time travel using the SQL analytics endpoint extends the Fabric Data Warehouse
+    time travel experience to the SQL analytics endpoint so you can query Lakehouse data exactly
+    as it looked at any prior point in time by adding OPTION (FOR TIMESTAMP AS OF '...') once
+    at the T-SQL statement level.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:f0b1e0975e97777436560d2b3f443eed0709437ae0b2fecb6cff40ed0ea16d5a
+  title_snapshot: Time Travel using SQL analytics endpoint (Preview)
+  summary_snapshot: Time Travel using SQL analytics endpoint (Preview) extends the Fabric
+    Data Warehouse time travel experience to the SQL analytics endpoint so you can query Lakehouse
+    data exactly as it looked at any prior point in time by adding OPTION (FOR TIMESTAMP AS
+    OF '...') once at the T-SQL statement level.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:e52d79e150cb352853704f7bd06852d9952a8fbbbc541faed77433590f986cfa
+  title_snapshot: Time Travel using SQL analytics endpoint (Preview)
+  summary_snapshot: Time travel using the SQL analytics endpoint extends the Fabric Data Warehouse
+    time travel experience to the SQL analytics endpoint so you can query Lakehouse data exactly
+    as it looked at any prior point in time by adding OPTION (FOR TIMESTAMP AS OF '...') once
+    at the T-SQL statement level.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:f0b1e0975e97777436560d2b3f443eed0709437ae0b2fecb6cff40ed0ea16d5a
+  title_snapshot: Time Travel using SQL analytics endpoint (Preview)
+  summary_snapshot: Time Travel using SQL analytics endpoint (Preview) extends the Fabric
+    Data Warehouse time travel experience to the SQL analytics endpoint so you can query Lakehouse
+    data exactly as it looked at any prior point in time by adding OPTION (FOR TIMESTAMP AS
+    OF '...') once at the T-SQL statement level.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:e52d79e150cb352853704f7bd06852d9952a8fbbbc541faed77433590f986cfa
+  title_snapshot: Time Travel using SQL analytics endpoint (Preview)
+  summary_snapshot: Time travel using the SQL analytics endpoint extends the Fabric Data Warehouse
+    time travel experience to the SQL analytics endpoint so you can query Lakehouse data exactly
+    as it looked at any prior point in time by adding OPTION (FOR TIMESTAMP AS OF '...') once
+    at the T-SQL statement level.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:f0b1e0975e97777436560d2b3f443eed0709437ae0b2fecb6cff40ed0ea16d5a
+  title_snapshot: Time Travel using SQL analytics endpoint (Preview)
+  summary_snapshot: Time Travel using SQL analytics endpoint (Preview) extends the Fabric
+    Data Warehouse time travel experience to the SQL analytics endpoint so you can query Lakehouse
+    data exactly as it looked at any prior point in time by adding OPTION (FOR TIMESTAMP AS
+    OF '...') once at the T-SQL statement level.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:e52d79e150cb352853704f7bd06852d9952a8fbbbc541faed77433590f986cfa
+  title_snapshot: Time Travel using SQL analytics endpoint (Preview)
+  summary_snapshot: Time travel using the SQL analytics endpoint extends the Fabric Data Warehouse
+    time travel experience to the SQL analytics endpoint so you can query Lakehouse data exactly
+    as it looked at any prior point in time by adding OPTION (FOR TIMESTAMP AS OF '...') once
+    at the T-SQL statement level.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:f0b1e0975e97777436560d2b3f443eed0709437ae0b2fecb6cff40ed0ea16d5a
+  title_snapshot: Time Travel using SQL analytics endpoint (Preview)
+  summary_snapshot: Time Travel using SQL analytics endpoint (Preview) extends the Fabric
+    Data Warehouse time travel experience to the SQL analytics endpoint so you can query Lakehouse
+    data exactly as it looked at any prior point in time by adding OPTION (FOR TIMESTAMP AS
+    OF '...') once at the T-SQL statement level.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:e52d79e150cb352853704f7bd06852d9952a8fbbbc541faed77433590f986cfa
+  title_snapshot: Time Travel using SQL analytics endpoint (Preview)
+  summary_snapshot: Time travel using the SQL analytics endpoint extends the Fabric Data Warehouse
+    time travel experience to the SQL analytics endpoint so you can query Lakehouse data exactly
+    as it looked at any prior point in time by adding OPTION (FOR TIMESTAMP AS OF '...') once
+    at the T-SQL statement level.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

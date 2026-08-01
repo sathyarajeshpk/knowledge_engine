@@ -56,4 +56,154 @@ revisions:
     large-scale data transformations with Spark compute. For more information, see Mapping
     data flow transforms in Dataflow Gen2 (Preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:095c254b0eda4f55f85a41b1c66a77c800282ec22f27c831f1c2bab759f49e59
+  title_snapshot: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
+  summary_snapshot: Mapping data flow transforms in Dataflow Gen2 (Preview) introduces Spark-based
+    transformation capabilities directly in the Dataflow Gen2 creation experience, enabling
+    large-scale data transformations with Spark compute and migration of mapping data flows
+    to Fabric. For pricing details, see Dataflow Gen2 pricing.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:cdcdf663fd9064395a8e6eba8940f0c4c1ad7e2c1d9486eebdbf5754af6423db
+  title_snapshot: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
+  summary_snapshot: Mapping data flow transforms in dataflow gen2 (Preview) introduces Spark-based
+    transformation capabilities directly in the Dataflow Gen2 creation experience, enabling
+    large-scale data transformations with Spark compute. For more information, see Mapping
+    data flow transforms in Dataflow Gen2 (Preview).
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:095c254b0eda4f55f85a41b1c66a77c800282ec22f27c831f1c2bab759f49e59
+  title_snapshot: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
+  summary_snapshot: Mapping data flow transforms in Dataflow Gen2 (Preview) introduces Spark-based
+    transformation capabilities directly in the Dataflow Gen2 creation experience, enabling
+    large-scale data transformations with Spark compute and migration of mapping data flows
+    to Fabric. For pricing details, see Dataflow Gen2 pricing.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:cdcdf663fd9064395a8e6eba8940f0c4c1ad7e2c1d9486eebdbf5754af6423db
+  title_snapshot: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
+  summary_snapshot: Mapping data flow transforms in dataflow gen2 (Preview) introduces Spark-based
+    transformation capabilities directly in the Dataflow Gen2 creation experience, enabling
+    large-scale data transformations with Spark compute. For more information, see Mapping
+    data flow transforms in Dataflow Gen2 (Preview).
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:095c254b0eda4f55f85a41b1c66a77c800282ec22f27c831f1c2bab759f49e59
+  title_snapshot: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
+  summary_snapshot: Mapping data flow transforms in Dataflow Gen2 (Preview) introduces Spark-based
+    transformation capabilities directly in the Dataflow Gen2 creation experience, enabling
+    large-scale data transformations with Spark compute and migration of mapping data flows
+    to Fabric. For pricing details, see Dataflow Gen2 pricing.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:cdcdf663fd9064395a8e6eba8940f0c4c1ad7e2c1d9486eebdbf5754af6423db
+  title_snapshot: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
+  summary_snapshot: Mapping data flow transforms in dataflow gen2 (Preview) introduces Spark-based
+    transformation capabilities directly in the Dataflow Gen2 creation experience, enabling
+    large-scale data transformations with Spark compute. For more information, see Mapping
+    data flow transforms in Dataflow Gen2 (Preview).
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:095c254b0eda4f55f85a41b1c66a77c800282ec22f27c831f1c2bab759f49e59
+  title_snapshot: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
+  summary_snapshot: Mapping data flow transforms in Dataflow Gen2 (Preview) introduces Spark-based
+    transformation capabilities directly in the Dataflow Gen2 creation experience, enabling
+    large-scale data transformations with Spark compute and migration of mapping data flows
+    to Fabric. For pricing details, see Dataflow Gen2 pricing.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:cdcdf663fd9064395a8e6eba8940f0c4c1ad7e2c1d9486eebdbf5754af6423db
+  title_snapshot: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
+  summary_snapshot: Mapping data flow transforms in dataflow gen2 (Preview) introduces Spark-based
+    transformation capabilities directly in the Dataflow Gen2 creation experience, enabling
+    large-scale data transformations with Spark compute. For more information, see Mapping
+    data flow transforms in Dataflow Gen2 (Preview).
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:095c254b0eda4f55f85a41b1c66a77c800282ec22f27c831f1c2bab759f49e59
+  title_snapshot: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
+  summary_snapshot: Mapping data flow transforms in Dataflow Gen2 (Preview) introduces Spark-based
+    transformation capabilities directly in the Dataflow Gen2 creation experience, enabling
+    large-scale data transformations with Spark compute and migration of mapping data flows
+    to Fabric. For pricing details, see Dataflow Gen2 pricing.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:cdcdf663fd9064395a8e6eba8940f0c4c1ad7e2c1d9486eebdbf5754af6423db
+  title_snapshot: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
+  summary_snapshot: Mapping data flow transforms in dataflow gen2 (Preview) introduces Spark-based
+    transformation capabilities directly in the Dataflow Gen2 creation experience, enabling
+    large-scale data transformations with Spark compute. For more information, see Mapping
+    data flow transforms in Dataflow Gen2 (Preview).
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

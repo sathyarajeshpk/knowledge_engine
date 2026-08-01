@@ -57,4 +57,154 @@ revisions:
     by your entire organization. For more information, see What is Fabric Activator? and Business
     events overview (Preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:27bfcbde273a37dc727225261e232d7411ef8be282a3f3ea91393390f284d12e
+  title_snapshot: Activator as business events publisher (Preview)
+  summary_snapshot: Activator provides a no-code way to publish business events in Microsoft
+    Fabric. When Activator detects that a condition is met in your data, it can emit a structured
+    business event into Real-Time hub, making that signal discoverable, routable, and consumable
+    by your entire organization. For more information, see What is Fabric Activator? and Business
+    events overview (Preview).
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:27bfcbde273a37dc727225261e232d7411ef8be282a3f3ea91393390f284d12e
+  title_snapshot: Activator as business events publisher (Preview)
+  summary_snapshot: Activator provides a no-code way to publish business events in Microsoft
+    Fabric. When Activator detects that a condition is met in your data, it can emit a structured
+    business event into Real-Time hub, making that signal discoverable, routable, and consumable
+    by your entire organization. For more information, see What is Fabric Activator? and Business
+    events overview (Preview).
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:27bfcbde273a37dc727225261e232d7411ef8be282a3f3ea91393390f284d12e
+  title_snapshot: Activator as business events publisher (Preview)
+  summary_snapshot: Activator provides a no-code way to publish business events in Microsoft
+    Fabric. When Activator detects that a condition is met in your data, it can emit a structured
+    business event into Real-Time hub, making that signal discoverable, routable, and consumable
+    by your entire organization. For more information, see What is Fabric Activator? and Business
+    events overview (Preview).
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:27bfcbde273a37dc727225261e232d7411ef8be282a3f3ea91393390f284d12e
+  title_snapshot: Activator as business events publisher (Preview)
+  summary_snapshot: Activator provides a no-code way to publish business events in Microsoft
+    Fabric. When Activator detects that a condition is met in your data, it can emit a structured
+    business event into Real-Time hub, making that signal discoverable, routable, and consumable
+    by your entire organization. For more information, see What is Fabric Activator? and Business
+    events overview (Preview).
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:27bfcbde273a37dc727225261e232d7411ef8be282a3f3ea91393390f284d12e
+  title_snapshot: Activator as business events publisher (Preview)
+  summary_snapshot: Activator provides a no-code way to publish business events in Microsoft
+    Fabric. When Activator detects that a condition is met in your data, it can emit a structured
+    business event into Real-Time hub, making that signal discoverable, routable, and consumable
+    by your entire organization. For more information, see What is Fabric Activator? and Business
+    events overview (Preview).
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:27bfcbde273a37dc727225261e232d7411ef8be282a3f3ea91393390f284d12e
+  title_snapshot: Activator as business events publisher (Preview)
+  summary_snapshot: Activator provides a no-code way to publish business events in Microsoft
+    Fabric. When Activator detects that a condition is met in your data, it can emit a structured
+    business event into Real-Time hub, making that signal discoverable, routable, and consumable
+    by your entire organization. For more information, see What is Fabric Activator? and Business
+    events overview (Preview).
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:27bfcbde273a37dc727225261e232d7411ef8be282a3f3ea91393390f284d12e
+  title_snapshot: Activator as business events publisher (Preview)
+  summary_snapshot: Activator provides a no-code way to publish business events in Microsoft
+    Fabric. When Activator detects that a condition is met in your data, it can emit a structured
+    business event into Real-Time hub, making that signal discoverable, routable, and consumable
+    by your entire organization. For more information, see What is Fabric Activator? and Business
+    events overview (Preview).
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:27bfcbde273a37dc727225261e232d7411ef8be282a3f3ea91393390f284d12e
+  title_snapshot: Activator as business events publisher (Preview)
+  summary_snapshot: Activator provides a no-code way to publish business events in Microsoft
+    Fabric. When Activator detects that a condition is met in your data, it can emit a structured
+    business event into Real-Time hub, making that signal discoverable, routable, and consumable
+    by your entire organization. For more information, see What is Fabric Activator? and Business
+    events overview (Preview).
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:27bfcbde273a37dc727225261e232d7411ef8be282a3f3ea91393390f284d12e
+  title_snapshot: Activator as business events publisher (Preview)
+  summary_snapshot: Activator provides a no-code way to publish business events in Microsoft
+    Fabric. When Activator detects that a condition is met in your data, it can emit a structured
+    business event into Real-Time hub, making that signal discoverable, routable, and consumable
+    by your entire organization. For more information, see What is Fabric Activator? and Business
+    events overview (Preview).
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:27bfcbde273a37dc727225261e232d7411ef8be282a3f3ea91393390f284d12e
+  title_snapshot: Activator as business events publisher (Preview)
+  summary_snapshot: Activator provides a no-code way to publish business events in Microsoft
+    Fabric. When Activator detects that a condition is met in your data, it can emit a structured
+    business event into Real-Time hub, making that signal discoverable, routable, and consumable
+    by your entire organization. For more information, see What is Fabric Activator? and Business
+    events overview (Preview).
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

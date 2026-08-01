@@ -57,4 +57,164 @@ revisions:
     output, schema drift handling, continuous sync, and sanitization of sheet names into valid
     Delta table names. For more information, see Shortcuts file transformations.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:3a24d875c68c0f4212a1c00bb37e23e67c2c0dc2def29507227c7e8848c4ced7
+  title_snapshot: Excel to Delta tables with shortcut transformations (Preview)
+  summary_snapshot: Excel to Delta tables with shortcut transformations (Preview) extends
+    the zero-code shortcut transformations ingestion model to multi-sheet .xlsx and .xls workbooks,
+    with automatic sheet discovery, wildcard sheet matching, combined-table or table-per-sheet
+    output, schema drift handling, continuous sync, and sanitization of sheet names into valid
+    Delta table names. For more information, see Shortcut transformations (file).
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:33da3b85313fe1d751031cf4eb26f9aba0ef0f26f31c68abaaa98f96b4d68406
+  title_snapshot: Excel to Delta tables with shortcut transformations (Preview)
+  summary_snapshot: Excel to Delta tables with shortcut transformations (Preview) extends
+    the zero-code shortcut transformations ingestion model to multi-sheet .xlsx and .xls workbooks,
+    with automatic sheet discovery, wildcard sheet matching, combined-table or table-per-sheet
+    output, schema drift handling, continuous sync, and sanitization of sheet names into valid
+    Delta table names. For more information, see Shortcuts file transformations.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:3a24d875c68c0f4212a1c00bb37e23e67c2c0dc2def29507227c7e8848c4ced7
+  title_snapshot: Excel to Delta tables with shortcut transformations (Preview)
+  summary_snapshot: Excel to Delta tables with shortcut transformations (Preview) extends
+    the zero-code shortcut transformations ingestion model to multi-sheet .xlsx and .xls workbooks,
+    with automatic sheet discovery, wildcard sheet matching, combined-table or table-per-sheet
+    output, schema drift handling, continuous sync, and sanitization of sheet names into valid
+    Delta table names. For more information, see Shortcut transformations (file).
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:33da3b85313fe1d751031cf4eb26f9aba0ef0f26f31c68abaaa98f96b4d68406
+  title_snapshot: Excel to Delta tables with shortcut transformations (Preview)
+  summary_snapshot: Excel to Delta tables with shortcut transformations (Preview) extends
+    the zero-code shortcut transformations ingestion model to multi-sheet .xlsx and .xls workbooks,
+    with automatic sheet discovery, wildcard sheet matching, combined-table or table-per-sheet
+    output, schema drift handling, continuous sync, and sanitization of sheet names into valid
+    Delta table names. For more information, see Shortcuts file transformations.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:3a24d875c68c0f4212a1c00bb37e23e67c2c0dc2def29507227c7e8848c4ced7
+  title_snapshot: Excel to Delta tables with shortcut transformations (Preview)
+  summary_snapshot: Excel to Delta tables with shortcut transformations (Preview) extends
+    the zero-code shortcut transformations ingestion model to multi-sheet .xlsx and .xls workbooks,
+    with automatic sheet discovery, wildcard sheet matching, combined-table or table-per-sheet
+    output, schema drift handling, continuous sync, and sanitization of sheet names into valid
+    Delta table names. For more information, see Shortcut transformations (file).
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:33da3b85313fe1d751031cf4eb26f9aba0ef0f26f31c68abaaa98f96b4d68406
+  title_snapshot: Excel to Delta tables with shortcut transformations (Preview)
+  summary_snapshot: Excel to Delta tables with shortcut transformations (Preview) extends
+    the zero-code shortcut transformations ingestion model to multi-sheet .xlsx and .xls workbooks,
+    with automatic sheet discovery, wildcard sheet matching, combined-table or table-per-sheet
+    output, schema drift handling, continuous sync, and sanitization of sheet names into valid
+    Delta table names. For more information, see Shortcuts file transformations.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:3a24d875c68c0f4212a1c00bb37e23e67c2c0dc2def29507227c7e8848c4ced7
+  title_snapshot: Excel to Delta tables with shortcut transformations (Preview)
+  summary_snapshot: Excel to Delta tables with shortcut transformations (Preview) extends
+    the zero-code shortcut transformations ingestion model to multi-sheet .xlsx and .xls workbooks,
+    with automatic sheet discovery, wildcard sheet matching, combined-table or table-per-sheet
+    output, schema drift handling, continuous sync, and sanitization of sheet names into valid
+    Delta table names. For more information, see Shortcut transformations (file).
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:33da3b85313fe1d751031cf4eb26f9aba0ef0f26f31c68abaaa98f96b4d68406
+  title_snapshot: Excel to Delta tables with shortcut transformations (Preview)
+  summary_snapshot: Excel to Delta tables with shortcut transformations (Preview) extends
+    the zero-code shortcut transformations ingestion model to multi-sheet .xlsx and .xls workbooks,
+    with automatic sheet discovery, wildcard sheet matching, combined-table or table-per-sheet
+    output, schema drift handling, continuous sync, and sanitization of sheet names into valid
+    Delta table names. For more information, see Shortcuts file transformations.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:3a24d875c68c0f4212a1c00bb37e23e67c2c0dc2def29507227c7e8848c4ced7
+  title_snapshot: Excel to Delta tables with shortcut transformations (Preview)
+  summary_snapshot: Excel to Delta tables with shortcut transformations (Preview) extends
+    the zero-code shortcut transformations ingestion model to multi-sheet .xlsx and .xls workbooks,
+    with automatic sheet discovery, wildcard sheet matching, combined-table or table-per-sheet
+    output, schema drift handling, continuous sync, and sanitization of sheet names into valid
+    Delta table names. For more information, see Shortcut transformations (file).
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:33da3b85313fe1d751031cf4eb26f9aba0ef0f26f31c68abaaa98f96b4d68406
+  title_snapshot: Excel to Delta tables with shortcut transformations (Preview)
+  summary_snapshot: Excel to Delta tables with shortcut transformations (Preview) extends
+    the zero-code shortcut transformations ingestion model to multi-sheet .xlsx and .xls workbooks,
+    with automatic sheet discovery, wildcard sheet matching, combined-table or table-per-sheet
+    output, schema drift handling, continuous sync, and sanitization of sheet names into valid
+    Delta table names. For more information, see Shortcuts file transformations.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

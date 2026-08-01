@@ -57,4 +57,154 @@ revisions:
     own policy logic. For more information, see What is Microsoft Fabric API for GraphQL?
     and Create a Fabric User data functions item.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:d5e7358ad73098b4d7690f57d86d5066caa3f0978aa867e0fb263d8309b1ce9b
+  title_snapshot: Custom authorization for API for GraphQL (Preview)
+  summary_snapshot: Authorizer User Data Functions for API for GraphQL (Preview) let you attach
+    a User Data Function that runs before each GraphQL operation and evaluates request context
+    such as tenant ID, role, or token claims to allow, restrict, or deny access based on your
+    own policy logic. For more information, see What is Microsoft Fabric API for GraphQL?
+    and Create a Fabric User data functions item.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:d5e7358ad73098b4d7690f57d86d5066caa3f0978aa867e0fb263d8309b1ce9b
+  title_snapshot: Custom authorization for API for GraphQL (Preview)
+  summary_snapshot: Authorizer User Data Functions for API for GraphQL (Preview) let you attach
+    a User Data Function that runs before each GraphQL operation and evaluates request context
+    such as tenant ID, role, or token claims to allow, restrict, or deny access based on your
+    own policy logic. For more information, see What is Microsoft Fabric API for GraphQL?
+    and Create a Fabric User data functions item.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:d5e7358ad73098b4d7690f57d86d5066caa3f0978aa867e0fb263d8309b1ce9b
+  title_snapshot: Custom authorization for API for GraphQL (Preview)
+  summary_snapshot: Authorizer User Data Functions for API for GraphQL (Preview) let you attach
+    a User Data Function that runs before each GraphQL operation and evaluates request context
+    such as tenant ID, role, or token claims to allow, restrict, or deny access based on your
+    own policy logic. For more information, see What is Microsoft Fabric API for GraphQL?
+    and Create a Fabric User data functions item.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:d5e7358ad73098b4d7690f57d86d5066caa3f0978aa867e0fb263d8309b1ce9b
+  title_snapshot: Custom authorization for API for GraphQL (Preview)
+  summary_snapshot: Authorizer User Data Functions for API for GraphQL (Preview) let you attach
+    a User Data Function that runs before each GraphQL operation and evaluates request context
+    such as tenant ID, role, or token claims to allow, restrict, or deny access based on your
+    own policy logic. For more information, see What is Microsoft Fabric API for GraphQL?
+    and Create a Fabric User data functions item.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:d5e7358ad73098b4d7690f57d86d5066caa3f0978aa867e0fb263d8309b1ce9b
+  title_snapshot: Custom authorization for API for GraphQL (Preview)
+  summary_snapshot: Authorizer User Data Functions for API for GraphQL (Preview) let you attach
+    a User Data Function that runs before each GraphQL operation and evaluates request context
+    such as tenant ID, role, or token claims to allow, restrict, or deny access based on your
+    own policy logic. For more information, see What is Microsoft Fabric API for GraphQL?
+    and Create a Fabric User data functions item.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:d5e7358ad73098b4d7690f57d86d5066caa3f0978aa867e0fb263d8309b1ce9b
+  title_snapshot: Custom authorization for API for GraphQL (Preview)
+  summary_snapshot: Authorizer User Data Functions for API for GraphQL (Preview) let you attach
+    a User Data Function that runs before each GraphQL operation and evaluates request context
+    such as tenant ID, role, or token claims to allow, restrict, or deny access based on your
+    own policy logic. For more information, see What is Microsoft Fabric API for GraphQL?
+    and Create a Fabric User data functions item.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:d5e7358ad73098b4d7690f57d86d5066caa3f0978aa867e0fb263d8309b1ce9b
+  title_snapshot: Custom authorization for API for GraphQL (Preview)
+  summary_snapshot: Authorizer User Data Functions for API for GraphQL (Preview) let you attach
+    a User Data Function that runs before each GraphQL operation and evaluates request context
+    such as tenant ID, role, or token claims to allow, restrict, or deny access based on your
+    own policy logic. For more information, see What is Microsoft Fabric API for GraphQL?
+    and Create a Fabric User data functions item.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:d5e7358ad73098b4d7690f57d86d5066caa3f0978aa867e0fb263d8309b1ce9b
+  title_snapshot: Custom authorization for API for GraphQL (Preview)
+  summary_snapshot: Authorizer User Data Functions for API for GraphQL (Preview) let you attach
+    a User Data Function that runs before each GraphQL operation and evaluates request context
+    such as tenant ID, role, or token claims to allow, restrict, or deny access based on your
+    own policy logic. For more information, see What is Microsoft Fabric API for GraphQL?
+    and Create a Fabric User data functions item.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:d5e7358ad73098b4d7690f57d86d5066caa3f0978aa867e0fb263d8309b1ce9b
+  title_snapshot: Custom authorization for API for GraphQL (Preview)
+  summary_snapshot: Authorizer User Data Functions for API for GraphQL (Preview) let you attach
+    a User Data Function that runs before each GraphQL operation and evaluates request context
+    such as tenant ID, role, or token claims to allow, restrict, or deny access based on your
+    own policy logic. For more information, see What is Microsoft Fabric API for GraphQL?
+    and Create a Fabric User data functions item.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:d5e7358ad73098b4d7690f57d86d5066caa3f0978aa867e0fb263d8309b1ce9b
+  title_snapshot: Custom authorization for API for GraphQL (Preview)
+  summary_snapshot: Authorizer User Data Functions for API for GraphQL (Preview) let you attach
+    a User Data Function that runs before each GraphQL operation and evaluates request context
+    such as tenant ID, role, or token claims to allow, restrict, or deny access based on your
+    own policy logic. For more information, see What is Microsoft Fabric API for GraphQL?
+    and Create a Fabric User data functions item.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

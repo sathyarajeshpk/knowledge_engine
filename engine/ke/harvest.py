@@ -31,7 +31,15 @@ from ke.indexer import write_indexes
 from ke.models import KnowledgeObject, Lifecycle, RawItem
 from ke.pack import Pack
 from ke.review import ReviewQueue
-from ke.store import build_object, with_reading_time, write_object
+from ke.revisions import apply_update, detect_changes
+from ke.store import (
+    build_object,
+    load_object,
+    object_dir,
+    update_object,
+    with_reading_time,
+    write_object,
+)
 
 
 @dataclass
@@ -43,6 +51,8 @@ class HarvestReport:
     minted: list[str] = field(default_factory=list)
     queued: int = 0
     already_known: int = 0
+    updated: list[str] = field(default_factory=list)
+    unchanged: int = 0
     near_duplicates: int = 0
     written_paths: list[str] = field(default_factory=list)
     index_paths: list[str] = field(default_factory=list)
@@ -56,8 +66,8 @@ class HarvestReport:
     def summary_line(self) -> str:
         return (
             f"{self.pack_name}: {self.discovered} discovered, "
-            f"{len(self.minted)} minted, {self.queued} queued, "
-            f"{self.already_known} already known, "
+            f"{len(self.minted)} minted, {len(self.updated)} updated, "
+            f"{self.unchanged} unchanged, {self.queued} queued, "
             f"{self.near_duplicates} near-duplicate(s)"
         )
 
@@ -134,6 +144,26 @@ def harvest_pack(
     )
     report.near_duplicates = sum(1 for d in decisions if d.needs_review)
 
+    # --- update what we already have ------------------------------------
+    # Runs before minting: an item we already store must never reach the
+    # minting path, and routing it here first makes that structural rather
+    # than a matter of the dedupe verdict being read correctly.
+    # One sighting per identity. The same feature is legitimately listed by two
+    # sources with slightly different metadata, and letting both run the update
+    # made the object flip between their renderings -- two writes every harvest,
+    # a permanently dirty diff, and `updated` counts that never reached zero.
+    # `decisions` is already deterministically ordered, so taking the first
+    # sighting is stable across runs.
+    handled: set[str] = set()
+    for decision in decisions:
+        if decision.is_new or not decision.matched:
+            continue
+        if decision.item.identity.key in handled:
+            report.unchanged += 1
+            continue
+        handled.add(decision.item.identity.key)
+        _update_existing(pack, registry, decision, clock, report, dry_run=dry_run)
+
     # --- gate, mint, store ---------------------------------------------
     to_mint: list[tuple[RawItem, bool]] = []
     for decision in decisions:
@@ -199,6 +229,58 @@ def harvest_pack(
     return report
 
 
+def _update_existing(pack, registry, decision, clock, report, *, dry_run: bool) -> None:
+    """Refresh one already-stored object, if this sighting actually changed it.
+
+    The dedupe layer told us which Feature ID this item matched; the registry
+    tells us where that object lives. Nothing here recomputes the path -- the
+    object's directory is permanent, and re-deriving it is how M2's registry
+    path bug happened.
+    """
+    feature_id = decision.matched
+    if not feature_id or feature_id == "pending":
+        return  # matched something minted earlier in this same run
+
+    subpath = registry.path_for(feature_id)
+    if subpath is None:
+        return  # not in the registry; `ke validate` reports it
+
+    directory = pack.knowledge_dir / subpath
+    existing = load_object(directory)
+    if existing is None:
+        return  # unreadable; validation reports it rather than the harvest
+
+    changes = detect_changes(existing, decision.item)
+    if not changes:
+        report.unchanged += 1
+        return
+
+    try:
+        updated = apply_update(
+            existing,
+            decision.item,
+            changes,
+            today=clock.today(),
+            run_id=clock.run_id(),
+        )
+        updated = with_reading_time(updated, decision.item.summary)
+        if not dry_run and update_object(
+            directory,
+            updated,
+            decision.item.summary,
+            max_summary_words=pack.max_summary_words,
+        ):
+            report.updated.append(f"{feature_id} ({', '.join(sorted(changes))})")
+        elif dry_run:
+            report.updated.append(f"{feature_id} ({', '.join(sorted(changes))})")
+    except PermissionError as exc:
+        # The ownership model refused a write. That is the guard working, and it
+        # is worth surfacing loudly rather than swallowing.
+        report.errors.append(f"{feature_id}: ownership violation: {exc}")
+    except Exception as exc:  # noqa: BLE001 - one object must not lose the rest
+        report.errors.append(f"{feature_id}: {type(exc).__name__}: {exc}")
+
+
 def _append_run_log(pack: Pack, clock: Clock, report: HarvestReport) -> None:
     """Append one line per run. **Always**, even when nothing was found.
 
@@ -218,5 +300,5 @@ def _append_run_log(pack: Pack, clock: Clock, report: HarvestReport) -> None:
     with log_path.open("a", encoding="utf-8") as stream:
         stream.write(
             f"| {clock.run_id()} | {report.discovered} | {len(report.minted)} | "
-            f"{report.queued} | {report.already_known} |\n"
+            f"{len(report.updated)} | {report.queued} | {report.already_known} |\n"
         )

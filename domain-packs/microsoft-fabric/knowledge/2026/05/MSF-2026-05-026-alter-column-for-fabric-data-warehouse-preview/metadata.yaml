@@ -56,4 +56,154 @@ revisions:
     complete as metadata-only updates without rewriting Parquet files. For more information,
     see ALTER TABLE (Transact-SQL) syntax for warehouse in Fabric.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:9a7ca5670aa749342ee15281bcf50de003449859ebd8b53e622db151e207c28c
+  title_snapshot: ALTER COLUMN for Fabric Data Warehouse (Preview)
+  summary_snapshot: ALTER TABLE ... ALTER COLUMN (Preview) lets you make supported schema
+    changes directly on warehouse tables with familiar T-SQL syntax. Supported scenarios complete
+    as metadata-only updates without rewriting Parquet files. For more information, see ALTER
+    TABLE (Transact-SQL) syntax for warehouse in Fabric.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:2966f31e396fb9ed63a677f78aa914db5146e958b48d30a2e44528b5044885de
+  title_snapshot: ALTER COLUMN for Fabric Data Warehouse (Preview)
+  summary_snapshot: ALTER TABLE ... ALTER COLUMN (Preview) lets you make supported schema
+    changes directly on warehouse tables using familiar T-SQL syntax. Supported scenarios
+    complete as metadata-only updates without rewriting Parquet files. For more information,
+    see ALTER TABLE (Transact-SQL) syntax for warehouse in Fabric.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:9a7ca5670aa749342ee15281bcf50de003449859ebd8b53e622db151e207c28c
+  title_snapshot: ALTER COLUMN for Fabric Data Warehouse (Preview)
+  summary_snapshot: ALTER TABLE ... ALTER COLUMN (Preview) lets you make supported schema
+    changes directly on warehouse tables with familiar T-SQL syntax. Supported scenarios complete
+    as metadata-only updates without rewriting Parquet files. For more information, see ALTER
+    TABLE (Transact-SQL) syntax for warehouse in Fabric.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:2966f31e396fb9ed63a677f78aa914db5146e958b48d30a2e44528b5044885de
+  title_snapshot: ALTER COLUMN for Fabric Data Warehouse (Preview)
+  summary_snapshot: ALTER TABLE ... ALTER COLUMN (Preview) lets you make supported schema
+    changes directly on warehouse tables using familiar T-SQL syntax. Supported scenarios
+    complete as metadata-only updates without rewriting Parquet files. For more information,
+    see ALTER TABLE (Transact-SQL) syntax for warehouse in Fabric.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:9a7ca5670aa749342ee15281bcf50de003449859ebd8b53e622db151e207c28c
+  title_snapshot: ALTER COLUMN for Fabric Data Warehouse (Preview)
+  summary_snapshot: ALTER TABLE ... ALTER COLUMN (Preview) lets you make supported schema
+    changes directly on warehouse tables with familiar T-SQL syntax. Supported scenarios complete
+    as metadata-only updates without rewriting Parquet files. For more information, see ALTER
+    TABLE (Transact-SQL) syntax for warehouse in Fabric.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:2966f31e396fb9ed63a677f78aa914db5146e958b48d30a2e44528b5044885de
+  title_snapshot: ALTER COLUMN for Fabric Data Warehouse (Preview)
+  summary_snapshot: ALTER TABLE ... ALTER COLUMN (Preview) lets you make supported schema
+    changes directly on warehouse tables using familiar T-SQL syntax. Supported scenarios
+    complete as metadata-only updates without rewriting Parquet files. For more information,
+    see ALTER TABLE (Transact-SQL) syntax for warehouse in Fabric.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:9a7ca5670aa749342ee15281bcf50de003449859ebd8b53e622db151e207c28c
+  title_snapshot: ALTER COLUMN for Fabric Data Warehouse (Preview)
+  summary_snapshot: ALTER TABLE ... ALTER COLUMN (Preview) lets you make supported schema
+    changes directly on warehouse tables with familiar T-SQL syntax. Supported scenarios complete
+    as metadata-only updates without rewriting Parquet files. For more information, see ALTER
+    TABLE (Transact-SQL) syntax for warehouse in Fabric.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:2966f31e396fb9ed63a677f78aa914db5146e958b48d30a2e44528b5044885de
+  title_snapshot: ALTER COLUMN for Fabric Data Warehouse (Preview)
+  summary_snapshot: ALTER TABLE ... ALTER COLUMN (Preview) lets you make supported schema
+    changes directly on warehouse tables using familiar T-SQL syntax. Supported scenarios
+    complete as metadata-only updates without rewriting Parquet files. For more information,
+    see ALTER TABLE (Transact-SQL) syntax for warehouse in Fabric.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:9a7ca5670aa749342ee15281bcf50de003449859ebd8b53e622db151e207c28c
+  title_snapshot: ALTER COLUMN for Fabric Data Warehouse (Preview)
+  summary_snapshot: ALTER TABLE ... ALTER COLUMN (Preview) lets you make supported schema
+    changes directly on warehouse tables with familiar T-SQL syntax. Supported scenarios complete
+    as metadata-only updates without rewriting Parquet files. For more information, see ALTER
+    TABLE (Transact-SQL) syntax for warehouse in Fabric.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:2966f31e396fb9ed63a677f78aa914db5146e958b48d30a2e44528b5044885de
+  title_snapshot: ALTER COLUMN for Fabric Data Warehouse (Preview)
+  summary_snapshot: ALTER TABLE ... ALTER COLUMN (Preview) lets you make supported schema
+    changes directly on warehouse tables using familiar T-SQL syntax. Supported scenarios
+    complete as metadata-only updates without rewriting Parquet files. For more information,
+    see ALTER TABLE (Transact-SQL) syntax for warehouse in Fabric.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

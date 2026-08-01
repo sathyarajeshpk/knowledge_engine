@@ -216,6 +216,57 @@ def write_object(
     return directory
 
 
+def load_object(directory: Path) -> KnowledgeObject | None:
+    """Read a stored object, or `None` if it is absent or unreadable.
+
+    Returns `None` rather than raising so that one damaged object cannot stop a
+    harvest. `ke validate` is what reports it; the pipeline's job is to keep
+    going and leave the damage visible.
+    """
+    metadata_path = directory / "metadata.yaml"
+    if not metadata_path.exists():
+        return None
+    try:
+        raw = yaml.safe_load(metadata_path.read_text(encoding="utf-8"))
+        return KnowledgeObject.from_metadata_dict(raw)
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def update_object(
+    directory: Path,
+    obj: KnowledgeObject,
+    summary: str,
+    *,
+    max_summary_words: int,
+) -> bool:
+    """Rewrite an existing object in place. Returns whether bytes changed.
+
+    Unlike `write_object` this **expects** the files to exist, and it compares
+    rendered output against what is already on disk before writing. A run that
+    changes nothing must leave the file untouched -- not rewrite identical
+    bytes, which would still update the mtime and, more importantly, teach
+    everyone to ignore the weekly diff.
+
+    The object's path is never recomputed here: an update writes to where the
+    object already lives, because a Feature ID's directory is permanent
+    (ADR-0006).
+    """
+    feature_text = render_feature_document(obj, summary, max_summary_words)
+    metadata_text = render_metadata(obj)
+
+    changed = False
+    for path, text in (
+        (directory / "feature.md", feature_text),
+        (directory / "metadata.yaml", metadata_text),
+    ):
+        if path.exists() and path.read_text(encoding="utf-8") == text:
+            continue
+        _atomic_write(path, text)
+        changed = True
+    return changed
+
+
 def reading_time_minutes(text: str, words_per_minute: int = 200) -> int:
     """Rounded up, minimum 1. A zero-minute read would be a lie."""
     words = len(text.split())

@@ -57,4 +57,169 @@ revisions:
     the Monitoring Hub. For more information, see High concurrency support in the Fabric Livy
     API and Get started with the Livy API for Fabric high concurrency sessions.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:610a42ce192a7d4961d9ddb6ff99f4f9f41ee63a454906f5220f013a29a20628
+  title_snapshot: High Concurrency Support for the Fabric Livy API (Preview)
+  summary_snapshot: High Concurrency (HC) sessions for the Fabric Livy API (Preview) let multiple
+    Spark workloads share a single managed Spark session with isolated REPLs, server-side
+    session packing via sessionTag, parallel statement execution, and built-in surfacing in
+    the Monitoring Hub. Up to five REPLs run per underlying Livy session. For more information,
+    see High concurrency support in the Fabric Livy API and Get started with the Livy API
+    for Fabric high concurrency sessions.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:4473a4ff7e34e63a8d87f35a553938baa2b240f039b93f8864e1d8e19a143475
+  title_snapshot: High Concurrency Support for the Fabric Livy API (Preview)
+  summary_snapshot: High Concurrency (HC) sessions for the Fabric Livy API (Preview) let multiple
+    Spark workloads share a single managed Spark session with isolated REPLs, server-side
+    session packing via sessionTag, parallel statement execution, and built-in surfacing in
+    the Monitoring Hub. For more information, see High concurrency support in the Fabric Livy
+    API and Get started with the Livy API for Fabric high concurrency sessions.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:610a42ce192a7d4961d9ddb6ff99f4f9f41ee63a454906f5220f013a29a20628
+  title_snapshot: High Concurrency Support for the Fabric Livy API (Preview)
+  summary_snapshot: High Concurrency (HC) sessions for the Fabric Livy API (Preview) let multiple
+    Spark workloads share a single managed Spark session with isolated REPLs, server-side
+    session packing via sessionTag, parallel statement execution, and built-in surfacing in
+    the Monitoring Hub. Up to five REPLs run per underlying Livy session. For more information,
+    see High concurrency support in the Fabric Livy API and Get started with the Livy API
+    for Fabric high concurrency sessions.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:4473a4ff7e34e63a8d87f35a553938baa2b240f039b93f8864e1d8e19a143475
+  title_snapshot: High Concurrency Support for the Fabric Livy API (Preview)
+  summary_snapshot: High Concurrency (HC) sessions for the Fabric Livy API (Preview) let multiple
+    Spark workloads share a single managed Spark session with isolated REPLs, server-side
+    session packing via sessionTag, parallel statement execution, and built-in surfacing in
+    the Monitoring Hub. For more information, see High concurrency support in the Fabric Livy
+    API and Get started with the Livy API for Fabric high concurrency sessions.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:610a42ce192a7d4961d9ddb6ff99f4f9f41ee63a454906f5220f013a29a20628
+  title_snapshot: High Concurrency Support for the Fabric Livy API (Preview)
+  summary_snapshot: High Concurrency (HC) sessions for the Fabric Livy API (Preview) let multiple
+    Spark workloads share a single managed Spark session with isolated REPLs, server-side
+    session packing via sessionTag, parallel statement execution, and built-in surfacing in
+    the Monitoring Hub. Up to five REPLs run per underlying Livy session. For more information,
+    see High concurrency support in the Fabric Livy API and Get started with the Livy API
+    for Fabric high concurrency sessions.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:4473a4ff7e34e63a8d87f35a553938baa2b240f039b93f8864e1d8e19a143475
+  title_snapshot: High Concurrency Support for the Fabric Livy API (Preview)
+  summary_snapshot: High Concurrency (HC) sessions for the Fabric Livy API (Preview) let multiple
+    Spark workloads share a single managed Spark session with isolated REPLs, server-side
+    session packing via sessionTag, parallel statement execution, and built-in surfacing in
+    the Monitoring Hub. For more information, see High concurrency support in the Fabric Livy
+    API and Get started with the Livy API for Fabric high concurrency sessions.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:610a42ce192a7d4961d9ddb6ff99f4f9f41ee63a454906f5220f013a29a20628
+  title_snapshot: High Concurrency Support for the Fabric Livy API (Preview)
+  summary_snapshot: High Concurrency (HC) sessions for the Fabric Livy API (Preview) let multiple
+    Spark workloads share a single managed Spark session with isolated REPLs, server-side
+    session packing via sessionTag, parallel statement execution, and built-in surfacing in
+    the Monitoring Hub. Up to five REPLs run per underlying Livy session. For more information,
+    see High concurrency support in the Fabric Livy API and Get started with the Livy API
+    for Fabric high concurrency sessions.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:4473a4ff7e34e63a8d87f35a553938baa2b240f039b93f8864e1d8e19a143475
+  title_snapshot: High Concurrency Support for the Fabric Livy API (Preview)
+  summary_snapshot: High Concurrency (HC) sessions for the Fabric Livy API (Preview) let multiple
+    Spark workloads share a single managed Spark session with isolated REPLs, server-side
+    session packing via sessionTag, parallel statement execution, and built-in surfacing in
+    the Monitoring Hub. For more information, see High concurrency support in the Fabric Livy
+    API and Get started with the Livy API for Fabric high concurrency sessions.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:610a42ce192a7d4961d9ddb6ff99f4f9f41ee63a454906f5220f013a29a20628
+  title_snapshot: High Concurrency Support for the Fabric Livy API (Preview)
+  summary_snapshot: High Concurrency (HC) sessions for the Fabric Livy API (Preview) let multiple
+    Spark workloads share a single managed Spark session with isolated REPLs, server-side
+    session packing via sessionTag, parallel statement execution, and built-in surfacing in
+    the Monitoring Hub. Up to five REPLs run per underlying Livy session. For more information,
+    see High concurrency support in the Fabric Livy API and Get started with the Livy API
+    for Fabric high concurrency sessions.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:4473a4ff7e34e63a8d87f35a553938baa2b240f039b93f8864e1d8e19a143475
+  title_snapshot: High Concurrency Support for the Fabric Livy API (Preview)
+  summary_snapshot: High Concurrency (HC) sessions for the Fabric Livy API (Preview) let multiple
+    Spark workloads share a single managed Spark session with isolated REPLs, server-side
+    session packing via sessionTag, parallel statement execution, and built-in surfacing in
+    the Monitoring Hub. For more information, see High concurrency support in the Fabric Livy
+    API and Get started with the Livy API for Fabric high concurrency sessions.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}

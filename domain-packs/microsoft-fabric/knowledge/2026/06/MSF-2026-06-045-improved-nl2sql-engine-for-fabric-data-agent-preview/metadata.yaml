@@ -57,4 +57,169 @@ revisions:
     questions when intent is ambiguous, and surfaces structured diagnostics. For more information,
     see Fabric data agent concepts.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:7765a8e01173f9b0978ee6dc9fb0212ff49894c5d938d9d6640f81dd3e1f1756
+  title_snapshot: Improved NL2SQL Engine for Fabric Data Agent (Preview)
+  summary_snapshot: Improved NL2SQL Engine (Preview) for Fabric Data Agent improves accuracy,
+    transparency, and resilience when translating natural language to SQL across lakehouses,
+    warehouses, and mirrored databases. It uses example queries to follow patterns, asks clarifying
+    questions when intent is ambiguous, and surfaces structured diagnostics, available when
+    you enable the Preview Fabric Data Agent Runtime. For more information, see Fabric data
+    agent concepts.
+  run_id: run-2026-08-01T06-29-53Z
+- revision: 3
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:5a0d7dfa8eecbaa225093c604c1570e55aa6f674536bc86a807937aee9337197
+  title_snapshot: Improved NL2SQL Engine for Fabric Data Agent (Preview)
+  summary_snapshot: Improved NL2SQL Engine (Preview) for Fabric Data Agent improves accuracy,
+    transparency, and resilience when translating natural language to SQL across lakehouses,
+    warehouses, and mirrored databases. It uses example queries to follow patterns, asks clarifying
+    questions when intent is ambiguous, and surfaces structured diagnostics. For more information,
+    see Fabric data agent concepts.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 4
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:7765a8e01173f9b0978ee6dc9fb0212ff49894c5d938d9d6640f81dd3e1f1756
+  title_snapshot: Improved NL2SQL Engine for Fabric Data Agent (Preview)
+  summary_snapshot: Improved NL2SQL Engine (Preview) for Fabric Data Agent improves accuracy,
+    transparency, and resilience when translating natural language to SQL across lakehouses,
+    warehouses, and mirrored databases. It uses example queries to follow patterns, asks clarifying
+    questions when intent is ambiguous, and surfaces structured diagnostics, available when
+    you enable the Preview Fabric Data Agent Runtime. For more information, see Fabric data
+    agent concepts.
+  run_id: run-2026-08-01T06-30-12Z
+- revision: 5
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:5a0d7dfa8eecbaa225093c604c1570e55aa6f674536bc86a807937aee9337197
+  title_snapshot: Improved NL2SQL Engine for Fabric Data Agent (Preview)
+  summary_snapshot: Improved NL2SQL Engine (Preview) for Fabric Data Agent improves accuracy,
+    transparency, and resilience when translating natural language to SQL across lakehouses,
+    warehouses, and mirrored databases. It uses example queries to follow patterns, asks clarifying
+    questions when intent is ambiguous, and surfaces structured diagnostics. For more information,
+    see Fabric data agent concepts.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 6
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:7765a8e01173f9b0978ee6dc9fb0212ff49894c5d938d9d6640f81dd3e1f1756
+  title_snapshot: Improved NL2SQL Engine for Fabric Data Agent (Preview)
+  summary_snapshot: Improved NL2SQL Engine (Preview) for Fabric Data Agent improves accuracy,
+    transparency, and resilience when translating natural language to SQL across lakehouses,
+    warehouses, and mirrored databases. It uses example queries to follow patterns, asks clarifying
+    questions when intent is ambiguous, and surfaces structured diagnostics, available when
+    you enable the Preview Fabric Data Agent Runtime. For more information, see Fabric data
+    agent concepts.
+  run_id: run-2026-08-01T06-30-16Z
+- revision: 7
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:5a0d7dfa8eecbaa225093c604c1570e55aa6f674536bc86a807937aee9337197
+  title_snapshot: Improved NL2SQL Engine for Fabric Data Agent (Preview)
+  summary_snapshot: Improved NL2SQL Engine (Preview) for Fabric Data Agent improves accuracy,
+    transparency, and resilience when translating natural language to SQL across lakehouses,
+    warehouses, and mirrored databases. It uses example queries to follow patterns, asks clarifying
+    questions when intent is ambiguous, and surfaces structured diagnostics. For more information,
+    see Fabric data agent concepts.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 8
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:7765a8e01173f9b0978ee6dc9fb0212ff49894c5d938d9d6640f81dd3e1f1756
+  title_snapshot: Improved NL2SQL Engine for Fabric Data Agent (Preview)
+  summary_snapshot: Improved NL2SQL Engine (Preview) for Fabric Data Agent improves accuracy,
+    transparency, and resilience when translating natural language to SQL across lakehouses,
+    warehouses, and mirrored databases. It uses example queries to follow patterns, asks clarifying
+    questions when intent is ambiguous, and surfaces structured diagnostics, available when
+    you enable the Preview Fabric Data Agent Runtime. For more information, see Fabric data
+    agent concepts.
+  run_id: run-2026-08-01T06-30-21Z
+- revision: 9
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:5a0d7dfa8eecbaa225093c604c1570e55aa6f674536bc86a807937aee9337197
+  title_snapshot: Improved NL2SQL Engine for Fabric Data Agent (Preview)
+  summary_snapshot: Improved NL2SQL Engine (Preview) for Fabric Data Agent improves accuracy,
+    transparency, and resilience when translating natural language to SQL across lakehouses,
+    warehouses, and mirrored databases. It uses example queries to follow patterns, asks clarifying
+    questions when intent is ambiguous, and surfaces structured diagnostics. For more information,
+    see Fabric data agent concepts.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 10
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:7765a8e01173f9b0978ee6dc9fb0212ff49894c5d938d9d6640f81dd3e1f1756
+  title_snapshot: Improved NL2SQL Engine for Fabric Data Agent (Preview)
+  summary_snapshot: Improved NL2SQL Engine (Preview) for Fabric Data Agent improves accuracy,
+    transparency, and resilience when translating natural language to SQL across lakehouses,
+    warehouses, and mirrored databases. It uses example queries to follow patterns, asks clarifying
+    questions when intent is ambiguous, and surfaces structured diagnostics, available when
+    you enable the Preview Fabric Data Agent Runtime. For more information, see Fabric data
+    agent concepts.
+  run_id: run-2026-08-01T06-30-43Z
+- revision: 11
+  date: 2026-08-01
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:5a0d7dfa8eecbaa225093c604c1570e55aa6f674536bc86a807937aee9337197
+  title_snapshot: Improved NL2SQL Engine for Fabric Data Agent (Preview)
+  summary_snapshot: Improved NL2SQL Engine (Preview) for Fabric Data Agent improves accuracy,
+    transparency, and resilience when translating natural language to SQL across lakehouses,
+    warehouses, and mirrored databases. It uses example queries to follow patterns, asks clarifying
+    questions when intent is ambiguous, and surfaces structured diagnostics. For more information,
+    see Fabric data agent concepts.
+  run_id: run-2026-08-01T06-31-17Z
 generation: {}
