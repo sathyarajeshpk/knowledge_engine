@@ -35,8 +35,71 @@ it protects data rather than commands.
 
 ## [Unreleased]
 
-Nothing yet. M7 (Retrieval and on-demand generation) begins after M6 is reviewed
-and merged.
+Nothing yet. M8 (Second pack — Power BI) begins after M7 is reviewed and merged.
+
+---
+
+## [0.8.0] — 2026-08-01
+
+Eighth milestone: **M7 — Retrieval and on-demand generation**.
+Release notes: [`docs/releases/v0.8.0.md`](docs/releases/v0.8.0.md).
+
+The knowledge became usable. Six milestones built a machine for getting knowledge
+in; this is the first about getting it out — and it does so with no API client,
+no key and no bill.
+
+**Schema version:** 1 (unchanged)
+
+### Added
+
+- `retrieve.py`, `ke search` and `ke get` — 12 filters composing by AND, no query
+  language, no relevance ranking
+  ([ADR-0041](docs/adr/0041-search-scans-rather-than-indexes.md)).
+- `generate.py` and `ke generate` — self-contained context packs for any model,
+  with no AI API call anywhere
+  ([ADR-0040](docs/adr/0040-context-packs-instead-of-api-calls.md)).
+- Seven versioned prompt templates in `ke/prompts/`, model-agnostic and asserted
+  to be so.
+- `attach.py` and `--attach` / `--request` — artifact content is user-owned, its
+  tracking is not
+  ([ADR-0042](docs/adr/0042-artifact-content-is-user-owned.md)).
+- `artifacts.py`, `ke status` and `indexes/generation-status.md` — coverage,
+  the requested backlog, and computed staleness. Surfaced weekly in the digest.
+- `requirements.lock` and `tools/lock_dependencies.py` — hash-pinned dependencies
+  installed with `--require-hashes` (closes M6's S-1).
+- `.github/dependabot.yml` — pip and Actions, weekly, pull requests only
+  (closes M6's S-4).
+- `docs/reviews/M7_OPERATIONAL_READINESS.md` — ten scenarios classified as
+  graceful degradation / automatic recovery / manual recovery, all 30 test
+  citations resolving. A standing deliverable from M7 onward.
+- `test_packaging.py` — installs the built package and checks what actually
+  shipped.
+- README section on the full copy-paste workflow.
+- 135 tests: 465 → 600.
+
+### Fixed
+
+- **The prompt templates were not installed with the package.** They lived one
+  directory above it, so `pip install -e .` found all seven and a real install
+  found none — `ke generate` would have failed for every artifact type. A command
+  that was thoroughly tested and completely broken.
+- **`stale_artifacts` was a method, not a property**, so `bool(...)` was true for
+  all 222 stored objects. `--stale` matched everything and looked reasonable.
+- **`refresh_pack` wrote through an index-relative link path** instead of a
+  filesystem directory. Split into `load_objects_with_dirs`.
+- **A failed registry write reported `[Errno 28]` and nothing else.** It now says
+  how many objects are affected, that nothing is lost, and what to run (O-1).
+- A prompt template can no longer declare an `output` path outside the object's
+  directory (S-7).
+
+### Known
+
+- Actions remain pinned by tag rather than commit SHA (S-2, TD-8): resolving the
+  SHAs requires repository access this environment does not have, and unverified
+  hashes would break the build.
+- Generation is manual with no batch mode, by design.
+- No artifact has yet been generated from a real model; the round trip is verified
+  with hand-written stand-in content.
 
 ---
 

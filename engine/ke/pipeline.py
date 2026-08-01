@@ -260,10 +260,36 @@ def persist_state(ctx: HarvestContext) -> None:
     **After objects are on disk** (ADR-0031). A crash here leaves an ID gap,
     which is recoverable; the reverse order leaves an ID pointing at nothing,
     which is permanent.
+
+    The failure mode is worth naming, because it is the one operational
+    scenario in this engine that needs a human (M7 readiness review, O-1). If
+    the registry cannot be written after objects were minted, the object exists
+    on disk and the registry does not know about it. Nothing is lost and no
+    Feature ID is duplicated -- `write_object` refuses to overwrite a minted
+    object, which is what stops the next run reusing the number -- but the pack
+    is internally inconsistent until somebody fixes it.
+
+    `ke validate` reports it as `REG003`, and the weekly workflow validates
+    before pushing, so the scheduled path never publishes this state: the runner
+    is discarded and the next Sunday starts from the last good commit. A local
+    `ke harvest` keeps the working tree, so there it needs a human.
     """
     if ctx.dry_run:
         return
-    ctx.registry.save(ctx.pack.registry_path)
+    try:
+        ctx.registry.save(ctx.pack.registry_path)
+    except OSError as exc:
+        # Re-raised with the recovery instruction attached. A bare
+        # "No space left on device" tells an operator what happened but not
+        # what it means or what to do about it, and this is the one failure
+        # where those differ.
+        raise OSError(
+            f"could not write the ID registry ({exc}). "
+            f"{len(ctx.report.minted)} object(s) were written this run and are "
+            "NOT registered. Nothing is lost and no Feature ID was duplicated. "
+            "Run `ke validate` to list them (REG003), free space or fix "
+            "permissions, then re-run the harvest."
+        ) from exc
     ctx.seen.save(ctx.pack.seen_path)
     ctx.queue.save(ctx.queue_path)
 

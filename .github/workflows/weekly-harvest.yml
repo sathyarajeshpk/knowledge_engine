@@ -56,7 +56,13 @@ jobs:
           python-version: "3.11"
 
       - name: Install the engine
-        run: python -m pip install --quiet -e "."
+        # Dependencies come from `requirements.lock` with `--require-hashes`, so
+        # a compromised release of PyYAML or feedparser fails the install rather
+        # than executing in a job that holds a write token (M6 review, S-1).
+        # `--no-deps` on the second line stops pip re-resolving them.
+        run: |
+          python -m pip install --quiet --require-hashes -r requirements.lock
+          python -m pip install --quiet --no-deps -e "."
 
       - name: Validate before harvesting
         # A pack that is already broken must not be harvested into. Better to

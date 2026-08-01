@@ -262,7 +262,24 @@ def test_stale_artifacts_are_reported_per_object():
             ),
         },
     )
-    assert obj.stale_artifacts() == (ArtifactType.TUTORIAL,)
+    assert obj.stale_artifacts == (ArtifactType.TUTORIAL,)
+
+
+def test_an_object_with_no_artifacts_is_falsy_for_staleness():
+    """Regression: `stale_artifacts` was a method, so it was always truthy.
+
+    `if obj.stale_artifacts:` was silently true for every one of the 222 stored
+    objects, none of which have artifacts at all. Nothing read it until M7, and
+    the first code that did got it wrong immediately — which is the whole
+    problem with a zero-argument accessor that looks like a call.
+
+    Asserting on the truthiness rather than on `== ()` is deliberate: `()` was
+    never the failing case, the bound method was.
+    """
+    obj = make_object()
+
+    assert obj.stale_artifacts == ()
+    assert not obj.stale_artifacts
 
 
 # ---------------------------------------------------------------------------

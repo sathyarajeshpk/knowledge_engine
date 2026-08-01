@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from datetime import date
 from pathlib import Path
 
 from ke import __version__
@@ -172,6 +173,125 @@ def build_parser() -> argparse.ArgumentParser:
     supersede.add_argument("--pack", metavar="NAME")
     supersede.add_argument("--repo-root", metavar="PATH", type=Path)
     supersede.set_defaults(handler=_run_supersede)
+
+    search = subcommands.add_parser(
+        "search",
+        help="find stored knowledge objects",
+        description=(
+            "Filters compose by AND: every option you give must match. There is "
+            "no query language and no relevance ranking — a wrong ranking hides "
+            "things convincingly, which is worse than no ranking at all."
+        ),
+    )
+    search.add_argument("text", nargs="?", help="substring of title, category or tags")
+    search.add_argument("--tier", type=int, choices=(1, 2, 3))
+    search.add_argument("--priority", choices=("high", "medium", "low"))
+    search.add_argument(
+        "--difficulty", choices=("beginner", "intermediate", "advanced")
+    )
+    search.add_argument(
+        "--learning-status",
+        choices=("not-started", "in-progress", "learned", "revisit"),
+    )
+    search.add_argument("--status", choices=("active", "replaced", "deprecated"))
+    search.add_argument("--category", metavar="NAME")
+    search.add_argument("--tag", metavar="TAG")
+    search.add_argument("--source", metavar="NAME")
+    search.add_argument("--since", metavar="YYYY-MM-DD")
+    search.add_argument("--until", metavar="YYYY-MM-DD")
+    search.add_argument(
+        "--needs-review", action="store_true", help="only objects flagged for review"
+    )
+    search.add_argument(
+        "--stale", action="store_true", help="only objects with a stale artifact"
+    )
+    search.add_argument("--limit", type=int, metavar="N")
+    search.add_argument(
+        "--ids-only",
+        action="store_true",
+        help="print bare Feature IDs, one per line, for piping",
+    )
+    search.add_argument("--pack", metavar="NAME")
+    search.add_argument("--repo-root", metavar="PATH", type=Path)
+    search.set_defaults(handler=_run_search)
+
+    get = subcommands.add_parser(
+        "get",
+        help="show one knowledge object in full",
+        description=(
+            "Everything the object records about itself, including artifact "
+            "status. The article text is a file on disk and is deliberately not "
+            "duplicated here."
+        ),
+    )
+    get.add_argument("id", help="Feature ID, e.g. MSF-2026-07-001")
+    get.add_argument("--pack", metavar="NAME")
+    get.add_argument("--repo-root", metavar="PATH", type=Path)
+    get.set_defaults(handler=_run_get)
+
+    generate = subcommands.add_parser(
+        "generate",
+        help="assemble a context pack to paste into any AI model",
+        description=(
+            "Prints a self-contained document — instruction, knowledge, "
+            "provenance — that produces a usable artifact when pasted into a "
+            "fresh model session with no other context. The engine never calls "
+            "a model itself: that is what keeps this free and vendor-neutral."
+        ),
+    )
+    generate.add_argument(
+        "type",
+        help="artifact type (`ke generate list` shows them all)",
+    )
+    generate.add_argument("--id", metavar="FEATURE_ID", help="the knowledge object")
+    generate.add_argument(
+        "--attach",
+        metavar="FILE",
+        help="store the model's answer from FILE (or `-` for stdin)",
+    )
+    generate.add_argument(
+        "--request",
+        action="store_true",
+        help="record that this artifact is wanted, without generating it",
+    )
+    generate.add_argument(
+        "--model",
+        metavar="NAME",
+        help="record which model produced it (provenance only; never read)",
+    )
+    generate.add_argument(
+        "--force",
+        action="store_true",
+        help="replace an existing, current artifact",
+    )
+    generate.add_argument("--pack", metavar="NAME")
+    generate.add_argument("--repo-root", metavar="PATH", type=Path)
+    generate.set_defaults(handler=_run_generate)
+
+    status = subcommands.add_parser(
+        "status",
+        help="artifact coverage across the pack",
+        description=(
+            "What has been generated, what was requested and never produced, "
+            "and what has gone stale because the source changed underneath it."
+        ),
+    )
+    status.add_argument(
+        "--stale", action="store_true", help="list only the stale artifacts"
+    )
+    status.add_argument(
+        "--requested",
+        action="store_true",
+        help="list only artifacts requested but not generated",
+    )
+    status.add_argument(
+        "--refresh",
+        action="store_true",
+        help="write computed staleness into metadata (never regenerates)",
+    )
+    status.add_argument("--pack", metavar="NAME")
+    status.add_argument("--repo-root", metavar="PATH", type=Path)
+    status.set_defaults(handler=_run_status)
     return parser
 
 
@@ -434,6 +554,175 @@ def _run_supersede(args: argparse.Namespace) -> int:
             last = exc
     print(f"error: {last}", file=sys.stderr)
     return 2
+
+
+def _parse_day(raw: str | None, flag: str) -> "date | None":
+    """Parse a `--since` / `--until` value, or explain why it will not parse.
+
+    Raises rather than silently ignoring an unparseable date: a filter that
+    quietly does nothing returns confidently wrong results, which is the worst
+    behaviour available to a search command.
+    """
+    if raw is None:
+        return None
+    try:
+        return date.fromisoformat(raw)
+    except ValueError as exc:
+        raise ValueError(f"{flag} must be YYYY-MM-DD, not {raw!r}") from exc
+
+
+def _query_from(args: argparse.Namespace) -> "Query":
+    from ke.models import Difficulty, LearningPriority, LearningStatus, ObjectStatus, Tier
+    from ke.retrieve import Query
+
+    return Query(
+        text=args.text,
+        tier=Tier(args.tier) if args.tier else None,
+        learning_priority=LearningPriority(args.priority) if args.priority else None,
+        difficulty=Difficulty(args.difficulty) if args.difficulty else None,
+        learning_status=(
+            LearningStatus(args.learning_status) if args.learning_status else None
+        ),
+        status=ObjectStatus(args.status) if args.status else None,
+        category=args.category,
+        tag=args.tag,
+        source=args.source,
+        since=_parse_day(args.since, "--since"),
+        until=_parse_day(args.until, "--until"),
+        # `store_true` gives False when absent, but False means "only objects
+        # NOT flagged", which is a different question. Absent must stay None.
+        needs_review=True if args.needs_review else None,
+        stale=True if args.stale else None,
+    )
+
+
+def _run_search(args: argparse.Namespace) -> int:
+    from ke.retrieve import render_results, search
+
+    _, packs = _packs_for(args)
+    if packs is None:
+        return 2
+
+    try:
+        query = _query_from(args)
+    except ValueError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 2
+
+    for pack in packs:
+        found = search(pack, query)
+        shown = found[: args.limit] if args.limit else found
+        if args.ids_only:
+            for obj in shown:
+                print(obj.id)
+            continue
+        if len(packs) > 1:
+            print(f"\n=== {pack.name} ===")
+        print(render_results(shown, total=len(found)))
+    return 0
+
+
+def _run_get(args: argparse.Namespace) -> int:
+    from ke.retrieve import render_object, resolve
+
+    _, packs = _packs_for(args)
+    if packs is None:
+        return 2
+    try:
+        _, obj, directory = resolve(packs, args.id)
+    except KeyError as exc:
+        # `str(KeyError)` is the repr of its argument, quotes and all. Reaching
+        # for args[0] keeps the message readable rather than 'like this'.
+        print(f"error: {exc.args[0] if exc.args else exc}", file=sys.stderr)
+        return 2
+    print(render_object(obj, directory))
+    return 0
+
+
+def _run_generate(args: argparse.Namespace) -> int:
+    from ke.generate import GenerateError, available_templates, build_pack, load_template
+    from ke.models import ArtifactType
+
+    if args.type == "list":
+        print("\nArtifact types:\n")
+        for template in available_templates():
+            print(f"  {str(template.artifact_type):<26} v{template.prompt_version}  "
+                  f"{template.description}")
+        print("\n  ke generate tutorial --id MSF-2026-05-029\n")
+        return 0
+
+    try:
+        artifact_type = ArtifactType(args.type)
+    except ValueError:
+        names = ", ".join(str(t) for t in ArtifactType)
+        print(f"error: unknown artifact type {args.type!r}\n  try: {names}",
+              file=sys.stderr)
+        return 2
+
+    if not args.id:
+        print("error: --id is required (which knowledge object?)", file=sys.stderr)
+        return 2
+
+    _, packs = _packs_for(args)
+    if packs is None:
+        return 2
+
+    from ke.retrieve import resolve
+
+    try:
+        pack, obj, directory = resolve(packs, args.id)
+        template = load_template(artifact_type)
+    except (KeyError, GenerateError) as exc:
+        print(f"error: {exc.args[0] if exc.args else exc}", file=sys.stderr)
+        return 2
+
+    from ke.attach import AttachError, attach, read_content, request
+
+    if args.request:
+        try:
+            request(pack, obj, directory, template)
+        except AttachError as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 2
+        print(f"recorded: {obj.id} wants a {artifact_type}")
+        print("  it will appear in `ke status` and the weekly digest")
+        return 0
+
+    if args.attach:
+        try:
+            content = read_content(args.attach)
+            _, path = attach(
+                pack, obj, directory, template, content,
+                today=SystemClock().today(), model=args.model, force=args.force,
+            )
+        except (AttachError, OSError) as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 2
+        print(f"attached: {pack.relative(path)}")
+        print(f"  generated from revision {obj.current_revision}; "
+              f"prompt v{template.prompt_version}")
+        print("  the file is yours — the engine will never rewrite it")
+        return 0
+
+    print(build_pack(pack, obj, directory, template))
+    return 0
+
+
+def _run_status(args: argparse.Namespace) -> int:
+    from ke.artifacts import Coverage, refresh_pack, render_status
+
+    _, packs = _packs_for(args)
+    if packs is None:
+        return 2
+
+    for pack in packs:
+        if args.refresh:
+            changed = refresh_pack(pack)
+            print(f"{pack.name}: marked {changed} artifact(s) stale")
+        coverage = Coverage.of(pack)
+        print(render_status(coverage, stale_only=args.stale,
+                            requested_only=args.requested))
+    return 0
 
 
 def _run_validate(args: argparse.Namespace) -> int:

@@ -156,6 +156,14 @@ def write_indexes(
         "by-month.md": render_by_month(objects, pack_name),
         "review-queue.md": queue_document,
     }
+
+    if pack is not None:
+        # Artifact coverage, rebuilt with everything else. Derived data is
+        # always regenerated in full rather than patched, so it cannot drift
+        # from the objects it describes.
+        from ke.artifacts import Coverage, render_index as render_generation_status
+
+        documents["generation-status.md"] = render_generation_status(Coverage.of(pack))
     written = []
     for name, text in documents.items():
         path = indexes_dir / name

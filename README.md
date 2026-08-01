@@ -94,17 +94,27 @@ cd knowledge_engine
 
 python -m pip install -e ".[dev]"
 
-python -m pytest engine/tests -q     # 107 tests, ~0.6s
+python -m pytest engine/tests -q     # 594 tests, ~30s
 python -m ke validate                # check every Domain Pack
 ```
 
 Expected output:
 
 ```
-ok: 1 pack(s), 0 knowledge object(s), no findings
+1 pack(s), 222 knowledge object(s): 0 error(s), 35 warning(s)
 ```
 
-Zero objects is correct — M0 builds the foundation; M1 adds discovery.
+The 35 warnings are real and deliberate: 35 objects carry revision history
+produced by a bug fixed in M3. The revisions truthfully record what the engine
+did at the time, so they are surfaced rather than rewritten.
+
+For a reproducible install with hash-pinned dependencies — what the weekly job
+uses — see `requirements.lock`:
+
+```bash
+python -m pip install --require-hashes -r requirements.lock
+python -m pip install --no-deps -e ".[dev]"
+```
 
 ### `ke validate`
 
@@ -121,6 +131,126 @@ Every finding carries a stable code (`ID003`, `OWN001`, `REG002`) documented in
 
 ---
 
+## Using your knowledge
+
+This is the half the engine exists for. Everything above gets knowledge *in*;
+these commands get it *out*.
+
+### Find something
+
+Filters compose by AND. There is no query language and no relevance ranking — a
+wrong ranking hides things convincingly, which is worse than no ranking at all.
+
+```bash
+ke search                                  # everything, most useful first
+ke search "direct lake"                    # title, category and tags
+ke search --tier 1 --learning-status not-started
+ke search --tag governance --since 2026-06-01
+ke search --needs-review                   # what the engine could not classify
+ke search --stale                          # artifacts the source has outgrown
+ke search --tier 1 --ids-only | head -5    # for piping
+```
+
+Text matching ignores case *and* punctuation, so `direct lake`, `Direct-Lake`
+and `directlake` all find the same objects.
+
+```bash
+ke get MSF-2026-05-029     # one object in full, including artifact status
+```
+
+### Turn it into something
+
+```bash
+ke generate list                                    # the seven artifact types
+ke generate tutorial --id MSF-2026-05-029           # prints a context pack
+```
+
+The output is a **self-contained document**: the instruction, the knowledge
+article, the metadata a model would otherwise guess at, related objects, and the
+source link. Paste it into Claude, ChatGPT, Gemini, or whatever exists next.
+Nothing about it is vendor-specific, and there is no API key anywhere.
+
+The full loop:
+
+```bash
+# 1. Assemble the pack and put it on the clipboard
+ke generate tutorial --id MSF-2026-05-029 | pbcopy       # macOS
+ke generate tutorial --id MSF-2026-05-029 | xclip -sel c # Linux
+
+# 2. Paste into any model. Read what comes back. This step is not optional —
+#    everything generated is plausible-sounding text about a technical subject,
+#    which is exactly where a wrong answer is hardest to spot.
+
+# 3. Paste the answer back
+pbpaste | ke generate tutorial --id MSF-2026-05-029 --attach - --model <name>
+```
+
+That writes `artifacts/tutorial.md` inside the object's directory and records
+what produced it:
+
+```yaml
+generation:
+  tutorial:
+    status: generated
+    path: artifacts/tutorial.md
+    generated_at: 2026-08-01
+    generated_from_revision: 1
+    model: <name>          # provenance only — nothing in the engine reads it
+    prompt_version: 1
+```
+
+**The artifact file is yours.** Edit it, rewrite it, throw half of it away. The
+engine will never touch it again. Only the `generation` block above — bookkeeping
+*about* the artifact — belongs to the engine.
+
+`--model` is recorded so that when something reads oddly in six months you can
+see what wrote it. Recording it is not a dependency; reading it would be.
+
+### Not right now, but soon
+
+```bash
+ke generate quiz --id MSF-2026-05-029 --request
+```
+
+Records the intention without generating anything. It shows up in `ke status`
+and the weekly digest, which is the only mechanism this system has for making a
+good intention visible after the enthusiasm has passed.
+
+### Keep track
+
+```bash
+ke status                # coverage by artifact type
+ke status --stale        # what the source changed after you made it
+ke status --requested    # what you promised yourself
+ke status --refresh      # write computed staleness into metadata
+```
+
+**Staleness is computed, never guessed.** An artifact is stale exactly when the
+knowledge object has been revised since it was generated. Nothing is regenerated
+automatically and nothing is ever deleted — the engine detects and reports, you
+decide.
+
+```bash
+ke generate tutorial --id MSF-2026-05-029 --attach new.md   # stale: allowed
+ke generate tutorial --id MSF-2026-05-029 --attach new.md --force  # current: needs --force
+```
+
+Replacing a *stale* artifact is the normal path. Replacing a *current* one needs
+`--force`, because an artifact you have since edited by hand should not vanish
+because you re-ran a command.
+
+### The rest of the CLI
+
+```bash
+ke harvest              # the full pipeline (what Sunday runs)
+ke review next          # the most urgent pending decision
+ke history MSF-2026-05-029          # every recorded state of an object
+ke supersede <old> --by <new>       # record that one feature replaced another
+ke validate             # the guardrail; runs in CI
+```
+
+---
+
 ## Repository structure
 
 ```
@@ -129,9 +259,12 @@ knowledge_engine/
 │   ├── ke/
 │   │   ├── models.py         What a knowledge object IS + field ownership
 │   │   ├── pack.py           Finding and loading Domain Packs
-│   │   ├── validate.py       31 checks against the schema contract
-│   │   └── __main__.py       CLI: python -m ke validate
-│   └── tests/                107 tests
+│   │   ├── validate.py       schema, ID, ownership and history checks
+│   │   ├── retrieve.py       ke search / ke get
+│   │   ├── generate.py       context packs for any AI model
+│   │   ├── prompts/          seven versioned prompt templates
+│   │   └── __main__.py       the CLI
+│   └── tests/                594 tests
 │
 ├── domain-packs/             ← ALL DATA. Contains no code.
 │   └── microsoft-fabric/
@@ -146,7 +279,8 @@ knowledge_engine/
 │   ├── VISION.md             Why this exists, and where it goes
 │   ├── ROADMAP.md            M0–M9 and the Domain Pack plan
 │   ├── JOURNAL.md            Development journal per milestone
-│   ├── adr/                  15 Architecture Decision Records
+│   ├── adr/                  40 Architecture Decision Records
+│   ├── reviews/              architecture, security and readiness reviews
 │   ├── playbook/             File-by-file developer guides
 │   └── learning/             Concept guides for each milestone
 │
@@ -253,23 +387,29 @@ current one is reviewed, merged and approved.
 
 Every milestone delivers, without being asked:
 
-- A PR review summary written as a Senior Software Architect
-- A Developer Playbook — `docs/playbook/M<n>_*.md`
-- A Learning Guide — `docs/learning/M<n>_*.md`
-- An interactive code walkthrough, one file at a time
+- A **PR review summary** written as a Senior Software Architect
+- An **Architecture Review** — `docs/reviews/M<n>_ARCHITECTURE_REVIEW.md`
+- A **Security & Vulnerability Review** — from M6 onward
+- An **Operational Readiness Review** — from M7 onward
+- Release notes, a test summary, remaining technical debt, risks for the next
+  milestone
 - Journal, roadmap, changelog and ADR updates
+
+Developer Playbooks and Learning Guides (`docs/playbook/`, `docs/learning/`)
+exist for M0–M1 and are paused: from M2 the project moved from
+architecture-first to product-first, and they resume on request.
 
 | # | Milestone | Status |
 |---|---|---|
 | M0 | Foundation, schema, guardrails | **done** |
-| M1 | Discovery — source adapters | next |
-| M2 | Identity, dedupe, storage | planned |
-| M3 | Classification and learning metadata | planned |
-| M4 | Relationships and knowledge graph | planned |
-| M5 | Revisions, updates, staleness | planned |
-| M6 | Weekly automation and notifications | planned |
-| M7 | Retrieval and on-demand generation | planned |
-| M8 | Second pack — proves the abstraction | planned |
+| M1 | Discovery and acquisition | **done** |
+| M2 | Identity, dedupe, storage | **done** |
+| M3 | The update path | **done** |
+| M4 | Orchestration and classification | **done** |
+| M5 | Review workflow and history | **done** |
+| M6 | Weekly automation and notifications | **done** |
+| M7 | Retrieval and on-demand generation | **done** |
+| M8 | Second pack — proves the abstraction | next |
 | M9 | Hardening, migration, split-readiness | planned |
 
 Full detail in [`docs/ROADMAP.md`](docs/ROADMAP.md).
@@ -343,7 +483,8 @@ no running cost never needs a business case and never gets switched off.
 | [`docs/VISION.md`](docs/VISION.md) | Why this exists, goals, philosophy, long view |
 | [`docs/ROADMAP.md`](docs/ROADMAP.md) | M0–M9, Domain Packs, non-goals |
 | [`docs/SCHEMA.md`](docs/SCHEMA.md) | The data contract `ke validate` enforces |
-| [`docs/adr/`](docs/adr/) | 15 Architecture Decision Records |
+| [`docs/adr/`](docs/adr/) | 40 Architecture Decision Records |
+| [`docs/reviews/`](docs/reviews/) | Architecture, security and operational readiness reviews |
 | [`docs/JOURNAL.md`](docs/JOURNAL.md) | Development journal per milestone |
 | [`docs/playbook/`](docs/playbook/) | File-by-file developer guides |
 | [`docs/learning/`](docs/learning/) | Concept guides per milestone |
