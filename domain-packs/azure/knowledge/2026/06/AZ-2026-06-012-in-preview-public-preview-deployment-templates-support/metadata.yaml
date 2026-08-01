@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-012
+slug: in-preview-public-preview-deployment-templates-support
+title: '[In preview] Public Preview: Deployment Templates support packaging deployment configurations
+  in registries for curated deployment'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563172
+announcement_url: https://azure.microsoft.com/updates?id=563172
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:80534219f20e3358d3d6c13707ece1ec55f73e9f9855b6da1670ab40d52ccce9
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:24b48076ea1ef9f0dca0ccbde6039aee8f2523eb7af63c495bb7acd4624a6f72
+  discovered_at: '2026-08-01T21:26:59.742716+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:24b48076ea1ef9f0dca0ccbde6039aee8f2523eb7af63c495bb7acd4624a6f72
+tier: 2
+learning_priority: low
+category: ai-machine-learning
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:80534219f20e3358d3d6c13707ece1ec55f73e9f9855b6da1670ab40d52ccce9
+  title_snapshot: '[In preview] Public Preview: Deployment Templates support packaging deployment
+    configurations in registries for curated deployment'
+  summary_snapshot: Deployment templates in Azure Machine Learning add public preview support
+    for deploying from registries, expanding the set of model registries that customers can
+    use as the source for a templated deployment. Deployment templates package a model, deploymen
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

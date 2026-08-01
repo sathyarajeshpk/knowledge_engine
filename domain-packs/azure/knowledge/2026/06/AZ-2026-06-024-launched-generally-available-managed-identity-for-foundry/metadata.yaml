@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-024
+slug: launched-generally-available-managed-identity-for-foundry
+title: '[Launched] Generally Available: Managed identity for Foundry billing calls from Azure
+  AI Search'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563242
+announcement_url: https://azure.microsoft.com/updates?id=563242
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:1087fccaa4e5780f8c56f10bd2917ad2aa6395f62ca5a1c6c2979efa786795b7
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:4759f6607f197ca9a221125d0e1812c82386caf0d59761be6e0cfc023f20e628
+  discovered_at: '2026-08-01T21:26:59.742446+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:4759f6607f197ca9a221125d0e1812c82386caf0d59761be6e0cfc023f20e628
+tier: 1
+learning_priority: low
+category: ai-machine-learning
+tags:
+- ga
+difficulty: advanced
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:1087fccaa4e5780f8c56f10bd2917ad2aa6395f62ca5a1c6c2979efa786795b7
+  title_snapshot: '[Launched] Generally Available: Managed identity for Foundry billing calls
+    from Azure AI Search'
+  summary_snapshot: Azure AI Search now supports managed identity authentication for the billing
+    operations it issues against Microsoft Foundry resources, replacing the prior key-based
+    flow. Customers assign a system-assigned or user-assigned identity to the search service,
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

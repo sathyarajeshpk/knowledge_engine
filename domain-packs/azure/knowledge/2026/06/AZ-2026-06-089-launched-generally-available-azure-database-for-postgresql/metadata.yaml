@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-089
+slug: launched-generally-available-azure-database-for-postgresql
+title: '[Launched] Generally Available: Azure Database for PostgreSQL - Flexible Server: DuckDB
+  extension'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563766
+announcement_url: https://azure.microsoft.com/updates?id=563766
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-03
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:820037407be5a8cefa266a0606ecd0182ebc99e1852affd384b56aae493fa917
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:7b54931a43f111a25c7996cd89974697c81555fb9fde1f026324ff349d06809b
+  discovered_at: '2026-08-01T21:26:59.739674+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:7b54931a43f111a25c7996cd89974697c81555fb9fde1f026324ff349d06809b
+tier: 1
+learning_priority: high
+category: databases
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:820037407be5a8cefa266a0606ecd0182ebc99e1852affd384b56aae493fa917
+  title_snapshot: '[Launched] Generally Available: Azure Database for PostgreSQL - Flexible
+    Server: DuckDB extension'
+  summary_snapshot: You can now install the DuckDB extension in Azure Database for PostgreSQL
+    flexible server. Learn more.
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

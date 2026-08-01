@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-028
+slug: in-preview-public-preview-mai-image-2-5-in-microsoft
+title: '[In preview] Public Preview: MAI-Image-2.5 in Microsoft Foundry model catalog'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563581
+announcement_url: https://azure.microsoft.com/updates?id=563581
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:34a8e76c80f3630b3c6aba6b674c1bc6a54d078ae656f47dc5e810755ba92221
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:51bb569c4d7844fa306846c37256e4d5979d12038520a88db22da02b02cd644e
+  discovered_at: '2026-08-01T21:26:59.741764+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:51bb569c4d7844fa306846c37256e4d5979d12038520a88db22da02b02cd644e
+tier: 2
+learning_priority: low
+category: ai-machine-learning
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:34a8e76c80f3630b3c6aba6b674c1bc6a54d078ae656f47dc5e810755ba92221
+  title_snapshot: '[In preview] Public Preview: MAI-Image-2.5 in Microsoft Foundry model catalog'
+  summary_snapshot: Microsoft Foundry adds MAI-Image-2.5 to the model catalog in public preview,
+    the next generation of Microsoft's in-house image generation model. The release improves
+    photorealism, prompt fidelity, and generation speed compared with MAI-Image-2, and is
+    tun
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

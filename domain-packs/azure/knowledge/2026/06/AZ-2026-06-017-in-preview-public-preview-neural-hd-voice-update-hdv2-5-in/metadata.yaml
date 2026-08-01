@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-017
+slug: in-preview-public-preview-neural-hd-voice-update-hdv2-5-in
+title: '[In preview] Public Preview: Neural HD voice update (HDv2.5) in Azure AI Speech'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563526
+announcement_url: https://azure.microsoft.com/updates?id=563526
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:4256400fb30a685e247fe8ce180e58982431de587229cd805150cfb2df7ae982
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:3b189d337ae43deb586119ccd5e7a4540be11f342db2c8d939bcb30402d5404e
+  discovered_at: '2026-08-01T21:26:59.741841+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:3b189d337ae43deb586119ccd5e7a4540be11f342db2c8d939bcb30402d5404e
+tier: 2
+learning_priority: low
+category: ai-machine-learning
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:4256400fb30a685e247fe8ce180e58982431de587229cd805150cfb2df7ae982
+  title_snapshot: '[In preview] Public Preview: Neural HD voice update (HDv2.5) in Azure AI
+    Speech'
+  summary_snapshot: Azure AI Speech is rolling out an updated Neural HD text-to-speech model,
+    moving customers from DragonHDLatest to HDv2.5. The update raises audio quality scores,
+    adds style and paralinguistic tag support for English voices, and reduces word error rate
+    in
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

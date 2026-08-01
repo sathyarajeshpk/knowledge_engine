@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-135
+slug: launched-generally-available-icmp-support-for-azure
+title: '[Launched] Generally Available: ICMP Support for Azure Standard V2 NAT Gateway'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=565487
+announcement_url: https://azure.microsoft.com/updates?id=565487
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-17
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:2782c7cf935741d9b7b47c62fad76a3d96e43a41b6383109b470feda16c10534
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:d4bbc140643dd6e0ffaebe61610d4456891fc8c92e06daa67034971b8da4155a
+  discovered_at: '2026-08-01T21:26:59.737764+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:d4bbc140643dd6e0ffaebe61610d4456891fc8c92e06daa67034971b8da4155a
+tier: 1
+learning_priority: low
+category: null
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:2782c7cf935741d9b7b47c62fad76a3d96e43a41b6383109b470feda16c10534
+  title_snapshot: '[Launched] Generally Available: ICMP Support for Azure Standard V2 NAT
+    Gateway'
+  summary_snapshot: Azure StandardV2 NAT Gateway now supports outbound ICMP Echo Request and
+    Echo Reply traffic, enabling customers to use tools such as ping to quickly validate outbound
+    connectivity and troubleshoot network issues from workloads behind StandardV2 NAT Gatewa
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

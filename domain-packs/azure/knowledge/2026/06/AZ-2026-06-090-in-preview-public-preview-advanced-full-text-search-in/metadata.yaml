@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-090
+slug: in-preview-public-preview-advanced-full-text-search-in
+title: '[In preview] Public Preview: Advanced full-text search in Azure DocumentDB'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563077
+announcement_url: https://azure.microsoft.com/updates?id=563077
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-03
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:e83a7933f3101f5e5f7d53979bc84d3abb28e4387cb1e43cf9088effc852bc9d
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:aaf0c3eb30610536bf532a2e1eafdfecf6d76f368c885ba0e9bd1893a4556e3b
+  discovered_at: '2026-08-01T21:26:59.739840+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:aaf0c3eb30610536bf532a2e1eafdfecf6d76f368c885ba0e9bd1893a4556e3b
+tier: 2
+learning_priority: low
+category: databases
+tags:
+- cosmos-db
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:e83a7933f3101f5e5f7d53979bc84d3abb28e4387cb1e43cf9088effc852bc9d
+  title_snapshot: '[In preview] Public Preview: Advanced full-text search in Azure DocumentDB'
+  summary_snapshot: Now you can unify your search operations in a single database. Azure DocumentDB
+    has added fuzzy search, proximity search, more language support, and BM25 ranking to its
+    full-text capabilities, bringing vector and advanced text search operations together.
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

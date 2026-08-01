@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-06-018
+slug: in-preview-public-preview-pre-upgrade-validation-checks-for
+title: '[In preview] Public Preview: Pre-upgrade validation checks for Azure Database for
+  PostgreSQL'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563786
+announcement_url: https://azure.microsoft.com/updates?id=563786
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:b55419670d3b7f86e94209ba15cc5ba145275d1d7e3dd95ec0314181c12f30aa
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:3cb6e6761a0e541ee4a1a2f4a3ece4db78c6c07c0283972b9eb2674f1330eb98
+  discovered_at: '2026-08-01T21:26:59.741392+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:3cb6e6761a0e541ee4a1a2f4a3ece4db78c6c07c0283972b9eb2674f1330eb98
+tier: 2
+learning_priority: high
+category: databases
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:b55419670d3b7f86e94209ba15cc5ba145275d1d7e3dd95ec0314181c12f30aa
+  title_snapshot: '[In preview] Public Preview: Pre-upgrade validation checks for Azure Database
+    for PostgreSQL'
+  summary_snapshot: You can now proactively validate Major Version Upgrade (MVU) readiness
+    for Azure Database for PostgreSQL flexible server before initiating the actual upgrade
+    process. New pre-upgrade validation checks allow you to independently run upgrade compatibility
+    v
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

@@ -1,0 +1,63 @@
+schema_version: 1
+id: AZ-2026-06-119
+slug: launched-generally-available-premium-ssd-v2-disks-now
+title: '[Launched] Generally Available: Premium SSD v2 disks now support non-zonal Azure Virtual
+  Machines'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=565359
+announcement_url: https://azure.microsoft.com/updates?id=565359
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-08
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:b3741466537e001bf20a8c6639ea0261fae25d3fb2917b0c2a754b9814e4cdb5
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:da5aaf1955ba7ab9355bc7e0446a4741a9b1c54db9b8ebf4dfdacdebd6690e1b
+  discovered_at: '2026-08-01T21:26:59.738299+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:da5aaf1955ba7ab9355bc7e0446a4741a9b1c54db9b8ebf4dfdacdebd6690e1b
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- ga
+- regional-availability
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:b3741466537e001bf20a8c6639ea0261fae25d3fb2917b0c2a754b9814e4cdb5
+  title_snapshot: '[Launched] Generally Available: Premium SSD v2 disks now support non-zonal
+    Azure Virtual Machines'
+  summary_snapshot: Azure Premium SSD v2 disks now support non-zonal, single-instance Azure
+    virtual machines in select Azure regions with Availability Zones (AZs). Customers can
+    now deploy Premium SSD v2 with non-zonal virtual machines without selecting an Availability
+    Zone.
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

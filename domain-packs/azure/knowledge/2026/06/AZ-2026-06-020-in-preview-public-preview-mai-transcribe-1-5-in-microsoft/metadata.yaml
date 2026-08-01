@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-020
+slug: in-preview-public-preview-mai-transcribe-1-5-in-microsoft
+title: '[In preview] Public Preview: MAI-Transcribe-1.5 in Microsoft Foundry model catalog'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563586
+announcement_url: https://azure.microsoft.com/updates?id=563586
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:9251c968289d468b2a8b1823b20bd4288839cce9fde2099fa2d3c6aa200ded86
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:41f19eed0cc9a31c45d79739002e819961c7a6c743aae2ede63d8cd53522bfc7
+  discovered_at: '2026-08-01T21:26:59.741724+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:41f19eed0cc9a31c45d79739002e819961c7a6c743aae2ede63d8cd53522bfc7
+tier: 2
+learning_priority: low
+category: ai-machine-learning
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:9251c968289d468b2a8b1823b20bd4288839cce9fde2099fa2d3c6aa200ded86
+  title_snapshot: '[In preview] Public Preview: MAI-Transcribe-1.5 in Microsoft Foundry model
+    catalog'
+  summary_snapshot: Microsoft Foundry adds MAI-Transcribe-1.5 to the model catalog in public
+    preview, Microsoft's next-generation speech-to-text model. The release adds improved accuracy
+    with noticeably lower word error rate on long-tail locales than the previous generation,
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

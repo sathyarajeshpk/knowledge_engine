@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-07-053
+slug: announcing-reservation-exchanges-for-azure-services
+title: 'Announcing: Reservation exchanges for Azure services supported by savings plans will
+  no longer be available starting February 1, 2027'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=568514
+announcement_url: https://azure.microsoft.com/updates?id=568514
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-30
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:261818fc106915ca70d467eac327e91cf4c93cd5d170e9c342d49f83b8af660d
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:5916549a49b20e478ff323e5d4e426638516fec80dd03f2ecf7e7270103e75cc
+  discovered_at: '2026-08-01T21:26:59.735294+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:5916549a49b20e478ff323e5d4e426638516fec80dd03f2ecf7e7270103e75cc
+tier: 2
+learning_priority: medium
+category: compute
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:261818fc106915ca70d467eac327e91cf4c93cd5d170e9c342d49f83b8af660d
+  title_snapshot: 'Announcing: Reservation exchanges for Azure services supported by savings
+    plans will no longer be available starting February 1, 2027'
+  summary_snapshot: 'Starting February 1, 2027, Azure reservations exchanges will no longer
+    be available for services covered by savings plans. At the time of this announcement,
+    this includes reservations for the following services: Compute services: Azure Virtual
+    Machine'
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

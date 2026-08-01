@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-049
+slug: in-preview-public-preview-incremental-sharepoint
+title: '[In preview] Public Preview: Incremental SharePoint permissions sync for Azure AI
+  Search and Foundry IQ'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563396
+announcement_url: https://azure.microsoft.com/updates?id=563396
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:6e0d13420720927230dbb7b56f8cd2fbd99019e3bb5342e84ce139154e7b7b1f
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:9be82bb252b1ce54c6d8046d3019324465a3d4fc72859a63d832386db6af7eb7
+  discovered_at: '2026-08-01T21:26:59.742086+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:9be82bb252b1ce54c6d8046d3019324465a3d4fc72859a63d832386db6af7eb7
+tier: 2
+learning_priority: low
+category: ai-machine-learning
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:6e0d13420720927230dbb7b56f8cd2fbd99019e3bb5342e84ce139154e7b7b1f
+  title_snapshot: '[In preview] Public Preview: Incremental SharePoint permissions sync for
+    Azure AI Search and Foundry IQ'
+  summary_snapshot: Azure AI Search and Foundry IQ Knowledge Sources add incremental SharePoint
+    permissions sync in public preview, keeping document-level, site, and library access control
+    lists current as SharePoint permissions change. Enterprises store business-critical co
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

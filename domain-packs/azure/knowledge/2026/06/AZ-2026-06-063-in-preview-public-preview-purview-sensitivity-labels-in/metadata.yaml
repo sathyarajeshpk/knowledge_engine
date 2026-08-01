@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-06-063
+slug: in-preview-public-preview-purview-sensitivity-labels-in
+title: '[In preview] Public Preview: Purview sensitivity labels in Azure AI Search knowledge
+  sources'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563591
+announcement_url: https://azure.microsoft.com/updates?id=563591
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:1fc401c4c6edc521b23aa21dd7935bbe94cd2c5fa7652b44db7fa795edc9e82e
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:c0cba34e2e93a2f852e6f7c2f35d58204708540997fce064fde7100b5a4d554e
+  discovered_at: '2026-08-01T21:26:59.741689+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:c0cba34e2e93a2f852e6f7c2f35d58204708540997fce064fde7100b5a4d554e
+tier: 2
+learning_priority: high
+category: ai-machine-learning
+tags:
+- ai
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:1fc401c4c6edc521b23aa21dd7935bbe94cd2c5fa7652b44db7fa795edc9e82e
+  title_snapshot: '[In preview] Public Preview: Purview sensitivity labels in Azure AI Search
+    knowledge sources'
+  summary_snapshot: Azure AI Search adds Microsoft Purview sensitivity label support to knowledge
+    sources in public preview. Labels applied at the source system flow through ingestion
+    into Azure AI Search and into the knowledge bases that ground Foundry agents and copilots,
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

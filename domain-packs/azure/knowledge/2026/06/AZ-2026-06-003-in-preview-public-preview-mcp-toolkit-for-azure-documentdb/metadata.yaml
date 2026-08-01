@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-003
+slug: in-preview-public-preview-mcp-toolkit-for-azure-documentdb
+title: '[In preview] Public Preview: MCP toolkit for Azure DocumentDB'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563112
+announcement_url: https://azure.microsoft.com/updates?id=563112
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:7f0e36a4cb2726176b114ce7c573f5542684ae5e0f9895c9ac99ea0514d94ef5
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:08282d0b06f17ee383f9ba51caa462bd58deb6b90669a16b4e5f4032de24e90c
+  discovered_at: '2026-08-01T21:26:59.743121+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:08282d0b06f17ee383f9ba51caa462bd58deb6b90669a16b4e5f4032de24e90c
+tier: 2
+learning_priority: low
+category: ai-machine-learning
+tags:
+- cosmos-db
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:7f0e36a4cb2726176b114ce7c573f5542684ae5e0f9895c9ac99ea0514d94ef5
+  title_snapshot: '[In preview] Public Preview: MCP toolkit for Azure DocumentDB'
+  summary_snapshot: Azure DocumentDB now supports the Model Context Protocol (MCP), available
+    in public preview. With the MCP toolkit, you can connect AI agents and LLM-powered applications
+    directly to your DocumentDB database, enabling natural language queries, document ret
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

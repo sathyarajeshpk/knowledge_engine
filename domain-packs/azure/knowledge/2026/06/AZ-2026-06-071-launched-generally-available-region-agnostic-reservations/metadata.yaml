@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-06-071
+slug: launched-generally-available-region-agnostic-reservations
+title: '[Launched] Generally Available: Region-agnostic reservations for Global PTU in Microsoft
+  Foundry'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563212
+announcement_url: https://azure.microsoft.com/updates?id=563212
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:7775fdaa5d333a36bc4e36016bc758a37508c38b9c08e22c4556b628308de211
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:e467d346fd019087fab3469bf5369d2dec93c701a6df236c28a3c8a1c5a0cbf0
+  discovered_at: '2026-08-01T21:26:59.742582+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:e467d346fd019087fab3469bf5369d2dec93c701a6df236c28a3c8a1c5a0cbf0
+tier: 1
+learning_priority: low
+category: governance-cost
+tags:
+- ga
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:7775fdaa5d333a36bc4e36016bc758a37508c38b9c08e22c4556b628308de211
+  title_snapshot: '[Launched] Generally Available: Region-agnostic reservations for Global
+    PTU in Microsoft Foundry'
+  summary_snapshot: Microsoft Foundry adds region-agnostic reservations for Global Provisioned
+    Throughput Units (PTUs) at general availability, letting customers commit to PTU capacity
+    once and consume it from any supported region. Previously, a reserved PTU commitment was
+    t
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

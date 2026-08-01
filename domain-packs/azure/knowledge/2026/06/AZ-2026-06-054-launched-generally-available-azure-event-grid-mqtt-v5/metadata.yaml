@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-054
+slug: launched-generally-available-azure-event-grid-mqtt-v5
+title: '[Launched] Generally Available: Azure Event Grid - MQTT v5 Subscription Identifier'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=564532
+announcement_url: https://azure.microsoft.com/updates?id=564532
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:2d9dc6531c30feb0b4df39b2e25aa5f848d7f1ebf3128d07e982427c44816787
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:a6c3f5114fc31f52406c1da28652fa65ff996d782632df776f88311a805cd347
+  discovered_at: '2026-08-01T21:26:59.740802+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:a6c3f5114fc31f52406c1da28652fa65ff996d782632df776f88311a805cd347
+tier: 1
+learning_priority: low
+category: null
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:2d9dc6531c30feb0b4df39b2e25aa5f848d7f1ebf3128d07e982427c44816787
+  title_snapshot: '[Launched] Generally Available: Azure Event Grid - MQTT v5 Subscription
+    Identifier'
+  summary_snapshot: Azure Event Grid Standard Namespace now supports MQTT v5 subscription
+    identifier capabilities in GA. Now each MQTT subscription can include an identifier that
+    is delivered with incoming messages, enabling applications to route events immediately
+    based on
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

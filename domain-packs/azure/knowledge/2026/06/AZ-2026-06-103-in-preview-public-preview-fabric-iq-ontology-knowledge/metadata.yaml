@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-103
+slug: in-preview-public-preview-fabric-iq-ontology-knowledge
+title: '[In preview] Public Preview: Fabric IQ Ontology Knowledge Source in Microsoft Foundry
+  IQ'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563416
+announcement_url: https://azure.microsoft.com/updates?id=563416
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-04
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:b084e6871bf96fd01542bc57f9cb236f3ae4eb5059c3eca032f678436353e38b
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:2b0588ba62f71949503218242f613e3b86a1b1d459f31a3f53d8f037638e81c1
+  discovered_at: '2026-08-01T21:26:59.738865+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:2b0588ba62f71949503218242f613e3b86a1b1d459f31a3f53d8f037638e81c1
+tier: 2
+learning_priority: low
+category: platform
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:b084e6871bf96fd01542bc57f9cb236f3ae4eb5059c3eca032f678436353e38b
+  title_snapshot: '[In preview] Public Preview: Fabric IQ Ontology Knowledge Source in Microsoft
+    Foundry IQ'
+  summary_snapshot: Microsoft Foundry IQ now treats a Microsoft Fabric Ontology as a federated
+    knowledge source in public preview, giving agents a way to query the semantic layer customers
+    already curate in Fabric. Foundry IQ translates natural language questions into ontolo
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

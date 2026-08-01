@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-022
+slug: in-preview-public-preview-advanced-filtering-for-diskann
+title: '[In preview] Public Preview: Advanced filtering for DiskANN vector search in Azure
+  HorizonDB'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563102
+announcement_url: https://azure.microsoft.com/updates?id=563102
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:31884b508e2070e19ef6732cb18b408f6aea681ff55364138e900d65098d79de
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:43dac7ff6e6cede3fa0b52b4790bc06bc235bf016bb850c2d54aa9f1dc2c4748
+  discovered_at: '2026-08-01T21:26:59.743210+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:43dac7ff6e6cede3fa0b52b4790bc06bc235bf016bb850c2d54aa9f1dc2c4748
+tier: 2
+learning_priority: low
+category: databases
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:31884b508e2070e19ef6732cb18b408f6aea681ff55364138e900d65098d79de
+  title_snapshot: '[In preview] Public Preview: Advanced filtering for DiskANN vector search
+    in Azure HorizonDB'
+  summary_snapshot: Advanced filtering for DiskANN vector search in Azure HorizonDB is now
+    available in public preview. With this release, you can combine vector similarity search
+    with metadata filters such as category, date range, price, or tenant ID without the performance
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

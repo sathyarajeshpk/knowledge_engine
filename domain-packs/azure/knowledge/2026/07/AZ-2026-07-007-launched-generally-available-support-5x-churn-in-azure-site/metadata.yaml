@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-07-007
+slug: launched-generally-available-support-5x-churn-in-azure-site
+title: '[Launched] Generally Available: Support 5x churn in Azure Site Recovery'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=566966
+announcement_url: https://azure.microsoft.com/updates?id=566966
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-06
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:8992ee3db963d7f82e0fbc12358bbfd05f553d8e5f4ab7f6d5e33cc08bbbbccc
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:3b8899b8bff647818b62e1e48650334c786a12822592aaf1942e9e1627cfc5fd
+  discovered_at: '2026-08-01T21:26:59.737211+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:3b8899b8bff647818b62e1e48650334c786a12822592aaf1942e9e1627cfc5fd
+tier: 1
+learning_priority: low
+category: null
+tags:
+- ga
+difficulty: intermediate
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:8992ee3db963d7f82e0fbc12358bbfd05f553d8e5f4ab7f6d5e33cc08bbbbccc
+  title_snapshot: '[Launched] Generally Available: Support 5x churn in Azure Site Recovery'
+  summary_snapshot: Azure Site Recovery now supports up to 5x churn (500 MB/s per VM). This
+    major enhancement empowers customers to confidently run high IOPS workloads with Azure
+    Site Recovery, ensuring robust disaster recovery for even the most demanding applications
+    like d
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

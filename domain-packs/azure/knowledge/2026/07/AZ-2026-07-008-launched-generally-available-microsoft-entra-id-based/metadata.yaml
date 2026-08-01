@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-07-008
+slug: launched-generally-available-microsoft-entra-id-based
+title: '[Launched] Generally Available: Microsoft Entra ID-based access for Azure Blob Storage
+  SFTP'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=567085
+announcement_url: https://azure.microsoft.com/updates?id=567085
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-06
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:b4e28e3eea537d4bf53da2dd9028087b1e444384ab28413c0a9fd7e83a57f312
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:7ce00c93049cf2f749315c246df7efa896561f1dad9eff0b6309166278f4b227
+  discovered_at: '2026-08-01T21:26:59.737177+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:7ce00c93049cf2f749315c246df7efa896561f1dad9eff0b6309166278f4b227
+tier: 1
+learning_priority: high
+category: storage
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:b4e28e3eea537d4bf53da2dd9028087b1e444384ab28413c0a9fd7e83a57f312
+  title_snapshot: '[Launched] Generally Available: Microsoft Entra ID-based access for Azure
+    Blob Storage SFTP'
+  summary_snapshot: Microsoft Entra ID-based access for Azure Blob Storage SFTP is now generally
+    available in all regions. You can now use Entra ID identities including guest users via
+    Entra External Identities to securely connect to Azure Blob Storage over SFTP, without
+    pro
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

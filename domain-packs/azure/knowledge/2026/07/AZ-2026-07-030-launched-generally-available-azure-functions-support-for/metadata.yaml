@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-07-030
+slug: launched-generally-available-azure-functions-support-for
+title: '[Launched] Generally Available: Azure Functions support for Python 3.14'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=567646
+announcement_url: https://azure.microsoft.com/updates?id=567646
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-17
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:37fd6edf94182e3aa47ec7d064cf665a8d1859c3f7f5711d4b66ddccb6065df8
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:36480315ba2249d536489877da9e6561bb3459bbbcd427bb2638d1de7a00470e
+  discovered_at: '2026-08-01T21:26:59.736139+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:36480315ba2249d536489877da9e6561bb3459bbbcd427bb2638d1de7a00470e
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:37fd6edf94182e3aa47ec7d064cf665a8d1859c3f7f5711d4b66ddccb6065df8
+  title_snapshot: '[Launched] Generally Available: Azure Functions support for Python 3.14'
+  summary_snapshot: You can now develop functions using Python 3.14 locally and deploy them
+    to Azure Functions plans on Linux. Upgrade your apps to Python 3.14 to take advantage
+    of enhanced security, a longer support window, and continued compatibility with the Azure
+    Functio
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

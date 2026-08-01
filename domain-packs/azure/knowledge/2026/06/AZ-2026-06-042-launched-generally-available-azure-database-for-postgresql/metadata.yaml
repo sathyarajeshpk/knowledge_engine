@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-042
+slug: launched-generally-available-azure-database-for-postgresql
+title: '[Launched] Generally Available: Azure Database for PostgreSQL flexible server pg_ivm
+  extension'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563771
+announcement_url: https://azure.microsoft.com/updates?id=563771
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:964603265b8a407c983c8754fc01f3917fd6b45d188c7e100ee5fc002cd794d7
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:7e0f3b06f993be013b1f357cb5732cbb6edc4c5e16218c6cb93a1b51f4ec39d9
+  discovered_at: '2026-08-01T21:26:59.741503+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:7e0f3b06f993be013b1f357cb5732cbb6edc4c5e16218c6cb93a1b51f4ec39d9
+tier: 1
+learning_priority: high
+category: databases
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:964603265b8a407c983c8754fc01f3917fd6b45d188c7e100ee5fc002cd794d7
+  title_snapshot: '[Launched] Generally Available: Azure Database for PostgreSQL flexible
+    server pg_ivm extension'
+  summary_snapshot: Now customers can install the pg_ivm extension in Azure Database for PostgreSQL
+    flexible server. Learn more.
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

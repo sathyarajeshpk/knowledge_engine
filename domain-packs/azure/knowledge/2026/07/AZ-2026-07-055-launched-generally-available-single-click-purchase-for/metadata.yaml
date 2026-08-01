@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-07-055
+slug: launched-generally-available-single-click-purchase-for
+title: '[Launched] Generally Available: Single-click purchase for public SaaS offers'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=568591
+announcement_url: https://azure.microsoft.com/updates?id=568591
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-31
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:83af8becce0f0d2dd34469d6797a9d6235147fe9b4dd6b7ee848b96405468ce8
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:02bbd84a79bcc7c70693e6421a170d44c42ac92f79b4668fb60ce89de798d2b7
+  discovered_at: '2026-08-01T21:26:59.734873+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:02bbd84a79bcc7c70693e6421a170d44c42ac92f79b4668fb60ce89de798d2b7
+tier: 1
+learning_priority: low
+category: platform
+tags:
+- ga
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:83af8becce0f0d2dd34469d6797a9d6235147fe9b4dd6b7ee848b96405468ce8
+  title_snapshot: '[Launched] Generally Available: Single-click purchase for public SaaS offers'
+  summary_snapshot: Eligible SaaS products on Microsoft Marketplace now support a simplified
+    purchase experience in Azure portal. Customers can review plan, billing, resource group,
+    contact details, and terms information on a single page for completing the purchase. This
+    exp
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

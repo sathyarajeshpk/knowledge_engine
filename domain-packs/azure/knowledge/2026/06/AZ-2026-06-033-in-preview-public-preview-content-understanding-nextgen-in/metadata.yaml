@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-033
+slug: in-preview-public-preview-content-understanding-nextgen-in
+title: '[In preview] Public Preview: Content Understanding NextGen in Microsoft Foundry'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563361
+announcement_url: https://azure.microsoft.com/updates?id=563361
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:2e056a4f3670cdf54862977bd8c7089f9b4f5db62d8f4c4f115000891060cb05
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:5bcae45132198827d933f1316a0e7f009947dbcba46b8d549fc1cff0f0def39f
+  discovered_at: '2026-08-01T21:26:59.742122+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:5bcae45132198827d933f1316a0e7f009947dbcba46b8d549fc1cff0f0def39f
+tier: 2
+learning_priority: low
+category: null
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:2e056a4f3670cdf54862977bd8c7089f9b4f5db62d8f4c4f115000891060cb05
+  title_snapshot: '[In preview] Public Preview: Content Understanding NextGen in Microsoft
+    Foundry'
+  summary_snapshot: Microsoft Foundry brings Content Understanding into the portal in public
+    preview, ending the context switch to the standalone Content Understanding Studio for
+    everyday work. Developers get Read and Layout playgrounds inside Foundry for OCR text
+    extraction
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

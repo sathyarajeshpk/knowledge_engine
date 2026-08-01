@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-07-006
+slug: launched-generally-available-anthropic-claude-sonnet-5-on
+title: '[Launched] Generally available: Anthropic Claude Sonnet 5 on Azure Databricks'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=567194
+announcement_url: https://azure.microsoft.com/updates?id=567194
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:1301bda1cdd38e7b836970fce64ab808dd3a53d16910c9c46fb069b05a2f43fe
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:3ee864b3e5e81575b8eac19766082929ce7d841dc1b9f32fc3153e6ebabe27d8
+  discovered_at: '2026-08-01T21:26:59.737245+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:3ee864b3e5e81575b8eac19766082929ce7d841dc1b9f32fc3153e6ebabe27d8
+tier: 1
+learning_priority: low
+category: ai-machine-learning
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:1301bda1cdd38e7b836970fce64ab808dd3a53d16910c9c46fb069b05a2f43fe
+  title_snapshot: '[Launched] Generally available: Anthropic Claude Sonnet 5 on Azure Databricks'
+  summary_snapshot: Azure Databricks now supports Anthropic Claude Sonnet 5 through Azure
+    Databricks AI Model Serving. Claude Sonnet 5 is Anthropic's most agentic Sonnet model
+    to date, delivering near-Opus-level intelligence with Sonnet's cost efficiency and speed.
+    Designed
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

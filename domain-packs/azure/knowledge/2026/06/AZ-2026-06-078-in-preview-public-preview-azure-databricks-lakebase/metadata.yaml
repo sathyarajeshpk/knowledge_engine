@@ -1,0 +1,63 @@
+schema_version: 1
+id: AZ-2026-06-078
+slug: in-preview-public-preview-azure-databricks-lakebase
+title: '[In preview] Public Preview: Azure Databricks Lakebase branching with GitHub Copilot
+  agent mode'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=564863
+announcement_url: https://azure.microsoft.com/updates?id=564863
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:37de21d7637fda27c1a1f157ab140ecfe954875445f3eb51c52f3a088aee690c
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:fed05e5513c92b1d8370fca771b10794859f025ed4944f6f67e1a131552b28ef
+  discovered_at: '2026-08-01T21:26:59.741093+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:fed05e5513c92b1d8370fca771b10794859f025ed4944f6f67e1a131552b28ef
+tier: 2
+learning_priority: high
+category: ai-machine-learning
+tags:
+- ai
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:37de21d7637fda27c1a1f157ab140ecfe954875445f3eb51c52f3a088aee690c
+  title_snapshot: '[In preview] Public Preview: Azure Databricks Lakebase branching with GitHub
+    Copilot agent mode'
+  summary_snapshot: Developers in Azure Databricks can now create a copy-on-write branch of
+    their Lakebase production database with a single command, connect GitHub Copilot agent
+    mode to the branch endpoint, and debug AI apps and agents against real production data
+    without e
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

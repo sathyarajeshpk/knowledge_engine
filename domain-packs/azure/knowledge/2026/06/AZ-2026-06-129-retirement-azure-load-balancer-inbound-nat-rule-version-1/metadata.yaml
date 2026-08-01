@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-129
+slug: retirement-azure-load-balancer-inbound-nat-rule-version-1
+title: 'Retirement: Azure Load Balancer Inbound NAT rule version 1 for Azure VMSS (aka Inbound
+  NAT Pools)'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=565482
+announcement_url: https://azure.microsoft.com/updates?id=565482
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-11
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:3b68587edc12198767a181cb04ab26e96e53e08c6d772cc51b68d5c6362d5284
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:676f6b983c9c0c5397f3d15f76580c413bf1cafc553fd0b3aab3f1e082066437
+  discovered_at: '2026-08-01T21:26:59.738032+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:676f6b983c9c0c5397f3d15f76580c413bf1cafc553fd0b3aab3f1e082066437
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- retirement
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:3b68587edc12198767a181cb04ab26e96e53e08c6d772cc51b68d5c6362d5284
+  title_snapshot: 'Retirement: Azure Load Balancer Inbound NAT rule version 1 for Azure VMSS
+    (aka Inbound NAT Pools)'
+  summary_snapshot: 'Update to our previous communication: We previously announced the retirement
+    of all Inbound NAT rules version 1 resources, which included both single-VM NAT rules
+    and NAT pools for Virtual Machine Scale Sets. We have narrowed the scope of this retirement'
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

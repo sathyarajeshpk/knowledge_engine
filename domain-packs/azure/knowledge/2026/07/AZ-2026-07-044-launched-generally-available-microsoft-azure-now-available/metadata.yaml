@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-07-044
+slug: launched-generally-available-microsoft-azure-now-available
+title: '[Launched] Generally Available: Microsoft Azure now available from new cloud region
+  in India (India South Central)'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=568013
+announcement_url: https://azure.microsoft.com/updates?id=568013
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-28
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:a630dfd0acdd2704021e3aa57d21ab40b16a4a0fdee6caf247c7c9f413ed825a
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:be418d4ba1e16fa434a78721e57cb92acc1a7237a58da8ee24bd8fe9e94ed4bf
+  discovered_at: '2026-08-01T21:26:59.735779+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:be418d4ba1e16fa434a78721e57cb92acc1a7237a58da8ee24bd8fe9e94ed4bf
+tier: 1
+learning_priority: high
+category: identity-security
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:a630dfd0acdd2704021e3aa57d21ab40b16a4a0fdee6caf247c7c9f413ed825a
+  title_snapshot: '[Launched] Generally Available: Microsoft Azure now available from new
+    cloud region in India (India South Central)'
+  summary_snapshot: Microsoft announces the opening of its fourth datacenter region in India,
+    India South Central, with campuses in Hyderabad, Telangana. The region will provide customers
+    with local, secure, state-of-the-art cloud infrastructure designed with AI readiness as
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

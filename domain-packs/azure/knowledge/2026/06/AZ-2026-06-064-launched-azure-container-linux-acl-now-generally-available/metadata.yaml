@@ -1,0 +1,63 @@
+schema_version: 1
+id: AZ-2026-06-064
+slug: launched-azure-container-linux-acl-now-generally-available
+title: '[Launched] Azure Container Linux (ACL) now generally available on Azure Kubernetes
+  Service (AKS)'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=564537
+announcement_url: https://azure.microsoft.com/updates?id=564537
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:79a7c590a5790cefbdd3ddb247ce7a985f3ccca0f88947b5244040e00969f199
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:c318d8d854d1f282a6103df0effa29219e69109a83ee29f8fe7d562c49f96bda
+  discovered_at: '2026-08-01T21:26:59.740767+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:c318d8d854d1f282a6103df0effa29219e69109a83ee29f8fe7d562c49f96bda
+tier: 1
+learning_priority: high
+category: compute
+tags:
+- ga
+- kubernetes
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:79a7c590a5790cefbdd3ddb247ce7a985f3ccca0f88947b5244040e00969f199
+  title_snapshot: '[Launched] Azure Container Linux (ACL) now generally available on Azure
+    Kubernetes Service (AKS)'
+  summary_snapshot: Azure Container Linux is a container-optimized, immutable operating system
+    for AKS node pools — derived from Flatcar Container Linux and built on Azure Linux RPM
+    packages. It delivers a locked-down, minimal host purpose-built for running containerized
+    wor
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

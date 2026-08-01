@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-061
+slug: launched-generally-available-github-copilot-modernization
+title: '[Launched] Generally Available: Github Copilot modernization'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=564431
+announcement_url: https://azure.microsoft.com/updates?id=564431
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:5b072ff49c9db76e7f5508d89349ad8b5c248343c6eef8d342b2d1365a8a2174
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:afe9ab9fc5617c0fcf5a84144cf85ddccf68881180cbf6f1d6f94c9c38fc2095
+  discovered_at: '2026-08-01T21:26:59.740904+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:afe9ab9fc5617c0fcf5a84144cf85ddccf68881180cbf6f1d6f94c9c38fc2095
+tier: 1
+learning_priority: high
+category: ai-machine-learning
+tags:
+- ai
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:5b072ff49c9db76e7f5508d89349ad8b5c248343c6eef8d342b2d1365a8a2174
+  title_snapshot: '[Launched] Generally Available: Github Copilot modernization'
+  summary_snapshot: GitHub Copilot modernization agent is now generally available Coordinated
+    orchestration from estate to code. Scale application assessments and upgrades across your
+    entire app portfolio with GitHub Copilot modernization agent (GA), connecti
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

@@ -1,0 +1,233 @@
+# Azure Domain Pack
+#
+# The second Domain Pack, and the one that tests whether the engine is genuinely
+# pack-agnostic. The acceptance criterion for M8 is `git diff engine/` showing
+# **no change** attributable to adding this pack: only data, only configuration.
+#
+# Why Azure rather than Power BI, which the roadmap originally named:
+# ADR-0016 settled that Power BI is a *category* inside the Fabric pack, not a
+# pack of its own. Source validation found no working Power BI feed, and two
+# packs drawing on overlapping sources can mint two permanent Feature IDs for
+# one feature -- a correctness problem with no recovery path. Azure has genuinely
+# independent sources and no overlap with Fabric's, which is what makes it a
+# real test rather than a rehearsal. See ADR-0043.
+
+name: azure
+display_name: Microsoft Azure
+description: >-
+  Knowledge about the Microsoft Azure platform: compute, storage, networking,
+  identity, databases, AI services and the platform's own operations.
+
+# Permanent. Reserved for Azure since the original plan; minted for the first
+# time in M8. Changing it later would orphan every Feature ID under it.
+id_prefix: AZ
+
+schema_version: 1
+
+# --- Limits ---------------------------------------------------------------
+limits:
+  # The Azure updates feed carries short official summaries rather than full
+  # articles, so this is comfortable rather than tight. Kept identical to the
+  # Fabric pack because the copyright rule (ADR-0003) is a property of the
+  # engine's obligations, not of the domain.
+  max_summary_words: 120
+
+# --- Categories -----------------------------------------------------------
+# Deliberately different from the Fabric pack's. This is the point: a pack's
+# taxonomy is its own, and the engine must not assume any particular vocabulary.
+# If these had to match Fabric's, packs would not be independent.
+categories:
+  - compute
+  - storage
+  - networking
+  - databases
+  - ai-machine-learning
+  - identity-security
+  - devops
+  - monitoring
+  - governance-cost
+  - platform
+
+# --- Sources ---------------------------------------------------------------
+# Source definitions are IMMUTABLE (ADR-0024). Never delete one; retire it by
+# moving `status`.
+#
+# Validation from this environment, 2026-08-01:
+#   azure-updates  HTTP 200, 151,788 bytes, ~200 entries.
+# Re-validated on a runner before the first scheduled harvest -- this container's
+# egress proxy blocks most hosts, so a failure here proves nothing either way.
+sources:
+  # The official Azure updates feed. Purpose-built for exactly this: one entry
+  # per product announcement, with a title, a canonical link and a date.
+  #
+  # Note how much less configuration this needs than the Fabric sources. Fabric
+  # has no update feed, so its adapters scrape a curated HTML page and rebuild
+  # canonical URLs from relative Markdown links. Azure publishes a feed, so the
+  # RSS adapter reads it directly. Same engine, same pipeline, different data.
+  - name: azure-updates
+    url: https://www.microsoft.com/releasecommunications/api/v2/azure/rss
+    authority: official-microsoft
+    status: active
+    role: primary
+    adapter:
+      name: rss
+      version: 1
+    notes: >-
+      Official Azure updates feed. Entries carry a canonical aka.ms or
+      azure.microsoft.com link, which gives identity a durable basis
+      (ADR-0023) rather than a title hash.
+    fallback:
+      - name: azure-updates-manual
+        url: https://azure.microsoft.com/en-us/updates/
+        authority: official-microsoft
+        role: manual-review
+        adapter:
+          name: manual
+          version: 1
+        notes: >-
+          Terminal link. Raises a review item rather than losing knowledge if
+          the feed becomes unreachable.
+
+# --- Classification --------------------------------------------------------
+# Written from the start, unlike the Fabric pack, which spent four milestones
+# without rules and taught the engine to flag rather than guess (M6). A pack
+# with no rules now warns loudly, which is how this section came to exist here
+# on day one.
+#
+# Rules are ordered; the first match wins. `contains` is case-insensitive and
+# matches against title, summary and raw tags -- never against the pack's own
+# output, which was the M4 bug.
+classification:
+  # Ordered; first match wins. `any` is a case-insensitive substring match over
+  # title, summary and raw tags -- never over the pack's own output (the M4 bug).
+  # `none` excludes: a rule fires only when no excluded token is present.
+  #
+  # The `none: [preview]` guard on the GA rule is not decoration. Azure phrases
+  # preview announcements as "now available in public preview", so a GA rule
+  # without it classifies every preview as act-now. That is exactly what happened
+  # on the first harvest of this pack: 200 objects, many wrongly tier 1. The
+  # Fabric pack already carried this guard; the lesson had to be learned twice.
+  tier:
+    # Retirements and breaking changes are act-now even when phrased as previews.
+    - name: breaking-or-retiring
+      any: [retirement, retiring, deprecat, breaking change, end of support,
+            will be retired, end of life]
+      value: 1
+    - name: pricing-and-availability
+      any: [price change, pricing update, billing change]
+      value: 1
+    - name: generally-available
+      any: [generally available, general availability, "(ga)", now available,
+            "[launched]"]
+      none: [preview]
+      value: 1
+    - name: preview-features
+      any: [preview, "[in preview]", coming soon, announcing]
+      value: 2
+    - name: enhancements
+      any: [improvement, enhanced, faster, performance, expanded, new region]
+      value: 2
+
+  learning_priority:
+    - name: high-leverage-platform
+      any: [kubernetes, aks, openai, ai foundry, copilot, cosmos db, postgresql,
+            entra, defender, api management]
+      value: high
+    - name: mainstream-services
+      any: [virtual machine, storage, sql, functions, app service, monitor,
+            networking, container]
+      value: medium
+    - name: peripheral
+      any: [region, availability zone, sdk, cli, portal update]
+      value: low
+
+  # Must be one of the `categories` list above.
+  category:
+    - name: ai-ml
+      any: [openai, machine learning, cognitive, ai foundry, copilot, ai gateway,
+            bot service, ai search, inference, model]
+      value: ai-machine-learning
+    - name: databases
+      any: [sql database, sql managed, cosmos, documentdb, postgres, mysql,
+            mariadb, redis, horizondb, database]
+      value: databases
+    - name: compute
+      any: [virtual machine, " vm ", aks, kubernetes, container app, container
+            instance, app service, azure functions, batch, vmware]
+      value: compute
+    - name: storage
+      any: [blob, storage account, data lake, azure files, netapp, managed disk,
+            storage tier, backup]
+      value: storage
+    - name: networking
+      any: [virtual network, vnet, load balancer, front door, cdn, azure dns,
+            firewall, expressroute, vpn gateway, private link, application gateway]
+      value: networking
+    - name: identity-security
+      any: [entra, active directory, key vault, defender, sentinel, confidential
+            computing, managed identity, rbac, encryption]
+      value: identity-security
+    - name: devops
+      any: [devops, pipelines, deployment stack, bicep, terraform, arm template,
+            github actions]
+      value: devops
+    - name: monitoring
+      any: [azure monitor, log analytics, application insights, diagnostic
+            setting, alert rule]
+      value: monitoring
+    - name: governance-cost
+      any: [cost management, azure policy, management group, advisor,
+            reservation, savings plan, budget, quota]
+      value: governance-cost
+    # Deliberately last and deliberately broad: an announcement about the
+    # platform itself rather than one service.
+    - name: platform
+      any: [azure portal, region, availability zone, sla, azure resource manager]
+      value: platform
+
+  difficulty:
+    - name: advanced
+      any: [kubernetes, confidential computing, expressroute, terraform, bicep,
+            managed identity, private link, migration]
+      value: advanced
+    - name: beginner
+      any: [azure portal, quickstart, new region, general availability]
+      value: beginner
+
+  workload:
+    - name: heavy
+      any: [migration, kubernetes, architecture, disaster recovery, cluster]
+      value: heavy
+    - name: light
+      any: [portal, region, setting, sdk, cli]
+      value: light
+
+  tags:
+    - name: preview
+      any: [preview, "[in preview]"]
+      value: preview
+    - name: ga
+      any: [generally available, general availability, "[launched]"]
+      value: ga
+    - name: retirement
+      any: [retirement, retiring, deprecat, end of support]
+      value: retirement
+    - name: kubernetes
+      any: [aks, kubernetes]
+      value: kubernetes
+    - name: ai
+      any: [openai, ai foundry, copilot, ai gateway, inference]
+      value: ai
+    - name: cosmos-db
+      any: [cosmos, documentdb]
+      value: cosmos-db
+    - name: regional
+      any: [new region, region expansion, availability zone]
+      value: regional-availability
+
+# --- Deduplication ---------------------------------------------------------
+dedupe:
+  # Same threshold as the Fabric pack. Azure titles are more formulaic
+  # ("X is now generally available in Y"), so this may need raising once there
+  # is evidence -- deliberately not tuned in advance.
+  near_duplicate_jaccard: 0.85

@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-102
+slug: launched-generally-available-azure-monitor-service-level
+title: '[Launched] Generally Available: Azure Monitor Service Level Indicators (SLI)'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=565159
+announcement_url: https://azure.microsoft.com/updates?id=565159
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-04
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:2aa0c404d6a24dc1fdcd8907573712e6c080f82dde0b6861d3a0de2299199397
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:1ee926402ae4e4a88fa9545ac3c72c719c2cf7c4b7943a7fd9d3ee5092fbd361
+  discovered_at: '2026-08-01T21:26:59.738983+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:1ee926402ae4e4a88fa9545ac3c72c719c2cf7c4b7943a7fd9d3ee5092fbd361
+tier: 1
+learning_priority: medium
+category: monitoring
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:2aa0c404d6a24dc1fdcd8907573712e6c080f82dde0b6861d3a0de2299199397
+  title_snapshot: '[Launched] Generally Available: Azure Monitor Service Level Indicators
+    (SLI)'
+  summary_snapshot: Azure Monitor now includes Service Level Indicators (SLIs) and Service
+    Level Objectives (SLOs), giving teams a clearer way to measure how customers actually
+    experience their applications. Instead of relying only on infrastructure signals like
+    CPU or isola
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

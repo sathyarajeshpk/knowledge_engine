@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-07-023
+slug: in-preview-public-preview-azure-sql-updates-for-mid-july
+title: '[In preview] Public Preview: Azure SQL updates for mid-July 2026'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=567426
+announcement_url: https://azure.microsoft.com/updates?id=567426
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-15
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:26e5805234ff78b4d15ad8643a89d0eeb4226d06371166a7335c21128501699e
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:73efc83d09b7325b11a12d63bd6391874d3b0686bfdeec9207a738cbcbb0bd29
+  discovered_at: '2026-08-01T21:26:59.736581+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:73efc83d09b7325b11a12d63bd6391874d3b0686bfdeec9207a738cbcbb0bd29
+tier: 2
+learning_priority: medium
+category: null
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:26e5805234ff78b4d15ad8643a89d0eeb4226d06371166a7335c21128501699e
+  title_snapshot: '[In preview] Public Preview: Azure SQL updates for mid-July 2026'
+  summary_snapshot: 'In mid-July 2026, the following updates and enhancements were made to
+    Azure SQL: Shortcut Configuration lets you customize keyboard shortcuts for Quick Queries,
+    the Results Grid, and the Query Editor directly within Visual Studio Code—wit'
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-114
+slug: in-development-private-preview-guest-rdma-on-azure-boost
+title: '[In development] Private Preview: Guest RDMA on Azure Boost'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=564981
+announcement_url: https://azure.microsoft.com/updates?id=564981
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-05
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:052d45cec40b22ad93030f7a01cf31568d401b3ff60dc68897946e4110773f7f
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:e90ef69ae234852ada8eca2e89890841ba437755117d9397593134809a2947ca
+  discovered_at: '2026-08-01T21:26:59.738515+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:e90ef69ae234852ada8eca2e89890841ba437755117d9397593134809a2947ca
+tier: 2
+learning_priority: medium
+category: platform
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:052d45cec40b22ad93030f7a01cf31568d401b3ff60dc68897946e4110773f7f
+  title_snapshot: '[In development] Private Preview: Guest RDMA on Azure Boost'
+  summary_snapshot: Guest RDMA is now in preview on Azure, starting in the UK South region,
+    bringing high-throughput, ultra-low latency networking directly into guest VMs within
+    the same region. By using Azure Boost to enable RDMA in the guest OS, applications can
+    bypass the
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

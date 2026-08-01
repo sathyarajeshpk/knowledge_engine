@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-07-057
+slug: in-preview-public-preview-azure-sql-updates-for-late-july
+title: '[In preview] Public Preview: Azure SQL updates for late-July'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=568139
+announcement_url: https://azure.microsoft.com/updates?id=568139
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-31
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:1ea997e1f3a82b665e0606b1ed2f3d841991c816384028b7c47df6e30d0d8d6a
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:a5e0d0abc60e1cdad4b75edf2b62cd39acfbf63d2971dd40a486d34bece8b2c9
+  discovered_at: '2026-08-01T21:26:59.735113+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:a5e0d0abc60e1cdad4b75edf2b62cd39acfbf63d2971dd40a486d34bece8b2c9
+tier: 2
+learning_priority: high
+category: identity-security
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:1ea997e1f3a82b665e0606b1ed2f3d841991c816384028b7c47df6e30d0d8d6a
+  title_snapshot: '[In preview] Public Preview: Azure SQL updates for late-July'
+  summary_snapshot: 'In late-July 2026, the following update and enhancement was made to Azure
+    SQL: Regex-based dynamic data masking (DDM) extends the built-in DDM feature with pattern‑based
+    masking to hide sensitive data like emails, phone numbers, and identifiers—centrally'
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

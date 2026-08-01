@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-06-047
+slug: launched-generally-available-managed-virtual-network-for
+title: '[Launched] Generally Available: Managed virtual network for evaluations in Microsoft
+  Foundry'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=564402
+announcement_url: https://azure.microsoft.com/updates?id=564402
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:cff4b35a6b10a61b7a8a3b19312e7e7a0eff0558812d121b0cc081db5c883a93
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:9256a917a74ed44c628c1669061c4e3c4c56753df09e3144d82adefb3cfbb61b
+  discovered_at: '2026-08-01T21:26:59.741285+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:9256a917a74ed44c628c1669061c4e3c4c56753df09e3144d82adefb3cfbb61b
+tier: 1
+learning_priority: low
+category: ai-machine-learning
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:cff4b35a6b10a61b7a8a3b19312e7e7a0eff0558812d121b0cc081db5c883a93
+  title_snapshot: '[Launched] Generally Available: Managed virtual network for evaluations
+    in Microsoft Foundry'
+  summary_snapshot: Microsoft Foundry makes managed virtual network support generally available
+    for evaluations, so customers can run cloud evaluation jobs against models and agents
+    that sit behind private endpoints. The Foundry-managed VNET handles outbound connectivity
+    to
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

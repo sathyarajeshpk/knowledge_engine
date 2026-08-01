@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-07-010
+slug: in-preview-public-preview-export-historical-data-from-log
+title: '[In preview] Public Preview: Export historical data from Log Analytics workspace with
+  Export jobs'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=566591
+announcement_url: https://azure.microsoft.com/updates?id=566591
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-07
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:c1769992977084f3b3f14f038c6ee89bf365f5b5aecec0e6d0ac306c59070e1c
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:13f842dc23af19b354da4ab3de4fe55117000bc9999d29f3a308e480ae9df318
+  discovered_at: '2026-08-01T21:26:59.737027+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:13f842dc23af19b354da4ab3de4fe55117000bc9999d29f3a308e480ae9df318
+tier: 2
+learning_priority: medium
+category: storage
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:c1769992977084f3b3f14f038c6ee89bf365f5b5aecec0e6d0ac306c59070e1c
+  title_snapshot: '[In preview] Public Preview: Export historical data from Log Analytics
+    workspace with Export jobs'
+  summary_snapshot: The Log Analytics Export job enables you to export historical data from
+    a Log Analytics workspace to an Azure Storage account based on a specified query and time
+    range. This allows you to extract only the data you need and move it to external systems
+    for
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}
