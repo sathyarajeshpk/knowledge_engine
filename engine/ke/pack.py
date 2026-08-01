@@ -104,6 +104,20 @@ class Pack:
         return int(version) if isinstance(version, int) else None
 
     @property
+    def source_definitions(self) -> list[Any]:
+        """Configured sources, in declaration order.
+
+        Imported lazily so `ke.pack` stays free of adapter dependencies -- the
+        validator loads packs without ever needing feedparser.
+        """
+        from ke.acquisition.sources.base import SourceDefinition
+
+        return [
+            SourceDefinition.from_config(entry)
+            for entry in (self.config.get("sources") or [])
+        ]
+
+    @property
     def categories(self) -> tuple[str, ...]:
         return tuple(self.config.get("categories") or ())
 
@@ -141,6 +155,14 @@ class Pack:
     @property
     def run_log_path(self) -> Path:
         return self.state_dir / "run-log.md"
+
+    @property
+    def source_health_path(self) -> Path:
+        return self.state_dir / "source-health.json"
+
+    @property
+    def events_path(self) -> Path:
+        return self.state_dir / "events.jsonl"
 
     # -- contents --------------------------------------------------------
 

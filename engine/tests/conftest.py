@@ -10,14 +10,16 @@ find.
 from __future__ import annotations
 
 import json
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
 import pytest
 import yaml
 
+from ke.acquisition.identity import IdentityBasis
 from ke.models import (
+    AdapterType,
     ArtifactType,
     DateConfidence,
     Difficulty,
@@ -26,10 +28,14 @@ from ke.models import (
     GenerationStatus,
     KnowledgeObject,
     LearningPriority,
+    DatePrecision,
+    ExtractionMethod,
     LearningStatus,
     ObjectStatus,
+    Provenance,
     Revision,
     SourceAuthority,
+    SourceRepresentation,
     Tier,
     Workload,
 )
@@ -45,6 +51,24 @@ PACK_CONFIG: dict[str, Any] = {
 }
 
 
+def make_provenance(**overrides: Any) -> Provenance:
+    """Build a valid `Provenance` record."""
+    defaults: dict[str, Any] = {
+        "source_name": "fabric-blog",
+        "source_representation": SourceRepresentation.HTML,
+        "adapter_type": AdapterType.HTML,
+        "discovered_at": datetime(2026, 4, 18, 6, 0, tzinfo=timezone.utc),
+        "extraction_method": ExtractionMethod.HTML_TABLE_ROW,
+        "parser_version": 1,
+        "selector": "h2#generally-available-features + table tr",
+        "run_id": "run-2026-04-18T06-00-00Z",
+        "identity_basis": IdentityBasis.CANONICAL_URL,
+        "identity_key": "sha256:" + "c" * 64,
+    }
+    defaults.update(overrides)
+    return Provenance(**defaults)
+
+
 def make_object(**overrides: Any) -> KnowledgeObject:
     """Build a valid `KnowledgeObject`, with any field overridden."""
     defaults: dict[str, Any] = {
@@ -57,6 +81,8 @@ def make_object(**overrides: Any) -> KnowledgeObject:
         "published_date": date(2026, 4, 15),
         "discovered_date": date(2026, 4, 18),
         "date_confidence": DateConfidence.EXACT,
+        "date_precision": DatePrecision.DAY,
+        "provenance": make_provenance(),
         "content_hash": "sha256:" + "a" * 64,
         "url_hash": "sha256:" + "b" * 64,
         "tier": Tier.ACT_NOW,

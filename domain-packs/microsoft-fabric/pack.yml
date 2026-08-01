@@ -12,9 +12,19 @@ name: microsoft-fabric
 display_name: Microsoft Fabric
 description: >-
   Knowledge about Microsoft Fabric: data engineering, data warehousing,
-  real-time intelligence, data science, and the Fabric platform itself.
+  real-time intelligence, data science, Power BI, and the Fabric platform
+  itself.
 
 # Permanent. Changing this would orphan every Feature ID already minted.
+#
+# This pack covers the whole Fabric platform *including Power BI*, which is a
+# Fabric workload rather than a separate product (ADR-0016). Power BI knowledge
+# is addressed by `category: power-bi` and tags, not by a separate pack -- packs
+# are source and identity boundaries, indexes handle topics.
+#
+# The `PBI` prefix stays reserved and unused in case Power BI later warrants its
+# own pack. Such a split would apply to new content only; existing MSF objects
+# keep their permanent identifiers.
 id_prefix: MSF
 
 schema_version: 1
@@ -34,27 +44,136 @@ categories:
   - data-science
   - real-time-intelligence
   - data-factory
-  - power-bi-integration
+  - power-bi
   - governance-security
   - administration
   - platform
 
 # --- Sources (M1) ----------------------------------------------------------
-# Intentionally empty.
+# Every URL below was verified on a GitHub Actions runner before being pinned.
+# See docs/reviews/M1_SOURCE_VALIDATION.md for the evidence, including the
+# candidates that were rejected and why.
 #
-# The feed URLs below are CANDIDATES, not verified endpoints. They could not be
-# reached from the planning environment, and pinning an unverified URL here
-# would be indistinguishable from a validated one. M1 issue #8 validates each
-# endpoint and only then moves it into this list with its real response format.
+# Source definitions are IMMUTABLE. Never delete one -- provenance on every
+# object it produced points at it. Retire a source by moving `status` to
+# deprecated, disabled or replaced (ADR-0024).
 #
-# Candidates to validate:
-#   - Microsoft Fabric blog feed        (official-microsoft)
-#   - Power BI blog feed                (official-microsoft)
-#   - Microsoft Learn "What's New"      (official-microsoft)
-#   - Fabric release plan / roadmap     (official-microsoft)
-#   - MicrosoftDocs/fabric-docs commits (official-microsoft)
-#   - Fabric Community blog             (microsoft-community)
-sources: []
+# `adapter.version` is the parser version stamped onto every item this source
+# produces. Increment it when the extraction strategy changes, so historical
+# objects stay attributable to the parser that made them.
+sources:
+  # The primary source. Validation: 131,730 chars of visible text, 23 tables,
+  # 177 dates, ms.date current. Contains a "Power BI" section, which is why one
+  # pack covers both products (ADR-0016).
+  - name: fabric-whats-new
+    url: https://learn.microsoft.com/en-us/fabric/fundamentals/whats-new
+    authority: official-microsoft
+    status: active
+    role: primary
+    adapter:
+      name: html
+      version: 1
+    notes: >-
+      Canonical curated list of Fabric updates. Highest-signal source available;
+      no purpose-built update feed is reachable from a runner.
+    fallback:
+      # The Markdown source behind the same page: same authoritative content,
+      # different host, different failure mode. Replaces the docs-commit feed,
+      # which carried merge-commit noise rather than knowledge.
+      - name: fabric-whats-new-markdown
+        url: https://raw.githubusercontent.com/MicrosoftDocs/fabric-docs/main/docs/fundamentals/whats-new.md
+        authority: official-microsoft
+        role: secondary
+        adapter:
+          name: markdown
+          version: 1
+        options:
+          # Needed to rebuild canonical URLs from relative .md links. Identity
+          # rests on those URLs, so this is configuration rather than a guess.
+          doc_path: docs/fundamentals/whats-new.md
+          docs_prefix: docs/
+          rendered_base_url: https://learn.microsoft.com/en-us/fabric
+        notes: >-
+          Verified 200, 189,900 bytes, 361 table rows, authoritative ms.date
+          front matter. Links are relative, so canonical URLs are reconstructed
+          -- which is why this is secondary rather than primary.
+      - name: fabric-whats-new-manual
+        url: https://learn.microsoft.com/en-us/fabric/fundamentals/whats-new
+        authority: official-microsoft
+        role: manual-review
+        adapter:
+          name: manual
+          version: 1
+        notes: Terminal link. Raises a review item rather than losing knowledge.
+
+  # Power BI Desktop monthly updates. Validation: server-rendered, 11 headings,
+  # 6 tables, ms.date current.
+  # Note: /desktop-latest-update redirects here. Pinned to the final URL so the
+  # canonical URL used for identity does not depend on a redirect being followed.
+  - name: powerbi-whats-new
+    url: https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new
+    authority: official-microsoft
+    status: active
+    role: primary
+    adapter:
+      name: html
+      version: 1
+    fallback:
+      # Re-enabled. It was briefly disabled because failing over would have
+      # minted ~5 duplicate permanent Feature IDs out of 19; the Identity
+      # Confidence gate (ADR-0028) closes that by construction rather than by
+      # judgement.
+      #
+      # Measured: both representations yield the SAME 14 high-confidence items,
+      # and those are exactly the 14 whose identities agree across
+      # representations. Failing over therefore mints the same objects, not
+      # duplicates. The 5 that diverge are precisely the weak-anchored ones the
+      # gate holds back for review.
+      #
+      # Fallback execution is independent of minting: the chain decides where
+      # knowledge comes from, the gate decides what is safe to mint from it.
+      - name: powerbi-whats-new-markdown
+        url: https://raw.githubusercontent.com/MicrosoftDocs/powerbi-docs/main/powerbi-docs/fundamentals/whats-new.md
+        authority: official-microsoft
+        role: secondary
+        adapter:
+          name: markdown
+          version: 1
+        options:
+          doc_path: powerbi-docs/fundamentals/whats-new.md
+          docs_prefix: powerbi-docs/
+          rendered_base_url: https://learn.microsoft.com/en-us/power-bi
+      - name: powerbi-whats-new-manual
+        url: https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new
+        authority: official-microsoft
+        role: manual-review
+        adapter:
+          name: manual
+          version: 1
+
+  # Corporate blog. Low value and stale (newest entry a month old at validation)
+  # but it is a real blog feed. Ships 29,000-character full articles, so
+  # truncation at ingest is mandatory (ADR-0003).
+  - name: fabric-blog
+    url: https://www.microsoft.com/en-us/microsoft-fabric/blog/feed/
+    authority: official-microsoft
+    status: active
+    role: primary
+    adapter:
+      name: rss
+      version: 1
+
+# Rejected candidates, recorded so they are not re-proposed:
+#   learn.microsoft.com/api/search/rss (fabric, power bi, whats-new queries)
+#     -- returns documentation landing pages ranked by search relevance, not
+#        announcements. Mechanically perfect, semantically wrong.
+#   learn.microsoft.com/en-us/fabric/known-issues/
+#     -- 2,226 visible chars against a 2,000 shell threshold, zero tables,
+#        ms.date a year stale. Profile closer to a JavaScript app than a page.
+#   blog.fabric.microsoft.com/* and powerbi.microsoft.com/* feeds
+#     -- 403 from a runner, including with a browser User-Agent.
+#   roadmap.fabric.microsoft.com
+#     -- JavaScript app; 196 KB yields 2,185 chars and zero dates.
 
 # --- Deduplication (M2) ----------------------------------------------------
 dedupe:

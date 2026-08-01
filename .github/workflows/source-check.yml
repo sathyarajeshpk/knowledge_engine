@@ -1,0 +1,93 @@
+name: Source check
+
+# Validates candidate knowledge sources against the real internet.
+#
+# This exists because the development environment blocks `*.microsoft.com`, so
+# source URLs cannot be verified locally. M1 must not pin an unverified
+# endpoint: a guessed URL is indistinguishable from a validated one once it is
+# sitting in `pack.yml`.
+#
+# It is a diagnostic, not part of the pipeline. It writes nothing to any Domain
+# Pack and is never scheduled.
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/source-check.yml"
+      - "tools/source_probe.py"
+      - "tools/html_structure_probe.py"
+      - "tools/access_diagnostic.py"
+      - "tools/fallback_probe.py"
+      - "tools/identity_experiment.py"
+      - "engine/ke/sources/**"
+      - "engine/ke/discover.py"
+      - "domain-packs/**/pack.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    name: Probe candidate endpoints
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install the engine
+        run: python -m pip install --quiet -e ".[dev]"
+
+      - name: Probe sources
+        run: python tools/source_probe.py
+
+      - name: Probe HTML page structure
+        # Decides whether a candidate page is server-rendered and parseable, or
+        # a JavaScript shell. The roadmap page is included as a control: if the
+        # probe cannot tell it apart from a real page, the probe is wrong.
+        run: python tools/html_structure_probe.py
+
+      - name: Run discovery against the real sources
+        # The development environment blocks *.microsoft.com, so this is the
+        # only place the adapters meet the pages they were written for.
+        # `ke discover` writes nothing -- storage arrives in M2.
+        run: python -m ke discover --pack microsoft-fabric --limit 6
+
+      - name: Diagnose Learn access and look for a better source
+        run: python tools/access_diagnostic.py
+
+      - name: Compare each primary against its Markdown secondary
+        # Runs last: this is the result worth reading, and a job log can only be
+        # tailed cheaply from the end.
+        #
+        # `ke discover` above cannot exercise a fallback, because a fallback only
+        # runs when its primary fails -- so on a healthy day the secondary is
+        # never touched, and would first be exercised during an outage, which is
+        # the worst possible moment to find out it was broken. This step runs
+        # both representations side by side and reports whether they agree on
+        # item identity. Disagreement means failing over would mint duplicate
+        # permanent Feature IDs (ADR-0023).
+        run: python tools/fallback_probe.py
+
+      - name: Measure candidate identity schemes
+        # Analysis for the ADR-0023 amendment proposal. Implements nothing:
+        # it scores identity schemes against production so the decision rests
+        # on measurement rather than argument.
+        run: python tools/identity_experiment.py
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-probe-results
+          path: |
+            source-probe-results.json
+            html-structure-results.json
+            access-diagnostic.json
+          if-no-files-found: warn

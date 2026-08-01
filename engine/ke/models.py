@@ -17,9 +17,10 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field, replace
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from enum import IntEnum, StrEnum
 from typing import Any
+
 
 # ---------------------------------------------------------------------------
 # Controlled vocabularies
@@ -42,6 +43,30 @@ class DateConfidence(StrEnum):
     INFERRED = "inferred"
 
 
+class DatePrecision(StrEnum):
+    """How precise `published_date` actually is.
+
+    Deliberately **independent of `DateConfidence`**. They answer different
+    questions and overloading one to mean both loses information:
+
+    * `date_confidence` - do we trust this date at all? (`exact` | `inferred`)
+    * `date_precision`  - how precise is it? (`day` | `month` | `year`)
+
+    The Microsoft Learn "What's New" page dates updates to a month, not a day.
+    That is an *exactly known month*, so `confidence: exact` with
+    `precision: month`. Recording it as `2026-07-01` with day precision would be
+    quietly false; recording it as `inferred` would wrongly suggest we guessed.
+
+    `published_date` always stores a real date so sorting stays deterministic -
+    the first of the month for month precision, the first of January for year
+    precision. `date_precision` says how much of it to believe.
+    """
+
+    DAY = "day"
+    MONTH = "month"
+    YEAR = "year"
+
+
 class SourceAuthority(StrEnum):
     """Where the knowledge came from. Purely a property of the source, so it
     needs no heuristics - it is configured per source in pack.yml."""
@@ -49,6 +74,191 @@ class SourceAuthority(StrEnum):
     OFFICIAL_MICROSOFT = "official-microsoft"
     MICROSOFT_COMMUNITY = "microsoft-community"
     THIRD_PARTY = "third-party"
+
+
+class AdapterType(StrEnum):
+    """Which kind of adapter produced an item.
+
+    Recorded per item so that a parser break can be traced to the code that
+    caused it, and so a source that changes format leaves an audit trail.
+    """
+
+    RSS = "rss"
+    ATOM = "atom"
+    HTML = "html"
+    MARKDOWN = "markdown"
+    GITHUB_COMMITS = "github-commits"
+    SITEMAP = "sitemap"
+    MANUAL = "manual"
+
+
+class IdentityBasis(StrEnum):
+    """Which signal established an item's identity, strongest first.
+
+    Recorded on every item. When a duplicate or a miss is investigated later,
+    the first question is always "what were we matching on?" -- and without this
+    field the answer requires re-deriving the whole pipeline from memory.
+    """
+
+    #: The canonical target URL. Strongest: survives rewording, reordering and
+    #: complete markup changes.
+    CANONICAL_URL = "canonical-url"
+    #: A stable identifier published by the source itself.
+    SOURCE_IDENTIFIER = "source-identifier"
+    #: Hash of the normalised title. Survives markup changes, not rewording.
+    TITLE_HASH = "normalised-title-hash"
+    #: Hash of normalised title plus summary. Last resort: survives nothing but
+    #: an unchanged item, so it is the weakest guarantee we offer.
+    CONTENT_FINGERPRINT = "content-fingerprint"
+
+
+@dataclass(frozen=True)
+class ItemIdentity:
+    """What an item is, and how we decided."""
+
+    basis: IdentityBasis
+    #: `sha256:...` over `raw_value`. What dedupe actually compares.
+    key: str
+    #: The exact string that was hashed. Kept for debugging: it turns "why did
+    #: these two not match?" into a diff rather than an investigation.
+    raw_value: str
+
+    @property
+    def is_durable(self) -> bool:
+        """Whether this identity survives a presentation-layer change.
+
+        URL and source-identifier bases do. Title and content hashes do not, so
+        items resting on them warrant closer attention when a source's markup
+        changes.
+        """
+        return self.basis in (IdentityBasis.CANONICAL_URL, IdentityBasis.SOURCE_IDENTIFIER)
+
+
+class Lifecycle(StrEnum):
+    """How far a piece of knowledge has travelled through **acquisition**.
+
+    Deliberately separate from `status`, and the distinction is worth stating
+    plainly because the two will otherwise be confused::
+
+        Lifecycle  answers  "how far through acquisition is this?"
+        status     answers  "is this knowledge still current?"
+
+    An object can be `MINTED` and `replaced` at the same time: fully acquired,
+    and superseded as knowledge. Collapsing them would make "we have not
+    finished processing this" indistinguishable from "this is out of date",
+    which are different problems with different remedies.
+
+    Stages move forward only. Nothing ever returns to `DISCOVERED`, because
+    acquisition history is append-only like everything else here.
+    """
+
+    #: Seen in a run. Not yet graded.
+    DISCOVERED = "discovered"
+    #: Graded and held: identity confidence was not high enough to mint.
+    QUEUED = "queued"
+    #: Cleared for minting -- automatically when the gate passes, or by a human
+    #: working the review queue.
+    APPROVED = "approved"
+    #: A permanent Feature ID exists and a knowledge object was written.
+    MINTED = "minted"
+    #: A later acquisition of the same feature replaced this record.
+    SUPERSEDED = "superseded"
+    #: Retired from the working set. Retained forever, never deleted.
+    ARCHIVED = "archived"
+
+
+#: The only transitions the engine may make. Anything else is a bug, and
+#: `is_valid_transition` exists so that it fails loudly rather than silently
+#: rewriting acquisition history.
+LIFECYCLE_TRANSITIONS: dict[Lifecycle, frozenset[Lifecycle]] = {
+    Lifecycle.DISCOVERED: frozenset({Lifecycle.QUEUED, Lifecycle.APPROVED}),
+    Lifecycle.QUEUED: frozenset({Lifecycle.APPROVED, Lifecycle.ARCHIVED}),
+    Lifecycle.APPROVED: frozenset({Lifecycle.MINTED, Lifecycle.ARCHIVED}),
+    Lifecycle.MINTED: frozenset({Lifecycle.SUPERSEDED, Lifecycle.ARCHIVED}),
+    Lifecycle.SUPERSEDED: frozenset({Lifecycle.ARCHIVED}),
+    Lifecycle.ARCHIVED: frozenset(),
+}
+
+
+def is_valid_transition(current: Lifecycle, proposed: Lifecycle) -> bool:
+    """Whether acquisition may move from one stage to another.
+
+    A no-op transition is allowed: re-running discovery over an already-queued
+    item must not be an error, or the weekly run could never be idempotent.
+    """
+    return proposed is current or proposed in LIFECYCLE_TRANSITIONS[current]
+
+
+class IdentityConfidence(StrEnum):
+    """How much this item's identity can be trusted **in this run**.
+
+    Distinct from `identity_basis`, which says *what the identity rests on*.
+    Confidence says whether that is good enough to mint a permanent Feature ID
+    from yet.
+
+    The distinction that makes this safe (docs/design/IDENTITY_MODEL.md §6.1):
+
+        Identity is permanent and run-independent.
+        Confidence is a per-run assessment of whether minting is safe yet.
+
+    Confidence may therefore use evidence that identity may not -- notably how
+    many distinct features share one announcement in this run. That evidence is
+    forbidden in identity because an identity that changes when a row stops
+    appearing is not permanent. It is fine here precisely because confidence
+    never enters the ID: it only decides whether to mint, and once minted the
+    identity is fixed forever no matter what confidence does afterwards.
+
+    Named rather than scored, deliberately. A numeric score invites a tunable
+    threshold, and a tunable threshold is a dial someone eventually turns to make
+    a review backlog go away.
+    """
+
+    #: Durable anchor, and the announcement resolves to exactly one feature.
+    HIGH = "high"
+    #: Identifiable but ambiguous: a shared announcement, or a weak anchor.
+    MEDIUM = "medium"
+    #: Nothing durable to rest on. Never minted automatically, ever.
+    LOW = "low"
+
+
+class SourceRepresentation(StrEnum):
+    """The **format we actually received**, as distinct from the adapter.
+
+    Deliberately separate from `AdapterType`. The same knowledge reaches us in
+    different representations from different infrastructure: the Fabric updates
+    exist as rendered `html` on Microsoft Learn and as `markdown` in the
+    MicrosoftDocs repository. Those have different hosts, different failure
+    modes and different fidelity -- which is precisely why one is a usable
+    fallback for the other.
+
+    Recording it makes an object's origin answerable without inferring it from
+    the adapter name: "was this item read from the rendered page or from the
+    source file?" is a question a future investigation will ask.
+    """
+
+    HTML = "html"
+    MARKDOWN = "markdown"
+    RSS = "rss"
+    ATOM = "atom"
+    API = "api"
+
+
+class ExtractionMethod(StrEnum):
+    """*How* a field was pulled out of the source document.
+
+    The difference between `html-table-row` and `html-heading` is the
+    difference between two extraction strategies that break independently. When
+    one of them stops returning items, this field says which.
+    """
+
+    FEED_ENTRY = "feed-entry"
+    HTML_TABLE_ROW = "html-table-row"
+    MARKDOWN_TABLE_ROW = "markdown-table-row"
+    HTML_HEADING_SECTION = "html-heading-section"
+    HTML_LIST_ITEM = "html-list-item"
+    JSON_FIELD = "json-field"
+    COMMIT_MESSAGE = "commit-message"
+    MANUAL_ENTRY = "manual-entry"
 
 
 class Tier(IntEnum):
@@ -109,6 +319,55 @@ class ObjectStatus(StrEnum):
     ACTIVE = "active"
     REPLACED = "replaced"
     DEPRECATED = "deprecated"
+
+
+class HealthState(StrEnum):
+    """Operational state of one configured source.
+
+    The engine must never silently stop collecting knowledge, so a source is
+    always in exactly one of these and the state is always written down.
+
+    `DEGRADED` is the important one. A source that returns *fewer items than its
+    historical baseline* is not healthy just because it returned HTTP 200 - that
+    is what a broken parser looks like from the outside. Treating "zero items"
+    as "no news this week" is precisely how a pipeline dies quietly.
+    """
+
+    HEALTHY = "healthy"  # last run succeeded and item count looks normal
+    DEGRADED = "degraded"  # reachable, but suspiciously few items, or fell back
+    FAILED = "failed"  # last run could not fetch or parse it
+    DISABLED = "disabled"  # taken out of rotation, by a human or by policy
+
+
+class SourceStatus(StrEnum):
+    """Lifecycle of a *source definition*, as distinct from its health.
+
+    Source definitions are **immutable and permanent**. A source is never
+    removed from `pack.yml`, because provenance on every object it ever produced
+    points at it -- deleting the definition would make historical knowledge
+    inexplicable. Same reasoning as Feature IDs (ADR-0005).
+
+    Health says "is it working right now?". Status says "should we still be
+    asking?".
+    """
+
+    ACTIVE = "active"  # in rotation
+    DEPRECATED = "deprecated"  # still polled, but superseded; expect retirement
+    DISABLED = "disabled"  # not polled; definition retained for provenance
+    REPLACED = "replaced"  # superseded by a named successor source
+
+
+class SourceRole(StrEnum):
+    """Position of a source within its fallback chain.
+
+    If the primary fails the engine tries the secondary. If both fail it raises
+    a review item rather than recording "no updates" -- an empty result and a
+    broken source must never look the same.
+    """
+
+    PRIMARY = "primary"
+    SECONDARY = "secondary"
+    MANUAL_REVIEW = "manual-review"
 
 
 class ArtifactType(StrEnum):
@@ -250,10 +509,13 @@ ENGINE_OWNED_FIELDS = frozenset(
         "published_date",
         "discovered_date",
         "date_confidence",
+        "date_precision",
+        "provenance",
         "content_hash",
         "url_hash",
         "reading_time",
         "status",
+        "lifecycle",
         "needs_review",
         "revisions",
         "generation",
@@ -338,20 +600,42 @@ class Revision:
     """One recorded change to a knowledge object's engine-owned fields.
 
     Revisions are append-only. Revision 1 is always the initial ingestion.
+
+    `content_hash` and `title_snapshot`/`summary_snapshot` are what make the
+    **Knowledge Time Machine** possible. Without them a revision records only
+    *that* something changed; with them the object carries its own history and
+    "how did Direct Lake evolve over two years?" is answerable by reading one
+    file, deterministically and without invoking Git or an AI model.
+
+    The snapshots are cheap because ADR-0003 already caps stored summaries at a
+    short original paragraph. We are keeping a bounded amount of text we were
+    already allowed to store.
     """
 
     revision: int
     date: date
     changed_fields: tuple[str, ...] = ()
     summary: str = ""
+    #: Content hash produced by this revision, forming a verifiable chain.
+    content_hash: str | None = None
+    #: Title and summary as of this revision, so earlier states are readable.
+    title_snapshot: str | None = None
+    summary_snapshot: str | None = None
+    #: Run that produced this revision; correlates with the run and event logs.
+    run_id: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
-        return {
+        out: dict[str, Any] = {
             "revision": self.revision,
             "date": self.date,
             "changed_fields": list(self.changed_fields),
             "summary": self.summary,
         }
+        for key in ("content_hash", "title_snapshot", "summary_snapshot", "run_id"):
+            value = getattr(self, key)
+            if value is not None:
+                out[key] = value
+        return out
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> Revision:
@@ -360,6 +644,80 @@ class Revision:
             date=_coerce_date(raw["date"]),
             changed_fields=tuple(raw.get("changed_fields") or ()),
             summary=raw.get("summary") or "",
+            content_hash=raw.get("content_hash"),
+            title_snapshot=raw.get("title_snapshot"),
+            summary_snapshot=raw.get("summary_snapshot"),
+            run_id=raw.get("run_id"),
+        )
+
+
+class EventType(StrEnum):
+    """What happened to a knowledge object, for the append-only event log."""
+
+    DISCOVERED = "discovered"  # first ingestion
+    REVISED = "revised"  # source changed; engine fields updated
+    RECLASSIFIED = "reclassified"  # tier / priority / category changed
+    REPLACED = "replaced"  # superseded by a new object
+    DEPRECATED = "deprecated"
+    ARTIFACT_GENERATED = "artifact-generated"
+    ARTIFACT_STALE = "artifact-stale"
+
+
+@dataclass(frozen=True)
+class KnowledgeEvent:
+    """One entry in the pack's append-only event log.
+
+    Knowledge objects answer "what is true now?". The event log answers "what
+    happened, and when?" -- and it is the difference between a knowledge base
+    and a **Knowledge Time Machine**:
+
+    * *What changed in Fabric during July 2026?* → filter by month.
+    * *Show everything since I last studied.* → filter by timestamp.
+    * *Compare this month with last month.* → two ranges.
+    * *What happened before feature X shipped?* → filter by timestamp < X.
+
+    Answering these by walking every object and replaying its revisions would
+    work but scales with the pack rather than with the answer. A single
+    time-ordered log makes every one of those queries a scan of one file, in
+    chronological order, with no index and no database (ADR-0003).
+
+    Stored as JSON Lines in `state/events.jsonl`: append-only, diff-friendly,
+    and readable one line at a time without parsing the whole file.
+    """
+
+    occurred_at: datetime
+    event_type: EventType
+    feature_id: str
+    run_id: str
+    revision: int | None = None
+    changed_fields: tuple[str, ...] = ()
+    detail: str = ""
+
+    def to_dict(self) -> dict[str, Any]:
+        out: dict[str, Any] = {
+            "occurred_at": self.occurred_at.isoformat(),
+            "event_type": str(self.event_type),
+            "feature_id": self.feature_id,
+            "run_id": self.run_id,
+        }
+        if self.revision is not None:
+            out["revision"] = self.revision
+        if self.changed_fields:
+            out["changed_fields"] = list(self.changed_fields)
+        if self.detail:
+            out["detail"] = self.detail
+        return out
+
+    @classmethod
+    def from_dict(cls, raw: dict[str, Any]) -> KnowledgeEvent:
+        return cls(
+            occurred_at=_coerce_datetime(raw["occurred_at"]),
+            event_type=EventType(raw["event_type"]),
+            feature_id=raw["feature_id"],
+            run_id=raw["run_id"],
+            revision=raw.get("revision"),
+            changed_fields=tuple(raw.get("changed_fields") or ()),
+            detail=raw.get("detail") or "",
         )
 
 
@@ -421,11 +779,93 @@ class GenerationEntry:
 
 
 @dataclass(frozen=True)
+class Provenance:
+    """Where an item came from and exactly how it was extracted.
+
+    Recorded on **every** discovered item, and carried through to the stored
+    knowledge object. It answers questions that are impossible to reconstruct
+    afterwards:
+
+    * Which adapter produced this, and which version of its parser?
+    * Which selector inside the document did it come from?
+    * Which run, at what moment?
+
+    The practical payoff is parser-break forensics. When a source changes its
+    markup, the items it produced afterwards are subtly wrong rather than
+    absent. `parser_version` and `selector` make it possible to find every item
+    a given parser produced and re-examine exactly those.
+    """
+
+    source_name: str
+    source_representation: SourceRepresentation
+    adapter_type: AdapterType
+    parser_version: int
+    extraction_method: ExtractionMethod
+    discovered_at: datetime  # UTC, always timezone-aware
+    #: Which signal established this item's identity, and the key derived from
+    #: it. Recorded because the first question when investigating a duplicate or
+    #: a missed match is always "what were we matching on?".
+    identity_basis: IdentityBasis = IdentityBasis.CONTENT_FINGERPRINT
+    identity_key: str = ""
+    #: The concrete selector, XPath, feed field or table column used. Free text
+    #: because every adapter type addresses its document differently.
+    selector: str | None = None
+    #: Identifier of the run that produced this item; correlates the object with
+    #: the run log and the event log.
+    run_id: str | None = None
+    #: Set when this item came from a fallback rather than the primary source.
+    source_role: SourceRole = SourceRole.PRIMARY
+
+    def to_dict(self) -> dict[str, Any]:
+        # Emitted in discovery-chain order, so reading the block top to bottom
+        # retraces how the item came to exist:
+        #   source -> representation -> adapter -> version -> extraction
+        #   -> identity basis -> when -> which link of the chain
+        out: dict[str, Any] = {
+            "source_name": self.source_name,
+            "source_representation": str(self.source_representation),
+            "adapter_type": str(self.adapter_type),
+            "parser_version": self.parser_version,
+            "extraction_method": str(self.extraction_method),
+            "identity_basis": str(self.identity_basis),
+            "identity_key": self.identity_key,
+            "discovered_at": self.discovered_at.isoformat(),
+            "source_role": str(self.source_role),
+        }
+        for key in ("selector", "run_id"):
+            value = getattr(self, key)
+            if value is not None:
+                out[key] = value
+        return out
+
+    @classmethod
+    def from_dict(cls, raw: dict[str, Any]) -> Provenance:
+        return cls(
+            source_name=raw["source_name"],
+            source_representation=SourceRepresentation(raw["source_representation"]),
+            adapter_type=AdapterType(raw["adapter_type"]),
+            discovered_at=_coerce_datetime(raw["discovered_at"]),
+            extraction_method=ExtractionMethod(raw["extraction_method"]),
+            parser_version=int(raw["parser_version"]),
+            identity_basis=IdentityBasis(
+                raw.get("identity_basis", IdentityBasis.CONTENT_FINGERPRINT)
+            ),
+            identity_key=raw.get("identity_key", ""),
+            selector=raw.get("selector"),
+            run_id=raw.get("run_id"),
+            source_role=SourceRole(raw.get("source_role", SourceRole.PRIMARY)),
+        )
+
+
+@dataclass(frozen=True)
 class RawItem:
     """A normalised item from a source, before it has an identity.
 
-    This is the hand-off between discovery (M1) and identity/dedupe (M2). It
-    gains hash fields in M1 once `ke.normalize` exists.
+    This is the hand-off between discovery (M1) and identity/dedupe (M2), and
+    the **only** type a discovery adapter may return. Every adapter implements
+    the same `discover() -> list[RawItem]` signature, which is what keeps every
+    downstream stage completely source-agnostic: dedupe, minting, storage and
+    classification never learn whether an item came from RSS or a table row.
     """
 
     source_name: str
@@ -434,19 +874,79 @@ class RawItem:
     title: str
     summary: str
     discovered_date: date
+    provenance: Provenance
+    identity: ItemIdentity
     published_date: date | None = None
     date_confidence: DateConfidence = DateConfidence.INFERRED
+    date_precision: DatePrecision = DatePrecision.DAY
     raw_tags: tuple[str, ...] = ()
+
+    #: The Announcement this Feature was reported in, if one could be resolved.
+    #:
+    #: Explicitly nullable and deliberately *not* defaulted to `source_url`.
+    #: `source_url` falls back to the source document when a link cannot be
+    #: resolved, and the document being read is not an announcement -- recording
+    #: it as one would invent a citation that does not exist. "This feature has
+    #: no announcement" is a fact worth representing (IDENTITY_MODEL.md §3.1).
+    announcement_url: str | None = None
+
+    #: Assigned by `discover_all` once the whole run is visible, because
+    #: announcement exclusivity cannot be known from one item alone. Adapters
+    #: leave this at its default; they cannot see the other items.
+    identity_confidence: IdentityConfidence = IdentityConfidence.MEDIUM
+
+    #: Why the confidence is what it is, in words, for the review queue. A
+    #: person triaging a Medium item should not have to re-derive the rule.
+    confidence_reason: str = ""
+
+    #: Where this item sits in acquisition. Adapters produce `DISCOVERED`;
+    #: `discover_all` moves it to `APPROVED` or `QUEUED` once the gate has run.
+    lifecycle: Lifecycle = Lifecycle.DISCOVERED
+
+    #: When this item was **first** seen, across all runs.
+    #:
+    #: Not the same as `discovered_date`, which is this run's date. A queued item
+    #: approved weeks later must mint its Feature ID from the date the knowledge
+    #: appeared, not the date a human got round to it -- otherwise review latency
+    #: silently shifts the ID's month, permanently (ADR-0028).
+    #:
+    #: `None` means "first seen in this run", so a fresh item needs no special
+    #: case. M2 populates it from the review queue when re-discovering.
+    first_discovered_date: date | None = None
+
+    @property
+    def mints_automatically(self) -> bool:
+        """Whether M2 may mint a permanent Feature ID without a human.
+
+        The gate is deliberately a *combination* rather than one overloaded
+        field: identity confidence and source authority answer different
+        questions, and folding them together would mean neither could be
+        changed without redefining the other (IDENTITY_MODEL.md §6.5).
+        """
+        return (
+            self.identity_confidence is IdentityConfidence.HIGH
+            and self.source_authority is SourceAuthority.OFFICIAL_MICROSOFT
+        )
 
     @property
     def id_basis_date(self) -> date:
         """The date whose month the Feature ID is minted from.
 
-        Publication month when we trust it, discovery month otherwise.
+        Publication month when we trust it, else the month this item was
+        **first** seen.
+
+        `date_precision` does not enter into this: month precision is *exactly*
+        what minting needs (ADR-0005), so a month-precise date is fully usable
+        here, and an exact date is deliberately **not** required to mint --
+        month-precision knowledge is still knowledge. Only `date_confidence`
+        decides whether the publication date is trusted at all.
+
+        The fallback uses `first_discovered_date` when present so that time
+        spent in the review queue cannot move a permanent identifier.
         """
         if self.published_date is not None and self.date_confidence is DateConfidence.EXACT:
             return self.published_date
-        return self.discovered_date
+        return self.first_discovered_date or self.discovered_date
 
 
 @dataclass
@@ -476,7 +976,9 @@ class KnowledgeObject:
     date_confidence: DateConfidence
     content_hash: str
     url_hash: str
+    provenance: Provenance
     published_date: date | None = None
+    date_precision: DatePrecision = DatePrecision.DAY
 
     # --- Classification (engine-proposed, user-overridable) ---
     tier: Tier = Tier.AWARENESS
@@ -502,6 +1004,13 @@ class KnowledgeObject:
     replaces: str | None = None
 
     # --- Lifecycle ---
+    #
+    # Two orthogonal axes, deliberately not merged:
+    #   `lifecycle` — how far through ACQUISITION this got
+    #   `status`    — whether the KNOWLEDGE is still current
+    # An object is routinely `minted` + `active`, and may be `minted` +
+    # `replaced`. See ADR-0029.
+    lifecycle: Lifecycle = Lifecycle.MINTED
     status: ObjectStatus = ObjectStatus.ACTIVE
     needs_review: bool = False
     overrides: tuple[str, ...] = ()  # proposed-class fields the user has locked
@@ -582,7 +1091,9 @@ class KnowledgeObject:
             "published_date": self.published_date,
             "discovered_date": self.discovered_date,
             "date_confidence": str(self.date_confidence),
+            "date_precision": str(self.date_precision),
             "content_hash": self.content_hash,
+            "provenance": self.provenance.to_dict(),
             "url_hash": self.url_hash,
             "tier": int(self.tier),
             "learning_priority": str(self.learning_priority),
@@ -599,6 +1110,7 @@ class KnowledgeObject:
             "related_topics": list(self.related_topics),
             "replaced_by": self.replaced_by,
             "replaces": self.replaces,
+            "lifecycle": str(self.lifecycle),
             "status": str(self.status),
             "needs_review": self.needs_review,
             "overrides": list(self.overrides),
@@ -628,7 +1140,9 @@ class KnowledgeObject:
             published_date=_coerce_date(published) if published else None,
             discovered_date=_coerce_date(raw["discovered_date"]),
             date_confidence=DateConfidence(raw["date_confidence"]),
+            date_precision=DatePrecision(raw.get("date_precision", DatePrecision.DAY)),
             content_hash=raw["content_hash"],
+            provenance=Provenance.from_dict(raw["provenance"]),
             url_hash=raw["url_hash"],
             tier=Tier(int(raw.get("tier", Tier.AWARENESS))),
             learning_priority=LearningPriority(
@@ -649,6 +1163,7 @@ class KnowledgeObject:
             related_topics=tuple(raw.get("related_topics") or ()),
             replaced_by=raw.get("replaced_by"),
             replaces=raw.get("replaces"),
+            lifecycle=Lifecycle(raw.get("lifecycle", Lifecycle.MINTED)),
             status=ObjectStatus(raw.get("status", ObjectStatus.ACTIVE)),
             needs_review=bool(raw.get("needs_review", False)),
             overrides=tuple(raw.get("overrides") or ()),
@@ -668,18 +1183,199 @@ class KnowledgeObject:
 
 
 @dataclass
-class SourceHealth:
-    """Outcome of polling one source during a run.
+class SourceAttempt:
+    """One attempt to fetch one source during one run.
 
-    Recorded per run so that a source which quietly stops returning items shows
-    up in the weekly digest instead of causing silent data loss.
+    This is the raw observation. `SourceHealth` is the running state derived
+    from a series of these.
     """
 
     source_name: str
+    run_id: str
+    attempted_at: datetime
     ok: bool
-    items_found: int = 0
-    duration_seconds: float = 0.0
-    error: str | None = None
+    role: SourceRole = SourceRole.PRIMARY
+    http_status: int | None = None
+    response_ms: int = 0
+    items_discovered: int = 0
+    failure_reason: str | None = None
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "source_name": self.source_name,
+            "run_id": self.run_id,
+            "attempted_at": self.attempted_at.isoformat(),
+            "ok": self.ok,
+            "role": str(self.role),
+            "http_status": self.http_status,
+            "response_ms": self.response_ms,
+            "items_discovered": self.items_discovered,
+            "failure_reason": self.failure_reason,
+        }
+
+    @classmethod
+    def from_dict(cls, raw: dict[str, Any]) -> SourceAttempt:
+        return cls(
+            source_name=raw["source_name"],
+            run_id=raw["run_id"],
+            attempted_at=_coerce_datetime(raw["attempted_at"]),
+            ok=bool(raw["ok"]),
+            role=SourceRole(raw.get("role", SourceRole.PRIMARY)),
+            http_status=raw.get("http_status"),
+            response_ms=int(raw.get("response_ms", 0)),
+            items_discovered=int(raw.get("items_discovered", 0)),
+            failure_reason=raw.get("failure_reason"),
+        )
+
+
+#: Consecutive failures before a source is escalated to a GitHub Issue (M6).
+FAILURE_ALERT_THRESHOLD = 3
+
+#: A run returning fewer than this fraction of a source's historical median is
+#: treated as a suspected parser break rather than "no news". Deliberately
+#: generous: a false "possible parser break" costs a glance at the digest, while
+#: a missed one costs weeks of silently lost knowledge.
+PARSER_BREAK_RATIO = 0.34
+
+#: Attempts needed before a baseline means anything. Below this the engine has
+#: no opinion and will not cry parser break.
+BASELINE_MIN_OBSERVATIONS = 3
+
+
+@dataclass
+class SourceHealth:
+    """Running health state of one configured source.
+
+    Persisted in `state/source-health.json` and updated every run, so a source
+    that quietly stops producing knowledge is visible in the weekly digest, in
+    `ke health`, and eventually in a GitHub Issue -- never silently absent.
+    """
+
+    source_name: str
+    state: HealthState = HealthState.HEALTHY
+    last_success_at: datetime | None = None
+    last_attempt_at: datetime | None = None
+    consecutive_failures: int = 0
+    last_http_status: int | None = None
+    last_failure_reason: str | None = None
+    last_items_discovered: int = 0
+    #: Item counts from previous *successful* runs, oldest first. Bounded, since
+    #: this file is committed on every run and must not grow without limit.
+    recent_item_counts: tuple[int, ...] = ()
+    #: Set when a human disables a source; the engine never clears it.
+    disabled_reason: str | None = None
+    #: Issue number of the currently-open health alert, so the engine does not
+    #: open a duplicate while one remains open.
+    open_alert_issue: int | None = None
+
+    MAX_HISTORY = 26  # roughly six months of weekly runs
+
+    @property
+    def baseline_items(self) -> float | None:
+        """Median item count over recent successful runs.
+
+        Median rather than mean: one anomalous week should not move the
+        baseline enough to mask a genuine break the following week.
+        """
+        counts = sorted(self.recent_item_counts)
+        if len(counts) < BASELINE_MIN_OBSERVATIONS:
+            return None
+        middle = len(counts) // 2
+        if len(counts) % 2:
+            return float(counts[middle])
+        return (counts[middle - 1] + counts[middle]) / 2
+
+    def looks_like_parser_break(self, items_discovered: int) -> bool:
+        """Whether this run's yield is suspiciously low for this source.
+
+        A source that has historically returned updates and suddenly returns
+        (almost) nothing has probably broken, not gone quiet. Assuming the
+        latter is how a pipeline dies without anyone noticing.
+        """
+        baseline = self.baseline_items
+        if baseline is None or baseline <= 0:
+            return False
+        return items_discovered < baseline * PARSER_BREAK_RATIO
+
+    @property
+    def needs_alert(self) -> bool:
+        """Whether this source warrants a GitHub Issue right now."""
+        if self.state is HealthState.DISABLED or self.open_alert_issue is not None:
+            return False
+        return self.consecutive_failures >= FAILURE_ALERT_THRESHOLD
+
+    def record(self, attempt: SourceAttempt) -> SourceHealth:
+        """Fold one attempt into the running state, returning a new copy.
+
+        Never mutates: like `KnowledgeObject.with_engine_fields`, callers get an
+        independent object so a partially-applied update is impossible.
+        """
+        if self.state is HealthState.DISABLED:
+            return replace(self, last_attempt_at=attempt.attempted_at)
+
+        if not attempt.ok:
+            return replace(
+                self,
+                state=HealthState.FAILED,
+                last_attempt_at=attempt.attempted_at,
+                consecutive_failures=self.consecutive_failures + 1,
+                last_http_status=attempt.http_status,
+                last_failure_reason=attempt.failure_reason,
+                last_items_discovered=0,
+            )
+
+        suspicious = self.looks_like_parser_break(attempt.items_discovered)
+        history = (*self.recent_item_counts, attempt.items_discovered)[-self.MAX_HISTORY:]
+        degraded = suspicious or attempt.role is not SourceRole.PRIMARY
+        return replace(
+            self,
+            state=HealthState.DEGRADED if degraded else HealthState.HEALTHY,
+            last_success_at=attempt.attempted_at,
+            last_attempt_at=attempt.attempted_at,
+            consecutive_failures=0,
+            last_http_status=attempt.http_status,
+            last_failure_reason=(
+                "possible parser break: item count far below historical baseline"
+                if suspicious else None
+            ),
+            last_items_discovered=attempt.items_discovered,
+            recent_item_counts=history,
+        )
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "source_name": self.source_name,
+            "state": str(self.state),
+            "last_success_at": self.last_success_at.isoformat() if self.last_success_at else None,
+            "last_attempt_at": self.last_attempt_at.isoformat() if self.last_attempt_at else None,
+            "consecutive_failures": self.consecutive_failures,
+            "last_http_status": self.last_http_status,
+            "last_failure_reason": self.last_failure_reason,
+            "last_items_discovered": self.last_items_discovered,
+            "recent_item_counts": list(self.recent_item_counts),
+            "disabled_reason": self.disabled_reason,
+            "open_alert_issue": self.open_alert_issue,
+        }
+
+    @classmethod
+    def from_dict(cls, raw: dict[str, Any]) -> SourceHealth:
+        return cls(
+            source_name=raw["source_name"],
+            state=HealthState(raw.get("state", HealthState.HEALTHY)),
+            last_success_at=(
+                _coerce_datetime(raw["last_success_at"]) if raw.get("last_success_at") else None
+            ),
+            last_attempt_at=(
+                _coerce_datetime(raw["last_attempt_at"]) if raw.get("last_attempt_at") else None
+            ),
+            consecutive_failures=int(raw.get("consecutive_failures", 0)),
+            last_http_status=raw.get("last_http_status"),
+            last_failure_reason=raw.get("last_failure_reason"),
+            last_items_discovered=int(raw.get("last_items_discovered", 0)),
+            recent_item_counts=tuple(raw.get("recent_item_counts") or ()),
+            disabled_reason=raw.get("disabled_reason"),
+            open_alert_issue=raw.get("open_alert_issue"),
+        )
 
 
 @dataclass
@@ -693,17 +1389,39 @@ class RunReport:
     """
 
     pack: str
+    run_id: str
     started_at: datetime
     finished_at: datetime | None = None
-    sources: list[SourceHealth] = field(default_factory=list)
+    attempts: list[SourceAttempt] = field(default_factory=list)
+    health: list[SourceHealth] = field(default_factory=list)
+    events: list[KnowledgeEvent] = field(default_factory=list)
     created: list[str] = field(default_factory=list)
     revised: list[str] = field(default_factory=list)
     duplicates_skipped: int = 0
     needs_review: list[str] = field(default_factory=list)
 
     @property
-    def unhealthy_sources(self) -> list[SourceHealth]:
-        return [source for source in self.sources if not source.ok]
+    def failed_attempts(self) -> list[SourceAttempt]:
+        return [attempt for attempt in self.attempts if not attempt.ok]
+
+    def by_state(self, state: HealthState) -> list[SourceHealth]:
+        """Sources currently in a given state, for the digest and `ke health`."""
+        return [source for source in self.health if source.state is state]
+
+    @property
+    def alerts_needed(self) -> list[SourceHealth]:
+        """Sources that have failed enough consecutive runs to warrant an Issue."""
+        return [source for source in self.health if source.needs_alert]
+
+    @property
+    def succeeded_overall(self) -> bool:
+        """Whether the run itself is a success.
+
+        **A failed source never fails the run.** Harvesting continues from every
+        healthy source and the failure is recorded in the run log, the digest
+        and the health file. The run only fails if it could not complete at all.
+        """
+        return self.finished_at is not None
 
     @property
     def is_empty(self) -> bool:
@@ -713,6 +1431,24 @@ class RunReport:
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
+
+def _coerce_datetime(value: Any) -> datetime:
+    """Read a timestamp, always returning an aware UTC `datetime`.
+
+    Every timestamp the engine writes is UTC ISO-8601. Naive values are treated
+    as UTC rather than as local time, because a run log that means different
+    instants depending on which machine wrote it is worse than useless.
+    """
+    if isinstance(value, datetime):
+        parsed = value
+    elif isinstance(value, str):
+        parsed = datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
+    else:
+        raise ValueError(f"cannot read {value!r} as a timestamp")
+    return parsed.replace(tzinfo=timezone.utc) if parsed.tzinfo is None else parsed.astimezone(
+        timezone.utc
+    )
 
 
 def _coerce_date(value: Any) -> date:

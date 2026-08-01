@@ -78,7 +78,7 @@ ownership class, declared in `engine/ke/models.py` and asserted at import time.
 
 | Class | Engine behaviour | Fields |
 |---|---|---|
-| **Engine-owned** | Rewritten freely on every run | `schema_version`, `id`, `slug`, `title`, `source_name`, `source_url`, `source_authority`, `published_date`, `discovered_date`, `date_confidence`, `content_hash`, `url_hash`, `reading_time`, `status`, `needs_review`, `revisions`, `generation` |
+| **Engine-owned** | Rewritten freely on every run | `schema_version`, `id`, `slug`, `title`, `source_name`, `source_url`, `announcement_url`, `identity_confidence`, `source_authority`, `published_date`, `discovered_date`, `date_confidence`, `content_hash`, `url_hash`, `reading_time`, `lifecycle`, `status`, `needs_review`, `revisions`, `generation` |
 | **Engine-proposed** | Written **only** if absent, or if not named in `overrides` | `tier`, `learning_priority`, `category`, `tags`, `difficulty`, `workload`, `version` |
 | **User-owned** | **Never written by the engine** | `learning_status`, `notes`, `prerequisites`, `builds_on`, `related_topics`, `replaced_by`, `replaces`, `overrides` |
 
@@ -117,12 +117,34 @@ title: Direct Lake mode reaches general availability
 # --- Provenance (engine-owned) ---
 source_name: fabric-blog
 source_url: https://blog.fabric.microsoft.com/...
+# The Announcement this Feature was reported in. Nullable, and NOT defaulted to
+# source_url: an announcement may report many features, and a source document is
+# not an announcement (ADR-0027).
+announcement_url: https://blog.fabric.microsoft.com/...
+identity_confidence: high       # high | medium | low — see §10.1 (ADR-0028)
 source_authority: official-microsoft
 published_date: 2026-04-15
 discovered_date: 2026-08-03
-date_confidence: exact
+date_confidence: exact          # do we trust it?   exact | inferred
+date_precision: day             # how precise?      day | month | year
 content_hash: sha256:...
 url_hash: sha256:...
+
+# Where this item came from and exactly how it was extracted (engine-owned).
+# Written in discovery-chain order: source → representation → adapter →
+# version → method → time → identity. See §10.
+provenance:
+  source_name: learn-fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  discovered_at: 2026-08-03T06:00:00+00:00
+  identity_basis: canonical-url
+  identity_key: sha256:...
+  selector: "h2#generally-available-features + table tr (date from cell 0)"
+  run_id: run-2026-08-03T06:00:00Z
+  source_role: primary
 
 # --- Classification (engine-proposed, user-overridable) ---
 tier: 1
@@ -148,6 +170,10 @@ replaced_by: null
 replaces: null
 
 # --- Lifecycle (engine-owned) ---
+# Two orthogonal axes (ADR-0029):
+#   lifecycle — how far through ACQUISITION this got
+#   status    — whether the KNOWLEDGE is still current
+lifecycle: minted               # discovered|queued|approved|minted|superseded|archived
 status: active
 needs_review: false
 overrides: []
@@ -180,10 +206,14 @@ generation:
 | `title` | string | yes | Must match the `# ` heading in `feature.md`. |
 | `source_name` | string | yes | Key of a source defined in `pack.yml`. |
 | `source_url` | string | yes | Canonical URL, tracking parameters stripped. |
+| `announcement_url` | string \| null | yes | The Announcement this Feature was reported in, or `null` when none could be resolved. Never defaulted to `source_url`. |
+| `identity_confidence` | enum | yes | `high` \| `medium` \| `low`. Whether this identity was trusted enough to mint from. See §10.1. |
 | `source_authority` | enum | yes | `official-microsoft` \| `microsoft-community` \| `third-party` |
 | `published_date` | date \| null | yes | Null only when `date_confidence` is `inferred`. |
 | `discovered_date` | date | yes | When the engine first saw it. |
-| `date_confidence` | enum | yes | `exact` \| `inferred` |
+| `date_confidence` | enum | yes | `exact` \| `inferred`. Do we trust the date at all? |
+| `date_precision` | enum | yes | `day` \| `month` \| `year`. How precise is it? **Independent of confidence** — see below. |
+| `provenance` | map | yes | Adapter, source, timestamp, extraction method, parser version, selector, run. See §10. |
 | `content_hash` | string | yes | `sha256:…` of normalised title + summary. Drives change detection. |
 | `url_hash` | string | yes | `sha256:…` of the canonical URL. Drives exact-duplicate detection. |
 | `tier` | int | yes | `1` act now \| `2` learn soon \| `3` awareness. Operational impact. |
@@ -201,11 +231,22 @@ generation:
 | `related_topics` | list[FeatureId] | yes | Symmetric in meaning; declared one-way (see §6). |
 | `replaced_by` | FeatureId \| null | yes | Set when this object is superseded. |
 | `replaces` | FeatureId \| null | yes | Inverse of `replaced_by`. |
+| `lifecycle` | enum | yes | Acquisition stage. `discovered` \| `queued` \| `approved` \| `minted` \| `superseded` \| `archived`. Orthogonal to `status` — see ADR-0029. |
 | `status` | enum | yes | `active` \| `replaced` \| `deprecated`. There is no `deleted`. |
 | `needs_review` | bool | yes | Engine could not classify confidently, or flagged a near-duplicate. |
 | `overrides` | list[string] | yes | Engine-proposed fields the user has locked. |
-| `revisions` | list[Revision] | yes | Append-only. See §5. |
+| `revisions` | list[Revision] | yes | Append-only, with content hash and snapshots. See §5. |
 | `generation` | map | yes | Artifact tracking. See §6. |
+
+**Date confidence and date precision are independent.** They answer different
+questions, and overloading one to carry both loses information. The Microsoft
+Learn "What's New" page dates updates to a *month*: that is an exactly known
+month, so `date_confidence: exact` with `date_precision: month`. Marking it
+`inferred` would wrongly suggest we guessed; recording day precision would be
+quietly false. `published_date` always holds a real date — the first of the month
+or of the year — so sorting stays deterministic; `date_precision` says how much
+of it to believe. Feature ID minting is unaffected: ADR-0005 needs the month, and
+month precision supplies exactly that.
 
 **Tier and learning priority are independent.** A Tier 3 item can be high
 learning priority (an excellent deep dive), and a Tier 1 item can be low (a
@@ -225,11 +266,24 @@ revisions:
     date: 2026-08-03
     changed_fields: []
     summary: Initial ingestion
+    content_hash: sha256:aaa...
+    title_snapshot: Direct Lake mode enters preview
+    summary_snapshot: Direct Lake is available in preview for...
+    run_id: run-2026-08-03T06:00:00Z
   - revision: 2
     date: 2026-09-14
     changed_fields: [title, content_hash]
     summary: Source article retitled and expanded
+    content_hash: sha256:bbb...
+    title_snapshot: Direct Lake mode reaches general availability
+    summary_snapshot: Direct Lake is now generally available for...
+    run_id: run-2026-09-14T06:00:00Z
 ```
+
+The snapshots make the object **self-describing over time**: "how did Direct Lake
+evolve?" is answerable by reading one file, deterministically and without Git or
+an AI model. They are cheap because §8 already caps stored summaries at a short
+paragraph. See [`docs/design/TIME_MACHINE.md`](design/TIME_MACHINE.md).
 
 - Revision 1 is always the initial ingestion.
 - A revision is appended **only** when an engine-owned field actually changed;
@@ -340,3 +394,106 @@ and `ke validate` enforces the word limit.
 Errors fail the build. Warnings are reported and pass, unless `--strict`.
 
 Graph checks (referential integrity, cycle detection) arrive in M4.
+
+
+---
+
+## 10. Provenance
+
+Every discovered item carries a provenance record, and it travels with the stored
+object. It is engine-owned.
+
+### The discovery chain
+
+Provenance fields are stored in the order knowledge actually travelled, so the
+record reads as a chain rather than a bag of attributes:
+
+```
+Source → Representation → Adapter → Adapter version → Extraction method
+       → Identity basis → Date precision → Date confidence → Knowledge object
+```
+
+Every link answers a different question, and every link can break independently.
+`date_precision` and `date_confidence` are the tail of the same chain even though
+they live on the object rather than inside `provenance` — they describe how the
+publication date was arrived at, which is what ADR-0005 mints a permanent Feature
+ID from.
+
+| Field | Meaning |
+|---|---|
+| `source_name` | Key of the source in `pack.yml` |
+| `source_representation` | `html` \| `markdown` \| `rss` \| `atom` \| `api` — the format actually received |
+| `adapter_type` | `rss` \| `atom` \| `html` \| `markdown` \| `github-commits` \| `sitemap` \| `manual` |
+| `parser_version` | Version of the adapter's parser that produced it |
+| `extraction_method` | `feed-entry` \| `html-table-row` \| `markdown-table-row` \| `html-heading-section` \| `html-list-item` \| `json-field` \| `commit-message` \| `manual-entry` |
+| `discovered_at` | UTC ISO-8601 timestamp of the run that found it |
+| `identity_basis` | `canonical-url` \| `source-identifier` \| `normalised-title-hash` \| `content-fingerprint` — which signal the Feature ID rests on |
+| `identity_key` | The computed key itself |
+| `selector` | The concrete selector, XPath, feed field or column used |
+| `run_id` | Correlates the object with the run log and event log |
+| `source_role` | `primary` \| `secondary` \| `manual-review` — which link in the fallback chain produced it |
+
+**Representation is not adapter.** They are usually the same word and
+occasionally are not, which is exactly why both are stored. The Fabric updates
+exist as rendered `html` on Microsoft Learn *and* as `markdown` in the
+`MicrosoftDocs/fabric-docs` repository — same authoritative content, different
+hosts, different failure modes. That is what makes one a usable fallback for the
+other, and "was this object read from the rendered page or from the source file?"
+is a question that cannot be answered from the adapter name alone once a source
+grows a second adapter. See [ADR-0026](adr/0026-discovery-chain-provenance.md).
+
+**Why this is worth the bytes.** When a source changes its markup, the items
+produced afterwards are subtly *wrong* rather than absent — the failure mode no
+health check catches. `parser_version` and `selector` make it possible to find
+every object a given parser produced and re-examine exactly those, instead of
+re-verifying the whole pack. `identity_basis` narrows it further: a duplicate
+investigation starts with "what were we matching on?", and objects resting on a
+title hash are the ones worth looking at first.
+
+### 10.1 Identity confidence
+
+`identity_basis` says what an identity rests on. It cannot say whether that is
+good enough to mint from — a canonical URL that identifies one feature and a
+canonical URL that identifies a blog post covering eleven features are both
+`canonical-url`.
+
+`identity_confidence` answers that second question
+([ADR-0028](adr/0028-identity-confidence.md)).
+
+| Level | Meaning | Effect |
+|---|---|---|
+| `high` | Durable anchor, and the announcement reports exactly one feature | Mints automatically |
+| `medium` | Durable anchor but a shared announcement, **or** a weak anchor | Review queue |
+| `low` | Content fingerprint, or no usable title and no durable anchor | Never minted automatically |
+
+The mint gate is a **combination**, not one field:
+
+```
+mint automatically  ⟺  identity_confidence is high
+                       AND source_authority is official-microsoft
+```
+
+**Identity is permanent; confidence is a per-run assessment.** Confidence may use
+run-scoped evidence — how many features shared this announcement in this run —
+precisely because it never enters the Feature ID. Read a stored value as "as of
+that run"; it never retroactively changes an ID that already exists.
+
+Note the name collision with `date_confidence`. They are unrelated:
+`date_confidence` grades the publication date, `identity_confidence` grades the
+identity. They are combined at the gate, never merged into one field.
+
+---
+
+## 11. Source health
+
+Health state lives in `state/source-health.json`, outside any knowledge object,
+because it describes the *source* rather than the knowledge. Full design in
+[`docs/design/SOURCE_HEALTH.md`](design/SOURCE_HEALTH.md).
+
+States: `healthy` · `degraded` · `failed` · `disabled`.
+
+The one worth understanding is **`degraded`**: reachable and returning items, but
+either falling back to a secondary source or returning far fewer items than its
+historical median. A source that always returns twenty items and suddenly
+returns zero has probably broken — treating that as "no news this week" is how a
+pipeline dies without anyone noticing.
