@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-059
 slug: workspace-monitoring-preview
-title: Workspace monitoring (Preview)
+title: Workspace monitoring (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/fundamentals/workspace-monitoring-overview
 announcement_url: https://learn.microsoft.com/en-us/fabric/fundamentals/workspace-monitoring-overview
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:35c447de7b19e9256fc01d7cd6c79f864b054137f8a741abfd3b26c34b293a37
+content_hash: sha256:b199cffaa6aecebdb32cf97301e203a6429b5d99cf66a02bb6468cd6ea566ca8
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     and metrics. For more information about this feature, see Announcing preview of workspace
     monitoring.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:b199cffaa6aecebdb32cf97301e203a6429b5d99cf66a02bb6468cd6ea566ca8
+  title_snapshot: Workspace monitoring (preview)
+  summary_snapshot: Workspace monitoring (Preview) Workspace monitoring (preview) is a Microsoft
+    Fabric database that collects data from a range of Fabric items in your workspace, and
+    lets you access and analyze logs and metrics. For more information about this feature,
+    see Announcing preview of workspace monitoring.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

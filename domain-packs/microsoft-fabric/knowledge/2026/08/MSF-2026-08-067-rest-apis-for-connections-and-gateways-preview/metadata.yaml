@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-067
 slug: rest-apis-for-connections-and-gateways-preview
-title: REST APIs for connections and gateways (Preview)
+title: REST APIs for connections and gateways are now in preview
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/announcing-the-availability-of-rest-apis-for-connections-and-gateways-in-microsoft-fabric?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/announcing-the-availability-of-rest-apis-for-connections-and-gateways-in-microsoft-fabric?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:376730c8864a764645833d7e9ff3e1276ee7cb45744ef4a9fbed2a4742e7b9c6
+content_hash: sha256:06e459221b2a224507162340ed94b434665ae35700262fed960fec2d86e5fefd
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,16 @@ revisions:
     allow developers to programmatically manage and interact with connections and gateways
     within Fabric.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:06e459221b2a224507162340ed94b434665ae35700262fed960fec2d86e5fefd
+  title_snapshot: REST APIs for connections and gateways are now in preview
+  summary_snapshot: REST APIs for connections and gateways (Preview) REST APIs for connections
+    and gateways are now in preview. These new APIs allow developers to programmatically manage
+    and interact with connections and gateways within Fabric.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

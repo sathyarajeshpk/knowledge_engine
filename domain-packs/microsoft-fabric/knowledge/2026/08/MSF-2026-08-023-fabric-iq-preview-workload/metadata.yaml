@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-023
 slug: fabric-iq-preview-workload
-title: Fabric IQ (Preview) workload
+title: Fabric IQ (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/iq/overview
 announcement_url: https://learn.microsoft.com/en-us/fabric/iq/overview
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:4e0ce0c760c920fd3ccae5ba1bb59bcb4ef389479e6d3cc185e64225332d8208
+content_hash: sha256:a866f533e6fc7c9a6dc9139d046d4223290f5d19f648f8908f39da19e9d47347
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -56,4 +56,16 @@ revisions:
     across data, models, and systems to power intelligent agents and decisions grounded in
     a live, holistic view of the business.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:a866f533e6fc7c9a6dc9139d046d4223290f5d19f648f8908f39da19e9d47347
+  title_snapshot: Fabric IQ (preview)
+  summary_snapshot: Fabric IQ (Preview) workload Fabric IQ (preview) is a new workload for
+    unifying business semantics across data, models, and systems to power intelligent agents
+    and decisions grounded in a live, holistic view of the business.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

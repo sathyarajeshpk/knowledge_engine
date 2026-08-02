@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-035
 slug: migration-assistant-to-sql-database-preview
-title: Migration Assistant to SQL database (preview)
+title: new Migration Assistant for SQL database
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/introducing-migration-assistant-for-sql-database-in-fabric-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/introducing-migration-assistant-for-sql-database-in-fabric-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:8a3a06cc6bb9ea00b3ecd2236eb885c715155be5bd7318f7560dddccb96ce339
+content_hash: sha256:da7aa7c800f9b6597fe4cf056b51883303d1cd7e23806169fb048c1cd6683fe2
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,19 @@ revisions:
     migration. For more information, see Fabric Migration Assistant for SQL database (Preview)
     and Introducing the Migration Assistant to SQL database in Fabric (preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:da7aa7c800f9b6597fe4cf056b51883303d1cd7e23806169fb048c1cd6683fe2
+  title_snapshot: new Migration Assistant for SQL database
+  summary_snapshot: Migration Assistant to SQL database (preview) The new Migration Assistant
+    for SQL database simplifies moving SQL Server on-premises workloads into Fabric. Designed
+    for SQL developers, it imports schema via DACPACs, identifies compatibility issues, and
+    provides clear, actionable guidance before migration. For more information, see Fabric
+    Migration Assistant for SQL database (Preview) and Introducing the Migration Assistant
+    to SQL database in Fabric (preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

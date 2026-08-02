@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-014
 slug: sharepoint-and-onedrive-shortcuts-generally-available
-title: SharePoint and OneDrive shortcuts (Generally Available)
+title: Create a OneDrive or SharePoint shortcut
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/onelake/create-onedrive-sharepoint-shortcut
 announcement_url: https://learn.microsoft.com/en-us/fabric/onelake/create-onedrive-sharepoint-shortcut
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:2705bec0fd4d666ebb3f92f9dd97cba51407d9e7b3ac5f8e552a1189c480ef8c
+content_hash: sha256:ffe42f0634ccb22b17ba1a14d879519c5b15d531f22554bed79ab494bac08f7b
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -56,4 +56,17 @@ revisions:
     workspace identity and service principal authentication. For more information, see Create
     a OneDrive or SharePoint shortcut and Workspace identity.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:ffe42f0634ccb22b17ba1a14d879519c5b15d531f22554bed79ab494bac08f7b
+  title_snapshot: Create a OneDrive or SharePoint shortcut
+  summary_snapshot: SharePoint and OneDrive shortcuts (Generally Available) Create shortcuts
+    to SharePoint or OneDrive locations, with support for workspace identity and service principal
+    authentication. For more information, see Create a OneDrive or SharePoint shortcut and
+    Workspace identity.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

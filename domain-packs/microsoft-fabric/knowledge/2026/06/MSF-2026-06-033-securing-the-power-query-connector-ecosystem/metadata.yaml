@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-033
 slug: securing-the-power-query-connector-ecosystem
-title: Securing the Power Query connector ecosystem
+title: Microsoft is bringing Power Query connectors in-house
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Securing-the-Power-Query-connector-ecosystem-in-Fabric/ba-p/5195164
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Securing-the-Power-Query-connector-ecosystem-in-Fabric/ba-p/5195164
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:2adaa3f053d9629112206ef491d198b499ed6001e77dd9ff305c913ebea6b2a8
+content_hash: sha256:5a4ecda3de3c28a9db80c86a0eca4a7be2f3300404da1554f63e50950927d85c
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -61,4 +61,19 @@ revisions:
     connectors such as Snowflake, Google BigQuery, and Amazon Redshift. For more information,
     see Snowflake connector and Google BigQuery connector.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:5a4ecda3de3c28a9db80c86a0eca4a7be2f3300404da1554f63e50950927d85c
+  title_snapshot: Microsoft is bringing Power Query connectors in-house
+  summary_snapshot: Securing the Power Query connector ecosystem Microsoft is bringing Power
+    Query connectors in-house to secure the connector supply chain and clarify a four-stage
+    connector lifecycle—Preview, Generally Available, Transparent Migration, and Retirement—building
+    on recently shipped Microsoft-owned V2 connectors such as Snowflake, Google BigQuery,
+    and Amazon Redshift. For more information, see Snowflake connector and Google BigQuery
+    connector.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

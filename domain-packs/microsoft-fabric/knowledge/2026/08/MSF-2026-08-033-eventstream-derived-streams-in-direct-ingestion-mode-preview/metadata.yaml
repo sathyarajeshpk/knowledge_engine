@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-033
 slug: eventstream-derived-streams-in-direct-ingestion-mode-preview
-title: Eventstream Derived Streams in Direct Ingestion mode (Preview)
+title: direct ingestion mode
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/add-destination-kql-database
 announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/add-destination-kql-database
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:e7b2b6f8cc2d9a33a92eeb473fed8fb6d69d8ed70771554ebdf13620a92e98e8
+content_hash: sha256:5a884393081bd72fd735c859f13d8341f448e184dfbb711e83177edf7db5f914
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,18 @@ revisions:
     information, see Fabric Eventhouse now supports Eventstream Derived Streams in Direct
     Ingestion mode (preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:5a884393081bd72fd735c859f13d8341f448e184dfbb711e83177edf7db5f914
+  title_snapshot: direct ingestion mode
+  summary_snapshot: Eventstream Derived Streams in Direct Ingestion mode (Preview) You can
+    ingest data from a Fabric Eventstream to Eventhouse seamlessly either from an eventstream
+    or using Eventhouse Get Data Wizard. This capability is now being extended to support
+    eventstream derived streams in direct ingestion mode. For more information, see Fabric
+    Eventhouse now supports Eventstream Derived Streams in Direct Ingestion mode (preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

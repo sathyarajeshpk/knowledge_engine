@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-025
 slug: workspace-identity-in-fabric-airflow-jobs
-title: Workspace Identity in Fabric Airflow Jobs
+title: Workspace Identity in Apache Airflow Jobs
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-factory/apache-airflow-jobs-workspace-identity
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/apache-airflow-jobs-workspace-identity
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:21f507e21a1720c04815d353db0c9e33be0bea0dbfc04464de3644d1c90791ec
+content_hash: sha256:55550c66707b5c33297e181b01792d0b2ffd19255f46ad38c7975223a00bdb58
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -56,4 +56,17 @@ revisions:
     managing individual credentials. For more information, see Use workspace identity to authenticate
     Apache Airflow Jobs to Fabric services.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:55550c66707b5c33297e181b01792d0b2ffd19255f46ad38c7975223a00bdb58
+  title_snapshot: Workspace Identity in Apache Airflow Jobs
+  summary_snapshot: Workspace Identity in Fabric Airflow Jobs Workspace Identity in Apache
+    Airflow Jobs lets you authenticate Apache Airflow jobs using workspace identity, enabling
+    secure access to Fabric resources without managing individual credentials. For more information,
+    see Use workspace identity to authenticate Apache Airflow Jobs to Fabric services.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

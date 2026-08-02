@@ -1,7 +1,8 @@
 schema_version: 1
 id: MSF-2026-08-080
 slug: solace-pubsub-connector
-title: Solace PubSub+ Connector
+title: 'New Solace PubSub+ Connector: seamlessly connect Fabric Eventstream with Solace PubSub+
+  (preview)'
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/new-solace-pubsub-connector-seamlessly-connect-fabric-eventstream-with-solace-pubsub-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/new-solace-pubsub-connector-seamlessly-connect-fabric-eventstream-with-solace-pubsub-preview?ft=All
@@ -11,7 +12,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:9ca7b27d2ec4addf0e54b2897a6916ecc2b29ed14d582f02df8ae7057270f983
+content_hash: sha256:c71e705f4ace99ff905c6a98a3960e7892f986d38a48ee6f7c5fdd91527f4bdf
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +58,17 @@ revisions:
     For more information and steps to get started, see New Solace PubSub+ Connector: seamlessly
     connect Fabric Eventstream with Solace PubSub+ (preview).'
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:c71e705f4ace99ff905c6a98a3960e7892f986d38a48ee6f7c5fdd91527f4bdf
+  title_snapshot: 'New Solace PubSub+ Connector: seamlessly connect Fabric Eventstream with
+    Solace PubSub+ (preview)'
+  summary_snapshot: 'Solace PubSub+ Connector Seamlessly connect Fabric Eventstream with Solace
+    PubSub+ (preview). For more information and steps to get started, see New Solace PubSub+
+    Connector: seamlessly connect Fabric Eventstream with Solace PubSub+ (preview).'
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

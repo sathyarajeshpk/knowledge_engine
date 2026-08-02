@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-010
 slug: notebook-export-controls
-title: Notebook export controls
+title: Notebook Export Control
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Notebook-export-controls-in-Microsoft-Fabric/ba-p/5183984
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Notebook-export-controls-in-Microsoft-Fabric/ba-p/5183984
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:8d3ad3c07d3198aa8998d9dc4153a47849801952c9ff5f32f300226af89b38ec
+content_hash: sha256:5572dd885b4194f2762d02f9beba1d957c5de708cd893d3c0f3b2387d87d6668
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,17 @@ revisions:
     closing a data exfiltration path for regulated organizations. For more information, see
     Notebook data export controls in Microsoft Fabric (preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:5572dd885b4194f2762d02f9beba1d957c5de708cd893d3c0f3b2387d87d6668
+  title_snapshot: Notebook Export Control
+  summary_snapshot: Notebook export controls Notebook Export Control is a tenant-level and
+    workspace-level security setting that lets admins block notebook downloads and rich DataFrame
+    export operations, closing a data exfiltration path for regulated organizations. For more
+    information, see Notebook data export controls in Microsoft Fabric (preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

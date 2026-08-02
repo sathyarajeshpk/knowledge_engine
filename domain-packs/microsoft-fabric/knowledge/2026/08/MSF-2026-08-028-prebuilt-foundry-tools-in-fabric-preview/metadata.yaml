@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-028
 slug: prebuilt-foundry-tools-in-fabric-preview
-title: Prebuilt Foundry Tools in Fabric preview
+title: preview of prebuilt Foundry Tools in Fabric
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/prebuilt-azure-ai-services-in-fabric-2
 announcement_url: https://blog.fabric.microsoft.com/blog/prebuilt-azure-ai-services-in-fabric-2
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:9ba93aa844b1aa3a8ca9fb8ee570609f0023ebbcc62662059202041dd98c3f04
+content_hash: sha256:333541609cdb1d4f722974603f6f8b3e70a2f5a2dbff7e3d380749b35b3393b7
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,19 @@ revisions:
     prebuilt Foundry Tools are in preview and include support for the Microsoft Azure OpenAI
     Service, Azure Language in Foundry Tools, and Azure Translator in Foundry Tools.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:333541609cdb1d4f722974603f6f8b3e70a2f5a2dbff7e3d380749b35b3393b7
+  title_snapshot: preview of prebuilt Foundry Tools in Fabric
+  summary_snapshot: Prebuilt Foundry Tools in Fabric preview The preview of prebuilt Foundry
+    Tools in Fabric is an integration with Foundry Tools, formerly known as Azure AI services.
+    Foundry Tools (preview) allow for easy enhancement of data with prebuilt AI models without
+    any prerequisites. Currently, prebuilt Foundry Tools are in preview and include support
+    for the Microsoft Azure OpenAI Service, Azure Language in Foundry Tools, and Azure Translator
+    in Foundry Tools.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

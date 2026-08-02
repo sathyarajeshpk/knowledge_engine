@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-075
 slug: data-factory-adaptive-performance-tuning-preview
-title: Data Factory Adaptive performance tuning (Preview)
+title: the adaptivePerformanceTuning property when using copy activity
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-factory/copy-data-activity
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/copy-data-activity
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:571249c0e086271e9ec77f505aab872199f6337762b2ff903cb0dc02c4c4c660
+content_hash: sha256:1c2c2f5174037c21d78a86b4f643b9ece4e1afe5e939801d6048f403114b6c75
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,18 @@ revisions:
     expertise or trial-and-error adjustments. To enable, see the adaptivePerformanceTuning
     property when using copy activity.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:1c2c2f5174037c21d78a86b4f643b9ece4e1afe5e939801d6048f403114b6c75
+  title_snapshot: the adaptivePerformanceTuning property when using copy activity
+  summary_snapshot: Data Factory Adaptive performance tuning (Preview) Adaptive Performance
+    Tuning is designed to intelligently optimize data movement performance based on your configuration
+    and runtime context. This preview feature makes tuning Data Factory simpler, safer, and
+    more effective without requiring deep manual expertise or trial-and-error adjustments.
+    To enable, see the adaptivePerformanceTuning property when using copy activity.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

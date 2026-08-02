@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-07-019
 slug: operations-agent-for-pipelines-preview
-title: Operations Agent for Pipelines (Preview)
+title: Operations Agent for Pipelines (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-factory/operations-agent-for-pipelines
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/operations-agent-for-pipelines
@@ -11,7 +11,7 @@ published_date: 2026-07-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:8d7068843b145bca38db7279b85fb75b8002d3e118ff784db1e895d354984bc2
+content_hash: sha256:60d04487ea1327a3fa579b2e91f66067ec3bb2f9dc990105594a3045bc4a47dd
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -224,4 +224,18 @@ revisions:
     such as all pipeline failures or runs exceeding expected durations. For more information,
     see Operations Agent for Pipelines (preview).
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:60d04487ea1327a3fa579b2e91f66067ec3bb2f9dc990105594a3045bc4a47dd
+  title_snapshot: Operations Agent for Pipelines (preview)
+  summary_snapshot: Operations Agent for Pipelines (Preview) Operations Agent for Pipelines
+    is an AI-powered monitoring agent that continuously watches your pipeline runs and proactively
+    notifies you through Microsoft Teams when failures or anomalies occur. Configure the agent
+    to monitor specific scenarios such as all pipeline failures or runs exceeding expected
+    durations. For more information, see Operations Agent for Pipelines (preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

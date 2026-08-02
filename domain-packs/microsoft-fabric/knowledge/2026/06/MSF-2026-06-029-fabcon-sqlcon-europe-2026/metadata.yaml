@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-029
 slug: fabcon-sqlcon-europe-2026
-title: FabCon+SQLCon Europe 2026
+title: Register now
 source_name: fabric-whats-new-markdown
 source_url: https://aka.ms/fabconeu
 announcement_url: https://aka.ms/fabconeu
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:1d9b13c119080dc7c9453681c8167ff16c8f664651df77a8b6fe33f3d9d51afb
+content_hash: sha256:54a05c950670ac783d9cf8267576abfc3f1ee624bd116dc197bcccc87fda999a
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     spaces, and the Power BI DataViz World Championships, this is where the data community
     comes together. Register now and save &euro;200 with code FABCMTY200.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:54a05c950670ac783d9cf8267576abfc3f1ee624bd116dc197bcccc87fda999a
+  title_snapshot: Register now
+  summary_snapshot: FabCon+SQLCon Europe 2026 Europe's largest Microsoft Fabric and SQL event
+    lands in Barcelona, September 28 – October 1, 2026. From 130 sessions and 4 keynotes to
+    workshops, the expo, community spaces, and the Power BI DataViz World Championships, this
+    is where the data community comes together. Register now and save €200 with code FABCMTY200.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

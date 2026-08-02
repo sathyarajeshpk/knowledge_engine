@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-109
+slug: alter-database-set-options-transact-sql
+title: ALTER DATABASE SET options (Transact-SQL)
+source_name: fabric-whats-new
+source_url: https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-set-options?preserve-view=true&view=fabric-sqldb
+announcement_url: https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-set-options?preserve-view=true&view=fabric-sqldb
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-02
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:7e96251ffe582dea5c1e67975f74801689e46810dfc4058acac2f1fca9793a24
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:f65fdec6749ad5e57c58c779da0eedc8b49c2dc4b1c0c815ae6a8690b1f5e867
+  discovered_at: '2026-08-02T08:00:14.714147+00:00'
+  source_role: primary
+  selector: h2[Features currently in preview] > table > tr (no date cell)
+  run_id: run-2026-08-02T08-00-14Z
+url_hash: sha256:f65fdec6749ad5e57c58c779da0eedc8b49c2dc4b1c0c815ae6a8690b1f5e867
+tier: 2
+learning_priority: medium
+category: data-warehouse
+tags:
+- preview
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-02
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:7e96251ffe582dea5c1e67975f74801689e46810dfc4058acac2f1fca9793a24
+  title_snapshot: ALTER DATABASE SET options (Transact-SQL)
+  summary_snapshot: ALTER DATABASE SET options in SQL database ALTER DATABASE SET options
+    in SQL database are now available as a preview feature. For more information, see ALTER
+    DATABASE SET options (Transact-SQL) for SQL database in Fabric. Collation support and
+    full-text indexing are also now available in SQL database as preview features.
+  run_id: run-2026-08-02T08-00-14Z
+generation: {}

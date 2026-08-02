@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-038
 slug: business-events-in-real-time-intelligence-preview
-title: Business Events in Real-Time Intelligence (Preview)
+title: Business Events (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/business-events-in-microsoft-fabric-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/business-events-in-microsoft-fabric-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:f8a422c87f20231da30f6f2c39623bcdaed4ae54c2abfacba321a71830c688ab
+content_hash: sha256:48ecbc5c1927fe8d6363b49ff46ff8370bff69d720d7cd49906b0d3385fc19d5
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -60,4 +60,17 @@ revisions:
     AI models, Spark jobs, dataflows, and Power Automate. For more information, see Business
     events overview (Preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:48ecbc5c1927fe8d6363b49ff46ff8370bff69d720d7cd49906b0d3385fc19d5
+  title_snapshot: Business Events (Preview)
+  summary_snapshot: Business Events in Real-Time Intelligence (Preview) Business Events (Preview)
+    capture critical business moments from User Data Functions and Notebooks and enable actions
+    via Activator alerts, custom logic, workflows, AI models, Spark jobs, dataflows, and Power
+    Automate. For more information, see Business events overview (Preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

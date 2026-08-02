@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-016
 slug: mapping-data-flow-transforms-in-dataflow-gen2-preview
-title: Mapping Data Flow Transforms in Dataflow Gen2 (Preview)
+title: Mapping data flow transforms in dataflow gen2 (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-factory/dataflow-gen2-mapping-data-flows-transforms
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/dataflow-gen2-mapping-data-flows-transforms
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:cdcdf663fd9064395a8e6eba8940f0c4c1ad7e2c1d9486eebdbf5754af6423db
+content_hash: sha256:280c3186f67d0a9907a0d18a6e4137665e5e78ee802b8ce7b9e44d57e12f497c
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -209,4 +209,18 @@ revisions:
     large-scale data transformations with Spark compute. For more information, see Mapping
     data flow transforms in Dataflow Gen2 (Preview).
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:280c3186f67d0a9907a0d18a6e4137665e5e78ee802b8ce7b9e44d57e12f497c
+  title_snapshot: Mapping data flow transforms in dataflow gen2 (Preview)
+  summary_snapshot: Mapping Data Flow Transforms in Dataflow Gen2 (Preview) Mapping data flow
+    transforms in dataflow gen2 (Preview) introduces Spark-based transformation capabilities
+    directly in the Dataflow Gen2 creation experience, enabling large-scale data transformations
+    with Spark compute. For more information, see Mapping data flow transforms in Dataflow
+    Gen2 (Preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

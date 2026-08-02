@@ -1,7 +1,8 @@
 schema_version: 1
 id: MSF-2026-08-086
 slug: confluent-schema-registry-support-in-eventstream-preview
-title: Confluent Schema Registry Support in Eventstream (Preview)
+title: Eventstream's Confluent Cloud for Apache Kafka streaming connector now supports decoding
+  data from topics associated with a data contract in Confluent Schema Registry
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/decoding-data-with-confluent-schema-registry-support-in-eventstream-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/decoding-data-with-confluent-schema-registry-support-in-eventstream-preview?ft=All
@@ -11,7 +12,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:97a1a3cb0d7ce9b34400c191b40911c93de7e162199c73d90ca9cd069155128f
+content_hash: sha256:9b9ef20a08e7dbf76b2e31ddd5733b9355073191d10e68c1e74d20dff267b91a
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +60,19 @@ revisions:
     data in Fabric Real-Time Intelligence. For more information, see Add Confluent Cloud for
     Apache Kafka source to an eventstream.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:9b9ef20a08e7dbf76b2e31ddd5733b9355073191d10e68c1e74d20dff267b91a
+  title_snapshot: Eventstream's Confluent Cloud for Apache Kafka streaming connector now supports
+    decoding data from topics associated with a data contract in Confluent Schema Registry
+  summary_snapshot: Confluent Schema Registry Support in Eventstream (Preview) Eventstream's
+    Confluent Cloud for Apache Kafka streaming connector now supports decoding data from topics
+    associated with a data contract in Confluent Schema Registry, enabling seamless ingestion,
+    preview, and routing of schema-encoded streaming data in Fabric Real-Time Intelligence.
+    For more information, see Add Confluent Cloud for Apache Kafka source to an eventstream.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

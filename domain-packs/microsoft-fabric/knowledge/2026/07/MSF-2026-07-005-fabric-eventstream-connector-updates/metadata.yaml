@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-07-005
 slug: fabric-eventstream-connector-updates
-title: Fabric Eventstream connector updates
+title: Fabric Eventstream connectors
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Supercharge-your-real-time-data-ingestion-What-s-new-in-Fabric/ba-p/5260314
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Supercharge-your-real-time-data-ingestion-What-s-new-in-Fabric/ba-p/5260314
@@ -11,7 +11,7 @@ published_date: 2026-07-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:aa60a5829e1425e2a44626f991c73d3b8444c494556a2c795027ce7aaf9cdcb1
+content_hash: sha256:ab24d9ba43bba3e9065df40f4f417259cd741ae9bc192c8cbe297b8e37729edb
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -61,4 +61,19 @@ revisions:
     Database change data capture (CDC) source, and HTTP connector pagination. For more information,
     see Add and manage an event source in an eventstream.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:ab24d9ba43bba3e9065df40f4f417259cd741ae9bc192c8cbe297b8e37729edb
+  title_snapshot: Fabric Eventstream connectors
+  summary_snapshot: Fabric Eventstream connector updates Fabric Eventstream connectors mark
+    private network (vNet/On-Prem) support, the Apache Kafka and Azure Service Bus source
+    connectors, and custom CA and mTLS support across MQTT, Apache Kafka, AWS MSK, and Confluent
+    Cloud for Apache Kafka as Generally Available, and introduce Preview support for enhanced
+    IoT Hub connector metadata, an Oracle Database change data capture (CDC) source, and HTTP
+    connector pagination. For more information, see Add and manage an event source in an eventstream.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

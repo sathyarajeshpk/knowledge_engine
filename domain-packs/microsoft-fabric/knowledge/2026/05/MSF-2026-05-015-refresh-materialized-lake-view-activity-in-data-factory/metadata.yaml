@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-015
 slug: refresh-materialized-lake-view-activity-in-data-factory
-title: Refresh Materialized Lake View activity in Data Factory pipelines (Preview)
+title: Refresh Materialized Lake View activity in Fabric Data Factory pipelines
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-factory/refresh-materialized-lake-view-activity
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/refresh-materialized-lake-view-activity
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:1da364c91c7ffadbe061076b5b9e3672a5769be37bd1fb826a3e20978f3488a3
+content_hash: sha256:abe7a8ab114a5ee0c79a02820c0a3f6be5a8f3f0b8ee8c729b432bd38dda06af
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -197,4 +197,16 @@ revisions:
     pipelines lets you refresh materialized lake views on demand or on a schedule within your
     pipeline orchestration.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:abe7a8ab114a5ee0c79a02820c0a3f6be5a8f3f0b8ee8c729b432bd38dda06af
+  title_snapshot: Refresh Materialized Lake View activity in Fabric Data Factory pipelines
+  summary_snapshot: Refresh Materialized Lake View activity in Data Factory pipelines (Preview)
+    The new Refresh Materialized Lake View activity in Fabric Data Factory pipelines lets
+    you refresh materialized lake views on demand or on a schedule within your pipeline orchestration.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

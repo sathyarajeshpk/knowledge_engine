@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-07-002
 slug: workspace-outbound-access-protection-for-real-time
-title: Workspace outbound access protection for Real-Time Intelligence (Preview)
+title: Workspace outbound access protection (OAP) for Real-Time Intelligence (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Workspace-Outbound-Access-Protection-OAP-for-Real-Time/ba-p/5241179
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Workspace-Outbound-Access-Protection-OAP-for-Real-Time/ba-p/5241179
@@ -11,7 +11,7 @@ published_date: 2026-07-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:ed22dbdd69c0d58ff5098e416ecbd45dd676b4815c9a625896b0166bbec5d6d9
+content_hash: sha256:e5eb17ed75a0e2d4f643ec4b043df5029bee18ae3bd69e324b82b8b990c7268f
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -209,4 +209,19 @@ revisions:
     block unwanted outbound connections by default and allow only approved destinations through
     data connection rules. For more information, see Workspace outbound access protection.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:e5eb17ed75a0e2d4f643ec4b043df5029bee18ae3bd69e324b82b8b990c7268f
+  title_snapshot: Workspace outbound access protection (OAP) for Real-Time Intelligence (Preview)
+  summary_snapshot: Workspace outbound access protection for Real-Time Intelligence (Preview)
+    Workspace outbound access protection (OAP) for Real-Time Intelligence (Preview) extends
+    workspace-level outbound network controls to Eventstream, Eventhouse, KQL QuerySet, Activator,
+    Real-Time Dashboards, and Azure and Fabric events, so admins block unwanted outbound connections
+    by default and allow only approved destinations through data connection rules. For more
+    information, see Workspace outbound access protection.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

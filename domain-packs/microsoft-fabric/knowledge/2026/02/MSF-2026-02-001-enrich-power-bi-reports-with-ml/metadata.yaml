@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-02-001
 slug: enrich-power-bi-reports-with-ml
-title: Enrich Power BI reports with ML
+title: Machine learning can enrich Power BI reports
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/enrich-power-bi-reports-with-machine-learning-in-microsoft-fabric?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/enrich-power-bi-reports-with-machine-learning-in-microsoft-fabric?ft=All
@@ -11,7 +11,7 @@ published_date: 2026-02-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:c0cabaeccf9add21c938a1a0ccb2e0e179e921468f11d725fdfa62546d9c42f7
+content_hash: sha256:ce508a8e03743e178ebe4603a170d848201ce25a6a847d8b3f457ad3f06599b5
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,17 @@ revisions:
     model with Fabric ML, applies batch and real-time scoring, and surfaces predictions in
     Power BI through Dataflow Gen2.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:ce508a8e03743e178ebe4603a170d848201ce25a6a847d8b3f457ad3f06599b5
+  title_snapshot: Machine learning can enrich Power BI reports
+  summary_snapshot: Enrich Power BI reports with ML Machine learning can enrich Power BI reports.
+    Learn how with this end-to-end pattern that uses Semantic Link to query a governed semantic
+    model, trains a churn-prediction model with Fabric ML, applies batch and real-time scoring,
+    and surfaces predictions in Power BI through Dataflow Gen2.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

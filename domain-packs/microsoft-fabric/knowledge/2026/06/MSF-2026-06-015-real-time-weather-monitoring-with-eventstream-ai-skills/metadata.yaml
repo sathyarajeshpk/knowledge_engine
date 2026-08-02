@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-015
 slug: real-time-weather-monitoring-with-eventstream-ai-skills
-title: Real-time weather monitoring with Eventstream AI Skills
+title: Building a real-time weather monitoring system with AI and Fabric Eventstream
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Monitoring-weather-conditions-in-real-time-using-AI-and-Fabric/ba-p/5197906
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Monitoring-weather-conditions-in-real-time-using-AI-and-Fabric/ba-p/5197906
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:e9ff35e0acc86ae4440f11f0dcd336dd26b396182587393ace3565d73286c2d0
+content_hash: sha256:809e2e594c526f85b253ceb1d5c4951286f6dd81053e91119732b4a92306fb2c
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,19 @@ revisions:
     conditions, and lands events in an Eventhouse KQL database for cross-venue KQL analysis.
     For more information, see Overview of Microsoft Fabric eventstreams and Eventhouse overview.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:809e2e594c526f85b253ceb1d5c4951286f6dd81053e91119732b4a92306fb2c
+  title_snapshot: Building a real-time weather monitoring system with AI and Fabric Eventstream
+  summary_snapshot: Real-time weather monitoring with Eventstream AI Skills Building a real-time
+    weather monitoring system with AI and Fabric Eventstream walks through using Eventstream
+    AI Skills to generate an 11-source eventstream from a single natural-language prompt that
+    ingests real-time weather, filters for heat-stress conditions, and lands events in an
+    Eventhouse KQL database for cross-venue KQL analysis. For more information, see Overview
+    of Microsoft Fabric eventstreams and Eventhouse overview.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

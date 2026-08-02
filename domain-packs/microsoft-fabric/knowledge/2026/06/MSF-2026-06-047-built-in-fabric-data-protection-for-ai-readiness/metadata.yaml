@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-047
 slug: built-in-fabric-data-protection-for-ai-readiness
-title: Built-in Fabric data protection for AI readiness
+title: Built-in Fabric data protection
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Use-built-in-Fabric-data-protection-to-get-your-data-AI-ready/ba-p/5237428
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Use-built-in-Fabric-data-protection-to-get-your-data-AI-ready/ba-p/5237428
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:e7e2cb85836d05560b116a1e69fcd18aaf826cb3922a07088123b7c18500bafa
+content_hash: sha256:6dfbc82daa991532c53e6e31ae317932ea6a1e991ecf9d37b1aa228e33de5dc0
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -61,4 +61,19 @@ revisions:
     when you export to Excel, PowerPoint, PDF, or .pbix. For more information, see Information
     protection in Microsoft Fabric and Protection policies in Microsoft Fabric.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:6dfbc82daa991532c53e6e31ae317932ea6a1e991ecf9d37b1aa228e33de5dc0
+  title_snapshot: Built-in Fabric data protection
+  summary_snapshot: Built-in Fabric data protection for AI readiness Built-in Fabric data
+    protection applies Microsoft Purview sensitivity labels, protection policies, data loss
+    prevention (DLP), and Data Security Posture Management (DSPM) directly to lakehouses,
+    warehouses, semantic models, and reports, and labels persist when you export to Excel,
+    PowerPoint, PDF, or .pbix. For more information, see Information protection in Microsoft
+    Fabric and Protection policies in Microsoft Fabric.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

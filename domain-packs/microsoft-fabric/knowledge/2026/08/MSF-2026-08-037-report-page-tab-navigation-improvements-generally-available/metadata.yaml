@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-037
 slug: report-page-tab-navigation-improvements-generally-available
-title: Report page tab navigation improvements (Generally Available)
+title: Report view in Power BI Desktop
 source_name: powerbi-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-report-view
 announcement_url: https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-report-view
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:a5de4ff2668913fd115901d0a6646ac63a099cec0b91ed20ea994d73266329f3
+content_hash: sha256:da9493400ce304ea32aacfa90b24c364d59d3ad1da406bcba128e1683e3c45a0
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,18 @@ revisions:
     each report page tab as you navigate. For more information, see Report view in Power BI
     Desktop.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:da9493400ce304ea32aacfa90b24c364d59d3ad1da406bcba128e1683e3c45a0
+  title_snapshot: Report view in Power BI Desktop
+  summary_snapshot: Report page tab navigation improvements (Generally Available) When dragging
+    a page tab to reorder it, tabs continue to scroll until you reach the desired position,
+    making it easier to move pages from the end to the beginning of your report. Arrow buttons
+    for paging through tabs are more precise, ensuring you see each report page tab as you
+    navigate. For more information, see Report view in Power BI Desktop.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

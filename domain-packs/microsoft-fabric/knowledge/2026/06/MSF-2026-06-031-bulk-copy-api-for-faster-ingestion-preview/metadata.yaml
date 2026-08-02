@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-031
 slug: bulk-copy-api-for-faster-ingestion-preview
-title: Bulk Copy API for faster ingestion (Preview)
+title: Bulk Copy API (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Using-Bulk-Copy-API-for-faster-ingestion-in-Fabric-Data/ba-p/5195627
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Using-Bulk-Copy-API-for-faster-ingestion-in-Fabric-Data/ba-p/5195627
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:87a101f03d0e7b4667efd135d3c6a9d8c1e6d158f3de73c411beff8dc23e89c3
+content_hash: sha256:7f38729ba4302f1b24bdcc2979cf4d2020c2063562261694b7a95fce395a02e9
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -221,4 +221,19 @@ revisions:
     and Informatica. For more information, see Ingest data into your warehouse by using BCP
     API (Preview).
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:7f38729ba4302f1b24bdcc2979cf4d2020c2063562261694b7a95fce395a02e9
+  title_snapshot: Bulk Copy API (Preview)
+  summary_snapshot: Bulk Copy API for faster ingestion (Preview) Bulk Copy API (Preview) writes
+    data directly to Fabric Data Warehouse tables from application code without first staging
+    files, replacing row-by-row INSERT statements to improve ingestion throughput. You can
+    use it through SqlBulkCopy for C#, SQLServerBulkCopy for Java, the bcp utility, and tools
+    such as SSIS, Azure Data Factory, and Informatica. For more information, see Ingest data
+    into your warehouse by using BCP API (Preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-043
 slug: ssms-22-7-schema-compare-and-sql-formatter-preview
-title: SSMS 22.7 schema compare and SQL formatter (Preview)
+title: Schema compare and a built-in SQL formatter in SSMS 22.7 (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Power-up-in-SSMS-22-7-Schema-compare-and-SQL-formatting/ba-p/5193417
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Power-up-in-SSMS-22-7-Schema-compare-and-SQL-formatting/ba-p/5193417
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:288b902caf8ca0442b60f7f876cde763a4ff60417703bc6b164ed50ac40c7569
+content_hash: sha256:2be079894b4bab86e8548461a2adfe949fdec58725c18e2c2949864a2dbf5016
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,18 @@ revisions:
     in the publish dialog for SQL projects. For more information, see Schema comparison and
     SQL formatter.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:2be079894b4bab86e8548461a2adfe949fdec58725c18e2c2949864a2dbf5016
+  title_snapshot: Schema compare and a built-in SQL formatter in SSMS 22.7 (Preview)
+  summary_snapshot: SSMS 22.7 schema compare and SQL formatter (Preview) Schema compare and
+    a built-in SQL formatter in SSMS 22.7 (Preview) let you diff two database definitions—a
+    connected database, SQL project, or .dacpac—and selectively apply changes, format T-SQL
+    from the editor context menu or on save, and set SQLCMD variables in the publish dialog
+    for SQL projects. For more information, see Schema comparison and SQL formatter.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

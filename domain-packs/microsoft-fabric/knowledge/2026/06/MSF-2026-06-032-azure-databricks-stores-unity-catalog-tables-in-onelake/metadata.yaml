@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-032
 slug: azure-databricks-stores-unity-catalog-tables-in-onelake
-title: Azure Databricks stores Unity Catalog tables in OneLake (Preview)
+title: Azure Databricks can now store Unity Catalog managed tables directly in OneLake
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Extending-interoperability-Azure-Databricks-can-now-store-Unity/ba-p/5199741
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Extending-interoperability-Azure-Databricks-can-now-store-Unity/ba-p/5199741
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:528b0de7fbc3f7247920a377c6c4119db6ab805cc3c63030f45cae52eb15737d
+content_hash: sha256:fd740455b0b249b98a0d4e8d90e33d5d89da514e0472f50cdece31a3557cc642
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -60,4 +60,20 @@ revisions:
     see OneLake catalog federation in Azure Databricks and Mirroring Azure Databricks Unity
     Catalog.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:fd740455b0b249b98a0d4e8d90e33d5d89da514e0472f50cdece31a3557cc642
+  title_snapshot: Azure Databricks can now store Unity Catalog managed tables directly in
+    OneLake
+  summary_snapshot: Azure Databricks stores Unity Catalog tables in OneLake (Preview) Azure
+    Databricks can now store Unity Catalog managed tables directly in OneLake through a Unity
+    Catalog external location mapped to a OneLake path (Beta), and Publish to Fabric (Preview)
+    creates Mirrored Azure Databricks Catalog items from Catalog Explorer so the tables are
+    immediately queryable across Fabric workloads. For more information, see OneLake catalog
+    federation in Azure Databricks and Mirroring Azure Databricks Unity Catalog.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-054
 slug: bookmarks-support-for-reports-in-org-apps
-title: Bookmarks support for reports in org apps
+title: Bookmarks in the Power BI service
 source_name: powerbi-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/power-bi/explore-reports/end-user-bookmarks
 announcement_url: https://learn.microsoft.com/en-us/power-bi/explore-reports/end-user-bookmarks
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:65291fed17d462b1c79df9421eedd24e7aeac4797a3ee097fb2635ef132bd7b0
+content_hash: sha256:e0252820a18b858484c309c5051e1f2a0d9ba5c859063cca5777647a1cdab0c7
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     report views with filters, selections, and visual state. For more information, see Bookmarks
     in the Power BI service.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:e0252820a18b858484c309c5051e1f2a0d9ba5c859063cca5777647a1cdab0c7
+  title_snapshot: Bookmarks in the Power BI service
+  summary_snapshot: Bookmarks support for reports in org apps Users can access both report
+    bookmarks created by authors and personal bookmarks when viewing interactive reports in
+    org apps, making it easy to return to saved report views with filters, selections, and
+    visual state. For more information, see Bookmarks in the Power BI service.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

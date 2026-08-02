@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-039
 slug: pass-parameter-values-to-fabric-items-preview
-title: Pass Parameter Values to Fabric Items (Preview)
+title: automatically activate Fabric items like pipeline and notebook
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/fabric-july-2025-feature-summary
 announcement_url: https://blog.fabric.microsoft.com/blog/fabric-july-2025-feature-summary
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:941d781ad2a0cd872c34b92e0b1a886128363af93889c25cd441de93377ce1da
+content_hash: sha256:1248cae38e40f98524d93ba6b0139a4563f1fb3ace13d8a62f2bc1c3f3dee702
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,17 @@ revisions:
     and notebook whenever certain data conditions are met. You can not only activate and execute
     Fabric items but also pass values to the parameters defined in your Fabric items.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:1248cae38e40f98524d93ba6b0139a4563f1fb3ace13d8a62f2bc1c3f3dee702
+  title_snapshot: automatically activate Fabric items like pipeline and notebook
+  summary_snapshot: Pass Parameter Values to Fabric Items (Preview) Activator enables you
+    to automatically activate Fabric items like pipeline and notebook whenever certain data
+    conditions are met. You can not only activate and execute Fabric items but also pass values
+    to the parameters defined in your Fabric items.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-07-015
 slug: onelake-architectural-guidance-for-the-ai-era
-title: OneLake architectural guidance for the AI era
+title: OneLake architectural guidance
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/OneLake-architectural-guidance-A-practical-blueprint-for-the-AI/ba-p/5282667
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/OneLake-architectural-guidance-A-practical-blueprint-for-the-AI/ba-p/5282667
@@ -11,7 +11,7 @@ published_date: 2026-07-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:00aa7d3b5a0f9699b984fc738d025d1f4ca6fece5b270fadd4a767c0b4172a14
+content_hash: sha256:4dd3d416b35fa2c8faa9a12d4a6b6cca3bfa955ce853d53c0a93f0f57ce981b9
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,18 @@ revisions:
     and platform capabilities, with five repeatable patterns: data access unification, medallion
     architecture, data mesh with governance, platform simplification, and external data sharing.'
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:4dd3d416b35fa2c8faa9a12d4a6b6cca3bfa955ce853d53c0a93f0f57ce981b9
+  title_snapshot: OneLake architectural guidance
+  summary_snapshot: 'OneLake architectural guidance for the AI era OneLake architectural guidance
+    is a blueprint that connects business priorities to architecture decisions through strategic
+    initiatives, architectural patterns, and platform capabilities, with five repeatable patterns:
+    data access unification, medallion architecture, data mesh with governance, platform simplification,
+    and external data sharing.'
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

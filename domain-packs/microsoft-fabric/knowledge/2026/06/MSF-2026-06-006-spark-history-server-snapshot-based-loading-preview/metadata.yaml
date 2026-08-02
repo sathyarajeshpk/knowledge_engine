@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-006
 slug: spark-history-server-snapshot-based-loading-preview
-title: Spark History Server snapshot-based loading (Preview)
+title: Snapshot-based loading for the Spark History Server (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Spark-History-Server-performance-improvement-Snapshot-based/ba-p/5196953
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Spark-History-Server-performance-improvement-Snapshot-based/ba-p/5196953
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:abde64c0653e6d93c6a0e96dc527cf32e32e01de2a07aa22dc4343cf300500ee
+content_hash: sha256:a3d00b3cd32b9f05bf61cc29a0f2055ebb231e5720828295a0ffdbaebbb28b73
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -60,4 +60,19 @@ revisions:
     jobs. For more information, see Use extended Apache Spark history server to debug and
     diagnose Apache Spark applications.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:a3d00b3cd32b9f05bf61cc29a0f2055ebb231e5720828295a0ffdbaebbb28b73
+  title_snapshot: Snapshot-based loading for the Spark History Server (Preview)
+  summary_snapshot: Spark History Server snapshot-based loading (Preview) Snapshot-based loading
+    for the Spark History Server (Preview) loads Spark execution metrics and logs incrementally
+    from the backend instead of parsing the full event log upfront, so large applications
+    that previously took up to an hour render in seconds or minutes. You can enable event
+    log compression and rolling for Spark Streaming jobs. For more information, see Use extended
+    Apache Spark history server to debug and diagnose Apache Spark applications.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

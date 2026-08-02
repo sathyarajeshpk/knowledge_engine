@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-025
 slug: real-time-dashboards-live-refresh-generally-available
-title: Real-Time Dashboards Live Refresh (Generally Available)
+title: Live Refresh for Real-Time Dashboards (Generally Available)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Live-refresh-for-Real-Time-Dashboards-Generally-Available/ba-p/5194911
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Live-refresh-for-Real-Time-Dashboards-Generally-Available/ba-p/5194911
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:07a2d597473d45db18654ab108596aa38962f519851671e8f5b60d07f958e523
+content_hash: sha256:0215c7f533d59376842b69141188b29a729b575d6cd8cd190bade7e0c79c5f5c
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -172,4 +172,18 @@ revisions:
     visualizations for operational monitoring and live analytics scenarios. For more information,
     see Create a Real-Time Dashboard.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:0215c7f533d59376842b69141188b29a729b575d6cd8cd190bade7e0c79c5f5c
+  title_snapshot: Live Refresh for Real-Time Dashboards (Generally Available)
+  summary_snapshot: Real-Time Dashboards Live Refresh (Generally Available) Live Refresh for
+    Real-Time Dashboards (Generally Available) pushes new data to dashboard tiles as soon
+    as it lands, replacing periodic refresh polling with always-current visualizations for
+    operational monitoring and live analytics scenarios. For more information, see Create
+    a Real-Time Dashboard.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

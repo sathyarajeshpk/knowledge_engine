@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-072
 slug: invoke-ssis-package-activity-in-data-factory-pipelines
-title: Invoke SSIS Package activity in Data Factory pipelines (Preview)
+title: Invoke SSIS Package activity (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-factory/invoke-ssis-package-activity
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/invoke-ssis-package-activity
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:ebad3451b9c4d078ff1ecc3bd7ad9af844cfd0158c80ceef6e159d50ad7dc9ab
+content_hash: sha256:dab05d4c2fa1418193e7bc8b5ebf48aed31589812f6b2a2f435cd6b4b08b5bbf
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     from pipeline orchestration in Fabric. For more information, read Blog: Invoke SSIS Package
     Activity in Microsoft Fabric (preview).'
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:dab05d4c2fa1418193e7bc8b5ebf48aed31589812f6b2a2f435cd6b4b08b5bbf
+  title_snapshot: Invoke SSIS Package activity (preview)
+  summary_snapshot: 'Invoke SSIS Package activity in Data Factory pipelines (Preview) The
+    Invoke SSIS Package activity (preview) enables package execution from pipeline orchestration
+    in Fabric. For more information, read Blog: Invoke SSIS Package Activity in Microsoft
+    Fabric (preview).'
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

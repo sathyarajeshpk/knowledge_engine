@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-002
 slug: time-series-visualization-in-real-time-dashboards-preview
-title: Time Series Visualization in Real-Time Dashboards (Preview)
+title: Real-Time Dashboard-specific visuals
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/dashboard-visuals
 announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/dashboard-visuals
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:0fd8575df28c878bc5dc9f255c9fd281f9c46d3e2de8f783ea3e79ac5089655e
+content_hash: sha256:d2124cdfbfbdce0f52e1a081d1a4b6afacc70498e73b6fa23875948bfcfcd6d6
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -197,4 +197,18 @@ revisions:
     search bar, pin-and-overlay for series comparison, multiple aligned-time panels, flexible
     Y-axis scaling, color assignment, and zoom with a time slider.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:d2124cdfbfbdce0f52e1a081d1a4b6afacc70498e73b6fa23875948bfcfcd6d6
+  title_snapshot: Real-Time Dashboard-specific visuals
+  summary_snapshot: Time Series Visualization in Real-Time Dashboards (Preview) Real-Time
+    Dashboard-specific visuals in Real-Time Dashboards adds dedicated capabilities for navigating,
+    comparing, and customizing time-based data, including a legend search bar, pin-and-overlay
+    for series comparison, multiple aligned-time panels, flexible Y-axis scaling, color assignment,
+    and zoom with a time slider.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

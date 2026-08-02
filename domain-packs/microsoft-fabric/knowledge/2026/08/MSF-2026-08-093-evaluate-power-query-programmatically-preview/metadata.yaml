@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-093
 slug: evaluate-power-query-programmatically-preview
-title: Evaluate Power Query programmatically (Preview)
+title: Evaluate Power Query Programmatically in Microsoft Fabric (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/execute-power-query-programmatically-in-microsoft-fabric?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/execute-power-query-programmatically-in-microsoft-fabric?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:2006455348430c632450b6f74b44dfdec266ee6d13161f4c32e0f650509bba5c
+content_hash: sha256:da4803fb588ddac1dad5ca45760b9b5dc796d11f909f0783c1d8c19dbb2aba8e
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -60,4 +60,18 @@ revisions:
     integration with Spark and pipelines, and access to 100+ data sources with 90-second timeout
     for transformations. For more information, see Execute Query API Reference.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:da4803fb588ddac1dad5ca45760b9b5dc796d11f909f0783c1d8c19dbb2aba8e
+  title_snapshot: Evaluate Power Query Programmatically in Microsoft Fabric (Preview)
+  summary_snapshot: Evaluate Power Query programmatically (Preview) Evaluate Power Query Programmatically
+    in Microsoft Fabric (Preview) introduces a public REST API to execute Power Query M scripts
+    programmatically, enabling automation, integration with Spark and pipelines, and access
+    to 100+ data sources with 90-second timeout for transformations. For more information,
+    see Execute Query API Reference.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

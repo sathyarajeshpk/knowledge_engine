@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-022
 slug: service-principal-support-for-fabric-data-agents-preview
-title: Service principal support for Fabric data agents (Preview)
+title: Fabric data agents now support service principal (SPN) authentication
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Service-Principal-Support-for-Data-Agents-in-Fabric-Preview/ba-p/5181634
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Service-Principal-Support-for-Data-Agents-in-Fabric-Preview/ba-p/5181634
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:f8c7e1db92dd60924d1b248d3be35bf72157896ac7e8adc727d967dab8c7c3ab
+content_hash: sha256:ebb7ce5da0337b1f6264f005b91431ef3a2259fd0b9d732fa5c16491a21d67fc
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -199,4 +199,18 @@ revisions:
     identity instead of a delegated user token. The data agent inherits workspace permissions;
     KQL database support is coming soon.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:ebb7ce5da0337b1f6264f005b91431ef3a2259fd0b9d732fa5c16491a21d67fc
+  title_snapshot: Fabric data agents now support service principal (SPN) authentication
+  summary_snapshot: Service principal support for Fabric data agents (Preview) Fabric data
+    agents now support service principal (SPN) authentication, so custom apps and Microsoft
+    Foundry agents call the data agent API with an application identity instead of a delegated
+    user token. The data agent inherits workspace permissions; KQL database support is coming
+    soon.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

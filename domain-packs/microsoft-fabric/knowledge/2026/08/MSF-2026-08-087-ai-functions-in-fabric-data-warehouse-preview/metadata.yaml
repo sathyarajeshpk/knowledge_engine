@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-087
 slug: ai-functions-in-fabric-data-warehouse-preview
-title: AI functions in Fabric Data Warehouse (preview)
+title: Use AI functions in Fabric Data Warehouse (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-warehouse/ai-functions
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-warehouse/ai-functions
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:bc9edd3f65565799b372b2af8ea09755ee23426d0672dee388c93e8ccf46a7a4
+content_hash: sha256:8ce4c6cd2255ebfb1803f3b7e81473fffa392bea7d5c37030469474ff5a2b322
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,18 @@ revisions:
     text across languages, and even correct grammar - all using built-in AI functions. To
     get started, see Use AI functions in Fabric Data Warehouse (preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:8ce4c6cd2255ebfb1803f3b7e81473fffa392bea7d5c37030469474ff5a2b322
+  title_snapshot: Use AI functions in Fabric Data Warehouse (preview)
+  summary_snapshot: AI functions in Fabric Data Warehouse (preview) Fabric Data Warehouse
+    now brings AI directly into T-SQL, enabling you to categorize and classify text, analyze
+    sentiment, extract structured information, translate text across languages, and even correct
+    grammar - all using built-in AI functions. To get started, see Use AI functions in Fabric
+    Data Warehouse (preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

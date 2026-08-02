@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-101
 slug: spark-connector-for-sql-databases-preview
-title: Spark Connector for SQL databases (Preview)
+title: Spark Connector for SQL databases
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/spark-connector-for-sql-databases-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/spark-connector-for-sql-databases-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:18244e7641499495f7cf664131703650a90295eb2be0edf6eceed60c34f61737
+content_hash: sha256:07abf8b2e8126e185d9ffe9cc331554f1916c53be5cb22a9a7d55950f9f5a769
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,17 @@ revisions:
     with built-in authentication and PySpark support. For more information, see Spark connector
     for SQL databases (Preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:07abf8b2e8126e185d9ffe9cc331554f1916c53be5cb22a9a7d55950f9f5a769
+  title_snapshot: Spark Connector for SQL databases
+  summary_snapshot: Spark Connector for SQL databases (Preview) Spark Connector for SQL databases
+    lets Spark read and write to Azure SQL Database, Azure SQL Managed Instance, SQL Server
+    on Azure VM, and Fabric SQL databases with built-in authentication and PySpark support.
+    For more information, see Spark connector for SQL databases (Preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

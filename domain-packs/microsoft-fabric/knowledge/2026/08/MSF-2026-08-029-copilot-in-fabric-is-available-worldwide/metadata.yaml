@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-029
 slug: copilot-in-fabric-is-available-worldwide
-title: Copilot in Fabric is available worldwide
+title: Copilot in Fabric is now available
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/copilot-in-fabric-preview-is-available-worldwide
 announcement_url: https://blog.fabric.microsoft.com/blog/copilot-in-fabric-preview-is-available-worldwide
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:2ea1a436036aa2f39eee18e4bfed5bd4ef548516f07a9687aff86725a9fc0b04
+content_hash: sha256:14c980ecb818e19203a7cd0a90f2278cab47bd5ebd9d19f62f97f78699c0db02
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -55,4 +55,16 @@ revisions:
   summary_snapshot: Copilot in Fabric is now available to all customers. For more information
     on release status, see Release status of AI and Copilot experiences in Fabric.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:14c980ecb818e19203a7cd0a90f2278cab47bd5ebd9d19f62f97f78699c0db02
+  title_snapshot: Copilot in Fabric is now available
+  summary_snapshot: Copilot in Fabric is available worldwide Copilot in Fabric is now available
+    to all customers. For more information on release status, see Release status of AI and
+    Copilot experiences in Fabric.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

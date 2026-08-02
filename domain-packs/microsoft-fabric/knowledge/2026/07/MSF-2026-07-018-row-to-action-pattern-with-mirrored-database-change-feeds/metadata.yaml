@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-07-018
 slug: row-to-action-pattern-with-mirrored-database-change-feeds
-title: Row-to-action pattern with Mirrored Database change feeds
+title: Turning Mirrored Database change feeds into real-time action
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/From-Mirrored-Database-to-Real-Time-Action-A-Fabric-Eventstreams/ba-p/5274750
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/From-Mirrored-Database-to-Real-Time-Action-A-Fabric-Eventstreams/ba-p/5274750
@@ -11,7 +11,7 @@ published_date: 2026-07-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:88071e9fd3b2cfeead6d7495a292fcc860c98089442913c1cdf7fab9f026887b
+content_hash: sha256:6c3bff312616ba63e65686ff74e04e21ce56d882feff0a073a8776bb6d1d446e
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -60,4 +60,19 @@ revisions:
     KQL dashboards. For more information, see Add Mirrored Database (Change Feed) source to
     an eventstream.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:6c3bff312616ba63e65686ff74e04e21ce56d882feff0a073a8776bb6d1d446e
+  title_snapshot: Turning Mirrored Database change feeds into real-time action
+  summary_snapshot: Row-to-action pattern with Mirrored Database change feeds Turning Mirrored
+    Database change feeds into real-time action walks through a manufacturing quality scenario
+    that mirrors an operational database into OneLake, streams Delta Change Data Feed changes
+    into an Eventstream, filters and windows failed inspections with SQL operators, then routes
+    them to Activator for alerts and to Eventhouse for live KQL dashboards. For more information,
+    see Add Mirrored Database (Change Feed) source to an eventstream.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-041
 slug: faster-python-udfs-in-the-native-execution-engine
-title: Faster Python UDFs in the Native Execution Engine
+title: Python UDFs and complex data types in the Native Execution Engine
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Improve-performance-for-Python-UDFs-and-complex-data-types-in/ba-p/5212036
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Improve-performance-for-Python-UDFs-and-complex-data-types-in/ba-p/5212036
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:f1836f4fd2c7453ddde8e1697606655b98631808e68e39dde65225f53e0f4d1e
+content_hash: sha256:71e39854d4d9a73263c5512cc634091e416262800318fbc67ce1bd2093819394
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,18 @@ revisions:
     and Spark jobs benefit with no code changes once it's enabled. For more information, see
     Native execution engine for Fabric Data Engineering.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:71e39854d4d9a73263c5512cc634091e416262800318fbc67ce1bd2093819394
+  title_snapshot: Python UDFs and complex data types in the Native Execution Engine
+  summary_snapshot: Faster Python UDFs in the Native Execution Engine Python UDFs and complex
+    data types in the Native Execution Engine now run in the engine's native columnar path—covering
+    arrays, maps, and structs—which reduces serialization round-trips and avoids fallback
+    to row-based execution, so existing notebooks and Spark jobs benefit with no code changes
+    once it's enabled. For more information, see Native execution engine for Fabric Data Engineering.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

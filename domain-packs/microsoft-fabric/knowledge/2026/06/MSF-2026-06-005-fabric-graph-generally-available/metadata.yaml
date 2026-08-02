@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-005
 slug: fabric-graph-generally-available
-title: Fabric Graph (Generally Available)
+title: Graph in Microsoft Fabric
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Graph-in-Fabric-Generally-Available/ba-p/5190748
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Graph-in-Fabric-Generally-Available/ba-p/5190748
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:592616759a1e5d254b8bab8f6d2bd2c78c7190cc1d8267460e93f04fad08f21c
+content_hash: sha256:30ee6d1078251dd2f98f57fe27c82b9f93e12e520b65ce5cf43336c2b656750b
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,18 @@ revisions:
     within your data and enhance decision-making capabilities. For more information, see Graph
     in Microsoft Fabric overview.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:30ee6d1078251dd2f98f57fe27c82b9f93e12e520b65ce5cf43336c2b656750b
+  title_snapshot: Graph in Microsoft Fabric
+  summary_snapshot: Fabric Graph (Generally Available) Graph in Microsoft Fabric helps you
+    model, visualize, and analyze complex relationships within your data. It's a scalable,
+    enterprise-grade solution that turns disconnected data into AI-powered insights. By using
+    graph, you can uncover hidden connections within your data and enhance decision-making
+    capabilities. For more information, see Graph in Microsoft Fabric overview.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

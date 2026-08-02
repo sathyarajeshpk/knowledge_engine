@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-063
 slug: mirrored-dremio-catalog-in-onelake-preview
-title: Mirrored Dremio catalog in OneLake (Preview)
+title: Bring your Dremio data into OneLake (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/bring-your-dremio-data-into-onelake-preview
 announcement_url: https://blog.fabric.microsoft.com/blog/bring-your-dremio-data-into-onelake-preview
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:667fd74c34a396b55ec882d2709c38221689403743a16fec914389793268f2bc
+content_hash: sha256:5f8b9624974ee195a1ca276bf82abe0597d22642eec8299796fd606a65432807
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,19 @@ revisions:
     analytics endpoint querying across Fabric workloads. For more information, see Bring your
     Dremio data into OneLake (Preview) and Mirrored Dremio catalog.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:5f8b9624974ee195a1ca276bf82abe0597d22642eec8299796fd606a65432807
+  title_snapshot: Bring your Dremio data into OneLake (Preview)
+  summary_snapshot: Mirrored Dremio catalog in OneLake (Preview) Fabric can mirror Dremio
+    Iceberg REST Catalog metadata to enable zero-copy access to Dremio-managed Iceberg tables
+    in OneLake via shortcuts. Tables appear in OneLake within seconds after selection, with
+    optional auto-include of newly added tables and SQL analytics endpoint querying across
+    Fabric workloads. For more information, see Bring your Dremio data into OneLake (Preview)
+    and Mirrored Dremio catalog.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

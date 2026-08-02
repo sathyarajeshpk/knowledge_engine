@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-004
 slug: analyze-business-events-in-eventhouse-and-real-time
-title: Analyze Business Events in Eventhouse and Real-Time Dashboards (Preview)
+title: Analyzing Business Events in Eventhouse and Real-Time Dashboards (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Analyze-Your-Business-Events-in-Eventhouse-and-Real-Time/ba-p/5190245
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Analyze-Your-Business-Events-in-Eventhouse-and-Real-Time/ba-p/5190245
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:8bdc24cf2373cd94d387fc52f3247169ee992dde69201715e4b8565622c7bb64
+content_hash: sha256:36a8b3cc8c28ca29babe462f58d5df5054c15be43331467123a0a1ceb0d50c58
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -60,4 +60,19 @@ revisions:
     and connect a Real-Time Dashboard for live operational monitoring without extra pipelines.
     For more information, see Business events overview (Preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:36a8b3cc8c28ca29babe462f58d5df5054c15be43331467123a0a1ceb0d50c58
+  title_snapshot: Analyzing Business Events in Eventhouse and Real-Time Dashboards (Preview)
+  summary_snapshot: Analyze Business Events in Eventhouse and Real-Time Dashboards (Preview)
+    Analyzing Business Events in Eventhouse and Real-Time Dashboards (Preview) walks through
+    how every published business event lands in a dedicated KQL table in Eventhouse by default,
+    so you can run historical KQL queries, correlate signals across event types, and connect
+    a Real-Time Dashboard for live operational monitoring without extra pipelines. For more
+    information, see Business events overview (Preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

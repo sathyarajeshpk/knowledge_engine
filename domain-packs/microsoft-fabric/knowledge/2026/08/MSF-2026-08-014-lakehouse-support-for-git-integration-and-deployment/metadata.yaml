@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-014
 slug: lakehouse-support-for-git-integration-and-deployment
-title: Lakehouse support for git integration and deployment pipelines (Preview)
+title: Lakehouse now integrates with the lifecycle management capabilities in Microsoft Fabric
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/microsoft-fabric-november-2023-update
 announcement_url: https://blog.fabric.microsoft.com/blog/microsoft-fabric-november-2023-update
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:49616520c6abd83f678be4489c1c8e8555aed78c822dd0806c29f37be887c9d2
+content_hash: sha256:c6f74c4e0bdc46c69dc8c819e4c23194bdd6ffad64e8b75d78a9af7d9e0339e6
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -60,4 +60,20 @@ revisions:
     facilitates an effective product versioning and release process by continuously delivering
     features and bug fixes into multiple environments.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:c6f74c4e0bdc46c69dc8c819e4c23194bdd6ffad64e8b75d78a9af7d9e0339e6
+  title_snapshot: Lakehouse now integrates with the lifecycle management capabilities in Microsoft
+    Fabric
+  summary_snapshot: Lakehouse support for git integration and deployment pipelines (Preview)
+    The Lakehouse now integrates with the lifecycle management capabilities in Microsoft Fabric,
+    providing a standardized collaboration between all development team members throughout
+    the product's life. Lakehouse git integration and deployment pipelines facilitates an
+    effective product versioning and release process by continuously delivering features and
+    bug fixes into multiple environments.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-027
 slug: evaluate-your-fabric-data-agents-with-the-python-sdk-preview
-title: Evaluate your Fabric data agents with the Python SDK (Preview)
+title: the Python SDK to programmatically evaluate Fabric data agents
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/evaluate-your-fabric-data-agents-programmatically-with-the-python-sdk?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/evaluate-your-fabric-data-agents-programmatically-with-the-python-sdk?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:321feaa0d12900781c9a6274d7195c27bd8c8baef7222b3067f95a2d31409c2c
+content_hash: sha256:36e40fadd4d37a1aca230e00f7e4a33f68510cf9994aeb7b3566b0e8b9a83612
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,16 @@ revisions:
     agents. For more information, see Consume a Fabric Data Agent in Microsoft Copilot Studio
     (preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:36e40fadd4d37a1aca230e00f7e4a33f68510cf9994aeb7b3566b0e8b9a83612
+  title_snapshot: the Python SDK to programmatically evaluate Fabric data agents
+  summary_snapshot: Evaluate your Fabric data agents with the Python SDK (Preview) You can
+    now use the Python SDK to programmatically evaluate Fabric data agents. For more information,
+    see Consume a Fabric Data Agent in Microsoft Copilot Studio (preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-004
 slug: visuals-calculations-lookup-function-now-supports-inferred
-title: Visuals calculations LOOKUP function now supports INFERRED mode
+title: Using visual calculations
 source_name: powerbi-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-visual-calculations-overview
 announcement_url: https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-visual-calculations-overview
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:8d89717ebbfe0c7347a7230999ed5f7327f5a76b134754de4d3baffdbf28516b
+content_hash: sha256:3b1afe9b64ccef3e4dcee7285e5292758566236ab9261ed1c89a74bae9f79633
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,19 @@ revisions:
     you supply and fills them in before evaluating the lookup. For more information, see Using
     visual calculations.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:3b1afe9b64ccef3e4dcee7285e5292758566236ab9261ed1c89a74bae9f79633
+  title_snapshot: Using visual calculations
+  summary_snapshot: Visuals calculations LOOKUP function now supports INFERRED mode The LOOKUP
+    function in visual calculations now accepts an optional AssociatedColumnsBehavior parameter
+    with EXPLICIT (default) and INFERRED values. When using INFERRED, the engine automatically
+    identifies which axis columns are functionally determined by the coordinates you supply
+    and fills them in before evaluating the lookup. For more information, see Using visual
+    calculations.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-010
 slug: fabric-skills-for-ai-coding-tools
-title: Fabric Skills for AI coding tools
+title: Fabric Skills
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Skills-for-GitHub-Copilot-Claude-and-CLI-built-by/ba-p/5190188
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Skills-for-GitHub-Copilot-Claude-and-CLI-built-by/ba-p/5190188
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:31072e44420471daa567af8e41fe4777ebb0151bea9ea65e0de9ee7b9982a116
+content_hash: sha256:93a5344e2089db1fc29c22015cb39f587536396bc7cccb70ea06a40ad81c57cc
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,19 @@ revisions:
     workloads. Install the full fabric-skills bundle or focused fabric-authoring, fabric-consumption,
     or fabric-operations bundles from the skills-for-fabric repository.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:93a5344e2089db1fc29c22015cb39f587536396bc7cccb70ea06a40ad81c57cc
+  title_snapshot: Fabric Skills
+  summary_snapshot: Fabric Skills for AI coding tools Fabric Skills is an open-source, MIT-licensed
+    library of Microsoft-authored AI skills that teach GitHub Copilot, Claude Code, Cursor,
+    Windsurf, and other AI coding tools the right APIs, token audiences, query patterns, and
+    end-to-end recipes for Fabric workloads. Install the full fabric-skills bundle or focused
+    fabric-authoring, fabric-consumption, or fabric-operations bundles from the skills-for-fabric
+    repository.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-083
 slug: org-apps-with-audiences-generally-available
-title: Org apps with audiences (Generally Available)
+title: Get started with org apps
 source_name: powerbi-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/power-bi/explore-reports/org-app-items
 announcement_url: https://learn.microsoft.com/en-us/power-bi/explore-reports/org-app-items
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:2ac31468720692d9f127f1a91b487b1f58a3c94afa56f2e19843269a3acb0a58
+content_hash: sha256:7dee92b33bf32fc062d4a9ff17b82b06d516f2cf18fdd7cff8aed7a00ddf209e
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -56,4 +56,17 @@ revisions:
     of users within the same app, making it easier to personalize content while managing a
     single app experience. For more information, see Get started with org apps.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:7dee92b33bf32fc062d4a9ff17b82b06d516f2cf18fdd7cff8aed7a00ddf209e
+  title_snapshot: Get started with org apps
+  summary_snapshot: Org apps with audiences (Generally Available) App creators can deliver
+    different content experiences to different groups of users within the same app, making
+    it easier to personalize content while managing a single app experience. For more information,
+    see Get started with org apps.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

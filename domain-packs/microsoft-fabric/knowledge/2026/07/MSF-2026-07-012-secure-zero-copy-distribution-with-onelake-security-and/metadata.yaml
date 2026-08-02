@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-07-012
 slug: secure-zero-copy-distribution-with-onelake-security-and
-title: Secure zero-copy distribution with OneLake security and shortcuts
+title: Zero-copy distribution patterns with OneLake security and shortcuts
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Securing-zero-copy-distribution-patterns-with-OneLake-security/ba-p/5227853
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Securing-zero-copy-distribution-patterns-with-OneLake-security/ba-p/5227853
@@ -11,7 +11,7 @@ published_date: 2026-07-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:119ef8f784848a222001db3247938dd8d7d9c542c0f76d8907d6762459a32959
+content_hash: sha256:b66960f2e90807c539502589728f4ae26aecd8db61fd1ab842c8a8c194a473d8
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -60,4 +60,20 @@ revisions:
     tenants, with security combined via intersection. For more information, see OneLake security
     access control model and Secure and manage OneLake shortcuts.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:b66960f2e90807c539502589728f4ae26aecd8db61fd1ab842c8a8c194a473d8
+  title_snapshot: Zero-copy distribution patterns with OneLake security and shortcuts
+  summary_snapshot: Secure zero-copy distribution with OneLake security and shortcuts Zero-copy
+    distribution patterns with OneLake security and shortcuts explains how passthrough shortcuts
+    evaluate permissions on the target for source-managed authorization, and how delegated
+    shortcuts—including delegated OneLake shortcuts—use an intermediate identity so central
+    teams delegate access management at scale and share data across Fabric tenants, with security
+    combined via intersection. For more information, see OneLake security access control model
+    and Secure and manage OneLake shortcuts.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-07-016
 slug: pipeline-authoring-and-monitoring-enhancements
-title: Pipeline authoring and monitoring enhancements
+title: New Fabric Data Factory pipeline enhancements
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Streamlining-orchestration-with-smarter-pipelines-and-deeper/ba-p/5280154
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Streamlining-orchestration-with-smarter-pipelines-and-deeper/ba-p/5280154
@@ -11,7 +11,7 @@ published_date: 2026-07-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:12408e475975605d72c30ace1fef4fcfada9b808094bd9f0a8180616e1ffb7ee
+content_hash: sha256:37a065b1c845e19133db44f7223d331b24f580958de1681e3e9097e8bae8fa65
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -60,4 +60,18 @@ revisions:
     For more information, see Transform data by running a notebook and Enable workspace monitoring
     in Microsoft Fabric.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:37a065b1c845e19133db44f7223d331b24f580958de1681e3e9097e8bae8fa65
+  title_snapshot: New Fabric Data Factory pipeline enhancements
+  summary_snapshot: Pipeline authoring and monitoring enhancements New Fabric Data Factory
+    pipeline enhancements auto-populate base parameters for the Notebook activity and add
+    activity-level (L2) workspace monitoring (Preview), so you drill from a pipeline run into
+    individual failed activities for root-cause analysis. For more information, see Transform
+    data by running a notebook and Enable workspace monitoring in Microsoft Fabric.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

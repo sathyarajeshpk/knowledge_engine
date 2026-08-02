@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-016
 slug: servicenow-zero-copy-querying-of-onelake-data-preview
-title: ServiceNow zero-copy querying of OneLake data (Preview)
+title: The ServiceNow OneLake connector (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/ServiceNow-Zero-Copy-Querying-of-Enterprise-Data-in-Microsoft/ba-p/5198369
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/ServiceNow-Zero-Copy-Querying-of-Enterprise-Data-in-Microsoft/ba-p/5198369
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:95a311542bfb995a9f54f1ec2767a09cb7c6738e782bcb1f66394819cde1f862
+content_hash: sha256:376ae676daa6c4af1bb367092ed3fbaf861d21261bf20db8acbc9a485858987e
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -61,4 +61,18 @@ revisions:
     data without ETL pipelines or copies. For more information, see OneLake overview and Iceberg
     table APIs overview.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:376ae676daa6c4af1bb367092ed3fbaf861d21261bf20db8acbc9a485858987e
+  title_snapshot: The ServiceNow OneLake connector (Preview)
+  summary_snapshot: ServiceNow zero-copy querying of OneLake data (Preview) The ServiceNow
+    OneLake connector (Preview) lets ServiceNow Workflow Data Fabric query governed OneLake
+    data in place through the OneLake Table APIs and the Apache Iceberg REST Catalog standard,
+    so ServiceNow workflows, analytics, and AI agents use enterprise data without ETL pipelines
+    or copies. For more information, see OneLake overview and Iceberg table APIs overview.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

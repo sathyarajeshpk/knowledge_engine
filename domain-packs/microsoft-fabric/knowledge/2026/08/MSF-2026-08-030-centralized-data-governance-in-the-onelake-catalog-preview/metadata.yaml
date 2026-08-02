@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-030
 slug: centralized-data-governance-in-the-onelake-catalog-preview
-title: Centralized data governance in the OneLake catalog (Preview)
+title: centralized data governance experience in the OneLake catalog
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/fabric-february-2025-feature-summary?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/fabric-february-2025-feature-summary?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:de909e6dd3a206be647a3d90333876eef0546ab6d367a04875dca1d360686bce
+content_hash: sha256:4fe1ac746ad49fa308f8993916f55038f758b3aae7dbd90ddc59c16ad8a95a80
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,18 @@ revisions:
     improving their governance by taking recommended actions, and access more information
     along with all available tools in Fabric.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:4fe1ac746ad49fa308f8993916f55038f758b3aae7dbd90ddc59c16ad8a95a80
+  title_snapshot: centralized data governance experience in the OneLake catalog
+  summary_snapshot: Centralized data governance in the OneLake catalog (Preview) A new centralized
+    data governance experience in the OneLake catalog is in preview. Data owners can view
+    aggregated insights on the items they created, consider improving their governance by
+    taking recommended actions, and access more information along with all available tools
+    in Fabric.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

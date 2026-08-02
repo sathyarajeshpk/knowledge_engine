@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-047
 slug: notebook-copilot-inline-code-completion-preview
-title: Notebook Copilot inline code completion (Preview)
+title: Copilot Inline Code Completion (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-engineering/author-execute-notebook
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-engineering/author-execute-notebook
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:40e896c2350377bcbf48a399a5e1abc735f41736b75d7dc3e0ffc9d79de97935
+content_hash: sha256:fa70a3e410815206eba1ea10df7d24ccef95ec74f78b61e091327a1dadb38e1a
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,17 @@ revisions:
     that assists data scientists and engineers in writing Python code more quickly and easily.
     For more information, see Notebook Copilot inline code completion (Preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:fa70a3e410815206eba1ea10df7d24ccef95ec74f78b61e091327a1dadb38e1a
+  title_snapshot: Copilot Inline Code Completion (Preview)
+  summary_snapshot: Notebook Copilot inline code completion (Preview) Now in preview, Copilot
+    Inline Code Completion (Preview) is an AI feature that assists data scientists and engineers
+    in writing Python code more quickly and easily. For more information, see Notebook Copilot
+    inline code completion (Preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

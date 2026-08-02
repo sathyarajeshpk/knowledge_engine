@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-045
 slug: improved-nl2sql-engine-for-fabric-data-agent-preview
-title: Improved NL2SQL Engine for Fabric Data Agent (Preview)
+title: Improved NL2SQL Engine (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://aka.ms/data-agent-nl2sql
 announcement_url: https://aka.ms/data-agent-nl2sql
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:5a0d7dfa8eecbaa225093c604c1570e55aa6f674536bc86a807937aee9337197
+content_hash: sha256:a4c5dfd39718ff25f973d43e4f65849edd75478ac5d8b18ef2f7d691a59cd131
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -226,4 +226,18 @@ revisions:
     questions when intent is ambiguous, and surfaces structured diagnostics. For more information,
     see Fabric data agent concepts.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:a4c5dfd39718ff25f973d43e4f65849edd75478ac5d8b18ef2f7d691a59cd131
+  title_snapshot: Improved NL2SQL Engine (Preview)
+  summary_snapshot: Improved NL2SQL Engine for Fabric Data Agent (Preview) Improved NL2SQL
+    Engine (Preview) for Fabric Data Agent improves accuracy, transparency, and resilience
+    when translating natural language to SQL across lakehouses, warehouses, and mirrored databases.
+    It uses example queries to follow patterns, asks clarifying questions when intent is ambiguous,
+    and surfaces structured diagnostics. For more information, see Fabric data agent concepts.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

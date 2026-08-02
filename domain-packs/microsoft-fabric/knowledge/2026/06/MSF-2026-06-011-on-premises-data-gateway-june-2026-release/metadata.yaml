@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-011
 slug: on-premises-data-gateway-june-2026-release
-title: On-premises data gateway June 2026 release
+title: June 2026 on-premises data gateway release
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/On-premises-data-gateway-June-2026-release/ba-p/5233421
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/On-premises-data-gateway-June-2026-release/ba-p/5233421
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:c62bc60e70c7062cc6412306e33e5f264a23bbb13c9bedeaf32025b1759c8f7c
+content_hash: sha256:659e4b0e47eba4bf358968969faf84b84e828da8c2ff8571af865d160fcf58e7
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,18 @@ revisions:
     and aligns the gateway query engine with the June 2026 Power BI Desktop release. For more
     information, see Update an on-premises data gateway.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:659e4b0e47eba4bf358968969faf84b84e828da8c2ff8571af865d160fcf58e7
+  title_snapshot: June 2026 on-premises data gateway release
+  summary_snapshot: On-premises data gateway June 2026 release The June 2026 on-premises data
+    gateway release (version 3000.322) adds Windows Web Account Manager (WAM) broker authentication,
+    updates the bundled Apache Log4j library to 2.25.4, adds consent-driven diagnostic uploads
+    in the Dataflow Gen2 run experience, and aligns the gateway query engine with the June
+    2026 Power BI Desktop release. For more information, see Update an on-premises data gateway.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

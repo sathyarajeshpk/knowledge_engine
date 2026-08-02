@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-006
 slug: continuous-ingestion-from-azure-storage-to-eventhouse
-title: Continuous ingestion from Azure Storage to Eventhouse (Preview)
+title: continuous ingestion from Azure Storage to Eventhouse (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/continuous-ingestion-from-azure-storage-to-eventhouse-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/continuous-ingestion-from-azure-storage-to-eventhouse-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:06537b5047e2c908fe3bce1c1e44870e92346fa8df99d04cc16ddba8f7a689df
+content_hash: sha256:eb78b3ef93e36e2986382e7158f8379fabae8af4579c3a9341f428b956be6fd2
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     (preview) to automatically and efficiently ingest data from Azure Storage into Eventhouse.
     For more information, see Get data from Azure Storage.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:eb78b3ef93e36e2986382e7158f8379fabae8af4579c3a9341f428b956be6fd2
+  title_snapshot: continuous ingestion from Azure Storage to Eventhouse (preview)
+  summary_snapshot: Continuous ingestion from Azure Storage to Eventhouse (Preview) You can
+    now use continuous ingestion from Azure Storage to Eventhouse (preview) to automatically
+    and efficiently ingest data from Azure Storage into Eventhouse. For more information,
+    see Get data from Azure Storage.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

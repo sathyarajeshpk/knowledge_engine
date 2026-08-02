@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-060
 slug: zero-copy-access-to-onelake-data-in-azure-databricks-preview
-title: Zero-copy access to OneLake data in Azure Databricks (Preview)
+title: OneLake catalog federation in Azure Databricks (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/zero-copy-access-to-onelake-data-in-azure-databricks-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/zero-copy-access-to-onelake-data-in-azure-databricks-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:00037955dd3320fa154ee9cca2f7349e19e8a5636de266afd042d0170e9ccc3f
+content_hash: sha256:1991f1863b594caaac696546dc1bab46702ee894e65fea53b08bdaae3fb32b0a
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,18 @@ revisions:
     source of truth while allowing Databricks compute to analyze tables through synchronized
     metadata and zero-copy data access. For more information, see Enable OneLake catalog federation.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:1991f1863b594caaac696546dc1bab46702ee894e65fea53b08bdaae3fb32b0a
+  title_snapshot: OneLake catalog federation in Azure Databricks (Preview)
+  summary_snapshot: Zero-copy access to OneLake data in Azure Databricks (Preview) OneLake
+    catalog federation in Azure Databricks (Preview) enables Unity Catalog to query Fabric
+    data stored in OneLake without copying, keeping OneLake as the source of truth while allowing
+    Databricks compute to analyze tables through synchronized metadata and zero-copy data
+    access. For more information, see Enable OneLake catalog federation.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-020
 slug: warehouse-custom-sql-pools-preview
-title: Warehouse custom SQL pools (preview)
+title: Custom SQL pools (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/custom-sql-pools-for-fabric-data-warehouse-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/custom-sql-pools-for-fabric-data-warehouse-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:bdd7962139cbb030a67dc194b22d6c0ce91f9c4b76952128feb4e1b93662526b
+content_hash: sha256:46052348305f3e9eec80f7a194354223fbf53ef2d89b7a5603928b271c70899d
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     control over SQL compute resource allocation, enabling you to define pools, assign percentage-based
     compute, and route queries by application name. For more information, see Custom SQL pools.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:46052348305f3e9eec80f7a194354223fbf53ef2d89b7a5603928b271c70899d
+  title_snapshot: Custom SQL pools (Preview)
+  summary_snapshot: Warehouse custom SQL pools (preview) Custom SQL pools (Preview) give workspace
+    administrators fine-grained control over SQL compute resource allocation, enabling you
+    to define pools, assign percentage-based compute, and route queries by application name.
+    For more information, see Custom SQL pools.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

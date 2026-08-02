@@ -5,10 +5,10 @@
     "2025-12": 1,
     "2026-02": 2,
     "2026-03": 5,
-    "2026-05": 33,
-    "2026-06": 53,
-    "2026-07": 21,
-    "2026-08": 106
+    "2026-05": 36,
+    "2026-06": 55,
+    "2026-07": 22,
+    "2026-08": 109
   },
   "paths": {
     "MSF-2025-11-001": "2025/11/MSF-2025-11-001-cosmos-db-in-microsoft-fabric-ga",
@@ -53,6 +53,9 @@
     "MSF-2026-05-031": "2026/05/MSF-2026-05-031-capacity-metrics-app-enhancements-and-chargeback-app",
     "MSF-2026-05-032": "2026/05/MSF-2026-05-032-data-warehouse-monitor-preview",
     "MSF-2026-05-033": "2026/05/MSF-2026-05-033-high-concurrency-support-for-the-fabric-livy-api-preview",
+    "MSF-2026-05-034": "2026/05/MSF-2026-05-034-fabric-apps-preview",
+    "MSF-2026-05-035": "2026/05/MSF-2026-05-035-onelake-item-size-reporting-preview",
+    "MSF-2026-05-036": "2026/05/MSF-2026-05-036-event-file-target",
     "MSF-2026-06-001": "2026/06/MSF-2026-06-001-billing-for-fabric-planning-preview",
     "MSF-2026-06-002": "2026/06/MSF-2026-06-002-time-series-visualization-in-real-time-dashboards-preview",
     "MSF-2026-06-003": "2026/06/MSF-2026-06-003-real-time-dashboards-powered-by-ai-preview",
@@ -106,6 +109,8 @@
     "MSF-2026-06-051": "2026/06/MSF-2026-06-051-data-ai-and-the-case-for-continuous-learning",
     "MSF-2026-06-052": "2026/06/MSF-2026-06-052-fabcon-europe-2026-the-sessions-we-re-most-excited-to-bring",
     "MSF-2026-06-053": "2026/06/MSF-2026-06-053-why-data-teams-are-emerging-as-leaders-in-ai-agent-adoption",
+    "MSF-2026-06-054": "2026/06/MSF-2026-06-054-rayfin-preview",
+    "MSF-2026-06-055": "2026/06/MSF-2026-06-055-business-events-overview-preview",
     "MSF-2026-07-001": "2026/07/MSF-2026-07-001-rayfin-ama-recap",
     "MSF-2026-07-002": "2026/07/MSF-2026-07-002-workspace-outbound-access-protection-for-real-time",
     "MSF-2026-07-003": "2026/07/MSF-2026-07-003-fabric-runtime-release-channels",
@@ -127,6 +132,7 @@
     "MSF-2026-07-019": "2026/07/MSF-2026-07-019-operations-agent-for-pipelines-preview",
     "MSF-2026-07-020": "2026/07/MSF-2026-07-020-eventstream-sql-operator-generally-available",
     "MSF-2026-07-021": "2026/07/MSF-2026-07-021-autoscaling-for-virtual-network-data-gateway-preview",
+    "MSF-2026-07-022": "2026/07/MSF-2026-07-022-change-event-streaming-overview",
     "MSF-2026-08-001": "2026/08/MSF-2026-08-001-data-replication-from-lakehouse-with-delta-change-feed",
     "MSF-2026-08-002": "2026/08/MSF-2026-08-002-on-premises-data-gateway-manual-update-preview",
     "MSF-2026-08-003": "2026/08/MSF-2026-08-003-manage-built-in-sql-database-mirroring-to-onelake-preview",
@@ -232,6 +238,9 @@
     "MSF-2026-08-103": "2026/08/MSF-2026-08-103-lakehouse-auto-binding-in-git-preview",
     "MSF-2026-08-104": "2026/08/MSF-2026-08-104-folder-rest-api-preview",
     "MSF-2026-08-105": "2026/08/MSF-2026-08-105-measure-descriptions-with-triple-slash-comments",
-    "MSF-2026-08-106": "2026/08/MSF-2026-08-106-upsert-to-delta-table-with-lakehouse-connector-preview"
+    "MSF-2026-08-106": "2026/08/MSF-2026-08-106-upsert-to-delta-table-with-lakehouse-connector-preview",
+    "MSF-2026-08-107": "2026/08/MSF-2026-08-107-mirroring-in-fabric",
+    "MSF-2026-08-108": "2026/08/MSF-2026-08-108-automatic-index-compaction",
+    "MSF-2026-08-109": "2026/08/MSF-2026-08-109-alter-database-set-options-transact-sql"
   }
 }

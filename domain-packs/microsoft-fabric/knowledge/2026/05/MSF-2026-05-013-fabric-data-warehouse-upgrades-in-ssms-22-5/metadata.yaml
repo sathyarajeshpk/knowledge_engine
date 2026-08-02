@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-013
 slug: fabric-data-warehouse-upgrades-in-ssms-22-5
-title: Fabric Data Warehouse upgrades in SSMS 22.5
+title: SSMS 22.5 Fabric Data Warehouse upgrades
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Warehouse-upgrades-in-SSMS-22-5/ba-p/5177764
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Warehouse-upgrades-in-SSMS-22-5/ba-p/5177764
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:20bbb502ce0c72db6b28c805ea938b30cdb5cf303ee158201d7ce927ad50ef3f
+content_hash: sha256:8a0679c8cf5be4b0abab68aa2549823ffac9eb0ee0f6de2e1eaec96d900763bd
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,18 @@ revisions:
     so item-level permissions are sufficient to connect. For more information, see Install
     SQL Server Management Studio (SSMS).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:8a0679c8cf5be4b0abab68aa2549823ffac9eb0ee0f6de2e1eaec96d900763bd
+  title_snapshot: SSMS 22.5 Fabric Data Warehouse upgrades
+  summary_snapshot: Fabric Data Warehouse upgrades in SSMS 22.5 SSMS 22.5 Fabric Data Warehouse
+    upgrades add direct create, rename, and delete actions for Fabric warehouses from Object
+    Explorer, let you generate a SQL database project from a live warehouse connection, and
+    remove the workspace-level permission requirement so item-level permissions are sufficient
+    to connect. For more information, see Install SQL Server Management Studio (SSMS).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

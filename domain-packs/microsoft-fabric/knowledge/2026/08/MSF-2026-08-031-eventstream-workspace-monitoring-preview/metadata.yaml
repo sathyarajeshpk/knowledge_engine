@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-031
 slug: eventstream-workspace-monitoring-preview
-title: Eventstream workspace monitoring (Preview)
+title: Workspace monitoring for Eventstreams (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Monitor-your-Eventstreams-with-workspace-monitoring-Preview/ba-p/5161116
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Monitor-your-Eventstreams-with-workspace-monitoring-Preview/ba-p/5161116
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:776553d92c06388806293b7f78cbf4c0fd04742c8391abd8a647e03575278a0e
+content_hash: sha256:09c9a426591414f5d2ff6275725d7de3c95b403afe87319260abae7add259ab4
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,18 @@ revisions:
     KQL. Existing Eventstreams need a republish to start emitting telemetry. For more information,
     see Eventstreams and Workspace monitoring.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:09c9a426591414f5d2ff6275725d7de3c95b403afe87319260abae7add259ab4
+  title_snapshot: Workspace monitoring for Eventstreams (Preview)
+  summary_snapshot: Eventstream workspace monitoring (Preview) Workspace monitoring for Eventstreams
+    (Preview) automatically creates three Eventhouse tables (EventStreamNodeStatus, EventStreamMetrics,
+    EventStreamErrorMetrics) for per-minute data volume, watermark delay, backlog, and error
+    counts queryable with KQL. Existing Eventstreams need a republish to start emitting telemetry.
+    For more information, see Eventstreams and Workspace monitoring.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

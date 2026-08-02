@@ -1,7 +1,8 @@
 schema_version: 1
 id: MSF-2026-08-041
 slug: openai-plugins-for-eventhouse-preview
-title: OpenAI plugins for Eventhouse (Preview)
+title: 'two powerful AI plugins for Eventhouse: AI Embed Text Plugin and AI Chat Completion
+  Prompt Plugin'
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/introducing-new-openai-plugins-for-eventhouse-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/introducing-new-openai-plugins-for-eventhouse-preview?ft=All
@@ -11,7 +12,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:a763c6f9f2053f558eb7ae73f052c25208f4cf34d28b2cbbb02e22bd63932632
+content_hash: sha256:d29922789a779726d81828b63ac7fe797b650c1c841940dc1f0e09de36c2d0b7
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +59,18 @@ revisions:
     applications for advanced analytics and AI scenarios. For more information, see aiembedtext
     (preview) and aichatcompletion (preview).'
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:d29922789a779726d81828b63ac7fe797b650c1c841940dc1f0e09de36c2d0b7
+  title_snapshot: 'two powerful AI plugins for Eventhouse: AI Embed Text Plugin and AI Chat
+    Completion Prompt Plugin'
+  summary_snapshot: 'OpenAI plugins for Eventhouse (Preview) You can now use two powerful
+    AI plugins for Eventhouse: AI Embed Text Plugin and AI Chat Completion Prompt Plugin.
+    Connect Eventhouse data to OpenAI-powered applications for advanced analytics and AI scenarios.
+    For more information, see ai_embed_text (preview) and ai_chat_completion (preview).'
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

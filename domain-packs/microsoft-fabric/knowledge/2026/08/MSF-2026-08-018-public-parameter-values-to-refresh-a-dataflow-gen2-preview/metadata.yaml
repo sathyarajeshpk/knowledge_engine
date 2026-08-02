@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-018
 slug: public-parameter-values-to-refresh-a-dataflow-gen2-preview
-title: Public parameter values to refresh a Dataflow Gen2 (Preview)
+title: public parameters capability for Dataflow Gen2
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/passing-parameter-values-to-refresh-a-dataflow-gen2-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/passing-parameter-values-to-refresh-a-dataflow-gen2-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:1c5e0a66f586555e4ed972ab6a99d9b7dcaebc6222dd7bceeaa6aef61117e2d0
+content_hash: sha256:743fc7972bf95bb554e28eb5ba4578660e1ff920b5581f16cd80bb3cbe917c52
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,16 @@ revisions:
     with CI/CD support, and the support for this new mode within the Dataflow refresh activity
     in Data Pipelines.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:743fc7972bf95bb554e28eb5ba4578660e1ff920b5581f16cd80bb3cbe917c52
+  title_snapshot: public parameters capability for Dataflow Gen2
+  summary_snapshot: Public parameter values to refresh a Dataflow Gen2 (Preview) Learn more
+    about the new public parameters capability for Dataflow Gen2 with CI/CD support, and the
+    support for this new mode within the Dataflow refresh activity in Data Pipelines.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

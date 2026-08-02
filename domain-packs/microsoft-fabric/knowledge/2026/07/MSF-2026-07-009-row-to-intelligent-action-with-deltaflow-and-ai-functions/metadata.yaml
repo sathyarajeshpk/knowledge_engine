@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-07-009
 slug: row-to-intelligent-action-with-deltaflow-and-ai-functions
-title: Row-to-intelligent-action with DeltaFlow and AI functions
+title: Real-time game-day operations with Eventstreams, Spark, and AI functions
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Intelligent-streaming-Real-time-game-day-operations-with-Fabric/ba-p/5287533
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Intelligent-streaming-Real-time-game-day-operations-with-Fabric/ba-p/5287533
@@ -11,7 +11,7 @@ published_date: 2026-07-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:4d6b3721a92b8649d4c98ef8f5aa1394eb302cd418bafe510af0fb7c711d4bc8
+content_hash: sha256:6c848e1f78269bee4f4df3c61a81fdc48d16e7c6f454902b34d5b7d56e0a64d4
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -62,4 +62,19 @@ revisions:
     Streaming notebook to classify each request by meaning and route actionable items to the
     right team in seconds. For more information, see DeltaFlow output transformation (preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:6c848e1f78269bee4f4df3c61a81fdc48d16e7c6f454902b34d5b7d56e0a64d4
+  title_snapshot: Real-time game-day operations with Eventstreams, Spark, and AI functions
+  summary_snapshot: Row-to-intelligent-action with DeltaFlow and AI functions Real-time game-day
+    operations with Eventstreams, Spark, and AI functions walks through a stadium operations
+    scenario that captures database changes with a CDC source, reshapes them with DeltaFlow
+    (Preview), and uses AI functions in a Spark Structured Streaming notebook to classify
+    each request by meaning and route actionable items to the right team in seconds. For more
+    information, see DeltaFlow output transformation (preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

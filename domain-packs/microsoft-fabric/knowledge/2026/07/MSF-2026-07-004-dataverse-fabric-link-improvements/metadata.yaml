@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-07-004
 slug: dataverse-fabric-link-improvements
-title: Dataverse Fabric Link improvements
+title: Dataverse Fabric Link
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/What-s-new-for-Dataverse-Fabric-Link-More-control-stronger/ba-p/5279493
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/What-s-new-for-Dataverse-Fabric-Link-More-control-stronger/ba-p/5279493
@@ -11,7 +11,7 @@ published_date: 2026-07-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:90f59fbd25a8748d7f868a81b18b783b2fa02bae5cc2c38644458236cc893d17
+content_hash: sha256:06eadf706b0e0addadf509a7039021ab7dffa0a0d2671c625200842ba80c8918
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -56,4 +56,17 @@ revisions:
     and reduces sync latency to under 15 minutes for most cases. For more information, see
     Link to Fabric and Create a Dataverse shortcut.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:06eadf706b0e0addadf509a7039021ab7dffa0a0d2671c625200842ba80c8918
+  title_snapshot: Dataverse Fabric Link
+  summary_snapshot: Dataverse Fabric Link improvements Dataverse Fabric Link now lets admins
+    choose which Dataverse and finance and operations tables sync to Fabric, adds Workspace
+    Identity and Service Principal authentication, and reduces sync latency to under 15 minutes
+    for most cases. For more information, see Link to Fabric and Create a Dataverse shortcut.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

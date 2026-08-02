@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-050
 slug: fabric-activator-integration-in-fabric-user-data-functions
-title: Fabric Activator integration in Fabric User Data functions (Preview)
+title: Fabric Activator integration with Fabric User Data functions (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/whats-new-in-fabric-user-data-functions-ignite-2025-edition?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/whats-new-in-fabric-user-data-functions-ignite-2025-edition?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:2ad22fd5454f137dbcde1cbb2dad0c09554da18eca44d2a82f6779cf55412ddc
+content_hash: sha256:e95d9fac90a2ee43923c430c5709626f481e48a4de949724fde601aa0799f1ef
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     means you can create functions to process events from any source, including Fabric events
     and OneLake events. For more information, see Trigger Fabric items.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:e95d9fac90a2ee43923c430c5709626f481e48a4de949724fde601aa0799f1ef
+  title_snapshot: Fabric Activator integration with Fabric User Data functions (preview)
+  summary_snapshot: Fabric Activator integration in Fabric User Data functions (Preview) Fabric
+    Activator integration with Fabric User Data functions (preview) means you can create functions
+    to process events from any source, including Fabric events and OneLake events. For more
+    information, see Trigger Fabric items.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

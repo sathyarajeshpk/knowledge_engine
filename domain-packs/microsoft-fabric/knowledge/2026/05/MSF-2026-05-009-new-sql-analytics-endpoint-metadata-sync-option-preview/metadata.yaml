@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-009
 slug: new-sql-analytics-endpoint-metadata-sync-option-preview
-title: New SQL analytics endpoint metadata sync option (preview)
+title: new SQL analytics endpoint metadata sync option
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-engineering/sql-analytics-endpoint-metadata-sync
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-engineering/sql-analytics-endpoint-metadata-sync
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:24cda437b1e0aade1cf012b77abab8153f39d8cbd08cbab816d02c2be36dc38f
+content_hash: sha256:59ddbc701aaefc48b77797bc41f77b830fc07b64aaa31807028be3a257405eb7
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -217,4 +217,18 @@ revisions:
     only to new SQL analytics endpoints, is faster, provides a new manual metadata sync option,
     and provides time travel querying.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:59ddbc701aaefc48b77797bc41f77b830fc07b64aaa31807028be3a257405eb7
+  title_snapshot: new SQL analytics endpoint metadata sync option
+  summary_snapshot: New SQL analytics endpoint metadata sync option (preview) You can now
+    opt in to the new SQL analytics endpoint metadata sync option, a preview feature. The
+    new option, which is currently opt-in only and currently applies only to new SQL analytics
+    endpoints, is faster, provides a new manual metadata sync option, and provides time travel
+    querying.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

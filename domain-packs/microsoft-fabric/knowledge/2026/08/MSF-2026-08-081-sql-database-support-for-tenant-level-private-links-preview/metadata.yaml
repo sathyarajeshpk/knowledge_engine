@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-081
 slug: sql-database-support-for-tenant-level-private-links-preview
-title: SQL database support for Tenant level private links (Preview)
+title: tenant level private links
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/security/security-private-links-overview
 announcement_url: https://learn.microsoft.com/en-us/fabric/security/security-private-links-overview
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:c2accbb9c1df4f09f04055a08de34a26e356f42c9d84a9ab10ec9267d3279db9
+content_hash: sha256:949d0147c46a480dd7c30d2509f828ece7e08b50d4e62db9eaa0e45498981db1
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     traffic in Microsoft Fabric, including SQL database (in preview). For more information,
     see Set up and use tenant-level private links and Blog: Tenant Level Private Link (Preview).'
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:949d0147c46a480dd7c30d2509f828ece7e08b50d4e62db9eaa0e45498981db1
+  title_snapshot: tenant level private links
+  summary_snapshot: 'SQL database support for Tenant level private links (Preview) You can
+    use tenant level private links to provide secure access for data traffic in Microsoft
+    Fabric, including SQL database (in preview). For more information, see Set up and use
+    tenant-level private links and Blog: Tenant Level Private Link (Preview).'
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

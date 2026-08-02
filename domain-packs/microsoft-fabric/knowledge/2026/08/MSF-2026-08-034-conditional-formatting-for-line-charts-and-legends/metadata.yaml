@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-034
 slug: conditional-formatting-for-line-charts-and-legends
-title: Conditional formatting for line charts and legends (Generally Available)
+title: Conditional formatting in Power BI visuals
 source_name: powerbi-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-conditional-formatting
 announcement_url: https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-conditional-formatting
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:5dcddcff186d3ef29ff5be3f0307165d0e185a5df2c7e56369c0ef15ca44e3a6
+content_hash: sha256:05bd2700a9b57eb7a9e7f47bb9bcc4e1f0bc197a2f03f274a7db83227d6b12c0
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,19 @@ revisions:
     across your report using a single DAX measure. For more information, see Conditional formatting
     in Power BI visuals.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:05bd2700a9b57eb7a9e7f47bb9bcc4e1f0bc197a2f03f274a7db83227d6b12c0
+  title_snapshot: Conditional formatting in Power BI visuals
+  summary_snapshot: Conditional formatting for line charts and legends (Generally Available)
+    Conditional formatting now extends to line charts and visuals with legends, including
+    bar charts, column charts, pie charts, donut charts, and line charts. Format line colors
+    using a gradient based on total value or category, or ensure consistent colors across
+    your report using a single DAX measure. For more information, see Conditional formatting
+    in Power BI visuals.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

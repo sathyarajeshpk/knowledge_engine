@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-051
 slug: data-factory-in-fabric-connection-recency-preview
-title: Data Factory in Fabric connection recency (Preview)
+title: Connection recency (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/connection-recency-for-improved-audit-and-management-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/connection-recency-for-improved-audit-and-management-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:34c3a2f21a0efde8e4b9ed2d2d352b8b1c0d3ba5b9a48b0ee131c26ff5964e19
+content_hash: sha256:f3200d35b0ab4f464c2170abf8f9291daa5e4f14696604ab689c8b95aaeafc2f
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -56,4 +56,16 @@ revisions:
     properties to connections for audit and lifecycle management. For more information, see
     Data source management.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:f3200d35b0ab4f464c2170abf8f9291daa5e4f14696604ab689c8b95aaeafc2f
+  title_snapshot: Connection recency (Preview)
+  summary_snapshot: Data Factory in Fabric connection recency (Preview) Connection recency
+    (Preview) adds last-linked-to-items and last-credentials-used properties to connections
+    for audit and lifecycle management. For more information, see Data source management.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

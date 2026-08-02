@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-002
 slug: on-premises-data-gateway-manual-update-preview
-title: On-premises data gateway manual update (Preview)
+title: Manual update for the on-premises data gateway
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/manual-update-for-on-premises-data-gateway-public-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/manual-update-for-on-premises-data-gateway-public-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:4cd43e2e2c39cb0e7fdf4bb085d1468c7a72ce53d5a2929762fd44fe3de2f319
+content_hash: sha256:4f301c1840564855ba831798ef39586829d19b2e63299b58df0f67dcbe124609
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     administrators to trigger gateway updates through the Fabric portal, API, or PowerShell
     scripts on their own schedule. For more information, see Update an on-premises data gateway.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:4f301c1840564855ba831798ef39586829d19b2e63299b58df0f67dcbe124609
+  title_snapshot: Manual update for the on-premises data gateway
+  summary_snapshot: On-premises data gateway manual update (Preview) Manual update for the
+    on-premises data gateway is now in preview, allowing administrators to trigger gateway
+    updates through the Fabric portal, API, or PowerShell scripts on their own schedule. For
+    more information, see Update an on-premises data gateway.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

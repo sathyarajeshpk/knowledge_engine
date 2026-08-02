@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-040
 slug: org-app-audiences-are-now-in-mobile-apps
-title: Org app audiences are now in mobile apps
+title: View org apps in the Power BI mobile apps
 source_name: powerbi-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/power-bi/explore-reports/mobile/mobile-apps-view-phone-report
 announcement_url: https://learn.microsoft.com/en-us/power-bi/explore-reports/mobile/mobile-apps-view-phone-report
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:94619c0c513eef4b33e773a21eeac276134a2525f26e6ffeb0897f544228ca14
+content_hash: sha256:024b87107339fde959cd8afdb7fa686dabdc66254518849b57eef56a978367f2
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,18 @@ revisions:
     people on smaller screens. For more information, see View org apps in the Power BI mobile
     apps.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:024b87107339fde959cd8afdb7fa686dabdc66254518849b57eef56a978367f2
+  title_snapshot: View org apps in the Power BI mobile apps
+  summary_snapshot: Org app audiences are now in mobile apps Org app audiences in the Power
+    BI mobile app extend a tailored org app experience to users on iOS and Android. Mobile
+    and tablet users can open an org app and see content based on their assigned audience,
+    delivering the right content to the right people on smaller screens. For more information,
+    see View org apps in the Power BI mobile apps.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

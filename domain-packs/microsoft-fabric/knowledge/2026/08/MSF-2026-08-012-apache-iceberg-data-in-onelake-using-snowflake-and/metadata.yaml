@@ -1,7 +1,8 @@
 schema_version: 1
 id: MSF-2026-08-012
 slug: apache-iceberg-data-in-onelake-using-snowflake-and
-title: Apache Iceberg data in OneLake using Snowflake and shortcuts (Preview)
+title: consume Apache Iceberg-formatted data across Microsoft Fabric with no data movement
+  or duplication
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/store-and-use-your-snowflake-iceberg-data-in-onelake?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/store-and-use-your-snowflake-iceberg-data-in-onelake?ft=All
@@ -11,7 +12,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:1715b00a7db5cad57c8a4c913ce5eaec03bcb92c00bdc9fb2fe86b2f6af9f08a
+content_hash: sha256:9fe6fbd8c61af0077d72aebfc5274e27681ae2ebf213c85e4e6a2fbd410d66b4
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +58,18 @@ revisions:
     with no data movement or duplication, plus Snowflake added the ability to write Iceberg
     tables directly to OneLake. For more information, see Use Apache Iceberg tables with OneLake.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:9fe6fbd8c61af0077d72aebfc5274e27681ae2ebf213c85e4e6a2fbd410d66b4
+  title_snapshot: consume Apache Iceberg-formatted data across Microsoft Fabric with no data
+    movement or duplication
+  summary_snapshot: Apache Iceberg data in OneLake using Snowflake and shortcuts (Preview)
+    You can now consume Apache Iceberg-formatted data across Microsoft Fabric with no data
+    movement or duplication, plus Snowflake added the ability to write Iceberg tables directly
+    to OneLake. For more information, see Use Apache Iceberg tables with OneLake.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

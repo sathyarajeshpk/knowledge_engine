@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-022
 slug: warehouse-identity-columns-preview
-title: Warehouse IDENTITY columns (Preview)
+title: IDENTITY columns
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/identity-columns-in-fabric-data-warehouse-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/identity-columns-in-fabric-data-warehouse-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:fe1cad50514acfdef4bb74fe95661ea7b790d668bf6ec6a34da7b437e56b6b5a
+content_hash: sha256:1471dcbad2f3ca98760b5fa6f1abdca5142d33b82f98a5ecb739bce5c0edc121
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,18 @@ revisions:
     (Preview) and Use IDENTITY columns to create surrogate keys. You can also learn how to
     Migrate to IDENTITY columns in Fabric Data Warehouse.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:1471dcbad2f3ca98760b5fa6f1abdca5142d33b82f98a5ecb739bce5c0edc121
+  title_snapshot: IDENTITY columns
+  summary_snapshot: Warehouse IDENTITY columns (Preview) IDENTITY columns automatically produce
+    unique values for each new row, eliminating the need for manual key assignments and eliminating
+    the risk of key duplication and key integrity issues. For more information and to get
+    started, see IDENTITY columns (Preview) and Use IDENTITY columns to create surrogate keys.
+    You can also learn how to Migrate to IDENTITY columns in Fabric Data Warehouse.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

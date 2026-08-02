@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-074
 slug: ai-functions-multimodal-support-preview
-title: AI Functions multimodal support (Preview)
+title: Use multimodal input with AI Functions (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-science/ai-functions/multimodal-overview
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-science/ai-functions/multimodal-overview
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:cd3c5e71da115f72195ee9a6589f1c2ae90fbda25b7cfd4d2c865dbb04b5c246
+content_hash: sha256:1534f39eea47ecc248b579cabe81d6c9948211145d05ba6fea1274bb27e7c435
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,16 @@ revisions:
     or PySpark DataFrames with high concurrency by default. For more information, see Use
     multimodal input with AI Functions (Preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:1534f39eea47ecc248b579cabe81d6c9948211145d05ba6fea1274bb27e7c435
+  title_snapshot: Use multimodal input with AI Functions (Preview)
+  summary_snapshot: AI Functions multimodal support (Preview) AI Functions apply one-line,
+    LLM-powered transformations to large pandas or PySpark DataFrames with high concurrency
+    by default. For more information, see Use multimodal input with AI Functions (Preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

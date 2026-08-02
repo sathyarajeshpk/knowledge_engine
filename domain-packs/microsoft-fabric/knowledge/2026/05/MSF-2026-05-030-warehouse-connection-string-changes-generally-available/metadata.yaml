@@ -1,17 +1,17 @@
 schema_version: 1
 id: MSF-2026-05-030
 slug: warehouse-connection-string-changes-generally-available
-title: Warehouse connection string changes (Generally Available)
+title: Connection behavior changes in Fabric Data Warehouse
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Connection-string-changes-in-Fabric-Warehouse-What-to-expect-for/ba-p/5185022
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Connection-string-changes-in-Fabric-Warehouse-What-to-expect-for/ba-p/5185022
-identity_confidence: high
+identity_confidence: medium
 source_authority: official-microsoft
 published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:cd8005ebb6cd1f0b8d4327e3da0017cc9b5aa03500797eb18dc08a0be8be39f8
+content_hash: sha256:8fcd40201885743865ca3d48d3ef0bc366f71be7f59558bc3173c2b34ca89bc4
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -178,4 +178,18 @@ revisions:
     improving predictability for downstream auditing. For more information, see Fabric Data
     Warehouse connectivity and Operation list.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - identity_confidence
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:8fcd40201885743865ca3d48d3ef0bc366f71be7f59558bc3173c2b34ca89bc4
+  title_snapshot: Connection behavior changes in Fabric Data Warehouse
+  summary_snapshot: Warehouse connection string changes (Generally Available) Connection behavior
+    changes in Fabric Data Warehouse make connections deterministic when the InitialCatalog
+    connection string value is ambiguous or missing, improving predictability for downstream
+    auditing. For more information, see Fabric Data Warehouse connectivity and Operation list.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

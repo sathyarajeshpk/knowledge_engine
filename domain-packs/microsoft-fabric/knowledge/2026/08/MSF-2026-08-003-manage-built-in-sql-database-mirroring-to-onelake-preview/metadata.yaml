@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-003
 slug: manage-built-in-sql-database-mirroring-to-onelake-preview
-title: Manage built-in SQL database mirroring to OneLake (preview)
+title: Mirroring Fabric SQL database to OneLake
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/database/sql/mirroring-overview
 announcement_url: https://learn.microsoft.com/en-us/fabric/database/sql/mirroring-overview
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:2f47c57031c8c64b71f23acc1cf787ed6acffc22c006a4fb93d74bcbd0907573
+content_hash: sha256:c0eae825fbd26d0b74933a39c8d416dd43c5c92d83e090e4dc5299b133970800
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,17 @@ revisions:
     mirrored into Fabric OneLake, and start or restart the Mirroring capability using the
     REST API.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:c0eae825fbd26d0b74933a39c8d416dd43c5c92d83e090e4dc5299b133970800
+  title_snapshot: Mirroring Fabric SQL database to OneLake
+  summary_snapshot: Manage built-in SQL database mirroring to OneLake (preview) Mirroring
+    Fabric SQL database to OneLake makes operational data immediately available for analytics
+    and AI, with zero ETL. You can now selectively manage the tables mirrored into Fabric
+    OneLake, and start or restart the Mirroring capability using the REST API.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

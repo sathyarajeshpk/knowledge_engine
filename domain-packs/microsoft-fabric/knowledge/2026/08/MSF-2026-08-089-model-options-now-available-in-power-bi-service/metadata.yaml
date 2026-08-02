@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-089
 slug: model-options-now-available-in-power-bi-service
-title: Model Options now available in Power BI Service
+title: Model options in the Power BI Service
 source_name: powerbi-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/power-bi/transform-model/service-model-options
 announcement_url: https://learn.microsoft.com/en-us/power-bi/transform-model/service-model-options
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:a84cca94f311186e1e8163b09e8772f4c5de7febcdce81d738e545a51ee88e66
+content_hash: sha256:559f44a9cd7b83f969260e2721d4f4c862c005e0a0b6a4af6c6a20749112975d
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     settings, DirectQuery connections, and maximum connections per data source. For more information,
     see Model options in the Power BI Service.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:559f44a9cd7b83f969260e2721d4f4c862c005e0a0b6a4af6c6a20749112975d
+  title_snapshot: Model options in the Power BI Service
+  summary_snapshot: Model Options now available in Power BI Service The Model options dialog
+    is now available directly in web modeling, providing control over type detection, relationships,
+    time intelligence, parallel loading, locale settings, DirectQuery connections, and maximum
+    connections per data source. For more information, see Model options in the Power BI Service.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

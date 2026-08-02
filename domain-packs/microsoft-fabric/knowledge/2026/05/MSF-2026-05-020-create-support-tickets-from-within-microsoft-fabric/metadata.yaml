@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-020
 slug: create-support-tickets-from-within-microsoft-fabric
-title: Create support tickets from within Microsoft Fabric (Generally Available)
+title: Ticket creation from within Microsoft Fabric (Generally Available)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Create-support-tickets-from-within-Microsoft-Fabric-Generally/ba-p/5183100
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Create-support-tickets-from-within-Microsoft-Fabric-Generally/ba-p/5183100
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:ead7a953eb7ed50789732ca557ed0218913fc386d066563b2af15fbbf31a2648
+content_hash: sha256:87d770ccc2a9d37586ca8c58b8f3d53be35632874668ec85215feae5470e6293
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -60,4 +60,20 @@ revisions:
     Help" information tenant setting. For more information, see Create a Fabric and Power
     BI support ticket and Publish "Get Help" information.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:87d770ccc2a9d37586ca8c58b8f3d53be35632874668ec85215feae5470e6293
+  title_snapshot: Ticket creation from within Microsoft Fabric (Generally Available)
+  summary_snapshot: Create support tickets from within Microsoft Fabric (Generally Available)
+    Ticket creation from within Microsoft Fabric (Generally Available) lets eligible Fabric
+    and Power BI users open support cases from the Help Pane, which collects session metadata
+    such as tenant location and item identifiers and routes them to support engineers without
+    leaving Fabric. Admins control availability through the Publish "Get Help" information
+    tenant setting. For more information, see Create a Fabric and Power BI support ticket
+    and Publish "Get Help" information.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

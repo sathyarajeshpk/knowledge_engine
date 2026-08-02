@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-104
 slug: folder-rest-api-preview
-title: Folder REST API (Preview)
+title: workspace folders
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/fundamentals/workspaces-folders
 announcement_url: https://learn.microsoft.com/en-us/fabric/fundamentals/workspaces-folders
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:1638b7c192a212349aefe0cd034a63b25655070846e06bd51b60e6373e3857b2
+content_hash: sha256:dd733c8949471cd1642927f30d811e4070d03a29a992194b2a4d386aa7714f7d
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,16 @@ revisions:
     and integrate with other systems and tools. The Folder Rest API is now in preview. To
     get started, see Fabric REST API Folders.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:dd733c8949471cd1642927f30d811e4070d03a29a992194b2a4d386aa7714f7d
+  title_snapshot: workspace folders
+  summary_snapshot: Folder REST API (Preview) You can now create and manage workspace folders
+    in automation scenarios and integrate with other systems and tools. The Folder Rest API
+    is now in preview. To get started, see Fabric REST API Folders.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

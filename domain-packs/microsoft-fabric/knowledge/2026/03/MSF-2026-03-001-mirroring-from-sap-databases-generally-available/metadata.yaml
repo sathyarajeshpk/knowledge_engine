@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-03-001
 slug: mirroring-from-sap-databases-generally-available
-title: Mirroring from SAP databases (Generally Available)
+title: Mirroring SAP
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/mirroring/sap
 announcement_url: https://learn.microsoft.com/en-us/fabric/mirroring/sap
@@ -11,7 +11,7 @@ published_date: 2026-03-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:6367a3a0e3b55b9b0683b873c61d98700b5f68405cbf45ca9cc8de274b6dbf7e
+content_hash: sha256:1939c40a4586079581efdd4c6dd714ea2da1ce291c948b992f3d4a3a85513681
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,17 @@ revisions:
     AI, data engineering, data science, and data sharing. For more information, see Mirroring
     SAP.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:1939c40a4586079581efdd4c6dd714ea2da1ce291c948b992f3d4a3a85513681
+  title_snapshot: Mirroring SAP
+  summary_snapshot: Mirroring from SAP databases (Generally Available) You can continuously
+    replicate your SAP data directly into Fabric's OneLake. Once in Fabric, you can take advantage
+    of powerful capabilities for business intelligence, AI, data engineering, data science,
+    and data sharing. For more information, see Mirroring SAP.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

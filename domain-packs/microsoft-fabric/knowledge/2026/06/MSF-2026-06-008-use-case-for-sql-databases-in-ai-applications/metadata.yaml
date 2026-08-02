@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-008
 slug: use-case-for-sql-databases-in-ai-applications
-title: Use case for SQL databases in AI applications
+title: use a Fabric SQL database in AI applications
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/database/sql/use-case-ai-application
 announcement_url: https://learn.microsoft.com/en-us/fabric/database/sql/use-case-ai-application
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:cd29119b7ea312627174792367191ca0447fad5e252d79f002bc745b7a190c7a
+content_hash: sha256:38fe4502f374bd6a01f755a8c67119eab81a3d89ed4c79441d3902675f5234a8
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     scalar functions, RAG-ready architecture, LangChain and Semantic Kernel, and Fabric platform
     integration.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:38fe4502f374bd6a01f755a8c67119eab81a3d89ed4c79441d3902675f5234a8
+  title_snapshot: use a Fabric SQL database in AI applications
+  summary_snapshot: Use case for SQL databases in AI applications The latest in a series of
+    articles, read the many ways you can use a Fabric SQL database in AI applications, including
+    for the native vector data type and vector scalar functions, RAG-ready architecture, LangChain
+    and Semantic Kernel, and Fabric platform integration.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-019
 slug: data-factory-sharepoint-data-source-site-picker-preview
-title: Data Factory SharePoint data source site picker (Preview)
+title: SharePoint Site Picker (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/sharepoint-site-picker-for-easily-connecting-sharepoint-data-in-microsoft-fabric-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/sharepoint-site-picker-for-easily-connecting-sharepoint-data-in-microsoft-fabric-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:a380882adb5ee40791967a0f1e2f9ff5e81b3a4fe0b9f96202765d56d2594a76
+content_hash: sha256:593ddfe190baf9892ece593f4911c36b818c225fd465c4d6a03331bf6ae6b2cc
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,17 @@ revisions:
     browsable, searchable dropdown for selecting SharePoint sites across Dataflow Gen2, Pipelines,
     Copy job, and Lakehouse shortcuts. For more information, see SharePoint Folder connector.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:593ddfe190baf9892ece593f4911c36b818c225fd465c4d6a03331bf6ae6b2cc
+  title_snapshot: SharePoint Site Picker (Preview)
+  summary_snapshot: Data Factory SharePoint data source site picker (Preview) The SharePoint
+    Site Picker (Preview) replaces manual URL entry with a browsable, searchable dropdown
+    for selecting SharePoint sites across Dataflow Gen2, Pipelines, Copy job, and Lakehouse
+    shortcuts. For more information, see SharePoint Folder connector.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

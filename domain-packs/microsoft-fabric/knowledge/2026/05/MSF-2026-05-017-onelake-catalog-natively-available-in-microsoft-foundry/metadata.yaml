@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-017
 slug: onelake-catalog-natively-available-in-microsoft-foundry
-title: OneLake catalog natively available in Microsoft Foundry (Generally Available)
+title: The OneLake catalog is now natively available in Microsoft Foundry
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/OneLake-catalog-is-now-natively-available-in-Foundry-Generally/ba-p/5178376
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/OneLake-catalog-is-now-natively-available-in-Foundry-Generally/ba-p/5178376
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:59eb066792c945b23e6e981dfce9b7df0c1b2c140e4978dde39b5c72be87fcd9
+content_hash: sha256:e038a8fe1af1738a107896105e8becca9d940d8b23e9ae5e795947ec53c458a9
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,18 @@ revisions:
     knowledge sources without leaving the project. For more information, see OneLake for Microsoft
     Foundry.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:e038a8fe1af1738a107896105e8becca9d940d8b23e9ae5e795947ec53c458a9
+  title_snapshot: The OneLake catalog is now natively available in Microsoft Foundry
+  summary_snapshot: OneLake catalog natively available in Microsoft Foundry (Generally Available)
+    The OneLake catalog is now natively available in Microsoft Foundry, so AI builders can
+    browse and select OneLake data directly inside Foundry, evaluate ownership, endorsement,
+    sensitivity, and location signals in place, and turn governed assets into knowledge sources
+    without leaving the project. For more information, see OneLake for Microsoft Foundry.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-070
 slug: max-vcores-limit-option-in-sql-databases-preview
-title: Max vCores limit option in SQL databases (Preview)
+title: Max vCores limit option (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/compute-auto-scaling-choices-to-better-optimize-price-performance-for-sql-databases-in-microsoft-fabric-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/compute-auto-scaling-choices-to-better-optimize-price-performance-for-sql-databases-in-microsoft-fabric-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:a0d8ae84301a0e8f10d0f7854721cfc7ec83ba5d65cf950600ccdf4abc14f666
+content_hash: sha256:300417f4a460d69fb56118686161e95905592ff8711e06b61c6180e1b6df366f
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -56,4 +56,17 @@ revisions:
     at 4 or 32 vCores to control costs and protect shared capacities from noisy-neighbor scenarios.
     For more information, see Control compute usage.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:300417f4a460d69fb56118686161e95905592ff8711e06b61c6180e1b6df366f
+  title_snapshot: Max vCores limit option (Preview)
+  summary_snapshot: Max vCores limit option in SQL databases (Preview) The Max vCores limit
+    option (Preview) lets you cap SQL database compute at 4 or 32 vCores to control costs
+    and protect shared capacities from noisy-neighbor scenarios. For more information, see
+    Control compute usage.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

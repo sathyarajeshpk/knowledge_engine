@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-001
 slug: data-replication-from-lakehouse-with-delta-change-feed
-title: Data replication from Lakehouse with Delta Change Feed (Preview)
+title: Data Replication from Fabric Lakehouse with Delta Change Data Feed (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/september-2025-fabric-feature-summary?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/september-2025-fabric-feature-summary?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:c175ce92d28c4e8174b65349329edb10fb0bf4e2caf7a3963a0a1ba8e7a024da
+content_hash: sha256:d7aebdb172a9a9193b2687ffcc7dfed69fe72930d9f69d2f5a2083f7b32fed6c
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     Lakehouse via Delta Change Data Feed (CDF), to supported destinations. For more information,
     see Data Replication from Fabric Lakehouse with Delta Change Data Feed (Preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:d7aebdb172a9a9193b2687ffcc7dfed69fe72930d9f69d2f5a2083f7b32fed6c
+  title_snapshot: Data Replication from Fabric Lakehouse with Delta Change Data Feed (Preview)
+  summary_snapshot: Data replication from Lakehouse with Delta Change Feed (Preview) The Fabric
+    Lakehouse Table connector provides changed data from a Fabric Lakehouse via Delta Change
+    Data Feed (CDF), to supported destinations. For more information, see Data Replication
+    from Fabric Lakehouse with Delta Change Data Feed (Preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

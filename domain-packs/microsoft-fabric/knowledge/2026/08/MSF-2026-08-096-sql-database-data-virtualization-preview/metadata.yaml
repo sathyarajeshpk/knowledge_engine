@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-096
 slug: sql-database-data-virtualization-preview
-title: SQL database data virtualization (Preview)
+title: Data virtualization (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/database/sql/data-virtualization
 announcement_url: https://learn.microsoft.com/en-us/fabric/database/sql/data-virtualization
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:3a7d5af31baa721c440441826713a0a789d4a5850d766bb19dbdba1791d3a48b
+content_hash: sha256:65ae86bc61ce75077d84c1d9d472e3313bdc735f7e0de54382cfd79e28ba9e6d
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,18 @@ revisions:
     (T-SQL) queries on files that store data in common data formats in OneLake. You can combine
     this data with locally stored relational data by using joins.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:65ae86bc61ce75077d84c1d9d472e3313bdc735f7e0de54382cfd79e28ba9e6d
+  title_snapshot: Data virtualization (preview)
+  summary_snapshot: SQL database data virtualization (Preview) Data virtualization (preview)
+    in SQL database enables querying external data stored in OneLake using T-SQL. With data
+    virtualization syntax, you can execute Transact-SQL (T-SQL) queries on files that store
+    data in common data formats in OneLake. You can combine this data with locally stored
+    relational data by using joins.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

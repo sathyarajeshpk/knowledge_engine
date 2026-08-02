@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:a37159fe3b49158bd70bc23523c860c3abaa7d868c3f5046db64b5573f89c588
+content_hash: sha256:71676b3f2246bf101f47418fbb5fffa574fa86b09adfaec9f1de9aa85ef349fb
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,16 @@ revisions:
     distance, Levenshtein similarity, and Jaro–Winkler similarity), Concatenation ( \ \ and
     \ \ = ), and Unicode construction (UNISTR).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:71676b3f2246bf101f47418fbb5fffa574fa86b09adfaec9f1de9aa85ef349fb
+  title_snapshot: New string functions and operators (Preview)
+  summary_snapshot: New string functions and operators (Preview) expand the Fabric Data Warehouse
+    T‑SQL language with String matching functions including (Levenshtein distance, Jaro–Winkler
+    distance, Levenshtein similarity, and Jaro–Winkler similarity), Concatenation ( || and
+    ||= ), and Unicode construction (UNISTR).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

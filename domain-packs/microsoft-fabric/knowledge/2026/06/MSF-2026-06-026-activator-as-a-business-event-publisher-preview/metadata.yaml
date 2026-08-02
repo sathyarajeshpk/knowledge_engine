@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-026
 slug: activator-as-a-business-event-publisher-preview
-title: Activator as a Business Event Publisher (Preview)
+title: Using Activator as a Business Event publisher (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Turn-insights-into-signals-with-Activator-as-a-Business-Event/ba-p/5190248
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Turn-insights-into-signals-with-Activator-as-a-Business-Event/ba-p/5190248
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:457c71b37106c84a15c90611375b62ad135bfe07a707abe144173e032f272aed
+content_hash: sha256:0732eaeecf411d9f8daf858aa5ab8fdc3f10c6355d10880bdbc34d1f72390ac7
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -60,4 +60,19 @@ revisions:
     discoverable, and consumable across your organization. For more information, see What
     is Fabric Activator? and Business events overview (Preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:0732eaeecf411d9f8daf858aa5ab8fdc3f10c6355d10880bdbc34d1f72390ac7
+  title_snapshot: Using Activator as a Business Event publisher (Preview)
+  summary_snapshot: Activator as a Business Event Publisher (Preview) Using Activator as a
+    Business Event publisher (Preview) shows how Activator rules in Power BI reports, Real-Time
+    Dashboards, KQL queries, and Fabric Warehouse SQL queries emit structured, governed business
+    events into Real-Time hub, so signals are persistent, discoverable, and consumable across
+    your organization. For more information, see What is Fabric Activator? and Business events
+    overview (Preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

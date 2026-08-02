@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-016
 slug: multiple-schema-inferencing-in-eventstream-preview
-title: Multiple-Schema Inferencing in Eventstream (Preview)
+title: Multiple schema inferencing (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/process-events-with-multiple-schemas
 announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/process-events-with-multiple-schemas
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:3f3fa74b41f9ee27f8734fbc0f1c8f9f242725b77aa6ec9deea277c8e0a7ddaa
+content_hash: sha256:adb5dcc5d01baa3405277fb1ef667494df42712252ea8f8999d031f10a29ba1b
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,17 @@ revisions:
     For more information, see Enhancing Data Transformation Flexibility with Multiple-Schema
     Inferencing in Eventstream (Preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:adb5dcc5d01baa3405277fb1ef667494df42712252ea8f8999d031f10a29ba1b
+  title_snapshot: Multiple schema inferencing (preview)
+  summary_snapshot: Multiple-Schema Inferencing in Eventstream (Preview) Multiple schema inferencing
+    (preview) lets you work with multiple data sources that emit varying schemas by inferring
+    and managing multiple schemas simultaneously. For more information, see Enhancing Data
+    Transformation Flexibility with Multiple-Schema Inferencing in Eventstream (Preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-052
 slug: workspace-customer-managed-keys-for-byok-preview
-title: Workspace customer-managed keys for BYOK (Preview)
+title: Workspace CMK for BYOK (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/workspace-customer-managed-keys-for-byok-in-microsoft-fabric-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/workspace-customer-managed-keys-for-byok-in-microsoft-fabric-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:ac90c4ea75acc80e987977aa6d1139b40e65b42a2b3c71fea06b9732ef577430
+content_hash: sha256:aad48dc390a75c03c56a5f11020be05b77b1d3329d8107ec24c131fb4e42479e
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,17 @@ revisions:
     Azure Key Vault keys without dedicated capacities. For more information, see Customer-managed
     keys for Fabric workspaces.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:aad48dc390a75c03c56a5f11020be05b77b1d3329d8107ec24c131fb4e42479e
+  title_snapshot: Workspace CMK for BYOK (Preview)
+  summary_snapshot: Workspace customer-managed keys for BYOK (Preview) Workspace CMK for BYOK
+    (Preview) enables workspace-level customer-managed key encryption in BYOK-enabled Fabric
+    capacities, so you can use the same or separate Azure Key Vault keys without dedicated
+    capacities. For more information, see Customer-managed keys for Fabric workspaces.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

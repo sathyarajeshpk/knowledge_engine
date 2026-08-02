@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-105
 slug: measure-descriptions-with-triple-slash-comments
-title: Measure descriptions with triple-slash comments
+title: Work with DAX query view in Power BI
 source_name: powerbi-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/power-bi/transform-model/dax-query-view
 announcement_url: https://learn.microsoft.com/en-us/power-bi/transform-model/dax-query-view
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:522d6d16f84096ccc527c24ffe3fbe530a642b47c3b08d377e1eb8a297c4811c
+content_hash: sha256:f4edbd026e7393ab2e3d66f9cd09c05bea217671ef10e99245d64e5237d1dc55
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,18 @@ revisions:
     in DAX query view, Model Explorer, and the Data pane. For more information, see Work with
     DAX query view in Power BI.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:f4edbd026e7393ab2e3d66f9cd09c05bea217671ef10e99245d64e5237d1dc55
+  title_snapshot: Work with DAX query view in Power BI
+  summary_snapshot: Measure descriptions with triple-slash comments Add measure descriptions
+    using /// comment lines directly above your MEASURE definition in DAX query view, using
+    the same syntax TMDL supports. Select Update model with changes and the description is
+    written into the model. Descriptions appear in tooltips in DAX query view, Model Explorer,
+    and the Data pane. For more information, see Work with DAX query view in Power BI.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-07-014
 slug: plan-generally-available
-title: Plan (Generally Available)
+title: Plan in Fabric IQ (Generally Available)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Bring-Enterprise-planning-to-the-AI-Era-with-Planning-in/ba-p/5326315
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Bring-Enterprise-planning-to-the-AI-Era-with-Planning-in/ba-p/5326315
@@ -11,7 +11,7 @@ published_date: 2026-07-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:2e465f5deca766e37f90c58a0c37224ce255084fd437d3b70fa40cbe0f95798d
+content_hash: sha256:8db703adbef92d19bd440a79c6a51ed72adca36abe081e0da42acd4c002037b6
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -56,4 +56,16 @@ revisions:
     for collaborative planning, reporting, analytics, data integration, and management. For
     more information, see What is plan?
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:8db703adbef92d19bd440a79c6a51ed72adca36abe081e0da42acd4c002037b6
+  title_snapshot: Plan in Fabric IQ (Generally Available)
+  summary_snapshot: Plan (Generally Available) Plan in Fabric IQ (Generally Available) is
+    a unified no-code platform for collaborative planning, reporting, analytics, data integration,
+    and management. For more information, see What is plan?
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

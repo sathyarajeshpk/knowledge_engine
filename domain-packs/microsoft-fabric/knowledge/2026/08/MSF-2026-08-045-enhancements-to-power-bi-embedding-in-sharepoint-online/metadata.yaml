@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-045
 slug: enhancements-to-power-bi-embedding-in-sharepoint-online
-title: Enhancements to Power BI embedding in SharePoint Online
+title: Add a Power BI report to SharePoint Online
 source_name: powerbi-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-embed-report-spo
 announcement_url: https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-embed-report-spo
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:378f4056c40cfa2783abc4857a2da5db93a7e4da1817a4e8f6d24409a0cfbcf1
+content_hash: sha256:c02c0eedc5be5b610adddf08edaeda3862720c2eb570447aa60510fdcac6f80b
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     Embed a single visual toggle. For more information, see Add a Power BI report to SharePoint
     Online.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:c02c0eedc5be5b610adddf08edaeda3862720c2eb570447aa60510fdcac6f80b
+  title_snapshot: Add a Power BI report to SharePoint Online
+  summary_snapshot: Enhancements to Power BI embedding in SharePoint Online A new UI lets
+    you directly select the workspace you want to embed in SharePoint instead of copying and
+    pasting the full URL. You can now embed a visual by selecting the Embed a single visual
+    toggle. For more information, see Add a Power BI report to SharePoint Online.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

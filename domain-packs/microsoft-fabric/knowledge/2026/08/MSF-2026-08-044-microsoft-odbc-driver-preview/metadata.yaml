@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-044
 slug: microsoft-odbc-driver-preview
-title: Microsoft ODBC Driver (Preview)
+title: Microsoft ODBC Driver for Fabric Data Engineering (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/microsoft-odbc-driver-for-microsoft-fabric-data-engineering-preview
 announcement_url: https://blog.fabric.microsoft.com/blog/microsoft-odbc-driver-for-microsoft-fabric-data-engineering-preview
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:b9524ec4c020233d7215ce9d21a92823533c4a2f0448c0de055ccf2940aa5d48
+content_hash: sha256:44348577ebd38d444709a99c4aafa47fbc1f6f160c6e4acbcd297421042e3129
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -60,4 +60,18 @@ revisions:
     and async prefetch. For more information, see Microsoft ODBC driver for Microsoft Fabric
     Data Engineering (Preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:44348577ebd38d444709a99c4aafa47fbc1f6f160c6e4acbcd297421042e3129
+  title_snapshot: Microsoft ODBC Driver for Fabric Data Engineering (Preview)
+  summary_snapshot: Microsoft ODBC Driver (Preview) The Microsoft ODBC Driver for Fabric Data
+    Engineering (Preview) enables .NET, Python, and other ODBC-compatible applications and
+    BI tools to connect to Spark SQL in Fabric through Livy APIs with Microsoft Entra ID authentication,
+    session reuse, and async prefetch. For more information, see Microsoft ODBC driver for
+    Microsoft Fabric Data Engineering (Preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

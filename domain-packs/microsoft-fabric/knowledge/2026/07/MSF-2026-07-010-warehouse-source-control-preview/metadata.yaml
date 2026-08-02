@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-07-010
 slug: warehouse-source-control-preview
-title: Warehouse source control (Preview)
+title: Source control with Warehouse (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-warehouse/development-deployment
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-warehouse/development-deployment
@@ -11,7 +11,7 @@ published_date: 2026-07-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:39831ba40034bcf837f76f55f73f5e6af853cd8dd78d0dffd26b5208966a7f69
+content_hash: sha256:be86f9b0c8b0829f798bcf5d68a93ba979e52d3d4c90b092bf7093e9e28019ac
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -208,4 +208,17 @@ revisions:
     available inside Visual Studio Code. For more information on warehouse source control,
     see CI/CD with Warehouses in Microsoft Fabric.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:be86f9b0c8b0829f798bcf5d68a93ba979e52d3d4c90b092bf7093e9e28019ac
+  title_snapshot: Source control with Warehouse (preview)
+  summary_snapshot: Warehouse source control (Preview) By using Source control with Warehouse
+    (preview), you can manage development and deployment of versioned warehouse objects. Use
+    the SQL Database Projects extension available inside Visual Studio Code. For more information
+    on warehouse source control, see CI/CD with Warehouses in Microsoft Fabric.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

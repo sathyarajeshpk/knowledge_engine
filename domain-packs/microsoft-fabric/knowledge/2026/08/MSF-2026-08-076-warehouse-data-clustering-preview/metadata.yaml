@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-076
 slug: warehouse-data-clustering-preview
-title: Warehouse data clustering (Preview)
+title: Data clustering in Fabric Data Warehouse
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-warehouse/data-clustering
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-warehouse/data-clustering
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:6406815bc1d163493c85e91c232637974eb193013363d2b690c35eebd121b02a
+content_hash: sha256:d54ea1667c80f992407d583312f4d77d0a206573a493853bbaca584e3ae68f64
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,18 @@ revisions:
     to get started, see Data clustering in Fabric Data Warehouse and Use data clustering in
     Fabric Data Warehouse (Preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:d54ea1667c80f992407d583312f4d77d0a206573a493853bbaca584e3ae68f64
+  title_snapshot: Data clustering in Fabric Data Warehouse
+  summary_snapshot: Warehouse data clustering (Preview) Data clustering is a technique used
+    to organize and store data based on similarity. Data clustering improves query performance
+    and reduces compute and storage access costs for queries by grouping similar records together.
+    For more information and to get started, see Data clustering in Fabric Data Warehouse
+    and Use data clustering in Fabric Data Warehouse (Preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

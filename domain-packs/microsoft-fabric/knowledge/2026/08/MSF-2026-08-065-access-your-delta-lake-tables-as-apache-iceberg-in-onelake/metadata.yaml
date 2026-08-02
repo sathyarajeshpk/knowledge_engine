@@ -1,7 +1,8 @@
 schema_version: 1
 id: MSF-2026-08-065
 slug: access-your-delta-lake-tables-as-apache-iceberg-in-onelake
-title: Access your Delta Lake tables as Apache Iceberg in OneLake (Preview)
+title: OneLake now lets you access your Delta Lake tables using Apache Iceberg compatible
+  readers
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/new-in-onelake-access-your-delta-lake-tables-as-iceberg-automatically?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/new-in-onelake-access-your-delta-lake-tables-as-iceberg-automatically?ft=All
@@ -11,7 +12,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:7ee8b3741722fca1fe0267b0c9a066603b91189347d5d58e27828d6a29e13ff2
+content_hash: sha256:77e456b20e3377c84b4a9e3c4ac7e07e80b3e0c2a541b75b98aec0ef9d6b7db2
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +58,17 @@ revisions:
     compatible readers, automatically, without data movement or duplication. To get started,
     see Use Iceberg tables with OneLake.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:77e456b20e3377c84b4a9e3c4ac7e07e80b3e0c2a541b75b98aec0ef9d6b7db2
+  title_snapshot: OneLake now lets you access your Delta Lake tables using Apache Iceberg
+    compatible readers
+  summary_snapshot: Access your Delta Lake tables as Apache Iceberg in OneLake (Preview) OneLake
+    now lets you access your Delta Lake tables using Apache Iceberg compatible readers, automatically,
+    without data movement or duplication. To get started, see Use Iceberg tables with OneLake.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

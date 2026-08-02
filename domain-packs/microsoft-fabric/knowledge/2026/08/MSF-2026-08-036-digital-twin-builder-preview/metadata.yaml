@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-036
 slug: digital-twin-builder-preview
-title: Digital twin builder (Preview)
+title: Digital twin builder (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/digital-twin-builder-in-microsoft-fabric-real-time-intelligence-revolutionizing-digital-twin-creation-and-management?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/digital-twin-builder-in-microsoft-fabric-real-time-intelligence-revolutionizing-digital-twin-creation-and-management?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:1a5e6ea7becea08d0abd633e9cacad48fb794e024fc985eafb2b7b67c5ef7e14
+content_hash: sha256:9ddca5ae669196a1bbb116e9374ffa555c645dbacb57b600c0fd6a58d0b6617a
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,18 @@ revisions:
     to optimize physical operations using data. For more information, see What is digital
     twin builder (preview)?
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:9ddca5ae669196a1bbb116e9374ffa555c645dbacb57b600c0fd6a58d0b6617a
+  title_snapshot: Digital twin builder (preview)
+  summary_snapshot: Digital twin builder (Preview) Digital twin builder (preview) is an item
+    within the Real-Time Intelligence workload. Digital twins create data-driven, real-time
+    representations of entities. It's a data modeling item that creates digital representations
+    of real-world environments, to optimize physical operations using data. For more information,
+    see What is digital twin builder (preview)?
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

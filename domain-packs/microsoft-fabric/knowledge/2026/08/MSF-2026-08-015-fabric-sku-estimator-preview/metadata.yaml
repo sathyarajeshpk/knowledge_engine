@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-015
 slug: fabric-sku-estimator-preview
-title: Fabric SKU estimator (Preview)
+title: Microsoft Fabric SKU estimator
 source_name: fabric-whats-new-markdown
 source_url: https://www.microsoft.com/microsoft-fabric/capacity-estimator
 announcement_url: https://www.microsoft.com/microsoft-fabric/capacity-estimator
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:94c2ec38b4a62e2ea07c379e506a2a0cbcfa4013fcf51c8ad83e143af8b10248
+content_hash: sha256:7ada455fe6befa7133d99e0fe7fd5b6645c1d44b4181b93233e1986e1a23be83
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     see Introducing the Microsoft Fabric SKU estimator (preview) and Mastering SKU Estimations
     with the Microsoft Fabric SKU Estimator.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:7ada455fe6befa7133d99e0fe7fd5b6645c1d44b4181b93233e1986e1a23be83
+  title_snapshot: Microsoft Fabric SKU estimator
+  summary_snapshot: Fabric SKU estimator (Preview) The Microsoft Fabric SKU estimator, now
+    available in preview, is an enhanced version of the previously introduced Microsoft Fabric
+    Capacity Calculator. For more information, see Introducing the Microsoft Fabric SKU estimator
+    (preview) and Mastering SKU Estimations with the Microsoft Fabric SKU Estimator.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

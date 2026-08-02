@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-092
 slug: update-your-report-defaults-and-use-color-palettes-with
-title: Update your report defaults and use color palettes with modern visual defaults (Preview)
+title: Visual defaults in Power BI reports
 source_name: powerbi-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/power-bi/create-reports/power-bi-reports-visual-defaults
 announcement_url: https://learn.microsoft.com/en-us/power-bi/create-reports/power-bi-reports-visual-defaults
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:3cd781dd17df797b43142e1a0181880847b9b48016010fe3dc9d55cae47bd2fb
+content_hash: sha256:41b602bed531efb4bd0718f14ffde778ada78458811834d0e47e380c537b6b6b
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -62,4 +62,21 @@ revisions:
     organizational themes. For more information, see Visual defaults in Power BI reports.
     ✔️
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:41b602bed531efb4bd0718f14ffde778ada78458811834d0e47e380c537b6b6b
+  title_snapshot: Visual defaults in Power BI reports
+  summary_snapshot: Update your report defaults and use color palettes with modern visual
+    defaults (Preview) Modern Visual Defaults now includes a Customize current theme experience
+    in the Format pane. Adjust report-wide defaults for visuals, choose color palettes, and
+    control visual elements like background, border, header icons, tooltips, and shadow across
+    your entire report. Update page size, background color, and wallpaper across all pages
+    at once. When finished, export your custom theme for use in other reports or add it to
+    organizational themes. For more information, see Visual defaults in Power BI reports.
+    ✔️
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

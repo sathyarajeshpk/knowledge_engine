@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-040
 slug: multi-cloud-data-architecture-patterns-with-fabric-data
-title: Multi-cloud data architecture patterns with Fabric Data Factory (Generally Available)
+title: Multi-cloud data architecture patterns
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Multi-cloud-data-architecture-patterns-using-Fabric-Data-Factory/ba-p/5217279
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Multi-cloud-data-architecture-patterns-using-Fabric-Data-Factory/ba-p/5217279
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:68e379c1c7ead1d7d1449ba46c212b3e6bc274de38af16130031553ed83010c6
+content_hash: sha256:f4e5515441b7e46490bcc3da7793111f7068b8a3fc9fccc887206aea15d8d4ca
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -62,4 +62,20 @@ revisions:
     real-time access with Purview lineage. For more information, see Activity overview and
     Connector overview.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:f4e5515441b7e46490bcc3da7793111f7068b8a3fc9fccc887206aea15d8d4ca
+  title_snapshot: Multi-cloud data architecture patterns
+  summary_snapshot: Multi-cloud data architecture patterns with Fabric Data Factory (Generally
+    Available) Multi-cloud data architecture patterns show how Fabric Data Factory uses native
+    connectors and orchestration activities such as If-Condition, Until, and ForEach with
+    event-based triggers to coordinate workflows across Snowflake, Databricks, Google BigQuery,
+    and Salesforce, and how OneLake shortcuts and mirroring enable zero-copy, near real-time
+    access with Purview lineage. For more information, see Activity overview and Connector
+    overview.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-026
 slug: alter-column-for-fabric-data-warehouse-preview
-title: ALTER COLUMN for Fabric Data Warehouse (Preview)
+title: ALTER TABLE ... ALTER COLUMN (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Simplify-Schema-Changes-in-Fabric-Data-Warehouse-with-ALTER/ba-p/5177593
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Simplify-Schema-Changes-in-Fabric-Data-Warehouse-with-ALTER/ba-p/5177593
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:2966f31e396fb9ed63a677f78aa914db5146e958b48d30a2e44528b5044885de
+content_hash: sha256:f72113f8594dc598b4c8e72c6dbd5670536c094566fd35723a061c545e97714f
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -208,4 +208,18 @@ revisions:
     complete as metadata-only updates without rewriting Parquet files. For more information,
     see ALTER TABLE (Transact-SQL) syntax for warehouse in Fabric.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:f72113f8594dc598b4c8e72c6dbd5670536c094566fd35723a061c545e97714f
+  title_snapshot: ALTER TABLE ... ALTER COLUMN (Preview)
+  summary_snapshot: ALTER COLUMN for Fabric Data Warehouse (Preview) ALTER TABLE ... ALTER
+    COLUMN (Preview) lets you make supported schema changes directly on warehouse tables using
+    familiar T-SQL syntax. Supported scenarios complete as metadata-only updates without rewriting
+    Parquet files. For more information, see ALTER TABLE (Transact-SQL) syntax for warehouse
+    in Fabric.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

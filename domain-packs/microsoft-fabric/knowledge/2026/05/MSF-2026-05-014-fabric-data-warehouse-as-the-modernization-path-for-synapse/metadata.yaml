@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-014
 slug: fabric-data-warehouse-as-the-modernization-path-for-synapse
-title: Fabric Data Warehouse as the modernization path for Synapse Dedicated SQL Pool
+title: Modernizing Synapse Dedicated SQL Pool to Fabric Data Warehouse
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Why-Fabric-Data-Warehouse-is-the-Modernization-Path-for-Synapse/ba-p/5178874
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Why-Fabric-Data-Warehouse-is-the-Modernization-Path-for-Synapse/ba-p/5178874
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:456c0dd8a29ef19056f9c20218f90ee4bd4346164dab077adc2581f2068de29f
+content_hash: sha256:036dc807fb856708e4fcda200b4a4836f2dccf78839b140149ebe3aed311c01d
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -62,4 +62,21 @@ revisions:
     and the AI-assisted Migration Assistant. For more information, see What is Fabric Data
     Warehouse? and Scale your Fabric capacity.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:036dc807fb856708e4fcda200b4a4836f2dccf78839b140149ebe3aed311c01d
+  title_snapshot: Modernizing Synapse Dedicated SQL Pool to Fabric Data Warehouse
+  summary_snapshot: Fabric Data Warehouse as the modernization path for Synapse Dedicated
+    SQL Pool Modernizing Synapse Dedicated SQL Pool to Fabric Data Warehouse outlines how
+    Fabric Data Warehouse addresses common Synapse pain points (pause/resume scaling, hard
+    concurrency limits, manual hash/replicated distribution, architectural sprawl) with non-disruptive
+    online scaling, autonomous workload management, intelligent data distribution, OneLake-based
+    open Delta storage, true data virtualization, near real-time mirroring, and the AI-assisted
+    Migration Assistant. For more information, see What is Fabric Data Warehouse? and Scale
+    your Fabric capacity.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-058
 slug: storytelling-support-for-reports-and-visuals-in-org-apps
-title: Storytelling support for reports and visuals in org apps
+title: Add live Power BI data to PowerPoint
 source_name: powerbi-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-power-bi-powerpoint-add-in-install
 announcement_url: https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-power-bi-powerpoint-add-in-install
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:1cae4ecfbfd1d611f1bdb4ab4db985ae5b10ba9725de7e48b459c471b0cd6fca
+content_hash: sha256:9d53414bae977567eb27aff562988b4532a787f6335fe49f0633590dc11cda53
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -56,4 +56,17 @@ revisions:
     to add live report pages and visuals from org app content into PowerPoint presentations.
     For more information, see Add live Power BI data to PowerPoint.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:9d53414bae977567eb27aff562988b4532a787f6335fe49f0633590dc11cda53
+  title_snapshot: Add live Power BI data to PowerPoint
+  summary_snapshot: Storytelling support for reports and visuals in org apps Reports in org
+    apps now support Storytelling in PowerPoint, allowing users to add live report pages and
+    visuals from org app content into PowerPoint presentations. For more information, see
+    Add live Power BI data to PowerPoint.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

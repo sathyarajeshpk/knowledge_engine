@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-003
 slug: on-premises-data-gateway-may-2026-release
-title: On-premises data gateway May 2026 release
+title: May 2026 on-premises data gateway release
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/On-premises-data-gateway-May-2026-release/ba-p/5190820
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/On-premises-data-gateway-May-2026-release/ba-p/5190820
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:714e7d64ef47d9e877cbb30bf4598e2ae26b86f20c773aad9964cc0bfbad3bee
+content_hash: sha256:3c4cbdf2338329f4f6ce7da44ab163342bb18421522efdddc34880a8397d8447
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -61,4 +61,19 @@ revisions:
     dataflow execution details for unified troubleshooting. For more information, see Update
     an on-premises data gateway.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:3c4cbdf2338329f4f6ce7da44ab163342bb18421522efdddc34880a8397d8447
+  title_snapshot: May 2026 on-premises data gateway release
+  summary_snapshot: On-premises data gateway May 2026 release The May 2026 on-premises data
+    gateway release brings the gateway up to date with the May 2026 Power BI Desktop release
+    and introduces Admin consent for gateway diagnostics with integrated Dataflow Gen2 diagnostics
+    (Preview), so tenant administrators control whether gateway diagnostic data is collected
+    and gateway logs appear alongside dataflow execution details for unified troubleshooting.
+    For more information, see Update an on-premises data gateway.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

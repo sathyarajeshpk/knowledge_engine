@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-090
 slug: workspace-level-surge-protection-preview
-title: Workspace-level surge protection (Preview)
+title: Workspace-level surge protection controls (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/surge-protection-gets-smarter-introducing-workspace-level-controls-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/surge-protection-gets-smarter-introducing-workspace-level-controls-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:875c888e6f96ad78ee08e7cd3b7ebd9717b8041aa95cfee24110a57cb2ca4379
+content_hash: sha256:876edac9f954557d5aa3109d5f9007cfbc30e0a365f835c440e86f1d7a24903a
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,18 @@ revisions:
     thresholds, and mission critical mode to exempt high-priority workspaces from surge protection
     rules. For more information, see Surge protection.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:876edac9f954557d5aa3109d5f9007cfbc30e0a365f835c440e86f1d7a24903a
+  title_snapshot: Workspace-level surge protection controls (Preview)
+  summary_snapshot: Workspace-level surge protection (Preview) Workspace-level surge protection
+    controls (Preview) enable per-workspace CU percentage limits over a rolling 24-hour period,
+    automatic blocking of workspaces exceeding thresholds, and mission critical mode to exempt
+    high-priority workspaces from surge protection rules. For more information, see Surge
+    protection.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

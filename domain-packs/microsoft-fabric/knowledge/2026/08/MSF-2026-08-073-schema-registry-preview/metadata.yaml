@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-073
 slug: schema-registry-preview
-title: Schema Registry (Preview)
+title: Event Schema Registry (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/schema-registry-creating-type-safe-pipelines-using-schemas-and-eventstreams-preview
 announcement_url: https://blog.fabric.microsoft.com/blog/schema-registry-creating-type-safe-pipelines-using-schemas-and-eventstreams-preview
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:0f20010521d9f7bae70649fc9728a83041b5d4a12807f444a4f1526633409439
+content_hash: sha256:154833ee4a6fb1e03b8e7da424d70374c8f133b97436d40e3c46476e3cf3238a
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,17 @@ revisions:
     and validate event schemas in Fabric Eventstreams for type-safe, reliable real-time pipelines.
     For more information, see Schema Registry in Fabric Real-Time Intelligence (preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:154833ee4a6fb1e03b8e7da424d70374c8f133b97436d40e3c46476e3cf3238a
+  title_snapshot: Event Schema Registry (preview)
+  summary_snapshot: Schema Registry (Preview) Event Schema Registry (preview) provides a contract-based
+    way to define and validate event schemas in Fabric Eventstreams for type-safe, reliable
+    real-time pipelines. For more information, see Schema Registry in Fabric Real-Time Intelligence
+    (preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

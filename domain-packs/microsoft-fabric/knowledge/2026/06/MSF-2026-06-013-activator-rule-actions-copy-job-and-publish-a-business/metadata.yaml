@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-013
 slug: activator-rule-actions-copy-job-and-publish-a-business
-title: 'Activator rule actions: Copy job and Publish a business event (Preview)'
+title: Configure actions for Activator rules
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/rule-actions
 announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/rule-actions
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:494f344da56d807d7dfcad218977314cff7765f1e39fd11f1bc5401e2d3c859c
+content_hash: sha256:e96d877a9e7633423e0ad0db01dc115a413e72a25c48a7f7a26c7e079b3e5f75
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,18 @@ revisions:
     downstream processes that consume business events. For more information, see Configure
     actions for Activator rules.'
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:e96d877a9e7633423e0ad0db01dc115a413e72a25c48a7f7a26c7e079b3e5f75
+  title_snapshot: Configure actions for Activator rules
+  summary_snapshot: 'Activator rule actions: Copy job and Publish a business event (Preview)
+    Activator rules now support two new actions: Copy job (preview) for copying data between
+    sources and destinations, and Publish a business event (preview) for triggering downstream
+    processes that consume business events. For more information, see Configure actions for
+    Activator rules.'
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

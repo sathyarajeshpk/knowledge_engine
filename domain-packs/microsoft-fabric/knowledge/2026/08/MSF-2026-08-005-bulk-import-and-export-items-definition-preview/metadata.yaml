@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-005
 slug: bulk-import-and-export-items-definition-preview
-title: Bulk import and export items definition (Preview)
+title: Bulk import and export APIs (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/public-apis-bulk-import-and-export-items-definition-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/public-apis-bulk-import-and-export-items-definition-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:912bd824654852efb874e864d8551f0bbeb126d843919d7d28643452cd31481c
+content_hash: sha256:46638c79567908f3fba6e828d3b29e2ad4e2b65e2b31c6b531150f65e662e437
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     deployment, metadata backup, and template provisioning by exporting and importing Fabric
     item definitions in bulk via the REST API. For more information, see Items API reference.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:46638c79567908f3fba6e828d3b29e2ad4e2b65e2b31c6b531150f65e662e437
+  title_snapshot: Bulk import and export APIs (Preview)
+  summary_snapshot: Bulk import and export items definition (Preview) Bulk import and export
+    APIs (Preview) enable workspace migration, CI/CD deployment, metadata backup, and template
+    provisioning by exporting and importing Fabric item definitions in bulk via the REST API.
+    For more information, see Items API reference.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

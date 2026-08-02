@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-023
 slug: my-queries-in-dataflow-gen2-preview
-title: My queries in Dataflow Gen2 (Preview)
+title: My queries (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/From-repetition-to-reuse-accelerate-data-prep-with-My-queries-in/ba-p/5176763
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/From-repetition-to-reuse-accelerate-data-prep-with-My-queries-in/ba-p/5176763
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:fcdde5900b5bdda3c235c48f6fd064eecd20b71cb7dc116182e8bd8371128b4b
+content_hash: sha256:7e47d02987cbe95f55fda933f314cec4dfd7ed070a0073fa169ecadd965c9a2c
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -198,4 +198,18 @@ revisions:
     My workspace, then reuse it across dataflows from the Recents & My Queries module in the
     modern Get data experience. For more information, see My queries (Preview).'
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:7e47d02987cbe95f55fda933f314cec4dfd7ed070a0073fa169ecadd965c9a2c
+  title_snapshot: My queries (Preview)
+  summary_snapshot: 'My queries in Dataflow Gen2 (Preview) My queries (Preview) gives Dataflow
+    Gen2 authors a personal query library: right-click any query and Add to My Queries to
+    save its M code to a per-user folder in My workspace, then reuse it across dataflows from
+    the Recents & My Queries module in the modern Get data experience. For more information,
+    see My queries (Preview).'
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

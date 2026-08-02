@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-05-035
+slug: onelake-item-size-reporting-preview
+title: OneLake item-size reporting (Preview)
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Understand-your-storage-with-OneLake-item-size-reporting-Preview/ba-p/5183716
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Understand-your-storage-with-OneLake-item-size-reporting-Preview/ba-p/5183716
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-01
+discovered_date: 2026-08-02
+date_confidence: exact
+date_precision: month
+content_hash: sha256:3e97d82d1a8c15bbdd3241fe72c7ade210bd369547b305eb6bdc8177098aca69
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:ab38944ba7847adcd88a68d18976e0efd3196a4d62b5a41e376880a7fb885c96
+  discovered_at: '2026-08-02T08:00:14.722353+00:00'
+  source_role: primary
+  selector: h2[Microsoft Fabric platform features] > table > tr (date from cell 0)
+  run_id: run-2026-08-02T08-00-14Z
+url_hash: sha256:ab38944ba7847adcd88a68d18976e0efd3196a4d62b5a41e376880a7fb885c96
+tier: 2
+learning_priority: high
+category: power-bi
+tags:
+- onelake
+- preview
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-02
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:3e97d82d1a8c15bbdd3241fe72c7ade210bd369547b305eb6bdc8177098aca69
+  title_snapshot: OneLake item-size reporting (Preview)
+  summary_snapshot: OneLake item-size reporting (Preview) gives workspace administrators item-level
+    insight into storage usage across OneLake, including system and soft-deleted data, with
+    a unified report and on-demand refresh. For more information, see Get the size of OneLake
+    items.
+  run_id: run-2026-08-02T08-00-14Z
+generation: {}

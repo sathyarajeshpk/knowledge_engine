@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-098
 slug: anomaly-detection-preview
-title: Anomaly detection (Preview)
+title: Anomaly detection in Real-Time Intelligence (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/anomaly-detection
 announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/anomaly-detection
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:ad1ee174f0730e944de66ab8177422094d4c090f47f72b05d82e5bf88a700350
+content_hash: sha256:72a3723354ff2194ca35550f9a14e66c46c70407ec4fe5ce998f0c93fade9d3c
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,18 @@ revisions:
     (Preview). For more information, see AI-Powered Real-Time Intelligence with Anomaly Detection
     (Preview). Billing for Anomaly Detector starts in December.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:72a3723354ff2194ca35550f9a14e66c46c70407ec4fe5ce998f0c93fade9d3c
+  title_snapshot: Anomaly detection in Real-Time Intelligence (Preview)
+  summary_snapshot: Anomaly detection (Preview) With a no-code interface, automatic model
+    selection, and flexible alerts, tracking changes and unexpected events is easy with Anomaly
+    detection in Real-Time Intelligence (Preview). For more information, see AI-Powered Real-Time
+    Intelligence with Anomaly Detection (Preview). Billing for Anomaly Detector starts in
+    December.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

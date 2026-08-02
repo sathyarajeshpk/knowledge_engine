@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-085
 slug: public-api-capabilities-for-dataflow-gen2-dataflows-in
-title: Public API capabilities for Dataflow Gen2 dataflows in Fabric Data Factory (Preview)
+title: preview of the Dataflows Gen 2 public APIs
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-factory/dataflow-gen2-public-apis
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/dataflow-gen2-public-apis
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:cafad2c3623cd247b814c4896122983b13bdd58ac381c2999269a1812a4d32f4
+content_hash: sha256:cf37d3d4a3baceba0508516977df8fe0a06ad98eeefbf0485cf157ab717fe1a7
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -60,4 +60,18 @@ revisions:
     of operations including dataflows CRUD (Create, Read, Update, and Delete), scheduling,
     and monitoring, making it easier for users to manage their data integration processes.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:cf37d3d4a3baceba0508516977df8fe0a06ad98eeefbf0485cf157ab717fe1a7
+  title_snapshot: preview of the Dataflows Gen 2 public APIs
+  summary_snapshot: Public API capabilities for Dataflow Gen2 dataflows in Fabric Data Factory
+    (Preview) This preview of the Dataflows Gen 2 public APIs enables users to create, update,
+    and monitor their data workflows programmatically. The APIs support a wide range of operations
+    including dataflows CRUD (Create, Read, Update, and Delete), scheduling, and monitoring,
+    making it easier for users to manage their data integration processes.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

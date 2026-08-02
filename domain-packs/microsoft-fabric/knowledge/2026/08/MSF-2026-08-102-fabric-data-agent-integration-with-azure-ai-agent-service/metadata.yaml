@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-102
 slug: fabric-data-agent-integration-with-azure-ai-agent-service
-title: Fabric Data Agent integration with Azure AI Agent Service (Preview)
+title: Consume a Fabric Data Agent in Microsoft Copilot Studio (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-science/data-agent-microsoft-copilot-studio
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-science/data-agent-microsoft-copilot-studio
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:55074442e42f4175b51f26d7717f8da088e9f24050cbfb03561c40acb8cd9579
+content_hash: sha256:f13c930ca0feb810a00213c32f519405857d4dd4165f6c70dc5d33727fe6bf80
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,17 @@ revisions:
     Agent in Microsoft Copilot Studio (preview). The Fabric data agent SDK is also available
     in preview.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:f13c930ca0feb810a00213c32f519405857d4dd4165f6c70dc5d33727fe6bf80
+  title_snapshot: Consume a Fabric Data Agent in Microsoft Copilot Studio (preview)
+  summary_snapshot: Fabric Data Agent integration with Azure AI Agent Service (Preview) We're
+    excited to launch the integration of data agents in Fabric with Azure AI Agent Service
+    from Microsoft Foundry. To get started, see Consume a Fabric Data Agent in Microsoft Copilot
+    Studio (preview). The Fabric data agent SDK is also available in preview.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

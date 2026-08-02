@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-024
 slug: real-time-intelligence-cribl-source-preview
-title: Real-Time Intelligence Cribl source (Preview)
+title: Cribl source (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/expanding-real-time-intelligence-data-sources-with-cribl-source-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/expanding-real-time-intelligence-data-sources-with-cribl-source-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:eeebcb67cc0b69c8be474c1bb13a983a8fca435cea407c59544e51400d090df0
+content_hash: sha256:d6eebea602dd86b9ea67c8279c46eab7f9e08487b33fb0faea3bab2485ca84d3
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,18 @@ revisions:
     configuration in Real-Time Hub. For more information, see Add Cribl source to an eventstream
     (preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:d6eebea602dd86b9ea67c8279c46eab7f9e08487b33fb0faea3bab2485ca84d3
+  title_snapshot: Cribl source (Preview)
+  summary_snapshot: Real-Time Intelligence Cribl source (Preview) Cribl source (Preview) enables
+    real-time data to flow into Fabric Eventstream from diverse telemetry and log sources
+    through Cribl Stream, including Syslog, Datadog Agent, Splunk, Open Telemetry, and edge-based
+    sources, with simplified Kafka endpoint configuration in Real-Time Hub. For more information,
+    see Add Cribl source to an eventstream (preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

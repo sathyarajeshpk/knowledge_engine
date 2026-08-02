@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-024
 slug: incremental-liquid-clustering-in-fabric-runtime-2-0
-title: Incremental Liquid Clustering in Fabric Runtime 2.0
+title: Incremental Liquid Clustering
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Incremental-Liquid-Clustering-in-Microsoft-Fabric-Faster-smarter/ba-p/5189122
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Incremental-Liquid-Clustering-in-Microsoft-Fabric-Faster-smarter/ba-p/5189122
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:039a5799e6d393ef7c88ce8341a181733d8da4adcacca0f0e6022ddf8b46f83a
+content_hash: sha256:ecc7550a01005cbb5e37c55d0d08929e6870d0546e9d75859836a3cfc25b3d84
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,20 @@ revisions:
     size. Enabled by default with no configuration changes; use OPTIMIZE table FULL for a
     full recluster. For more information, see Apply liquid clustering on Delta tables.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:ecc7550a01005cbb5e37c55d0d08929e6870d0546e9d75859836a3cfc25b3d84
+  title_snapshot: Incremental Liquid Clustering
+  summary_snapshot: Incremental Liquid Clustering in Fabric Runtime 2.0 Incremental Liquid
+    Clustering in Fabric Runtime 2.0 is a new OPTIMIZE algorithm that processes only unclustered,
+    small, or deletion-vector-heavy files instead of rewriting entire 100-GB groups, with
+    Auto Reclustering to keep layout quality high—delivering up to 8.9x faster clustering
+    and constant-time cost that scales with new data, not table size. Enabled by default with
+    no configuration changes; use OPTIMIZE table FULL for a full recluster. For more information,
+    see Apply liquid clustering on Delta tables.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

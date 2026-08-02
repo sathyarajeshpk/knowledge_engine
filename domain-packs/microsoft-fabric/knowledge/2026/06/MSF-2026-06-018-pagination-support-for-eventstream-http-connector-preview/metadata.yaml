@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-018
 slug: pagination-support-for-eventstream-http-connector-preview
-title: Pagination support for Eventstream HTTP connector (Preview)
+title: add an HTTP source to an eventstream (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/add-source-http
 announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/add-source-http
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:9e9cd426b03b980df9d1d639e066e045fcf2c049e8177c26437c7619705a0170
+content_hash: sha256:51f6ee27d0c72f8826b63aa8f59fe5e574a28cc90db755d296e85c9aa82c02c1
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -188,4 +188,17 @@ revisions:
     REST API responses through page-based or cursor-based pagination, eliminating custom orchestration
     when bringing activity logs, audit records, or operational events into Eventstream.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:51f6ee27d0c72f8826b63aa8f59fe5e574a28cc90db755d296e85c9aa82c02c1
+  title_snapshot: add an HTTP source to an eventstream (preview)
+  summary_snapshot: Pagination support for Eventstream HTTP connector (Preview) You can add
+    an HTTP source to an eventstream (preview) to ingest paginated REST API responses through
+    page-based or cursor-based pagination, eliminating custom orchestration when bringing
+    activity logs, audit records, or operational events into Eventstream.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

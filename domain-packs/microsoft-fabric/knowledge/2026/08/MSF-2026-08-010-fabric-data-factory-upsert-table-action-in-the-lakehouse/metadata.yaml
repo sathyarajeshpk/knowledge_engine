@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-010
 slug: fabric-data-factory-upsert-table-action-in-the-lakehouse
-title: Fabric Data Factory Upsert table action in the Lakehouse Connector (Preview)
+title: Upsert (Preview) table action in the Lakehouse Connector
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/on-premises-data-gateway-june-2025-release?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/on-premises-data-gateway-june-2025-release?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:a4fe887a4b5a7e275374d6a42971edca2b0e121e632107cb12c75e092d7cf8bd
+content_hash: sha256:d7eb855cb3859c6e08db5fb91e165c0c58bd0982a118adff938c60cb874d8808
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -55,4 +55,15 @@ revisions:
   title_snapshot: Fabric Data Factory Upsert table action in the Lakehouse Connector (Preview)
   summary_snapshot: The Upsert (Preview) table action in the Lakehouse Connector is in preview.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:d7eb855cb3859c6e08db5fb91e165c0c58bd0982a118adff938c60cb874d8808
+  title_snapshot: Upsert (Preview) table action in the Lakehouse Connector
+  summary_snapshot: Fabric Data Factory Upsert table action in the Lakehouse Connector (Preview)
+    The Upsert (Preview) table action in the Lakehouse Connector is in preview.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

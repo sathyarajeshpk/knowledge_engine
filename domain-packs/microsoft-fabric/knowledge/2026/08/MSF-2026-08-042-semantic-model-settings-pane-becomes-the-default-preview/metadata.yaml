@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-042
 slug: semantic-model-settings-pane-becomes-the-default-preview
-title: Semantic model settings pane becomes the default (Preview)
+title: Edit semantic models in the Power BI Service
 source_name: powerbi-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/power-bi/transform-model/service-edit-data-models
 announcement_url: https://learn.microsoft.com/en-us/power-bi/transform-model/service-edit-data-models
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:987f005a650e4c688d25f302563184f07d3dc510af90a5b1572fa5379dedf26d
+content_hash: sha256:0d39287bf39e88e33b0ce73d411b92472fa071811b382134766a07b0a37020f3
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,18 @@ revisions:
     refresh schedules, credentials, and other options without leaving your workspace. For
     more information, see Edit semantic models in the Power BI Service. ✔️
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:0d39287bf39e88e33b0ce73d411b92472fa071811b382134766a07b0a37020f3
+  title_snapshot: Edit semantic models in the Power BI Service
+  summary_snapshot: Semantic model settings pane becomes the default (Preview) Starting in
+    August, semantic model settings open in the new settings pane instead of the full settings
+    page. The pane opens beside your content, so you can update refresh schedules, credentials,
+    and other options without leaving your workspace. For more information, see Edit semantic
+    models in the Power BI Service. ✔️
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

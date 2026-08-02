@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-106
 slug: upsert-to-delta-table-with-lakehouse-connector-preview
-title: Upsert to delta table with Lakehouse connector (Preview)
+title: Configure Lakehouse in a copy activity
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-factory/connector-lakehouse-copy-activity
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/connector-lakehouse-copy-activity
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:0fb930b3fce0bf9b5696d3bc6639d176b11566b253ac3fb3f43127bb9f906cfa
+content_hash: sha256:fb336fd7efc24e272e6f57620611f3cc2c2a0a08b78dfe0cfd956b3cb95b4a8e
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,17 @@ revisions:
     writes to Delta tables, in both Copy job and Copy activity within Pipeline. For more information,
     see Configure Lakehouse in a copy activity.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:fb336fd7efc24e272e6f57620611f3cc2c2a0a08b78dfe0cfd956b3cb95b4a8e
+  title_snapshot: Configure Lakehouse in a copy activity
+  summary_snapshot: Upsert to delta table with Lakehouse connector (Preview) We've added upsert
+    support to the Lakehouse connector, allowing direct writes to Delta tables, in both Copy
+    job and Copy activity within Pipeline. For more information, see Configure Lakehouse in
+    a copy activity.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

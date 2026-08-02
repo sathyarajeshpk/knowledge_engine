@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-035
 slug: diagnose-lakehouse-table-health-with-t-sql-generally
-title: Diagnose Lakehouse table health with T-SQL (Generally Available)
+title: Lakehouse table health diagnostics (Generally Available)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Know-before-you-optimize-Diagnose-Lakehouse-table-health-with-a/ba-p/5228076
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Know-before-you-optimize-Diagnose-Lakehouse-table-health-with-a/ba-p/5228076
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:297096a673259ef3a586634cd029c9954b30cb75b72615d77877c28aed48f4b0
+content_hash: sha256:d452bf461c86779a7c63aaabe15bf951cb5062c09d8b2c958ea32a1a7fbc4bc0
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,19 @@ revisions:
     and checkpoint versions so you can run OPTIMIZE only when needed. For more information,
     see Optimize Lakehouse tables based on health checks.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:d452bf461c86779a7c63aaabe15bf951cb5062c09d8b2c958ea32a1a7fbc4bc0
+  title_snapshot: Lakehouse table health diagnostics (Generally Available)
+  summary_snapshot: Diagnose Lakehouse table health with T-SQL (Generally Available) Lakehouse
+    table health diagnostics (Generally Available) add the built-in sys.sp_get_table_health_metrics
+    stored procedure to the SQL analytics endpoint, returning anomaly indicators and storage
+    metrics such as small-file counts, deleted-row counts, and checkpoint versions so you
+    can run OPTIMIZE only when needed. For more information, see Optimize Lakehouse tables
+    based on health checks.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-006
 slug: eventstream-business-events-publisher-preview
-title: Eventstream Business Events publisher (Preview)
+title: Eventstream now publishes Business Events
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Eventstream-can-now-publish-Business-Events-Preview/ba-p/5180050
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Eventstream-can-now-publish-Business-Events-Preview/ba-p/5180050
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:3316cfdacdd6f1e94c250b3fc73082a2139d17b6793ed09193cda22b9b96c981
+content_hash: sha256:79720d00dad7f7284888733f4e62e206e47bd36afb946c500bca9c17f25027f7
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -187,4 +187,16 @@ revisions:
     you filter, aggregate, threshold, and emit governed, discoverable business signals from
     the Eventstream canvas with no code.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:79720d00dad7f7284888733f4e62e206e47bd36afb946c500bca9c17f25027f7
+  title_snapshot: Eventstream now publishes Business Events
+  summary_snapshot: Eventstream Business Events publisher (Preview) Eventstream now publishes
+    Business Events as a built-in destination, so you filter, aggregate, threshold, and emit
+    governed, discoverable business signals from the Eventstream canvas with no code.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

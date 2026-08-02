@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-011
 slug: item-history-in-fabric-capacity-metrics-app-preview
-title: Item History in Fabric Capacity Metrics App (Preview)
+title: Item History page in the Fabric Capacity Metrics App (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/26307?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/26307?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:8d7ccf1a8e5d15b0377a6a65c77e9ce90baace9c7758c83afc6fc0ad5b33d7fe
+content_hash: sha256:640fe197b71581776719d2cb69ccf8bc9c501d6273cc5e806918327841734683
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     workspace and item-level analysis. For more information, see Understand the metrics app
     item history page (preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:640fe197b71581776719d2cb69ccf8bc9c501d6273cc5e806918327841734683
+  title_snapshot: Item History page in the Fabric Capacity Metrics App (Preview)
+  summary_snapshot: Item History in Fabric Capacity Metrics App (Preview) The Item History
+    page in the Fabric Capacity Metrics App (Preview) provides a 30-day view of compute capacity
+    consumption with interactive visuals and slicers for workspace and item-level analysis.
+    For more information, see Understand the metrics app item history page (preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-038
 slug: activator-rules-for-onelake-items-preview
-title: Activator rules for OneLake items (Preview)
+title: Trigger Fabric items
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-trigger-fabric-items
 announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-trigger-fabric-items
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:c7c27fd3e676d50483d03f62a0be80c35b8d06e8ee919b62019eda7c7094f1d2
+content_hash: sha256:9d9606f536c1835ba5c747774d0ddb9e86e068ee5ea5681fbdc05fb23a2e0d1e
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -63,4 +63,19 @@ revisions:
     items, such as pipelines, Spark jobs, and notebooks. For more information, see Trigger
     Fabric items.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:9d9606f536c1835ba5c747774d0ddb9e86e068ee5ea5681fbdc05fb23a2e0d1e
+  title_snapshot: Trigger Fabric items
+  summary_snapshot: Activator rules for OneLake items (Preview) In the Fabric portal, you
+    can create and manage Activator rules for OneLake items using Fabric Activator. These
+    rules allow you to automate actions based on specific events or conditions related to
+    OneLake items, such as when a file is created or deleted. You can also create rules based
+    on the status of processes that interact with OneLake items, such as pipelines, Spark
+    jobs, and notebooks. For more information, see Trigger Fabric items.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-068
 slug: deltaflow-transformation-in-fabric-real-time-intelligence-s
-title: DeltaFlow transformation in Fabric Real-Time Intelligence's Eventstream (preview)
+title: DeltaFlow output transformation (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/delta-flow-output-transformation
 announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/delta-flow-output-transformation
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:0349731defcf0e0b5495ee4a69593dea9d232d5d6e3e720cd62d9fb9fdf38b8b
+content_hash: sha256:910580cf523ef47ab26b26189a49ca8e5a850b0c18530a3c6738e1d889956bbf
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -62,4 +62,21 @@ revisions:
     in preview. For more information, see DeltaFlow output transformation (preview) and Blog:
     Business Events in Microsoft Fabric (Preview).'
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:910580cf523ef47ab26b26189a49ca8e5a850b0c18530a3c6738e1d889956bbf
+  title_snapshot: DeltaFlow output transformation (preview)
+  summary_snapshot: 'DeltaFlow transformation in Fabric Real-Time Intelligence''s Eventstream
+    (preview) DeltaFlow is a capability in Fabric Eventstream that transforms raw Change Data
+    Capture (CDC) events into a flattened, analytics-ready format. Instead of working with
+    deeply nested Debezium JSON payloads, DeltaFlow produces tabular rows that closely mirror
+    the structure of the source database tables, enriched with metadata columns that describe
+    each change. Eventstream supports DeltaFlow transformations, which are currently in preview.
+    For more information, see DeltaFlow output transformation (preview) and Blog: Business
+    Events in Microsoft Fabric (Preview).'
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

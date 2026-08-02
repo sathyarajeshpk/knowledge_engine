@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-003
 slug: real-time-dashboards-powered-by-ai-preview
-title: Real-Time Dashboards powered by AI (Preview)
+title: The redesigned Real-Time Dashboard tile editor (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/A-new-way-to-create-visuals-on-Real-Time-Dashboards-Preview/ba-p/5194484
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/A-new-way-to-create-visuals-on-Real-Time-Dashboards-Preview/ba-p/5194484
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:38d6d0a99cc0e7729857890a5ea9c3fd28431b2f21e6b5d1fedd484509e2de92
+content_hash: sha256:6ac51ec4744f1b9902005e2514925706fcf89a1c4f1dd6dcfd2849f4ef1ae443
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -218,4 +218,18 @@ revisions:
     and Copilot generates the visualization for review without requiring KQL expertise. For
     more information, see Create a Real-Time Dashboard.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:6ac51ec4744f1b9902005e2514925706fcf89a1c4f1dd6dcfd2849f4ef1ae443
+  title_snapshot: The redesigned Real-Time Dashboard tile editor (Preview)
+  summary_snapshot: Real-Time Dashboards powered by AI (Preview) The redesigned Real-Time
+    Dashboard tile editor (Preview) is an AI-first experience where you choose a visual type
+    and describe what you need in natural language, and Copilot generates the visualization
+    for review without requiring KQL expertise. For more information, see Create a Real-Time
+    Dashboard.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

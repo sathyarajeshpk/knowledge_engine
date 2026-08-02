@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-082
 slug: data-factory-on-premises-data-gateway-manual-update-option
-title: Data Factory On-premises data gateway manual update option (Preview)
+title: Gateway December 2025 release
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/on-premises-data-gateway-december-2025-release
 announcement_url: https://blog.fabric.microsoft.com/blog/on-premises-data-gateway-december-2025-release
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:2138ab2855e699829a84d5dd7c0b77899bbe6ce9d06c453df884cd09b2e7e248
+content_hash: sha256:d591c8724fa5523b979c3652e46a18c781bc3359d4307b1b61463b8e4b4f67d3
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,18 @@ revisions:
     the baseline version for this feature, and you can start performing manual updates beginning
     in December. For more information, see Update an on-premises data gateway.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:d591c8724fa5523b979c3652e46a18c781bc3359d4307b1b61463b8e4b4f67d3
+  title_snapshot: Gateway December 2025 release
+  summary_snapshot: Data Factory On-premises data gateway manual update option (Preview) The
+    Gateway December 2025 release (version 3000.298) provides a new manual update option (in
+    preview) via the Fabric portal or API.The November release serves as the baseline version
+    for this feature, and you can start performing manual updates beginning in December. For
+    more information, see Update an on-premises data gateway.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

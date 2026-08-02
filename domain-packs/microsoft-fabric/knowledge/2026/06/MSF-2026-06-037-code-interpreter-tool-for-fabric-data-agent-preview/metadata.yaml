@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-037
 slug: code-interpreter-tool-for-fabric-data-agent-preview
-title: Code Interpreter Tool for Fabric Data Agent (Preview)
+title: Code Interpreter Tool (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://aka.ms/data-agent-code-interpreter
 announcement_url: https://aka.ms/data-agent-code-interpreter
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:ccec7f14607e3ed5d7e930f174bd796756d46bcbf144a985a7eaa2a7486d7d3e
+content_hash: sha256:2015b4b67b4d3fdbb8d0071e43069fcc629e38435821aab35191e1b743b7d102
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,17 @@ revisions:
     analysis, forecasting, cohort analysis, and rich Python visualization. For more information,
     see Fabric data agent concepts.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:2015b4b67b4d3fdbb8d0071e43069fcc629e38435821aab35191e1b743b7d102
+  title_snapshot: Code Interpreter Tool (Preview)
+  summary_snapshot: Code Interpreter Tool for Fabric Data Agent (Preview) Code Interpreter
+    Tool (Preview) in Fabric Data Agent runs Python directly inside agent workflows so the
+    agent goes beyond database queries to perform statistical analysis, forecasting, cohort
+    analysis, and rich Python visualization. For more information, see Fabric data agent concepts.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

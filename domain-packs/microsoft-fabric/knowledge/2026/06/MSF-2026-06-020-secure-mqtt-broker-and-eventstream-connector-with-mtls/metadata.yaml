@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-020
 slug: secure-mqtt-broker-and-eventstream-connector-with-mtls
-title: Secure MQTT broker and Eventstream connector with mTLS (Preview)
+title: mTLS for the Eventstream MQTT source connector (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/add-source-mqtt
 announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/add-source-mqtt
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:f450e79d097532ab1913ad6a6efb1c9e4897bf59d418a433f24bcd17d6bc488a
+content_hash: sha256:5b2521bf5fc7c24ab9a2c4f70c0f2fc1bab232a102fc519a41001acd8756e868
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -198,4 +198,18 @@ revisions:
     a mutually authenticated, encrypted connection with an MQTT broker for secure IoT data
     ingestion across untrusted networks.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:5b2521bf5fc7c24ab9a2c4f70c0f2fc1bab232a102fc519a41001acd8756e868
+  title_snapshot: mTLS for the Eventstream MQTT source connector (Preview)
+  summary_snapshot: Secure MQTT broker and Eventstream connector with mTLS (Preview) mTLS
+    for the Eventstream MQTT source connector (Preview) lets you specify your own CA and client
+    certificates stored in Azure Key Vault, so Eventstream can establish a mutually authenticated,
+    encrypted connection with an MQTT broker for secure IoT data ingestion across untrusted
+    networks.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

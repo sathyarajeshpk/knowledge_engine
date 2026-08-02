@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-028
 slug: onelake-storage-tiers-and-lifecycle-management-preview
-title: OneLake storage tiers and lifecycle management (Preview)
+title: hot, cool, and cold storage tiers
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Optimize-your-storage-costs-with-OneLake-storage-tiers-and/ba-p/5179295
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Optimize-your-storage-costs-with-OneLake-storage-tiers-and/ba-p/5179295
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:583ee8084bf14e0ecfc03669c6cba10a014d0e7a06c258a872f58ccdfa43cf0b
+content_hash: sha256:cbc735755f5699597859a3a51072ee3f1c4887c043fadd60f0b7d879eeabd105
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -198,4 +198,18 @@ revisions:
     modification, or last access, so you trade higher transaction and retrieval costs for
     lower storage cost on infrequently accessed data.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:cbc735755f5699597859a3a51072ee3f1c4887c043fadd60f0b7d879eeabd105
+  title_snapshot: hot, cool, and cold storage tiers
+  summary_snapshot: OneLake storage tiers and lifecycle management (Preview) OneLake now supports
+    hot, cool, and cold storage tiers, and lifecycle management policies automatically move
+    files between tiers based on creation time, last modification, or last access, so you
+    trade higher transaction and retrieval costs for lower storage cost on infrequently accessed
+    data.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

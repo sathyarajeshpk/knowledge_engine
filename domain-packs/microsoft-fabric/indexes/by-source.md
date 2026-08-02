@@ -17,224 +17,238 @@
 | [MSF-2026-02-002](../knowledge/2026/02/MSF-2026-02-002-top-sessions-you-won-t-want-to-miss-at-the-microsoft-fabric) | Top sessions you won’t want to miss at the Microsoft Fabric Community Conference 2026 | 2026-02-03 | fabric-blog |
 | [MSF-2025-12-001](../knowledge/2025/12/MSF-2025-12-001-fabcon-and-sqlcon-from-workshops-and-keynotes-to-demos-and) | FabCon and SQLCon: From workshops and keynotes to demos and deep dives | 2025-12-17 | fabric-blog |
 
+## fabric-whats-new (9)
+
+| ID | Title | Published | Source |
+|---|---|---|---|
+| [MSF-2026-07-022](../knowledge/2026/07/MSF-2026-07-022-change-event-streaming-overview) | Change event streaming overview | 2026-07-01 | fabric-whats-new |
+| [MSF-2026-06-054](../knowledge/2026/06/MSF-2026-06-054-rayfin-preview) | Rayfin (Preview) | 2026-06-01 | fabric-whats-new |
+| [MSF-2026-06-055](../knowledge/2026/06/MSF-2026-06-055-business-events-overview-preview) | Business events overview (Preview) | 2026-06-01 | fabric-whats-new |
+| [MSF-2026-05-034](../knowledge/2026/05/MSF-2026-05-034-fabric-apps-preview) | Fabric Apps (preview) | 2026-05-01 | fabric-whats-new |
+| [MSF-2026-05-035](../knowledge/2026/05/MSF-2026-05-035-onelake-item-size-reporting-preview) | OneLake item-size reporting (Preview) | 2026-05-01 | fabric-whats-new |
+| [MSF-2026-05-036](../knowledge/2026/05/MSF-2026-05-036-event-file-target) | event_file target | 2026-05-01 | fabric-whats-new |
+| [MSF-2026-08-107](../knowledge/2026/08/MSF-2026-08-107-mirroring-in-fabric) | Mirroring in Fabric | — | fabric-whats-new |
+| [MSF-2026-08-108](../knowledge/2026/08/MSF-2026-08-108-automatic-index-compaction) | Automatic index compaction | — | fabric-whats-new |
+| [MSF-2026-08-109](../knowledge/2026/08/MSF-2026-08-109-alter-database-set-options-transact-sql) | ALTER DATABASE SET options (Transact-SQL) | — | fabric-whats-new |
+
 ## fabric-whats-new-markdown (198)
 
 | ID | Title | Published | Source |
 |---|---|---|---|
 | [MSF-2026-07-001](../knowledge/2026/07/MSF-2026-07-001-rayfin-ama-recap) | Rayfin AMA recap | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-002](../knowledge/2026/07/MSF-2026-07-002-workspace-outbound-access-protection-for-real-time) | Workspace outbound access protection for Real-Time Intelligence (Preview) | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-002](../knowledge/2026/07/MSF-2026-07-002-workspace-outbound-access-protection-for-real-time) | Workspace outbound access protection (OAP) for Real-Time Intelligence (Preview) | 2026-07-01 | fabric-whats-new-markdown |
 | [MSF-2026-07-003](../knowledge/2026/07/MSF-2026-07-003-fabric-runtime-release-channels) | Fabric Runtime Release Channels | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-004](../knowledge/2026/07/MSF-2026-07-004-dataverse-fabric-link-improvements) | Dataverse Fabric Link improvements | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-005](../knowledge/2026/07/MSF-2026-07-005-fabric-eventstream-connector-updates) | Fabric Eventstream connector updates | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-006](../knowledge/2026/07/MSF-2026-07-006-sensitivity-labels-as-ai-agent-context) | Sensitivity labels as AI agent context | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-007](../knowledge/2026/07/MSF-2026-07-007-fabric-data-agent-public-api) | Fabric data agent public API | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-008](../knowledge/2026/07/MSF-2026-07-008-pipeline-canvas-node-experience-updates) | Pipeline canvas node experience updates | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-009](../knowledge/2026/07/MSF-2026-07-009-row-to-intelligent-action-with-deltaflow-and-ai-functions) | Row-to-intelligent-action with DeltaFlow and AI functions | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-010](../knowledge/2026/07/MSF-2026-07-010-warehouse-source-control-preview) | Warehouse source control (Preview) | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-004](../knowledge/2026/07/MSF-2026-07-004-dataverse-fabric-link-improvements) | Dataverse Fabric Link | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-005](../knowledge/2026/07/MSF-2026-07-005-fabric-eventstream-connector-updates) | Fabric Eventstream connectors | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-006](../knowledge/2026/07/MSF-2026-07-006-sensitivity-labels-as-ai-agent-context) | Using sensitivity labels to guide AI agents and skills | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-007](../knowledge/2026/07/MSF-2026-07-007-fabric-data-agent-public-api) | The Fabric data agent public API | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-008](../knowledge/2026/07/MSF-2026-07-008-pipeline-canvas-node-experience-updates) | pipeline canvas in Fabric Data Factory | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-009](../knowledge/2026/07/MSF-2026-07-009-row-to-intelligent-action-with-deltaflow-and-ai-functions) | Real-time game-day operations with Eventstreams, Spark, and AI functions | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-010](../knowledge/2026/07/MSF-2026-07-010-warehouse-source-control-preview) | Source control with Warehouse (preview) | 2026-07-01 | fabric-whats-new-markdown |
 | [MSF-2026-07-011](../knowledge/2026/07/MSF-2026-07-011-delegated-onelake-shortcuts-preview) | Delegated OneLake Shortcuts (Preview) | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-012](../knowledge/2026/07/MSF-2026-07-012-secure-zero-copy-distribution-with-onelake-security-and) | Secure zero-copy distribution with OneLake security and shortcuts | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-013](../knowledge/2026/07/MSF-2026-07-013-oracle-database-cdc-source-connector-for-fabric-eventstream) | Oracle Database CDC source connector for Fabric Eventstream (Preview) | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-014](../knowledge/2026/07/MSF-2026-07-014-plan-generally-available) | Plan (Generally Available) | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-015](../knowledge/2026/07/MSF-2026-07-015-onelake-architectural-guidance-for-the-ai-era) | OneLake architectural guidance for the AI era | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-016](../knowledge/2026/07/MSF-2026-07-016-pipeline-authoring-and-monitoring-enhancements) | Pipeline authoring and monitoring enhancements | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-012](../knowledge/2026/07/MSF-2026-07-012-secure-zero-copy-distribution-with-onelake-security-and) | Zero-copy distribution patterns with OneLake security and shortcuts | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-013](../knowledge/2026/07/MSF-2026-07-013-oracle-database-cdc-source-connector-for-fabric-eventstream) | The Oracle Database CDC source connector for Eventstream (Preview) | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-014](../knowledge/2026/07/MSF-2026-07-014-plan-generally-available) | Plan in Fabric IQ (Generally Available) | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-015](../knowledge/2026/07/MSF-2026-07-015-onelake-architectural-guidance-for-the-ai-era) | OneLake architectural guidance | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-016](../knowledge/2026/07/MSF-2026-07-016-pipeline-authoring-and-monitoring-enhancements) | New Fabric Data Factory pipeline enhancements | 2026-07-01 | fabric-whats-new-markdown |
 | [MSF-2026-07-017](../knowledge/2026/07/MSF-2026-07-017-benchmarking-gpu-accelerated-fabric-data-warehouse) | Benchmarking GPU-accelerated Fabric Data Warehouse | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-018](../knowledge/2026/07/MSF-2026-07-018-row-to-action-pattern-with-mirrored-database-change-feeds) | Row-to-action pattern with Mirrored Database change feeds | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-019](../knowledge/2026/07/MSF-2026-07-019-operations-agent-for-pipelines-preview) | Operations Agent for Pipelines (Preview) | 2026-07-01 | fabric-whats-new-markdown |
-| [MSF-2026-07-020](../knowledge/2026/07/MSF-2026-07-020-eventstream-sql-operator-generally-available) | Eventstream SQL operator (Generally Available) | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-018](../knowledge/2026/07/MSF-2026-07-018-row-to-action-pattern-with-mirrored-database-change-feeds) | Turning Mirrored Database change feeds into real-time action | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-019](../knowledge/2026/07/MSF-2026-07-019-operations-agent-for-pipelines-preview) | Operations Agent for Pipelines (preview) | 2026-07-01 | fabric-whats-new-markdown |
+| [MSF-2026-07-020](../knowledge/2026/07/MSF-2026-07-020-eventstream-sql-operator-generally-available) | The Eventstream SQL operator (Generally Available) | 2026-07-01 | fabric-whats-new-markdown |
 | [MSF-2026-07-021](../knowledge/2026/07/MSF-2026-07-021-autoscaling-for-virtual-network-data-gateway-preview) | Autoscaling for Virtual Network Data Gateway (Preview) | 2026-07-01 | fabric-whats-new-markdown |
 | [MSF-2026-06-001](../knowledge/2026/06/MSF-2026-06-001-billing-for-fabric-planning-preview) | Billing for Fabric Planning (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-002](../knowledge/2026/06/MSF-2026-06-002-time-series-visualization-in-real-time-dashboards-preview) | Time Series Visualization in Real-Time Dashboards (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-003](../knowledge/2026/06/MSF-2026-06-003-real-time-dashboards-powered-by-ai-preview) | Real-Time Dashboards powered by AI (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-004](../knowledge/2026/06/MSF-2026-06-004-analyze-business-events-in-eventhouse-and-real-time) | Analyze Business Events in Eventhouse and Real-Time Dashboards (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-005](../knowledge/2026/06/MSF-2026-06-005-fabric-graph-generally-available) | Fabric Graph (Generally Available) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-006](../knowledge/2026/06/MSF-2026-06-006-spark-history-server-snapshot-based-loading-preview) | Spark History Server snapshot-based loading (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-007](../knowledge/2026/06/MSF-2026-06-007-extended-iot-hub-source-eventstream-connector-preview) | Extended IoT Hub source Eventstream connector (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-008](../knowledge/2026/06/MSF-2026-06-008-use-case-for-sql-databases-in-ai-applications) | Use case for SQL databases in AI applications | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-009](../knowledge/2026/06/MSF-2026-06-009-service-issue-notifications-and-service-health-dashboard) | Service issue notifications and Service Health dashboard (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-010](../knowledge/2026/06/MSF-2026-06-010-fabric-skills-for-ai-coding-tools) | Fabric Skills for AI coding tools | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-011](../knowledge/2026/06/MSF-2026-06-011-on-premises-data-gateway-june-2026-release) | On-premises data gateway June 2026 release | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-012](../knowledge/2026/06/MSF-2026-06-012-time-travel-using-sql-analytics-endpoint-preview) | Time Travel using SQL analytics endpoint (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-013](../knowledge/2026/06/MSF-2026-06-013-activator-rule-actions-copy-job-and-publish-a-business) | Activator rule actions: Copy job and Publish a business event (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-014](../knowledge/2026/06/MSF-2026-06-014-sharepoint-and-onedrive-shortcuts-generally-available) | SharePoint and OneDrive shortcuts (Generally Available) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-015](../knowledge/2026/06/MSF-2026-06-015-real-time-weather-monitoring-with-eventstream-ai-skills) | Real-time weather monitoring with Eventstream AI Skills | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-016](../knowledge/2026/06/MSF-2026-06-016-servicenow-zero-copy-querying-of-onelake-data-preview) | ServiceNow zero-copy querying of OneLake data (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-017](../knowledge/2026/06/MSF-2026-06-017-microsoft-sql-updates-in-2026-so-far) | Microsoft SQL updates in 2026 so far | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-018](../knowledge/2026/06/MSF-2026-06-018-pagination-support-for-eventstream-http-connector-preview) | Pagination support for Eventstream HTTP connector (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-002](../knowledge/2026/06/MSF-2026-06-002-time-series-visualization-in-real-time-dashboards-preview) | Real-Time Dashboard-specific visuals | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-003](../knowledge/2026/06/MSF-2026-06-003-real-time-dashboards-powered-by-ai-preview) | The redesigned Real-Time Dashboard tile editor (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-004](../knowledge/2026/06/MSF-2026-06-004-analyze-business-events-in-eventhouse-and-real-time) | Analyzing Business Events in Eventhouse and Real-Time Dashboards (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-005](../knowledge/2026/06/MSF-2026-06-005-fabric-graph-generally-available) | Graph in Microsoft Fabric | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-006](../knowledge/2026/06/MSF-2026-06-006-spark-history-server-snapshot-based-loading-preview) | Snapshot-based loading for the Spark History Server (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-007](../knowledge/2026/06/MSF-2026-06-007-extended-iot-hub-source-eventstream-connector-preview) | Extended Azure IoT Hub source connector (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-008](../knowledge/2026/06/MSF-2026-06-008-use-case-for-sql-databases-in-ai-applications) | use a Fabric SQL database in AI applications | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-009](../knowledge/2026/06/MSF-2026-06-009-service-issue-notifications-and-service-health-dashboard) | Service issue communications in Fabric (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-010](../knowledge/2026/06/MSF-2026-06-010-fabric-skills-for-ai-coding-tools) | Fabric Skills | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-011](../knowledge/2026/06/MSF-2026-06-011-on-premises-data-gateway-june-2026-release) | June 2026 on-premises data gateway release | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-012](../knowledge/2026/06/MSF-2026-06-012-time-travel-using-sql-analytics-endpoint-preview) | Time travel using the SQL analytics endpoint | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-013](../knowledge/2026/06/MSF-2026-06-013-activator-rule-actions-copy-job-and-publish-a-business) | Configure actions for Activator rules | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-014](../knowledge/2026/06/MSF-2026-06-014-sharepoint-and-onedrive-shortcuts-generally-available) | Create a OneDrive or SharePoint shortcut | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-015](../knowledge/2026/06/MSF-2026-06-015-real-time-weather-monitoring-with-eventstream-ai-skills) | Building a real-time weather monitoring system with AI and Fabric Eventstream | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-016](../knowledge/2026/06/MSF-2026-06-016-servicenow-zero-copy-querying-of-onelake-data-preview) | The ServiceNow OneLake connector (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-017](../knowledge/2026/06/MSF-2026-06-017-microsoft-sql-updates-in-2026-so-far) | A mid-year recap of Microsoft SQL updates | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-018](../knowledge/2026/06/MSF-2026-06-018-pagination-support-for-eventstream-http-connector-preview) | add an HTTP source to an eventstream (preview) | 2026-06-01 | fabric-whats-new-markdown |
 | [MSF-2026-06-019](../knowledge/2026/06/MSF-2026-06-019-data-days) | Data Days | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-020](../knowledge/2026/06/MSF-2026-06-020-secure-mqtt-broker-and-eventstream-connector-with-mtls) | Secure MQTT broker and Eventstream connector with mTLS (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-021](../knowledge/2026/06/MSF-2026-06-021-workspace-outbound-access-protection-for-azure-and-fabric) | Workspace outbound access protection for Azure and Fabric events (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-020](../knowledge/2026/06/MSF-2026-06-020-secure-mqtt-broker-and-eventstream-connector-with-mtls) | mTLS for the Eventstream MQTT source connector (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-021](../knowledge/2026/06/MSF-2026-06-021-workspace-outbound-access-protection-for-azure-and-fabric) | Workspace outbound access protection (OAP) for Azure and Fabric events (Preview) | 2026-06-01 | fabric-whats-new-markdown |
 | [MSF-2026-06-022](../knowledge/2026/06/MSF-2026-06-022-fabric-influencers-spotlight-june-2026) | Fabric Influencers Spotlight June 2026 | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-023](../knowledge/2026/06/MSF-2026-06-023-fabric-spark-operations-skill-for-failure-diagnosis-preview) | Fabric Spark Operations Skill for failure diagnosis (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-024](../knowledge/2026/06/MSF-2026-06-024-efficient-scaledown-for-spark-jobs-preview) | Efficient Scaledown for Spark jobs (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-025](../knowledge/2026/06/MSF-2026-06-025-real-time-dashboards-live-refresh-generally-available) | Real-Time Dashboards Live Refresh (Generally Available) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-026](../knowledge/2026/06/MSF-2026-06-026-activator-as-a-business-event-publisher-preview) | Activator as a Business Event Publisher (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-027](../knowledge/2026/06/MSF-2026-06-027-item-recovery-generally-available) | Item Recovery (Generally Available) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-028](../knowledge/2026/06/MSF-2026-06-028-activator-as-business-events-publisher-preview) | Activator as business events publisher (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-029](../knowledge/2026/06/MSF-2026-06-029-fabcon-sqlcon-europe-2026) | FabCon+SQLCon Europe 2026 | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-023](../knowledge/2026/06/MSF-2026-06-023-fabric-spark-operations-skill-for-failure-diagnosis-preview) | The Fabric Spark Operations Skill (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-024](../knowledge/2026/06/MSF-2026-06-024-efficient-scaledown-for-spark-jobs-preview) | Efficient Scaledown (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-025](../knowledge/2026/06/MSF-2026-06-025-real-time-dashboards-live-refresh-generally-available) | Live Refresh for Real-Time Dashboards (Generally Available) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-026](../knowledge/2026/06/MSF-2026-06-026-activator-as-a-business-event-publisher-preview) | Using Activator as a Business Event publisher (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-027](../knowledge/2026/06/MSF-2026-06-027-item-recovery-generally-available) | Item Recovery in Microsoft Fabric (Generally Available) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-028](../knowledge/2026/06/MSF-2026-06-028-activator-as-business-events-publisher-preview) | What is Fabric Activator? | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-029](../knowledge/2026/06/MSF-2026-06-029-fabcon-sqlcon-europe-2026) | Register now | 2026-06-01 | fabric-whats-new-markdown |
 | [MSF-2026-06-030](../knowledge/2026/06/MSF-2026-06-030-operations-agent-generally-available) | Operations agent (Generally Available) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-031](../knowledge/2026/06/MSF-2026-06-031-bulk-copy-api-for-faster-ingestion-preview) | Bulk Copy API for faster ingestion (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-032](../knowledge/2026/06/MSF-2026-06-032-azure-databricks-stores-unity-catalog-tables-in-onelake) | Azure Databricks stores Unity Catalog tables in OneLake (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-033](../knowledge/2026/06/MSF-2026-06-033-securing-the-power-query-connector-ecosystem) | Securing the Power Query connector ecosystem | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-034](../knowledge/2026/06/MSF-2026-06-034-migrate-azure-data-factory-pipelines-from-your-fabric) | Migrate Azure Data Factory pipelines from your Fabric workspace (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-035](../knowledge/2026/06/MSF-2026-06-035-diagnose-lakehouse-table-health-with-t-sql-generally) | Diagnose Lakehouse table health with T-SQL (Generally Available) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-031](../knowledge/2026/06/MSF-2026-06-031-bulk-copy-api-for-faster-ingestion-preview) | Bulk Copy API (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-032](../knowledge/2026/06/MSF-2026-06-032-azure-databricks-stores-unity-catalog-tables-in-onelake) | Azure Databricks can now store Unity Catalog managed tables directly in OneLake | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-033](../knowledge/2026/06/MSF-2026-06-033-securing-the-power-query-connector-ecosystem) | Microsoft is bringing Power Query connectors in-house | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-034](../knowledge/2026/06/MSF-2026-06-034-migrate-azure-data-factory-pipelines-from-your-fabric) | Fabric-first Azure Data Factory migration (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-035](../knowledge/2026/06/MSF-2026-06-035-diagnose-lakehouse-table-health-with-t-sql-generally) | Lakehouse table health diagnostics (Generally Available) | 2026-06-01 | fabric-whats-new-markdown |
 | [MSF-2026-06-036](../knowledge/2026/06/MSF-2026-06-036-gpu-accelerated-fabric-data-warehouse-early-access-preview) | GPU-accelerated Fabric Data Warehouse (Early Access Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-037](../knowledge/2026/06/MSF-2026-06-037-code-interpreter-tool-for-fabric-data-agent-preview) | Code Interpreter Tool for Fabric Data Agent (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-038](../knowledge/2026/06/MSF-2026-06-038-activator-rules-for-onelake-items-preview) | Activator rules for OneLake items (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-039](../knowledge/2026/06/MSF-2026-06-039-power-bi-in-report-alerts-with-translytical-task-flows) | Power BI in-report alerts with translytical task flows | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-040](../knowledge/2026/06/MSF-2026-06-040-multi-cloud-data-architecture-patterns-with-fabric-data) | Multi-cloud data architecture patterns with Fabric Data Factory (Generally Available) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-041](../knowledge/2026/06/MSF-2026-06-041-faster-python-udfs-in-the-native-execution-engine) | Faster Python UDFs in the Native Execution Engine | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-042](../knowledge/2026/06/MSF-2026-06-042-business-events-capacity-consumption-generally-available) | Business Events Capacity Consumption (Generally Available) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-043](../knowledge/2026/06/MSF-2026-06-043-ssms-22-7-schema-compare-and-sql-formatter-preview) | SSMS 22.7 schema compare and SQL formatter (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-037](../knowledge/2026/06/MSF-2026-06-037-code-interpreter-tool-for-fabric-data-agent-preview) | Code Interpreter Tool (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-038](../knowledge/2026/06/MSF-2026-06-038-activator-rules-for-onelake-items-preview) | Trigger Fabric items | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-039](../knowledge/2026/06/MSF-2026-06-039-power-bi-in-report-alerts-with-translytical-task-flows) | A translytical task flow pattern for in-report alerts | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-040](../knowledge/2026/06/MSF-2026-06-040-multi-cloud-data-architecture-patterns-with-fabric-data) | Multi-cloud data architecture patterns | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-041](../knowledge/2026/06/MSF-2026-06-041-faster-python-udfs-in-the-native-execution-engine) | Python UDFs and complex data types in the Native Execution Engine | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-042](../knowledge/2026/06/MSF-2026-06-042-business-events-capacity-consumption-generally-available) | Microsoft Fabric Capacity Metrics app | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-043](../knowledge/2026/06/MSF-2026-06-043-ssms-22-7-schema-compare-and-sql-formatter-preview) | Schema compare and a built-in SQL formatter in SSMS 22.7 (Preview) | 2026-06-01 | fabric-whats-new-markdown |
 | [MSF-2026-06-044](../knowledge/2026/06/MSF-2026-06-044-new-string-functions-and-operators-preview) | New string functions and operators (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-045](../knowledge/2026/06/MSF-2026-06-045-improved-nl2sql-engine-for-fabric-data-agent-preview) | Improved NL2SQL Engine for Fabric Data Agent (Preview) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-045](../knowledge/2026/06/MSF-2026-06-045-improved-nl2sql-engine-for-fabric-data-agent-preview) | Improved NL2SQL Engine (Preview) | 2026-06-01 | fabric-whats-new-markdown |
 | [MSF-2026-06-046](../knowledge/2026/06/MSF-2026-06-046-cross-workspace-role-management-in-the-onelake-catalog) | Cross-workspace role management in the OneLake catalog (Preview) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-047](../knowledge/2026/06/MSF-2026-06-047-built-in-fabric-data-protection-for-ai-readiness) | Built-in Fabric data protection for AI readiness | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-06-048](../knowledge/2026/06/MSF-2026-06-048-event-driven-copy-job-execution-with-activator-generally) | Event-driven Copy job execution with Activator (Generally Available) | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-047](../knowledge/2026/06/MSF-2026-06-047-built-in-fabric-data-protection-for-ai-readiness) | Built-in Fabric data protection | 2026-06-01 | fabric-whats-new-markdown |
+| [MSF-2026-06-048](../knowledge/2026/06/MSF-2026-06-048-event-driven-copy-job-execution-with-activator-generally) | Event-driven Copy job execution with Fabric Activator (Generally Available) | 2026-06-01 | fabric-whats-new-markdown |
 | [MSF-2026-06-049](../knowledge/2026/06/MSF-2026-06-049-migration-assistant-direct-connection-generally-available) | Migration Assistant direct connection (Generally Available) | 2026-06-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-001](../knowledge/2026/05/MSF-2026-05-001-onelake-security-generally-available-and-onelake-data) | OneLake security (Generally Available) and OneLake data access roles (Generally Available) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-002](../knowledge/2026/05/MSF-2026-05-002-data-agent-support-for-eventhouse-functions-materialized) | Data Agent support for Eventhouse functions, materialized views, and shortcuts (Preview) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-003](../knowledge/2026/05/MSF-2026-05-003-on-premises-data-gateway-may-2026-release) | On-premises data gateway May 2026 release | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-001](../knowledge/2026/05/MSF-2026-05-001-onelake-security-generally-available-and-onelake-data) | OneLake security and OneLake data access roles are generally available | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-002](../knowledge/2026/05/MSF-2026-05-002-data-agent-support-for-eventhouse-functions-materialized) | Data Agent | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-003](../knowledge/2026/05/MSF-2026-05-003-on-premises-data-gateway-may-2026-release) | May 2026 on-premises data gateway release | 2026-05-01 | fabric-whats-new-markdown |
 | [MSF-2026-05-004](../knowledge/2026/05/MSF-2026-05-004-fabric-jumpstart) | Fabric Jumpstart | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-005](../knowledge/2026/05/MSF-2026-05-005-database-schema-in-git-for-sql-database-in-fabric) | Database schema in Git for SQL database in Fabric | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-006](../knowledge/2026/05/MSF-2026-05-006-eventstream-business-events-publisher-preview) | Eventstream Business Events publisher (Preview) | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-005](../knowledge/2026/05/MSF-2026-05-005-database-schema-in-git-for-sql-database-in-fabric) | SQL database in Microsoft Fabric ships with built-in Git integration | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-006](../knowledge/2026/05/MSF-2026-05-006-eventstream-business-events-publisher-preview) | Eventstream now publishes Business Events | 2026-05-01 | fabric-whats-new-markdown |
 | [MSF-2026-05-007](../knowledge/2026/05/MSF-2026-05-007-fabric-influencers-spotlight-may-2026) | Fabric Influencers Spotlight May 2026 | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-008](../knowledge/2026/05/MSF-2026-05-008-custom-authorization-for-api-for-graphql-preview) | Custom authorization for API for GraphQL (Preview) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-009](../knowledge/2026/05/MSF-2026-05-009-new-sql-analytics-endpoint-metadata-sync-option-preview) | New SQL analytics endpoint metadata sync option (preview) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-010](../knowledge/2026/05/MSF-2026-05-010-notebook-export-controls) | Notebook export controls | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-011](../knowledge/2026/05/MSF-2026-05-011-configurable-data-retention-in-fabric-data-warehouse-preview) | Configurable Data Retention in Fabric Data Warehouse (Preview) | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-008](../knowledge/2026/05/MSF-2026-05-008-custom-authorization-for-api-for-graphql-preview) | Authorizer User Data Functions for API for GraphQL (Preview) | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-009](../knowledge/2026/05/MSF-2026-05-009-new-sql-analytics-endpoint-metadata-sync-option-preview) | new SQL analytics endpoint metadata sync option | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-010](../knowledge/2026/05/MSF-2026-05-010-notebook-export-controls) | Notebook Export Control | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-011](../knowledge/2026/05/MSF-2026-05-011-configurable-data-retention-in-fabric-data-warehouse-preview) | Configurable data retention (Preview) in Fabric Data Warehouse | 2026-05-01 | fabric-whats-new-markdown |
 | [MSF-2026-05-012](../knowledge/2026/05/MSF-2026-05-012-custom-live-pools-for-fabric-data-engineering-preview) | Custom Live Pools for Fabric Data Engineering (Preview) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-013](../knowledge/2026/05/MSF-2026-05-013-fabric-data-warehouse-upgrades-in-ssms-22-5) | Fabric Data Warehouse upgrades in SSMS 22.5 | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-014](../knowledge/2026/05/MSF-2026-05-014-fabric-data-warehouse-as-the-modernization-path-for-synapse) | Fabric Data Warehouse as the modernization path for Synapse Dedicated SQL Pool | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-015](../knowledge/2026/05/MSF-2026-05-015-refresh-materialized-lake-view-activity-in-data-factory) | Refresh Materialized Lake View activity in Data Factory pipelines (Preview) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-016](../knowledge/2026/05/MSF-2026-05-016-mapping-data-flow-transforms-in-dataflow-gen2-preview) | Mapping Data Flow Transforms in Dataflow Gen2 (Preview) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-017](../knowledge/2026/05/MSF-2026-05-017-onelake-catalog-natively-available-in-microsoft-foundry) | OneLake catalog natively available in Microsoft Foundry (Generally Available) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-018](../knowledge/2026/05/MSF-2026-05-018-business-workflow-management-in-fabric-pipelines) | Business Workflow Management in Fabric Pipelines | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-019](../knowledge/2026/05/MSF-2026-05-019-copy-job-for-sap-via-abap-add-on-preview) | Copy job for SAP via ABAP Add-On (Preview) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-020](../knowledge/2026/05/MSF-2026-05-020-create-support-tickets-from-within-microsoft-fabric) | Create support tickets from within Microsoft Fabric (Generally Available) | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-013](../knowledge/2026/05/MSF-2026-05-013-fabric-data-warehouse-upgrades-in-ssms-22-5) | SSMS 22.5 Fabric Data Warehouse upgrades | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-014](../knowledge/2026/05/MSF-2026-05-014-fabric-data-warehouse-as-the-modernization-path-for-synapse) | Modernizing Synapse Dedicated SQL Pool to Fabric Data Warehouse | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-015](../knowledge/2026/05/MSF-2026-05-015-refresh-materialized-lake-view-activity-in-data-factory) | Refresh Materialized Lake View activity in Fabric Data Factory pipelines | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-016](../knowledge/2026/05/MSF-2026-05-016-mapping-data-flow-transforms-in-dataflow-gen2-preview) | Mapping data flow transforms in dataflow gen2 (Preview) | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-017](../knowledge/2026/05/MSF-2026-05-017-onelake-catalog-natively-available-in-microsoft-foundry) | The OneLake catalog is now natively available in Microsoft Foundry | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-018](../knowledge/2026/05/MSF-2026-05-018-business-workflow-management-in-fabric-pipelines) | Business workflow management with pipelines in Fabric Data Factory | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-019](../knowledge/2026/05/MSF-2026-05-019-copy-job-for-sap-via-abap-add-on-preview) | Copy job for SAP via ABAP Add-On (preview) | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-020](../knowledge/2026/05/MSF-2026-05-020-create-support-tickets-from-within-microsoft-fabric) | Ticket creation from within Microsoft Fabric (Generally Available) | 2026-05-01 | fabric-whats-new-markdown |
 | [MSF-2026-05-021](../knowledge/2026/05/MSF-2026-05-021-resource-profiles-in-fabric-data-engineering-preview) | Resource Profiles in Fabric Data Engineering (Preview) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-022](../knowledge/2026/05/MSF-2026-05-022-service-principal-support-for-fabric-data-agents-preview) | Service principal support for Fabric data agents (Preview) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-023](../knowledge/2026/05/MSF-2026-05-023-my-queries-in-dataflow-gen2-preview) | My queries in Dataflow Gen2 (Preview) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-024](../knowledge/2026/05/MSF-2026-05-024-incremental-liquid-clustering-in-fabric-runtime-2-0) | Incremental Liquid Clustering in Fabric Runtime 2.0 | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-025](../knowledge/2026/05/MSF-2026-05-025-workspace-identity-in-fabric-airflow-jobs) | Workspace Identity in Fabric Airflow Jobs | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-026](../knowledge/2026/05/MSF-2026-05-026-alter-column-for-fabric-data-warehouse-preview) | ALTER COLUMN for Fabric Data Warehouse (Preview) | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-022](../knowledge/2026/05/MSF-2026-05-022-service-principal-support-for-fabric-data-agents-preview) | Fabric data agents now support service principal (SPN) authentication | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-023](../knowledge/2026/05/MSF-2026-05-023-my-queries-in-dataflow-gen2-preview) | My queries (Preview) | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-024](../knowledge/2026/05/MSF-2026-05-024-incremental-liquid-clustering-in-fabric-runtime-2-0) | Incremental Liquid Clustering | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-025](../knowledge/2026/05/MSF-2026-05-025-workspace-identity-in-fabric-airflow-jobs) | Workspace Identity in Apache Airflow Jobs | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-026](../knowledge/2026/05/MSF-2026-05-026-alter-column-for-fabric-data-warehouse-preview) | ALTER TABLE ... ALTER COLUMN (Preview) | 2026-05-01 | fabric-whats-new-markdown |
 | [MSF-2026-05-027](../knowledge/2026/05/MSF-2026-05-027-excel-to-delta-tables-with-shortcut-transformations-preview) | Excel to Delta tables with shortcut transformations (Preview) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-028](../knowledge/2026/05/MSF-2026-05-028-onelake-storage-tiers-and-lifecycle-management-preview) | OneLake storage tiers and lifecycle management (Preview) | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-028](../knowledge/2026/05/MSF-2026-05-028-onelake-storage-tiers-and-lifecycle-management-preview) | hot, cool, and cold storage tiers | 2026-05-01 | fabric-whats-new-markdown |
 | [MSF-2026-05-029](../knowledge/2026/05/MSF-2026-05-029-direct-lake-on-sql-with-fabric-data-warehouse) | Direct Lake on SQL with Fabric Data Warehouse | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-030](../knowledge/2026/05/MSF-2026-05-030-warehouse-connection-string-changes-generally-available) | Warehouse connection string changes (Generally Available) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-031](../knowledge/2026/05/MSF-2026-05-031-capacity-metrics-app-enhancements-and-chargeback-app) | Capacity metrics app enhancements and Chargeback app (Generally Available) | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-030](../knowledge/2026/05/MSF-2026-05-030-warehouse-connection-string-changes-generally-available) | Connection behavior changes in Fabric Data Warehouse | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-05-031](../knowledge/2026/05/MSF-2026-05-031-capacity-metrics-app-enhancements-and-chargeback-app) | Capacity health page, timepoint summary, timepoint detail, and the Chargeback app are generally available | 2026-05-01 | fabric-whats-new-markdown |
 | [MSF-2026-05-032](../knowledge/2026/05/MSF-2026-05-032-data-warehouse-monitor-preview) | Data Warehouse Monitor (Preview) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-05-033](../knowledge/2026/05/MSF-2026-05-033-high-concurrency-support-for-the-fabric-livy-api-preview) | High Concurrency Support for the Fabric Livy API (Preview) | 2026-05-01 | fabric-whats-new-markdown |
-| [MSF-2026-03-001](../knowledge/2026/03/MSF-2026-03-001-mirroring-from-sap-databases-generally-available) | Mirroring from SAP databases (Generally Available) | 2026-03-01 | fabric-whats-new-markdown |
-| [MSF-2026-02-001](../knowledge/2026/02/MSF-2026-02-001-enrich-power-bi-reports-with-ml) | Enrich Power BI reports with ML | 2026-02-01 | fabric-whats-new-markdown |
-| [MSF-2025-11-001](../knowledge/2025/11/MSF-2025-11-001-cosmos-db-in-microsoft-fabric-ga) | Cosmos DB in Microsoft Fabric (GA) | 2025-11-01 | fabric-whats-new-markdown |
-| [MSF-2026-08-001](../knowledge/2026/08/MSF-2026-08-001-data-replication-from-lakehouse-with-delta-change-feed) | Data replication from Lakehouse with Delta Change Feed (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-002](../knowledge/2026/08/MSF-2026-08-002-on-premises-data-gateway-manual-update-preview) | On-premises data gateway manual update (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-003](../knowledge/2026/08/MSF-2026-08-003-manage-built-in-sql-database-mirroring-to-onelake-preview) | Manage built-in SQL database mirroring to OneLake (preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-005](../knowledge/2026/08/MSF-2026-08-005-bulk-import-and-export-items-definition-preview) | Bulk import and export items definition (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-006](../knowledge/2026/08/MSF-2026-08-006-continuous-ingestion-from-azure-storage-to-eventhouse) | Continuous ingestion from Azure Storage to Eventhouse (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-007](../knowledge/2026/08/MSF-2026-08-007-stream-mirrored-database-change-feeds-into-eventstreams) | Stream Mirrored Database change feeds into Eventstreams (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-05-033](../knowledge/2026/05/MSF-2026-05-033-high-concurrency-support-for-the-fabric-livy-api-preview) | High Concurrency (HC) sessions for the Fabric Livy API (Preview) | 2026-05-01 | fabric-whats-new-markdown |
+| [MSF-2026-03-001](../knowledge/2026/03/MSF-2026-03-001-mirroring-from-sap-databases-generally-available) | Mirroring SAP | 2026-03-01 | fabric-whats-new-markdown |
+| [MSF-2026-02-001](../knowledge/2026/02/MSF-2026-02-001-enrich-power-bi-reports-with-ml) | Machine learning can enrich Power BI reports | 2026-02-01 | fabric-whats-new-markdown |
+| [MSF-2025-11-001](../knowledge/2025/11/MSF-2025-11-001-cosmos-db-in-microsoft-fabric-ga) | Cosmos DB in Microsoft Fabric | 2025-11-01 | fabric-whats-new-markdown |
+| [MSF-2026-08-001](../knowledge/2026/08/MSF-2026-08-001-data-replication-from-lakehouse-with-delta-change-feed) | Data Replication from Fabric Lakehouse with Delta Change Data Feed (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-002](../knowledge/2026/08/MSF-2026-08-002-on-premises-data-gateway-manual-update-preview) | Manual update for the on-premises data gateway | — | fabric-whats-new-markdown |
+| [MSF-2026-08-003](../knowledge/2026/08/MSF-2026-08-003-manage-built-in-sql-database-mirroring-to-onelake-preview) | Mirroring Fabric SQL database to OneLake | — | fabric-whats-new-markdown |
+| [MSF-2026-08-005](../knowledge/2026/08/MSF-2026-08-005-bulk-import-and-export-items-definition-preview) | Bulk import and export APIs (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-006](../knowledge/2026/08/MSF-2026-08-006-continuous-ingestion-from-azure-storage-to-eventhouse) | continuous ingestion from Azure Storage to Eventhouse (preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-007](../knowledge/2026/08/MSF-2026-08-007-stream-mirrored-database-change-feeds-into-eventstreams) | Mirrored Database change feed connector for Eventstreams (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-008](../knowledge/2026/08/MSF-2026-08-008-capacity-overage-preview) | Capacity overage (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-009](../knowledge/2026/08/MSF-2026-08-009-recent-data-in-dataflow-gen2-preview) | Recent data in Dataflow Gen2 (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-010](../knowledge/2026/08/MSF-2026-08-010-fabric-data-factory-upsert-table-action-in-the-lakehouse) | Fabric Data Factory Upsert table action in the Lakehouse Connector (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-011](../knowledge/2026/08/MSF-2026-08-011-item-history-in-fabric-capacity-metrics-app-preview) | Item History in Fabric Capacity Metrics App (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-012](../knowledge/2026/08/MSF-2026-08-012-apache-iceberg-data-in-onelake-using-snowflake-and) | Apache Iceberg data in OneLake using Snowflake and shortcuts (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-013](../knowledge/2026/08/MSF-2026-08-013-partitioned-compute-for-dataflow-gen2-preview) | Partitioned compute for Dataflow Gen2 (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-014](../knowledge/2026/08/MSF-2026-08-014-lakehouse-support-for-git-integration-and-deployment) | Lakehouse support for git integration and deployment pipelines (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-015](../knowledge/2026/08/MSF-2026-08-015-fabric-sku-estimator-preview) | Fabric SKU estimator (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-016](../knowledge/2026/08/MSF-2026-08-016-multiple-schema-inferencing-in-eventstream-preview) | Multiple-Schema Inferencing in Eventstream (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-010](../knowledge/2026/08/MSF-2026-08-010-fabric-data-factory-upsert-table-action-in-the-lakehouse) | Upsert (Preview) table action in the Lakehouse Connector | — | fabric-whats-new-markdown |
+| [MSF-2026-08-011](../knowledge/2026/08/MSF-2026-08-011-item-history-in-fabric-capacity-metrics-app-preview) | Item History page in the Fabric Capacity Metrics App (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-012](../knowledge/2026/08/MSF-2026-08-012-apache-iceberg-data-in-onelake-using-snowflake-and) | consume Apache Iceberg-formatted data across Microsoft Fabric with no data movement or duplication | — | fabric-whats-new-markdown |
+| [MSF-2026-08-013](../knowledge/2026/08/MSF-2026-08-013-partitioned-compute-for-dataflow-gen2-preview) | partitioned compute in Dataflow Gen2 | — | fabric-whats-new-markdown |
+| [MSF-2026-08-014](../knowledge/2026/08/MSF-2026-08-014-lakehouse-support-for-git-integration-and-deployment) | Lakehouse now integrates with the lifecycle management capabilities in Microsoft Fabric | — | fabric-whats-new-markdown |
+| [MSF-2026-08-015](../knowledge/2026/08/MSF-2026-08-015-fabric-sku-estimator-preview) | Microsoft Fabric SKU estimator | — | fabric-whats-new-markdown |
+| [MSF-2026-08-016](../knowledge/2026/08/MSF-2026-08-016-multiple-schema-inferencing-in-eventstream-preview) | Multiple schema inferencing (preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-017](../knowledge/2026/08/MSF-2026-08-017-fabric-connection-inside-notebook-preview) | Fabric Connection inside Notebook (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-018](../knowledge/2026/08/MSF-2026-08-018-public-parameter-values-to-refresh-a-dataflow-gen2-preview) | Public parameter values to refresh a Dataflow Gen2 (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-019](../knowledge/2026/08/MSF-2026-08-019-data-factory-sharepoint-data-source-site-picker-preview) | Data Factory SharePoint data source site picker (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-020](../knowledge/2026/08/MSF-2026-08-020-warehouse-custom-sql-pools-preview) | Warehouse custom SQL pools (preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-018](../knowledge/2026/08/MSF-2026-08-018-public-parameter-values-to-refresh-a-dataflow-gen2-preview) | public parameters capability for Dataflow Gen2 | — | fabric-whats-new-markdown |
+| [MSF-2026-08-019](../knowledge/2026/08/MSF-2026-08-019-data-factory-sharepoint-data-source-site-picker-preview) | SharePoint Site Picker (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-020](../knowledge/2026/08/MSF-2026-08-020-warehouse-custom-sql-pools-preview) | Custom SQL pools (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-021](../knowledge/2026/08/MSF-2026-08-021-dropped-warehouse-recovery-preview) | Dropped warehouse recovery (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-022](../knowledge/2026/08/MSF-2026-08-022-warehouse-identity-columns-preview) | Warehouse IDENTITY columns (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-023](../knowledge/2026/08/MSF-2026-08-023-fabric-iq-preview-workload) | Fabric IQ (Preview) workload | — | fabric-whats-new-markdown |
-| [MSF-2026-08-024](../knowledge/2026/08/MSF-2026-08-024-real-time-intelligence-cribl-source-preview) | Real-Time Intelligence Cribl source (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-025](../knowledge/2026/08/MSF-2026-08-025-advanced-edit-for-data-destination-queries-in-dataflow-gen2) | Advanced edit for data destination queries in Dataflow Gen2 (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-026](../knowledge/2026/08/MSF-2026-08-026-load-fabric-onelake-data-in-excel) | Load Fabric OneLake Data in Excel | — | fabric-whats-new-markdown |
-| [MSF-2026-08-027](../knowledge/2026/08/MSF-2026-08-027-evaluate-your-fabric-data-agents-with-the-python-sdk-preview) | Evaluate your Fabric data agents with the Python SDK (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-028](../knowledge/2026/08/MSF-2026-08-028-prebuilt-foundry-tools-in-fabric-preview) | Prebuilt Foundry Tools in Fabric preview | — | fabric-whats-new-markdown |
-| [MSF-2026-08-029](../knowledge/2026/08/MSF-2026-08-029-copilot-in-fabric-is-available-worldwide) | Copilot in Fabric is available worldwide | — | fabric-whats-new-markdown |
-| [MSF-2026-08-030](../knowledge/2026/08/MSF-2026-08-030-centralized-data-governance-in-the-onelake-catalog-preview) | Centralized data governance in the OneLake catalog (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-031](../knowledge/2026/08/MSF-2026-08-031-eventstream-workspace-monitoring-preview) | Eventstream workspace monitoring (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-033](../knowledge/2026/08/MSF-2026-08-033-eventstream-derived-streams-in-direct-ingestion-mode-preview) | Eventstream Derived Streams in Direct Ingestion mode (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-035](../knowledge/2026/08/MSF-2026-08-035-migration-assistant-to-sql-database-preview) | Migration Assistant to SQL database (preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-036](../knowledge/2026/08/MSF-2026-08-036-digital-twin-builder-preview) | Digital twin builder (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-038](../knowledge/2026/08/MSF-2026-08-038-business-events-in-real-time-intelligence-preview) | Business Events in Real-Time Intelligence (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-039](../knowledge/2026/08/MSF-2026-08-039-pass-parameter-values-to-fabric-items-preview) | Pass Parameter Values to Fabric Items (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-041](../knowledge/2026/08/MSF-2026-08-041-openai-plugins-for-eventhouse-preview) | OpenAI plugins for Eventhouse (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-043](../knowledge/2026/08/MSF-2026-08-043-dbt-job-in-fabric-data-factory-preview) | dbt Job in Fabric Data Factory (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-044](../knowledge/2026/08/MSF-2026-08-044-microsoft-odbc-driver-preview) | Microsoft ODBC Driver (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-046](../knowledge/2026/08/MSF-2026-08-046-ontology-preview-item) | Ontology (preview) item | — | fabric-whats-new-markdown |
-| [MSF-2026-08-047](../knowledge/2026/08/MSF-2026-08-047-notebook-copilot-inline-code-completion-preview) | Notebook Copilot inline code completion (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-022](../knowledge/2026/08/MSF-2026-08-022-warehouse-identity-columns-preview) | IDENTITY columns | — | fabric-whats-new-markdown |
+| [MSF-2026-08-023](../knowledge/2026/08/MSF-2026-08-023-fabric-iq-preview-workload) | Fabric IQ (preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-024](../knowledge/2026/08/MSF-2026-08-024-real-time-intelligence-cribl-source-preview) | Cribl source (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-025](../knowledge/2026/08/MSF-2026-08-025-advanced-edit-for-data-destination-queries-in-dataflow-gen2) | advanced edit for data destination queries in Dataflow Gen2 | — | fabric-whats-new-markdown |
+| [MSF-2026-08-026](../knowledge/2026/08/MSF-2026-08-026-load-fabric-onelake-data-in-excel) | OneLake catalog and Get Data are integrated into Excel for Windows | — | fabric-whats-new-markdown |
+| [MSF-2026-08-027](../knowledge/2026/08/MSF-2026-08-027-evaluate-your-fabric-data-agents-with-the-python-sdk-preview) | the Python SDK to programmatically evaluate Fabric data agents | — | fabric-whats-new-markdown |
+| [MSF-2026-08-028](../knowledge/2026/08/MSF-2026-08-028-prebuilt-foundry-tools-in-fabric-preview) | preview of prebuilt Foundry Tools in Fabric | — | fabric-whats-new-markdown |
+| [MSF-2026-08-029](../knowledge/2026/08/MSF-2026-08-029-copilot-in-fabric-is-available-worldwide) | Copilot in Fabric is now available | — | fabric-whats-new-markdown |
+| [MSF-2026-08-030](../knowledge/2026/08/MSF-2026-08-030-centralized-data-governance-in-the-onelake-catalog-preview) | centralized data governance experience in the OneLake catalog | — | fabric-whats-new-markdown |
+| [MSF-2026-08-031](../knowledge/2026/08/MSF-2026-08-031-eventstream-workspace-monitoring-preview) | Workspace monitoring for Eventstreams (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-033](../knowledge/2026/08/MSF-2026-08-033-eventstream-derived-streams-in-direct-ingestion-mode-preview) | direct ingestion mode | — | fabric-whats-new-markdown |
+| [MSF-2026-08-035](../knowledge/2026/08/MSF-2026-08-035-migration-assistant-to-sql-database-preview) | new Migration Assistant for SQL database | — | fabric-whats-new-markdown |
+| [MSF-2026-08-036](../knowledge/2026/08/MSF-2026-08-036-digital-twin-builder-preview) | Digital twin builder (preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-038](../knowledge/2026/08/MSF-2026-08-038-business-events-in-real-time-intelligence-preview) | Business Events (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-039](../knowledge/2026/08/MSF-2026-08-039-pass-parameter-values-to-fabric-items-preview) | automatically activate Fabric items like pipeline and notebook | — | fabric-whats-new-markdown |
+| [MSF-2026-08-041](../knowledge/2026/08/MSF-2026-08-041-openai-plugins-for-eventhouse-preview) | two powerful AI plugins for Eventhouse: AI Embed Text Plugin and AI Chat Completion Prompt Plugin | — | fabric-whats-new-markdown |
+| [MSF-2026-08-043](../knowledge/2026/08/MSF-2026-08-043-dbt-job-in-fabric-data-factory-preview) | dbt Job in Fabric Data Factory | — | fabric-whats-new-markdown |
+| [MSF-2026-08-044](../knowledge/2026/08/MSF-2026-08-044-microsoft-odbc-driver-preview) | Microsoft ODBC Driver for Fabric Data Engineering (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-046](../knowledge/2026/08/MSF-2026-08-046-ontology-preview-item) | What is ontology (preview)? | — | fabric-whats-new-markdown |
+| [MSF-2026-08-047](../knowledge/2026/08/MSF-2026-08-047-notebook-copilot-inline-code-completion-preview) | Copilot Inline Code Completion (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-048](../knowledge/2026/08/MSF-2026-08-048-microsoft-ado-net-driver-for-fabric-data-engineering-preview) | Microsoft ADO.NET Driver for Fabric Data Engineering (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-049](../knowledge/2026/08/MSF-2026-08-049-fabric-remote-mcp-preview) | Fabric Remote MCP (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-050](../knowledge/2026/08/MSF-2026-08-050-fabric-activator-integration-in-fabric-user-data-functions) | Fabric Activator integration in Fabric User Data functions (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-051](../knowledge/2026/08/MSF-2026-08-051-data-factory-in-fabric-connection-recency-preview) | Data Factory in Fabric connection recency (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-052](../knowledge/2026/08/MSF-2026-08-052-workspace-customer-managed-keys-for-byok-preview) | Workspace customer-managed keys for BYOK (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-050](../knowledge/2026/08/MSF-2026-08-050-fabric-activator-integration-in-fabric-user-data-functions) | Fabric Activator integration with Fabric User Data functions (preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-051](../knowledge/2026/08/MSF-2026-08-051-data-factory-in-fabric-connection-recency-preview) | Connection recency (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-052](../knowledge/2026/08/MSF-2026-08-052-workspace-customer-managed-keys-for-byok-preview) | Workspace CMK for BYOK (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-053](../knowledge/2026/08/MSF-2026-08-053-azure-monitor-to-fabric-eventhouse-preview) | Azure Monitor to Fabric Eventhouse (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-055](../knowledge/2026/08/MSF-2026-08-055-fabric-capacity-overview-events-in-real-time-hub-preview) | Fabric Capacity overview events in Real-Time Hub (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-056](../knowledge/2026/08/MSF-2026-08-056-dataflow-gen2-diagnostics-download-preview) | Dataflow Gen2 diagnostics download (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-057](../knowledge/2026/08/MSF-2026-08-057-entity-diagram-in-eventhouse-kql-database-preview) | Entity diagram in Eventhouse KQL database (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-059](../knowledge/2026/08/MSF-2026-08-059-workspace-monitoring-preview) | Workspace monitoring (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-060](../knowledge/2026/08/MSF-2026-08-060-zero-copy-access-to-onelake-data-in-azure-databricks-preview) | Zero-copy access to OneLake data in Azure Databricks (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-061](../knowledge/2026/08/MSF-2026-08-061-ml-model-endpoints-preview) | ML model endpoints (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-059](../knowledge/2026/08/MSF-2026-08-059-workspace-monitoring-preview) | Workspace monitoring (preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-060](../knowledge/2026/08/MSF-2026-08-060-zero-copy-access-to-onelake-data-in-azure-databricks-preview) | OneLake catalog federation in Azure Databricks (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-061](../knowledge/2026/08/MSF-2026-08-061-ml-model-endpoints-preview) | ML models in Fabric can now serve real-time predictions from secure, scalable, and easy-to-use online endpoints | — | fabric-whats-new-markdown |
 | [MSF-2026-08-062](../knowledge/2026/08/MSF-2026-08-062-fabric-admin-apis) | Fabric Admin APIs | — | fabric-whats-new-markdown |
-| [MSF-2026-08-063](../knowledge/2026/08/MSF-2026-08-063-mirrored-dremio-catalog-in-onelake-preview) | Mirrored Dremio catalog in OneLake (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-064](../knowledge/2026/08/MSF-2026-08-064-mcp-remote-servers-for-activator-and-eventhouse-in-real) | MCP remote servers for Activator and Eventhouse in Real-Time Intelligence (preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-065](../knowledge/2026/08/MSF-2026-08-065-access-your-delta-lake-tables-as-apache-iceberg-in-onelake) | Access your Delta Lake tables as Apache Iceberg in OneLake (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-063](../knowledge/2026/08/MSF-2026-08-063-mirrored-dremio-catalog-in-onelake-preview) | Bring your Dremio data into OneLake (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-064](../knowledge/2026/08/MSF-2026-08-064-mcp-remote-servers-for-activator-and-eventhouse-in-real) | Get started with the remote MCP server for eventhouses (preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-065](../knowledge/2026/08/MSF-2026-08-065-access-your-delta-lake-tables-as-apache-iceberg-in-onelake) | OneLake now lets you access your Delta Lake tables using Apache Iceberg compatible readers | — | fabric-whats-new-markdown |
 | [MSF-2026-08-066](../knowledge/2026/08/MSF-2026-08-066-workspace-monitoring-for-copy-job-preview) | Workspace Monitoring for Copy job (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-067](../knowledge/2026/08/MSF-2026-08-067-rest-apis-for-connections-and-gateways-preview) | REST APIs for connections and gateways (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-068](../knowledge/2026/08/MSF-2026-08-068-deltaflow-transformation-in-fabric-real-time-intelligence-s) | DeltaFlow transformation in Fabric Real-Time Intelligence's Eventstream (preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-069](../knowledge/2026/08/MSF-2026-08-069-lakehouse-utility-suite-preview) | Lakehouse utility suite (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-070](../knowledge/2026/08/MSF-2026-08-070-max-vcores-limit-option-in-sql-databases-preview) | Max vCores limit option in SQL databases (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-067](../knowledge/2026/08/MSF-2026-08-067-rest-apis-for-connections-and-gateways-preview) | REST APIs for connections and gateways are now in preview | — | fabric-whats-new-markdown |
+| [MSF-2026-08-068](../knowledge/2026/08/MSF-2026-08-068-deltaflow-transformation-in-fabric-real-time-intelligence-s) | DeltaFlow output transformation (preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-069](../knowledge/2026/08/MSF-2026-08-069-lakehouse-utility-suite-preview) | Lakehouse Utility Suite | — | fabric-whats-new-markdown |
+| [MSF-2026-08-070](../knowledge/2026/08/MSF-2026-08-070-max-vcores-limit-option-in-sql-databases-preview) | Max vCores limit option (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-071](../knowledge/2026/08/MSF-2026-08-071-fabric-cli-in-azure-devops-preview) | Fabric CLI in Azure DevOps (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-072](../knowledge/2026/08/MSF-2026-08-072-invoke-ssis-package-activity-in-data-factory-pipelines) | Invoke SSIS Package activity in Data Factory pipelines (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-073](../knowledge/2026/08/MSF-2026-08-073-schema-registry-preview) | Schema Registry (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-074](../knowledge/2026/08/MSF-2026-08-074-ai-functions-multimodal-support-preview) | AI Functions multimodal support (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-075](../knowledge/2026/08/MSF-2026-08-075-data-factory-adaptive-performance-tuning-preview) | Data Factory Adaptive performance tuning (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-076](../knowledge/2026/08/MSF-2026-08-076-warehouse-data-clustering-preview) | Warehouse data clustering (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-077](../knowledge/2026/08/MSF-2026-08-077-git-developer-experiences-preview) | Git developer experiences (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-072](../knowledge/2026/08/MSF-2026-08-072-invoke-ssis-package-activity-in-data-factory-pipelines) | Invoke SSIS Package activity (preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-073](../knowledge/2026/08/MSF-2026-08-073-schema-registry-preview) | Event Schema Registry (preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-074](../knowledge/2026/08/MSF-2026-08-074-ai-functions-multimodal-support-preview) | Use multimodal input with AI Functions (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-075](../knowledge/2026/08/MSF-2026-08-075-data-factory-adaptive-performance-tuning-preview) | the adaptivePerformanceTuning property when using copy activity | — | fabric-whats-new-markdown |
+| [MSF-2026-08-076](../knowledge/2026/08/MSF-2026-08-076-warehouse-data-clustering-preview) | Data clustering in Fabric Data Warehouse | — | fabric-whats-new-markdown |
+| [MSF-2026-08-077](../knowledge/2026/08/MSF-2026-08-077-git-developer-experiences-preview) | New Git developer experiences (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-078](../knowledge/2026/08/MSF-2026-08-078-mssql-extension-for-vs-code-fabric-integration-preview) | MSSQL extension for VS Code Fabric integration (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-079](../knowledge/2026/08/MSF-2026-08-079-resource-instance-rules-for-onelake-preview) | Resource Instance Rules for OneLake (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-080](../knowledge/2026/08/MSF-2026-08-080-solace-pubsub-connector) | Solace PubSub+ Connector | — | fabric-whats-new-markdown |
-| [MSF-2026-08-081](../knowledge/2026/08/MSF-2026-08-081-sql-database-support-for-tenant-level-private-links-preview) | SQL database support for Tenant level private links (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-082](../knowledge/2026/08/MSF-2026-08-082-data-factory-on-premises-data-gateway-manual-update-option) | Data Factory On-premises data gateway manual update option (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-080](../knowledge/2026/08/MSF-2026-08-080-solace-pubsub-connector) | New Solace PubSub+ Connector: seamlessly connect Fabric Eventstream with Solace PubSub+ (preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-081](../knowledge/2026/08/MSF-2026-08-081-sql-database-support-for-tenant-level-private-links-preview) | tenant level private links | — | fabric-whats-new-markdown |
+| [MSF-2026-08-082](../knowledge/2026/08/MSF-2026-08-082-data-factory-on-premises-data-gateway-manual-update-option) | Gateway December 2025 release | — | fabric-whats-new-markdown |
 | [MSF-2026-08-084](../knowledge/2026/08/MSF-2026-08-084-customer-managed-keys-cmk-for-eventhouse-preview) | Customer Managed Keys (CMK) for Eventhouse (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-085](../knowledge/2026/08/MSF-2026-08-085-public-api-capabilities-for-dataflow-gen2-dataflows-in) | Public API capabilities for Dataflow Gen2 dataflows in Fabric Data Factory (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-086](../knowledge/2026/08/MSF-2026-08-086-confluent-schema-registry-support-in-eventstream-preview) | Confluent Schema Registry Support in Eventstream (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-087](../knowledge/2026/08/MSF-2026-08-087-ai-functions-in-fabric-data-warehouse-preview) | AI functions in Fabric Data Warehouse (preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-085](../knowledge/2026/08/MSF-2026-08-085-public-api-capabilities-for-dataflow-gen2-dataflows-in) | preview of the Dataflows Gen 2 public APIs | — | fabric-whats-new-markdown |
+| [MSF-2026-08-086](../knowledge/2026/08/MSF-2026-08-086-confluent-schema-registry-support-in-eventstream-preview) | Eventstream's Confluent Cloud for Apache Kafka streaming connector now supports decoding data from topics associated with a data contract in Confluent Schema Registry | — | fabric-whats-new-markdown |
+| [MSF-2026-08-087](../knowledge/2026/08/MSF-2026-08-087-ai-functions-in-fabric-data-warehouse-preview) | Use AI functions in Fabric Data Warehouse (preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-088](../knowledge/2026/08/MSF-2026-08-088-jobinsight-diagnostics-library-preview) | JobInsight Diagnostics Library (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-090](../knowledge/2026/08/MSF-2026-08-090-workspace-level-surge-protection-preview) | Workspace-level surge protection (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-091](../knowledge/2026/08/MSF-2026-08-091-scalar-user-defined-functions-udfs) | Scalar user-defined functions (UDFs) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-093](../knowledge/2026/08/MSF-2026-08-093-evaluate-power-query-programmatically-preview) | Evaluate Power Query programmatically (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-094](../knowledge/2026/08/MSF-2026-08-094-associate-an-identity-for-items-preview) | Associate an identity for items (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-095](../knowledge/2026/08/MSF-2026-08-095-manage-failure-notifications-from-the-monitoring-hub-in) | Manage failure notifications from the monitoring hub in Fabric (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-096](../knowledge/2026/08/MSF-2026-08-096-sql-database-data-virtualization-preview) | SQL database data virtualization (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-090](../knowledge/2026/08/MSF-2026-08-090-workspace-level-surge-protection-preview) | Workspace-level surge protection controls (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-091](../knowledge/2026/08/MSF-2026-08-091-scalar-user-defined-functions-udfs) | Scalar user-defined functions (UDFs) are now supported | — | fabric-whats-new-markdown |
+| [MSF-2026-08-093](../knowledge/2026/08/MSF-2026-08-093-evaluate-power-query-programmatically-preview) | Evaluate Power Query Programmatically in Microsoft Fabric (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-094](../knowledge/2026/08/MSF-2026-08-094-associate-an-identity-for-items-preview) | Associated identities for items (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-095](../knowledge/2026/08/MSF-2026-08-095-manage-failure-notifications-from-the-monitoring-hub-in) | Schedule failures page in the Fabric monitoring hub (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-096](../knowledge/2026/08/MSF-2026-08-096-sql-database-data-virtualization-preview) | Data virtualization (preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-097](../knowledge/2026/08/MSF-2026-08-097-fabric-runtime-2-0-preview) | Fabric Runtime 2.0 (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-098](../knowledge/2026/08/MSF-2026-08-098-anomaly-detection-preview) | Anomaly detection (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-098](../knowledge/2026/08/MSF-2026-08-098-anomaly-detection-preview) | Anomaly detection in Real-Time Intelligence (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-100](../knowledge/2026/08/MSF-2026-08-100-fabric-migration-assessment-for-data-factory-preview) | Fabric Migration Assessment for Data Factory (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-101](../knowledge/2026/08/MSF-2026-08-101-spark-connector-for-sql-databases-preview) | Spark Connector for SQL databases (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-102](../knowledge/2026/08/MSF-2026-08-102-fabric-data-agent-integration-with-azure-ai-agent-service) | Fabric Data Agent integration with Azure AI Agent Service (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-101](../knowledge/2026/08/MSF-2026-08-101-spark-connector-for-sql-databases-preview) | Spark Connector for SQL databases | — | fabric-whats-new-markdown |
+| [MSF-2026-08-102](../knowledge/2026/08/MSF-2026-08-102-fabric-data-agent-integration-with-azure-ai-agent-service) | Consume a Fabric Data Agent in Microsoft Copilot Studio (preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-103](../knowledge/2026/08/MSF-2026-08-103-lakehouse-auto-binding-in-git-preview) | Lakehouse auto-binding in Git (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-104](../knowledge/2026/08/MSF-2026-08-104-folder-rest-api-preview) | Folder REST API (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-08-106](../knowledge/2026/08/MSF-2026-08-106-upsert-to-delta-table-with-lakehouse-connector-preview) | Upsert to delta table with Lakehouse connector (Preview) | — | fabric-whats-new-markdown |
+| [MSF-2026-08-104](../knowledge/2026/08/MSF-2026-08-104-folder-rest-api-preview) | workspace folders | — | fabric-whats-new-markdown |
+| [MSF-2026-08-106](../knowledge/2026/08/MSF-2026-08-106-upsert-to-delta-table-with-lakehouse-connector-preview) | Configure Lakehouse in a copy activity | — | fabric-whats-new-markdown |
 
 ## powerbi-whats-new-markdown (14)
 
 | ID | Title | Published | Source |
 |---|---|---|---|
-| [MSF-2026-08-004](../knowledge/2026/08/MSF-2026-08-004-visuals-calculations-lookup-function-now-supports-inferred) | Visuals calculations LOOKUP function now supports INFERRED mode | — | powerbi-whats-new-markdown |
-| [MSF-2026-08-032](../knowledge/2026/08/MSF-2026-08-032-simplified-title-spacing-for-visuals) | Simplified title spacing for visuals | — | powerbi-whats-new-markdown |
-| [MSF-2026-08-034](../knowledge/2026/08/MSF-2026-08-034-conditional-formatting-for-line-charts-and-legends) | Conditional formatting for line charts and legends (Generally Available) | — | powerbi-whats-new-markdown |
-| [MSF-2026-08-037](../knowledge/2026/08/MSF-2026-08-037-report-page-tab-navigation-improvements-generally-available) | Report page tab navigation improvements (Generally Available) | — | powerbi-whats-new-markdown |
-| [MSF-2026-08-040](../knowledge/2026/08/MSF-2026-08-040-org-app-audiences-are-now-in-mobile-apps) | Org app audiences are now in mobile apps | — | powerbi-whats-new-markdown |
-| [MSF-2026-08-042](../knowledge/2026/08/MSF-2026-08-042-semantic-model-settings-pane-becomes-the-default-preview) | Semantic model settings pane becomes the default (Preview) | — | powerbi-whats-new-markdown |
-| [MSF-2026-08-045](../knowledge/2026/08/MSF-2026-08-045-enhancements-to-power-bi-embedding-in-sharepoint-online) | Enhancements to Power BI embedding in SharePoint Online | — | powerbi-whats-new-markdown |
-| [MSF-2026-08-054](../knowledge/2026/08/MSF-2026-08-054-bookmarks-support-for-reports-in-org-apps) | Bookmarks support for reports in org apps | — | powerbi-whats-new-markdown |
-| [MSF-2026-08-058](../knowledge/2026/08/MSF-2026-08-058-storytelling-support-for-reports-and-visuals-in-org-apps) | Storytelling support for reports and visuals in org apps | — | powerbi-whats-new-markdown |
-| [MSF-2026-08-083](../knowledge/2026/08/MSF-2026-08-083-org-apps-with-audiences-generally-available) | Org apps with audiences (Generally Available) | — | powerbi-whats-new-markdown |
-| [MSF-2026-08-089](../knowledge/2026/08/MSF-2026-08-089-model-options-now-available-in-power-bi-service) | Model Options now available in Power BI Service | — | powerbi-whats-new-markdown |
-| [MSF-2026-08-092](../knowledge/2026/08/MSF-2026-08-092-update-your-report-defaults-and-use-color-palettes-with) | Update your report defaults and use color palettes with modern visual defaults (Preview) | — | powerbi-whats-new-markdown |
-| [MSF-2026-08-099](../knowledge/2026/08/MSF-2026-08-099-tmdl-view-on-the-web) | TMDL View on the web | — | powerbi-whats-new-markdown |
-| [MSF-2026-08-105](../knowledge/2026/08/MSF-2026-08-105-measure-descriptions-with-triple-slash-comments) | Measure descriptions with triple-slash comments | — | powerbi-whats-new-markdown |
+| [MSF-2026-08-004](../knowledge/2026/08/MSF-2026-08-004-visuals-calculations-lookup-function-now-supports-inferred) | Using visual calculations | — | powerbi-whats-new-markdown |
+| [MSF-2026-08-032](../knowledge/2026/08/MSF-2026-08-032-simplified-title-spacing-for-visuals) | Customize visualization titles in Power BI reports | — | powerbi-whats-new-markdown |
+| [MSF-2026-08-034](../knowledge/2026/08/MSF-2026-08-034-conditional-formatting-for-line-charts-and-legends) | Conditional formatting in Power BI visuals | — | powerbi-whats-new-markdown |
+| [MSF-2026-08-037](../knowledge/2026/08/MSF-2026-08-037-report-page-tab-navigation-improvements-generally-available) | Report view in Power BI Desktop | — | powerbi-whats-new-markdown |
+| [MSF-2026-08-040](../knowledge/2026/08/MSF-2026-08-040-org-app-audiences-are-now-in-mobile-apps) | View org apps in the Power BI mobile apps | — | powerbi-whats-new-markdown |
+| [MSF-2026-08-042](../knowledge/2026/08/MSF-2026-08-042-semantic-model-settings-pane-becomes-the-default-preview) | Edit semantic models in the Power BI Service | — | powerbi-whats-new-markdown |
+| [MSF-2026-08-045](../knowledge/2026/08/MSF-2026-08-045-enhancements-to-power-bi-embedding-in-sharepoint-online) | Add a Power BI report to SharePoint Online | — | powerbi-whats-new-markdown |
+| [MSF-2026-08-054](../knowledge/2026/08/MSF-2026-08-054-bookmarks-support-for-reports-in-org-apps) | Bookmarks in the Power BI service | — | powerbi-whats-new-markdown |
+| [MSF-2026-08-058](../knowledge/2026/08/MSF-2026-08-058-storytelling-support-for-reports-and-visuals-in-org-apps) | Add live Power BI data to PowerPoint | — | powerbi-whats-new-markdown |
+| [MSF-2026-08-083](../knowledge/2026/08/MSF-2026-08-083-org-apps-with-audiences-generally-available) | Get started with org apps | — | powerbi-whats-new-markdown |
+| [MSF-2026-08-089](../knowledge/2026/08/MSF-2026-08-089-model-options-now-available-in-power-bi-service) | Model options in the Power BI Service | — | powerbi-whats-new-markdown |
+| [MSF-2026-08-092](../knowledge/2026/08/MSF-2026-08-092-update-your-report-defaults-and-use-color-palettes-with) | Visual defaults in Power BI reports | — | powerbi-whats-new-markdown |
+| [MSF-2026-08-099](../knowledge/2026/08/MSF-2026-08-099-tmdl-view-on-the-web) | Use Tabular Model Definition Language view in Power BI Desktop | — | powerbi-whats-new-markdown |
+| [MSF-2026-08-105](../knowledge/2026/08/MSF-2026-08-105-measure-descriptions-with-triple-slash-comments) | Work with DAX query view in Power BI | — | powerbi-whats-new-markdown |

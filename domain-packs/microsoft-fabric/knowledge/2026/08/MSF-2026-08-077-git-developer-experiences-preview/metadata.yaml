@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-077
 slug: git-developer-experiences-preview
-title: Git developer experiences (Preview)
+title: New Git developer experiences (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/introducing-new-git-developer-experiences-in-microsoft-fabric-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/introducing-new-git-developer-experiences-in-microsoft-fabric-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:2d5e51b59abf797be3e371d2a287f672bba925ddd85ed1548360c0202a9acc22
+content_hash: sha256:45c9a5f10a10f77793756cc5effd8205f7a3436c996a20ffacdf59f16dd35793
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     the items you need, and the ability to Compare Code Changes for rich diff review before
     committing or syncing.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:45c9a5f10a10f77793756cc5effd8205f7a3436c996a20ffacdf59f16dd35793
+  title_snapshot: New Git developer experiences (Preview)
+  summary_snapshot: Git developer experiences (Preview) New Git developer experiences (Preview)
+    add branched workspaces for formal source-to-feature workspace relationships, selective
+    branching to branch out with only the items you need, and the ability to Compare Code
+    Changes for rich diff review before committing or syncing.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

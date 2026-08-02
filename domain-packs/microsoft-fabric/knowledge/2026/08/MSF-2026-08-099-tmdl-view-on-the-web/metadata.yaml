@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-099
 slug: tmdl-view-on-the-web
-title: TMDL View on the web
+title: Use Tabular Model Definition Language view in Power BI Desktop
 source_name: powerbi-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-tmdl-view
 announcement_url: https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-tmdl-view
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:9006ed0888f3a6d359830ebf0e2f583ad8ec5a99ae0e20cf2cfe969660b043b3
+content_hash: sha256:eecb456f032de6838b458e61d18c99475681d8bbbdd5e1be57d3df38de61cbd4
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,18 @@ revisions:
     for bulk edits, automation, and reusable definitions. For more information, see Use Tabular
     Model Definition Language view in Power BI Desktop.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:eecb456f032de6838b458e61d18c99475681d8bbbdd5e1be57d3df38de61cbd4
+  title_snapshot: Use Tabular Model Definition Language view in Power BI Desktop
+  summary_snapshot: TMDL View on the web Developers can script, modify, and apply changes
+    to model objects directly in a code editor using Tabular Model Definition Language without
+    switching to Desktop or downloading model files. Provides code-level visibility into semantic
+    model metadata for bulk edits, automation, and reusable definitions. For more information,
+    see Use Tabular Model Definition Language view in Power BI Desktop.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

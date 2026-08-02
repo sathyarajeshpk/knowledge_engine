@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-095
 slug: manage-failure-notifications-from-the-monitoring-hub-in
-title: Manage failure notifications from the monitoring hub in Fabric (Preview)
+title: Schedule failures page in the Fabric monitoring hub (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Manage-failure-notifications-from-the-monitoring-hub-in-Fabric/ba-p/5160381
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Manage-failure-notifications-from-the-monitoring-hub-in-Fabric/ba-p/5160381
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:ff07ca557becae0f6c281a6ba96e40657781c4a64f7e364d5d75a92f01de024e
+content_hash: sha256:288cf7545f3b01b300659e8fefa8284e4d8e96762cb4a700debecb7a8972de98
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,18 @@ revisions:
     For more information, see Schedule failures (preview) and Receive notifications for failed
     scheduled jobs.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:288cf7545f3b01b300659e8fefa8284e4d8e96762cb4a700debecb7a8972de98
+  title_snapshot: Schedule failures page in the Fabric monitoring hub (Preview)
+  summary_snapshot: Manage failure notifications from the monitoring hub in Fabric (Preview)
+    The Schedule failures page in the Fabric monitoring hub (Preview) lists every scheduled
+    item with failure notifications configured and lets you add, edit, or remove recipients
+    for any item from one place, without opening each item individually. For more information,
+    see Schedule failures (preview) and Receive notifications for failed scheduled jobs.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

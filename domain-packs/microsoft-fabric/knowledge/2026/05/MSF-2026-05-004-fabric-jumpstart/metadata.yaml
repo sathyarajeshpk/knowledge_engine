@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:3e740b32038ee2b5aa1be93c1912928bbd025585ddb93c370f51e421e133526a
+content_hash: sha256:e5bcb21ef3de790c617ca6c44edba52c516e3864d1ad72875b9ebdaa09974329
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,16 @@ revisions:
     Python command (fabricjumpstart.install) to deploy end-to-end scenarios such as a real-time
     healthcare billing system or a stateful streaming lakehouse without building from scratch.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:e5bcb21ef3de790c617ca6c44edba52c516e3864d1ad72875b9ebdaa09974329
+  title_snapshot: Fabric Jumpstart
+  summary_snapshot: Fabric Jumpstart is a catalog of Microsoft-sponsored and community-contributed
+    accelerators, tutorials, and demos for Microsoft Fabric that you install with a single
+    Python command (fabric_jumpstart.install) to deploy end-to-end scenarios such as a real-time
+    healthcare billing system or a stateful streaming lakehouse without building from scratch.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

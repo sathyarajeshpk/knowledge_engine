@@ -84,18 +84,6 @@
       "reason": "this announcement is cited by 8 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"
     },
-    "sha256:3016dd0972aa16f74dd3413c09d046d817048f735baa16adcec473ef6eedd16c": {
-      "identity_key": "sha256:3016dd0972aa16f74dd3413c09d046d817048f735baa16adcec473ef6eedd16c",
-      "title": "Mirroring for Azure Database for MySQL (Preview)",
-      "summary": "Mirroring in Fabric provides an easy experience to avoid complex ETL (Extract, Transform, Load) processes and seamlessly integrate your existing Azure Database for MySQL data with the rest of your data in Fabric. For more information, see Mirroring Azure Database for MySQL.",
-      "source_name": "fabric-whats-new-markdown",
-      "source_url": "https://learn.microsoft.com/en-us/fabric/mirroring/overview",
-      "announcement_url": "https://learn.microsoft.com/en-us/fabric/mirroring/overview",
-      "first_discovered_date": "2026-08-01",
-      "confidence": "medium",
-      "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
-      "lifecycle": "queued"
-    },
     "sha256:358ad71d155173f7e5f20d2639604aeb7a780d424693d1c0db527457bc1e84ae": {
       "identity_key": "sha256:358ad71d155173f7e5f20d2639604aeb7a780d424693d1c0db527457bc1e84ae",
       "title": "Deprecation of old file picker experience in Power BI Desktop",
@@ -120,6 +108,30 @@
       "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"
     },
+    "sha256:50e619d1505923357161227a939454002d4acf336e7fa9dd63bae94e2d07e46c": {
+      "identity_key": "sha256:50e619d1505923357161227a939454002d4acf336e7fa9dd63bae94e2d07e46c",
+      "title": "Starting in October, users with Power BI Desktop versions from March 2026 or earlier will no longer be able to save and share files to OneDrive and SharePoint. Update Power BI Desktop to keep using this functionality.",
+      "summary": "Deprecation of old file picker experience in Power BI Desktop",
+      "source_name": "powerbi-whats-new",
+      "source_url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new",
+      "announcement_url": null,
+      "first_discovered_date": "2026-08-02",
+      "confidence": "medium",
+      "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
+      "lifecycle": "queued"
+    },
+    "sha256:52e62449041faba288b2a637042a3b9f2924869c6e171ffe9540a8764724434d": {
+      "identity_key": "sha256:52e62449041faba288b2a637042a3b9f2924869c6e171ffe9540a8764724434d",
+      "title": "Paginated reports can now be managed through Microsoft Fabric REST APIs. New support for create, read, update, delete, and list operations enables developers and administrators to automate report lifecycle management and deployment workflows.",
+      "summary": "CRUD APIs for paginated reports",
+      "source_name": "powerbi-whats-new",
+      "source_url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new",
+      "announcement_url": null,
+      "first_discovered_date": "2026-08-02",
+      "confidence": "medium",
+      "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
+      "lifecycle": "queued"
+    },
     "sha256:5cef4940a5750d3d91ab246a89a8d0397209bf8afa3f8773d742273a0d74ccfd": {
       "identity_key": "sha256:5cef4940a5750d3d91ab246a89a8d0397209bf8afa3f8773d742273a0d74ccfd",
       "title": "Data protection: DLP restrict access for structured data in OneLake (Preview)",
@@ -132,16 +144,28 @@
       "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"
     },
-    "sha256:6dd0a81443376ed9a1e34f07e4a2ad5d213933e6d6874b27c599a97c24a051e1": {
-      "identity_key": "sha256:6dd0a81443376ed9a1e34f07e4a2ad5d213933e6d6874b27c599a97c24a051e1",
-      "title": "Rayfin SDK and CLI (Preview)",
-      "summary": "Rayfin (Preview) is an open-source SDK and CLI that developers and coding agents use to define a complete application backend in code—data models, APIs, identity, access policies, and business logic—and deploy it to Microsoft Fabric. The resulting apps run as first-class items with built-in governance and direct access to OneLake. For more information, see Fabric Apps, the Rayfin GitHub repo, and the Rayfin docs.",
-      "source_name": "fabric-whats-new-markdown",
-      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Introducing-Rayfin-A-new-AI-first-way-to-build-deploy-and-govern/ba-p/5191676",
-      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Introducing-Rayfin-A-new-AI-first-way-to-build-deploy-and-govern/ba-p/5191676",
-      "first_discovered_date": "2026-08-01",
+    "sha256:6fd95601da942eee3b59c4c8cbc1f5a0da8b9c515631172a988a63ebf0cb498d": {
+      "identity_key": "sha256:6fd95601da942eee3b59c4c8cbc1f5a0da8b9c515631172a988a63ebf0cb498d",
+      "title": "Developers and administrators can programmatically manage org apps and audiences using Microsoft Fabric REST APIs. New APIs support create, read, update, delete, and list operations for both org app items and audience items.",
+      "summary": "CRUD APIs for org apps and audiences",
+      "source_name": "powerbi-whats-new",
+      "source_url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new",
+      "announcement_url": null,
+      "first_discovered_date": "2026-08-02",
       "confidence": "medium",
-      "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
+      "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
+      "lifecycle": "queued"
+    },
+    "sha256:74b01175ba74602b476152129e175091ff9302071b85a52aa42e9ace3d21762d": {
+      "identity_key": "sha256:74b01175ba74602b476152129e175091ff9302071b85a52aa42e9ace3d21762d",
+      "title": "Currently in preview",
+      "summary": "Feature Description",
+      "source_name": "powerbi-whats-new",
+      "source_url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new",
+      "announcement_url": null,
+      "first_discovered_date": "2026-08-02",
+      "confidence": "medium",
+      "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
       "lifecycle": "queued"
     },
     "sha256:83556f5faa1a7a5962ff12cfc4877fff420964941207b5a42bbe68cefe61f145": {
@@ -240,16 +264,16 @@
       "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
       "lifecycle": "queued"
     },
-    "sha256:ab38944ba7847adcd88a68d18976e0efd3196a4d62b5a41e376880a7fb885c96": {
-      "identity_key": "sha256:ab38944ba7847adcd88a68d18976e0efd3196a4d62b5a41e376880a7fb885c96",
-      "title": "OneLake item-size reporting (Preview)",
-      "summary": "OneLake item-size reporting (Preview) gives workspace administrators item-level insight into storage usage across OneLake, including system and soft-deleted data, with a unified report and on-demand refresh. For more information, see Get the size of OneLake items.",
-      "source_name": "fabric-whats-new-markdown",
-      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Understand-your-storage-with-OneLake-item-size-reporting-Preview/ba-p/5183716",
-      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Understand-your-storage-with-OneLake-item-size-reporting-Preview/ba-p/5183716",
-      "first_discovered_date": "2026-08-01",
+    "sha256:b96fd521f166f7b30ebb9f30f85daaa50d3c86194679fd8d5558d3da5fab84a3": {
+      "identity_key": "sha256:b96fd521f166f7b30ebb9f30f85daaa50d3c86194679fd8d5558d3da5fab84a3",
+      "title": "Browse hundreds of custom visuals in AppSource, available directly from Power BI Desktop, or develop your own. Publish to AppSource or share across your organization.",
+      "summary": "Third-party custom visuals",
+      "source_name": "powerbi-whats-new",
+      "source_url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new",
+      "announcement_url": null,
+      "first_discovered_date": "2026-08-02",
       "confidence": "medium",
-      "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
+      "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
       "lifecycle": "queued"
     },
     "sha256:c0288947a8ef8e6cc06c4537561e8d265217479c9c4528750312b9639568106d": {
@@ -264,18 +288,6 @@
       "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
       "lifecycle": "queued"
     },
-    "sha256:c77328e16c50ea1992c64cc5ed214f87eced35a13fbf1aafe5104e33042b3465": {
-      "identity_key": "sha256:c77328e16c50ea1992c64cc5ed214f87eced35a13fbf1aafe5104e33042b3465",
-      "title": "Business Events Capacity Consumption (Generally Available)",
-      "summary": "Business Events capacity consumption is now metered through the standard Fabric capacity model, so publishing, routing, and consuming business events bills against your existing capacity SKU with no separate license. For more information, see Business events overview (Preview) and Microsoft Fabric Capacity Metrics app.",
-      "source_name": "fabric-whats-new-markdown",
-      "source_url": "https://learn.microsoft.com/en-us/fabric/real-time-hub/business-events/business-events-overview",
-      "announcement_url": "https://learn.microsoft.com/en-us/fabric/real-time-hub/business-events/business-events-overview",
-      "first_discovered_date": "2026-08-01",
-      "confidence": "medium",
-      "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
-      "lifecycle": "queued"
-    },
     "sha256:cd594cdd3c26d4fd78d8dfd2aa4969fcd4445f2cb44aa554155bc1dbb4e48c62": {
       "identity_key": "sha256:cd594cdd3c26d4fd78d8dfd2aa4969fcd4445f2cb44aa554155bc1dbb4e48c62",
       "title": "Refresh SQL analytics endpoint activity (Generally Available)",
@@ -288,6 +300,18 @@
       "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"
     },
+    "sha256:d20312bc8022b58ed28b4eef916b298e6151cffb2e21c9c6359abb823ce35259": {
+      "identity_key": "sha256:d20312bc8022b58ed28b4eef916b298e6151cffb2e21c9c6359abb823ce35259",
+      "title": "Learn more",
+      "summary": "Feature",
+      "source_name": "fabric-whats-new",
+      "source_url": "https://learn.microsoft.com/en-us/fabric/fundamentals/whats-new",
+      "announcement_url": null,
+      "first_discovered_date": "2026-08-02",
+      "confidence": "medium",
+      "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
+      "lifecycle": "queued"
+    },
     "sha256:da399a5f55a384b6b09af954b968eac7448b5f398b02deacd70db71fc59824db": {
       "identity_key": "sha256:da399a5f55a384b6b09af954b968eac7448b5f398b02deacd70db71fc59824db",
       "title": "Delta column mapping in the SQL analytics endpoint",
@@ -298,6 +322,18 @@
       "first_discovered_date": "2026-08-01",
       "confidence": "medium",
       "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
+      "lifecycle": "queued"
+    },
+    "sha256:e4ce2bc843fe22eb0da30e2b3340d02ca05adf49a018c6a90a861abc8effc9f6": {
+      "identity_key": "sha256:e4ce2bc843fe22eb0da30e2b3340d02ca05adf49a018c6a90a861abc8effc9f6",
+      "title": "When downloading a .pbix file from a semantic model, users now get an empty report with the dataset only. To download the report with the dataset, go to the report in the Power BI Service. This change addresses inconsistent report results from semantic model downloading.",
+      "summary": "New behavior for downloading .pbix from semantic model in Power BI Service",
+      "source_name": "powerbi-whats-new",
+      "source_url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new",
+      "announcement_url": null,
+      "first_discovered_date": "2026-08-02",
+      "confidence": "medium",
+      "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
       "lifecycle": "queued"
     },
     "sha256:eb6ebe267eeb16265173462008637ff97bd142902b6c46f8c87590b08dd8fb2e": {

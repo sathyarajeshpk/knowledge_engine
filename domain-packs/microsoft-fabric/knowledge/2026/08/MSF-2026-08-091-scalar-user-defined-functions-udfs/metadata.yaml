@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-091
 slug: scalar-user-defined-functions-udfs
-title: Scalar user-defined functions (UDFs)
+title: Scalar user-defined functions (UDFs) are now supported
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/inline-scalar-user-defined-functions-udfs-in-microsoft-fabric-warehouse-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/inline-scalar-user-defined-functions-udfs-in-microsoft-fabric-warehouse-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:31cf3b55e959ac999acaa37db67fb2173907111c92253f70d761ab5c978b52e7
+content_hash: sha256:dbe268c48864a9dc0fb9feea2208208b207f02e4ad2ff3a54e860d37f2ef8e20
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -56,4 +56,16 @@ revisions:
   summary_snapshot: Scalar user-defined functions (UDFs) are now supported as a preview feature.
     For more information, see CREATE FUNCTION for Fabric Data Warehouse.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:dbe268c48864a9dc0fb9feea2208208b207f02e4ad2ff3a54e860d37f2ef8e20
+  title_snapshot: Scalar user-defined functions (UDFs) are now supported
+  summary_snapshot: Scalar user-defined functions (UDFs) Scalar user-defined functions (UDFs)
+    are now supported as a preview feature. For more information, see CREATE FUNCTION for
+    Fabric Data Warehouse.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

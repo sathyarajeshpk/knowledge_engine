@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-018
 slug: business-workflow-management-in-fabric-pipelines
-title: Business Workflow Management in Fabric Pipelines
+title: Business workflow management with pipelines in Fabric Data Factory
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-factory/business-workflow-management
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/business-workflow-management
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:61afd410484f14b71d57e37938d0bc3c0bcf6561ef11e3f5afab52abacfa9443
+content_hash: sha256:74cfbef66010ba7b6583d22f5521067d4c6fe18ac4d5e9ef2c04ba59335365d3
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -56,4 +56,17 @@ revisions:
     Fabric Data Factory pipelines enables end-to-end business workflows that orchestrate work
     across systems with built-in process tracking and status management.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:74cfbef66010ba7b6583d22f5521067d4c6fe18ac4d5e9ef2c04ba59335365d3
+  title_snapshot: Business workflow management with pipelines in Fabric Data Factory
+  summary_snapshot: Business Workflow Management in Fabric Pipelines Business workflow management
+    with pipelines in Fabric Data Factory in Fabric Data Factory pipelines enables end-to-end
+    business workflows that orchestrate work across systems with built-in process tracking
+    and status management.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

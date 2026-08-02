@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-026
 slug: load-fabric-onelake-data-in-excel
-title: Load Fabric OneLake Data in Excel
+title: OneLake catalog and Get Data are integrated into Excel for Windows
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/easily-load-fabric-onelake-data-into-excel-onelake-catalog-and-modern-get-data-are-integrated-into-excel-for-windows-preview?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/easily-load-fabric-onelake-data-into-excel-onelake-catalog-and-modern-get-data-are-integrated-into-excel-for-windows-preview?ft=All
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:cb05221507ac6b9b93b9668b232c4b1550da3cfd8c0bbab9df975fd799d4a927
+content_hash: sha256:6b93b332c1bb7f410d3f893c862432a2593ddd39a7206b71a348893a5c819fdb
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     and modern Get Data experience (preview). For more information and steps to get started,
     see OneLake catalog and Get Data are integrated into Excel for Windows.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:6b93b332c1bb7f410d3f893c862432a2593ddd39a7206b71a348893a5c819fdb
+  title_snapshot: OneLake catalog and Get Data are integrated into Excel for Windows
+  summary_snapshot: Load Fabric OneLake Data in Excel Easily load Fabric OneLake data into
+    Excel with integrated OneLake catalog and modern Get Data experience (preview). For more
+    information and steps to get started, see OneLake catalog and Get Data are integrated
+    into Excel for Windows.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-06-034
 slug: migrate-azure-data-factory-pipelines-from-your-fabric
-title: Migrate Azure Data Factory pipelines from your Fabric workspace (Preview)
+title: Fabric-first Azure Data Factory migration (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Migrating-Azure-Data-Factory-pipelines-to-Fabric-directly-from/ba-p/5190801
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Migrating-Azure-Data-Factory-pipelines-to-Fabric-directly-from/ba-p/5190801
@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:ad277bdb706c9691c6bebdfe7cd1ef66b2b3099ad5f7e603393968d4e0164d0f
+content_hash: sha256:99948f9e7452b6b838788e2dd285fc90c103f83ae25077e8b578afde65c0936c
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -60,4 +60,20 @@ revisions:
     more information, see Upgrade Azure Data Factory pipelines to Fabric Data Factory and
     Migration best practices for Azure Data Factory to Fabric Data Factory.'
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:99948f9e7452b6b838788e2dd285fc90c103f83ae25077e8b578afde65c0936c
+  title_snapshot: Fabric-first Azure Data Factory migration (Preview)
+  summary_snapshot: 'Migrate Azure Data Factory pipelines from your Fabric workspace (Preview)
+    Fabric-first Azure Data Factory migration (Preview) lets you start and complete ADF pipeline
+    migrations without leaving Fabric: select Migrate > Data Factory, mount a read-only reference
+    to an ADF instance, then select pipelines, auto-map supported connections, and migrate
+    them into a named folder with triggers disabled by default. For more information, see
+    Upgrade Azure Data Factory pipelines to Fabric Data Factory and Migration best practices
+    for Azure Data Factory to Fabric Data Factory.'
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

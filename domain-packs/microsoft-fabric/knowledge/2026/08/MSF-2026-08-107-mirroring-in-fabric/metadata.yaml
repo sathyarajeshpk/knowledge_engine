@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-107
+slug: mirroring-in-fabric
+title: Mirroring in Fabric
+source_name: fabric-whats-new
+source_url: https://learn.microsoft.com/en-us/fabric/mirroring/overview
+announcement_url: https://learn.microsoft.com/en-us/fabric/mirroring/overview
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-02
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:97b6b0bacae841eb82afcd2ac6e029e8da94a451ea743753f6bc922b8d2526ac
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:3016dd0972aa16f74dd3413c09d046d817048f735baa16adcec473ef6eedd16c
+  discovered_at: '2026-08-02T08:00:14.718096+00:00'
+  source_role: primary
+  selector: h2[Features currently in preview] > table > tr (no date cell)
+  run_id: run-2026-08-02T08-00-14Z
+url_hash: sha256:3016dd0972aa16f74dd3413c09d046d817048f735baa16adcec473ef6eedd16c
+tier: 2
+learning_priority: medium
+category: data-factory
+tags:
+- preview
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-02
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:97b6b0bacae841eb82afcd2ac6e029e8da94a451ea743753f6bc922b8d2526ac
+  title_snapshot: Mirroring in Fabric
+  summary_snapshot: Mirroring for Azure Database for MySQL (Preview) Mirroring in Fabric provides
+    an easy experience to avoid complex ETL (Extract, Transform, Load) processes and seamlessly
+    integrate your existing Azure Database for MySQL data with the rest of your data in Fabric.
+    For more information, see Mirroring Azure Database for MySQL.
+  run_id: run-2026-08-02T08-00-14Z
+generation: {}

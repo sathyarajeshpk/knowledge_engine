@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-064
 slug: mcp-remote-servers-for-activator-and-eventhouse-in-real
-title: MCP remote servers for Activator and Eventhouse in Real-Time Intelligence (preview)
+title: Get started with the remote MCP server for eventhouses (preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/mcp-remote-eventhouse
 announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/mcp-remote-eventhouse
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:f667d7c3dcae01a8037e42f3204721370aacf186913c67de9b10d26e7f1e05ce
+content_hash: sha256:8a7c3db3fb0486fe1a1f9cd97c751c014bcd798f379ce14d0971e88ac6d5b1a1
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -64,4 +64,23 @@ revisions:
     and Get started with the remote MCP server for Activator (preview). This feature is currently
     in preview.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:8a7c3db3fb0486fe1a1f9cd97c751c014bcd798f379ce14d0971e88ac6d5b1a1
+  title_snapshot: Get started with the remote MCP server for eventhouses (preview)
+  summary_snapshot: MCP remote servers for Activator and Eventhouse in Real-Time Intelligence
+    (preview) Fabric Real-Time Intelligence provides hosted Model Context Protocol (MCP) remote
+    servers for Activator and Eventhouse, enabling AI assistants and agents to interact with
+    RTI components through natural language. By using the Activator MCP server, AI assistants
+    can create monitoring rules, manage alerts, and trigger actions in Fabric Activator. The
+    Eventhouse remote MCP server allows AI agents to query, reason over, and act on real-time
+    data stored in an RTI eventhouse by configuring a URL that points to the Eventhouse. For
+    more information, see Get started with the remote MCP server for eventhouses (preview)
+    and Get started with the remote MCP server for Activator (preview). This feature is currently
+    in…
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

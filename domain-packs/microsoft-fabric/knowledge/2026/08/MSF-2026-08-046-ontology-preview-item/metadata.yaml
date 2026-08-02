@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-046
 slug: ontology-preview-item
-title: Ontology (preview) item
+title: What is ontology (preview)?
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/iq/ontology/overview
 announcement_url: https://learn.microsoft.com/en-us/fabric/iq/ontology/overview
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:9a75d6a2c22c159efbe68a9be6b5c9139907c0b8e8f79366f7b1f15a2a1a0e00
+content_hash: sha256:0017079a69b9367f82dd670513aa69510296b4c68e24b1317fbb7f041f6a2262
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -56,4 +56,16 @@ revisions:
     properties, and other constraints to organize data according to your business vocabulary.
     For more information, see What is ontology (preview)?
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:0017079a69b9367f82dd670513aa69510296b4c68e24b1317fbb7f041f6a2262
+  title_snapshot: What is ontology (preview)?
+  summary_snapshot: Ontology (preview) item Ontology (preview) in Fabric IQ lets you define
+    entity types, relationships, properties, and other constraints to organize data according
+    to your business vocabulary. For more information, see What is ontology (preview)?
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

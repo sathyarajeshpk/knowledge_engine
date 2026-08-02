@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-07-008
 slug: pipeline-canvas-node-experience-updates
-title: Pipeline canvas node experience updates
+title: pipeline canvas in Fabric Data Factory
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-canvas-experience
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-canvas-experience
@@ -11,7 +11,7 @@ published_date: 2026-07-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:83136ee4bbca9dfca83537c46a6fec61661c9bf0beb922958584da2ef6a97d91
+content_hash: sha256:a62b827f206649f49f58d0560ab62c3441f1358a145081533b5c4a74eff633c0
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -56,4 +56,16 @@ revisions:
     for improved readability and usability when building and monitoring Fabric Data Factory
     pipelines.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:a62b827f206649f49f58d0560ab62c3441f1358a145081533b5c4a74eff633c0
+  title_snapshot: pipeline canvas in Fabric Data Factory
+  summary_snapshot: Pipeline canvas node experience updates The refreshed pipeline canvas
+    in Fabric Data Factory has new node designs for improved readability and usability when
+    building and monitoring Fabric Data Factory pipelines.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

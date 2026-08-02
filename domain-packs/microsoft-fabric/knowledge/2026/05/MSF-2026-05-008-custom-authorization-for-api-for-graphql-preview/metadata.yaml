@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-008
 slug: custom-authorization-for-api-for-graphql-preview
-title: Custom authorization for API for GraphQL (Preview)
+title: Authorizer User Data Functions for API for GraphQL (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Custom-authorization-for-API-for-GraphQL-in-Microsoft-Fabric/ba-p/5182352
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Custom-authorization-for-API-for-GraphQL-in-Microsoft-Fabric/ba-p/5182352
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:d5e7358ad73098b4d7690f57d86d5066caa3f0978aa867e0fb263d8309b1ce9b
+content_hash: sha256:0d9ded834e96e86740e0f6018d082aecab3d47b5cb41d47663e626a71061e371
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -209,4 +209,19 @@ revisions:
     own policy logic. For more information, see What is Microsoft Fabric API for GraphQL?
     and Create a Fabric User data functions item.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:0d9ded834e96e86740e0f6018d082aecab3d47b5cb41d47663e626a71061e371
+  title_snapshot: Authorizer User Data Functions for API for GraphQL (Preview)
+  summary_snapshot: Custom authorization for API for GraphQL (Preview) Authorizer User Data
+    Functions for API for GraphQL (Preview) let you attach a User Data Function that runs
+    before each GraphQL operation and evaluates request context such as tenant ID, role, or
+    token claims to allow, restrict, or deny access based on your own policy logic. For more
+    information, see What is Microsoft Fabric API for GraphQL? and Create a Fabric User data
+    functions item.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

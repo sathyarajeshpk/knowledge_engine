@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-032
 slug: simplified-title-spacing-for-visuals
-title: Simplified title spacing for visuals
+title: Customize visualization titles in Power BI reports
 source_name: powerbi-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-customize-title-background-and-legend
 announcement_url: https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-customize-title-background-and-legend
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:308b5dfe853ab25c309b1dfd18a2024ad463e27fbcf94773e338ca3f5db70cba
+content_hash: sha256:7091c3a992129f09ab7ad98b346e1aaf0acea5df09cc38a32a37dddd0fa72309
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -57,4 +57,17 @@ revisions:
     and themes automatically adjust without appearance changes. For more information, see
     Customize visualization titles in Power BI reports.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:7091c3a992129f09ab7ad98b346e1aaf0acea5df09cc38a32a37dddd0fa72309
+  title_snapshot: Customize visualization titles in Power BI reports
+  summary_snapshot: Simplified title spacing for visuals Title spacing now uses a consistent
+    "space above" approach for subtitle, divider, and plot area, instead of the previous "space
+    below" settings. Existing reports and themes automatically adjust without appearance changes.
+    For more information, see Customize visualization titles in Power BI reports.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

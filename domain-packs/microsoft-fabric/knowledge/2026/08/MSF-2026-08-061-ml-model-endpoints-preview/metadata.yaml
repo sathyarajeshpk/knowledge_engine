@@ -1,7 +1,8 @@
 schema_version: 1
 id: MSF-2026-08-061
 slug: ml-model-endpoints-preview
-title: ML model endpoints (Preview)
+title: ML models in Fabric can now serve real-time predictions from secure, scalable, and
+  easy-to-use online endpoints
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/serve-real-time-predictions-seamlessly-with-ml-model-endpoints?ft=All
 announcement_url: https://blog.fabric.microsoft.com/blog/serve-real-time-predictions-seamlessly-with-ml-model-endpoints?ft=All
@@ -11,7 +12,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:f8db2cceac0dfc518939149558f2a98e07ef7c9d31693d089e753b98c610d1dc
+content_hash: sha256:c8324721d39191356c1f70f033477bf3f8280e4d3f78f008b778e2b14b6d2dc5
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +59,19 @@ revisions:
     endpoints to bring ML model predictions to other Fabric solutions and custom applications.
     For more information, see Automated ML in Fabric and Model endpoints in Fabric.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:c8324721d39191356c1f70f033477bf3f8280e4d3f78f008b778e2b14b6d2dc5
+  title_snapshot: ML models in Fabric can now serve real-time predictions from secure, scalable,
+    and easy-to-use online endpoints
+  summary_snapshot: ML model endpoints (Preview) ML models in Fabric can now serve real-time
+    predictions from secure, scalable, and easy-to-use online endpoints. In addition to batch
+    predictions in Spark, you can use endpoints to bring ML model predictions to other Fabric
+    solutions and custom applications. For more information, see Automated ML in Fabric and
+    Model endpoints in Fabric.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

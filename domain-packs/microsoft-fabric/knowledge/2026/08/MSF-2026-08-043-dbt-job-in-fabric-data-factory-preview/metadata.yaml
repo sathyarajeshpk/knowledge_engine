@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-043
 slug: dbt-job-in-fabric-data-factory-preview
-title: dbt Job in Fabric Data Factory (Preview)
+title: dbt Job in Fabric Data Factory
 source_name: fabric-whats-new-markdown
 source_url: https://blog.fabric.microsoft.com/blog/dbt-job-in-microsoft-fabric-ship-trustworthy-sql-models-faster-preview
 announcement_url: https://blog.fabric.microsoft.com/blog/dbt-job-in-microsoft-fabric-ship-trustworthy-sql-models-faster-preview
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:55e4e947c4a541826b304bd1ff973f50c2ec66946470071bbf7b0cff486ba3ad
+content_hash: sha256:5db88c0932388bb54f4436fcfc7ece607425042aacd2a73f5e247d947202fa00
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,17 @@ revisions:
     and governance via Entra ID and SQL security policies. For more information, see dbt job
     in Microsoft Fabric (preview).
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:5db88c0932388bb54f4436fcfc7ece607425042aacd2a73f5e247d947202fa00
+  title_snapshot: dbt Job in Fabric Data Factory
+  summary_snapshot: dbt Job in Fabric Data Factory (Preview) A dbt Job in Fabric Data Factory
+    lets you author, schedule, and monitor dbt projects natively with serverless execution,
+    integrated testing and documentation, and governance via Entra ID and SQL security policies.
+    For more information, see dbt job in Microsoft Fabric (preview).
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-05-001
 slug: onelake-security-generally-available-and-onelake-data
-title: OneLake security (Generally Available) and OneLake data access roles (Generally Available)
+title: OneLake security and OneLake data access roles are generally available
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/OneLake-security-Generally-Available/ba-p/5176756
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/OneLake-security-Generally-Available/ba-p/5176756
@@ -11,7 +11,7 @@ published_date: 2026-05-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:d0e575d3c7aeffb91b028d144e8a13acc39892f41eb0bd810ad70b7e15549f71
+content_hash: sha256:deab84e03dd56825eb4a49ef175594de87eedf62d4a12fda46b57c0f8e1b645c
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -63,4 +63,21 @@ revisions:
     of May 2026. For more information, see Get started with OneLake security and OneLake data
     access roles.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:deab84e03dd56825eb4a49ef175594de87eedf62d4a12fda46b57c0f8e1b645c
+  title_snapshot: OneLake security and OneLake data access roles are generally available
+  summary_snapshot: OneLake security (Generally Available) and OneLake data access roles (Generally
+    Available) OneLake security and OneLake data access roles are generally available, providing
+    fine-grained access control for OneLake data with role permissions and folder-, row-,
+    and column-level security. New capabilities include a wizard-based role creation flow
+    with RLS and CLS at creation time, inline RLS validation, and cross-region shortcut support.
+    OneLake security is being enabled by default on all supported items by the end of May
+    2026. For more information, see Get started with OneLake security and OneLake data access
+    roles.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}

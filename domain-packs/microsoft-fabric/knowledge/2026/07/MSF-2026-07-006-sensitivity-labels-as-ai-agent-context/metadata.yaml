@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-07-006
 slug: sensitivity-labels-as-ai-agent-context
-title: Sensitivity labels as AI agent context
+title: Using sensitivity labels to guide AI agents and skills
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Use-sensitivity-labels-to-improve-AI-Agents-accuracy-and/ba-p/5256054
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Use-sensitivity-labels-to-improve-AI-Agents-accuracy-and/ba-p/5256054
@@ -11,7 +11,7 @@ published_date: 2026-07-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:1e0c64025b4828afd2c588541deee61f43e696b8c0b40321d13caf98138a94b2
+content_hash: sha256:a92910f9edfe851073c47242600076f295796bd5348bb8b68f62f570ab9ec246
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -58,4 +58,20 @@ revisions:
     and Highly Confidential content according to your rules. For more information, see Apply
     sensitivity labels to Fabric items and Information protection in Microsoft Fabric.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-02
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:a92910f9edfe851073c47242600076f295796bd5348bb8b68f62f570ab9ec246
+  title_snapshot: Using sensitivity labels to guide AI agents and skills
+  summary_snapshot: Sensitivity labels as AI agent context Using sensitivity labels to guide
+    AI agents and skills shows how Microsoft Purview sensitivity labels—already used for access
+    control and protection policies in Fabric—also give AI agents organizational context to
+    select and prioritize data by label, so agents provide fuller analysis on General data
+    while restricting or summarizing Confidential and Highly Confidential content according
+    to your rules. For more information, see Apply sensitivity labels to Fabric items and
+    Information protection in Microsoft Fabric.
+  run_id: run-2026-08-02T08-00-14Z
 generation: {}
