@@ -522,3 +522,98 @@ def test_render_report_scans_the_other_packs_once(two_packs, monkeypatch) -> Non
 
     render_report(pack)
     assert len(calls) == 1
+
+
+# ---------------------------------------------------------------------------
+# The scan happens once per run, not once per pack (M9, TD-15)
+# ---------------------------------------------------------------------------
+
+
+def _count_pack_reads(fn):
+    """Run `fn`, counting full-pack reads through `ke.harvest`."""
+    import ke.harvest as harvest_module
+
+    real = harvest_module.load_objects_with_dirs
+    calls = []
+
+    def counted(pack):
+        calls.append(pack.name)
+        return real(pack)
+
+    harvest_module.load_objects_with_dirs = counted
+    try:
+        fn()
+    finally:
+        harvest_module.load_objects_with_dirs = real
+    return calls
+
+
+def test_a_multi_pack_harvest_scans_each_pack_a_bounded_number_of_times(
+    two_packs, monkeypatch
+) -> None:
+    """The cross-pack scan must not be repeated per pack.
+
+    This is a **performance property expressed as a test**, and it exists
+    because reverting the hoist breaks no other test in the suite — correctness
+    tests cannot see the difference between scanning once and scanning N times,
+    which is precisely how the quadratic got in and survived eight milestones.
+
+    The bound is `2 * packs` reads per pack, matching the benchmark's linear
+    budget: enough headroom for the harvest-side read plus one scan read each,
+    and not enough for anything quadratic. At 2 packs the old design did 4
+    reads inside index rebuild alone.
+    """
+    from ke.harvest import harvest_all
+
+    packs = list(two_packs)
+    calls = _count_pack_reads(lambda: harvest_all(packs, clock=CLOCK))
+
+    budget = 2 * len(packs) * len(packs)
+    assert len(calls) <= budget, (
+        f"{len(calls)} full-pack reads for {len(packs)} packs; "
+        f"the per-pack scan is back"
+    )
+
+
+def test_the_cross_pack_scan_sees_every_pack_after_it_has_harvested(
+    two_packs, monkeypatch
+) -> None:
+    """TD-16: no pack may be published against a stale view of the others.
+
+    In the old design each pack published inside its own harvest, so pack 1's
+    cross-pack list was computed before pack 2 had harvested — every pack but
+    the last reported a duplicate one run late. Splitting harvest from publish
+    means the scan runs after all harvesting and every pack sees the same
+    finished state.
+    """
+    import ke.harvest as harvest_module
+    from ke.harvest import harvest_all
+    from ke.pipeline import HARVEST_STAGES
+
+    packs = list(two_packs)
+    order: list[str] = []
+
+    real_run = None
+    import ke.pipeline as pipeline_module
+
+    real_run = pipeline_module.run_stages
+
+    def traced(ctx, stages=HARVEST_STAGES):
+        order.append(("harvest" if stages is HARVEST_STAGES else "publish", ctx.pack.name))
+        return real_run(ctx, stages)
+
+    real_scan = harvest_module._scan_cross_pack
+
+    def traced_scan(packs_, **kw):
+        order.append(("scan", None))
+        return real_scan(packs_, **kw)
+
+    monkeypatch.setattr("ke.pipeline.run_stages", traced)
+    monkeypatch.setattr("ke.harvest._scan_cross_pack", traced_scan)
+
+    harvest_all(packs, clock=CLOCK)
+
+    phases = [p for p, _ in order]
+    scan_at = phases.index("scan")
+    assert "publish" not in phases[:scan_at], "a pack published before the scan ran"
+    assert "harvest" not in phases[scan_at:], "a pack harvested after the scan ran"

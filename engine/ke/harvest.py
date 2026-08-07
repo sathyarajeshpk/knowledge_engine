@@ -101,6 +101,103 @@ def harvest_pack(
     )
 
 
+def harvest_all(
+    packs: list[Pack],
+    *,
+    clock: Clock | None = None,
+    fetcher=None,
+    dry_run: bool = False,
+    notify: bool = False,
+    on_error=None,
+) -> list[HarvestReport]:
+    """Harvest every pack, scanning for cross-pack duplicates exactly once.
+
+    ## Why this exists
+
+    `harvest_pack` is self-contained: it harvests a pack and publishes it. Run
+    in a loop that is correct for one pack and quadratic for many, because
+    publishing needs to know about *other* packs -- the review queue it writes
+    includes cross-pack duplicates, and finding those means reading every pack.
+    Once per pack. An N-pack repository performed N full-repository scans
+    (M8 performance review, P-1; measured at exactly `packs²` reads).
+
+    So this runs the pipeline in two phases:
+
+        for each pack:  HARVEST_STAGES    -- touches only that pack
+        once:           scan for cross-pack duplicates
+        for each pack:  PUBLISH_STAGES    -- given the scan, reads nobody
+
+    ## The second thing this fixes
+
+    Splitting the phases is not only cheaper, it is *more correct*. In the old
+    loop, pack 1 published before packs 2..N had harvested, so its cross-pack
+    list was computed against last week's version of every other pack -- every
+    pack but the last reported a duplicate one run late (M8 readiness, O-3).
+    Scanning between the phases means every pack sees the same finished state.
+
+    ## Failure isolation is preserved
+
+    One pack failing must not cost the others their run (M8 readiness, O-2). A
+    pack that fails during harvest is dropped from the publish phase rather than
+    half-published, and `on_error` is called so the caller can report it.
+    """
+    from ke.pipeline import HARVEST_STAGES, PUBLISH_STAGES, HarvestContext, run_stages
+
+    clock = clock or SystemClock()
+    contexts: list[HarvestContext] = []
+
+    for pack in packs:
+        ctx = HarvestContext(
+            pack=pack,
+            clock=clock,
+            report=HarvestReport(pack_name=pack.name),
+            fetcher=fetcher,
+            dry_run=dry_run,
+            notify=notify,
+        )
+        try:
+            run_stages(ctx, HARVEST_STAGES)
+        except Exception as exc:  # noqa: BLE001 - isolation is the point
+            if on_error is not None:
+                on_error(pack, exc)
+            continue
+        contexts.append(ctx)
+
+    # The one scan. Everything above has finished writing; nothing below writes
+    # knowledge, so this sees the state every pack will be published against.
+    cross_pack = _scan_cross_pack([c.pack for c in contexts], dry_run=dry_run)
+
+    reports: list[HarvestReport] = []
+    for ctx in contexts:
+        ctx.cross_pack = cross_pack
+        try:
+            run_stages(ctx, PUBLISH_STAGES)
+        except Exception as exc:  # noqa: BLE001
+            if on_error is not None:
+                on_error(ctx.pack, exc)
+            continue
+        reports.append(ctx.report)
+    return reports
+
+
+def _scan_cross_pack(packs: list[Pack], *, dry_run: bool) -> list | None:
+    """Outstanding cross-pack duplicates, or `None` if there can be none.
+
+    `None` rather than `[]` is deliberate and load-bearing: `[]` means "scanned,
+    found nothing" and suppresses the fallback scan downstream, while `None`
+    means "not computed" and lets `rebuild_indexes` behave exactly as it always
+    has. With fewer than two packs there is nothing cross-pack by definition, so
+    either would do -- but a dry run writes nothing and must not silently claim
+    a clean scan.
+    """
+    if dry_run or len(packs) < 2:
+        return None
+    from ke.crosspack import outstanding
+
+    repo_root = packs[0].root.parent.parent
+    return outstanding(packs, repo_root)
+
+
 def _append_run_log(pack: Pack, clock: Clock, report: HarvestReport) -> None:
     """Append one line per run. **Always**, even when nothing was found.
 

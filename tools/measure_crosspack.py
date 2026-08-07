@@ -173,7 +173,7 @@ def measure_shape(
     number that only matters at the shape the gate turns on. It is requested for
     the 10-pack row and skipped elsewhere.
     """
-    from ke.harvest import load_objects_with_dirs
+    from ke.harvest import _scan_cross_pack, load_objects_with_dirs
     from ke.indexer import write_indexes
 
     repo, packs = build_repo(objects_per_pack, pack_count)
@@ -183,9 +183,26 @@ def measure_shape(
         loaded = {p.name: [(o, "..") for o, _ in load_objects_with_dirs(p)] for p in packs}
 
         def rebuild():
+            # Publish every pack the way the engine now publishes them: scan for
+            # cross-pack duplicates ONCE for the run, then hand the result to
+            # each pack's index rebuild.
+            #
+            # The M9-1 baseline called `write_indexes` per pack with no scan
+            # argument, because that was the only path that existed. Keeping
+            # that call here after M9-2 measured the *fallback* branch -- each
+            # pack scanning for itself -- and returned ABANDON for a design that
+            # the unit tests independently show is linear. A false negative that
+            # would have killed a working change, and the mirror image of M8's
+            # false positive.
+            #
+            # `_scan_cross_pack` is the engine's own function, called rather
+            # than reimplemented, so this measures the engine and not a copy of
+            # it.
+            cross_pack = _scan_cross_pack(packs, dry_run=False)
             for pack in packs:
                 write_indexes(
-                    pack.indexes_dir, loaded[pack.name], [], pack.name, pack=pack
+                    pack.indexes_dir, loaded[pack.name], [], pack.name, pack=pack,
+                    cross_pack=cross_pack,
                 )
 
         gc.collect()

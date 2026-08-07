@@ -551,61 +551,85 @@ def _two_pack_repo(tmp_path: Path) -> Path:
     return repo
 
 
-def test_a_failing_pack_does_not_stop_the_next_one(tmp_path, monkeypatch, capsys):
-    """Packs are independent by construction; the harvest loop must reflect it.
+def _fail_during_harvest(monkeypatch, pack_name, exc=None):
+    """Blow up one pack's harvest phase; record which packs were attempted.
 
-    Until M8 this loop returned on the first failure, so a stuck lock on Fabric
+    Patches `ke.pipeline.run_stages`, **not** `ke.harvest.harvest_pack`.
+
+    M9-2 split the pipeline into a harvest phase and a publish phase so the
+    cross-pack scan can run once between them, and the CLI now drives
+    `harvest_all`. `harvest_pack` is no longer on the path these tests exercise,
+    so patching it would leave four tests passing against a function nobody
+    calls — a guard that is never invoked, which is exactly what M8 learned to
+    distrust.
+
+    `pack_name=None` fails every pack. Returns the list of attempted names.
+    """
+    import ke.pipeline as pipeline_module
+    from ke.pipeline import HARVEST_STAGES
+
+    tried: list[str] = []
+    real = pipeline_module.run_stages
+    failure = exc or RuntimeError("disk on fire")
+
+    def fake_run_stages(ctx, stages=HARVEST_STAGES):
+        if stages is HARVEST_STAGES:
+            tried.append(ctx.pack.name)
+            if pack_name is None or ctx.pack.name == pack_name:
+                raise failure
+        return real(ctx, stages)
+
+    monkeypatch.setattr("ke.pipeline.run_stages", fake_run_stages)
+    return tried
+
+
+def test_a_failing_pack_does_not_stop_the_next_one(tmp_path, monkeypatch, capsys):
+    """Packs are independent by construction; the run must reflect it.
+
+    Before M8 the loop returned on the first failure, so a stuck lock on Fabric
     silently cost a week of Azure. Invisible with one pack, where "abort the
     pack" and "abort the run" are the same thing.
     """
     from ke import __main__ as cli
 
     repo = _two_pack_repo(tmp_path)
-    harvested: list[str] = []
-
-    def fake_harvest(pack, **kwargs):
-        harvested.append(pack.name)
-        if pack.name == "alpha":
-            raise RuntimeError("disk on fire")
-        return HarvestReport(pack_name=pack.name)
-
-    monkeypatch.setattr("ke.harvest.harvest_pack", fake_harvest)
+    tried = _fail_during_harvest(monkeypatch, "alpha")
 
     code = cli.main(["harvest", "--repo-root", str(repo)])
 
-    assert harvested == ["alpha", "beta"], "beta was skipped after alpha failed"
+    assert tried == ["alpha", "beta"], "beta was skipped after alpha failed"
     assert code != 0, "a failed pack must not report success"
 
 
 def test_a_locked_pack_does_not_stop_the_next_one(tmp_path, monkeypatch, capsys):
     """A lock is per-pack state, so a stuck one is a per-pack problem.
 
-    `LockError` was the *only* exception the loop caught, and it returned
+    `LockError` was once the *only* exception the loop caught, and it returned
     immediately — so the one failure the author had thought about was also the
     one that cost every other pack its run.
     """
+    import contextlib as ctxlib
+
     from ke import __main__ as cli
     from ke.lock import LockError
 
     repo = _two_pack_repo(tmp_path)
-    harvested: list[str] = []
-
-    def fake_harvest(pack, **kwargs):
-        harvested.append(pack.name)
-        return HarvestReport(pack_name=pack.name)
 
     def fake_lock(state_dir, holder=""):
         if state_dir.parent.name == "alpha":
             raise LockError("held by another process")
-        return contextlib.nullcontext()
+        return ctxlib.nullcontext()
 
-    monkeypatch.setattr("ke.harvest.harvest_pack", fake_harvest)
     monkeypatch.setattr("ke.lock.pack_lock", fake_lock)
 
     code = cli.main(["harvest", "--repo-root", str(repo)])
+    out = capsys.readouterr()
 
-    assert harvested == ["beta"]
+    assert "alpha" in out.err
     assert code != 0
+    # beta was not locked, so it must still have been harvested and published.
+    assert (repo / "domain-packs" / "beta" / "indexes" / "INDEX.md").is_file()
+    assert not (repo / "domain-packs" / "alpha" / "indexes" / "INDEX.md").is_file()
 
 
 def test_the_failed_packs_are_named_again_at_the_end(tmp_path, monkeypatch, capsys):
@@ -617,13 +641,7 @@ def test_the_failed_packs_are_named_again_at_the_end(tmp_path, monkeypatch, caps
     from ke import __main__ as cli
 
     repo = _two_pack_repo(tmp_path)
-
-    def fake_harvest(pack, **kwargs):
-        if pack.name == "alpha":
-            raise RuntimeError("disk on fire")
-        return HarvestReport(pack_name=pack.name)
-
-    monkeypatch.setattr("ke.harvest.harvest_pack", fake_harvest)
+    _fail_during_harvest(monkeypatch, "alpha")
 
     cli.main(["harvest", "--repo-root", str(repo)])
 
@@ -636,15 +654,9 @@ def test_a_keyboard_interrupt_still_stops_everything(tmp_path, monkeypatch):
     from ke import __main__ as cli
 
     repo = _two_pack_repo(tmp_path)
-    harvested: list[str] = []
-
-    def fake_harvest(pack, **kwargs):
-        harvested.append(pack.name)
-        raise KeyboardInterrupt
-
-    monkeypatch.setattr("ke.harvest.harvest_pack", fake_harvest)
+    tried = _fail_during_harvest(monkeypatch, "alpha", exc=KeyboardInterrupt())
 
     with pytest.raises(KeyboardInterrupt):
         cli.main(["harvest", "--repo-root", str(repo)])
 
-    assert harvested == ["alpha"]
+    assert tried == ["alpha"]

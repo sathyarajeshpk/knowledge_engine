@@ -135,18 +135,26 @@ def write_indexes(
     pending: list,
     pack_name: str,
     pack=None,
+    *,
+    cross_pack=None,
 ) -> list[Path]:
     """Rebuild every index. Returns the paths written.
 
     `review-queue.md` comes from the unified review workflow when a pack is
     supplied, so the file shows every kind of pending decision rather than only
     the items held back from minting.
+
+    `cross_pack` is the repository-wide duplicate set when the caller has
+    already computed it for this run. Passing it is what stops an N-pack run
+    performing N full-repository scans (M9, TD-15); leaving it `None` makes this
+    function compute its own, which is what a standalone single-pack rebuild
+    does.
     """
     indexes_dir.mkdir(parents=True, exist_ok=True)
     if pack is not None:
         from ke.reviewq import render_report
 
-        queue_document = render_report(pack)
+        queue_document = render_report(pack, cross_pack=cross_pack)
     else:
         queue_document = render_review_queue(pending, pack_name)
 
