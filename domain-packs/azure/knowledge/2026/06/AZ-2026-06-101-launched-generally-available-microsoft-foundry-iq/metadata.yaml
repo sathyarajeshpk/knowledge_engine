@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-06-101
+slug: launched-generally-available-microsoft-foundry-iq
+title: '[Launched] Generally Available: Microsoft Foundry IQ'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563222
+announcement_url: https://azure.microsoft.com/updates?id=563222
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-04
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:5d978a2a9d762d30ef8ed024536717fb3576e67fd62afaf595d94ca3db68842b
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:0567202e5439769cddca19ca281e3970c326114c6547e0fa94d27898f8ebc6db
+  discovered_at: '2026-08-01T21:26:59.738895+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:0567202e5439769cddca19ca281e3970c326114c6547e0fa94d27898f8ebc6db
+tier: 1
+learning_priority: low
+category: storage
+tags:
+- ga
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:5d978a2a9d762d30ef8ed024536717fb3576e67fd62afaf595d94ca3db68842b
+  title_snapshot: '[Launched] Generally Available: Microsoft Foundry IQ'
+  summary_snapshot: Microsoft Foundry IQ reaches general availability, giving developers a
+    managed knowledge layer that grounds agents in enterprise data without rebuilding retrieval
+    pipelines for each project. Teams connect SharePoint, OneLake, Azure Blob, and other sources
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

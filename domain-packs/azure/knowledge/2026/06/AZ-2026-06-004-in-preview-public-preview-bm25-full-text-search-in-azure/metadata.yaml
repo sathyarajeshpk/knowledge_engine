@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-06-004
+slug: in-preview-public-preview-bm25-full-text-search-in-azure
+title: '[In preview] Public Preview: BM25 full-text search in Azure HorizonDB'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563107
+announcement_url: https://azure.microsoft.com/updates?id=563107
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:5cbe962edfe07269bcddccee03050ac79d026a83d5d9169f4182a2af7c28bf83
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:084c6b02f95b1cfdf417f4be2016ed025c0b829f5be262c785276b5f4e5c6a0c
+  discovered_at: '2026-08-01T21:26:59.743163+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:084c6b02f95b1cfdf417f4be2016ed025c0b829f5be262c785276b5f4e5c6a0c
+tier: 2
+learning_priority: low
+category: ai-machine-learning
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:5cbe962edfe07269bcddccee03050ac79d026a83d5d9169f4182a2af7c28bf83
+  title_snapshot: '[In preview] Public Preview: BM25 full-text search in Azure HorizonDB'
+  summary_snapshot: BM25 full-text search is now available in public preview for Azure HorizonDB.
+    Now you can get production-quality keyword search powered by BM25, the same relevance
+    ranking algorithm used by Elasticsearch, Solr, and Azure AI Search, running entirely inside
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

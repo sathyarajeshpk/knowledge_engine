@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-07-018
+slug: launched-generally-available-azure-databricks-sql
+title: '[Launched] Generally Available: Azure Databricks SQL Serverless in UK West'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=567444
+announcement_url: https://azure.microsoft.com/updates?id=567444
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-13
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:b2017371e267b3a1ddbd7c1cd73879639708ffdaa9b473a36aff9b3dcf4b2e8c
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:77f8816d7bb5403276c6de01f1871aa36179f12bb23f4394147fd43bb2d68624
+  discovered_at: '2026-08-01T21:26:59.736767+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:77f8816d7bb5403276c6de01f1871aa36179f12bb23f4394147fd43bb2d68624
+tier: 1
+learning_priority: medium
+category: platform
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:b2017371e267b3a1ddbd7c1cd73879639708ffdaa9b473a36aff9b3dcf4b2e8c
+  title_snapshot: '[Launched] Generally Available: Azure Databricks SQL Serverless in UK West'
+  summary_snapshot: Starting July 13th, 2026, customers can use Azure Databricks SQL Serverless
+    in the UK West region to simplify analytics workloads while benefiting from instant compute,
+    automated scaling, and reduced infrastructure management. Eligible UK West workspaces
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

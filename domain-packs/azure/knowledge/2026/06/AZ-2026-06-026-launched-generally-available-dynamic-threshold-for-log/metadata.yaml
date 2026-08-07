@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-026
+slug: launched-generally-available-dynamic-threshold-for-log
+title: '[Launched] Generally Available: Dynamic threshold for Log search alerts'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=561984
+announcement_url: https://azure.microsoft.com/updates?id=561984
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:1fd4e5baaf0311e4290d9b2e9f120f8a1b1b03b134af1f39e11b1b6bf6678bf0
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:4e6691ff05d2db59dfa534c0f4e6ea198d9151c4bdca418395d78bb5e3a05606
+  discovered_at: '2026-08-01T21:26:59.741014+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:4e6691ff05d2db59dfa534c0f4e6ea198d9151c4bdca418395d78bb5e3a05606
+tier: 1
+learning_priority: low
+category: monitoring
+tags:
+- ga
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:1fd4e5baaf0311e4290d9b2e9f120f8a1b1b03b134af1f39e11b1b6bf6678bf0
+  title_snapshot: '[Launched] Generally Available: Dynamic threshold for Log search alerts'
+  summary_snapshot: We’re excited to announce the General Availability of Dynamic threshold
+    for Log search alerts! Using dynamic thresholds means you don't have to know the right
+    threshold for each Log alert rule - Dynamic thresholds calculate the most appropriate
+    thresholds
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

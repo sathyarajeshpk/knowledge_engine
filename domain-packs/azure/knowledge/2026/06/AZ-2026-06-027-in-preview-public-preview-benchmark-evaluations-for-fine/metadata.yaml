@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-06-027
+slug: in-preview-public-preview-benchmark-evaluations-for-fine
+title: '[In preview] Public Preview: Benchmark evaluations for fine-tuned models in Microsoft
+  Foundry'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563167
+announcement_url: https://azure.microsoft.com/updates?id=563167
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:cb710ea0c7b63397b2612e42204703b6c448d0317efd1ecdfb9dd57d1bd4154a
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:4e9216d0a6aaae0677b8ceff09d1da55370d318dc8ab4639faa1075c27d64ca5
+  discovered_at: '2026-08-01T21:26:59.742754+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:4e9216d0a6aaae0677b8ceff09d1da55370d318dc8ab4639faa1075c27d64ca5
+tier: 2
+learning_priority: low
+category: ai-machine-learning
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:cb710ea0c7b63397b2612e42204703b6c448d0317efd1ecdfb9dd57d1bd4154a
+  title_snapshot: '[In preview] Public Preview: Benchmark evaluations for fine-tuned models
+    in Microsoft Foundry'
+  summary_snapshot: Choosing the right AI system is rarely as simple as picking the newest
+    or largest model — and agents add their own layer of variability on top. A model that
+    wins on a public leaderboard can still underperform on the reasoning, math, or domain-knowledge
+    qu
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

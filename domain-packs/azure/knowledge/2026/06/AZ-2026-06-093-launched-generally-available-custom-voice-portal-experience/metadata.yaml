@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-093
+slug: launched-generally-available-custom-voice-portal-experience
+title: '[Launched] Generally Available: Custom Voice portal experience in Microsoft Foundry'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563691
+announcement_url: https://azure.microsoft.com/updates?id=563691
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-03
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:aacabc92fe59e1dc8dcda04c195f46084b8209c54f5ef7ad0efba8b8e8e7d4ec
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:c55813dc1367692f989b65f1b71a65335839e713ea17501504ebb6fe1d8a5b9b
+  discovered_at: '2026-08-01T21:26:59.739510+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:c55813dc1367692f989b65f1b71a65335839e713ea17501504ebb6fe1d8a5b9b
+tier: 1
+learning_priority: low
+category: null
+tags:
+- ga
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:aacabc92fe59e1dc8dcda04c195f46084b8209c54f5ef7ad0efba8b8e8e7d4ec
+  title_snapshot: '[Launched] Generally Available: Custom Voice portal experience in Microsoft
+    Foundry'
+  summary_snapshot: Azure AI Speech moves the Custom Voice authoring experience into the Microsoft
+    Foundry portal in general availability. Approved Custom Voice customers can now upload
+    voice talent recordings and consent statements, run data quality checks, train neural
+    voi
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

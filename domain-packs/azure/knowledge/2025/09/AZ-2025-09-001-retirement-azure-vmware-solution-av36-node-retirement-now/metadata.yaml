@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2025-09-001
+slug: retirement-azure-vmware-solution-av36-node-retirement-now
+title: 'Retirement: Azure VMware Solution AV36 Node Retirement now on September 30, 2027'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=503883
+announcement_url: https://azure.microsoft.com/updates?id=503883
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2025-09-27
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:f63b5711ee2018a89a481808a8a7a1b01cf66195611c03a07bb2900239178b7b
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:b7d165a3ef3ce68b8fa114fc273d9487903abcae18013ac6216c51fbd6e3c3b7
+  discovered_at: '2026-08-01T21:26:59.737623+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:b7d165a3ef3ce68b8fa114fc273d9487903abcae18013ac6216c51fbd6e3c3b7
+tier: 1
+learning_priority: low
+category: compute
+tags:
+- retirement
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:f63b5711ee2018a89a481808a8a7a1b01cf66195611c03a07bb2900239178b7b
+  title_snapshot: 'Retirement: Azure VMware Solution AV36 Node Retirement now on September
+    30, 2027'
+  summary_snapshot: Microsoft announced the retirement of the AV36 node type on June 30, 2028,
+    that date has changed to align with VMware’s roadmap. Broadcom will end support for the
+    current AV36 version with vSphere 8 on September 30, 2027, and the AV36 SKU is not compatibl
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-06-091
+slug: in-preview-public-preview-rubric-evaluator-in-microsoft
+title: '[In preview] Public Preview: Rubric evaluator in Microsoft Foundry'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563656
+announcement_url: https://azure.microsoft.com/updates?id=563656
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-03
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:7526f955b900953e5b28bdc71ff9a7ae29adfc736a768d9a270aaaebace1d5ea
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:c101cdeef7d9001bcd04cd7c3a1875252e5f660fb6fe1fdc6d4b37e9ed6a48e9
+  discovered_at: '2026-08-01T21:26:59.739539+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:c101cdeef7d9001bcd04cd7c3a1875252e5f660fb6fe1fdc6d4b37e9ed6a48e9
+tier: 2
+learning_priority: low
+category: null
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:7526f955b900953e5b28bdc71ff9a7ae29adfc736a768d9a270aaaebace1d5ea
+  title_snapshot: '[In preview] Public Preview: Rubric evaluator in Microsoft Foundry'
+  summary_snapshot: Microsoft Foundry introduces rubric evaluators for measuring agent quality,
+    now in public preview for single-turn and multi-turn agent flows. Rubric evaluators enable
+    developers to define context-specific evaluation criteria using agent prompts, productio
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

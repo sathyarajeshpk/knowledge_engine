@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-07-035
+slug: in-preview-public-preview-protect-sensitive-generative-ai
+title: '[In preview] Public Preview: Protect sensitive generative AI telemetry in Application
+  Insights and Microsoft Foundry'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=567594
+announcement_url: https://azure.microsoft.com/updates?id=567594
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-20
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:aa9b664cea913e74340500f5bccfc1e682f6af8522ef586cb7a3e95316a64b86
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:b54aedd0a65b6cd3cfee5899815cd72a3daf5bbb053e13a0dcbecb362c28a817
+  discovered_at: '2026-08-01T21:26:59.736060+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:b54aedd0a65b6cd3cfee5899815cd72a3daf5bbb053e13a0dcbecb362c28a817
+tier: 2
+learning_priority: medium
+category: monitoring
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:aa9b664cea913e74340500f5bccfc1e682f6af8522ef586cb7a3e95316a64b86
+  title_snapshot: '[In preview] Public Preview: Protect sensitive generative AI telemetry
+    in Application Insights and Microsoft Foundry'
+  summary_snapshot: Azure Monitor Application Insights now stores generative AI content in
+    a dedicated GenAIContent table (AppGenAIContent in Log Analytics), making it possible
+    to apply newly available access controls to sensitive AI telemetry. Because Application
+    Insights p
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

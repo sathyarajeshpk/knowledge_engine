@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-087
+slug: in-preview-public-preview-mai-voice-2-in-microsoft-foundry
+title: '[In preview] Public Preview: MAI-Voice-2 in Microsoft Foundry'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563217
+announcement_url: https://azure.microsoft.com/updates?id=563217
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-03
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:6b754452be0060fa1ecaa770220e4db2f5410ccd6c0e47d1b243e5670643bb74
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:70c7fa8a420ac23757adc28fbb055619e61633c8eba0c5fe7cca423ba36da3e3
+  discovered_at: '2026-08-01T21:26:59.739026+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:70c7fa8a420ac23757adc28fbb055619e61633c8eba0c5fe7cca423ba36da3e3
+tier: 2
+learning_priority: low
+category: ai-machine-learning
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:6b754452be0060fa1ecaa770220e4db2f5410ccd6c0e47d1b243e5670643bb74
+  title_snapshot: '[In preview] Public Preview: MAI-Voice-2 in Microsoft Foundry'
+  summary_snapshot: Microsoft Foundry now offers MAI-Voice-2 in public preview, a first-party
+    voice model from the Microsoft AI team. MAI-Voice-2 generates natural speech across more
+    than 10 languages and supports voice cloning from a short reference sample, plus voice
+    promp
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

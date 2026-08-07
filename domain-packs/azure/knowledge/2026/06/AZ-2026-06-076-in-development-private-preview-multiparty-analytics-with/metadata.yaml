@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-06-076
+slug: in-development-private-preview-multiparty-analytics-with
+title: '[In development] Private Preview: multiparty analytics with Azure Confidential Clean
+  Rooms'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=564495
+announcement_url: https://azure.microsoft.com/updates?id=564495
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:c52c3a3f6f49e27e12f061bd7a54a11fa5b9d934ddcc47f346723a56d77056ec
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:f8249966d7b4bd1f757f2adb06f2704423c24ad88959d601918f58d4d03691a4
+  discovered_at: '2026-08-01T21:26:59.740834+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:f8249966d7b4bd1f757f2adb06f2704423c24ad88959d601918f58d4d03691a4
+tier: 2
+learning_priority: low
+category: null
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:c52c3a3f6f49e27e12f061bd7a54a11fa5b9d934ddcc47f346723a56d77056ec
+  title_snapshot: '[In development] Private Preview: multiparty analytics with Azure Confidential
+    Clean Rooms'
+  summary_snapshot: Microsoft is announcing the preview of multiparty analytics with Azure
+    Confidential Clean Rooms, resulting in fully managed service that allows customers and
+    their partners to securely analyze privacy sensitive datasets with Apache Spark based
+    big-data an
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

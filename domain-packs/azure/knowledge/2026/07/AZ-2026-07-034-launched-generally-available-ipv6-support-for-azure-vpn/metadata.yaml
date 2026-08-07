@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-07-034
+slug: launched-generally-available-ipv6-support-for-azure-vpn
+title: '[Launched] Generally Available: IPv6 support for Azure VPN Gateway'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=567847
+announcement_url: https://azure.microsoft.com/updates?id=567847
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-20
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:cdcc807f2632d90d3d6c8e81a982d8a522d05e8f8c8c1a0a8abab1fe920e4f76
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:2dc597aecb8474de0bb954b177db66ed9fed233aea21f4f351e6d8b42728aea9
+  discovered_at: '2026-08-01T21:26:59.736100+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:2dc597aecb8474de0bb954b177db66ed9fed233aea21f4f351e6d8b42728aea9
+tier: 1
+learning_priority: low
+category: networking
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:cdcc807f2632d90d3d6c8e81a982d8a522d05e8f8c8c1a0a8abab1fe920e4f76
+  title_snapshot: '[Launched] Generally Available: IPv6 support for Azure VPN Gateway'
+  summary_snapshot: IPv6 support for Azure VPN Gateway enables customers to run IPv6 inner
+    traffic through VPN tunnels in a dual‑stack configuration. IPv6 is supported on all production
+    SKU gateways that use standard public IPs.IPv6 inner traffic can be configured for both
+    n
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-06-132
+slug: in-preview-public-preview-new-project-templates-and
+title: '[In preview] Public Preview: New project templates and template gallery for Azure
+  Functions in VS Code'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=562497
+announcement_url: https://azure.microsoft.com/updates?id=562497
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-16
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:fa0069792a9bd5dacec8feebed70a508dfbb63dd564a6ff7209106f75415b303
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:4bbabee7d31098ea91d2792f3ccd2303a7fa65ecf0f164515c738ab63557f821
+  discovered_at: '2026-08-01T21:26:59.737801+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:4bbabee7d31098ea91d2792f3ccd2303a7fa65ecf0f164515c738ab63557f821
+tier: 2
+learning_priority: medium
+category: compute
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:fa0069792a9bd5dacec8feebed70a508dfbb63dd564a6ff7209106f75415b303
+  title_snapshot: '[In preview] Public Preview: New project templates and template gallery
+    for Azure Functions in VS Code'
+  summary_snapshot: The Azure Functions extension for VS Code now provides a redesigned Create
+    New Project experience in public preview, featuring a rich, visual template gallery that
+    replaces the multi-step Quick Pick wizard with a searchable, filterable view of project
+    tem
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-07-039
+slug: launched-generally-available-claude-opus-5-on-azure
+title: '[Launched] Generally Available: Claude Opus 5 on Azure Databricks'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=568316
+announcement_url: https://azure.microsoft.com/updates?id=568316
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-27
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:1ca64dc1a8b7ab58132f632a1455be1ed544ceb137410a75c88be03ea35b5dc0
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:47df521590126da8b4b05e08ddd6ef5d22f0c85ab1a68b324c4c8bdc5175ce45
+  discovered_at: '2026-08-01T21:26:59.735821+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:47df521590126da8b4b05e08ddd6ef5d22f0c85ab1a68b324c4c8bdc5175ce45
+tier: 1
+learning_priority: low
+category: ai-machine-learning
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:1ca64dc1a8b7ab58132f632a1455be1ed544ceb137410a75c88be03ea35b5dc0
+  title_snapshot: '[Launched] Generally Available: Claude Opus 5 on Azure Databricks'
+  summary_snapshot: Azure Databricks now supports Anthropic Claude Opus 5 through AI Model
+    Serving. Claude Opus 5 is Anthropic's latest model for advanced reasoning, coding, agentic
+    workflows, and professional knowledge work. Claude Opus 5 is designed for complex tasks
+    requi
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

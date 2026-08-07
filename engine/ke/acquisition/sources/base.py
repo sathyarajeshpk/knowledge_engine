@@ -54,6 +54,38 @@ class FetchResult:
     final_url: str
 
 
+#: The only schemes a source may name. `urlopen` also speaks `file:`, `ftp:` and
+#: `data:`, and a `pack.yml` is **data reviewed as data** (ADR-0016) -- nobody
+#: reads a 29-rule pack file expecting one line of it to be a local-file read.
+#:
+#: `url: file:///etc/passwd` in a source entry made `HttpFetcher` return the
+#: file's contents, which the pipeline then stored as a knowledge object and the
+#: weekly workflow committed and pushed. Verified before this guard existed.
+#: An allowlist is the right shape here rather than a denylist: the set of
+#: schemes this engine legitimately needs is two, and it will stay two.
+WEB_SCHEMES = ("http://", "https://")
+
+
+def require_web_url(url: object, source_name: str) -> str:
+    """Return `url` if a source may legitimately fetch it, else refuse.
+
+    Checked when the pack is **loaded**, not when the fetch happens, so a
+    malformed source fails on `ke validate` in CI -- on the pull request that
+    introduces it -- rather than silently at 03:00 on Sunday inside a process
+    holding a repository write token.
+    """
+    text = str(url or "")
+    if not text.lower().startswith(WEB_SCHEMES):
+        raise ValueError(
+            f"source {source_name!r} declares url {text!r}. Only "
+            f"{' and '.join(s.rstrip(':/') for s in WEB_SCHEMES)} are allowed: "
+            "urlopen also speaks file:, ftp: and data:, so any other scheme "
+            "would let a pack definition read the runner's filesystem into "
+            "stored knowledge."
+        )
+    return text
+
+
 class Fetcher(Protocol):
     def fetch(self, url: str) -> FetchResult: ...
 
@@ -70,6 +102,12 @@ class HttpFetcher:
         self.user_agent = user_agent
 
     def fetch(self, url: str) -> FetchResult:
+        # Checked again here, not only at pack load. This is the object that
+        # actually opens the URL, and it is reachable from adapters, tests and
+        # any future caller that did not come through `SourceDefinition`. A
+        # guard that lives only at the configuration boundary protects the
+        # configuration boundary.
+        require_web_url(url, "<direct fetch>")
         request = Request(url, headers={"User-Agent": self.user_agent, "Accept": "*/*"})
         started = time.monotonic()
         try:
@@ -141,7 +179,7 @@ class SourceDefinition:
         return cls(
             name=raw["name"],
             adapter=AdapterType(adapter["name"]),
-            url=raw["url"],
+            url=require_web_url(raw["url"], raw.get("name", "<unnamed>")),
             authority=SourceAuthority(raw["authority"]),
             parser_version=int(adapter.get("version", 1)),
             status=SourceStatus(raw.get("status", SourceStatus.ACTIVE)),

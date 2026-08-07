@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-125
+slug: launched-generally-available-microsoft-entra-server
+title: '[Launched] Generally Available: Microsoft Entra server principals on Azure SQL Database'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=565154
+announcement_url: https://azure.microsoft.com/updates?id=565154
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-10
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:6112eab21f3efe1c046ffef4d9de800b5cd896aa7fbd9c0968d56c24cce1fe90
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:d7298a00717b25d18f308a682f430bc5ab435b908d6456a4bc596ad662a61681
+  discovered_at: '2026-08-01T21:26:59.738065+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:d7298a00717b25d18f308a682f430bc5ab435b908d6456a4bc596ad662a61681
+tier: 1
+learning_priority: high
+category: databases
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:6112eab21f3efe1c046ffef4d9de800b5cd896aa7fbd9c0968d56c24cce1fe90
+  title_snapshot: '[Launched] Generally Available: Microsoft Entra server principals on Azure
+    SQL Database'
+  summary_snapshot: Microsoft Entra server principals (logins) for Azure SQL Database is now
+    generally available. You can now use CREATE LOGIN ... FROM EXTERNAL PROVIDER in the virtual
+    master database, bringing parity with SQL logins for your Microsoft Entra identities.With
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

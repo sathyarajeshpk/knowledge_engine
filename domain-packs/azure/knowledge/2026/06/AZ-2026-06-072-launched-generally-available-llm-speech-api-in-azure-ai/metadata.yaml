@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-06-072
+slug: launched-generally-available-llm-speech-api-in-azure-ai
+title: '[Launched] Generally Available: LLM Speech API in Azure AI Speech'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=564387
+announcement_url: https://azure.microsoft.com/updates?id=564387
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:716116a79bf3e9ed6bd60f1f490948c9a4d2d167b529fc7ff19864a3f42117d8
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:e499521c456dfdaed14b81980fdcd9af4aceaa283372ecd4383c16fb6589930d
+  discovered_at: '2026-08-01T21:26:59.741319+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:e499521c456dfdaed14b81980fdcd9af4aceaa283372ecd4383c16fb6589930d
+tier: 1
+learning_priority: low
+category: platform
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:716116a79bf3e9ed6bd60f1f490948c9a4d2d167b529fc7ff19864a3f42117d8
+  title_snapshot: '[Launched] Generally Available: LLM Speech API in Azure AI Speech'
+  summary_snapshot: Azure AI Speech makes the LLM Speech API generally available, delivering
+    state-of-the-art LLM-powered transcription and translation for audio files, with multi-lingual
+    support across 25 languages (90+ locales), improved accuracy, expanded regions, and enh
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

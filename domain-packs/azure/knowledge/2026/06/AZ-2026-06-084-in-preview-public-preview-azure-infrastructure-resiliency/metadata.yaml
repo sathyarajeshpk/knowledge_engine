@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-084
+slug: in-preview-public-preview-azure-infrastructure-resiliency
+title: '[In preview] Public Preview: Azure Infrastructure Resiliency Manager'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=564759
+announcement_url: https://azure.microsoft.com/updates?id=564759
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-03
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:f3086852a7be07abf15fbf64b1b5932d7e777a025be059a6900bbaf2c95f6abe
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:427566c7431ff91bf4e69be6bff1a649ebec9fbc45ebe0452c3a231c95e3a073
+  discovered_at: '2026-08-01T21:26:59.739635+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:427566c7431ff91bf4e69be6bff1a649ebec9fbc45ebe0452c3a231c95e3a073
+tier: 2
+learning_priority: low
+category: governance-cost
+tags:
+- preview
+- regional-availability
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:f3086852a7be07abf15fbf64b1b5932d7e777a025be059a6900bbaf2c95f6abe
+  title_snapshot: '[In preview] Public Preview: Azure Infrastructure Resiliency Manager'
+  summary_snapshot: Azure Infrastructure Resiliency Manager is now in public preview, offering
+    a unified, goal-driven experience to design, assess, and improve application resiliency
+    across Azure. It brings together capabilities across Availability Zones, Azure Advisor,
+    Chao
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

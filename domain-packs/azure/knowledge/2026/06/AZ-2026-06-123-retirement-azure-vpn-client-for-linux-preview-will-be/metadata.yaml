@@ -1,0 +1,63 @@
+schema_version: 1
+id: AZ-2026-06-123
+slug: retirement-azure-vpn-client-for-linux-preview-will-be
+title: 'Retirement: Azure VPN Client for Linux (Preview) will be retired on August 31, 2026'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=565393
+announcement_url: https://azure.microsoft.com/updates?id=565393
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-10
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:7eea116a651a8241330f93bd4327dd9a6345fcd9caa26cd6e9b46ddf95649fe3
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:140da75e60a8a702e2d69d158e3b04ca88a6e3a0a70a3dc9ab95d2a76567981f
+  discovered_at: '2026-08-01T21:26:59.738134+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:140da75e60a8a702e2d69d158e3b04ca88a6e3a0a70a3dc9ab95d2a76567981f
+tier: 1
+learning_priority: medium
+category: null
+tags:
+- ga
+- preview
+- retirement
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:7eea116a651a8241330f93bd4327dd9a6345fcd9caa26cd6e9b46ddf95649fe3
+  title_snapshot: 'Retirement: Azure VPN Client for Linux (Preview) will be retired on August
+    31, 2026'
+  summary_snapshot: The Azure VPN Client for Linux (Preview) has remained in public preview
+    and does not have a path to general availability (GA). As part of our ongoing efforts
+    to align Azure networking services with current security and reliability standards, this
+    preview
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

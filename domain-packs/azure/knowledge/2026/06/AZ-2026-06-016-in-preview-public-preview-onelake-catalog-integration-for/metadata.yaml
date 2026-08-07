@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-06-016
+slug: in-preview-public-preview-onelake-catalog-integration-for
+title: '[In preview] Public Preview: OneLake Catalog integration for Foundry IQ Knowledge
+  Sources'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563227
+announcement_url: https://azure.microsoft.com/updates?id=563227
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:3b3b5882c978f9c35e60fb7f6d83ec0ffbf4cc41ee154e022d1dc79fe195c11f
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:3a7d940a257d49ad29fda1415f8ff8e0bd2c870d2784752ad0b33fff6078a393
+  discovered_at: '2026-08-01T21:26:59.742526+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:3a7d940a257d49ad29fda1415f8ff8e0bd2c870d2784752ad0b33fff6078a393
+tier: 2
+learning_priority: low
+category: null
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:3b3b5882c978f9c35e60fb7f6d83ec0ffbf4cc41ee154e022d1dc79fe195c11f
+  title_snapshot: '[In preview] Public Preview: OneLake Catalog integration for Foundry IQ
+    Knowledge Sources'
+  summary_snapshot: Microsoft Foundry IQ adds public preview support for OneLake Catalog as
+    a knowledge source, so agents can ground responses on lakehouse tables, files, and shortcuts
+    already governed in Microsoft Fabric. Data engineers register the OneLake catalog once
+    and
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

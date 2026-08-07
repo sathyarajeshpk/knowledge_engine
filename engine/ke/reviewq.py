@@ -59,13 +59,21 @@ class TaskKind(StrEnum):
     UNCLASSIFIED = "unclassified"
     #: A stored object changed in a way worth a human look. Added in M5.
     REVISION = "revision"
+    #: Two packs minted separate Feature IDs for what may be one feature.
+    #: Added in M8, when a second pack made it possible for the first time.
+    #: Nothing is merged or dropped — see `crosspack.py`.
+    CROSS_PACK = "cross-pack"
 
 
 #: Lower sorts first in `ke review next`.
 KIND_URGENCY = {
     TaskKind.QUEUED: 0,
-    TaskKind.REVISION: 1,
-    TaskKind.UNCLASSIFIED: 2,
+    # Above revisions: two permanent IDs for one feature is not lost knowledge,
+    # but it is the kind of thing that gets harder to reason about the longer it
+    # sits, because both objects keep accumulating revisions and artifacts.
+    TaskKind.CROSS_PACK: 1,
+    TaskKind.REVISION: 2,
+    TaskKind.UNCLASSIFIED: 3,
 }
 
 
@@ -207,11 +215,66 @@ def revision_tasks(pack: Pack) -> list[ReviewTask]:
     return tasks
 
 
+
+
+def cross_pack_tasks(pack: Pack) -> list[ReviewTask]:
+    """Duplicates this pack shares with another pack (M8, ADR-0044).
+
+    Deliberately surfaced from **both** sides: reviewing either pack shows the
+    same pair, because a duplicate is a fact about two packs and hiding it from
+    one of them would make the queue depend on which pack you happened to open.
+
+    The resolution is stored once, repo-level and keyed on the canonical pair,
+    so acknowledging from either side clears it for both.
+    """
+    from ke.crosspack import outstanding
+    from ke.pack import find_repo_root
+
+    repo_root = pack.root.parent.parent
+    if not (repo_root / "domain-packs").is_dir():  # pragma: no cover - defensive
+        repo_root = find_repo_root()
+
+    others = [p for p in Pack.discover(repo_root)]
+    if len(others) < 2:
+        return []
+
+    tasks = []
+    for pair in outstanding(others, repo_root):
+        if not pair.involves(pack.name):
+            continue
+        counterpart = pair.other_side(pack.name)
+        mine = next(s for s in pair.sides if s.pack_name == pack.name)
+        tasks.append(
+            ReviewTask(
+                key=pair.short_key,
+                kind=TaskKind.CROSS_PACK,
+                title=mine.title,
+                reason=(
+                    f"also in {counterpart.pack_name} as {counterpart.feature_id} "
+                    f"(matched on {pair.basis})"
+                ),
+                first_seen=None,
+                feature_id=mine.feature_id,
+                actions=(Action.RESOLVE,),
+                detail={
+                    "basis": pair.basis,
+                    "this": f"{mine.pack_name}:{mine.feature_id}",
+                    "other": f"{counterpart.pack_name}:{counterpart.feature_id}",
+                    "url": mine.url,
+                    "other_url": counterpart.url,
+                    "other_title": counterpart.title,
+                },
+            )
+        )
+    return tasks
+
+
 #: Every provider. Adding a kind is one entry here plus one function.
 PROVIDERS: tuple[Callable[[Pack], list[ReviewTask]], ...] = (
     queued_tasks,
     unclassified_tasks,
     revision_tasks,
+    cross_pack_tasks,
 )
 
 
@@ -251,9 +314,17 @@ def find(pack: Pack, needle: str) -> ReviewTask:
     return matches[0]
 
 
-def counts(pack: Pack) -> dict[TaskKind, int]:
+def counts(pack: Pack, tasks: list[ReviewTask] | None = None) -> dict[TaskKind, int]:
+    """Tally by kind, over `tasks` if the caller already has them.
+
+    The parameter exists because counting is never the only thing a caller
+    wants. `render_report` needs both the list and the tally, and calling
+    `collect()` twice ran every provider twice -- including the cross-pack one,
+    which reads every object in every pack. On a ten-pack repository that was
+    half of a 147-second index rebuild, spent recomputing an identical answer.
+    """
     tally = {kind: 0 for kind in TaskKind}
-    for task in collect(pack):
+    for task in collect(pack) if tasks is None else tasks:
         tally[task.kind] += 1
     return tally
 
@@ -273,7 +344,37 @@ def apply_action(pack: Pack, task: ReviewTask, action: Action) -> str:
 
     if task.kind is TaskKind.QUEUED:
         return _act_on_queued(pack, task, action)
+    if task.kind is TaskKind.CROSS_PACK:
+        return _act_on_cross_pack(pack, task)
     return _act_on_object(pack, task, action)
+
+
+def _act_on_cross_pack(pack: Pack, task: ReviewTask) -> str:
+    """Acknowledge a cross-pack duplicate. **Modifies neither object.**
+
+    The whole point of this kind is that the engine does not choose. Resolving
+    records that a human looked, so it stops being surfaced weekly; it does not
+    merge, drop, supersede or rewrite anything. If the human decides one
+    genuinely replaces the other, that is `ke supersede`, which is a separate
+    and explicit act.
+    """
+    from ke.clock import SystemClock
+    from ke.crosspack import Resolutions, find_duplicates
+
+    repo_root = pack.root.parent.parent
+    packs = Pack.discover(repo_root)
+    pair = next((p for p in find_duplicates(packs) if p.short_key == task.key), None)
+    if pair is None:
+        raise KeyError(f"{task.key} is no longer a cross-pack duplicate")
+
+    resolutions = Resolutions.load(repo_root)
+    resolutions.acknowledge(pair, today=SystemClock().today())
+    resolutions.save(repo_root)
+    return (
+        f"acknowledged: {pair.short_key}\n"
+        "  both objects are unchanged and both are kept\n"
+        "  it will not be surfaced again"
+    )
 
 
 def _act_on_queued(pack: Pack, task: ReviewTask, action: Action) -> str:
@@ -333,7 +434,7 @@ def render_report(pack: Pack) -> str:
     A backlog only gets worked if somebody can see it without running a command.
     """
     tasks = collect(pack)
-    tally = counts(pack)
+    tally = counts(pack, tasks)
     lines = [
         f"# {pack.name} — review queue",
         "",
@@ -345,6 +446,7 @@ def render_report(pack: Pack) -> str:
         "|---|---|---|",
         f"| queued | {tally[TaskKind.QUEUED]} | Discovered but not minted — identity not trusted enough |",
         f"| revision | {tally[TaskKind.REVISION]} | A stored item was retitled at source |",
+        f"| cross-pack | {tally[TaskKind.CROSS_PACK]} | Two packs hold what may be the same feature |",
         f"| unclassified | {tally[TaskKind.UNCLASSIFIED]} | Minted, but no rule could categorise it |",
         "",
         "Work them with `ke review next`, or act directly:",

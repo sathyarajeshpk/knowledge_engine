@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-07-033
+slug: launched-generally-available-microsoft-defender-security
+title: '[Launched] Generally Available: Microsoft Defender security assessments for Azure
+  Database for PostgreSQL Flexible Server'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=567527
+announcement_url: https://azure.microsoft.com/updates?id=567527
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-17
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:6aabf4e007c30438afe2ede978972c20f3cfba8caabf7f11e3a9bf4c6289aaa8
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:e1ba3f25bca6f58b38a192bc37d88c3eb309ce36f4ca807d1d847a664819c1ac
+  discovered_at: '2026-08-01T21:26:59.736215+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:e1ba3f25bca6f58b38a192bc37d88c3eb309ce36f4ca807d1d847a664819c1ac
+tier: 1
+learning_priority: high
+category: databases
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:6aabf4e007c30438afe2ede978972c20f3cfba8caabf7f11e3a9bf4c6289aaa8
+  title_snapshot: '[Launched] Generally Available: Microsoft Defender security assessments
+    for Azure Database for PostgreSQL Flexible Server'
+  summary_snapshot: Microsoft Defender Cloud Security Posture Management (CSPM) assessments
+    for Azure Database for PostgreSQL Flexible Server are now generally available. You can
+    use assessments to continuously evaluate the security posture of your Azure PostgreSQL
+    flexible
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

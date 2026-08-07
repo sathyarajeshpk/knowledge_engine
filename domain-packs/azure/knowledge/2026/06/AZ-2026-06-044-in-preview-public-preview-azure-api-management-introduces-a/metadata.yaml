@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-06-044
+slug: in-preview-public-preview-azure-api-management-introduces-a
+title: '[In preview] Public Preview: Azure API Management introduces a Unified Model API for
+  multi-model AI applications.'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=562853
+announcement_url: https://azure.microsoft.com/updates?id=562853
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:44b046cf87ace3b9d97068d01cac87d8500b45addcb5e5f8f929db08278e8108
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:8310e65fdfc765aa9d622394cc1f6fef0a002273168da7f31a09b836eb0ae416
+  discovered_at: '2026-08-01T21:26:59.740316+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:8310e65fdfc765aa9d622394cc1f6fef0a002273168da7f31a09b836eb0ae416
+tier: 2
+learning_priority: high
+category: ai-machine-learning
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:44b046cf87ace3b9d97068d01cac87d8500b45addcb5e5f8f929db08278e8108
+  title_snapshot: '[In preview] Public Preview: Azure API Management introduces a Unified
+    Model API for multi-model AI applications.'
+  summary_snapshot: As organizations adopt multiple LLM providers, developers often need to
+    handle different API formats, SDKs, and integration patterns for each model vendor. This
+    increases application complexity and makes provider switching, failover, and governance
+    more d
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-07-003
+slug: launched-generally-available-document-pii-nextgen
+title: '[Launched] Generally Available: Document PII NextGen Playground in Azure AI Language'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=564382
+announcement_url: https://azure.microsoft.com/updates?id=564382
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:03e4965c6f4492ae50c09530c74eb90fb33a100d5dcac746af4f04ad7f3b75c7
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:455e452db6f8c310691203cb4b718165e4071c83cb1238df372d3bdd4f15114d
+  discovered_at: '2026-08-01T21:26:59.737345+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:455e452db6f8c310691203cb4b718165e4071c83cb1238df372d3bdd4f15114d
+tier: 1
+learning_priority: low
+category: null
+tags:
+- ga
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:03e4965c6f4492ae50c09530c74eb90fb33a100d5dcac746af4f04ad7f3b75c7
+  title_snapshot: '[Launched] Generally Available: Document PII NextGen Playground in Azure
+    AI Language'
+  summary_snapshot: Azure AI Language now offers a refreshed Document PII playground in general
+    availability, giving customers a faster way to evaluate personally identifiable information
+    detection on documents. The playground ships with curated sample inputs and outputs, so
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

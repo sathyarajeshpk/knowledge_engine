@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-105
+slug: in-preview-public-preview-azure-sql-as-a-knowledge-source
+title: '[In preview] Public Preview: Azure SQL as a knowledge source in Foundry IQ'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563446
+announcement_url: https://azure.microsoft.com/updates?id=563446
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-04
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:e10439283d6f3a04ad5adc4f0c1cdf89f524b9dbafd5b7e8b55e59785578d1a8
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:50e44cba2e2fc61a6b0264d02e95247d2587313f74b9fc4ddcfc66b8ebac490f
+  discovered_at: '2026-08-01T21:26:59.738761+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:50e44cba2e2fc61a6b0264d02e95247d2587313f74b9fc4ddcfc66b8ebac490f
+tier: 2
+learning_priority: high
+category: ai-machine-learning
+tags:
+- ai
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:e10439283d6f3a04ad5adc4f0c1cdf89f524b9dbafd5b7e8b55e59785578d1a8
+  title_snapshot: '[In preview] Public Preview: Azure SQL as a knowledge source in Foundry
+    IQ'
+  summary_snapshot: Microsoft Foundry adds Azure SQL Database as a first-class Knowledge Source
+    in Azure AI Search, available in public preview. Enterprise developers and solution architects
+    building Copilot, RAG, and agentic experiences can now expose authoritative tables a
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

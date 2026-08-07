@@ -39,6 +39,58 @@ Nothing yet. M8 (Second pack — Power BI) begins after M7 is reviewed and merge
 
 ---
 
+## [0.9.0] — 2026-08-01
+
+Ninth milestone: **M8 — the second Domain Pack**.
+Release notes: [`docs/releases/v0.9.0.md`](docs/releases/v0.9.0.md).
+
+### Added
+
+- **A second Domain Pack: Azure (`AZ`)** — 200 knowledge objects, 10 categories,
+  29 classification rules, its own source and its own ID namespace. Added with
+  **zero engine files changed**, which is what M8 existed to test.
+- **Cross-pack duplicate detection** (`ke review --kind cross-pack`,
+  `ke review resolve`). Detects and reports; never merges, drops or blocks
+  (ADR-0044). Order-independent: harvesting A then B produces a byte-identical
+  report to B then A. Resolutions stored once at `state/cross-pack.json`.
+- **Cross-pack references** — a relationship may point into another pack and is
+  validated repository-wide (`REF001`).
+- **`XPK001`** (WARNING) — a cross-pack duplicate, reported by `ke validate`.
+- **`SEC001`** (ERROR) — a symlink under `domain-packs/` pointing outside it.
+- **`SEC002`** (ERROR) — a source URL that is not `http` or `https`.
+- `ke.paths` — path containment, the engine's symlink boundary.
+- `tools/measure_performance.py` — the benchmark behind the Performance Review.
+- `docs/ADDING-A-PACK.md`; ADRs 0043, 0044, 0045.
+
+### Fixed
+
+- **A pack could read local files into stored, committed knowledge.** A source
+  declaring `file:///etc/hostname` was fetched and stored. Now refused by an
+  `http`/`https` allowlist at three layers.
+- **A symlink in a pack could redirect every automated write.** Contained at
+  pack discovery, at write time, and reported by `ke validate`.
+- **One failing pack took the whole harvest run down.** `LockError` was the only
+  exception caught and it returned immediately, so a stuck lock on one pack cost
+  every other pack its week.
+- **`ke review --kind cross-pack` was rejected by argparse** — a hard-coded
+  choice tuple that did not follow the enum it described.
+- **The review report scanned every pack twice**, doubling the cost of every
+  index rebuild in a multi-pack repository.
+
+### Security
+
+- ADR-0045 closes the capability surface of a Domain Pack: web sources and string
+  matching, nothing else. Enforced by `ke validate` on every pull request.
+- Context packs now mark stored knowledge as data rather than instruction.
+
+### Known limitations
+
+- Index rebuild is **O(packs²)**; fine at two packs, address before the fifth.
+- Cross-pack detection lags one run, because each pack indexes before the later
+  packs have harvested.
+
+---
+
 ## [0.8.0] — 2026-08-01
 
 Eighth milestone: **M7 — Retrieval and on-demand generation**.

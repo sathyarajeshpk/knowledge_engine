@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-06-085
+slug: launched-generally-available-simple-log-alerts-in-azure
+title: '[Launched] Generally Available: Simple log alerts in Azure Monitor'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=561978
+announcement_url: https://azure.microsoft.com/updates?id=561978
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-03
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:f9cc5d286cd293312faff9badbac38b1c3e880a28e5dd9864e02c6189b3d8832
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:43156b2f4a16190b5ffde7a61a18dce3bfd197cb7ca21e35451057bb1d0c3768
+  discovered_at: '2026-08-01T21:26:59.739886+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:43156b2f4a16190b5ffde7a61a18dce3bfd197cb7ca21e35451057bb1d0c3768
+tier: 1
+learning_priority: medium
+category: monitoring
+tags:
+- ga
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:f9cc5d286cd293312faff9badbac38b1c3e880a28e5dd9864e02c6189b3d8832
+  title_snapshot: '[Launched] Generally Available: Simple log alerts in Azure Monitor'
+  summary_snapshot: We are excited to announce the General Availability of Simple log alerts
+    in Azure Monitor, available starting today. This feature is designed to provide a simplified
+    and more intuitive experience for monitoring and alerting, enhancing your ability to dete
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

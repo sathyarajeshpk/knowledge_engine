@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-013
+slug: in-preview-public-preview-purview-admin-access-auditing-for
+title: '[In preview] Public Preview: Purview admin access auditing for sensitivity-labeled
+  content in Azure AI Search'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563606
+announcement_url: https://azure.microsoft.com/updates?id=563606
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:a91207c4502b93090e7c874c5bf4d816ea5691cb5ce3b6ca2e82e8d9539fcb34
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:2a985b22e260d5270e9881ecc046c7a34f5eb04c465754d8a9852de8b0850444
+  discovered_at: '2026-08-01T21:26:59.741613+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:2a985b22e260d5270e9881ecc046c7a34f5eb04c465754d8a9852de8b0850444
+tier: 2
+learning_priority: low
+category: ai-machine-learning
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:a91207c4502b93090e7c874c5bf4d816ea5691cb5ce3b6ca2e82e8d9539fcb34
+  title_snapshot: '[In preview] Public Preview: Purview admin access auditing for sensitivity-labeled
+    content in Azure AI Search'
+  summary_snapshot: Azure AI Search adds Microsoft Purview admin access auditing for sensitivity-labeled
+    content in public preview. Admin operations that touch Purview-labeled documents inside
+    Azure AI Search, knowledge retrieval, and Foundry IQ knowledge bases now flow into
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

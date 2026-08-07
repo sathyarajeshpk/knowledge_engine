@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-06-110
+slug: in-preview-public-preview-tool-search-in-microsoft-foundry
+title: '[In preview] Public Preview: Tool search in Microsoft Foundry toolboxes'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563506
+announcement_url: https://azure.microsoft.com/updates?id=563506
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-04
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:e05d7d6d7a453e38e5638ab4e2be301666e02adcb3712710dbdf9140f6d0b122
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:af2734c1fc9629902dd47e6439dc55069638798e29d9fa8e82089b69eb581c89
+  discovered_at: '2026-08-01T21:26:59.738694+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:af2734c1fc9629902dd47e6439dc55069638798e29d9fa8e82089b69eb581c89
+tier: 2
+learning_priority: low
+category: null
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:e05d7d6d7a453e38e5638ab4e2be301666e02adcb3712710dbdf9140f6d0b122
+  title_snapshot: '[In preview] Public Preview: Tool search in Microsoft Foundry toolboxes'
+  summary_snapshot: Microsoft Foundry adds tool search to Foundry toolboxes in public preview,
+    giving developers and admins a fast way to find the right tool inside large, multi-team
+    catalogs. As your toolbox grows, sending every tool definition on every turn gets expensive.
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

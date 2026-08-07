@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-07-028
+slug: announcing-tracing-for-microsoft-agent-framework-python-and
+title: 'Announcing: Tracing for Microsoft Agent Framework (Python and .NET)'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=564071
+announcement_url: https://azure.microsoft.com/updates?id=564071
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-15
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:f79f47c5d11b70c683046a1ba310e551fa99b86f046203dcd6ed3045814a9960
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:fca808bcd1a57f589b49299b4b922c7b02fb242a2f4e7fa7079aff9a2ffbaafd
+  discovered_at: '2026-08-01T21:26:59.736468+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:fca808bcd1a57f589b49299b4b922c7b02fb242a2f4e7fa7079aff9a2ffbaafd
+tier: 2
+learning_priority: low
+category: ai-machine-learning
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:f79f47c5d11b70c683046a1ba310e551fa99b86f046203dcd6ed3045814a9960
+  title_snapshot: 'Announcing: Tracing for Microsoft Agent Framework (Python and .NET)'
+  summary_snapshot: In public preview, Microsoft Foundry now offers tracing for the Microsoft
+    Agent Framework in both Python and .NET, helping developers observe how agents reason,
+    call tools, and interact with models during execution. This release is part of the broader
+    hos
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

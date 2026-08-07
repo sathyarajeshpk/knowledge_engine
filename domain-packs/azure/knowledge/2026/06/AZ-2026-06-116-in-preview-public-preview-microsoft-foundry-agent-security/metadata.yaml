@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-06-116
+slug: in-preview-public-preview-microsoft-foundry-agent-security
+title: '[In preview] Public Preview: Microsoft Foundry agent security capabilities in Microsoft
+  Defender for Cloud are transitioning to a Microsoft Agent 365 license'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=565171
+announcement_url: https://azure.microsoft.com/updates?id=565171
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-08
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:fe6dec855181012c984e824af3c1e89aea8d97276627894f4493f14e0269f7d8
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:c210c9e4286434905f00fe4888b6f999b81dc5a0e4cc267d5f271472bfa81625
+  discovered_at: '2026-08-01T21:26:59.738333+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:c210c9e4286434905f00fe4888b6f999b81dc5a0e4cc267d5f271472bfa81625
+tier: 2
+learning_priority: high
+category: identity-security
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:fe6dec855181012c984e824af3c1e89aea8d97276627894f4493f14e0269f7d8
+  title_snapshot: '[In preview] Public Preview: Microsoft Foundry agent security capabilities
+    in Microsoft Defender for Cloud are transitioning to a Microsoft Agent 365 license'
+  summary_snapshot: Starting July 1, 2026, Microsoft Foundry agent security capabilities previously
+    available through Microsoft Defender for Cloud will transition to a Microsoft Agent 365
+    license. Agent protection in Defender will be powered by Agent 365 observability logs
+    a
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

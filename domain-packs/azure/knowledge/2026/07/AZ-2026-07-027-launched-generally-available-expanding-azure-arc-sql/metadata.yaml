@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-07-027
+slug: launched-generally-available-expanding-azure-arc-sql
+title: '[Launched] Generally Available: Expanding Azure Arc SQL Migration with SQL Server
+  on Azure Virtual Machines'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=567362
+announcement_url: https://azure.microsoft.com/updates?id=567362
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-15
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:e0a880d3f19e8c76c685ef7207c11289661042df5e7845607d819701033d0829
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:f53da4bb5c859c986247f8d926f861c2891ae729d20d2fb2ce9a9836b0edcc5d
+  discovered_at: '2026-08-01T21:26:59.736618+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:f53da4bb5c859c986247f8d926f861c2891ae729d20d2fb2ce9a9836b0edcc5d
+tier: 1
+learning_priority: medium
+category: databases
+tags:
+- ga
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:e0a880d3f19e8c76c685ef7207c11289661042df5e7845607d819701033d0829
+  title_snapshot: '[Launched] Generally Available: Expanding Azure Arc SQL Migration with
+    SQL Server on Azure Virtual Machines'
+  summary_snapshot: The Azure Arc migration solution now supports SQL Server on Azure Virtual
+    Machines as a migration target. Arc-enabled SQL Server instances can now be migrated to
+    both Azure SQL Managed Instance and SQL Server on Azure infrastructure using the same
+    unified
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

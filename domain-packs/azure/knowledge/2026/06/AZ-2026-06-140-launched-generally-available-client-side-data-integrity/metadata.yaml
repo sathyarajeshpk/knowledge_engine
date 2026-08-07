@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-06-140
+slug: launched-generally-available-client-side-data-integrity
+title: '[Launched] Generally Available: Client-side data integrity protections in Azure Blob
+  Storage'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=566895
+announcement_url: https://azure.microsoft.com/updates?id=566895
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-30
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:95b358fa18d0e3b536648c7397ec37e3ee0f679fb7a447951de258d453c36f3e
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:cdb61142f180d1e13285eba9d06e5ca4bcc7136833f1ce96af4aa3a094cddd99
+  discovered_at: '2026-08-01T21:26:59.737452+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:cdb61142f180d1e13285eba9d06e5ca4bcc7136833f1ce96af4aa3a094cddd99
+tier: 1
+learning_priority: medium
+category: storage
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:95b358fa18d0e3b536648c7397ec37e3ee0f679fb7a447951de258d453c36f3e
+  title_snapshot: '[Launched] Generally Available: Client-side data integrity protections
+    in Azure Blob Storage'
+  summary_snapshot: Azure Blob Storage has long supported data integrity validation, starting
+    with MD5 as part of the original HTTP standards and adding CRC64-NVME support in 2019.
+    Today, CRC64-NVME is now integrated into the latest Azure Blob SDKs for .NET, C++, and
+    JavaScr
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

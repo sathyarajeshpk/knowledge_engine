@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-06-069
+slug: in-preview-public-preview-azure-database-postgresql
+title: '[In preview] Public Preview: Azure Database PostgreSQL - Flexible Server cross-tenant
+  customer-managed keys'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563776
+announcement_url: https://azure.microsoft.com/updates?id=563776
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:e12414a4752a4249b8e65b88c165d3fac266f4c4fffa5c835b645096011ea49d
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:d1ade6d24e984928e1a79b6b398f784816c0ba15b9ebcfab7ee704bd793f8cf7
+  discovered_at: '2026-08-01T21:26:59.741468+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:d1ade6d24e984928e1a79b6b398f784816c0ba15b9ebcfab7ee704bd793f8cf7
+tier: 2
+learning_priority: high
+category: databases
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:e12414a4752a4249b8e65b88c165d3fac266f4c4fffa5c835b645096011ea49d
+  title_snapshot: '[In preview] Public Preview: Azure Database PostgreSQL - Flexible Server
+    cross-tenant customer-managed keys'
+  summary_snapshot: Azure Database for PostgreSQL - Flexible Server now supports cross-tenant
+    customer-managed keys (CMK), in public preview, allowing you to encrypt your data at rest
+    using an Azure Key Vault key that resides in a separate Microsoft Entra tenant from the
+    dat
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-030
+slug: in-preview-public-preview-sharepoint-in-microsoft-365
+title: '[In preview] Public Preview: SharePoint in Microsoft 365 indexer supports ASPX pages
+  and Lists'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563262
+announcement_url: https://azure.microsoft.com/updates?id=563262
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:7aceb6508774ce896f161edb17a1b7b7e55c50c322d81ca1f2adc78135d9ceac
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:545a7fe211c3f371e14dbaf6f66148bc20edecfa58520015c4ad1a8bb8bd7891
+  discovered_at: '2026-08-01T21:26:59.742343+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:545a7fe211c3f371e14dbaf6f66148bc20edecfa58520015c4ad1a8bb8bd7891
+tier: 2
+learning_priority: high
+category: ai-machine-learning
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:7aceb6508774ce896f161edb17a1b7b7e55c50c322d81ca1f2adc78135d9ceac
+  title_snapshot: '[In preview] Public Preview: SharePoint in Microsoft 365 indexer supports
+    ASPX pages and Lists'
+  summary_snapshot: The Azure AI Search SharePoint in Microsoft 365 indexer now indexes ASPX
+    site content and SharePoint Lists in addition to document libraries. The indexer connects
+    through a Microsoft Entra application registration with application or delegated permissions
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

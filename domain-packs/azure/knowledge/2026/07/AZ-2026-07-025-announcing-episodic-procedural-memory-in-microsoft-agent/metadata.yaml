@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-07-025
+slug: announcing-episodic-procedural-memory-in-microsoft-agent
+title: 'Announcing: Episodic procedural memory in Microsoft Agent Framework'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563561
+announcement_url: https://azure.microsoft.com/updates?id=563561
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-15
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:b80a3701859f5d525e64fecf26a0ba69b30e0fa13a505c7a87085a8804b8c358
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:bc384f655e85c8155dea3c3d43287bf31ac67734ac94b512be1c9b2b03acd7cd
+  discovered_at: '2026-08-01T21:26:59.736542+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:bc384f655e85c8155dea3c3d43287bf31ac67734ac94b512be1c9b2b03acd7cd
+tier: 2
+learning_priority: low
+category: null
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:b80a3701859f5d525e64fecf26a0ba69b30e0fa13a505c7a87085a8804b8c358
+  title_snapshot: 'Announcing: Episodic procedural memory in Microsoft Agent Framework'
+  summary_snapshot: Microsoft Agent Framework adds episodic procedural memory in public preview,
+    a built-in store that lets agents remember successful task patterns and replay them on
+    similar future requests. The framework records action sequences, tool selections, and
+    inter
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

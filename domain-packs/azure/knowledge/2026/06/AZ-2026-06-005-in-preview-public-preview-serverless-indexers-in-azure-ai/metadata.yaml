@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-005
+slug: in-preview-public-preview-serverless-indexers-in-azure-ai
+title: '[In preview] Public Preview: Serverless indexers in Azure AI Search'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563531
+announcement_url: https://azure.microsoft.com/updates?id=563531
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:049194ec518c72090216a5f2bf18422a47ed30a2ebf7ebcb96b4c97989f81f4c
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:102c1c59ad4f0d330d018642a77513eec6b0b66fc5f769e8162ace910e2bfd41
+  discovered_at: '2026-08-01T21:26:59.741807+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:102c1c59ad4f0d330d018642a77513eec6b0b66fc5f769e8162ace910e2bfd41
+tier: 2
+learning_priority: low
+category: ai-machine-learning
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:049194ec518c72090216a5f2bf18422a47ed30a2ebf7ebcb96b4c97989f81f4c
+  title_snapshot: '[In preview] Public Preview: Serverless indexers in Azure AI Search'
+  summary_snapshot: Azure AI Search now offers a serverless option for native indexers in
+    public preview, removing the requirement to provision and manage indexer compute for ingestion
+    workflows. Indexer execution scales with workload demand, so customers stop paying for
+    idl
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

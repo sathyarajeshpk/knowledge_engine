@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-06-043
+slug: launched-generally-available-image-translation-inside
+title: '[Launched] Generally Available: Image translation inside Office documents for batch
+  document translation'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=564412
+announcement_url: https://azure.microsoft.com/updates?id=564412
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:b4a1fd74f3d5664c2ff437b024c2308154cebcd08232420f0d2d279f469d6192
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:82a2395b297ac2987dd501110a527e9dfb0a103cfa489fe7df9825742a6ae054
+  discovered_at: '2026-08-01T21:26:59.741211+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:82a2395b297ac2987dd501110a527e9dfb0a103cfa489fe7df9825742a6ae054
+tier: 1
+learning_priority: low
+category: compute
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:b4a1fd74f3d5664c2ff437b024c2308154cebcd08232420f0d2d279f469d6192
+  title_snapshot: '[Launched] Generally Available: Image translation inside Office documents
+    for batch document translation'
+  summary_snapshot: Azure AI Translator batch document translation now translates text inside
+    images embedded in Word `.docx` files as a generally available capability. The service
+    detects image regions, runs OCR, translates the recognized text, and re-renders it back
+    into t
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

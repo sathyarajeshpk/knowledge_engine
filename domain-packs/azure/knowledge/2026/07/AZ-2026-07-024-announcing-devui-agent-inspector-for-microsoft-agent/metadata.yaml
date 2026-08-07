@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-07-024
+slug: announcing-devui-agent-inspector-for-microsoft-agent
+title: 'Announcing: DevUI Agent Inspector for Microsoft Agent Framework'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563551
+announcement_url: https://azure.microsoft.com/updates?id=563551
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-15
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:a4e1c4adcfaa37499c835f4a4a02fe990ac5eb9553a81233b7adf09c5f194aff
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:7c7476e4e102c98574419ad64f92b1b2ec3ba86d88a2919cae4928ab223170fe
+  discovered_at: '2026-08-01T21:26:59.736695+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:7c7476e4e102c98574419ad64f92b1b2ec3ba86d88a2919cae4928ab223170fe
+tier: 2
+learning_priority: low
+category: ai-machine-learning
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:a4e1c4adcfaa37499c835f4a4a02fe990ac5eb9553a81233b7adf09c5f194aff
+  title_snapshot: 'Announcing: DevUI Agent Inspector for Microsoft Agent Framework'
+  summary_snapshot: Microsoft Agent Framework adds DevUI Agent Inspector in public preview,
+    a local debugging surface that shows agent runs as a navigable tree of model calls, tool
+    invocations, and intermediate state. Developers can pause, replay, and edit prompts mid-run,
+    s
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

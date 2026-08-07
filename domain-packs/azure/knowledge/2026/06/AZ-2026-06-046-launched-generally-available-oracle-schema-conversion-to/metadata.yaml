@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-06-046
+slug: launched-generally-available-oracle-schema-conversion-to
+title: '[Launched] Generally Available: Oracle schema conversion to Azure PostgreSQL in Visual
+  Studio Code'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563791
+announcement_url: https://azure.microsoft.com/updates?id=563791
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:7c3f456a89405ab95cf284bdccff7cf70cb43f989f34ab020991799dcc257155
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:8fd28025a3f7f2bb2305cc4821db3234e70503c150c4c7708f263e4a5b3144e3
+  discovered_at: '2026-08-01T21:26:59.741356+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:8fd28025a3f7f2bb2305cc4821db3234e70503c150c4c7708f263e4a5b3144e3
+tier: 1
+learning_priority: high
+category: databases
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:7c3f456a89405ab95cf284bdccff7cf70cb43f989f34ab020991799dcc257155
+  title_snapshot: '[Launched] Generally Available: Oracle schema conversion to Azure PostgreSQL
+    in Visual Studio Code'
+  summary_snapshot: You can now convert Oracle database schema objects to Azure Database for
+    PostgreSQL-compatible schema directly in the PostgreSQL extension for Visual Studio Code.
+    The experience provides a project-based workflow for Oracle to Microsoft for PostgreSQL
+    offe
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

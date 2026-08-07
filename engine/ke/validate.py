@@ -113,6 +113,16 @@ def validate_repo(repo_root: Path, pack_name: str | None = None) -> list[Finding
             ]
 
     findings: list[Finding] = []
+
+    # Runs whatever `--pack` says. A symlink out of `domain-packs/` is a fact
+    # about the repository, not about one pack, and a security check that a flag
+    # can switch off is a security check that will be switched off. It also has
+    # to run here rather than inside `validate_pack`, because a symlinked pack
+    # *root* is skipped by `find_roots` and would otherwise be reported by
+    # nothing at all.
+    findings.extend(_check_escaping_links(repo_root))
+
+    loaded: list[Pack] = []
     for root in roots:
         try:
             pack = Pack.load(root)
@@ -130,6 +140,96 @@ def validate_repo(repo_root: Path, pack_name: str | None = None) -> list[Finding
             )
             continue
         findings.extend(validate_pack(pack))
+        loaded.append(pack)
+
+    # Whole-repository checks. These cannot be done per pack by definition: a
+    # reference from one pack into another resolves only when both are in view,
+    # and a duplicate spanning two packs belongs to neither.
+    #
+    # Only run when the whole repository was validated. Under `--pack` the
+    # other packs were deliberately not loaded, and reporting every cross-pack
+    # reference as dangling because the target was filtered out would be a
+    # false alarm caused by the flag rather than by the data.
+    if pack_name is None and len(loaded) > 1:
+        findings.extend(_validate_across_packs(loaded))
+    return findings
+
+
+def _check_escaping_links(repo_root: Path) -> list[Finding]:
+    """SEC001 -- a symlink under `domain-packs/` that points outside it.
+
+    ADR-0016 makes a pack pure data so that adding one needs no engine change
+    and therefore no engine review. A symlink is the one thing a data-only
+    change can contain that reaches back out at engine-owned files: the weekly
+    workflow writes state, knowledge and indexes under the pack root while
+    holding a repository write token, so a redirected component sends those
+    writes wherever the link points.
+
+    The boundary is `domain-packs/`, not the repository root, and the difference
+    is the whole point. `domain-packs/x/state -> ../../.git` never leaves the
+    repository and is exactly the attack: engine-owned paths are *inside* the
+    repository, so a check that only caught escapes from it would catch nothing
+    that matters.
+
+    ERROR, not warning. Every other cross-pack finding in this module is a
+    warning because the engine is not entitled to judge the knowledge; this one
+    judges the *filesystem*, where a pack has no legitimate reason to reach
+    outside its own tree and no ambiguity about what it means when it does.
+    """
+    from ke.paths import escaping_links, resolved
+
+    packs_dir = resolved(Path(repo_root) / PACKS_DIRNAME)
+    if not packs_dir.is_dir():
+        return []
+    return [
+        Finding(
+            Level.ERROR,
+            "SEC001",
+            f"{PACKS_DIRNAME}/{link.relative_to(packs_dir)}",
+            f"symlink points outside {PACKS_DIRNAME}/, to {target}. Packs are "
+            "data and are reviewed as data; a link out of one redirects "
+            "automated writes to a path nobody reviewed.",
+        )
+        for link, target in escaping_links(packs_dir)
+    ]
+
+
+def _validate_across_packs(packs: list[Pack]) -> list[Finding]:
+    """Referential integrity and duplicate reporting across the whole repository.
+
+    Cross-pack duplicates are a **warning**, never an error. Two packs holding
+    the same canonical URL is often correct -- the same announcement filed under
+    two taxonomies, useful to two different questions -- and the engine has no
+    way to tell that from a true duplicate. Failing CI over it would make a
+    judgement the engine is not entitled to make (ADR-0044).
+    """
+    from ke.crosspack import dangling_references, find_duplicates
+
+    findings: list[Finding] = []
+
+    for feature_id, field, missing in dangling_references(packs):
+        findings.append(
+            Finding(
+                Level.ERROR,
+                "REF001",
+                PACKS_DIRNAME,
+                f"{feature_id}: {field} references {missing}, which exists in no pack",
+            )
+        )
+
+    for pair in find_duplicates(packs):
+        where = " and ".join(
+            f"{side.pack_name}:{side.feature_id}" for side in pair.sides
+        )
+        findings.append(
+            Finding(
+                Level.WARNING,
+                "XPK001",
+                PACKS_DIRNAME,
+                f"the same {pair.basis} is held by {where}; both are kept — "
+                "review with `ke review --kind cross-pack`",
+            )
+        )
     return findings
 
 
@@ -222,6 +322,29 @@ def _check_pack_config(pack: Pack) -> list[Finding]:
                 "PACK004",
                 pack.location(pack.state_dir),
                 "missing required pack directory (must contain id-registry.json)",
+            )
+        )
+
+    # SEC002 -- force the source definitions to be built.
+    #
+    # `Pack.source_definitions` is a lazy property, so the scheme allowlist in
+    # `SourceDefinition.from_config` only fires when something asks for the
+    # sources. Validation never did, which meant a pack declaring
+    # `url: file:///etc/hostname` reported "no findings" in CI and failed at
+    # 03:00 on Sunday instead -- inside the process holding the write token,
+    # which is the one place it must not first be discovered.
+    #
+    # Found by running the installed CLI rather than the library: the guard was
+    # real, the path to it was not.
+    try:
+        pack.source_definitions
+    except Exception as exc:  # noqa: BLE001 - any malformed source is a finding
+        findings.append(
+            Finding(
+                Level.ERROR,
+                "SEC002",
+                location,
+                " ".join(str(exc).split()) or f"{type(exc).__name__} while reading sources",
             )
         )
     return findings

@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-096
+slug: in-preview-public-preview-domain-filter-for-specialized
+title: '[In preview] Public Preview: Domain filter for specialized model discovery in Foundry
+  model catalog'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563731
+announcement_url: https://azure.microsoft.com/updates?id=563731
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-03
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:b4530e25e1b67514766cf1014d05a15f01ccbf4dfb6e13f7bb5a54d2dd5123fc
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:e4f6d48e6b81bb0cb72b8888c15bb8c77fc5f777e6eb1d4209b8e99e77cd7e89
+  discovered_at: '2026-08-01T21:26:59.739416+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:e4f6d48e6b81bb0cb72b8888c15bb8c77fc5f777e6eb1d4209b8e99e77cd7e89
+tier: 2
+learning_priority: low
+category: ai-machine-learning
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:b4530e25e1b67514766cf1014d05a15f01ccbf4dfb6e13f7bb5a54d2dd5123fc
+  title_snapshot: '[In preview] Public Preview: Domain filter for specialized model discovery
+    in Foundry model catalog'
+  summary_snapshot: Microsoft Foundry model catalog adds a domain filter in public preview,
+    helping developers narrow the catalog of over 1,900 models to the ones trained for a specific
+    industry or use case. Filters cover domains such as robotics, biomedical sciences, materi
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

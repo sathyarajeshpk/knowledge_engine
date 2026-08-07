@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-07-042
+slug: launched-generally-available-resource-placement-in-azure
+title: '[Launched] Generally Available: Resource placement in Azure Kubernetes Fleet Manager'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=567931
+announcement_url: https://azure.microsoft.com/updates?id=567931
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-28
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:c5a4eddec4681bdc52c127c991a05d75cc71ad8f83a9826dba5ab66866210f9f
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:7dd56753ba3d15e32898c9d0f1b2c619f1f05f16b39b07d39319d640731e2b8e
+  discovered_at: '2026-08-01T21:26:59.735669+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:7dd56753ba3d15e32898c9d0f1b2c619f1f05f16b39b07d39319d640731e2b8e
+tier: 1
+learning_priority: high
+category: compute
+tags:
+- ga
+- kubernetes
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:c5a4eddec4681bdc52c127c991a05d75cc71ad8f83a9826dba5ab66866210f9f
+  title_snapshot: '[Launched] Generally Available: Resource placement in Azure Kubernetes
+    Fleet Manager'
+  summary_snapshot: Managing Kubernetes resources across multiple clusters can require significant
+    manual effort to apply updates and maintain consistency. Resource placement in Azure Kubernetes
+    Fleet Manager is now generally available and enables platform and application te
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

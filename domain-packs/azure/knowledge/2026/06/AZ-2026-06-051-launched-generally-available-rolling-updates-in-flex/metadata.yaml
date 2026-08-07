@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-06-051
+slug: launched-generally-available-rolling-updates-in-flex
+title: '[Launched] Generally Available: Rolling updates in Flex Consumption'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=562365
+announcement_url: https://azure.microsoft.com/updates?id=562365
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:a947a9045e7793033bf6e06fdcf1c8623edc41bcf48128b9ee5563cd86261938
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:9eae5264f86ecd4a4cf272c35662d7a007e04c056ac5c253f34f565bf7bc200e
+  discovered_at: '2026-08-01T21:26:59.740941+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:9eae5264f86ecd4a4cf272c35662d7a007e04c056ac5c253f34f565bf7bc200e
+tier: 1
+learning_priority: low
+category: null
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:a947a9045e7793033bf6e06fdcf1c8623edc41bcf48128b9ee5563cd86261938
+  title_snapshot: '[Launched] Generally Available: Rolling updates in Flex Consumption'
+  summary_snapshot: Rolling updates are now generally available in the Flex Consumption plan,
+    delivering zero-downtime deployments with a simple configuration change.Instead of forcefully
+    restarting all instances during code or configuration updates, the platform gracefully
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

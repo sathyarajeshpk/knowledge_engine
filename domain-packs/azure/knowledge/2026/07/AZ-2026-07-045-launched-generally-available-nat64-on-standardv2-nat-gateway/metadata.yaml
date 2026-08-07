@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-07-045
+slug: launched-generally-available-nat64-on-standardv2-nat-gateway
+title: '[Launched] Generally Available: NAT64 on StandardV2 NAT Gateway'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=568409
+announcement_url: https://azure.microsoft.com/updates?id=568409
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-28
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:1fb007003eb0e5aebef7201d600fbdbfb95ae1519b3ca3d1a276cce2d1c90312
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:e4715287231d3efdd760f9c6f9a7c77f82f0a585712282e0762a71f86cd17403
+  discovered_at: '2026-08-01T21:26:59.735592+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:e4715287231d3efdd760f9c6f9a7c77f82f0a585712282e0762a71f86cd17403
+tier: 1
+learning_priority: low
+category: platform
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:1fb007003eb0e5aebef7201d600fbdbfb95ae1519b3ca3d1a276cce2d1c90312
+  title_snapshot: '[Launched] Generally Available: NAT64 on StandardV2 NAT Gateway'
+  summary_snapshot: StandardV2 NAT Gateway now supports NAT64, enabling IPv6 workloads to
+    communicate with IPv4-only internet destinations by translating synthesized outbound IPv6
+    traffic into IPv4 traffic. NAT64 relies on a DNS64-capable resolver to synthesize IPv6
+    addresse
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

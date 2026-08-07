@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-134
+slug: in-preview-public-preview-azure-databricks-natively-storing
+title: '[In preview] Public Preview: Azure Databricks natively storing data in Microsoft OneLake'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=565706
+announcement_url: https://azure.microsoft.com/updates?id=565706
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-17
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:32d99ed24b6e442499d3f1267c08ec7d5f5d44a125375d99c957541de7a39098
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:aab854e800fc6111cffb3475d993a3a777cf31f62a8645b7a095b2e2364e55a5
+  discovered_at: '2026-08-01T21:26:59.737731+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:aab854e800fc6111cffb3475d993a3a777cf31f62a8645b7a095b2e2364e55a5
+tier: 2
+learning_priority: medium
+category: storage
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:32d99ed24b6e442499d3f1267c08ec7d5f5d44a125375d99c957541de7a39098
+  title_snapshot: '[In preview] Public Preview: Azure Databricks natively storing data in
+    Microsoft OneLake'
+  summary_snapshot: Azure Databricks can now natively write managed Delta tables to Microsoft
+    OneLake. This capability enables customers to use OneLake as a unified storage layer for
+    Azure Databricks workloads without managing separate storage accounts. By storing data
+    direc
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

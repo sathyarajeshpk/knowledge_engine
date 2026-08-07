@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-118
+slug: in-preview-public-preview-azure-managed-redis-now-supports
+title: '[In preview] Public Preview: Azure Managed Redis now supports Entra ID based RBAC
+  for data management'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=564873
+announcement_url: https://azure.microsoft.com/updates?id=564873
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-08
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:3be54e883f27712ceda3b964817f13c1f3f3efb457f747094973b9400dbe041d
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:cd1189615997aa2a719fef9b7e23c5106c3e5eb2fd856cdce083e232518e1f16
+  discovered_at: '2026-08-01T21:26:59.738446+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:cd1189615997aa2a719fef9b7e23c5106c3e5eb2fd856cdce083e232518e1f16
+tier: 2
+learning_priority: high
+category: databases
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:3be54e883f27712ceda3b964817f13c1f3f3efb457f747094973b9400dbe041d
+  title_snapshot: '[In preview] Public Preview: Azure Managed Redis now supports Entra ID
+    based RBAC for data management'
+  summary_snapshot: With role-based access control (RBAC) for Azure Managed Redis data access,
+    you can precisely control who can read, write, or administer your Redis data using Microsoft
+    Entra ID—without relying on shared keys. Built on top of Redis Access Control Lists (AC
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

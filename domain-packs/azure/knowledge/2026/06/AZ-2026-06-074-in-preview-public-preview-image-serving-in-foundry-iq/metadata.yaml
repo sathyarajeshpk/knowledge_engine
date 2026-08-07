@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-074
+slug: in-preview-public-preview-image-serving-in-foundry-iq
+title: '[In preview] Public Preview: Image serving in Foundry IQ knowledge bases'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563237
+announcement_url: https://azure.microsoft.com/updates?id=563237
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:73b109a3398b2cb650da81b9e231f17f69f6d98bfaee8bce5e2ca3a2c2b525f8
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:f60049bccd69489d713354db0d234a36690d8123eed2c1fbf638b3e16510eec0
+  discovered_at: '2026-08-01T21:26:59.742481+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:f60049bccd69489d713354db0d234a36690d8123eed2c1fbf638b3e16510eec0
+tier: 2
+learning_priority: low
+category: null
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:73b109a3398b2cb650da81b9e231f17f69f6d98bfaee8bce5e2ca3a2c2b525f8
+  title_snapshot: '[In preview] Public Preview: Image serving in Foundry IQ knowledge bases'
+  summary_snapshot: Foundry IQ knowledge bases now surface document-extracted images at query
+    time in public preview. When ingestion pulls figures, screenshots, and diagrams out of
+    PDFs, slides, and Office files, Foundry IQ retains each image alongside the text it appeared
+    w
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

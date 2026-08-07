@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-06-035
+slug: launched-generally-available-photo-avatar-standard-and
+title: '[Launched] Generally Available: Photo Avatar standard and custom in Azure AI Speech'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563282
+announcement_url: https://azure.microsoft.com/updates?id=563282
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:80a70674a1fb99497e6ebe9b0d6ca16a5100b7c85cf07c5eeca043faf2296a76
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:5fa8e93793f76fb5707c367947c02606e6f15a380694e360f8147c976b19b87e
+  discovered_at: '2026-08-01T21:26:59.742271+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:5fa8e93793f76fb5707c367947c02606e6f15a380694e360f8147c976b19b87e
+tier: 1
+learning_priority: low
+category: null
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:80a70674a1fb99497e6ebe9b0d6ca16a5100b7c85cf07c5eeca043faf2296a76
+  title_snapshot: '[Launched] Generally Available: Photo Avatar standard and custom in Azure
+    AI Speech'
+  summary_snapshot: Photo Avatar in Azure AI Speech is now generally available in standard
+    and custom flavors. Standard Photo Avatar produces a talking head video from a single
+    photo at 512x512 resolution, and custom Photo Avatar lets you fine-tune the look from
+    your own ima
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

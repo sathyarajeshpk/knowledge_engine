@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-06-115
+slug: in-preview-public-preview-azure-site-recovery-support-for
+title: '[In preview] Public Preview: Azure Site Recovery support for Linux Azure VMs with
+  NVMe disk controllers.'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=565103
+announcement_url: https://azure.microsoft.com/updates?id=565103
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-08
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:7dae03b280c38c54db6988b9371a2c9efa514284d8086d1ae9d1b8c99c090a24
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:8049be35ef6b6d7269fd314e2078a90509bd6c3542bb9caf449b1f11815e2956
+  discovered_at: '2026-08-01T21:26:59.738374+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:8049be35ef6b6d7269fd314e2078a90509bd6c3542bb9caf449b1f11815e2956
+tier: 2
+learning_priority: medium
+category: compute
+tags:
+- preview
+difficulty: intermediate
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:7dae03b280c38c54db6988b9371a2c9efa514284d8086d1ae9d1b8c99c090a24
+  title_snapshot: '[In preview] Public Preview: Azure Site Recovery support for Linux Azure
+    VMs with NVMe disk controllers.'
+  summary_snapshot: Azure Site Recovery now supports replication and disaster recovery for
+    Linux Azure Virtual Machines running on NVMe-enabled Generation 2 VM families, such as
+    the Da/Ea/Fa v6-series and Ebsv5/Ebdsv5 in the Azure-to-Azure scenario. This support is
+    limited t
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

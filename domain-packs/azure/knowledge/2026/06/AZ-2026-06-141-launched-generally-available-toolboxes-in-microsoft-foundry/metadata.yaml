@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-141
+slug: launched-generally-available-toolboxes-in-microsoft-foundry
+title: '[Launched] Generally Available: Toolboxes in Microsoft Foundry'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563481
+announcement_url: https://azure.microsoft.com/updates?id=563481
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-30
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:cedea355ea961f2347b17b3469fd39822c1699412084572e2d3b786b9a8938bb
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:e0763ca7fce1e6e6e38eb3a640e57bcf0c369491ef2a8e83a42438718760f082
+  discovered_at: '2026-08-01T21:26:59.737483+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:e0763ca7fce1e6e6e38eb3a640e57bcf0c369491ef2a8e83a42438718760f082
+tier: 1
+learning_priority: low
+category: null
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:cedea355ea961f2347b17b3469fd39822c1699412084572e2d3b786b9a8938bb
+  title_snapshot: '[Launched] Generally Available: Toolboxes in Microsoft Foundry'
+  summary_snapshot: Microsoft Foundry brings Toolboxes to GA, providing a unified endpoint
+    to invoke the most-used tools in prompt agents and callable outside of prompt agents.
+    Today every agent team hand-assembles its own tool list to solve the same tasks, with
+    no shared ar
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

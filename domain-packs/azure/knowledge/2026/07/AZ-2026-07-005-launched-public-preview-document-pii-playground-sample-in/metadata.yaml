@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-07-005
+slug: launched-public-preview-document-pii-playground-sample-in
+title: '[Launched] Public Preview: Document PII playground sample in Microsoft Foundry NextGen'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=563331
+announcement_url: https://azure.microsoft.com/updates?id=563331
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:a82d442d6a4f333473c5c0df04cb153dccd638b16fc5dc41fa10b60a2bdfd954
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:cdc044d1915ce896bc36f01c7a3cb8d7b0c0511b8c91bed90e19aabdd94aad1b
+  discovered_at: '2026-08-01T21:26:59.737313+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:cdc044d1915ce896bc36f01c7a3cb8d7b0c0511b8c91bed90e19aabdd94aad1b
+tier: 2
+learning_priority: low
+category: null
+tags:
+- ga
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:a82d442d6a4f333473c5c0df04cb153dccd638b16fc5dc41fa10b60a2bdfd954
+  title_snapshot: '[Launched] Public Preview: Document PII playground sample in Microsoft
+    Foundry NextGen'
+  summary_snapshot: Document-based PII detection in Azure AI Language now ships an initial
+    playground experience in the Microsoft Foundry NextGen portal. The playground loads a
+    prepared sample document, runs it through the document-based PII feature, and shows the
+    redacted o
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}

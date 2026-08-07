@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-07-015
+slug: launched-generally-available-open-ai-gpt-5-6-on-azure
+title: '[Launched] Generally Available: Open AI GPT-5.6 on Azure Databricks'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=567431
+announcement_url: https://azure.microsoft.com/updates?id=567431
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-09
+discovered_date: 2026-08-01
+date_confidence: exact
+date_precision: day
+content_hash: sha256:9083a933d4ad66704c0cab901e427fbf11503f8502c975fbff0b806ef514586a
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:18c62e78953e932ac126053710aa99e985c25e084fc20dbd85a5c530c9cf8495
+  discovered_at: '2026-08-01T21:26:59.736884+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-01T21-26-58Z
+url_hash: sha256:18c62e78953e932ac126053710aa99e985c25e084fc20dbd85a5c530c9cf8495
+tier: 1
+learning_priority: low
+category: ai-machine-learning
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-01
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:9083a933d4ad66704c0cab901e427fbf11503f8502c975fbff0b806ef514586a
+  title_snapshot: '[Launched] Generally Available: Open AI GPT-5.6 on Azure Databricks'
+  summary_snapshot: Open AI GPT-5.6 is now available on Azure Databricks. You can use GPT
+    5.6 (purchased on Microsoft Foundry) via Model Serving Endpoint in Azure Databricks. Through
+    integrations across Foundry and Azure Databricks, you can securely build, deploy, and
+    manage
+  run_id: run-2026-08-01T21-26-58Z
+generation: {}
