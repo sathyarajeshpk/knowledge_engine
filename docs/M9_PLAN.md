@@ -1,12 +1,27 @@
 # M9 — Implementation Plan (for approval)
 
-**Status:** Proposed. No code written.
+**Status:** **APPROVED 2026-08-07.** Decisions recorded in §0.
 **Baseline:** v0.9.0, merged as `8dd189f`. 2 packs, 431 knowledge objects, 671 tests.
 **Preceded by:** M8 — the second Domain Pack.
 
 Every number below is labelled **[measured]** or **[estimate]**. Measured figures
 come from `docs/reviews/M8_PERFORMANCE_REVIEW.md`, `tools/measure_performance.py`,
 or a query run against the merged repository today.
+
+---
+
+## 0. Approved decisions
+
+| # | Decision |
+|---|---|
+| **D1** | **TD-15/TD-16 approved.** M9-1 benchmarking first, then architectural work. Thresholds stay fixed before implementation; if the hypothesis is disproved, take the fallback rather than forcing the original design. |
+| **D2** | **REV002: fix detection before grandfathering.** A temporary rise from ~6 to ~35 is accepted — *"Accuracy is more important than artificially low numbers."* Baseline and `--strict` come only after detection is correct. |
+| **D3** | **`ke migrate` is DEFERRED, not descoped-by-omission.** No migration framework will be built for a hypothetical schema. It lands when a real schema evolution requires it. Recorded as deferred scope. |
+| **D4** | **Incremental delivery is a requirement.** No single large architectural PR. Each major step must be independently mergeable and validated, with measurable acceptance criteria. |
+
+Work-item numbers are unchanged from the approved plan. **M9-5 is retained as a
+row and marked deferred** rather than deleted, so this document still maps onto
+what was approved.
 
 ---
 
@@ -19,7 +34,7 @@ capability; it makes the engine safe to extend and safe to trust.
 |---|---|
 | **O1.** Resolve the O(packs²) index rebuild | An architecture decision is made **on evidence**, implemented, and the multi-pack benchmark shows the agreed improvement — *or* the hypothesis is rejected on evidence and a fallback is adopted |
 | **O2.** Make `--strict` enforceable in CI | CI runs `ke validate --strict` and is green, with no historical knowledge rewritten |
-| **O3.** Schema migration exists and has been exercised | `ke migrate` runs a real schema change end to end, dry-run first, on 431 real objects |
+| **O3.** ~~Schema migration~~ | **DEFERRED (D3)** — no migration framework for a hypothetical schema |
 | **O4.** Recovery is documented | `docs/RUNBOOK.md` covers every **manual recovery** case named in the M7 and M8 readiness reviews |
 | **O5.** The engine is provably extractable | `docs/SPLITTING-REPOS.md`, plus a test asserting zero hard-coded pack paths in `engine/` |
 
@@ -49,6 +64,10 @@ renumbering).
 - **TD-8 (pin Actions to commit SHAs) is scoped in but may not be completable** —
   it needs repository access no session so far has had. Carried openly for a third
   milestone rather than silently.
+- **`ke migrate` — DEFERRED (D3).** Building a migration framework with no real
+  migration to run means it would be exercised for the first time on live
+  knowledge. It lands when a genuine schema change needs it. Deferred scope,
+  recorded, not forgotten.
 
 ---
 
@@ -238,7 +257,7 @@ the same pattern as `state/cross-pack.json` (ADR-0044).
 | **M9-2** | Implement H-A (hoist detection) **or** fallback F1 | M9-1 | **Gate A** |
 | **M9-3** | REV002 sliding-window detection | — | **Gate B** |
 | **M9-4** | Baseline file + INFO downgrade; enable `ke validate --strict` in CI | M9-3 | — |
-| **M9-5** | `ke migrate` against a **concrete** first schema change; dry-run first; revision entry per migrated object | — | — |
+| ~~**M9-5**~~ | ~~`ke migrate`~~ — **DEFERRED (D3).** Lands when a real schema evolution requires it | — | — |
 | **M9-6** | TD-10 `ke repair --registry`; TD-12 rename; TD-17 first-harvest rule sanity report | — | — |
 | **M9-7** | `docs/RUNBOOK.md`, `docs/SPLITTING-REPOS.md`, extraction test | M9-2 | — |
 | **M9-8** | Milestone deliverables: reviews, ADRs, release notes v0.10.0, TD renumbering (TD-18) | all | — |
@@ -247,8 +266,15 @@ the same pattern as `state/cross-pack.json` (ADR-0044).
 first implementation work, and it establishes the baseline *before* any
 architectural code exists to bias it.
 
-**M9-3 and M9-5 are independent of the gate-A outcome** and can proceed in
-parallel if M9-2 stalls.
+**M9-3 is independent of the gate-A outcome** and can proceed if M9-2 stalls.
+
+### Delivery shape (D4)
+
+Every row above ships as its **own PR**, independently mergeable and green on its
+own, with its own acceptance criteria. Explicitly: M9-1 (measurement only, no
+behaviour change) merges before any architectural code exists; M9-3 (detection)
+merges before M9-4 (baseline + `--strict`), so the warning count rises in a
+reviewable step of its own rather than buried inside a larger change.
 
 ---
 
@@ -258,11 +284,11 @@ parallel if M9-2 stalls.
 |---|---|---|
 | **The benchmark is wrong again** | The architecture decision rests on a false number | M9-1 counts **full-pack reads** (deterministic) as the primary signal, with wall-clock only as confirmation. M8's failure was timing-specific |
 | **H-A is confirmed by a benchmark that measures the wrong thing** | Proceeding on a real-looking but irrelevant improvement | Falsification threshold covers both: linear reads *and* ≥50% wall-clock. Linear reads with flat wall-clock triggers REVISE, not PROCEED |
-| **`ke migrate` designed against a hypothetical schema change** | A migration path exercised for the first time on real knowledge | M9-5 requires a *concrete* proposed schema change chosen first; if none is genuinely needed, say so and defer rather than invent one |
+| ~~`ke migrate` designed against a hypothetical schema~~ | — | **Retired by D3:** deferred rather than built speculatively |
 | **Sliding-window REV002 over-fires** | `--strict` blocked, or the check is disabled to unblock CI | Gate B's REVISE branch exists exactly for this; the count is checkable against the 35 before anything is enforced |
 | **Hoisting breaks order-independence** | Silent violation of ADR-0044 | All 23 `test_crosspack.py` tests must pass unchanged; byte-identical output is itself asserted (ADR-0022) |
 | **TD-8 blocked a third time** | Unpinned Actions remain a supply-chain surface | Named in scope; if still blocked, it is reported as blocked with the specific access needed, not carried silently |
-| **Scope creep from 8 work items** | M9 sprawls | O1 and O2 are the milestone. M9-5 through M9-7 are droppable to M10 if the gates consume the budget |
+| **Scope creep** | M9 sprawls | O1 and O2 are the milestone. M9-6 and M9-7 are droppable to M10 if the gates consume the budget |
 
 ---
 
@@ -275,7 +301,6 @@ parallel if M9-2 stalls.
 2. `ke validate --strict` green in CI, with **zero** `metadata.yaml` files
    modified to achieve it (verifiable: `git diff` over `domain-packs/**/metadata.yaml`
    across the milestone shows no history edits).
-3. `ke migrate` demonstrated on all 431 objects, dry-run first.
 4. `docs/RUNBOOK.md` covers every manual-recovery row in the M7/M8 readiness
    reviews.
 5. Test count up, no test deleted to make something pass.
@@ -283,23 +308,17 @@ parallel if M9-2 stalls.
 **Validation, beyond "tests pass":**
 
 - **Mutation-verify every new guard.** It corrected four claims in M8.
-- **Installation-level tests** for any new user-facing surface (`ke migrate`,
-  `ke repair`) — the M8 lesson that a guard never invoked and a guard that does not
-  exist are the same guard.
-- **Read the produced knowledge**, not the exit code. After `ke migrate`, diff a
-  sample of migrated objects by hand and confirm user-owned fields are byte-identical.
+- **Installation-level tests** for any new user-facing surface (`ke repair`) — the
+  M8 lesson that a guard never invoked and a guard that does not exist are the
+  same guard.
+- **Read the produced knowledge**, not the exit code. After any change that
+  rewrites objects, diff a sample by hand and confirm user-owned fields are
+  byte-identical.
 - **Re-run the M8 benchmark** at the end and publish before/after in the M9
   performance review, whichever way gate A went.
 
 ---
 
-## 8. What I need from you
+## 8. Status
 
-1. **Approve or amend the two gates**, particularly the ≥50% threshold in gate A
-   and the detection-before-grandfathering sequence in gate B.
-2. **Gate B sequencing decision:** are you comfortable that the REV002 warning
-   count will *rise* from 6 to ~35 mid-milestone before `--strict` goes on?
-3. **M9-5:** is there a schema change you actually want, or should `ke migrate` be
-   deferred rather than built against a hypothetical?
-
-No code will be written until you approve.
+Approved 2026-08-07 (§0). Proceeding with M9-1.
