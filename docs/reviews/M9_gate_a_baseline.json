@@ -1,0 +1,40 @@
+{
+  "rows": [
+    {
+      "packs": 1,
+      "objects_per_pack": 200,
+      "objects": 200,
+      "reads": 0,
+      "index_s": 1.5945327720000932
+    },
+    {
+      "packs": 2,
+      "objects_per_pack": 200,
+      "objects": 400,
+      "reads": 4,
+      "index_s": 5.347614143999635
+    },
+    {
+      "packs": 4,
+      "objects_per_pack": 200,
+      "objects": 800,
+      "reads": 16,
+      "index_s": 15.034066643000187
+    },
+    {
+      "packs": 8,
+      "objects_per_pack": 200,
+      "objects": 1600,
+      "reads": 64,
+      "index_s": 45.645716650000395
+    },
+    {
+      "packs": 10,
+      "objects_per_pack": 200,
+      "objects": 2000,
+      "reads": 100,
+      "index_s": 68.9873380580002
+    }
+  ],
+  "measured_variance_pct": 9
+}
