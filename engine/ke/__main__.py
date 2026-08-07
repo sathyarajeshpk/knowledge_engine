@@ -340,6 +340,7 @@ def _run_harvest(args: argparse.Namespace) -> int:
         return 2
 
     exit_code = 0
+    failed: list[str] = []
     for pack in packs:
         from ke.lock import LockError, pack_lock
 
@@ -354,9 +355,27 @@ def _run_harvest(args: argparse.Namespace) -> int:
                     dry_run=args.dry_run,
                     notify=getattr(args, "notify", False),
                 )
-        except LockError as exc:
-            print(f"error: {exc}", file=sys.stderr)
-            return 2
+        except Exception as exc:  # noqa: BLE001 - deliberate; see below
+            # Catches `LockError` and anything `harvest_pack` raises.
+            #
+            # **One pack must not take the run down with it.** Packs are
+            # independent by construction (ADR-0016) -- separate sources,
+            # separate state, separate locks -- and until M8 this loop did not
+            # reflect that: any failure in the first pack returned before the
+            # second was touched, so a stuck lock on Fabric silently cost a
+            # week of Azure.
+            #
+            # Invisible with one pack, where "abort the pack" and "abort the
+            # run" are the same thing.
+            #
+            # `Exception`, not `BaseException`: Ctrl-C and SystemExit must still
+            # stop everything. The run still exits non-zero, so a failure is
+            # never reported as success -- it just no longer costs the packs
+            # that were fine.
+            print(f"error: {pack.name}: {exc}", file=sys.stderr)
+            failed.append(pack.name)
+            exit_code = 2
+            continue
         print(f"\n=== {report.summary_line()} ===\n")
 
         if report.minted:
@@ -409,6 +428,17 @@ def _run_harvest(args: argparse.Namespace) -> int:
 
         if args.dry_run:
             print("  (dry run: nothing was written)")
+
+    if failed:
+        # Restated at the end because the per-pack error scrolled past several
+        # screens of successful output. A run that harvested three packs and
+        # dropped one must not read as a clean run to somebody skimming the tail
+        # of a workflow log.
+        print(
+            f"\n!! {len(failed)} pack(s) failed and were skipped: "
+            f"{', '.join(failed)}",
+            file=sys.stderr,
+        )
     return exit_code
 
 
