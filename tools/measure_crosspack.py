@@ -41,6 +41,7 @@ import shutil
 import sys
 import tempfile
 import time
+import tracemalloc
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -80,6 +81,25 @@ PROCEED_SPEEDUP = 0.50
 
 #: Below this, the reads were not the cost. REVISE rather than PROCEED.
 REVISE_SPEEDUP = 0.25
+
+# Wall-clock is compared on a MACHINE-SPEED-NORMALISED basis: the 10-pack index
+# time divided by the 1-pack index time from the same run.
+#
+# Why, with the evidence that forced it. The merged baseline recorded 68.99s at
+# 10 packs. A later run of the *identical* code recorded 80.47s -- 17% drift,
+# nearly twice the 9% previously observed, and enough to move a borderline
+# verdict on its own. Normalising against the 1-pack row removes it:
+#
+#     merged baseline : 68.99 / 1.59 = 43.39
+#     later run       : 80.47 / 1.90 = 42.35   (-2.4%)
+#
+# The 1-pack row is the right control precisely because it performs ZERO
+# cross-pack reads, so the change under test cannot affect it. Any movement in
+# it is machine speed, not architecture.
+#
+# The THRESHOLDS above are unchanged. Only the basis of comparison is. This was
+# added before any implementation existed, so it cannot have been fitted to a
+# result -- which is the whole reason to do it now rather than after.
 
 
 class ReadCounter:
@@ -142,8 +162,17 @@ def build_repo(objects_per_pack: int, pack_count: int) -> tuple[Path, list]:
     return repo, packs
 
 
-def measure_shape(objects_per_pack: int, pack_count: int) -> dict:
-    """Rebuild every pack's indexes once, counting reads and wall-clock."""
+def measure_shape(
+    objects_per_pack: int, pack_count: int, *, with_memory: bool = False
+) -> dict:
+    """Rebuild every pack's indexes once, counting reads and wall-clock.
+
+    `with_memory` is off by default and deliberately so. The memory pass runs
+    the whole rebuild a second time under `tracemalloc`, which is 4-5x slower --
+    measuring it at every shape took the full curve past ten minutes for a
+    number that only matters at the shape the gate turns on. It is requested for
+    the 10-pack row and skipped elsewhere.
+    """
     from ke.harvest import load_objects_with_dirs
     from ke.indexer import write_indexes
 
@@ -153,14 +182,28 @@ def measure_shape(objects_per_pack: int, pack_count: int) -> dict:
         # performs for its own setup are not counted as engine work.
         loaded = {p.name: [(o, "..") for o, _ in load_objects_with_dirs(p)] for p in packs}
 
-        gc.collect()
-        with ReadCounter() as counter:
-            start = time.perf_counter()
+        def rebuild():
             for pack in packs:
                 write_indexes(
                     pack.indexes_dir, loaded[pack.name], [], pack.name, pack=pack
                 )
+
+        gc.collect()
+        with ReadCounter() as counter:
+            start = time.perf_counter()
+            rebuild()
             elapsed = time.perf_counter() - start
+
+        # Memory in a SEPARATE pass, timings discarded. tracemalloc hooks the
+        # allocator and inflated every M8 timing by 4-5x; measuring both at once
+        # is the exact mistake that milestone made.
+        peak = 0
+        if with_memory:
+            gc.collect()
+            tracemalloc.start()
+            rebuild()
+            _, peak = tracemalloc.get_traced_memory()
+            tracemalloc.stop()
 
         return {
             "packs": pack_count,
@@ -168,6 +211,7 @@ def measure_shape(objects_per_pack: int, pack_count: int) -> dict:
             "objects": objects_per_pack * pack_count,
             "reads": counter.count,
             "index_s": elapsed,
+            "peak_mb": peak / 1_048_576 if with_memory else None,
         }
     finally:
         shutil.rmtree(repo, ignore_errors=True)
@@ -225,16 +269,24 @@ def verdict(baseline: dict, current: dict) -> tuple[str, list[str]]:
         return "ABANDON", reasons
     reasons.append(f"Reads are linear in pack count (budget {LINEAR_READ_BUDGET(10)} at 10 packs).")
 
-    # 2. Wall-clock at the decisive shape.
+    # 2. Wall-clock at the decisive shape, normalised by the 1-pack control.
     ten_now, ten_before = by_packs.get(10), base_by_packs.get(10)
-    if ten_now is None or ten_before is None:
-        reasons.append("No 10-pack row to compare; cannot rule.")
+    one_now, one_before = by_packs.get(1), base_by_packs.get(1)
+    if not all((ten_now, ten_before, one_now, one_before)):
+        reasons.append("Missing a 1-pack or 10-pack row; cannot rule.")
         return "REVISE", reasons
 
-    speedup = 1 - (ten_now["index_s"] / ten_before["index_s"])
+    ratio_now = ten_now["index_s"] / one_now["index_s"]
+    ratio_before = ten_before["index_s"] / one_before["index_s"]
+    speedup = 1 - (ratio_now / ratio_before)
+
     reasons.append(
-        f"10-pack index rebuild: {ten_before['index_s']:.2f}s -> "
-        f"{ten_now['index_s']:.2f}s ({speedup:+.0%})."
+        f"10-pack index rebuild, raw: {ten_before['index_s']:.2f}s -> "
+        f"{ten_now['index_s']:.2f}s."
+    )
+    reasons.append(
+        f"Normalised by the 1-pack control: {ratio_before:.1f}x -> "
+        f"{ratio_now:.1f}x ({speedup:+.0%})."
     )
     if speedup >= PROCEED_SPEEDUP:
         reasons.append(f"Meets the {PROCEED_SPEEDUP:.0%} threshold fixed before implementation.")
@@ -278,20 +330,27 @@ def run(include_large: bool) -> dict:
     # single most likely way for this harness to lie.
     measure_shape(50, 2)
 
-    rows = [measure_shape(OBJECTS_PER_PACK, n) for n in PACK_COUNTS]
+    # Memory only at the decisive shape: it is the row the gate turns on, and
+    # the tracemalloc pass costs ~4x the shape's runtime.
+    rows = [
+        measure_shape(OBJECTS_PER_PACK, n, with_memory=(n == max(PACK_COUNTS)))
+        for n in PACK_COUNTS
+    ]
     if include_large:
         rows.append(measure_shape(LARGE_SHAPE[1], LARGE_SHAPE[0]))
     return {"rows": rows, "measured_variance_pct": MEASURED_VARIANCE_PCT}
 
 
 def render(rows: list[dict]) -> None:
-    print(f"{'packs':>6} {'objects':>8} {'reads':>7} {'reads/packs²':>13} {'index':>9}")
-    print("-" * 48)
+    print(f"{'packs':>6} {'objects':>8} {'reads':>7} {'reads/packs²':>13} "
+          f"{'index':>9} {'peakMB':>8}")
+    print("-" * 57)
     for r in rows:
         law = r["reads"] / (r["packs"] ** 2) if r["packs"] else 0
         print(
             f"{r['packs']:>6} {r['objects']:>8} {r['reads']:>7} "
-            f"{law:>13.2f} {r['index_s']:>8.2f}s"
+            f"{law:>13.2f} {r['index_s']:>8.2f}s "
+            f"{('%.1f' % r['peak_mb']) if r.get('peak_mb') else '-':>8}"
         )
 
 
