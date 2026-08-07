@@ -4,7 +4,7 @@ Two independent axes:
 
 - **Milestones (M0–M9)** build the engine. Sequential — each depends on the last.
 - **Domain Packs** are the knowledge. Pure data. Adding one requires no engine
-  change once M8 has proven the abstraction.
+  change now that M8 has proven the abstraction.
 
 Status legend: **done** · **in progress** · **planned**
 
@@ -28,8 +28,8 @@ original intent is preserved in the section for that milestone below.
 | M5 | Review workflow and history | **done** | Unified `ke review`, `ke history`, `ke supersede`, chain validation |
 | M6 | Weekly automation | **done** | Digest, notifications, lock, Sunday cron, security review |
 | M7 | Retrieval and on-demand generation | **done** | `ke search`, `ke generate`, context packs, hash-pinned deps |
-| M8 | Second pack (Power BI) | **next** | Proof the engine is pack-agnostic |
-| M9 | Hardening and split-readiness | **planned** | Migrations, runbook, extraction guide |
+| M8 | Second pack (Azure) | **done** | Pack-agnosticism proven: 200 objects, **0 engine files** |
+| M9 | Hardening and split-readiness | **next** | Migrations, runbook, extraction guide, O(packs²) decision |
 
 Relationships and the knowledge graph — originally M4 — were deferred rather
 than dropped. The engine has produced 222 objects and no curated relationships,
@@ -69,9 +69,11 @@ Fetch from real sources and print what was found. No writes.
 - [ ] `ke discover --dry-run`
 - [ ] Per-source failure isolation and health reporting
 
-**Open question to resolve here:** Fabric and Power BI blogs overlap heavily.
-Decide whether Power BI content in the Fabric feed belongs to `MSF` or `PBI`
-*before* IDs are minted — retrofitting means permanent duplicates.
+**Open question, resolved:** Fabric and Power BI blogs overlap heavily, and the
+question was whether Power BI content in the Fabric feed belongs to `MSF` or
+`PBI`. Answered in M8: Power BI is a **category within the Fabric pack**, not a
+pack, because a pack is a source boundary and Power BI does not have one
+(ADR-0043). Decided before any `PBI` ID was minted, as this note required.
 
 ---
 
@@ -159,21 +161,29 @@ Must land before the cron, because every run after the first is an update run.
 
 ---
 
-### M8 — Second pack · **next**
+### M8 — Second pack · **done**
 
-- [ ] **Carried from M7:** pin Actions to commit SHAs (TD-8, security S-2)
-- [ ] **Carried from M7:** `ke repair --registry` and the minting/persistence
+- [x] `domain-packs/azure/` — **data only**. Power BI was the planned second
+      pack; it shares Fabric's sources almost entirely, so it is a category
+      rather than a pack (ADR-0043).
+- [x] Workflow loops over all discovered packs, with per-pack failure isolation
+- [x] Cross-pack duplicate detection — report, never resolve (ADR-0044)
+- [x] Cross-pack relationships, validated repository-wide
+- [x] Pack trust boundary enumerated and CI-enforced (ADR-0045)
+- [x] `docs/ADDING-A-PACK.md`
+- [x] **Acceptance met: 0 engine files in the Azure pack commit**
+- [ ] **Still carried:** pin Actions to commit SHAs (TD-8) — needs repository
+      access this session does not have
+- [ ] **Still carried:** `ke repair --registry` and the minting/persistence
       ordering question (TD-10, readiness O-1)
-- [ ] `domain-packs/power-bi/` — **data only**
-- [ ] Workflow loops over all discovered packs
-- [ ] Cross-pack relationships
-- [ ] `docs/ADDING-A-PACK.md`
-- [ ] **Acceptance: `git diff engine/` is empty**
 
 ---
 
-### M9 — Hardening and split-readiness · **planned**
+### M9 — Hardening and split-readiness · **next**
 
+- [ ] **Decide the O(packs²) index rebuild** (M8 performance P-1, readiness O-3).
+      Hoisting cross-pack detection out of per-pack index rebuild fixes the
+      quadratic *and* the one-run staleness together. Wanted before pack five.
 - [ ] `ke migrate` — `schema_version` upgrades
 - [ ] Relationship-proposal review (`ke review` itself landed in M2)
 - [ ] `docs/SPLITTING-REPOS.md`
@@ -189,11 +199,11 @@ changing it would orphan every Feature ID ever minted.
 
 | Pack | Prefix | Status | Notes |
 |---|---|---|---|
-| Microsoft Fabric | `MSF` | **in progress** | First pack. Skeleton exists; sources land in M1. |
-| Power BI | `PBI` | **planned** (M8) | The abstraction proof. Heavy source overlap with Fabric — boundary must be decided in M1. |
+| Microsoft Fabric | `MSF` | **live** | First pack. 222 objects. |
+| Power BI | — | **not a pack** | Shares Fabric's sources, so it is a *category* within the Fabric pack (ADR-0043). |
 | SQL | `SQL` | **planned** | Slower-moving. More evergreen concepts than release news. |
 | Python | `PY` | **planned** | PEPs, release notes, major library changes. |
-| Azure | `AZ` | **planned** | Very high volume. Will need aggressive source scoping. |
+| Azure | `AZ` | **live** | Second pack, M8. 200 objects. The abstraction proof — added with zero engine changes. |
 | Databricks | `DBX` | **planned** | Overlaps Fabric on Spark and Delta concepts. |
 | Snowflake | `SNF` | **planned** | Good cross-pack test — a genuine competitor to Fabric. |
 | AWS | `AWS` | **planned** | Highest volume of all. Scope to services actually used. |
