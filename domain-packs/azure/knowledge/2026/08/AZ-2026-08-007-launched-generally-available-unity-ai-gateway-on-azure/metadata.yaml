@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-08-007
+slug: launched-generally-available-unity-ai-gateway-on-azure
+title: '[Launched] Generally Available: Unity AI Gateway on Azure Databricks'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=568910
+announcement_url: https://azure.microsoft.com/updates?id=568910
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-05
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: day
+content_hash: sha256:97677f3b706a6717cc48b733ccb0d09b134092a151fbfb7cd0e2bb8512c6532d
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:3b832252d4ce3b666fd3f0e66f3464e441459588c53df1d4ab9f9ec0b7dd64c4
+  discovered_at: '2026-08-08T06:51:09.890749+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:3b832252d4ce3b666fd3f0e66f3464e441459588c53df1d4ab9f9ec0b7dd64c4
+tier: 1
+learning_priority: high
+category: ai-machine-learning
+tags:
+- ai
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:97677f3b706a6717cc48b733ccb0d09b134092a151fbfb7cd0e2bb8512c6532d
+  title_snapshot: '[Launched] Generally Available: Unity AI Gateway on Azure Databricks'
+  summary_snapshot: Unity AI Gateway is now generally available on Azure Databricks. Unity
+    AI Gateway provides centralized governance for AI models, agents, tools, and MCP services,
+    helping organizations monitor usage, manage costs, apply guardrails, and enforce access
+    contr
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

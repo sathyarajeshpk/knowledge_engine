@@ -1,0 +1,63 @@
+schema_version: 1
+id: MSF-2026-07-047
+slug: configure-the-dropped-item-retention-period-in-the-item
+title: configure the dropped item retention period in the Item Recovery tenant setting
+source_name: fabric-whats-new
+source_url: https://learn.microsoft.com/en-us/fabric/admin/item-recovery
+announcement_url: https://learn.microsoft.com/en-us/fabric/admin/item-recovery
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: month
+content_hash: sha256:65d7423ed1d2977d10ae43657d91c3285755fe035dbd0217cea63e5fc32812ed
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:f2c8f2758cea5f4eb84d973f1374c5e52c34183a52c587619559775d53b52900
+  discovered_at: '2026-08-08T06:51:11.566731+00:00'
+  source_role: primary
+  selector: h2[Fabric Data Warehouse] > table > tr (date from cell 0)
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:f2c8f2758cea5f4eb84d973f1374c5e52c34183a52c587619559775d53b52900
+tier: 1
+learning_priority: high
+category: data-warehouse
+tags:
+- ga
+- warehouse
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:65d7423ed1d2977d10ae43657d91c3285755fe035dbd0217cea63e5fc32812ed
+  title_snapshot: configure the dropped item retention period in the Item Recovery tenant
+    setting
+  summary_snapshot: Dropped warehouse recovery (Generally Available) Workspace Administrators
+    can restore accidentally dropped warehouses from the Workspace Recycle Bin within a configurable
+    retention window (7 to 90 days), recovering table schemas, data, snapshots, permissions,
+    views, and stored procedures. You can configure the dropped item retention period in the
+    Item Recovery tenant setting.
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

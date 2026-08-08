@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-07-039
+slug: fabric-data-agents-in-microsoft-foundry
+title: Fabric data agents in Microsoft Foundry
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-data-agents-in-Microsoft-Foundry-Easier-to-connect-easier/ba-p/5318989
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-data-agents-in-Microsoft-Foundry-Easier-to-connect-easier/ba-p/5318989
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: month
+content_hash: sha256:8cef3cec7f35d85804885d4451d7270c7f8fbdc6119df660bf7fe29e303932bf
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:ab53b6ffedd55216e5f03590fae135ab149846334499e1f51f7c972b587722f3
+  discovered_at: '2026-08-08T06:51:11.566107+00:00'
+  source_role: primary
+  selector: h2[Fabric Data Science] > table > tr (date from cell 0)
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:ab53b6ffedd55216e5f03590fae135ab149846334499e1f51f7c972b587722f3
+tier: 3
+learning_priority: high
+category: data-engineering
+tags:
+- ai
+- onelake
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:8cef3cec7f35d85804885d4451d7270c7f8fbdc6119df660bf7fe29e303932bf
+  title_snapshot: Fabric data agents in Microsoft Foundry
+  summary_snapshot: Fabric data agents in Foundry Fabric data agents in Microsoft Foundry
+    now connect through MCP, appear in OneLake Catalog discovery, support multiple data agents
+    per Foundry agent, and expose logs and traces through Foundry Observability. For more
+    information, see Observability for Fabric data agents in Microsoft Foundry.
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

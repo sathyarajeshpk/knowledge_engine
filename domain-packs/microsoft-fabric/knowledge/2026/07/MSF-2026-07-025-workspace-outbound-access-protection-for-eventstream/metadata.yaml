@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-07-025
+slug: workspace-outbound-access-protection-for-eventstream
+title: Workspace Outbound Access Protection for Eventstream
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Control-where-your-streaming-data-goes-with-Outbound-Access/ba-p/5327001
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Control-where-your-streaming-data-goes-with-Outbound-Access/ba-p/5327001
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: month
+content_hash: sha256:ddd5df96e9daa1aa5270bd5f0cdfd382b6f778da52adfc9d76f7e78f693d3ba5
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:1f483c04a6636e8cb4cc13080047d340f2276770ec406916b50bf2733b3643b2
+  discovered_at: '2026-08-08T06:51:11.568261+00:00'
+  source_role: primary
+  selector: h2[Real-Time Intelligence in Microsoft Fabric] > table > tr (date from cell 0)
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:1f483c04a6636e8cb4cc13080047d340f2276770ec406916b50bf2733b3643b2
+tier: 3
+learning_priority: medium
+category: real-time-intelligence
+tags:
+- real-time
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:ddd5df96e9daa1aa5270bd5f0cdfd382b6f778da52adfc9d76f7e78f693d3ba5
+  title_snapshot: Workspace Outbound Access Protection for Eventstream
+  summary_snapshot: Outbound access protection for Eventstream Workspace Outbound Access Protection
+    for Eventstream lets you govern Eventstream sources and destinations with workspace-level
+    data connection rules. For more information, see Workspace Outbound Access Protection
+    overview and Set up workspace outbound access protection.
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

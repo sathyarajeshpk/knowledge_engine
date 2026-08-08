@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-07-031
+slug: business-events-and-user-data-functions
+title: Business Events and User Data Functions
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Building-Event-Driven-Applications-in-Microsoft-Fabric-with/ba-p/5323591
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Building-Event-Driven-Applications-in-Microsoft-Fabric-with/ba-p/5323591
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: month
+content_hash: sha256:d7e20c4eaf7f379537a72b8ceed858984e01f0d9ce208271dc1cc551f6dce734
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:612f517c942e2d928e18ad3f264c9bdc2024c7f50b4359d2e94769c011c88996
+  discovered_at: '2026-08-08T06:51:11.568296+00:00'
+  source_role: primary
+  selector: h2[Real-Time Intelligence in Microsoft Fabric] > table > tr (date from cell 0)
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:612f517c942e2d928e18ad3f264c9bdc2024c7f50b4359d2e94769c011c88996
+tier: 3
+learning_priority: low
+category: platform
+tags: []
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:d7e20c4eaf7f379537a72b8ceed858984e01f0d9ce208271dc1cc551f6dce734
+  title_snapshot: Business Events and User Data Functions
+  summary_snapshot: Event-driven app patterns with UDFs Business Events and User Data Functions
+    show how you can publish business events from User Data Functions and automate event-driven
+    workflows in Fabric. For more information, see Business events overview.
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

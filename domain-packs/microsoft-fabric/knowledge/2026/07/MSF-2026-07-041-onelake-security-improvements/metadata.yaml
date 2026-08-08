@@ -1,0 +1,63 @@
+schema_version: 1
+id: MSF-2026-07-041
+slug: onelake-security-improvements
+title: OneLake security improvements
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/New-OneLake-security-improvements-for-Microsoft-Fabric/ba-p/5314377
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/New-OneLake-security-improvements-for-Microsoft-Fabric/ba-p/5314377
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: month
+content_hash: sha256:e8b97010b979053611f0c7e4e6b2e957caafb8f5a048d0005c6b392e76143a51
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:b13ac40d1592464609ed628aac34c9cc44dede52b2f1755a0baafd2bebe05657
+  discovered_at: '2026-08-08T06:51:11.563821+00:00'
+  source_role: primary
+  selector: h2[Microsoft Fabric platform features] > table > tr (date from cell 0)
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:b13ac40d1592464609ed628aac34c9cc44dede52b2f1755a0baafd2bebe05657
+tier: 1
+learning_priority: high
+category: real-time-intelligence
+tags:
+- api
+- onelake
+- real-time
+- security
+difficulty: advanced
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:e8b97010b979053611f0c7e4e6b2e957caafb8f5a048d0005c6b392e76143a51
+  title_snapshot: OneLake security improvements
+  summary_snapshot: OneLake security improvements extend security to Eventhouse, make Graph
+    integration and OneLake security APIs, simplify column-level security, and set user identity
+    mode for SQL analytics endpoint sync. For more information, see OneLake security for SQL
+    analytics endpoints and OneLake data access security REST API.
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

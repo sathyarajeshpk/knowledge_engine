@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-07-035
+slug: user-data-functions-rest-api-pattern
+title: User Data Functions REST API pattern
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Use-User-Data-Functions-to-securely-call-Fabric-REST-APIs/ba-p/5294590
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Use-User-Data-Functions-to-securely-call-Fabric-REST-APIs/ba-p/5294590
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: month
+content_hash: sha256:6b0d5a7548a147c02d71d4ca899bec262c16a86371b2eda246e7a41ab0cd5d0a
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:880b50f80823ee3bda58fee4ae7e3955eaacf03a6a8c789e75042b8f54665903
+  discovered_at: '2026-08-08T06:51:11.566024+00:00'
+  source_role: primary
+  selector: h2[Fabric Data Engineering] > table > tr (date from cell 0)
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:880b50f80823ee3bda58fee4ae7e3955eaacf03a6a8c789e75042b8f54665903
+tier: 3
+learning_priority: low
+category: platform
+tags:
+- api
+difficulty: advanced
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:6b0d5a7548a147c02d71d4ca899bec262c16a86371b2eda246e7a41ab0cd5d0a
+  title_snapshot: User Data Functions REST API pattern
+  summary_snapshot: User Data Functions REST API pattern shows how you call Fabric REST APIs
+    from a User Data Function with service principal authentication and Key Vault-managed
+    secrets. For more information, see Fabric User data functions and Microsoft Fabric REST
+    APIs.
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

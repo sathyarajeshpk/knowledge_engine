@@ -1,0 +1,62 @@
+schema_version: 1
+id: MSF-2026-07-043
+slug: job-concurrency-and-queue-monitoring-generally-available
+title: Job concurrency and queue monitoring (Generally Available)
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Job-concurrency-and-queue-monitoring-for-Spark-now-with-a/ba-p/5323779
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Job-concurrency-and-queue-monitoring-for-Spark-now-with-a/ba-p/5323779
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: month
+content_hash: sha256:7562108772acc52e338d8bd707e416b3badf68ece69067f77f4d6ea14b9f9be0
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:c5e7c8267fd7cadd8e4145deed9aeb90ca04aff2f26c6e283632e28289f3525d
+  discovered_at: '2026-08-08T06:51:11.562839+00:00'
+  source_role: primary
+  selector: h2[Generally available features] > table > tr (date from cell 0)
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:c5e7c8267fd7cadd8e4145deed9aeb90ca04aff2f26c6e283632e28289f3525d
+tier: 1
+learning_priority: high
+category: data-science
+tags:
+- ga
+- spark
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:7562108772acc52e338d8bd707e416b3badf68ece69067f77f4d6ea14b9f9be0
+  title_snapshot: Job concurrency and queue monitoring (Generally Available)
+  summary_snapshot: Spark job monitoring (Generally Available) Job concurrency and queue monitoring
+    (Generally Available) adds a capacity-level view so you can compare Spark resource use
+    across workspaces, identify contention, and tune limits. For more information, see Job
+    concurrency and queue monitoring and Concurrency limits and queueing in Apache Spark for
+    Fabric.
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

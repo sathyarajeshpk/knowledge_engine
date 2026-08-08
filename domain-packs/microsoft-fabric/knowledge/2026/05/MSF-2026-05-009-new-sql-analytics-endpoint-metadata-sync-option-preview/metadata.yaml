@@ -7,11 +7,11 @@ source_url: https://learn.microsoft.com/en-us/fabric/data-engineering/sql-analyt
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-engineering/sql-analytics-endpoint-metadata-sync
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-05-01
+published_date: null
 discovered_date: 2026-08-01
-date_confidence: exact
-date_precision: month
-content_hash: sha256:59ddbc701aaefc48b77797bc41f77b830fc07b64aaa31807028be3a257405eb7
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:5757a02e846666a4a2c478188e540c43cec3014307ef1b59ebf5e8017a6c580f
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -231,4 +231,20 @@ revisions:
     endpoints, is faster, provides a new manual metadata sync option, and provides time travel
     querying.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 13
+  date: 2026-08-08
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:5757a02e846666a4a2c478188e540c43cec3014307ef1b59ebf5e8017a6c580f
+  title_snapshot: new SQL analytics endpoint metadata sync option
+  summary_snapshot: SQL analytics endpoint metadata sync option (preview) You can now opt
+    in to the new SQL analytics endpoint metadata sync option, a preview feature. The new
+    option, which is currently opt-in only and currently applies only to new SQL analytics
+    endpoints, is faster, provides a new manual metadata sync option, and provides time travel
+    querying.
+  run_id: run-2026-08-08T06-51-09Z
 generation: {}

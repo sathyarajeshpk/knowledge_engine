@@ -4,7 +4,8 @@
     "2025-09": 1,
     "2026-04": 1,
     "2026-06": 141,
-    "2026-07": 57
+    "2026-07": 57,
+    "2026-08": 13
   },
   "paths": {
     "AZ-2025-09-001": "2025/09/AZ-2025-09-001-retirement-azure-vmware-solution-av36-node-retirement-now",
@@ -206,6 +207,19 @@
     "AZ-2026-07-054": "2026/07/AZ-2026-07-054-launched-generally-available-azure-database-for-postgresql",
     "AZ-2026-07-055": "2026/07/AZ-2026-07-055-launched-generally-available-single-click-purchase-for",
     "AZ-2026-07-056": "2026/07/AZ-2026-07-056-in-preview-public-preview-route-maps-for-azure-route-server",
-    "AZ-2026-07-057": "2026/07/AZ-2026-07-057-in-preview-public-preview-azure-sql-updates-for-late-july"
+    "AZ-2026-07-057": "2026/07/AZ-2026-07-057-in-preview-public-preview-azure-sql-updates-for-late-july",
+    "AZ-2026-08-001": "2026/08/AZ-2026-08-001-launched-generally-available-immutability-to-the-most",
+    "AZ-2026-08-002": "2026/08/AZ-2026-08-002-launched-generally-available-trusted-launch-as-default",
+    "AZ-2026-08-003": "2026/08/AZ-2026-08-003-in-preview-public-preview-azure-dns-enables-dns-based-load",
+    "AZ-2026-08-004": "2026/08/AZ-2026-08-004-launched-generally-available-azure-virtual-network-routing",
+    "AZ-2026-08-005": "2026/08/AZ-2026-08-005-in-preview-public-preview-azure-private-link-support-over",
+    "AZ-2026-08-006": "2026/08/AZ-2026-08-006-in-preview-public-preview-perimeter-link-feature-in-network",
+    "AZ-2026-08-007": "2026/08/AZ-2026-08-007-launched-generally-available-unity-ai-gateway-on-azure",
+    "AZ-2026-08-008": "2026/08/AZ-2026-08-008-launched-generally-available-sharepoint-connector-for-azure",
+    "AZ-2026-08-009": "2026/08/AZ-2026-08-009-launched-generally-available-explicit-proxy-in-azure",
+    "AZ-2026-08-010": "2026/08/AZ-2026-08-010-retirement-nested-confidential-cc-v5-vms-will-be-retired-on",
+    "AZ-2026-08-011": "2026/08/AZ-2026-08-011-announcing-azure-databricks-genie-one-and-genie-agents-free",
+    "AZ-2026-08-012": "2026/08/AZ-2026-08-012-in-preview-public-preview-migrate-from-aws-fsx-for-windows",
+    "AZ-2026-08-013": "2026/08/AZ-2026-08-013-in-preview-public-preview-azure-expressroute-resiliency"
   }
 }

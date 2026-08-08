@@ -1,0 +1,62 @@
+schema_version: 1
+id: MSF-2026-07-023
+slug: fabric-data-agent-integration-in-copilot-in-power-bi
+title: Fabric data agent integration in Copilot in Power BI
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Retirement-of-Fabric-data-agent-integration-in-Copilot-in-Power/ba-p/5328344
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Retirement-of-Fabric-data-agent-integration-in-Copilot-in-Power/ba-p/5328344
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: month
+content_hash: sha256:f8d8dece180259c53777154a1dced3509a8324da8fa3767c95f6b74d0dc1d190
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:0582de22cd6d6521123e7333b5f9f79e8509c0de810b58651e171f39ba1a9ef4
+  discovered_at: '2026-08-08T06:51:11.566142+00:00'
+  source_role: primary
+  selector: h2[Fabric Data Science] > table > tr (date from cell 0)
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:0582de22cd6d6521123e7333b5f9f79e8509c0de810b58651e171f39ba1a9ef4
+tier: 1
+learning_priority: low
+category: power-bi
+tags:
+- ai
+- deprecation
+- power-bi
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:f8d8dece180259c53777154a1dced3509a8324da8fa3767c95f6b74d0dc1d190
+  title_snapshot: Fabric data agent integration in Copilot in Power BI
+  summary_snapshot: Data agent Copilot integration retirement Fabric data agent integration
+    in Copilot in Power BI retires on August 26, 2026, so you need to move data agent workflows
+    to supported experiences. For more information, see Consume a data agent from Copilot
+    in Power BI.
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

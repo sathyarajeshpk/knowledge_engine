@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-08-012
+slug: in-preview-public-preview-migrate-from-aws-fsx-for-windows
+title: '[In preview] Public Preview: Migrate from AWS FSx for Windows File Server to Azure
+  Files with Azure Storage Mover'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=567979
+announcement_url: https://azure.microsoft.com/updates?id=567979
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-06
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: day
+content_hash: sha256:bc4d79adbd4c262bc5d196eb34a46beca7672bd32806ccb74ac2e31a1911154f
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:2c419864f93dae96a1f93b9ca1ae1f356770f96b71d2f6649e4b301e71e7ea75
+  discovered_at: '2026-08-08T06:51:09.890626+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:2c419864f93dae96a1f93b9ca1ae1f356770f96b71d2f6649e4b301e71e7ea75
+tier: 2
+learning_priority: medium
+category: storage
+tags:
+- preview
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:bc4d79adbd4c262bc5d196eb34a46beca7672bd32806ccb74ac2e31a1911154f
+  title_snapshot: '[In preview] Public Preview: Migrate from AWS FSx for Windows File Server
+    to Azure Files with Azure Storage Mover'
+  summary_snapshot: Azure Storage Mover now supports agentless, cloud-to-cloud migration from
+    AWS FSx for Windows File Server (SMB) to Azure Files (SMB), in preview. You can move your
+    Windows file shares off FSx and into Azure Files without deploying or managing a migration
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

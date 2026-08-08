@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-08-005
+slug: in-preview-public-preview-azure-private-link-support-over
+title: '[In preview] Public Preview: Azure Private Link support over IPv6'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=568842
+announcement_url: https://azure.microsoft.com/updates?id=568842
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-04
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: day
+content_hash: sha256:f1c30f4ede7833c0bc4d9c0953c8b1e1f4cc9e0b2560ccb1cc4bd5cd5d59bc9c
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:6a8b7450a89359162e2618b363d9c9927b22846a9c9088997706dd8512fa3465
+  discovered_at: '2026-08-08T06:51:09.890988+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:6a8b7450a89359162e2618b363d9c9927b22846a9c9088997706dd8512fa3465
+tier: 2
+learning_priority: medium
+category: databases
+tags:
+- preview
+difficulty: advanced
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:f1c30f4ede7833c0bc4d9c0953c8b1e1f4cc9e0b2560ccb1cc4bd5cd5d59bc9c
+  title_snapshot: '[In preview] Public Preview: Azure Private Link support over IPv6'
+  summary_snapshot: Azure Private Link over IPv6 enables you to privately access Azure PaaS
+    services, such as Azure Storage and Azure SQL Database, over IPv6-based connectivity.
+    You can now use IPv6 private endpoints to connect from IPv6 clients in an Azure virtual
+    network o
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

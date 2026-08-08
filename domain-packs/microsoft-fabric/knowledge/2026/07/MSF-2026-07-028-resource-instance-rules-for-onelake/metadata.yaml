@@ -1,0 +1,62 @@
+schema_version: 1
+id: MSF-2026-07-028
+slug: resource-instance-rules-for-onelake
+title: Resource Instance Rules for OneLake
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Simplify-OneLake-network-security-for-Azurfe-Services-with/ba-p/5284830
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Simplify-OneLake-network-security-for-Azurfe-Services-with/ba-p/5284830
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: month
+content_hash: sha256:73526c545f77dcf4f6147e87d4c1ff261548d33b3416fa7ddceab01fe1ca9612
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:38c535bcb4ee0b2098058e896adfbf46293805e7bdedeacda24fdc284514f4bc
+  discovered_at: '2026-08-08T06:51:11.562887+00:00'
+  source_role: primary
+  selector: h2[Generally available features] > table > tr (date from cell 0)
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:38c535bcb4ee0b2098058e896adfbf46293805e7bdedeacda24fdc284514f4bc
+tier: 1
+learning_priority: high
+category: governance-security
+tags:
+- ga
+- onelake
+- security
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:73526c545f77dcf4f6147e87d4c1ff261548d33b3416fa7ddceab01fe1ca9612
+  title_snapshot: Resource Instance Rules for OneLake
+  summary_snapshot: Resource Instance Rules for OneLake Network Security for Azure Services
+    (Generally Available) Resource Instance Rules for OneLake let you allow specific Azure
+    resource instances to access OneLake over the public endpoint while Fabric still evaluates
+    data permissions. For more information, see Resource Instance rules for Inbound access.
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

@@ -7,11 +7,11 @@ source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Resour
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Resource-Profiles-in-Microsoft-Fabric-Data-Engineering-Preview/ba-p/5182862
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-05-01
+published_date: null
 discovered_date: 2026-08-01
-date_confidence: exact
-date_precision: month
-content_hash: sha256:0ef468f67a34d717c6fa017cf7ce5df150edcf6447ef0d44fe6d3207026772dd
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:20e87ca456f47888b9a3d4706629fb8a2e2592987605ea98000f14813caf09d2
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -220,4 +220,20 @@ revisions:
     manual tuning of dozens of Spark properties. For more information, see Configure Resource
     Profile Configurations in Microsoft Fabric.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-08
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:20e87ca456f47888b9a3d4706629fb8a2e2592987605ea98000f14813caf09d2
+  title_snapshot: Resource Profiles in Fabric Data Engineering (Preview)
+  summary_snapshot: Resource Profiles in Fabric Data Engineering (Preview) are preconfigured
+    Spark compute profiles—write-heavy, read-heavy for Spark, and read-heavy for Power BI—that
+    you select per environment so Fabric applies workload-aware settings automatically without
+    manual tuning of dozens of Spark properties. For more information, see Configure Resource
+    Profile Configurations.
+  run_id: run-2026-08-08T06-51-09Z
 generation: {}

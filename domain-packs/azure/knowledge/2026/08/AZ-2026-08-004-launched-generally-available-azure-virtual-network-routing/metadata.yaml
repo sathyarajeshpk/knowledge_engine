@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-08-004
+slug: launched-generally-available-azure-virtual-network-routing
+title: '[Launched] Generally Available: Azure Virtual Network routing appliance'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=568605
+announcement_url: https://azure.microsoft.com/updates?id=568605
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-04
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: day
+content_hash: sha256:6dbb1d408ea9b38c1d0c7c4b20a5d635a5f1a3565ee69439234faf862f95a112
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:4d013be91e7b2602ff8336b1770e4bc6a841020038a5302ef1cbc7b3ff24a50c
+  discovered_at: '2026-08-08T06:51:09.891081+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:4d013be91e7b2602ff8336b1770e4bc6a841020038a5302ef1cbc7b3ff24a50c
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:6dbb1d408ea9b38c1d0c7c4b20a5d635a5f1a3565ee69439234faf862f95a112
+  title_snapshot: '[Launched] Generally Available: Azure Virtual Network routing appliance'
+  summary_snapshot: Azure Virtual Network routing appliance is now generally available. It
+    delivers private connectivity across virtual networks, using specialized hardware for
+    low latency, high throughput, and better performance than virtual machines. Key benefits
+    and funct
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

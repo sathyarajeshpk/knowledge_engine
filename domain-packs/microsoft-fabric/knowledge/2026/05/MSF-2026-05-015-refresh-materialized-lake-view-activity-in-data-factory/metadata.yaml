@@ -7,11 +7,11 @@ source_url: https://learn.microsoft.com/en-us/fabric/data-factory/refresh-materi
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/refresh-materialized-lake-view-activity
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-05-01
+published_date: null
 discovered_date: 2026-08-01
-date_confidence: exact
-date_precision: month
-content_hash: sha256:abe7a8ab114a5ee0c79a02820c0a3f6be5a8f3f0b8ee8c729b432bd38dda06af
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:e3411aafe4ba6f1513813d8e2a4d606fcb1fa0b530d372de1ab34fbe63c3bcfc
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -209,4 +209,21 @@ revisions:
     The new Refresh Materialized Lake View activity in Fabric Data Factory pipelines lets
     you refresh materialized lake views on demand or on a schedule within your pipeline orchestration.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 13
+  date: 2026-08-08
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:e3411aafe4ba6f1513813d8e2a4d606fcb1fa0b530d372de1ab34fbe63c3bcfc
+  title_snapshot: Refresh Materialized Lake View activity in Fabric Data Factory pipelines
+  summary_snapshot: Materialized Lake View refresh features (Preview) The Refresh Materialized
+    Lake View activity in Fabric Data Factory pipelines in Fabric Data Factory pipelines lets
+    you refresh materialized lake views on demand or on a schedule within your pipeline orchestration.
+    Event-driven refresh for materialized lake views triggers dependent materialized lake
+    view refreshes when OneLake file events or pipeline and notebook job events occur. For
+    more information, see Schedule a materialized lake view refresh.
+  run_id: run-2026-08-08T06-51-09Z
 generation: {}

@@ -7,10 +7,10 @@ source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Data-W
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Data-Warehouse-Monitor-A-Unified-Monitoring-Experience-for/ba-p/5180024
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-05-01
+published_date: null
 discovered_date: 2026-08-01
-date_confidence: exact
-date_precision: month
+date_confidence: inferred
+date_precision: day
 content_hash: sha256:1a5d574506d0980baa406c331f1a9ab8cde63a28347496e7d254a7cabf3ab601
 provenance:
   source_name: fabric-whats-new-markdown
@@ -209,4 +209,19 @@ revisions:
     lets you cancel long-running queries with one click. For more information, see Monitor
     T-SQL queries (Preview).
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-08
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:1a5d574506d0980baa406c331f1a9ab8cde63a28347496e7d254a7cabf3ab601
+  title_snapshot: Data Warehouse Monitor (Preview)
+  summary_snapshot: Data Warehouse Monitor (Preview) (previously Query Activity) is a unified
+    monitoring UI for Fabric Data Warehouse that shows active and historical queries side
+    by side, supports cross-execution performance analysis powered by Query Insights, and
+    lets you cancel long-running queries with one click. For more information, see Monitor
+    T-SQL queries (Preview).
+  run_id: run-2026-08-08T06-51-09Z
 generation: {}

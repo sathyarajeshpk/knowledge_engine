@@ -7,10 +7,10 @@ source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Data-A
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Data-Agent-Now-Supports-Eventhouse-Functions-Materialized-Views/ba-p/5181801
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-05-01
+published_date: null
 discovered_date: 2026-08-01
-date_confidence: exact
-date_precision: month
+date_confidence: inferred
+date_precision: day
 content_hash: sha256:637640874c95870b33fa25e59aef05da916737a4fb0fb9ac208044652516c574
 provenance:
   source_name: fabric-whats-new-markdown
@@ -224,4 +224,19 @@ revisions:
     views for faster answers, and reaches data federated from sources outside the eventhouse.
     For more information, see Fabric data agent concepts.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 13
+  date: 2026-08-08
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:637640874c95870b33fa25e59aef05da916737a4fb0fb9ac208044652516c574
+  title_snapshot: Data Agent
+  summary_snapshot: Data Agent support for Eventhouse functions, materialized views, and shortcuts
+    (Preview) Data Agent now discovers and queries Eventhouse user-defined functions (UDFs),
+    materialized views, and shortcut tables, so it calls validated KQL logic, uses pre-aggregated
+    views for faster answers, and reaches data federated from sources outside the eventhouse.
+    For more information, see Fabric data agent concepts.
+  run_id: run-2026-08-08T06-51-09Z
 generation: {}

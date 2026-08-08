@@ -7,10 +7,10 @@ source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/From-r
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/From-repetition-to-reuse-accelerate-data-prep-with-My-queries-in/ba-p/5176763
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-05-01
+published_date: null
 discovered_date: 2026-08-01
-date_confidence: exact
-date_precision: month
+date_confidence: inferred
+date_precision: day
 content_hash: sha256:7e47d02987cbe95f55fda933f314cec4dfd7ed070a0073fa169ecadd965c9a2c
 provenance:
   source_name: fabric-whats-new-markdown
@@ -212,4 +212,19 @@ revisions:
     the Recents & My Queries module in the modern Get data experience. For more information,
     see My queries (Preview).'
   run_id: run-2026-08-02T08-00-14Z
+- revision: 13
+  date: 2026-08-08
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:7e47d02987cbe95f55fda933f314cec4dfd7ed070a0073fa169ecadd965c9a2c
+  title_snapshot: My queries (Preview)
+  summary_snapshot: 'My queries in Dataflow Gen2 (Preview) My queries (Preview) gives Dataflow
+    Gen2 authors a personal query library: right-click any query and Add to My Queries to
+    save its M code to a per-user folder in My workspace, then reuse it across dataflows from
+    the Recents & My Queries module in the modern Get data experience. For more information,
+    see My queries (Preview).'
+  run_id: run-2026-08-08T06-51-09Z
 generation: {}

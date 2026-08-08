@@ -24,18 +24,6 @@
       "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"
     },
-    "sha256:19563761e3f032a5c23b8078b67ecd740bdbc25e412fcf39fb534668a674ce6d": {
-      "identity_key": "sha256:19563761e3f032a5c23b8078b67ecd740bdbc25e412fcf39fb534668a674ce6d",
-      "title": "Edit Copy job via JSON payloads (Generally Available)",
-      "summary": "Edit Copy job via JSON payloads (Generally Available) lets advanced users programmatically define and update Copy job configurations beyond the visual authoring experience, so you can automate edits and apply bulk, consistent changes across environments. For more information, see What is Copy job in Data Factory for Microsoft Fabric?",
-      "source_name": "fabric-whats-new-markdown",
-      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Simplify-data-movement-with-Copy-job-more-control-more/ba-p/5184219",
-      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Simplify-data-movement-with-Copy-job-more-control-more/ba-p/5184219",
-      "first_discovered_date": "2026-08-01",
-      "confidence": "medium",
-      "reason": "this announcement is cited by 3 distinct features, so the URL identifies the announcement rather than this feature",
-      "lifecycle": "queued"
-    },
     "sha256:1f31ed464193ab563d54b61b0565713eb83b5022100d0a29f5a266e8476b3f80": {
       "identity_key": "sha256:1f31ed464193ab563d54b61b0565713eb83b5022100d0a29f5a266e8476b3f80",
       "title": "AI-assisted Synapse to Fabric migration skills (Preview)",
@@ -192,6 +180,30 @@
       "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
       "lifecycle": "queued"
     },
+    "sha256:86cc721657dd6c1a1ff07654bf61925c56d39d2ef1a5761c251f5ab0940f1394": {
+      "identity_key": "sha256:86cc721657dd6c1a1ff07654bf61925c56d39d2ef1a5761c251f5ab0940f1394",
+      "title": "Mirrored Azure Monitor and Mirrored AWS Glue catalog",
+      "summary": "Azure Monitor and AWS Glue mirroring (Preview) Mirrored Azure Monitor and Mirrored AWS Glue catalog bring Log Analytics workspace tables and AWS Glue Iceberg tables into OneLake for Fabric analysis without duplicating data. For more information, see Mirror Azure Monitor in Microsoft Fabric and Mirrored AWS Glue catalog.",
+      "source_name": "fabric-whats-new",
+      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Bring-Azure-Monitor-and-AWS-Glue-data-to-OneLake-Preview/ba-p/5326474",
+      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Bring-Azure-Monitor-and-AWS-Glue-data-to-OneLake-Preview/ba-p/5326474",
+      "first_discovered_date": "2026-08-08",
+      "confidence": "medium",
+      "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
+      "lifecycle": "queued"
+    },
+    "sha256:879860dd685dded2e15dc13657403a101f9ef9d598606f9277599f24b24e37e4": {
+      "identity_key": "sha256:879860dd685dded2e15dc13657403a101f9ef9d598606f9277599f24b24e37e4",
+      "title": "native execution engine support for Python UDFs, Scala UDFs, and complex data types",
+      "summary": "Native execution engine UDFs and complex types (Generally Available) In Fabric Data Engineering, native execution engine support for Python UDFs, Scala UDFs, and complex data types accelerates Spark processing with no changes to existing notebooks or jobs. For more information, see Native execution engine UDF and complex type support.",
+      "source_name": "fabric-whats-new",
+      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-July-2026-Feature-Summary/ba-p/5325823",
+      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-July-2026-Feature-Summary/ba-p/5325823",
+      "first_discovered_date": "2026-08-08",
+      "confidence": "medium",
+      "reason": "this announcement is cited by 11 distinct features, so the URL identifies the announcement rather than this feature",
+      "lifecycle": "queued"
+    },
     "sha256:88eb85cfb83fd5ba5f41f92e6a4635c53d6f83e93a53f581eb2e0b174070fc82": {
       "identity_key": "sha256:88eb85cfb83fd5ba5f41f92e6a4635c53d6f83e93a53f581eb2e0b174070fc82",
       "title": "Create AI Auto-Description for Semantic Models (Preview)",
@@ -238,18 +250,6 @@
       "first_discovered_date": "2026-08-01",
       "confidence": "medium",
       "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
-      "lifecycle": "queued"
-    },
-    "sha256:a0ee8a3a8beb3cb012586698036d8a6ef87836d8755760b5574df2cf0d75a363": {
-      "identity_key": "sha256:a0ee8a3a8beb3cb012586698036d8a6ef87836d8755760b5574df2cf0d75a363",
-      "title": "Approval activity in Data Factory pipelines (Preview)",
-      "summary": "The new Approval activity (Preview) in Fabric Data Factory pipelines pauses execution until a reviewer approves or rejects through Outlook or Teams, then routes pipeline flow dynamically based on the outcome (approved, rejected, or timed out). For more information, see Approval activity documentation.",
-      "source_name": "fabric-whats-new-markdown",
-      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Pipelines-are-evolving-beyond-ETL/ba-p/5177527",
-      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Pipelines-are-evolving-beyond-ETL/ba-p/5177527",
-      "first_discovered_date": "2026-08-01",
-      "confidence": "medium",
-      "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"
     },
     "sha256:a1898a8fedb7bcba5bfa0c08ac4a351302caa5897d1f38ae8b823bd57560a0b8": {

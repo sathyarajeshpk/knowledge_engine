@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-08-001
+slug: launched-generally-available-immutability-to-the-most
+title: '[Launched] Generally Available: Immutability to the most recent seven days of backups
+  on Azure SQL Database and Azure SQL Managed Instance'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=568339
+announcement_url: https://azure.microsoft.com/updates?id=568339
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-03
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: day
+content_hash: sha256:51a1a97a67f6b0e394a3c6ef5c3d2927194148b2e9df3df33f380cff8b17c6be
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:395a8c018310d6c4e0a279c0492d04694dbcc01eb976b9b083f056ee0681d94b
+  discovered_at: '2026-08-08T06:51:09.891166+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:395a8c018310d6c4e0a279c0492d04694dbcc01eb976b9b083f056ee0681d94b
+tier: 1
+learning_priority: medium
+category: databases
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:51a1a97a67f6b0e394a3c6ef5c3d2927194148b2e9df3df33f380cff8b17c6be
+  title_snapshot: '[Launched] Generally Available: Immutability to the most recent seven days
+    of backups on Azure SQL Database and Azure SQL Managed Instance'
+  summary_snapshot: To enhance backup protection, Azure SQL Database and Azure SQL Managed
+    Instance now automatically apply immutability to the most recent seven days of backups.
+    This capability is enabled by default for all databases, regardless of the configured
+    point-in-t
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

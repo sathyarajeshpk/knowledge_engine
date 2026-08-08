@@ -7,10 +7,10 @@ source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Eventstream-can-now-publish-Business-Events-Preview/ba-p/5180050
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-05-01
+published_date: null
 discovered_date: 2026-08-01
-date_confidence: exact
-date_precision: month
+date_confidence: inferred
+date_precision: day
 content_hash: sha256:79720d00dad7f7284888733f4e62e206e47bd36afb946c500bca9c17f25027f7
 provenance:
   source_name: fabric-whats-new-markdown
@@ -199,4 +199,17 @@ revisions:
     Business Events as a built-in destination, so you filter, aggregate, threshold, and emit
     governed, discoverable business signals from the Eventstream canvas with no code.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 13
+  date: 2026-08-08
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:79720d00dad7f7284888733f4e62e206e47bd36afb946c500bca9c17f25027f7
+  title_snapshot: Eventstream now publishes Business Events
+  summary_snapshot: Eventstream Business Events publisher (Preview) Eventstream now publishes
+    Business Events as a built-in destination, so you filter, aggregate, threshold, and emit
+    governed, discoverable business signals from the Eventstream canvas with no code.
+  run_id: run-2026-08-08T06-51-09Z
 generation: {}

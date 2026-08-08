@@ -1,0 +1,63 @@
+schema_version: 1
+id: MSF-2026-07-038
+slug: customer-intent-streaming-pattern
+title: Customer-intent streaming pattern
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Intelligent-streaming-Turning-customer-intent-into-revenue-with/ba-p/5317223
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Intelligent-streaming-Turning-customer-intent-into-revenue-with/ba-p/5317223
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: month
+content_hash: sha256:54ad872a85d8ffc151229a4ee2a04b66b4c2dc3cb49f88b2a731b8693eff1e5d
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:a65b00878b9a014731025f8fbe67ae87b735c2dadb450f225901a168989c121f
+  discovered_at: '2026-08-08T06:51:11.568366+00:00'
+  source_role: primary
+  selector: h2[Real-Time Intelligence in Microsoft Fabric] > table > tr (date from cell 0)
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:a65b00878b9a014731025f8fbe67ae87b735c2dadb450f225901a168989c121f
+tier: 2
+learning_priority: medium
+category: real-time-intelligence
+tags:
+- ai
+- preview
+- real-time
+- spark
+difficulty: advanced
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:54ad872a85d8ffc151229a4ee2a04b66b4c2dc3cb49f88b2a731b8693eff1e5d
+  title_snapshot: Customer-intent streaming pattern
+  summary_snapshot: Customer-intent streaming pattern shows how you capture CDC events in
+    Eventstream, reshape them with DeltaFlow (Preview), enrich micro-batches with AI Functions,
+    publish Business Events, and activate responses while the signal remains current. For
+    more information, see AI Functions for PySpark reference and Business events overview.
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

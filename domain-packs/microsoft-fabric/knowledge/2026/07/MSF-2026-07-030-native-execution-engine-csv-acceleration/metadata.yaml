@@ -1,0 +1,62 @@
+schema_version: 1
+id: MSF-2026-07-030
+slug: native-execution-engine-csv-acceleration
+title: Native Execution Engine CSV acceleration
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Native-Execution-Engine-now-accelerates-CSV-workloads-in/ba-p/5311861
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Native-Execution-Engine-now-accelerates-CSV-workloads-in/ba-p/5311861
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-08
+date_confidence: exact
+date_precision: month
+content_hash: sha256:3c09799e34ec02ccbb4a196a4e59ec878ba179c5fb00bba5241312f4169cae51
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:55f32a90183840edac11ef38bf4112bb620ff7aa973f36daa226f5f9eb0aa32b
+  discovered_at: '2026-08-08T06:51:11.565628+00:00'
+  source_role: primary
+  selector: h2[Fabric Data Engineering] > table > tr (date from cell 0)
+  run_id: run-2026-08-08T06-51-09Z
+url_hash: sha256:55f32a90183840edac11ef38bf4112bb620ff7aa973f36daa226f5f9eb0aa32b
+tier: 2
+learning_priority: medium
+category: data-factory
+tags:
+- notebook
+- pipeline
+- spark
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-08
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:3c09799e34ec02ccbb4a196a4e59ec878ba179c5fb00bba5241312f4169cae51
+  title_snapshot: Native Execution Engine CSV acceleration
+  summary_snapshot: Native Execution Engine CSV acceleration reads CSV files in the native
+    vectorized pipeline when Native Execution Engine is enabled, so existing Spark notebooks,
+    pipelines, and SQL queries can run faster with no code changes. For more information,
+    see Native execution engine for Fabric Data Engineering.
+  run_id: run-2026-08-08T06-51-09Z
+generation: {}

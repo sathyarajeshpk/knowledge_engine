@@ -7,11 +7,11 @@ source_url: https://learn.microsoft.com/en-us/sql/relational-databases/extended-
 announcement_url: https://learn.microsoft.com/en-us/sql/relational-databases/extended-events/targets-for-extended-events-in-sql-server?preserve-view=true&view=fabric-sqldb
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-05-01
+published_date: null
 discovered_date: 2026-08-02
-date_confidence: exact
-date_precision: month
-content_hash: sha256:c1cd6b677251a43d32358c07913c8542c0be4151d0b537e4a9a256bd2eb8c0ab
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:c4cadee528b06c28567df9f917c037bcf36fd6ca36fa6c49d447a2dbc2d9d983
 provenance:
   source_name: fabric-whats-new
   source_representation: html
@@ -26,8 +26,8 @@ provenance:
   run_id: run-2026-08-02T08-00-14Z
 url_hash: sha256:eff8cc39dc989a5afa1a317326d898afb25eefc3622340d8438abe8e42e45171
 tier: 2
-learning_priority: low
-category: null
+learning_priority: medium
+category: data-warehouse
 tags:
 - preview
 difficulty: intermediate
@@ -57,4 +57,19 @@ revisions:
     to retain only the specified number of the most recent Azure Storage blobs. For more information,
     see event_file target.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 2
+  date: 2026-08-08
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:c4cadee528b06c28567df9f917c037bcf36fd6ca36fa6c49d447a2dbc2d9d983
+  title_snapshot: event_file target
+  summary_snapshot: MAX_ROLLOVER_FILES in extended event sessions using Azure Storage blobs
+    (preview) For new extended event sessions in SQL database in Fabric, you can specify the
+    MAX_ROLLOVER_FILES option to retain only the specified number of the most recent Azure
+    Storage blobs. For more information, see event_file target.
+  run_id: run-2026-08-08T06-51-09Z
 generation: {}

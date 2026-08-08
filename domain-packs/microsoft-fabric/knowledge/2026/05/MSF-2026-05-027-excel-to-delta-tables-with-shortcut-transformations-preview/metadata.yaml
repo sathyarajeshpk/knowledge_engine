@@ -7,11 +7,11 @@ source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/From-E
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/From-Excel-to-Delta-Tables-Simplifying-Excel-Data-Ingestion-with/ba-p/5185370
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-05-01
+published_date: null
 discovered_date: 2026-08-01
-date_confidence: exact
-date_precision: month
-content_hash: sha256:33da3b85313fe1d751031cf4eb26f9aba0ef0f26f31c68abaaa98f96b4d68406
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:3a24d875c68c0f4212a1c00bb37e23e67c2c0dc2def29507227c7e8848c4ced7
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -218,4 +218,20 @@ revisions:
     output, schema drift handling, continuous sync, and sanitization of sheet names into valid
     Delta table names. For more information, see Shortcuts file transformations.
   run_id: run-2026-08-01T06-31-17Z
+- revision: 12
+  date: 2026-08-08
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:3a24d875c68c0f4212a1c00bb37e23e67c2c0dc2def29507227c7e8848c4ced7
+  title_snapshot: Excel to Delta tables with shortcut transformations (Preview)
+  summary_snapshot: Excel to Delta tables with shortcut transformations (Preview) extends
+    the zero-code shortcut transformations ingestion model to multi-sheet .xlsx and .xls workbooks,
+    with automatic sheet discovery, wildcard sheet matching, combined-table or table-per-sheet
+    output, schema drift handling, continuous sync, and sanitization of sheet names into valid
+    Delta table names. For more information, see Shortcut transformations (file).
+  run_id: run-2026-08-08T06-51-09Z
 generation: {}
