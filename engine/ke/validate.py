@@ -624,19 +624,77 @@ def _check_revision_history(pack: Pack, path: Path, obj: KnowledgeObject) -> lis
         for problem in verify_chain(obj)
     ]
 
-    changes = [tuple(rev.changed_fields) for rev in obj.revisions[1:]]
-    if len(changes) >= 3 and len(set(changes)) == 1:
+    run = _longest_identical_run([tuple(rev.changed_fields) for rev in obj.revisions[1:]])
+    if run is not None:
+        fields, length, start = run
         findings.append(
             Finding(
                 Level.WARNING,
                 "REV002",
                 location,
-                f"{len(changes)} consecutive revisions all record the same change "
-                f"({', '.join(changes[0])}); this is the signature of a value "
+                f"revisions {start}-{start + length - 1} all record the same change "
+                f"({', '.join(fields)}); this is the signature of a value "
                 "flip-flopping between runs rather than genuine edits",
             )
         )
     return findings
+
+
+#: A run this long or longer is the flip-flop signature. Three is the shortest
+#: sequence that cannot be a coincidence of two ordinary edits touching the same
+#: field, and it is the threshold the check has used since M5.
+FLIP_FLOP_RUN = 3
+
+
+def _longest_identical_run(changes: list[tuple[str, ...]]):
+    """The longest run of consecutive identical change-sets, if it is long enough.
+
+    Returns `(fields, length, first_revision_number)` or `None`.
+
+    ## Why a run rather than whole-chain uniformity
+
+    This check used to require the **entire** post-initial chain to be uniform::
+
+        len(changes) >= 3 and len(set(changes)) == 1
+
+    which meant a single genuine edit *anywhere afterwards* erased the finding
+    permanently. Measured on the live repository: 35 objects carried the
+    signature, one ordinary weekly harvest appended one real edit to 29 of them,
+    and the reported count silently fell to 6 with **nothing fixed** (M9 Gate B).
+
+    That is the wrong shape for a warning. A flip-flop that happened is a fact
+    about the object's history; later legitimate activity does not undo it. So
+    the check now looks for the signature *anywhere in the chain* and is
+    append-insensitive: adding revisions to the end can lengthen a run, never
+    shorten one.
+
+    ## What this deliberately does not do
+
+    It compares `changed_fields` — field *names*, not values — so it detects
+    "the same fields changed repeatedly", which is a proxy for "a value
+    oscillated". A stronger check would need the values, and revisions do not
+    store them for the fields that flip-flop. The proxy is honest about being
+    one, and `ke.audit` carries the independent mechanism-level signal used to
+    validate it.
+    """
+    if len(changes) < FLIP_FLOP_RUN:
+        return None
+
+    best = (None, 0, 0)
+    current, start = 1, 0
+    for index in range(1, len(changes)):
+        if changes[index] == changes[index - 1]:
+            current += 1
+        else:
+            current, start = 1, index
+        if current > best[1]:
+            best = (changes[index], current, start)
+
+    fields, length, start = best
+    if length < FLIP_FLOP_RUN:
+        return None
+    # `changes` excludes revision 1, so index 0 is revision 2.
+    return fields, length, start + 2
 
 
 def _check_feature_document(pack: Pack, feature_path: Path, obj: KnowledgeObject) -> list[Finding]:
