@@ -74,6 +74,7 @@ decision is a conscious act rather than a tidy-up.
 | [0043](0043-power-bi-is-a-category-not-a-pack.md) | Power BI is a category within the Fabric pack, not a pack of its own | Accepted |
 | [0044](0044-cross-pack-duplicates-are-reported-never-resolved.md) | Cross-pack duplicates are detected and reported, never merged, dropped or blocked | Accepted |
 | [0045](0045-a-pack-may-name-web-sources-and-match-strings.md) | A pack may name web sources and match strings, and nothing else | Accepted |
+| [0046](0046-an-acknowledged-cross-pack-duplicate-does-not-block-ci.md) | An acknowledged cross-pack duplicate is reported as INFO and does not block CI | Accepted (amends 0044) |
 
 ## Template
 
