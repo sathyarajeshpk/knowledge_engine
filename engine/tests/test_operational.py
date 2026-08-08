@@ -660,3 +660,153 @@ def test_a_keyboard_interrupt_still_stops_everything(tmp_path, monkeypatch):
         cli.main(["harvest", "--repo-root", str(repo)])
 
     assert tried == ["alpha"]
+
+
+# ---------------------------------------------------------------------------
+# Lock scope under the interleaved execution model (M9-2)
+# ---------------------------------------------------------------------------
+
+
+def _lock_path(repo: Path, pack: str) -> Path:
+    return repo / "domain-packs" / pack / "state" / ".harvest.lock"
+
+
+def test_every_pack_stays_locked_through_the_publish_phase(tmp_path, monkeypatch):
+    """The property the new execution model requires, and the reason it changed.
+
+    `harvest_all` interleaves packs: alpha and beta both harvest, then the
+    cross-pack scan runs, then both publish. If alpha's lock were released when
+    alpha finished *harvesting* — which is what a per-pack acquire/release loop
+    does — a concurrent run could start minting into alpha while this run was
+    still publishing alpha's indexes from the objects it had just read.
+
+    So the lock has to span harvest **and** publish for every pack. This test
+    fails if the scope is narrowed back.
+    """
+    from ke import __main__ as cli
+    import ke.pipeline as pipeline_module
+    from ke.pipeline import PUBLISH_STAGES
+
+    repo = _two_pack_repo(tmp_path)
+    seen_during_publish: list[tuple[str, bool, bool]] = []
+    real = pipeline_module.run_stages
+
+    def traced(ctx, stages=PUBLISH_STAGES):
+        if stages is PUBLISH_STAGES:
+            seen_during_publish.append(
+                (
+                    ctx.pack.name,
+                    _lock_path(repo, "alpha").exists(),
+                    _lock_path(repo, "beta").exists(),
+                )
+            )
+        return real(ctx, stages)
+
+    monkeypatch.setattr("ke.pipeline.run_stages", traced)
+    cli.main(["harvest", "--repo-root", str(repo)])
+
+    assert seen_during_publish, "no pack reached the publish phase"
+    for pack_name, alpha_locked, beta_locked in seen_during_publish:
+        assert alpha_locked, f"alpha unlocked while publishing {pack_name}"
+        assert beta_locked, f"beta unlocked while publishing {pack_name}"
+
+
+def test_every_lock_is_released_when_the_run_finishes(tmp_path):
+    """A run that completes must leave nothing behind for the next one."""
+    from ke import __main__ as cli
+
+    repo = _two_pack_repo(tmp_path)
+    cli.main(["harvest", "--repo-root", str(repo)])
+
+    assert not _lock_path(repo, "alpha").exists()
+    assert not _lock_path(repo, "beta").exists()
+
+
+def test_every_lock_is_released_when_a_pack_raises(tmp_path, monkeypatch):
+    """Held in an ExitStack, so an exception mid-run still unwinds every lock.
+
+    Widening the scope from one pack to all of them widens the blast radius of
+    getting release wrong: a leaked lock now strands the whole repository for an
+    hour rather than one pack.
+    """
+    from ke import __main__ as cli
+
+    repo = _two_pack_repo(tmp_path)
+    _fail_during_harvest(monkeypatch, None)
+
+    cli.main(["harvest", "--repo-root", str(repo)])
+
+    assert not _lock_path(repo, "alpha").exists()
+    assert not _lock_path(repo, "beta").exists()
+
+
+def test_a_second_run_cannot_touch_a_pack_the_first_still_holds(tmp_path):
+    """Per-pack exclusivity is what actually protects the registry.
+
+    Two runs never write the same pack: the second gets `LockError` for anything
+    the first holds, reports it and skips it. It may still take packs the first
+    does not hold — the guarantee is per-pack exclusivity, not whole-run
+    mutual exclusion — and that is sufficient, because a Feature ID is minted
+    from one pack's registry.
+    """
+    from ke import __main__ as cli
+    from ke.lock import pack_lock
+
+    repo = _two_pack_repo(tmp_path)
+
+    with pack_lock(_lock_path(repo, "alpha").parent, holder="another run"):
+        code = cli.main(["harvest", "--repo-root", str(repo)])
+
+    assert code != 0
+    # alpha was held by the other run, so this run must not have published it.
+    assert not (repo / "domain-packs" / "alpha" / "indexes" / "INDEX.md").is_file()
+    # beta was free, so it must still have been harvested.
+    assert (repo / "domain-packs" / "beta" / "indexes" / "INDEX.md").is_file()
+
+
+def test_a_stale_lock_cannot_permanently_block_the_repository(tmp_path):
+    """Widening the scope must not create a way to strand every pack at once.
+
+    Reclaim is unchanged from M6 and still per-pack, so a crashed run leaves
+    locks that the next run reclaims after `STALE_AFTER_SECONDS` — for all of
+    them, not just the one it died on.
+    """
+    import json
+    import time
+
+    from ke import __main__ as cli
+
+    repo = _two_pack_repo(tmp_path)
+    ancient = time.time() - STALE_AFTER_SECONDS - 60
+    for name in ("alpha", "beta"):
+        path = _lock_path(repo, name)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps({"holder": "crashed", "acquired_at": ancient}))
+
+    code = cli.main(["harvest", "--repo-root", str(repo)])
+
+    assert code == 0, "a stale lock blocked the run"
+    assert (repo / "domain-packs" / "alpha" / "indexes" / "INDEX.md").is_file()
+    assert (repo / "domain-packs" / "beta" / "indexes" / "INDEX.md").is_file()
+
+
+def test_a_single_pack_run_is_unchanged(tmp_path):
+    """One pack: acquire one lock, no cross-pack scan, publish as always.
+
+    The interleaving only exists for multiple packs, so the single-pack path
+    must not have acquired any new behaviour along with it.
+    """
+    from ke import __main__ as cli
+
+    repo = tmp_path / "repo"
+    packs_dir = repo / "domain-packs"
+    packs_dir.mkdir(parents=True)
+    from conftest import make_pack
+
+    make_pack(packs_dir, "solo", "SOL")
+
+    code = cli.main(["harvest", "--repo-root", str(repo)])
+
+    assert code == 0
+    assert (repo / "domain-packs" / "solo" / "indexes" / "INDEX.md").is_file()
+    assert not _lock_path(repo, "solo").exists()

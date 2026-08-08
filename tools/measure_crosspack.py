@@ -173,8 +173,19 @@ def measure_shape(
     number that only matters at the shape the gate turns on. It is requested for
     the 10-pack row and skipped elsewhere.
     """
-    from ke.harvest import _scan_cross_pack, load_objects_with_dirs
+    from ke.harvest import load_objects_with_dirs
     from ke.indexer import write_indexes
+
+    # Publish the best way THIS engine can, so one instrument can measure both
+    # sides of the change. Pre-H-A there is no run-scoped scan and
+    # `write_indexes` takes no `cross_pack`; post-H-A there is. Detecting that
+    # rather than assuming it is what makes an apples-to-apples comparison
+    # possible at all -- the alternative is two different harnesses, which is
+    # precisely the thing that produced a false ABANDON.
+    try:
+        from ke.harvest import _scan_cross_pack
+    except ImportError:
+        _scan_cross_pack = None
 
     repo, packs = build_repo(objects_per_pack, pack_count)
     try:
@@ -183,21 +194,23 @@ def measure_shape(
         loaded = {p.name: [(o, "..") for o, _ in load_objects_with_dirs(p)] for p in packs}
 
         def rebuild():
-            # Publish every pack the way the engine now publishes them: scan for
-            # cross-pack duplicates ONCE for the run, then hand the result to
-            # each pack's index rebuild.
+            # Publish every pack the way THIS engine publishes them.
             #
-            # The M9-1 baseline called `write_indexes` per pack with no scan
-            # argument, because that was the only path that existed. Keeping
-            # that call here after M9-2 measured the *fallback* branch -- each
-            # pack scanning for itself -- and returned ABANDON for a design that
-            # the unit tests independently show is linear. A false negative that
-            # would have killed a working change, and the mirror image of M8's
-            # false positive.
+            # The M9-1 harness called `write_indexes` per pack with no scan
+            # argument, because that was the only path that existed. Kept
+            # unchanged after H-A it measured the *fallback* branch -- each pack
+            # scanning for itself -- and returned ABANDON for a design the unit
+            # tests independently show is linear. A false negative that would
+            # have killed a working change.
             #
             # `_scan_cross_pack` is the engine's own function, called rather
-            # than reimplemented, so this measures the engine and not a copy of
-            # it.
+            # than reimplemented, so this measures the engine and not a copy.
+            if _scan_cross_pack is None:
+                for pack in packs:
+                    write_indexes(
+                        pack.indexes_dir, loaded[pack.name], [], pack.name, pack=pack
+                    )
+                return
             cross_pack = _scan_cross_pack(packs, dry_run=False)
             for pack in packs:
                 write_indexes(
