@@ -333,7 +333,9 @@ def _packs_for(args: argparse.Namespace) -> tuple[Path, list[Pack]] | tuple[Path
 
 
 def _run_harvest(args: argparse.Namespace) -> int:
-    from ke.harvest import harvest_pack
+    import contextlib
+
+    from ke.harvest import harvest_all
 
     _, packs = _packs_for(args)
     if packs is None:
@@ -341,41 +343,45 @@ def _run_harvest(args: argparse.Namespace) -> int:
 
     exit_code = 0
     failed: list[str] = []
-    for pack in packs:
-        from ke.lock import LockError, pack_lock
 
-        try:
-            # Two harvests minting at once would both allocate the same ID, and
-            # a duplicate Feature ID is permanent. The workflow's concurrency
-            # group covers scheduled runs; this covers everything else.
-            with pack_lock(pack.state_dir, holder="ke harvest"):
-                report = harvest_pack(
-                    pack,
-                    clock=SystemClock(),
-                    dry_run=args.dry_run,
-                    notify=getattr(args, "notify", False),
-                )
-        except Exception as exc:  # noqa: BLE001 - deliberate; see below
-            # Catches `LockError` and anything `harvest_pack` raises.
-            #
-            # **One pack must not take the run down with it.** Packs are
-            # independent by construction (ADR-0016) -- separate sources,
-            # separate state, separate locks -- and until M8 this loop did not
-            # reflect that: any failure in the first pack returned before the
-            # second was touched, so a stuck lock on Fabric silently cost a
-            # week of Azure.
-            #
-            # Invisible with one pack, where "abort the pack" and "abort the
-            # run" are the same thing.
-            #
-            # `Exception`, not `BaseException`: Ctrl-C and SystemExit must still
-            # stop everything. The run still exits non-zero, so a failure is
-            # never reported as success -- it just no longer costs the packs
-            # that were fine.
-            print(f"error: {pack.name}: {exc}", file=sys.stderr)
-            failed.append(pack.name)
-            exit_code = 2
-            continue
+    def note_failure(pack, exc):
+        # **One pack must not take the run down with it.** Packs are independent
+        # by construction (ADR-0016) -- separate sources, separate state,
+        # separate locks -- and until M8 this loop did not reflect that: any
+        # failure in the first pack returned before the second was touched, so a
+        # stuck lock on Fabric silently cost a week of Azure.
+        print(f"error: {pack.name}: {exc}", file=sys.stderr)
+        failed.append(pack.name)
+
+    from ke.lock import LockError, pack_lock
+
+    # Two harvests minting at once would both allocate the same ID, and a
+    # duplicate Feature ID is permanent. Every pack's lock is taken for the
+    # whole run, because the run now interleaves packs: pack 1 is still being
+    # published after pack 2 has harvested, so releasing its lock early would
+    # reopen exactly the window the lock exists to close.
+    locked, stack = [], contextlib.ExitStack()
+    with stack:
+        for pack in packs:
+            try:
+                stack.enter_context(pack_lock(pack.state_dir, holder="ke harvest"))
+            except LockError as exc:
+                note_failure(pack, exc)
+                exit_code = 2
+                continue
+            locked.append(pack)
+
+        reports = harvest_all(
+            locked,
+            clock=SystemClock(),
+            dry_run=args.dry_run,
+            notify=getattr(args, "notify", False),
+            on_error=note_failure,
+        )
+    if failed:
+        exit_code = 2
+
+    for report in reports:
         print(f"\n=== {report.summary_line()} ===\n")
 
         if report.minted:

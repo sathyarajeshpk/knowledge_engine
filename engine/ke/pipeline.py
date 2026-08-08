@@ -72,6 +72,15 @@ class HarvestContext:
     #: The digest, once `write_digest` has run. Notification reads it.
     digest: object | None = None
 
+    #: Cross-pack duplicates for the whole repository, computed **once per run**
+    #: by `harvest_all` after every pack has harvested (M9, TD-15/TD-16).
+    #:
+    #: `None` means "nobody computed this for me", and `rebuild_indexes` then
+    #: falls back to computing it itself -- which is what a single-pack
+    #: `harvest_pack()` does, and what every existing caller and test does.
+    #: That fallback is why this change is additive rather than a rewrite.
+    cross_pack: object | None = None
+
     #: Set by a stage to end the run early without treating it as a failure.
     stop: bool = False
 
@@ -308,6 +317,7 @@ def rebuild_indexes(ctx: HarvestContext) -> None:
             ctx.queue.pending,
             ctx.pack.name,
             ctx.pack,
+            cross_pack=ctx.cross_pack,
         )
     ]
 
@@ -382,7 +392,9 @@ def send_notifications(ctx: HarvestContext) -> None:
 
 #: The pipeline. Adding a stage is one entry here plus one function; the
 #: ordering constraints are documented on the stages themselves.
-STAGES: tuple[Stage, ...] = (
+#: Stages that read sources and write knowledge. Everything up to and including
+#: `persist_state` touches **only this pack**.
+HARVEST_STAGES: tuple[Stage, ...] = (
     discover,
     load_state,
     deduplicate,
@@ -390,11 +402,24 @@ STAGES: tuple[Stage, ...] = (
     gate_and_mint,
     classify_objects,
     persist_state,
+)
+
+#: Stages that publish what was harvested. `rebuild_indexes` is the first stage
+#: that needs to know about **other packs**, because the review queue it writes
+#: includes cross-pack duplicates.
+#:
+#: The split exists so a multi-pack run can harvest every pack first, compute
+#: cross-pack duplicates once against the finished state, and only then publish
+#: (M9, TD-15/TD-16). `STAGES` concatenates the two, so a single-pack
+#: `harvest_pack()` behaves exactly as it did before.
+PUBLISH_STAGES: tuple[Stage, ...] = (
     rebuild_indexes,
     write_digest,
     append_run_log,
     send_notifications,
 )
+
+STAGES: tuple[Stage, ...] = HARVEST_STAGES + PUBLISH_STAGES
 
 
 def run_stages(ctx: HarvestContext, stages: tuple[Stage, ...] = STAGES) -> HarvestReport:

@@ -217,7 +217,7 @@ def revision_tasks(pack: Pack) -> list[ReviewTask]:
 
 
 
-def cross_pack_tasks(pack: Pack) -> list[ReviewTask]:
+def cross_pack_tasks(pack: Pack, pairs: list | None = None) -> list[ReviewTask]:
     """Duplicates this pack shares with another pack (M8, ADR-0044).
 
     Deliberately surfaced from **both** sides: reviewing either pack shows the
@@ -234,12 +234,18 @@ def cross_pack_tasks(pack: Pack) -> list[ReviewTask]:
     if not (repo_root / "domain-packs").is_dir():  # pragma: no cover - defensive
         repo_root = find_repo_root()
 
-    others = [p for p in Pack.discover(repo_root)]
-    if len(others) < 2:
-        return []
+    if pairs is not None:
+        # Already computed for this run. Reading every pack again would produce
+        # the same answer at N times the cost (M9, TD-15).
+        outstanding_pairs = pairs
+    else:
+        others = [p for p in Pack.discover(repo_root)]
+        if len(others) < 2:
+            return []
+        outstanding_pairs = outstanding(others, repo_root)
 
     tasks = []
-    for pair in outstanding(others, repo_root):
+    for pair in outstanding_pairs:
         if not pair.involves(pack.name):
             continue
         counterpart = pair.other_side(pack.name)
@@ -283,12 +289,26 @@ PROVIDERS: tuple[Callable[[Pack], list[ReviewTask]], ...] = (
 # ---------------------------------------------------------------------------
 
 
-def collect(pack: Pack, kinds: set[TaskKind] | None = None) -> list[ReviewTask]:
-    """Every pending task, most urgent first, deterministically ordered."""
+def collect(
+    pack: Pack,
+    kinds: set[TaskKind] | None = None,
+    *,
+    cross_pack: list | None = None,
+) -> list[ReviewTask]:
+    """Every pending task, most urgent first, deterministically ordered.
+
+    `cross_pack` lets a caller that has already scanned the repository this run
+    hand the result in rather than have the cross-pack provider scan it again
+    (M9, TD-15). Omitting it keeps the old behaviour exactly: each provider
+    fetches what it needs.
+    """
     tasks: list[ReviewTask] = []
     for provider in PROVIDERS:
         try:
-            tasks.extend(provider(pack))
+            if provider is cross_pack_tasks and cross_pack is not None:
+                tasks.extend(cross_pack_tasks(pack, cross_pack))
+            else:
+                tasks.extend(provider(pack))
         except Exception:  # noqa: BLE001 - one broken provider must not hide the rest
             continue
     if kinds:
@@ -428,12 +448,12 @@ def _act_on_object(pack: Pack, task: ReviewTask, action: Action) -> str:
     return f"resolved: {task.feature_id} {obj.title[:56]}"
 
 
-def render_report(pack: Pack) -> str:
+def render_report(pack: Pack, *, cross_pack: list | None = None) -> str:
     """The queue as Markdown, so it is visible in the GitHub UI.
 
     A backlog only gets worked if somebody can see it without running a command.
     """
-    tasks = collect(pack)
+    tasks = collect(pack, cross_pack=cross_pack)
     tally = counts(pack, tasks)
     lines = [
         f"# {pack.name} — review queue",
