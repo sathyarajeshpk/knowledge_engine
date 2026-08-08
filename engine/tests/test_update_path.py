@@ -13,14 +13,15 @@ job is unsafe to run unattended and the engine should be stopped.
 from __future__ import annotations
 
 from dataclasses import replace
-from datetime import date
+from datetime import date, datetime, timezone
 
 import pytest
 import yaml
 
 import ke.pipeline as pipeline_module
 from ke.acquisition import DiscoveryResult
-from ke.harvest import harvest_pack
+from ke.clock import FrozenClock
+from ke.harvest import harvest_pack, load_objects_with_dirs
 from ke.models import (
     DateConfidence,
     KnowledgeObject,
@@ -457,3 +458,179 @@ def test_an_updated_pack_still_validates(pack, monkeypatch, tmp_path):
 
     findings = validate_repo(tmp_path, None)
     assert not has_errors(findings, strict=True), "\n".join(str(f) for f in findings)
+
+
+# ---------------------------------------------------------------------------
+# One update per stored object per run, whichever layer matched (M9-3, TD-19)
+# ---------------------------------------------------------------------------
+#
+# Every assertion here is on `run_id` and revision counts. None reads REV002.
+# The M9-3a investigation produced a false positive by trusting a signal it had
+# not checked, and REV002 is the detector these objects would later be used to
+# validate — asserting on it here would be circular twice over.
+
+
+TWO_SOURCE_TITLE = "One feature, two sources, two dates"
+
+
+def _pack_for_update(tmp_path):
+    root = tmp_path / "domain-packs" / "p"
+    (root / "state").mkdir(parents=True)
+    (root / "pack.yml").write_text(
+        "name: p\nid_prefix: PP\nschema_version: 1\n"
+        "limits:\n  max_summary_words: 120\nsources: []\n",
+        encoding="utf-8",
+    )
+    (root / "state" / "id-registry.json").write_text('{"prefix": "PP"}\n')
+    return Pack.load(root)
+
+
+def _harvest(pack, items, clock, monkeypatch):
+    monkeypatch.setattr(
+        pipeline_module, "discover_all",
+        lambda *a, **k: DiscoveryResult(items=list(items)),
+    )
+    return harvest_pack(pack, clock=clock)
+
+
+def _runs(obj):
+    """How many revisions each run appended. The M9-3a oracle."""
+    counts = {}
+    for revision in obj.revisions:
+        counts[revision.run_id] = counts.get(revision.run_id, 0) + 1
+    return counts
+
+
+RUN_ONE = FrozenClock(datetime(2026, 8, 2, 6, 0, tzinfo=timezone.utc))
+RUN_TWO = FrozenClock(datetime(2026, 8, 3, 6, 0, tzinfo=timezone.utc))
+
+
+def _layer_one_and_layer_two(tmp_path, monkeypatch):
+    """Store an object, then present two sightings that match it differently.
+
+    `same_url` matches on identity (Layer 1). `other_url` carries the same title
+    and summary at a different URL, so its identity key differs and it matches
+    on content fingerprint (Layer 2). Both differ from what is stored, so both
+    would record a change if both were applied.
+    """
+    pack = _pack_for_update(tmp_path)
+    stored = make_item(title=TWO_SOURCE_TITLE, url="https://x.invalid/one",
+                       published_date=date(2026, 5, 1))
+    _harvest(pack, [stored], RUN_ONE, monkeypatch)
+
+    same_url = make_item(title=TWO_SOURCE_TITLE, url="https://x.invalid/one",
+                         published_date=date(2026, 7, 1))
+    other_url = make_item(title=TWO_SOURCE_TITLE, url="https://x.invalid/two",
+                          published_date=date(2026, 6, 1))
+    assert same_url.identity.key != other_url.identity.key
+    return pack, same_url, other_url
+
+
+def test_t1_one_run_appends_at_most_one_revision_per_object(tmp_path, monkeypatch):
+    """T1 — the M9-3a reproduction, now prevented.
+
+    Before the fix this object took two revisions from a single run.
+    """
+    pack, same_url, other_url = _layer_one_and_layer_two(tmp_path, monkeypatch)
+
+    _harvest(pack, [same_url, other_url], RUN_TWO, monkeypatch)
+
+    obj, _ = load_objects_with_dirs(pack)[0]
+    counts = _runs(obj)
+    assert max(counts.values()) == 1, f"a run appended twice: {counts}"
+    assert counts[RUN_TWO.run_id()] == 1
+
+
+def test_t2_the_suppressed_sighting_is_counted_not_dropped(tmp_path, monkeypatch):
+    """T2 — a rejected sighting is accounted for rather than vanishing."""
+    pack, same_url, other_url = _layer_one_and_layer_two(tmp_path, monkeypatch)
+
+    report = _harvest(pack, [same_url, other_url], RUN_TWO, monkeypatch)
+
+    assert report.unchanged >= 1, "the second sighting disappeared silently"
+
+
+def test_t3_layer_one_behaviour_is_unchanged(tmp_path, monkeypatch):
+    """T3 — two sightings sharing one identity key still collapse to one update.
+
+    This is the case the original guard already handled correctly. The fix must
+    not alter it.
+    """
+    pack = _pack_for_update(tmp_path)
+    stored = make_item(title="A feature seen twice at one url",
+                       url="https://x.invalid/same", published_date=date(2026, 5, 1))
+    _harvest(pack, [stored], RUN_ONE, monkeypatch)
+
+    a = make_item(title="A feature seen twice at one url",
+                  url="https://x.invalid/same", published_date=date(2026, 7, 1))
+    b = make_item(title="A feature seen twice at one url",
+                  url="https://x.invalid/same", published_date=date(2026, 7, 1))
+    assert a.identity.key == b.identity.key
+
+    _harvest(pack, [a, b], RUN_TWO, monkeypatch)
+
+    obj, _ = load_objects_with_dirs(pack)[0]
+    assert max(_runs(obj).values()) == 1
+
+
+def test_t4_the_winner_does_not_depend_on_discovery_order(tmp_path, monkeypatch):
+    """T4 — the test that fails under positional first-wins.
+
+    `sort_items` orders by `published_date`, which is the field these two
+    sightings disagree about, so a positional rule would let the disputed value
+    decide the winner. Presenting the same pair in both orders must select the
+    same sighting.
+    """
+    outcomes = []
+    for index, order in enumerate(("forwards", "backwards")):
+        root = tmp_path / order
+        (root / "domain-packs").mkdir(parents=True)
+        pack, same_url, other_url = _layer_one_and_layer_two(root, monkeypatch)
+        items = [same_url, other_url] if order == "forwards" else [other_url, same_url]
+
+        _harvest(pack, items, RUN_TWO, monkeypatch)
+
+        obj, _ = load_objects_with_dirs(pack)[0]
+        assert max(_runs(obj).values()) == 1
+        outcomes.append((obj.published_date, obj.source_url))
+
+    assert outcomes[0] == outcomes[1], (
+        f"discovery order changed the winner: {outcomes[0]} vs {outcomes[1]}"
+    )
+
+
+def test_t5_the_winner_is_the_lowest_identity_key(tmp_path, monkeypatch):
+    """T5 — pins the selection rule itself, so changing it is visible.
+
+    Asserted through the stored object rather than by reaching into the stage:
+    whichever sighting won is the one whose URL the object now carries.
+    """
+    pack, same_url, other_url = _layer_one_and_layer_two(tmp_path, monkeypatch)
+    expected = min([same_url, other_url], key=lambda i: i.identity.key)
+
+    _harvest(pack, [same_url, other_url], RUN_TWO, monkeypatch)
+
+    obj, _ = load_objects_with_dirs(pack)[0]
+    assert obj.published_date == expected.published_date
+
+
+def test_t6_unrelated_objects_each_still_get_their_own_update(tmp_path, monkeypatch):
+    """T6 — grouping must not collapse across distinct objects."""
+    pack = _pack_for_update(tmp_path)
+    first = make_item(title="First distinct feature", url="https://x.invalid/first",
+                      published_date=date(2026, 5, 1))
+    second = make_item(title="Second distinct feature", url="https://x.invalid/second",
+                       published_date=date(2026, 5, 1))
+    _harvest(pack, [first, second], RUN_ONE, monkeypatch)
+
+    first_v2 = make_item(title="First distinct feature", url="https://x.invalid/first",
+                         published_date=date(2026, 7, 1))
+    second_v2 = make_item(title="Second distinct feature", url="https://x.invalid/second",
+                          published_date=date(2026, 7, 1))
+    _harvest(pack, [first_v2, second_v2], RUN_TWO, monkeypatch)
+
+    stored = load_objects_with_dirs(pack)
+    assert len(stored) == 2
+    for obj, _ in stored:
+        assert max(_runs(obj).values()) == 1
+        assert obj.published_date == date(2026, 7, 1), "an object missed its update"

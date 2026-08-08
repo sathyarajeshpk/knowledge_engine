@@ -158,20 +158,57 @@ def update_existing(ctx: HarvestContext) -> None:
     minting path. That ordering makes the guarantee structural rather than a
     matter of reading the dedupe verdict correctly.
 
-    One sighting per identity: the same feature is legitimately listed by two
-    sources with different metadata, and letting both update made the object
-    flip between their renderings twice per harvest.
+    ## The invariant
+
+    **At most one update decision is applied to a stored object per run,
+    regardless of which identity layer produced the match.**
+
+    **When multiple decisions match the same stored object, the decision with
+    the lowest `identity.key` is selected.**
+
+    ## Why it is keyed on the object, not the identity
+
+    This guard used to key on `decision.item.identity.key` -- one sighting per
+    *identity* -- and the docstring claimed that was one sighting per feature.
+    It is not. `dedupe.classify` matches a stored object through two layers:
+    Layer 1 on identity key, Layer 2 on content fingerprint. An item reaching
+    Layer 2 **necessarily** carries a different identity key from the stored
+    object's, because a matching key would have been caught by Layer 1.
+
+    So two sightings could carry two identity keys, resolve to one object, and
+    both pass a guard keyed on the item. The object then took two revisions in
+    a single run -- reproduced against the engine in M9-3a, and exactly the
+    class of damage found in 35 objects on 2026-08-01.
+
+    ## Why the winner is the lowest identity key, not the first decision
+
+    Discovery order *is* deterministic (`sort_items`, ADR-0022), so taking the
+    first decision would have been reproducible. It would also have made the
+    winner depend on `published_date`, because that is the primary sort key --
+    and `published_date` is precisely what two disagreeing sightings disagree
+    about. That yields a hidden rule of "the earlier claimed date wins", which
+    systematically prefers the staler value and breaks silently if the sort key
+    is ever reordered.
+
+    `identity.key` is content-derived, unique, stable across machines, already
+    `sort_items`' own final tiebreaker, and independent of every disputed
+    field. It is arbitrary, but explicitly and stably so (M9-3b, O1).
     """
-    handled: set[str] = set()
+    by_object: dict[str, list] = {}
     for decision in ctx.decisions:
         if decision.is_new or not decision.matched:
             continue
-        key = decision.item.identity.key
-        if key in handled:
-            ctx.report.unchanged += 1
-            continue
-        handled.add(key)
-        _update_one(ctx, decision)
+        by_object.setdefault(decision.matched, []).append(decision)
+
+    # Objects processed in sorted order so the run's write order is
+    # deterministic too, not merely the choice within each group.
+    for feature_id in sorted(by_object):
+        candidates = by_object[feature_id]
+        winner = min(candidates, key=lambda d: d.item.identity.key)
+        # The losers are counted, not dropped silently: a suppressed sighting
+        # is still a sighting, and the run report should say so.
+        ctx.report.unchanged += len(candidates) - 1
+        _update_one(ctx, winner)
 
 
 def gate_and_mint(ctx: HarvestContext) -> None:

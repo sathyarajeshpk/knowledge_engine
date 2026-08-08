@@ -197,6 +197,9 @@ Not debt, but worth restating: **35 `REV002` warnings** persist on Fabric object
 They are residue from the M3 flip-flop bug, fixed in M3, and they remain because
 history is never rewritten. Correct behaviour, permanently visible.
 
+> **⚠ Corrected 2026-08-08 — see [`docs/CORRECTIONS.md`](../CORRECTIONS.md) entry C-1.** The attribution to the M3 flip-flop bug above is **wrong**. All of these revisions date from 2026-08-01 and were produced by four harvest runs that each appended two revisions to the same object. The original wording is left in place deliberately; the correction record explains what was believed, what the evidence shows, and why the conclusion failed.
+
+
 ---
 
 ## Risks for M9
