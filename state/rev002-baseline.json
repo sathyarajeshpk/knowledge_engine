@@ -1,0 +1,413 @@
+{
+  "_comment": "Historical REV002 findings accepted as baseline. These are known, bounded and characterised. This does NOT mean the 2026-08-01 incident has been explained - see docs/CORRECTIONS.md C-1. Matching is exact on (feature_id, first_revision, last_revision, changed_fields); every other field here is provenance for a human and never participates in matching.",
+  "generated_at": "2026-08-08",
+  "generated_from_commit": "1761468",
+  "incident": {
+    "runs": [
+      "run-2026-08-01T06-30-12Z",
+      "run-2026-08-01T06-30-16Z",
+      "run-2026-08-01T06-30-21Z",
+      "run-2026-08-01T06-30-43Z"
+    ],
+    "note": "All findings below are attributable to these runs, identified by the independent run_id audit oracle (ke.audit). The mechanism that produced them remains unidentified."
+  },
+  "findings": [
+    {
+      "feature_id": "MSF-2026-05-002",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-006",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-008",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-009",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash",
+        "date_confidence",
+        "date_precision",
+        "published_date",
+        "title"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-011",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash",
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-012",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-015",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash",
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-016",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash",
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-021",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash",
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-022",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-023",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-026",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash",
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-027",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash",
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-028",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-030",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-032",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-05-033",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash",
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-06-002",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-06-003",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash",
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-06-007",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-06-012",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash",
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-06-018",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-06-020",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-06-021",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-06-024",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash",
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-06-025",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-06-028",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-06-031",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-06-045",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash",
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-07-002",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-07-010",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash",
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-07-011",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-07-013",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-07-019",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash",
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    },
+    {
+      "feature_id": "MSF-2026-07-021",
+      "first_revision": 2,
+      "last_revision": 11,
+      "changed_fields": [
+        "content_hash",
+        "date_confidence",
+        "date_precision",
+        "published_date"
+      ],
+      "pack": "microsoft-fabric"
+    }
+  ]
+}

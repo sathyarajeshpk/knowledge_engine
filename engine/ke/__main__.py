@@ -799,15 +799,19 @@ def _report(repo_root: Path, findings: list[Finding], *, strict: bool) -> None:
 
     for location in sorted(by_location):
         for finding in sorted(
-            by_location[location], key=lambda f: (f.level is not Level.ERROR, f.code)
+            by_location[location], key=lambda f: (f.level is Level.INFO, f.level is not Level.ERROR, f.code)
         ):
             print(finding)
 
     errors = sum(1 for f in findings if f.level is Level.ERROR)
-    warnings = len(findings) - errors
+    warnings = sum(1 for f in findings if f.level is Level.WARNING)
+    # Counted explicitly rather than as `len(findings) - errors`, which silently
+    # reported INFO findings as warnings the moment the INFO tier was added.
+    info = sum(1 for f in findings if f.level is Level.INFO)
     print(
         f"\n{pack_count} pack(s), {scanned} knowledge object(s): "
         f"{errors} error(s), {warnings} warning(s)"
+        + (f", {info} accepted as baseline" if info else "")
         + (" (strict: warnings fail)" if strict else "")
     )
 
