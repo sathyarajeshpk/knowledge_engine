@@ -596,3 +596,179 @@ def test_an_unparseable_source_entry_is_reported_rather_than_raised(
 
     findings = validate_repo(repo)
     assert any(f.code == "SEC002" for f in findings)
+
+
+# ---------------------------------------------------------------------------
+# Gate C — REV002 run-based detection (M9-4)
+# ---------------------------------------------------------------------------
+#
+# The oracle for these tests is `ke.audit.duplicate_write_objects`, which reads
+# `run_id` and never `changed_fields`. REV002 is never used to validate REV002.
+
+
+def _rev(number: int, fields: tuple[str, ...], run: str = "r"):
+    return Revision(
+        revision=number,
+        date=date(2026, 8, number if number < 29 else 28),
+        changed_fields=fields,
+        content_hash=f"sha256:{number:064d}",
+        run_id=run,
+    )
+
+
+def _object_with_revisions(revisions):
+    return make_object(revisions=tuple(revisions))
+
+
+def _rev002(pack, obj, tmp_path):
+    """Findings for one object, via the real check. Returns REV002 codes only."""
+    from ke.validate import _check_revision_history
+
+    return [f for f in _check_revision_history(pack, tmp_path / "feature.md", obj)
+            if f.code == "REV002"]
+
+
+FLIP = ("date_confidence", "date_precision", "published_date")
+
+
+def test_gate_c_rev002_matches_the_independent_oracle_exactly(tmp_path) -> None:
+    """The Gate C criterion: **exact set equality**, not equal counts.
+
+    The expected set is derived from `run_id` — one run appending two revisions
+    to one object — which never inspects `changed_fields`, so it cannot be
+    circular with the detector it validates.
+
+    Equal cardinality over different sets is a failure, which is why this
+    asserts both differences are empty rather than comparing lengths.
+    """
+    import re
+
+    from ke.audit import duplicate_write_objects
+    from ke.pack import Pack, find_repo_root
+
+    repo_root = find_repo_root(Path(__file__))
+    expected = set(duplicate_write_objects(Pack.discover(repo_root)))
+
+    pattern = re.compile(r"/((?:[A-Z]{2,4})-\d{4}-\d{2}-\d{3})")
+    actual = {
+        pattern.search(f.location).group(1)
+        for f in validate_repo(repo_root)
+        if f.code == "REV002"
+    }
+
+    assert expected - actual == set(), f"oracle objects missed: {sorted(expected - actual)}"
+    assert actual - expected == set(), f"healthy objects flagged: {sorted(actual - expected)}"
+    assert expected == actual
+
+
+def test_a_later_genuine_revision_does_not_clear_the_finding(pack_root, tmp_path) -> None:
+    """The masking defect, tested directly.
+
+    Whole-chain uniformity meant one real edit after a flip-flop erased the
+    finding permanently. Measured on the live repository: 35 objects carried the
+    signature, one weekly harvest appended a genuine edit to 29 of them, and the
+    count silently fell to 6 with nothing fixed.
+
+    A flip-flop that happened is a fact about the object's history. Later
+    legitimate activity does not undo it.
+    """
+    pack = Pack.load(pack_root)
+    flipping = _object_with_revisions(
+        [_rev(1, ())] + [_rev(n, FLIP) for n in range(2, 6)]
+    )
+    assert _rev002(pack, flipping, tmp_path), "the flip-flop itself was not detected"
+
+    # The synthetic later genuine revision — a real content edit, as a weekly
+    # harvest would append.
+    with_later_edit = _object_with_revisions(
+        [_rev(1, ())]
+        + [_rev(n, FLIP) for n in range(2, 6)]
+        + [_rev(6, ("content_hash", "title"))]
+    )
+
+    assert _rev002(pack, with_later_edit, tmp_path), (
+        "a later genuine revision cleared an existing REV002 finding"
+    )
+
+
+def test_a_run_anywhere_in_the_chain_is_detected(pack_root, tmp_path) -> None:
+    """Not only a run at the start. The old check required the whole chain."""
+    pack = Pack.load(pack_root)
+    obj = _object_with_revisions(
+        [_rev(1, ()), _rev(2, ("title",))]
+        + [_rev(n, FLIP) for n in range(3, 7)]
+        + [_rev(7, ("summary",))]
+    )
+
+    assert _rev002(pack, obj, tmp_path)
+
+
+def test_a_healthy_chain_of_varied_edits_is_not_flagged(pack_root, tmp_path) -> None:
+    """Guards the REVISE branch: over-detection is as wrong as under-detection."""
+    pack = Pack.load(pack_root)
+    obj = _object_with_revisions([
+        _rev(1, ()),
+        _rev(2, ("title",)),
+        _rev(3, ("summary",)),
+        _rev(4, ("published_date",)),
+        _rev(5, ("title",)),
+        _rev(6, ("summary",)),
+    ])
+
+    assert not _rev002(pack, obj, tmp_path)
+
+
+def test_two_consecutive_identical_revisions_are_not_enough(pack_root, tmp_path) -> None:
+    """Three is the threshold, unchanged since M5. Two ordinary edits touching
+    the same field is a coincidence, not a signature."""
+    pack = Pack.load(pack_root)
+    obj = _object_with_revisions([_rev(1, ()), _rev(2, FLIP), _rev(3, FLIP)])
+
+    assert not _rev002(pack, obj, tmp_path)
+
+
+def test_the_audit_oracle_emits_no_validation_finding(tmp_path) -> None:
+    """The oracle must not become a second live warning users reconcile against.
+
+    `ke.audit` exists to validate REV002 and to identify the historical set. If
+    it ever started emitting findings it would stop being independent of the
+    thing it validates.
+    """
+    import inspect
+
+    from ke import audit
+    from ke.pack import Pack, find_repo_root
+
+    source = inspect.getsource(audit)
+    assert "Finding(" not in source, "the audit oracle emits validation findings"
+
+    repo_root = find_repo_root(Path(__file__))
+    codes = {f.code for f in validate_repo(repo_root)}
+    assert not any(code.startswith("AUD") for code in codes)
+
+
+def test_the_audit_oracle_never_reads_changed_fields(tmp_path) -> None:
+    """What makes it a valid oracle for a `changed_fields`-based detector.
+
+    Asserted against the source, because the property is *how* the answer is
+    reached, not what the answer is — a correct result computed the wrong way
+    would still be circular.
+    """
+    import ast
+    import inspect
+
+    from ke import audit
+
+    # Parsed, not grepped. The module's *prose* discusses `changed_fields` at
+    # length — explaining precisely why it does not read them — so a text search
+    # would fail on the documentation that makes the property clear. The
+    # property is about executed code, so the check is about executed code.
+    tree = ast.parse(inspect.getsource(audit))
+    referenced = {
+        node.attr for node in ast.walk(tree) if isinstance(node, ast.Attribute)
+    } | {
+        node.value for node in ast.walk(tree)
+        if isinstance(node, ast.Constant) and isinstance(node.value, str)
+        and node.col_offset > 0  # string literals used as values, not docstrings
+    }
+    assert "changed_fields" not in referenced
