@@ -1,13 +1,42 @@
 # M9 Gate B — REV002 detection (work item M9-3)
 
-**Status:** Proposed, for approval. **No implementation code written.**
+**Status:** **APPROVED 2026-08-08** (H-B, M9-3a, and the record correction).
+Revised to record the approved criteria and sequencing. **No implementation code written.**
 **Baseline:** merged `main` at `dce0840` (post M9-2). 2 packs, 431 objects, 679 tests.
 
 Every claim is labelled **[measured]**, **[derived]** or **[estimate]**.
 
 ---
 
-## 0. The headline, because it changes the milestone
+## 0. Approved decisions and sequencing
+
+| # | Decision |
+|---|---|
+| **B1** | **H-B approved**, with the success criterion being **exact set equality**, not cardinality. |
+| **B2** | **M9-3a approved** and inserted **before** grandfathering. Its objective is *not* to prove the defect still exists — it is to determine whether the current system can still produce the same class of corruption. |
+| **B3** | **Record correction approved.** Filed as `docs/CORRECTIONS.md` entry C-1. No document was silently rewritten. |
+
+### Approved sequence — no step may be skipped
+
+```
+M9-3a   reproduce / refute the double-revision defect
+   |
+M9-3    establish independent ground truth + run-based detection
+   |
+        verify detection against the independent oracle (set equality)
+   |
+        establish the grandfather baseline — only once detection is trustworthy
+   |
+        only then consider enabling `--strict`
+```
+
+**No grandfathering and no `--strict` before that evidence exists.** No
+production implementation beyond approved investigation and design work until
+the relevant gate is approved.
+
+---
+
+## 0b. The headline, because it changes the milestone
 
 The ground-truth work did not confirm the story I had been telling. It
 contradicted it.
@@ -107,6 +136,41 @@ This is the right oracle because:
 * It is **falsifiable and was nearly falsified** — candidates A and B both
   disagreed with 35, which is what makes C's agreement informative rather than
   assumed.
+
+### Why "one run + two revisions + one object" is sufficient to identify the defect
+
+Preserved explicitly, because the whole validation rests on it.
+
+The revision contract is that **a revision records a change observed by a run**.
+A run reads the stored object once, compares it against what discovery produced,
+and appends **at most one** revision describing the difference. There is no code
+path in which a single run legitimately observes one object change twice: the
+run holds one view of the source and one view of storage.
+
+So two revisions bearing the same `run_id` on the same object mean the update
+path executed twice within one run against the same object. Whatever
+`changed_fields` says, the second revision cannot describe a real-world change —
+nothing outside the process changed between them. It is a duplicate write, and
+duplicate writes are the mechanism that produced the long uniform chains.
+
+This is why the oracle needs **no judgement about values**, and why it avoids
+the two traps that sank candidates A and B:
+
+* It does not care whether `content_hash` moved (dates are not in the hash).
+* It does not care what `changed_fields` claims — that is the thing under test.
+
+It reads one field, `run_id`, whose meaning is fixed by the engine's run
+identity and not by the detection logic being validated.
+
+### Cardinality agreement is weak evidence. Set equality is the requirement.
+
+| | |
+|---|---|
+| **Cardinality agreement** ("both give 35") | **Weak.** Two definitions can produce equal counts over disjoint or partly-overlapping sets. It is consistent with both being wrong. |
+| **Exact set equality** ("both give the *same* 35") | **The required validation.** Verified: both differences empty, in both directions. |
+
+**If the implementation later produces the same count but a different
+object/revision set, that is a FAILURE**, not a pass. §6 encodes this.
 
 ### The one caveat, stated rather than buried
 
@@ -209,6 +273,45 @@ F-B1 is a real fallback — measured, implementable, and narrower on purpose.
 
 ---
 
+## 8b. M9-3a — reproduce or refute the double-revision defect
+
+**Approved (B2).** Runs *before* M9-3, and before any grandfathering.
+
+**Objective, as approved:** not to prove the defect still exists, but to
+determine whether the current system **can still produce the same class of
+corruption**.
+
+### Three outcomes, each with a defined consequence
+
+| Outcome | Consequence |
+|---|---|
+| **Reproduced** | A live correctness defect. **Fix the underlying cause before grandfathering** — and before `--strict`, which ranks below a bug that corrupts revision history. |
+| **Refuted** | Document **why the current engine can no longer produce it**, with evidence: the specific code path that prevents it, and what changed since 2026-08-01. Then proceed to M9-3. |
+| **Inconclusive** | **Do not grandfather.** Define explicitly what additional evidence would be required, and treat that as a blocking work item rather than a caveat. |
+
+### What is explicitly not sufficient evidence
+
+**[measured]** The one clean scheduled harvest since — `run-2026-08-02T08-00-14Z`
+— appended exactly one revision per object and is not in the offending list.
+
+**A single clean weekly harvest does not refute the defect.** The four bad runs
+were seconds apart; the weekly cron never reproduces that condition, so a clean
+weekly run does not exercise the circumstance under suspicion. Refutation
+requires identifying the mechanism, not observing its absence once.
+
+### Candidate mechanisms to investigate
+
+Listed now so the investigation is not shaped by whichever is found first:
+
+* Repeated `ke harvest` invocations racing, under lock behaviour as it stood
+  before M6's lock or before M8's isolation fix.
+* The update path executing twice within one `run_stages` pass.
+* A retry or fallback in the acquisition chain re-entering the update stage.
+* Two packs' harvests interleaving over a shared object — implausible given pack
+  isolation, but on the list rather than assumed away.
+
+---
+
 ## 9. Impact on grandfathering and `--strict`
 
 **This section is why I am bringing the proposal back rather than proceeding.**
@@ -226,13 +329,8 @@ not proof the defect is fixed; those four runs were seconds apart, which is a
 condition the weekly cron does not reproduce and which I have not tried to
 reproduce deliberately.
 
-So I recommend **inserting a step before grandfathering**:
-
-> **M9-3a — establish whether one run can still append two revisions to one
-> object.** Attempt to reproduce it deliberately against the current engine. If
-> it reproduces, it is a live correctness defect and takes priority over
-> `--strict` entirely. If it does not, record what changed and *then*
-> grandfather with confidence.
+**M9-3a is approved and inserted before grandfathering** — see §8b for its
+objective and its three defined outcomes.
 
 Grandfathering a defect that can still occur would convert REV002 from a warning
 into permanent noise, and the next real occurrence would be invisible — the
@@ -246,13 +344,10 @@ history).
 
 ---
 
-## 10. What I need from you
+## 10. Status
 
-1. **Approve H-B and the §6 thresholds**, or amend them.
-2. **Approve inserting M9-3a** — reproduce-or-refute the double-revision defect
-   — before grandfathering. This is a scope addition and it is your call.
-3. **Note the correction.** The "M3 residue" claim in the M8 release notes, PR
-   #17 and the M9 plan is wrong on the evidence. I propose correcting those
-   documents as part of M9-3 rather than leaving the record wrong.
+All three decisions approved 2026-08-08 (§0). The record correction is filed as
+`docs/CORRECTIONS.md` entry C-1, with inline notes added to every document that
+carried the incorrect claim; no original wording was removed.
 
-No implementation code will be written until you approve.
+Next step is **M9-3a**, an investigation with no production implementation.
