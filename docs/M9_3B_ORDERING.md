@@ -1,6 +1,6 @@
 # M9-3b — Discovery ordering, and the final fix design
 
-**Status:** Findings for approval. **No implementation code written.**
+**Status:** **APPROVED 2026-08-08.** Decisions recorded in §8; implementation follows.
 **Engine inspected:** merged `main` at `dce0840`
 
 ---
@@ -88,7 +88,17 @@ invariant that does not exist.** Not proposed.
 
 ---
 
-## 4. Recommended tie-break: lowest `identity.key`
+## 4. Selection invariant (approved)
+
+Recorded as an **invariant**, not an implementation detail:
+
+> **At most one update decision is applied to a stored object per run, regardless
+> of which identity layer produced the match.**
+>
+> **When multiple decisions match the same stored object, the decision with the
+> lowest `identity.key` is selected.**
+
+### Why this tie-break
 
 ```
 Among decisions matching the same stored object, apply the one whose
@@ -216,12 +226,12 @@ To be used verbatim wherever this is referenced:
 
 ---
 
-## 8. For approval
+## 8. Approved decisions (2026-08-08)
 
-1. **The ordering decision** — lowest `identity.key`, with positional order
-   rejected for the reason in §2 despite being contractually deterministic.
-2. **The final fix expression** in §5.
-3. **The regression-test design** in §6.
-4. **The wording** in §7.
-
-No implementation until approved.
+| # | Decision |
+|---|---|
+| **O1** | **Ordering:** lowest `identity.key` as the explicit tie-break. Positional first-wins rejected — contractually deterministic, but it makes the winner depend on `published_date`, the disputed field, creating a hidden "earlier claimed date wins" rule. |
+| **O2** | **Fix model:** classify → group by matched object → select lowest `identity.key` → suppress the rest under existing duplicate semantics → process objects in deterministic sorted order. Not a positional one-liner. |
+| **O3** | **All six regression tests** proceed. T4 (order independence) and T3 (Layer-1 unchanged) called out specifically. Tests assert on `run_id` and revision counts — never on REV002 or revision identity. |
+| **O4** | **§7 wording kept verbatim.** Not a blocker for the fix; **is** a blocker for declaring the 2026-08-01 incident explained. |
+| **O5** | **Implementation boundary:** do not modify historical evidence, do not grandfather the 2026-08-01 groups, do not enable `--strict`, do not broaden the fix beyond the demonstrated invariant. |
