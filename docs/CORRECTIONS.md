@@ -108,5 +108,18 @@ removed.
       `claude/knowledge-engine-planning-0fu2z6`, so it cannot be annotated here.
       Its §4 rests on the incorrect explanation and must be corrected if that
       branch is ever merged. Recorded rather than quietly skipped.
-- [ ] PR #17 description — merged and immutable in effect; to be annotated by
-      comment rather than edited, so the original stays legible.
+- [x] PR #17 — annotated by **comment** on the merged PR, not by editing the
+      description. Merged history is not rewritten; the original wording stays
+      legible and the comment points here.
+
+### Follow-up from M9-3a (2026-08-08)
+
+`docs/M9_3A_FINDINGS.md` records the investigation this correction triggered.
+Outcome: **Reproduced** — the current engine can still produce the defect class.
+
+One part of C-1 remains **open**: the specific mechanism behind the 2026-08-01
+damage is still unidentified. The reproduced path necessarily rewrites
+`url_hash`/`source_url`, and **zero** of the 35 historical duplicate groups do
+**[measured]**. The likely explanation is the pre-guard code that ran at 06:30,
+but that is an inference and is deliberately not being recorded as fact — which
+is the same trap this entry exists to document.
