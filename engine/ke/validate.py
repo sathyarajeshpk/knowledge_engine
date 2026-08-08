@@ -31,6 +31,7 @@ from ke.models import (
     GenerationStatus,
     KnowledgeObject,
 )
+from ke.baseline import BASELINE_PATH
 from ke.pack import OBJECT_SUBDIRS, PACKS_DIRNAME, REQUIRED_PACK_KEYS, Pack, PackError
 
 #: Schema versions this build of the engine understands.
@@ -43,6 +44,11 @@ H1_PATTERN = re.compile(r"^#\s+(?P<title>.+?)\s*$", re.MULTILINE)
 class Level(StrEnum):
     ERROR = "error"
     WARNING = "warning"
+    #: Reported, but never a build failure -- not even under `--strict`.
+    #: Currently used only for findings a committed baseline has accepted as
+    #: history (`ke.baseline`). A downgraded finding stays visible; hiding it
+    #: would be the silent suppression this milestone removed.
+    INFO = "info"
 
 
 @dataclass(frozen=True)
@@ -74,14 +80,14 @@ class LoadedObject:
 # ---------------------------------------------------------------------------
 
 
-def validate_pack(pack: Pack) -> list[Finding]:
+def validate_pack(pack: Pack, baseline=None) -> list[Finding]:
     """Validate one Domain Pack end to end."""
     findings: list[Finding] = []
     findings.extend(_check_pack_config(pack))
 
     loaded: list[LoadedObject] = []
     for object_dir in pack.iter_object_dirs():
-        object_findings, parsed = _check_object(pack, object_dir)
+        object_findings, parsed = _check_object(pack, object_dir, baseline)
         findings.extend(object_findings)
         if parsed is not None:
             loaded.append(parsed)
@@ -112,6 +118,10 @@ def validate_repo(repo_root: Path, pack_name: str | None = None) -> list[Finding
                 )
             ]
 
+    from ke.baseline import Baseline
+
+    baseline = Baseline.load(repo_root)
+
     findings: list[Finding] = []
 
     # Runs whatever `--pack` says. A symlink out of `domain-packs/` is a fact
@@ -139,7 +149,7 @@ def validate_repo(repo_root: Path, pack_name: str | None = None) -> list[Finding
                 )
             )
             continue
-        findings.extend(validate_pack(pack))
+        findings.extend(validate_pack(pack, baseline))
         loaded.append(pack)
 
     # Whole-repository checks. These cannot be done per pack by definition: a
@@ -152,6 +162,24 @@ def validate_repo(repo_root: Path, pack_name: str | None = None) -> list[Finding
     # false alarm caused by the flag rather than by the data.
     if pack_name is None and len(loaded) > 1:
         findings.extend(_validate_across_packs(loaded))
+
+    # Stale baseline entries -- only meaningful when the whole repository was
+    # validated. Under `--pack` the other packs were deliberately not walked, so
+    # their entries would look stale because of the flag rather than the data.
+    if pack_name is None:
+        findings.extend(
+            Finding(
+                Level.WARNING,
+                "REV003",
+                str(BASELINE_PATH),
+                f"baseline entry matches no current finding: {key.describe()}. "
+                "Either the object was removed, its history was rewritten (both "
+                "forbidden), or the entry was wrong. Entries are never dropped "
+                "automatically -- remove it in a reviewed change if it is right "
+                "to.",
+            )
+            for key in baseline.stale()
+        )
     return findings
 
 
@@ -270,7 +298,10 @@ def has_errors(findings: Iterable[Finding], strict: bool = False) -> bool:
     """
     findings = list(findings)
     if strict:
-        return bool(findings)
+        # `bool(findings)` would fail on INFO too, which would make the
+        # baseline downgrade achieve nothing -- the whole point of INFO is that
+        # it is reported without failing the build.
+        return any(finding.level is not Level.INFO for finding in findings)
     return any(finding.level is Level.ERROR for finding in findings)
 
 
@@ -355,7 +386,7 @@ def _check_pack_config(pack: Pack) -> list[Finding]:
 # ---------------------------------------------------------------------------
 
 
-def _check_object(pack: Pack, object_dir: Path) -> tuple[list[Finding], LoadedObject | None]:
+def _check_object(pack: Pack, object_dir: Path, baseline=None) -> tuple[list[Finding], LoadedObject | None]:
     """Validate one knowledge object directory.
 
     Returns the findings plus the parsed object, or `None` if it could not be
@@ -413,7 +444,7 @@ def _check_object(pack: Pack, object_dir: Path) -> tuple[list[Finding], LoadedOb
     findings.extend(_check_generation(location, object_dir, obj))
     if feature_path.is_file():
         findings.extend(_check_feature_document(pack, feature_path, obj))
-        findings.extend(_check_revision_history(pack, feature_path, obj))
+        findings.extend(_check_revision_history(pack, feature_path, obj, baseline))
 
     return findings, LoadedObject(directory=object_dir, obj=obj)
 
@@ -602,7 +633,7 @@ def _check_category(pack: Pack, location: str, obj: KnowledgeObject) -> list[Fin
     return []
 
 
-def _check_revision_history(pack: Pack, path: Path, obj: KnowledgeObject) -> list[Finding]:
+def _check_revision_history(pack: Pack, path: Path, obj: KnowledgeObject, baseline=None) -> list[Finding]:
     """Check an object's history for the ways it can be wrong.
 
     A history that cannot be believed is worse than no history, because nothing
@@ -627,9 +658,23 @@ def _check_revision_history(pack: Pack, path: Path, obj: KnowledgeObject) -> lis
     for fields, length, start in identical_runs(
         [canonical_fields(rev.changed_fields) for rev in obj.revisions[1:]]
     ):
+        # Exact match only -- all four key components. A partial match is not a
+        # match, and there is no fuzzy matching anywhere in this path.
+        grandfathered = False
+        if baseline is not None:
+            from ke.baseline import BaselineKey
+
+            grandfathered = baseline.match(
+                BaselineKey(
+                    feature_id=str(obj.id),
+                    first_revision=start,
+                    last_revision=start + length - 1,
+                    changed_fields=fields,
+                )
+            )
         findings.append(
             Finding(
-                Level.WARNING,
+                Level.INFO if grandfathered else Level.WARNING,
                 "REV002",
                 location,
                 f"revisions {start}-{start + length - 1} all record the same change "
