@@ -161,7 +161,7 @@ def validate_repo(repo_root: Path, pack_name: str | None = None) -> list[Finding
     # reference as dangling because the target was filtered out would be a
     # false alarm caused by the flag rather than by the data.
     if pack_name is None and len(loaded) > 1:
-        findings.extend(_validate_across_packs(loaded))
+        findings.extend(_validate_across_packs(loaded, repo_root))
 
     # Stale baseline entries -- only meaningful when the whole repository was
     # validated. Under `--pack` the other packs were deliberately not walked, so
@@ -222,7 +222,7 @@ def _check_escaping_links(repo_root: Path) -> list[Finding]:
     ]
 
 
-def _validate_across_packs(packs: list[Pack]) -> list[Finding]:
+def _validate_across_packs(packs: list[Pack], repo_root: Path) -> list[Finding]:
     """Referential integrity and duplicate reporting across the whole repository.
 
     Cross-pack duplicates are a **warning**, never an error. Two packs holding
@@ -230,8 +230,28 @@ def _validate_across_packs(packs: list[Pack]) -> list[Finding]:
     two taxonomies, useful to two different questions -- and the engine has no
     way to tell that from a true duplicate. Failing CI over it would make a
     judgement the engine is not entitled to make (ADR-0044).
+
+    ## Acknowledgement is honoured here, as it already was in `ke review`
+
+    An acknowledged duplicate is reported as **INFO**: still visible, no longer
+    blocking. ADR-0044 promised that "a resolution is recorded so the same
+    duplicate is not repeatedly surfaced", and until M9 that promise was only
+    kept by `ke review`, which reads `outstanding()`. This function read
+    `find_duplicates()` and reported every pair regardless -- so acknowledging a
+    duplicate cleared the review queue and left the validation warning standing
+    (ADR-0046).
+
+    That gap mattered because `--strict` fails on any warning. A legitimate
+    cross-pack duplicate would have failed CI with **no way to clear it**: the
+    acknowledgement mechanism built for exactly that case had no effect on the
+    check that failed.
+
+    Acknowledged pairs become INFO rather than disappearing, for the same reason
+    baselined REV002 findings do: a suppression nobody can see is one nobody can
+    audit. **The engine still does not resolve the duplicate or choose a
+    winner** -- both objects are kept, untouched, exactly as ADR-0044 requires.
     """
-    from ke.crosspack import dangling_references, find_duplicates
+    from ke.crosspack import Resolutions, dangling_references, find_duplicates
 
     findings: list[Finding] = []
 
@@ -245,10 +265,23 @@ def _validate_across_packs(packs: list[Pack]) -> list[Finding]:
             )
         )
 
+    resolutions = Resolutions.load(repo_root)
     for pair in find_duplicates(packs):
         where = " and ".join(
             f"{side.pack_name}:{side.feature_id}" for side in pair.sides
         )
+        if resolutions.is_acknowledged(pair):
+            findings.append(
+                Finding(
+                    Level.INFO,
+                    "XPK001",
+                    PACKS_DIRNAME,
+                    f"the same {pair.basis} is held by {where}; reviewed and "
+                    "accepted — both are kept, and the engine has not chosen "
+                    "between them",
+                )
+            )
+            continue
         findings.append(
             Finding(
                 Level.WARNING,

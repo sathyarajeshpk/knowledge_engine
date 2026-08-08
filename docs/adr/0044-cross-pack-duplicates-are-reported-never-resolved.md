@@ -1,9 +1,13 @@
 # ADR-0044 — Cross-pack duplicates are detected and reported, never merged, dropped or blocked
 
-**Status:** Accepted
+**Status:** Accepted — **amended by ADR-0046**
 **Date:** 2026-08-01
 **Relates to:** ADR-0014 (never auto-drop), ADR-0016 (a pack is a source
 boundary and an ID namespace), ADR-0022 (deterministic output)
+**Amended by:** ADR-0046 — an *acknowledged* duplicate is reported as `INFO`
+rather than `WARNING`, so it no longer blocks `--strict`. Nothing in the
+decision below is reversed: both objects are still kept, the engine still picks
+no winner, and an *unreviewed* duplicate is still a warning.
 
 ## Context
 
@@ -67,6 +71,13 @@ people to ignore it.
 duplicate would make a judgement the engine is not entitled to make. Contrast
 REF001 — a reference resolving to no object in any pack — which *is* an error,
 because that is unambiguously wrong.
+
+> **Amended by ADR-0046.** Still never an error. But `ke validate` now reads the
+> resolution store, so an *acknowledged* duplicate is `INFO` rather than
+> `WARNING`. As written, this clause and the resolution store above contradicted
+> each other under `--strict`: acknowledging cleared `ke review` and left the
+> `ke validate` warning standing, with no way to clear it short of deleting real
+> knowledge.
 
 **Cross-pack references are legitimate.** Validation resolves a relationship
 against the whole repository rather than one pack, so an Azure object may be a

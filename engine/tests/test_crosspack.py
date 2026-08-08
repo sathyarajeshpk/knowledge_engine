@@ -400,6 +400,270 @@ def test_a_corrupt_resolution_store_degrades_rather_than_stopping(repo, two_pack
 
 
 # ---------------------------------------------------------------------------
+# Acknowledgement and `ke validate` (ADR-0046, amending ADR-0044)
+# ---------------------------------------------------------------------------
+#
+# ADR-0044 promised two things: XPK001 warns and never errors, and "a resolution
+# is recorded so the same duplicate is not repeatedly surfaced". Until M9 only
+# `ke review` kept the second promise -- it reads `outstanding()`, which filters
+# acknowledged pairs, while `ke validate` read `find_duplicates()`, which does
+# not. Two commands disagreed about the same fact, and the one that disagreed was
+# the one CI runs.
+#
+# Everything below pins the corrected behaviour *and* the three properties
+# ADR-0044 still owns, because those are what a future change is most likely to
+# break while making this file pass.
+
+
+SECOND_URL = "https://learn.invalid/a-second-shared-announcement"
+
+
+def second_shared_item(source: str):
+    """A second genuine duplicate, so "a different pair" is testable."""
+    return make_item(title="Another feature both packs found", url=SECOND_URL,
+                     source_name=source)
+
+
+def _xpk(repo) -> list:
+    from ke.validate import validate_repo
+
+    return [f for f in validate_repo(Path(repo)) if f.code == "XPK001"]
+
+
+def _acknowledge(repo, packs, pair, note="") -> None:
+    resolutions = Resolutions.load(Path(repo))
+    resolutions.acknowledge(pair, today=TODAY, note=note)
+    resolutions.save(Path(repo))
+
+
+@pytest.fixture
+def duplicated(repo, two_packs, monkeypatch):
+    """Two packs holding one genuine cross-pack duplicate."""
+    alpha, beta = two_packs
+    harvest(alpha, [shared_item("alpha-source")], monkeypatch)
+    harvest(beta, [shared_item("beta-source")], monkeypatch)
+    return repo, [alpha, beta]
+
+
+def test_an_unreviewed_duplicate_is_reported_as_a_warning(duplicated):
+    """Nobody has looked at it yet, so it is worth stopping for."""
+    from ke.validate import Level
+
+    repo, _ = duplicated
+
+    findings = _xpk(repo)
+
+    assert len(findings) == 1
+    assert findings[0].level is Level.WARNING
+
+
+def test_an_unreviewed_duplicate_blocks_strict_but_is_never_an_error(duplicated):
+    """Both halves matter, and they are the two halves of ADR-0044 plus M9.
+
+    It must block `--strict` -- otherwise acknowledgement decides nothing and
+    the whole mechanism is decorative. It must **not** be an ERROR -- that would
+    fail an ordinary `ke validate` over a judgement the engine is not entitled
+    to make, which ADR-0044 forbids and ADR-0046 does not change.
+    """
+    from ke.validate import has_errors
+
+    repo, _ = duplicated
+    findings = _xpk(repo)
+
+    assert has_errors(findings, strict=True), "an unreviewed duplicate passed --strict"
+    assert not has_errors(findings), "XPK001 became an error"
+
+
+def test_an_acknowledged_duplicate_is_downgraded_to_info(duplicated):
+    from ke.validate import Level
+
+    repo, packs = duplicated
+    _acknowledge(repo, packs, find_duplicates(packs)[0], note="two sources, one feature")
+
+    findings = _xpk(repo)
+
+    assert len(findings) == 1
+    assert findings[0].level is Level.INFO
+
+
+def test_an_acknowledged_duplicate_does_not_block_strict(duplicated):
+    """The point of the change: a reviewed duplicate has a way to be cleared.
+
+    Before ADR-0046 the only ways past a legitimate cross-pack duplicate under
+    `--strict` were deleting real knowledge or turning `--strict` off.
+    """
+    from ke.validate import has_errors
+
+    repo, packs = duplicated
+    assert has_errors(_xpk(repo), strict=True)
+
+    _acknowledge(repo, packs, find_duplicates(packs)[0])
+
+    assert not has_errors(_xpk(repo), strict=True)
+
+
+def test_an_acknowledged_duplicate_is_still_reported(duplicated):
+    """Downgraded, not hidden. A suppression nobody can see is one nobody can audit.
+
+    The same choice the REV002 baseline makes, for the same reason.
+    """
+    repo, packs = duplicated
+    _acknowledge(repo, packs, find_duplicates(packs)[0])
+
+    findings = _xpk(repo)
+
+    assert len(findings) == 1, "the finding was removed rather than downgraded"
+    for feature_id in find_duplicates(packs)[0].feature_ids:
+        assert feature_id in findings[0].message
+    assert "reviewed and accepted" in findings[0].message
+
+
+def test_validate_and_review_now_agree_about_the_same_duplicate(duplicated):
+    """The defect ADR-0046 fixes, stated directly.
+
+    `ke review` and `ke validate` are two views of one fact. Acknowledging used
+    to clear the first and leave the second standing.
+    """
+    repo, packs = duplicated
+
+    assert len(outstanding(packs, Path(repo))) == 1
+    assert [f.level.name for f in _xpk(repo)] == ["WARNING"]
+
+    _acknowledge(repo, packs, find_duplicates(packs)[0])
+
+    assert outstanding(packs, Path(repo)) == []
+    assert [f.level.name for f in _xpk(repo)] == ["INFO"]
+
+
+def test_acknowledging_does_not_resolve_the_duplicate(duplicated):
+    """ADR-0044's central rule, unchanged and asserted on the bytes.
+
+    Both objects are kept, neither is modified, nothing is merged or dropped.
+    The duplicate is still a duplicate -- only the *reporting level* moved.
+    """
+    repo, packs = duplicated
+
+    before = {
+        str(path): (Path(path) / "metadata.yaml").read_bytes()
+        for pack in packs
+        for _, path in load_objects_with_dirs(pack)
+    }
+    assert len(before) == 2
+
+    _acknowledge(repo, packs, find_duplicates(packs)[0])
+    _xpk(repo)   # a full validate, in case validation itself writes
+
+    after = {
+        str(path): (Path(path) / "metadata.yaml").read_bytes()
+        for pack in packs
+        for _, path in load_objects_with_dirs(pack)
+    }
+
+    assert before == after, "acknowledging modified a knowledge object"
+    assert len(find_duplicates(packs)) == 1, "the duplicate stopped being detected"
+
+
+def test_acknowledging_does_not_record_a_winner(duplicated):
+    """It records that a human looked, not which object is right.
+
+    The engine has no basis for choosing between two packs' taxonomies and never
+    will, so the stored record must not imply one.
+    """
+    repo, packs = duplicated
+    _acknowledge(repo, packs, find_duplicates(packs)[0])
+
+    entry = json.loads(
+        (Path(repo) / CROSS_PACK_STATE).read_text(encoding="utf-8")
+    )["acknowledged"]
+    stored = next(iter(entry.values()))
+
+    assert set(stored) == {"basis", "acknowledged_on", "note", "objects"}
+    assert len(stored["objects"]) == 2
+    for side in stored["objects"]:
+        assert set(side) == {"pack", "id", "title", "url"}
+
+
+def test_a_different_pair_is_not_covered_by_an_existing_acknowledgement(
+    repo, two_packs, monkeypatch
+):
+    """The safety property. Acknowledgement is keyed on the Feature ID pair.
+
+    A *new* duplicate is a different key, matches nothing, and still blocks --
+    the same reasoning that makes the REV002 baseline safe. Without this the
+    fix would be a blanket "cross-pack duplicates stop mattering once you have
+    acknowledged any one of them".
+    """
+    from ke.validate import Level, has_errors
+
+    alpha, beta = two_packs
+    harvest(alpha, [shared_item("alpha-source"), second_shared_item("alpha-source")],
+            monkeypatch)
+    harvest(beta, [shared_item("beta-source"), second_shared_item("beta-source")],
+            monkeypatch)
+    packs = [alpha, beta]
+
+    pairs = find_duplicates(packs)
+    assert len(pairs) == 2
+
+    _acknowledge(repo, packs, pairs[0])
+
+    findings = _xpk(repo)
+    levels = sorted(f.level.name for f in findings)
+
+    assert levels == ["INFO", "WARNING"], "acknowledging one pair covered the other"
+    assert has_errors(findings, strict=True), "the unreviewed pair stopped blocking"
+
+    unreviewed = [f for f in findings if f.level is Level.WARNING][0]
+    for feature_id in pairs[1].feature_ids:
+        assert feature_id in unreviewed.message
+
+
+def test_an_acknowledgement_for_an_unrelated_pair_downgrades_nothing(duplicated):
+    """A resolution store full of other decisions is inert against this pair."""
+    from ke.validate import Level
+
+    repo, packs = duplicated
+    resolutions = Resolutions.load(Path(repo))
+    resolutions.acknowledged["ALF-1999-01-999+BET-1999-01-999"] = {
+        "basis": "canonical-url",
+        "acknowledged_on": "1999-01-01",
+        "note": "",
+        "objects": [],
+    }
+    resolutions.save(Path(repo))
+
+    findings = _xpk(repo)
+
+    assert len(findings) == 1
+    assert findings[0].level is Level.WARNING
+
+
+def test_a_missing_resolution_store_acknowledges_nothing(duplicated):
+    """The default state, and the one the live repository is in."""
+    from ke.validate import Level
+
+    repo, _ = duplicated
+    assert not (Path(repo) / CROSS_PACK_STATE).exists()
+
+    assert _xpk(repo)[0].level is Level.WARNING
+
+
+def test_a_corrupt_resolution_store_does_not_acknowledge_anything(duplicated):
+    """Degrading to empty here fails **safe**: the duplicate keeps blocking.
+
+    Same degradation as `outstanding()`, and it is the right direction. An
+    unreadable file must never be able to clear a check.
+    """
+    from ke.validate import Level
+
+    repo, packs = duplicated
+    _acknowledge(repo, packs, find_duplicates(packs)[0])
+    (Path(repo) / CROSS_PACK_STATE).write_text("{ not json", encoding="utf-8")
+
+    assert _xpk(repo)[0].level is Level.WARNING
+
+
+# ---------------------------------------------------------------------------
 # Pack isolation
 # ---------------------------------------------------------------------------
 
