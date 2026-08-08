@@ -772,3 +772,94 @@ def test_the_audit_oracle_never_reads_changed_fields(tmp_path) -> None:
         and node.col_offset > 0  # string literals used as values, not docstrings
     }
     assert "changed_fields" not in referenced
+
+
+# ---------------------------------------------------------------------------
+# Gate D prerequisite — every qualifying run is reported (M9-6)
+# ---------------------------------------------------------------------------
+
+
+def test_a_shorter_later_run_cannot_be_masked_by_a_longer_historical_one(
+    pack_root, tmp_path
+) -> None:
+    """The invariant a safe grandfather baseline depends on.
+
+        A historical REV002 finding must not become invisible merely because a
+        future qualifying run on the same object is shorter than the historical
+        run.
+
+    Longest-run reporting fails this. Demonstrated against a real object in Gate
+    D: appending a fresh three-revision run to a chain already carrying a
+    ten-revision run left the reported finding completely unchanged. Baseline
+    that finding and the new damage is invisible forever.
+    """
+    pack = Pack.load(pack_root)
+    historical = FLIP
+    fresh = ("summary",)
+
+    obj = _object_with_revisions(
+        [_rev(1, ())]
+        + [_rev(n, historical) for n in range(2, 12)]   # the historical run, 10 long
+        + [_rev(12, ("title",))]                        # a genuine edit between them
+        + [_rev(n, fresh) for n in range(13, 16)]       # a NEW, SHORTER run
+    )
+
+    findings = _rev002(pack, obj, tmp_path)
+
+    assert len(findings) == 2, f"expected both runs to be reported, got {len(findings)}"
+    messages = " ".join(f.message for f in findings)
+    assert "revisions 2-11" in messages, "the historical run vanished"
+    assert "revisions 13-15" in messages, "the new shorter run was masked"
+
+
+def test_each_run_is_reported_with_its_own_revision_range(pack_root, tmp_path) -> None:
+    """One finding per run, each carrying the range a baseline will key on."""
+    pack = Pack.load(pack_root)
+    obj = _object_with_revisions(
+        [_rev(1, ())]
+        + [_rev(n, FLIP) for n in range(2, 5)]
+        + [_rev(5, ("title",))]
+        + [_rev(n, ("summary",)) for n in range(6, 9)]
+    )
+
+    findings = _rev002(pack, obj, tmp_path)
+
+    assert len(findings) == 2
+    assert "revisions 2-4" in findings[0].message
+    assert "revisions 6-8" in findings[1].message
+
+
+def test_a_change_set_is_matched_regardless_of_field_order(pack_root, tmp_path) -> None:
+    """Run detection compares change-sets, so ordering must not break a run.
+
+    Nothing on disk is currently out of order — `revisions.py` sorts before
+    writing — but `history.py` writes `("status", "replaced_by")` literally on
+    the supersede path, so the guarantee held by habit rather than by contract.
+    """
+    pack = Pack.load(pack_root)
+    obj = _object_with_revisions([
+        _rev(1, ()),
+        _rev(2, ("published_date", "date_confidence")),
+        _rev(3, ("date_confidence", "published_date")),   # same set, other order
+        _rev(4, ("published_date", "date_confidence")),
+    ])
+
+    findings = _rev002(pack, obj, tmp_path)
+
+    assert len(findings) == 1, "field ordering broke the run"
+    assert "revisions 2-4" in findings[0].message
+
+
+def test_reported_change_sets_are_canonical(pack_root, tmp_path) -> None:
+    """The message names fields in sorted order, matching the baseline key form.
+
+    The detector and the baseline must not disagree about what a change-set is.
+    """
+    pack = Pack.load(pack_root)
+    obj = _object_with_revisions(
+        [_rev(1, ())] + [_rev(n, ("published_date", "date_confidence")) for n in range(2, 5)]
+    )
+
+    findings = _rev002(pack, obj, tmp_path)
+
+    assert "date_confidence, published_date" in findings[0].message

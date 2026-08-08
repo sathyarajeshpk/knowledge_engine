@@ -624,9 +624,9 @@ def _check_revision_history(pack: Pack, path: Path, obj: KnowledgeObject) -> lis
         for problem in verify_chain(obj)
     ]
 
-    run = _longest_identical_run([tuple(rev.changed_fields) for rev in obj.revisions[1:]])
-    if run is not None:
-        fields, length, start = run
+    for fields, length, start in identical_runs(
+        [canonical_fields(rev.changed_fields) for rev in obj.revisions[1:]]
+    ):
         findings.append(
             Finding(
                 Level.WARNING,
@@ -646,10 +646,29 @@ def _check_revision_history(pack: Pack, path: Path, obj: KnowledgeObject) -> lis
 FLIP_FLOP_RUN = 3
 
 
-def _longest_identical_run(changes: list[tuple[str, ...]]):
-    """The longest run of consecutive identical change-sets, if it is long enough.
+def canonical_fields(fields) -> tuple[str, ...]:
+    """A change-set in canonical form: sorted, so equality is order-independent.
 
-    Returns `(fields, length, first_revision_number)` or `None`.
+    Run detection compares change-sets for equality, so two revisions recording
+    the same fields in a different order would break a run and hide a flip-flop.
+
+    Nothing on disk is currently out of order (measured: 0 of 524 revisions),
+    because `revisions.py` sorts before writing. But `history.py` writes
+    `("status", "replaced_by")` literally on the supersede path, which is not
+    sorted, so the guarantee holds by habit rather than by contract.
+    Canonicalising here makes it hold by contract, at no cost — verified
+    set-neutral against the live repository.
+
+    It is also the form the M9 Gate D baseline keys on, so the detector and the
+    baseline cannot disagree about what a change-set *is*.
+    """
+    return tuple(sorted(fields))
+
+
+def identical_runs(changes: list[tuple[str, ...]]) -> list[tuple[tuple[str, ...], int, int]]:
+    """**Every** run of consecutive identical change-sets that is long enough.
+
+    Returns `(fields, length, first_revision_number)` per run, in chain order.
 
     ## Why a run rather than whole-chain uniformity
 
@@ -668,6 +687,32 @@ def _longest_identical_run(changes: list[tuple[str, ...]]):
     append-insensitive: adding revisions to the end can lengthen a run, never
     shorten one.
 
+    ## Why every run, and not just the longest
+
+    Reporting only the longest run made a grandfather baseline impossible to
+    build safely. Baselining a finding suppresses it; if the detector reports
+    only the longest run, a **new, shorter** flip-flop on an already-baselined
+    object produces no new finding at all — the detector keeps reporting the
+    old, longer run, the baseline keeps matching it, and the new damage is
+    invisible forever.
+
+    Demonstrated in M9 Gate D against a real object: appending a fresh
+    three-revision run to `MSF-2026-05-002` left the reported finding completely
+    unchanged at "10 long, starting rev 2".
+
+    The invariant this establishes:
+
+        A historical REV002 finding must not become invisible merely because a
+        future qualifying run on the same object is shorter than the historical
+        run.
+
+    Every run becomes its own finding with its own revision range, which is what
+    lets a baseline pin history without blinding the future.
+
+    Measured set-neutral when introduced: no object in the repository has more
+    than one qualifying run, so this produced exactly the same 35 findings as
+    longest-run reporting.
+
     ## What this deliberately does not do
 
     It compares `changed_fields` — field *names*, not values — so it detects
@@ -677,24 +722,22 @@ def _longest_identical_run(changes: list[tuple[str, ...]]):
     one, and `ke.audit` carries the independent mechanism-level signal used to
     validate it.
     """
+    runs: list[tuple[tuple[str, ...], int, int]] = []
     if len(changes) < FLIP_FLOP_RUN:
-        return None
+        return runs
 
-    best = (None, 0, 0)
     current, start = 1, 0
     for index in range(1, len(changes)):
         if changes[index] == changes[index - 1]:
             current += 1
-        else:
-            current, start = 1, index
-        if current > best[1]:
-            best = (changes[index], current, start)
-
-    fields, length, start = best
-    if length < FLIP_FLOP_RUN:
-        return None
-    # `changes` excludes revision 1, so index 0 is revision 2.
-    return fields, length, start + 2
+            continue
+        if current >= FLIP_FLOP_RUN:
+            # `changes` excludes revision 1, so index 0 is revision 2.
+            runs.append((changes[start], current, start + 2))
+        current, start = 1, index
+    if current >= FLIP_FLOP_RUN:
+        runs.append((changes[start], current, start + 2))
+    return runs
 
 
 def _check_feature_document(pack: Pack, feature_path: Path, obj: KnowledgeObject) -> list[Finding]:
