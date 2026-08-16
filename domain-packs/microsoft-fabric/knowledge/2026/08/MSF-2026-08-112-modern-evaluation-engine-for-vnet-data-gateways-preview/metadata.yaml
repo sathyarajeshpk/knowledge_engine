@@ -1,0 +1,63 @@
+schema_version: 1
+id: MSF-2026-08-112
+slug: modern-evaluation-engine-for-vnet-data-gateways-preview
+title: modern evaluation engine for VNet data gateways (Preview)
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Evaluate-Fabric-workload-performance-with-the-modern-evaluation/ba-p/5330293
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Evaluate-Fabric-workload-performance-with-the-modern-evaluation/ba-p/5330293
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-08-16
+date_confidence: exact
+date_precision: month
+content_hash: sha256:c026ec17dbaf215a65d101b2330c9a97afabcde2ebd6152b3651090d89507780
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:138ca9c300eed8411fdca2ef4a0dad1b40646d72558f5912ef03ef04977526bb
+  discovered_at: '2026-08-16T06:18:47.217673+00:00'
+  source_role: primary
+  selector: h2[Data Factory in Microsoft Fabric] > table > tr (date from cell 0)
+  run_id: run-2026-08-16T06-18-44Z
+url_hash: sha256:138ca9c300eed8411fdca2ef4a0dad1b40646d72558f5912ef03ef04977526bb
+tier: 2
+learning_priority: high
+category: data-factory
+tags:
+- dataflow
+- preview
+- semantic-model
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-16
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:c026ec17dbaf215a65d101b2330c9a97afabcde2ebd6152b3651090d89507780
+  title_snapshot: modern evaluation engine for VNet data gateways (Preview)
+  summary_snapshot: Modern evaluation engine for VNet data gateways (Preview) The modern evaluation
+    engine for VNet data gateways (Preview) provides an opt-in execution path for supported
+    mashup evaluations so you can test semantic model refresh, Dataflow Gen2 refresh, and
+    DirectQuery performance without changing your private network architecture. For more information,
+    see Modern evaluation engine for VNet data gateways.
+  run_id: run-2026-08-16T06-18-44Z
+generation: {}

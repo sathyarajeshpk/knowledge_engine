@@ -1,0 +1,63 @@
+schema_version: 1
+id: MSF-2026-08-111
+slug: medallion-architecture-patterns-for-fabric-data-warehouse
+title: Medallion architecture patterns for Fabric Data Warehouse
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Choosing-your-medallion-pattern-in-Fabric-Data-Warehouse/ba-p/5328670
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Choosing-your-medallion-pattern-in-Fabric-Data-Warehouse/ba-p/5328670
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-08-16
+date_confidence: exact
+date_precision: month
+content_hash: sha256:16a8d165831caf4ea20049a84e7d8d6a7539ccfec7b0d05323a6ea449a82936d
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:072b0c865bd9061b196281942354f0b8b846841b7c5bcba16abe86c9f5dda26a
+  discovered_at: '2026-08-16T06:18:47.221147+00:00'
+  source_role: primary
+  selector: h2[Fabric Data Warehouse] > table > tr (date from cell 0)
+  run_id: run-2026-08-16T06-18-44Z
+url_hash: sha256:072b0c865bd9061b196281942354f0b8b846841b7c5bcba16abe86c9f5dda26a
+tier: 3
+learning_priority: high
+category: data-warehouse
+tags:
+- lakehouse
+- onelake
+- spark
+- warehouse
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-16
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:16a8d165831caf4ea20049a84e7d8d6a7539ccfec7b0d05323a6ea449a82936d
+  title_snapshot: Medallion architecture patterns for Fabric Data Warehouse
+  summary_snapshot: Medallion patterns for Fabric Data Warehouse Medallion architecture patterns
+    for Fabric Data Warehouse compare an all-in-one warehouse approach for SQL-focused, structured
+    workloads with a Lakehouse and warehouse hybrid for workloads that need Spark or unstructured
+    data processing. For more information, see Fabric Data Warehouse and OneLake overview.
+  run_id: run-2026-08-16T06-18-44Z
+generation: {}

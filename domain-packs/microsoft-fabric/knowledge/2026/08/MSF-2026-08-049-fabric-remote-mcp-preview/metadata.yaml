@@ -1,7 +1,7 @@
 schema_version: 1
 id: MSF-2026-08-049
 slug: fabric-remote-mcp-preview
-title: Fabric Remote MCP (Preview)
+title: Fabric Core MCP Server (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Agentic-Fabric-How-MCP-is-turning-your-data-platform-into-an-AI/ba-p/5172009
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Agentic-Fabric-How-MCP-is-turning-your-data-platform-into-an-AI/ba-p/5172009
@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:5af26ff6958364b8e4dc57658cb8e6c425748a25aafde19d5526eadaa6bb0e07
+content_hash: sha256:0d6dd47aa90310c6e8b95e6fb3605e461664f708337bd51a274d8d4a2e5590ef
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -59,4 +59,18 @@ revisions:
     audit logging, with no local install. For more information, see Get started with Fabric
     Core MCP Server.
   run_id: run-2026-08-01T06-14-25Z
+- revision: 2
+  date: 2026-08-16
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:0d6dd47aa90310c6e8b95e6fb3605e461664f708337bd51a274d8d4a2e5590ef
+  title_snapshot: Fabric Core MCP Server (Preview)
+  summary_snapshot: Fabric Core MCP Server (Preview) is a remote, cloud-hosted Model Context
+    Protocol server that lets AI agents perform real, authenticated operations against Fabric
+    workspaces, items, search, permissions, connections, and OneLake through Microsoft Entra
+    ID with full audit logging, with no local install. For more information, see Get started
+    with Fabric Core MCP Server.
+  run_id: run-2026-08-16T06-18-44Z
 generation: {}

@@ -5,7 +5,7 @@
     "2026-04": 1,
     "2026-06": 141,
     "2026-07": 57,
-    "2026-08": 13
+    "2026-08": 23
   },
   "paths": {
     "AZ-2025-09-001": "2025/09/AZ-2025-09-001-retirement-azure-vmware-solution-av36-node-retirement-now",
@@ -220,6 +220,16 @@
     "AZ-2026-08-010": "2026/08/AZ-2026-08-010-retirement-nested-confidential-cc-v5-vms-will-be-retired-on",
     "AZ-2026-08-011": "2026/08/AZ-2026-08-011-announcing-azure-databricks-genie-one-and-genie-agents-free",
     "AZ-2026-08-012": "2026/08/AZ-2026-08-012-in-preview-public-preview-migrate-from-aws-fsx-for-windows",
-    "AZ-2026-08-013": "2026/08/AZ-2026-08-013-in-preview-public-preview-azure-expressroute-resiliency"
+    "AZ-2026-08-013": "2026/08/AZ-2026-08-013-in-preview-public-preview-azure-expressroute-resiliency",
+    "AZ-2026-08-014": "2026/08/AZ-2026-08-014-announcing-microsoft-fabric-item-recovery-will-be-enabled",
+    "AZ-2026-08-015": "2026/08/AZ-2026-08-015-launched-generally-available-2-2x-idps-performance",
+    "AZ-2026-08-016": "2026/08/AZ-2026-08-016-launched-generally-available-batch-rule-updates-for-azure",
+    "AZ-2026-08-017": "2026/08/AZ-2026-08-017-in-preview-public-preview-azure-front-door-mutual-tls",
+    "AZ-2026-08-018": "2026/08/AZ-2026-08-018-retirement-containerized-data-connector-agent-for-the",
+    "AZ-2026-08-019": "2026/08/AZ-2026-08-019-in-preview-public-preview-markdown-for-agents-in-azure-app",
+    "AZ-2026-08-020": "2026/08/AZ-2026-08-020-launched-generally-available-pre-upgrade-validation-checks",
+    "AZ-2026-08-021": "2026/08/AZ-2026-08-021-launched-generally-available-control-plane-metrics",
+    "AZ-2026-08-022": "2026/08/AZ-2026-08-022-launched-generally-available-live-resize-for-shared-premium",
+    "AZ-2026-08-023": "2026/08/AZ-2026-08-023-announcing-azure-databricks-runtime-10-4-lts-will-reach-end"
   }
 }

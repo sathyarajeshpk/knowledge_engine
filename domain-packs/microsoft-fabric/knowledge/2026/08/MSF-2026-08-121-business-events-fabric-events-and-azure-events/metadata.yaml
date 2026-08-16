@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-08-121
+slug: business-events-fabric-events-and-azure-events
+title: Business Events, Fabric Events, and Azure Events
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Choose-the-right-event-pillar-in-Microsoft-Fabric-Business/ba-p/5331534
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Choose-the-right-event-pillar-in-Microsoft-Fabric-Business/ba-p/5331534
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-08-16
+date_confidence: exact
+date_precision: month
+content_hash: sha256:e6cf3710c2973305b97f6113d70ddbbadfe58cb6a5c7dbdb33a7aaa18c9b12ca
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:e9650db36ea345d4e16e7047d58e20c95b8dabc182078637d7751f88f4df25bd
+  discovered_at: '2026-08-16T06:18:47.222946+00:00'
+  source_role: primary
+  selector: h2[Real-Time Intelligence in Microsoft Fabric] > table > tr (date from cell 0)
+  run_id: run-2026-08-16T06-18-44Z
+url_hash: sha256:e9650db36ea345d4e16e7047d58e20c95b8dabc182078637d7751f88f4df25bd
+tier: 3
+learning_priority: low
+category: platform
+tags: []
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-16
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:e6cf3710c2973305b97f6113d70ddbbadfe58cb6a5c7dbdb33a7aaa18c9b12ca
+  title_snapshot: Business Events, Fabric Events, and Azure Events
+  summary_snapshot: 'Choose an event pillar The easiest way to understand Fabric eventing
+    is not to start with the consumer. Start with the publisher. Who is saying that something
+    happened? That answer determines which Fabric event pillar you use. Business Events, Fabric
+    Events, and Azure Events serve different publishers and consumers: your workloads publish
+    Business Events, Fabric publishes platform events, and Azure Storage publishes Azure Events.
+    For more information, see Business events overview and Fabric events overview.'
+  run_id: run-2026-08-16T06-18-44Z
+generation: {}

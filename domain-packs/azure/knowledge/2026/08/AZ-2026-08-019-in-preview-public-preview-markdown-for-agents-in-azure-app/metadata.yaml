@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-08-019
+slug: in-preview-public-preview-markdown-for-agents-in-azure-app
+title: '[In preview] Public Preview: Markdown for Agents in Azure App Service'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=568979
+announcement_url: https://azure.microsoft.com/updates?id=568979
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-12
+discovered_date: 2026-08-16
+date_confidence: exact
+date_precision: day
+content_hash: sha256:adb1b55e999501a8c19bb2d14bae0f593b8c01b70ec04de96e9181246b6b8c4c
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:e24ba5be06829b90b835cec03563ab1a48daaaabaf3e4f89281a9ef0d6d4c430
+  discovered_at: '2026-08-16T06:18:45.207537+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-16T06-18-44Z
+url_hash: sha256:e24ba5be06829b90b835cec03563ab1a48daaaabaf3e4f89281a9ef0d6d4c430
+tier: 2
+learning_priority: medium
+category: compute
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-16
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:adb1b55e999501a8c19bb2d14bae0f593b8c01b70ec04de96e9181246b6b8c4c
+  title_snapshot: '[In preview] Public Preview: Markdown for Agents in Azure App Service'
+  summary_snapshot: Today, we are announcing the public preview of Markdown for Agents in
+    Azure App Service. This feature gives AI agents and other tools a cleaner way to consume
+    content from an App Service app. When a client requests Markdown, App Service can automatically
+  run_id: run-2026-08-16T06-18-44Z
+generation: {}

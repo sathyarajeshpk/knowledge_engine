@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-118
+slug: fabric-runtime-2-0-generally-available
+title: Fabric Runtime 2.0 (Generally Available)
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Runtime-2-0-Generally-Available/ba-p/5326359
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Runtime-2-0-Generally-Available/ba-p/5326359
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-08-16
+date_confidence: exact
+date_precision: month
+content_hash: sha256:bb0efa4f09e9c7864431765b545d79cbef9a24b53919d4e8d2e6c981d5ab5087
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:a34996b30b175694e79ee3ee7a8e859df6e27916a75831dc3519c8c79b3fa88e
+  discovered_at: '2026-08-16T06:18:47.214640+00:00'
+  source_role: primary
+  selector: h2[Generally available features] > table > tr (date from cell 0)
+  run_id: run-2026-08-16T06-18-44Z
+url_hash: sha256:a34996b30b175694e79ee3ee7a8e859df6e27916a75831dc3519c8c79b3fa88e
+tier: 1
+learning_priority: medium
+category: data-science
+tags:
+- ga
+- spark
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-16
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:bb0efa4f09e9c7864431765b545d79cbef9a24b53919d4e8d2e6c981d5ab5087
+  title_snapshot: Fabric Runtime 2.0 (Generally Available)
+  summary_snapshot: Fabric Runtime 2.0 (Generally Available) includes Apache Spark 4.1, Delta
+    Lake 4.2, Python 3.13, Java 21, Scala 2.13, and Azure Linux 3.0, and remains opt-in until
+    its planned default rollout. For more information, see Runtime 2.0 in Fabric.
+  run_id: run-2026-08-16T06-18-44Z
+generation: {}

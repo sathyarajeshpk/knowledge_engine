@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-08-015
+slug: launched-generally-available-2-2x-idps-performance
+title: '[Launched] Generally Available: 2.2X IDPS performance optimization in Azure Firewall'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=569256
+announcement_url: https://azure.microsoft.com/updates?id=569256
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-11
+discovered_date: 2026-08-16
+date_confidence: exact
+date_precision: day
+content_hash: sha256:5f477422189a4635b9408fd3ac053b8972908193c9a3abfa4c6b97a1168b09df
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:5d57ae01083e9028869ad8025702232196ea6b4046df40c2fe89e4bdb1565480
+  discovered_at: '2026-08-16T06:18:45.207597+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-16T06-18-44Z
+url_hash: sha256:5d57ae01083e9028869ad8025702232196ea6b4046df40c2fe89e4bdb1565480
+tier: 1
+learning_priority: low
+category: networking
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-16
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:5f477422189a4635b9408fd3ac053b8972908193c9a3abfa4c6b97a1168b09df
+  title_snapshot: '[Launched] Generally Available: 2.2X IDPS performance optimization in Azure
+    Firewall'
+  summary_snapshot: Azure Firewall Premium now delivers up to 22 Gbps throughput with TLS
+    inspection and IDPS in Deny mode, a 120% increase from 10 Gbps, and up to 600 Mbps per
+    TCP connection with IDPS enabled in either Alert or Deny mode (doubled from 300 Mbps).
+    Learn more.
+  run_id: run-2026-08-16T06-18-44Z
+generation: {}

@@ -6,9 +6,9 @@
     "2026-02": 2,
     "2026-03": 5,
     "2026-05": 36,
-    "2026-06": 56,
+    "2026-06": 57,
     "2026-07": 47,
-    "2026-08": 110
+    "2026-08": 121
   },
   "paths": {
     "MSF-2025-11-001": "2025/11/MSF-2025-11-001-cosmos-db-in-microsoft-fabric-ga",
@@ -112,6 +112,7 @@
     "MSF-2026-06-054": "2026/06/MSF-2026-06-054-rayfin-preview",
     "MSF-2026-06-055": "2026/06/MSF-2026-06-055-business-events-overview-preview",
     "MSF-2026-06-056": "2026/06/MSF-2026-06-056-extended-auto-partition-support-in-copy-job-preview",
+    "MSF-2026-06-057": "2026/06/MSF-2026-06-057-build-agent-with-ai-preview",
     "MSF-2026-07-001": "2026/07/MSF-2026-07-001-rayfin-ama-recap",
     "MSF-2026-07-002": "2026/07/MSF-2026-07-002-workspace-outbound-access-protection-for-real-time",
     "MSF-2026-07-003": "2026/07/MSF-2026-07-003-fabric-runtime-release-channels",
@@ -268,6 +269,17 @@
     "MSF-2026-08-107": "2026/08/MSF-2026-08-107-mirroring-in-fabric",
     "MSF-2026-08-108": "2026/08/MSF-2026-08-108-automatic-index-compaction",
     "MSF-2026-08-109": "2026/08/MSF-2026-08-109-alter-database-set-options-transact-sql",
-    "MSF-2026-08-110": "2026/08/MSF-2026-08-110-approval-activity-preview"
+    "MSF-2026-08-110": "2026/08/MSF-2026-08-110-approval-activity-preview",
+    "MSF-2026-08-111": "2026/08/MSF-2026-08-111-medallion-architecture-patterns-for-fabric-data-warehouse",
+    "MSF-2026-08-112": "2026/08/MSF-2026-08-112-modern-evaluation-engine-for-vnet-data-gateways-preview",
+    "MSF-2026-08-113": "2026/08/MSF-2026-08-113-item-recovery-is-enabled-by-default",
+    "MSF-2026-08-114": "2026/08/MSF-2026-08-114-capacity-overview-events-in-real-time-hub-generally",
+    "MSF-2026-08-115": "2026/08/MSF-2026-08-115-use-t-sql-predicate-expressions-to-filter-which-events-are",
+    "MSF-2026-08-116": "2026/08/MSF-2026-08-116-scheduled-user-data-functions-preview",
+    "MSF-2026-08-117": "2026/08/MSF-2026-08-117-july-2026-on-premises-data-gateway-release",
+    "MSF-2026-08-118": "2026/08/MSF-2026-08-118-fabric-runtime-2-0-generally-available",
+    "MSF-2026-08-119": "2026/08/MSF-2026-08-119-capacity-metrics-and-query-insights",
+    "MSF-2026-08-120": "2026/08/MSF-2026-08-120-business-event-schema",
+    "MSF-2026-08-121": "2026/08/MSF-2026-08-121-business-events-fabric-events-and-azure-events"
   }
 }

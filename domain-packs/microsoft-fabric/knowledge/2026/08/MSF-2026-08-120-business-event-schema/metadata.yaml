@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-120
+slug: business-event-schema
+title: Business Event schema
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Design-a-Business-Event-schema-that-consumers-can-act-on/ba-p/5331546
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Design-a-Business-Event-schema-that-consumers-can-act-on/ba-p/5331546
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-08-16
+date_confidence: exact
+date_precision: month
+content_hash: sha256:f06eb180195ad5f73f88d78ae1d1b5fb33ca4ec29055e8f045a46f15abda3d00
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:d226fb09f25c132a4b262fa2d9c87c3b3edafddcf9db565f3918f397696ad138
+  discovered_at: '2026-08-16T06:18:47.222994+00:00'
+  source_role: primary
+  selector: h2[Real-Time Intelligence in Microsoft Fabric] > table > tr (date from cell 0)
+  run_id: run-2026-08-16T06-18-44Z
+url_hash: sha256:d226fb09f25c132a4b262fa2d9c87c3b3edafddcf9db565f3918f397696ad138
+tier: 3
+learning_priority: low
+category: real-time-intelligence
+tags: []
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-16
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:f06eb180195ad5f73f88d78ae1d1b5fb33ca4ec29055e8f045a46f15abda3d00
+  title_snapshot: Business Event schema
+  summary_snapshot: Design a Business Event schema A Business Event schema uses a clear, factual,
+    versioned contract so publishers and consumers share the meaning of each event while evolving
+    independently. For more information, see Real-Time Hub overview and Business events overview.
+  run_id: run-2026-08-16T06-18-44Z
+generation: {}

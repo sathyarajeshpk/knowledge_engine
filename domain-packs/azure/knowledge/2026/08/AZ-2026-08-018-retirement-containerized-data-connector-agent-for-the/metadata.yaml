@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-08-018
+slug: retirement-containerized-data-connector-agent-for-the
+title: 'Retirement: Containerized data connector agent for the Microsoft Sentinel solution
+  for SAP applications'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=568457
+announcement_url: https://azure.microsoft.com/updates?id=568457
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-12
+discovered_date: 2026-08-16
+date_confidence: exact
+date_precision: day
+content_hash: sha256:446834a779ff70590ac4eddf919bf1bf099d0a412ff0d9a7c2d28c26b03f5763
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:dbcc603679ec5f513fcee267e44da0ce2c9a3dbcec8e9acda22a0a98d7e44ff2
+  discovered_at: '2026-08-16T06:18:45.207338+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-16T06-18-44Z
+url_hash: sha256:dbcc603679ec5f513fcee267e44da0ce2c9a3dbcec8e9acda22a0a98d7e44ff2
+tier: 1
+learning_priority: medium
+category: identity-security
+tags:
+- retirement
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-16
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:446834a779ff70590ac4eddf919bf1bf099d0a412ff0d9a7c2d28c26b03f5763
+  title_snapshot: 'Retirement: Containerized data connector agent for the Microsoft Sentinel
+    solution for SAP applications'
+  summary_snapshot: On September 14, 2026 we will retire the containerized data connector
+    agent for the Microsoft Sentinel solution for SAP applications. After this date the agent
+    will be permanently disabled and will stop sending SAP logs to Microsoft Sentinel.The
+    SAP agent
+  run_id: run-2026-08-16T06-18-44Z
+generation: {}

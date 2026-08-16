@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-116
+slug: scheduled-user-data-functions-preview
+title: Scheduled User Data Functions (Preview)
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Automate-recurring-business-logic-with-scheduled-User-Data/ba-p/5341912
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Automate-recurring-business-logic-with-scheduled-User-Data/ba-p/5341912
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-08-16
+date_confidence: exact
+date_precision: month
+content_hash: sha256:8fe848602eddb448c346141bce78de55811d406889cd7b1c35ea54f7046d0258
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:7ce71633e41053ffb430df180eb4e264d403a50c90d5e2dc2ae29a9a36940765
+  discovered_at: '2026-08-16T06:18:47.218795+00:00'
+  source_role: primary
+  selector: h2[Fabric Data Engineering] > table > tr (date from cell 0)
+  run_id: run-2026-08-16T06-18-44Z
+url_hash: sha256:7ce71633e41053ffb430df180eb4e264d403a50c90d5e2dc2ae29a9a36940765
+tier: 2
+learning_priority: low
+category: administration
+tags:
+- preview
+difficulty: beginner
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-16
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:8fe848602eddb448c346141bce78de55811d406889cd7b1c35ea54f7046d0258
+  title_snapshot: Scheduled User Data Functions (Preview)
+  summary_snapshot: Scheduled User Data Functions (Preview) run parameterized business logic
+    on a recurring cadence through the Fabric job scheduler, with execution history available
+    in the monitoring hub. For more information, see User Data Functions overview and Schedule
+    a User Data Function.
+  run_id: run-2026-08-16T06-18-44Z
+generation: {}
