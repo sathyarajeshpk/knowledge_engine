@@ -5,7 +5,7 @@
     "2026-04": 1,
     "2026-06": 141,
     "2026-07": 57,
-    "2026-08": 23
+    "2026-08": 37
   },
   "paths": {
     "AZ-2025-09-001": "2025/09/AZ-2025-09-001-retirement-azure-vmware-solution-av36-node-retirement-now",
@@ -230,6 +230,20 @@
     "AZ-2026-08-020": "2026/08/AZ-2026-08-020-launched-generally-available-pre-upgrade-validation-checks",
     "AZ-2026-08-021": "2026/08/AZ-2026-08-021-launched-generally-available-control-plane-metrics",
     "AZ-2026-08-022": "2026/08/AZ-2026-08-022-launched-generally-available-live-resize-for-shared-premium",
-    "AZ-2026-08-023": "2026/08/AZ-2026-08-023-announcing-azure-databricks-runtime-10-4-lts-will-reach-end"
+    "AZ-2026-08-023": "2026/08/AZ-2026-08-023-announcing-azure-databricks-runtime-10-4-lts-will-reach-end",
+    "AZ-2026-08-024": "2026/08/AZ-2026-08-024-in-preview-public-preview-zone-redundancy-for-azure-sql",
+    "AZ-2026-08-025": "2026/08/AZ-2026-08-025-in-preview-public-preview-azure-linux-on-wsl",
+    "AZ-2026-08-026": "2026/08/AZ-2026-08-026-launched-generally-available-dragon-copilot-physician-apps",
+    "AZ-2026-08-027": "2026/08/AZ-2026-08-027-in-preview-public-preview-ipv6-support-in-azure-firewall",
+    "AZ-2026-08-028": "2026/08/AZ-2026-08-028-launched-generally-available-managed-instance-on-azure-app",
+    "AZ-2026-08-029": "2026/08/AZ-2026-08-029-retirement-azure-vmware-solution-license-included-service",
+    "AZ-2026-08-030": "2026/08/AZ-2026-08-030-launched-generally-available-vcore-customization-disable",
+    "AZ-2026-08-031": "2026/08/AZ-2026-08-031-launched-generally-available-azure-databricks-lakebase-in",
+    "AZ-2026-08-032": "2026/08/AZ-2026-08-032-in-preview-public-preview-sql-formatter-in-mssql-extension",
+    "AZ-2026-08-033": "2026/08/AZ-2026-08-033-launched-generally-available-byon-bring-your-own-nic-in",
+    "AZ-2026-08-034": "2026/08/AZ-2026-08-034-launched-generally-available-azure-sql-database",
+    "AZ-2026-08-035": "2026/08/AZ-2026-08-035-launched-generally-available-azure-sql-updates-for-mid",
+    "AZ-2026-08-036": "2026/08/AZ-2026-08-036-launched-generally-available-summarized-advertised-gateway",
+    "AZ-2026-08-037": "2026/08/AZ-2026-08-037-announcing-azure-copilot-introduces-direct-access-to-agents"
   }
 }

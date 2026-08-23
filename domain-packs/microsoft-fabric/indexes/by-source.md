@@ -17,7 +17,7 @@
 | [MSF-2026-02-002](../knowledge/2026/02/MSF-2026-02-002-top-sessions-you-won-t-want-to-miss-at-the-microsoft-fabric) | Top sessions you won’t want to miss at the Microsoft Fabric Community Conference 2026 | 2026-02-03 | fabric-blog |
 | [MSF-2025-12-001](../knowledge/2025/12/MSF-2025-12-001-fabcon-and-sqlcon-from-workshops-and-keynotes-to-demos-and) | FabCon and SQLCon: From workshops and keynotes to demos and deep dives | 2025-12-17 | fabric-blog |
 
-## fabric-whats-new (48)
+## fabric-whats-new (52)
 
 | ID | Title | Published | Source |
 |---|---|---|---|
@@ -32,6 +32,10 @@
 | [MSF-2026-08-119](../knowledge/2026/08/MSF-2026-08-119-capacity-metrics-and-query-insights) | Capacity Metrics and Query Insights | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-08-120](../knowledge/2026/08/MSF-2026-08-120-business-event-schema) | Business Event schema | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-08-121](../knowledge/2026/08/MSF-2026-08-121-business-events-fabric-events-and-azure-events) | Business Events, Fabric Events, and Azure Events | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-122](../knowledge/2026/08/MSF-2026-08-122-data-source-routing-in-fabric-data-agents) | Data source routing in Fabric data agents | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-123](../knowledge/2026/08/MSF-2026-08-123-publishing-business-events-from-fabric-workloads) | Publishing Business Events from Fabric workloads | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-124](../knowledge/2026/08/MSF-2026-08-124-sql-database-skills-preview) | SQL database skills (Preview) | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-125](../knowledge/2026/08/MSF-2026-08-125-workspace-monitoring-for-eventstreams) | Workspace monitoring for Eventstreams | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-07-022](../knowledge/2026/07/MSF-2026-07-022-change-event-streaming-overview) | Change event streaming overview | 2026-07-01 | fabric-whats-new |
 | [MSF-2026-07-023](../knowledge/2026/07/MSF-2026-07-023-fabric-data-agent-integration-in-copilot-in-power-bi) | Fabric data agent integration in Copilot in Power BI | 2026-07-01 | fabric-whats-new |
 | [MSF-2026-07-024](../knowledge/2026/07/MSF-2026-07-024-lakehouse-query-explorer) | Lakehouse Query Explorer | 2026-07-01 | fabric-whats-new |
@@ -272,6 +276,25 @@
 | [MSF-2026-08-103](../knowledge/2026/08/MSF-2026-08-103-lakehouse-auto-binding-in-git-preview) | Lakehouse auto-binding in Git (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-08-104](../knowledge/2026/08/MSF-2026-08-104-folder-rest-api-preview) | workspace folders | — | fabric-whats-new-markdown |
 | [MSF-2026-08-106](../knowledge/2026/08/MSF-2026-08-106-upsert-to-delta-table-with-lakehouse-connector-preview) | Configure Lakehouse in a copy activity | — | fabric-whats-new-markdown |
+
+## powerbi-whats-new (14)
+
+| ID | Title | Published | Source |
+|---|---|---|---|
+| [MSF-2026-08-126](../knowledge/2026/08/MSF-2026-08-126-azure-maps-visual-for-power-bi) | Azure Maps visual for Power BI | — | powerbi-whats-new |
+| [MSF-2026-08-127](../knowledge/2026/08/MSF-2026-08-127-data-refresh-in-power-bi) | Data refresh in Power BI | — | powerbi-whats-new |
+| [MSF-2026-08-128](../knowledge/2026/08/MSF-2026-08-128-create-an-app-connected-to-a-semantic-model) | Create an app connected to a semantic model | — | powerbi-whats-new |
+| [MSF-2026-08-129](../knowledge/2026/08/MSF-2026-08-129-explore-reports-in-the-power-bi-mobile-apps) | Explore reports in the Power BI mobile apps | — | powerbi-whats-new |
+| [MSF-2026-08-130](../knowledge/2026/08/MSF-2026-08-130-slicers-in-power-bi) | Slicers in Power BI | — | powerbi-whats-new |
+| [MSF-2026-08-131](../knowledge/2026/08/MSF-2026-08-131-get-data-in-power-bi-desktop) | Get data in Power BI Desktop | — | powerbi-whats-new |
+| [MSF-2026-08-132](../knowledge/2026/08/MSF-2026-08-132-summarize-a-report-with-copilot) | Summarize a report with Copilot | — | powerbi-whats-new |
+| [MSF-2026-08-133](../knowledge/2026/08/MSF-2026-08-133-power-bi-projects-overview) | Power BI Projects overview | — | powerbi-whats-new |
+| [MSF-2026-08-134](../knowledge/2026/08/MSF-2026-08-134-export-data-from-a-power-bi-visualization) | Export data from a Power BI visualization | — | powerbi-whats-new |
+| [MSF-2026-08-135](../knowledge/2026/08/MSF-2026-08-135-add-a-center-value-to-a-donut-chart) | Add a center value to a donut chart | — | powerbi-whats-new |
+| [MSF-2026-08-136](../knowledge/2026/08/MSF-2026-08-136-add-a-reference-layer-to-the-azure-maps-power-bi-visual) | Add a reference layer to the Azure Maps Power BI visual | — | powerbi-whats-new |
+| [MSF-2026-08-137](../knowledge/2026/08/MSF-2026-08-137-customize-x-axis-and-y-axis-properties) | Customize x-axis and y-axis properties | — | powerbi-whats-new |
+| [MSF-2026-08-138](../knowledge/2026/08/MSF-2026-08-138-comments-in-power-bi-reports) | Comments in Power BI reports | — | powerbi-whats-new |
+| [MSF-2026-08-139](../knowledge/2026/08/MSF-2026-08-139-use-onelake-file-urls-in-power-bi-reports) | Use OneLake file URLs in Power BI reports | — | powerbi-whats-new |
 
 ## powerbi-whats-new-markdown (14)
 

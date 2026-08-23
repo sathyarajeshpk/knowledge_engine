@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-138
+slug: comments-in-power-bi-reports
+title: Comments in Power BI reports
+source_name: powerbi-whats-new
+source_url: https://learn.microsoft.com/en-us/power-bi/explore-reports/end-user-comment
+announcement_url: https://learn.microsoft.com/en-us/power-bi/explore-reports/end-user-comment
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-23
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:a209bac861e50feb1bdf201c80d5c4ec333222151bec1e86d9885e7608e329a5
+provenance:
+  source_name: powerbi-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:f6bb7e225a69b049455165b498145b5a194dde1b05c3a81d8cbb5672a618b81d
+  discovered_at: '2026-08-23T06:19:43.353413+00:00'
+  source_role: primary
+  selector: h2[Reporting] > table > tr (no date cell)
+  run_id: run-2026-08-23T06-19-40Z
+url_hash: sha256:f6bb7e225a69b049455165b498145b5a194dde1b05c3a81d8cbb5672a618b81d
+tier: 3
+learning_priority: low
+category: power-bi
+tags:
+- power-bi
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-23
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:a209bac861e50feb1bdf201c80d5c4ec333222151bec1e86d9885e7608e329a5
+  title_snapshot: Comments in Power BI reports
+  summary_snapshot: Comments support for reports in org apps Users can comment on report pages
+    and visuals in org apps, start discussions, and use @mentions to notify others. Comments
+    capture the current report context. For more information, see Comments in Power BI reports.
+  run_id: run-2026-08-23T06-19-40Z
+generation: {}

@@ -1,0 +1,62 @@
+schema_version: 1
+id: MSF-2026-08-136
+slug: add-a-reference-layer-to-the-azure-maps-power-bi-visual
+title: Add a reference layer to the Azure Maps Power BI visual
+source_name: powerbi-whats-new
+source_url: https://learn.microsoft.com/en-us/azure/azure-maps/power-bi-visual-add-reference-layer?context=%2Fpower-bi%2Fcreate-reports%2Fcontext%2Fcontext
+announcement_url: https://learn.microsoft.com/en-us/azure/azure-maps/power-bi-visual-add-reference-layer?context=%2Fpower-bi%2Fcreate-reports%2Fcontext%2Fcontext
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-23
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:cd8e42e276ef39fc7abf930ca6c2dbf174c43089a40cd06c140ee45dab7a41ea
+provenance:
+  source_name: powerbi-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:d958a013b588500c8291d504f84be055966c52725be57e8bf46738218409c4d9
+  discovered_at: '2026-08-23T06:19:43.353718+00:00'
+  source_role: primary
+  selector: h2[Reporting] > table > tr (no date cell)
+  run_id: run-2026-08-23T06-19-40Z
+url_hash: sha256:d958a013b588500c8291d504f84be055966c52725be57e8bf46738218409c4d9
+tier: 1
+learning_priority: low
+category: power-bi
+tags:
+- ga
+- power-bi
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-23
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:cd8e42e276ef39fc7abf930ca6c2dbf174c43089a40cd06c140ee45dab7a41ea
+  title_snapshot: Add a reference layer to the Azure Maps Power BI visual
+  summary_snapshot: Azure Maps reference layer shape-matching improvements (Generally Available)
+    Shape matching in Azure Maps reference layers now renders faster, and interactions like
+    filtering, cross-highlighting, and zoom respond more smoothly. No configuration change
+    is required. For more information, see Add a reference layer to the Azure Maps Power BI
+    visual.
+  run_id: run-2026-08-23T06-19-40Z
+generation: {}

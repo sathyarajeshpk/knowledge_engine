@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:41b602bed531efb4bd0718f14ffde778ada78458811834d0e47e380c537b6b6b
+content_hash: sha256:05b8223ca0ff5dfe143e10283d2216a61467364782c4ec36e85c5af8f0ab28d4
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -79,4 +79,18 @@ revisions:
     organizational themes. For more information, see Visual defaults in Power BI reports.
     ✔️
   run_id: run-2026-08-02T08-00-14Z
+- revision: 3
+  date: 2026-08-23
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:05b8223ca0ff5dfe143e10283d2216a61467364782c4ec36e85c5af8f0ab28d4
+  title_snapshot: Visual defaults in Power BI reports
+  summary_snapshot: Modern visual defaults and customize themes formatting panes (Generally
+    Available) New reports start with the Fluent 2 base theme. Use the Theme pane to set a
+    base theme, adjust color palettes, change text styles, set visual and page properties,
+    and import or export custom themes in Desktop or on the web. Font overrides are removed
+    from the base theme so the Text section now applies consistently across all visuals. For
+    more information, see Visual defaults in Power BI reports.
+  run_id: run-2026-08-23T06-19-40Z
 generation: {}

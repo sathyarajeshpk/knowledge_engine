@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-133
+slug: power-bi-projects-overview
+title: Power BI Projects overview
+source_name: powerbi-whats-new
+source_url: https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-overview
+announcement_url: https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-overview
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-23
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:8feb7760fd44a5620e858e10c93958a9b22540915e0caf3e1048b64939372600
+provenance:
+  source_name: powerbi-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:aa57952aaa5a5cabbf1449758ecfdfa0aa7646cb81ad2110e3ffa5cfc5527fbf
+  discovered_at: '2026-08-23T06:19:43.354327+00:00'
+  source_role: primary
+  selector: h2[Developers and APIs] > table > tr (no date cell)
+  run_id: run-2026-08-23T06-19-40Z
+url_hash: sha256:aa57952aaa5a5cabbf1449758ecfdfa0aa7646cb81ad2110e3ffa5cfc5527fbf
+tier: 2
+learning_priority: low
+category: power-bi
+tags:
+- power-bi
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-23
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:8feb7760fd44a5620e858e10c93958a9b22540915e0caf3e1048b64939372600
+  title_snapshot: Power BI Projects overview
+  summary_snapshot: Faster PBIP development with instant reloads and VS Code integration Power
+    BI Desktop detects external changes to PBIP project files and prompts you to apply them
+    with a single click. A built-in entry point opens the project directly in Visual Studio
+    Code. For more information, see Power BI Projects overview.
+  run_id: run-2026-08-23T06-19-40Z
+generation: {}

@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-08-028
+slug: launched-generally-available-managed-instance-on-azure-app
+title: '[Launched] Generally Available: Managed Instance on Azure App Service'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=568952
+announcement_url: https://azure.microsoft.com/updates?id=568952
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-18
+discovered_date: 2026-08-23
+date_confidence: exact
+date_precision: day
+content_hash: sha256:9c47d9c635c1075c13ba7f985fe2ac492ffd7371648585e19e1652b9da30344f
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:5067ad9e58b232697e0965e3c23a47ce552b7b5872ec060dc3190dddc594a4b2
+  discovered_at: '2026-08-23T06:19:41.303717+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-23T06-19-40Z
+url_hash: sha256:5067ad9e58b232697e0965e3c23a47ce552b7b5872ec060dc3190dddc594a4b2
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-23
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:9c47d9c635c1075c13ba7f985fe2ac492ffd7371648585e19e1652b9da30344f
+  title_snapshot: '[Launched] Generally Available: Managed Instance on Azure App Service'
+  summary_snapshot: Managed Instance on Azure App Service is now generally available. Managed
+    Instance helps organizations migrate web applications to Azure App Service with minimal
+    configuration and no code changes. Applications running on-premises or in virtual machines
+    ca
+  run_id: run-2026-08-23T06-19-40Z
+generation: {}

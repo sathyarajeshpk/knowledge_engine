@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-08-031
+slug: launched-generally-available-azure-databricks-lakebase-in
+title: '[Launched] Generally Available: Azure Databricks Lakebase in four additional regions'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=569684
+announcement_url: https://azure.microsoft.com/updates?id=569684
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-19
+discovered_date: 2026-08-23
+date_confidence: exact
+date_precision: day
+content_hash: sha256:ea327214c3913187d8eef82de60835a855d11a252b4a682d5affc5cbd5cf4183
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:203b618d20b01e355f24de209270a72c68f718b0831e540ce31db4f9c1cef38f
+  discovered_at: '2026-08-23T06:19:41.303165+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-23T06-19-40Z
+url_hash: sha256:203b618d20b01e355f24de209270a72c68f718b0831e540ce31db4f9c1cef38f
+tier: 1
+learning_priority: high
+category: identity-security
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-23
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:ea327214c3913187d8eef82de60835a855d11a252b4a682d5affc5cbd5cf4183
+  title_snapshot: '[Launched] Generally Available: Azure Databricks Lakebase in four additional
+    regions'
+  summary_snapshot: 'Lakebase is now generally available in four additional Azure regions:
+    North Central US, France Central, Germany West Central, and East Asia. This expansion
+    provides customers with additional deployment options and broader regional availability
+    for Lakebas'
+  run_id: run-2026-08-23T06-19-40Z
+generation: {}

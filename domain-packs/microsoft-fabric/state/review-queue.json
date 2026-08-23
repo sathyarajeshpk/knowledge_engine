@@ -36,6 +36,18 @@
       "reason": "this announcement is cited by 3 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"
     },
+    "sha256:21721b0b7349b8542984813d5d0ba96223698318c13480c22d7a90a28e2c5064": {
+      "identity_key": "sha256:21721b0b7349b8542984813d5d0ba96223698318c13480c22d7a90a28e2c5064",
+      "title": "Expand and collapse row and column headers",
+      "summary": "Matrix: Expand and collapse for column headers (Generally Available) Column headers in the matrix visual now support expand and collapse using +/- icons when more than one field is in the Columns field well. Icon color and size are customizable under Column headers > +/- icons in the format pane. For more information, see Expand and collapse row and column headers.",
+      "source_name": "powerbi-whats-new",
+      "source_url": "https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-matrix-visual",
+      "announcement_url": "https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-matrix-visual",
+      "first_discovered_date": "2026-08-23",
+      "confidence": "medium",
+      "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
+      "lifecycle": "queued"
+    },
     "sha256:25275bb1479e1892b630b8cbf25b4f85fe7e01092f4013c1e5855f3d5b9e1f86": {
       "identity_key": "sha256:25275bb1479e1892b630b8cbf25b4f85fe7e01092f4013c1e5855f3d5b9e1f86",
       "title": "Fabric Apps",
@@ -128,6 +140,18 @@
       "source_url": "https://blog.fabric.microsoft.com/blog/new-data-protection-capabilities-in-microsoft-fabric-native-security-for-the-modern-data-estate?ft=All",
       "announcement_url": "https://blog.fabric.microsoft.com/blog/new-data-protection-capabilities-in-microsoft-fabric-native-security-for-the-modern-data-estate?ft=All",
       "first_discovered_date": "2026-08-01",
+      "confidence": "medium",
+      "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
+      "lifecycle": "queued"
+    },
+    "sha256:64cc22e330fa3fa6059c81309c6d241be626235dac6ed3078a1e4ff17319a020": {
+      "identity_key": "sha256:64cc22e330fa3fa6059c81309c6d241be626235dac6ed3078a1e4ff17319a020",
+      "title": "Fabric Lakehouse support in dbt jobs",
+      "summary": "Fabric Lakehouse support in dbt job (Preview) Fabric Lakehouse support in dbt jobs lets you run dbt projects directly against a new or existing lakehouse and apply dbt models and tests where your data is stored. For more information, see dbt job in Microsoft Fabric.",
+      "source_name": "fabric-whats-new",
+      "source_url": "https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/introducing-fabric-lakehouse-support-in-dbt-job-for-microsoft-fabric-preview/5358240",
+      "announcement_url": "https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/introducing-fabric-lakehouse-support-in-dbt-job-for-microsoft-fabric-preview/5358240",
+      "first_discovered_date": "2026-08-23",
       "confidence": "medium",
       "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"

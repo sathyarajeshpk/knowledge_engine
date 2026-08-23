@@ -8,7 +8,7 @@
     "2026-05": 36,
     "2026-06": 57,
     "2026-07": 47,
-    "2026-08": 121
+    "2026-08": 139
   },
   "paths": {
     "MSF-2025-11-001": "2025/11/MSF-2025-11-001-cosmos-db-in-microsoft-fabric-ga",
@@ -280,6 +280,24 @@
     "MSF-2026-08-118": "2026/08/MSF-2026-08-118-fabric-runtime-2-0-generally-available",
     "MSF-2026-08-119": "2026/08/MSF-2026-08-119-capacity-metrics-and-query-insights",
     "MSF-2026-08-120": "2026/08/MSF-2026-08-120-business-event-schema",
-    "MSF-2026-08-121": "2026/08/MSF-2026-08-121-business-events-fabric-events-and-azure-events"
+    "MSF-2026-08-121": "2026/08/MSF-2026-08-121-business-events-fabric-events-and-azure-events",
+    "MSF-2026-08-122": "2026/08/MSF-2026-08-122-data-source-routing-in-fabric-data-agents",
+    "MSF-2026-08-123": "2026/08/MSF-2026-08-123-publishing-business-events-from-fabric-workloads",
+    "MSF-2026-08-124": "2026/08/MSF-2026-08-124-sql-database-skills-preview",
+    "MSF-2026-08-125": "2026/08/MSF-2026-08-125-workspace-monitoring-for-eventstreams",
+    "MSF-2026-08-126": "2026/08/MSF-2026-08-126-azure-maps-visual-for-power-bi",
+    "MSF-2026-08-127": "2026/08/MSF-2026-08-127-data-refresh-in-power-bi",
+    "MSF-2026-08-128": "2026/08/MSF-2026-08-128-create-an-app-connected-to-a-semantic-model",
+    "MSF-2026-08-129": "2026/08/MSF-2026-08-129-explore-reports-in-the-power-bi-mobile-apps",
+    "MSF-2026-08-130": "2026/08/MSF-2026-08-130-slicers-in-power-bi",
+    "MSF-2026-08-131": "2026/08/MSF-2026-08-131-get-data-in-power-bi-desktop",
+    "MSF-2026-08-132": "2026/08/MSF-2026-08-132-summarize-a-report-with-copilot",
+    "MSF-2026-08-133": "2026/08/MSF-2026-08-133-power-bi-projects-overview",
+    "MSF-2026-08-134": "2026/08/MSF-2026-08-134-export-data-from-a-power-bi-visualization",
+    "MSF-2026-08-135": "2026/08/MSF-2026-08-135-add-a-center-value-to-a-donut-chart",
+    "MSF-2026-08-136": "2026/08/MSF-2026-08-136-add-a-reference-layer-to-the-azure-maps-power-bi-visual",
+    "MSF-2026-08-137": "2026/08/MSF-2026-08-137-customize-x-axis-and-y-axis-properties",
+    "MSF-2026-08-138": "2026/08/MSF-2026-08-138-comments-in-power-bi-reports",
+    "MSF-2026-08-139": "2026/08/MSF-2026-08-139-use-onelake-file-urls-in-power-bi-reports"
   }
 }

@@ -1,0 +1,62 @@
+schema_version: 1
+id: MSF-2026-08-130
+slug: slicers-in-power-bi
+title: Slicers in Power BI
+source_name: powerbi-whats-new
+source_url: https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-slicers
+announcement_url: https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-slicers
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-23
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:7b778728371dd6f17bffa899af0cd03b9f739ed18e1bfe3d3d2eb14043c8f1a6
+provenance:
+  source_name: powerbi-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:56f4a1eb4a2b63188056b46e81b6b098a8aa912226af8729ec6cdc28e8fd2ed4
+  discovered_at: '2026-08-23T06:19:43.353287+00:00'
+  source_role: primary
+  selector: h2[Reporting] > table > tr (no date cell)
+  run_id: run-2026-08-23T06-19-40Z
+url_hash: sha256:56f4a1eb4a2b63188056b46e81b6b098a8aa912226af8729ec6cdc28e8fd2ed4
+tier: 1
+learning_priority: low
+category: power-bi
+tags:
+- ga
+- power-bi
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-23
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:7b778728371dd6f17bffa899af0cd03b9f739ed18e1bfe3d3d2eb14043c8f1a6
+  title_snapshot: Slicers in Power BI
+  summary_snapshot: Date picker for Slicer visual (Generally Available) Date pickers support
+    relative selections that roll forward with time, a calendar, and a slider for manual date
+    range or single-date selection. A new Single date setting under Visual > Slicer settings
+    > Selection controls restricts the slicer to one date at a time. Selections can also be
+    cleared from a header icon. For more information, see Slicers in Power BI.
+  run_id: run-2026-08-23T06-19-40Z
+generation: {}

@@ -1,0 +1,63 @@
+schema_version: 1
+id: AZ-2026-08-026
+slug: launched-generally-available-dragon-copilot-physician-apps
+title: '[Launched] Generally Available: Dragon Copilot Physician Apps and Agents on Microsoft
+  Marketplace'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=557775
+announcement_url: https://azure.microsoft.com/updates?id=557775
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-17
+discovered_date: 2026-08-23
+date_confidence: exact
+date_precision: day
+content_hash: sha256:94c1e4c1431717eb8d4140917650a323d652fbbc94ccdcb0baf5193580c6df1d
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:6531b1f555450aa7255c6b3ae035d9213c4fe309108fd1e3411f3c9808cdde5e
+  discovered_at: '2026-08-23T06:19:41.303894+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-23T06-19-40Z
+url_hash: sha256:6531b1f555450aa7255c6b3ae035d9213c4fe309108fd1e3411f3c9808cdde5e
+tier: 1
+learning_priority: high
+category: ai-machine-learning
+tags:
+- ai
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-23
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:94c1e4c1431717eb8d4140917650a323d652fbbc94ccdcb0baf5193580c6df1d
+  title_snapshot: '[Launched] Generally Available: Dragon Copilot Physician Apps and Agents
+    on Microsoft Marketplace'
+  summary_snapshot: This release adds Microsoft Marketplace as a new discovery and procurement
+    channel for Dragon Copilot AI apps and agents. Dragon Copilot customers in the United
+    States can now discover, evaluate and purchase Dragon Copilot Physician Apps and Agents
+    throug
+  run_id: run-2026-08-23T06-19-40Z
+generation: {}

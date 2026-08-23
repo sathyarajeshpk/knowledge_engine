@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-129
+slug: explore-reports-in-the-power-bi-mobile-apps
+title: Explore reports in the Power BI mobile apps
+source_name: powerbi-whats-new
+source_url: https://learn.microsoft.com/en-us/power-bi/explore-reports/mobile/mobile-reports-in-the-mobile-apps
+announcement_url: https://learn.microsoft.com/en-us/power-bi/explore-reports/mobile/mobile-reports-in-the-mobile-apps
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-23
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:dea8f565531dd7715402d5c9b2046cbb3832801f471dc75d15a2beadcba65da3
+provenance:
+  source_name: powerbi-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:3a26118213d04b5f79c3b8edfc6b9c3b47a819f37911473273012a24dbc78768
+  discovered_at: '2026-08-23T06:19:43.354111+00:00'
+  source_role: primary
+  selector: h2[Mobile] > table > tr (no date cell)
+  run_id: run-2026-08-23T06-19-40Z
+url_hash: sha256:3a26118213d04b5f79c3b8edfc6b9c3b47a819f37911473273012a24dbc78768
+tier: 3
+learning_priority: low
+category: power-bi
+tags:
+- power-bi
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-23
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:dea8f565531dd7715402d5c9b2046cbb3832801f471dc75d15a2beadcba65da3
+  title_snapshot: Explore reports in the Power BI mobile apps
+  summary_snapshot: Rotate view in the mobile report footer The Rotate view button in the
+    Power BI Mobile report footer lets you switch layouts with one tap, even when the phone
+    is locked in portrait orientation. Rolling out to iOS and Android. For more information,
+    see Explore reports in the Power BI mobile apps.
+  run_id: run-2026-08-23T06-19-40Z
+generation: {}

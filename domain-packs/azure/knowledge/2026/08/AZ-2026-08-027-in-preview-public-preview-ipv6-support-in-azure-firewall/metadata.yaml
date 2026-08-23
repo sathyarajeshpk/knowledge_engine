@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-08-027
+slug: in-preview-public-preview-ipv6-support-in-azure-firewall
+title: '[In preview] Public Preview: Ipv6 support in Azure Firewall'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=569520
+announcement_url: https://azure.microsoft.com/updates?id=569520
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-18
+discovered_date: 2026-08-23
+date_confidence: exact
+date_precision: day
+content_hash: sha256:a10b1faa335efc4a75c3bb55964779242de6c08c2ce0813c95ada485afcd8ea1
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:273e1ec9207e276c998960bd172d6c6bfc34501381b3e08cc09b5608dace0094
+  discovered_at: '2026-08-23T06:19:41.303773+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-23T06-19-40Z
+url_hash: sha256:273e1ec9207e276c998960bd172d6c6bfc34501381b3e08cc09b5608dace0094
+tier: 2
+learning_priority: low
+category: networking
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-23
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:a10b1faa335efc4a75c3bb55964779242de6c08c2ce0813c95ada485afcd8ea1
+  title_snapshot: '[In preview] Public Preview: Ipv6 support in Azure Firewall'
+  summary_snapshot: Azure Firewall now supports IPv6 in public preview, enabling customers
+    to configure Azure Firewall and Firewall Policy in dual-stack mode for both IPv4 and IPv6
+    traffic. This preview allows native IPv6 network-rule filtering and DNS Proxy support,
+    helping
+  run_id: run-2026-08-23T06-19-40Z
+generation: {}

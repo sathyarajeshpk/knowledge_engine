@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-124
+slug: sql-database-skills-preview
+title: SQL database skills (Preview)
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/build-end-to-end-fabric-solutions-with-sql-database-skills-preview/5357234
+announcement_url: https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/build-end-to-end-fabric-solutions-with-sql-database-skills-preview/5357234
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-08-23
+date_confidence: exact
+date_precision: month
+content_hash: sha256:acef7d578ff4bc2493428d595a1ac6d3993236a672c62fe8d9757597cb8e62ad
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:ca56d37aaa4682695550ab4fc7c2278cc234fa6d76ae6d88e0280909deff013d
+  discovered_at: '2026-08-23T06:19:43.297957+00:00'
+  source_role: primary
+  selector: h2[SQL database in Microsoft Fabric] > table > tr (date from cell 0)
+  run_id: run-2026-08-23T06-19-40Z
+url_hash: sha256:ca56d37aaa4682695550ab4fc7c2278cc234fa6d76ae6d88e0280909deff013d
+tier: 2
+learning_priority: medium
+category: data-warehouse
+tags:
+- preview
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-23
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:acef7d578ff4bc2493428d595a1ac6d3993236a672c62fe8d9757597cb8e62ad
+  title_snapshot: SQL database skills (Preview)
+  summary_snapshot: SQL database skills (Preview) give AI coding agents workload-specific
+    guidance for authoring schemas, querying data, and operating SQL databases as part of
+    broader Fabric solutions. For more information, see Work with SQL database skills in Microsoft
+    Fabric.
+  run_id: run-2026-08-23T06-19-40Z
+generation: {}

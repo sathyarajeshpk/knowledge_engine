@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:c02c0eedc5be5b610adddf08edaeda3862720c2eb570447aa60510fdcac6f80b
+content_hash: sha256:d5c42987542a85733692dc93a41539b730aab28e10f6d232eb04c22b44c24656
 provenance:
   source_name: powerbi-whats-new-markdown
   source_representation: markdown
@@ -70,4 +70,16 @@ revisions:
     pasting the full URL. You can now embed a visual by selecting the Embed a single visual
     toggle. For more information, see Add a Power BI report to SharePoint Online.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 3
+  date: 2026-08-23
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:d5c42987542a85733692dc93a41539b730aab28e10f6d232eb04c22b44c24656
+  title_snapshot: Add a Power BI report to SharePoint Online
+  summary_snapshot: Enhancements to Power BI embedding in SharePoint Online A new UI lets
+    you browse and select a workspace directly, instead of copying and pasting a URL. You
+    can also embed a single visual using the Embed a single visual toggle. For more information,
+    see Add a Power BI report to SharePoint Online.
+  run_id: run-2026-08-23T06-19-40Z
 generation: {}

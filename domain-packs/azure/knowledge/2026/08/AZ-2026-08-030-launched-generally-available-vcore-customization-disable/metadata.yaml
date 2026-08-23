@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-08-030
+slug: launched-generally-available-vcore-customization-disable
+title: '[Launched] Generally Available: vCore Customization: Disable Multithreading and Configurable
+  Constrained Cores'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=569051
+announcement_url: https://azure.microsoft.com/updates?id=569051
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-19
+discovered_date: 2026-08-23
+date_confidence: exact
+date_precision: day
+content_hash: sha256:ee35ea4412dda9f8761c10990647ce28ae7599c02878c882764909d055ae155a
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:135326e21f34fde3170b8d79997fd3f398b5420ec62228de7ac363ba9d6e6f15
+  discovered_at: '2026-08-23T06:19:41.303500+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-23T06-19-40Z
+url_hash: sha256:135326e21f34fde3170b8d79997fd3f398b5420ec62228de7ac363ba9d6e6f15
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- ga
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-23
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:ee35ea4412dda9f8761c10990647ce28ae7599c02878c882764909d055ae155a
+  title_snapshot: '[Launched] Generally Available: vCore Customization: Disable Multithreading
+    and Configurable Constrained Cores'
+  summary_snapshot: 'Today, we are announcing the General Availability of VM vCore Customization
+    for Azure Virtual Machines, introducing two new capabilities: Disable Simultaneous Multi-Threading/Hyper-Threading
+    (SMT/HT) and Configurable Constrained Cores. These features prov'
+  run_id: run-2026-08-23T06-19-40Z
+generation: {}

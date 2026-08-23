@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-08-127
+slug: data-refresh-in-power-bi
+title: Data refresh in Power BI
+source_name: powerbi-whats-new
+source_url: https://learn.microsoft.com/en-us/power-bi/connect-data/refresh-data
+announcement_url: https://learn.microsoft.com/en-us/power-bi/connect-data/refresh-data
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-23
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:ae96046dbf2132b8f4b1fbb0199dd5a6c7d2797d422f8d1a8a3060d954f40c94
+provenance:
+  source_name: powerbi-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:342faf80c7e408a1956086355ac642e73cb929b7e095589111adff121636927e
+  discovered_at: '2026-08-23T06:19:43.353914+00:00'
+  source_role: primary
+  selector: h2[Modeling] > table > tr (no date cell)
+  run_id: run-2026-08-23T06-19-40Z
+url_hash: sha256:342faf80c7e408a1956086355ac642e73cb929b7e095589111adff121636927e
+tier: 3
+learning_priority: high
+category: power-bi
+tags:
+- power-bi
+- semantic-model
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-23
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:ae96046dbf2132b8f4b1fbb0199dd5a6c7d2797d422f8d1a8a3060d954f40c94
+  title_snapshot: Data refresh in Power BI
+  summary_snapshot: 'More control over semantic model refresh in Power BI Service The Refresh
+    button now offers three options: Refresh schema and data, Sync schema only, and Refresh
+    data only. Refresh operations can also be performed at the table level. For more information,
+    see Data refresh in Power BI.'
+  run_id: run-2026-08-23T06-19-40Z
+generation: {}

@@ -1,0 +1,65 @@
+schema_version: 1
+id: MSF-2026-08-139
+slug: use-onelake-file-urls-in-power-bi-reports
+title: Use OneLake file URLs in Power BI reports
+source_name: powerbi-whats-new
+source_url: https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-onelake-files
+announcement_url: https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-onelake-files
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-23
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:084c66d61d96317369ce114ae0f9dcc91da8e0e1b817bbcbfd19a67283c916d6
+provenance:
+  source_name: powerbi-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:fe4c8b2e8ef00114ddcf78ed734b64e093aae9789d70572af0397e30705931a3
+  discovered_at: '2026-08-23T06:19:43.353578+00:00'
+  source_role: primary
+  selector: h2[Reporting] > table > tr (no date cell)
+  run_id: run-2026-08-23T06-19-40Z
+url_hash: sha256:fe4c8b2e8ef00114ddcf78ed734b64e093aae9789d70572af0397e30705931a3
+tier: 1
+learning_priority: high
+category: power-bi
+tags:
+- ga
+- onelake
+- power-bi
+difficulty: advanced
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-23
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:084c66d61d96317369ce114ae0f9dcc91da8e0e1b817bbcbfd19a67283c916d6
+  title_snapshot: Use OneLake file URLs in Power BI reports
+  summary_snapshot: OneLake file URLs for report visuals and maps (Generally Available) Image
+    files stored in OneLake can be used as image sources in the image visual, table and matrix
+    cells, the card visual, button and list slicers, and custom icons in the Icons cell element.
+    Power BI authenticates on the viewer's behalf. Reference layer maps and shape map files
+    can also be linked from OneLake URLs. For more information, see Use OneLake file URLs
+    in Power BI reports, Display images in a table, matrix, or slicer, and Image visual in
+    Power BI.
+  run_id: run-2026-08-23T06-19-40Z
+generation: {}

@@ -1,7 +1,7 @@
 schema_version: 1
 id: AZ-2025-09-001
 slug: retirement-azure-vmware-solution-av36-node-retirement-now
-title: 'Retirement: Azure VMware Solution AV36 Node Retirement now on September 30, 2027'
+title: 'Retirement: Azure VMware Solution AV36 Node Retirement now on August 30, 2027'
 source_name: azure-updates
 source_url: https://azure.microsoft.com/updates?id=503883
 announcement_url: https://azure.microsoft.com/updates?id=503883
@@ -11,7 +11,7 @@ published_date: 2025-09-27
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: day
-content_hash: sha256:f63b5711ee2018a89a481808a8a7a1b01cf66195611c03a07bb2900239178b7b
+content_hash: sha256:318c5785baf8bc09b12fd1c23ca5edaf18049c49ca9db63a4d82b3b048a53fea
 provenance:
   source_name: azure-updates
   source_representation: rss
@@ -57,4 +57,18 @@ revisions:
     that date has changed to align with VMware’s roadmap. Broadcom will end support for the
     current AV36 version with vSphere 8 on September 30, 2027, and the AV36 SKU is not compatibl
   run_id: run-2026-08-01T21-26-58Z
+- revision: 2
+  date: 2026-08-23
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:318c5785baf8bc09b12fd1c23ca5edaf18049c49ca9db63a4d82b3b048a53fea
+  title_snapshot: 'Retirement: Azure VMware Solution AV36 Node Retirement now on August 30,
+    2027'
+  summary_snapshot: 'UPDATED: Microsoft announced the retirement of the AV36 node type on
+    June 30, 2028, that date has changed to align with VMware’s roadmap. Broadcom will end
+    support for the current AV36 version with vSphere 8 on September 30, 2027, and the AV36
+    SKU is not'
+  run_id: run-2026-08-23T06-19-40Z
 generation: {}
