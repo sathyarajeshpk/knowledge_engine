@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-08-144
+slug: enhanced-data-agent-visualizations-with-fabric-visuals
+title: Enhanced data agent visualizations with Fabric visuals (Preview)
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Enhanced-data-agent-visualizations-with-Fabric-visuals-Preview/ba-p/5359686
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Enhanced-data-agent-visualizations-with-Fabric-visuals-Preview/ba-p/5359686
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-08-30
+date_confidence: exact
+date_precision: month
+content_hash: sha256:3ef4f658b26a6f3b426e136377a7c4b7159ed50fb80ba8fbab433b342721dd3b
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:7ab8d8078dfc9462871cef3400211e82cd175296b83f9a6dca9f558c10f79ae3
+  discovered_at: '2026-08-30T10:49:09.650524+00:00'
+  source_role: primary
+  selector: h2[Fabric Data Science] > table > tr (date from cell 0)
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:7ab8d8078dfc9462871cef3400211e82cd175296b83f9a6dca9f558c10f79ae3
+tier: 2
+learning_priority: low
+category: power-bi
+tags:
+- ai
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:3ef4f658b26a6f3b426e136377a7c4b7159ed50fb80ba8fbab433b342721dd3b
+  title_snapshot: Enhanced data agent visualizations with Fabric visuals (Preview)
+  summary_snapshot: Enhanced Fabric data agent visualizations (Preview) Enhanced data agent
+    visualizations with Fabric visuals (Preview) let data agents return interactive Fabric
+    charts and graphs alongside text and tables. For more information, see Get visual responses
+    from a Fabric data agent (preview) and Best practices for configuring your data agent.
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

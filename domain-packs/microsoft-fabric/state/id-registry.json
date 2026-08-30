@@ -7,8 +7,8 @@
     "2026-03": 5,
     "2026-05": 36,
     "2026-06": 57,
-    "2026-07": 47,
-    "2026-08": 139
+    "2026-07": 48,
+    "2026-08": 155
   },
   "paths": {
     "MSF-2025-11-001": "2025/11/MSF-2025-11-001-cosmos-db-in-microsoft-fabric-ga",
@@ -160,6 +160,7 @@
     "MSF-2026-07-045": "2026/07/MSF-2026-07-045-native-execution-engine-optimizations",
     "MSF-2026-07-046": "2026/07/MSF-2026-07-046-onelake-item-size-reporting",
     "MSF-2026-07-047": "2026/07/MSF-2026-07-047-configure-the-dropped-item-retention-period-in-the-item",
+    "MSF-2026-07-048": "2026/07/MSF-2026-07-048-azure-event-hubs-source-workspace-identity-authentication",
     "MSF-2026-08-001": "2026/08/MSF-2026-08-001-data-replication-from-lakehouse-with-delta-change-feed",
     "MSF-2026-08-002": "2026/08/MSF-2026-08-002-on-premises-data-gateway-manual-update-preview",
     "MSF-2026-08-003": "2026/08/MSF-2026-08-003-manage-built-in-sql-database-mirroring-to-onelake-preview",
@@ -298,6 +299,22 @@
     "MSF-2026-08-136": "2026/08/MSF-2026-08-136-add-a-reference-layer-to-the-azure-maps-power-bi-visual",
     "MSF-2026-08-137": "2026/08/MSF-2026-08-137-customize-x-axis-and-y-axis-properties",
     "MSF-2026-08-138": "2026/08/MSF-2026-08-138-comments-in-power-bi-reports",
-    "MSF-2026-08-139": "2026/08/MSF-2026-08-139-use-onelake-file-urls-in-power-bi-reports"
+    "MSF-2026-08-139": "2026/08/MSF-2026-08-139-use-onelake-file-urls-in-power-bi-reports",
+    "MSF-2026-08-140": "2026/08/MSF-2026-08-140-anonymous-data-access-for-fabric-apps-preview",
+    "MSF-2026-08-141": "2026/08/MSF-2026-08-141-building-bronze-silver-and-gold-layers",
+    "MSF-2026-08-142": "2026/08/MSF-2026-08-142-connectivity-patterns-in-microsoft-fabric",
+    "MSF-2026-08-143": "2026/08/MSF-2026-08-143-using-custom-sql-pools-to-balance-performance-and-cost",
+    "MSF-2026-08-144": "2026/08/MSF-2026-08-144-enhanced-data-agent-visualizations-with-fabric-visuals",
+    "MSF-2026-08-145": "2026/08/MSF-2026-08-145-fabric-migration-assistant-for-sql-database",
+    "MSF-2026-08-146": "2026/08/MSF-2026-08-146-fabcon-sqlcon-2027-session-submission-guidance",
+    "MSF-2026-08-147": "2026/08/MSF-2026-08-147-mirroring-for-google-bigquery",
+    "MSF-2026-08-148": "2026/08/MSF-2026-08-148-ten-things-to-know-about-gpu-powered-query-acceleration",
+    "MSF-2026-08-149": "2026/08/MSF-2026-08-149-identity-columns",
+    "MSF-2026-08-150": "2026/08/MSF-2026-08-150-billing-personas-for-powertable-in-fabric-planning-are",
+    "MSF-2026-08-151": "2026/08/MSF-2026-08-151-workspace-customer-managed-key-apis-are-generally-available",
+    "MSF-2026-08-152": "2026/08/MSF-2026-08-152-agentic-warehouse-development-with-mcp-and-agent-skills",
+    "MSF-2026-08-153": "2026/08/MSF-2026-08-153-google-lakehouse-runtime-catalog-mirroring-preview",
+    "MSF-2026-08-154": "2026/08/MSF-2026-08-154-the-kpi-visualization-in-real-time-dashboards-is-now",
+    "MSF-2026-08-155": "2026/08/MSF-2026-08-155-create-calculated-columns-in-power-bi-desktop"
   }
 }

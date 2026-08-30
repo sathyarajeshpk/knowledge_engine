@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-08-050
+slug: launched-generally-available-azure-vm-image-builder-in
+title: '[Launched] Generally Available: Azure VM Image Builder in sovereign and air-gapped
+  clouds'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=570105
+announcement_url: https://azure.microsoft.com/updates?id=570105
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-28
+discovered_date: 2026-08-30
+date_confidence: exact
+date_precision: day
+content_hash: sha256:ebb733a74f3334338089d16d4813ce6f28ec30a96e323353e19ca6fbfa596d7b
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:2d96c731337c5f0f346a6d037b49944035f9631c1a16bd2fc9d1224b60455353
+  discovered_at: '2026-08-30T10:49:07.857352+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:2d96c731337c5f0f346a6d037b49944035f9631c1a16bd2fc9d1224b60455353
+tier: 1
+learning_priority: low
+category: compute
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:ebb733a74f3334338089d16d4813ce6f28ec30a96e323353e19ca6fbfa596d7b
+  title_snapshot: '[Launched] Generally Available: Azure VM Image Builder in sovereign and
+    air-gapped clouds'
+  summary_snapshot: Overview:Azure VM Image Builder is now generally available in Azure Government,
+    China North 3, Azure Government Secret, and Azure Government Top Secret.You can now use
+    the same managed image-building service across your sovereign and air-gapped environmen
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

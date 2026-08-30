@@ -1,0 +1,67 @@
+schema_version: 1
+id: MSF-2026-08-147
+slug: mirroring-for-google-bigquery
+title: Mirroring for Google BigQuery
+source_name: fabric-whats-new
+source_url: https://learn.microsoft.com/en-us/fabric/mirroring/google-bigquery
+announcement_url: https://learn.microsoft.com/en-us/fabric/mirroring/google-bigquery
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-08-30
+date_confidence: exact
+date_precision: month
+content_hash: sha256:4a78cb771b921934eeb8f4167fde5b2440720d749f8151c91ecac1febc12da13
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:abfa5c7ccaf8bc9a744e88efd094bbeecc3bf3de97abc50f91f6d2c50d11f499
+  discovered_at: '2026-08-30T10:49:09.652241+00:00'
+  source_role: primary
+  selector: h2[Fabric Mirroring] > table > tr (date from cell 0)
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:abfa5c7ccaf8bc9a744e88efd094bbeecc3bf3de97abc50f91f6d2c50d11f499
+tier: 1
+learning_priority: high
+category: data-factory
+tags:
+- direct-lake
+- ga
+- onelake
+- pipeline
+- power-bi
+difficulty: beginner
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:4a78cb771b921934eeb8f4167fde5b2440720d749f8151c91ecac1febc12da13
+  title_snapshot: Mirroring for Google BigQuery
+  summary_snapshot: 'Mirroring for Google BigQuery (Generally Available) Mirroring for Google
+    BigQuery is now generally available with full production support. Continuously replicate
+    BigQuery tables into OneLake as open Delta tables — no ETL pipelines, no data movement,
+    and no refresh management — with automatic schema evolution, Direct Lake integration for
+    Power BI, and zero Fabric replication compute or network ingress cost. For more information,
+    see Mirrored databases from Google BigQuery and Tutorial: Set up mirroring for Google
+    BigQuery.'
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-08-040
+slug: announcing-extended-support-for-azure-database-for
+title: 'Announcing: Extended Support for Azure Database for PostgreSQL Flexible Server'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=569526
+announcement_url: https://azure.microsoft.com/updates?id=569526
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-24
+discovered_date: 2026-08-30
+date_confidence: exact
+date_precision: day
+content_hash: sha256:40c0efc7d0502b5db6c1ceef0829518930578957f91721712b421923f16e1196
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:e222a5f16db0b9705a656637d3dcadc77afe0684ee5da38c41b531cd504d15d0
+  discovered_at: '2026-08-30T10:49:07.857870+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:e222a5f16db0b9705a656637d3dcadc77afe0684ee5da38c41b531cd504d15d0
+tier: 2
+learning_priority: high
+category: databases
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:40c0efc7d0502b5db6c1ceef0829518930578957f91721712b421923f16e1196
+  title_snapshot: 'Announcing: Extended Support for Azure Database for PostgreSQL Flexible
+    Server'
+  summary_snapshot: Extended Support for Azure Database for PostgreSQL Flexible Server helps
+    you maintain secure, supported workloads while transitioning to newer PostgreSQL versions.
+    With access to critical security updates, critical bug fixes, and technical support for
+    eli
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

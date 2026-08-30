@@ -11,7 +11,7 @@ published_date: 2026-06-01
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: month
-content_hash: sha256:b938554de2c98b79bda7eb141c3f2fa555ee2198d0122e8c713fb54ddf62c085
+content_hash: sha256:f18372597cf0b09e5ab53e0b85d89d249846766d32b01886e600c1d9baf8072b
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -225,4 +225,18 @@ revisions:
     when the Real-Time Events connector is added to the workspace's data connection rules.
     For more information, see Private links for Azure and Fabric Events.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 13
+  date: 2026-08-30
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:f18372597cf0b09e5ab53e0b85d89d249846766d32b01886e600c1d9baf8072b
+  title_snapshot: Workspace outbound access protection (OAP) for Azure and Fabric events (Preview)
+  summary_snapshot: Workspace outbound access protection for Azure and Fabric events (Preview)
+    Workspace outbound access protection (OAP) for Azure and Fabric events (Preview) extends
+    outbound network controls to cross-workspace event consumption, so Activator alerts, Eventstreams,
+    and other consumers in a protected workspace can only receive events from other workspaces
+    when the Real-Time Events connector is added to the workspace's data connection rules.
+    For more information, see Tenant private links for Azure and Fabric events.
+  run_id: run-2026-08-30T10-49-07Z
 generation: {}

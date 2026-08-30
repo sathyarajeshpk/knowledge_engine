@@ -17,10 +17,11 @@
 | [MSF-2026-02-002](../knowledge/2026/02/MSF-2026-02-002-top-sessions-you-won-t-want-to-miss-at-the-microsoft-fabric) | Top sessions you won’t want to miss at the Microsoft Fabric Community Conference 2026 | 2026-02-03 | fabric-blog |
 | [MSF-2025-12-001](../knowledge/2025/12/MSF-2025-12-001-fabcon-and-sqlcon-from-workshops-and-keynotes-to-demos-and) | FabCon and SQLCon: From workshops and keynotes to demos and deep dives | 2025-12-17 | fabric-blog |
 
-## fabric-whats-new (52)
+## fabric-whats-new (68)
 
 | ID | Title | Published | Source |
 |---|---|---|---|
+| [MSF-2026-08-107](../knowledge/2026/08/MSF-2026-08-107-mirroring-in-fabric) | Mirroring in Fabric | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-08-111](../knowledge/2026/08/MSF-2026-08-111-medallion-architecture-patterns-for-fabric-data-warehouse) | Medallion architecture patterns for Fabric Data Warehouse | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-08-112](../knowledge/2026/08/MSF-2026-08-112-modern-evaluation-engine-for-vnet-data-gateways-preview) | modern evaluation engine for VNet data gateways (Preview) | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-08-113](../knowledge/2026/08/MSF-2026-08-113-item-recovery-is-enabled-by-default) | Item Recovery is enabled by default | 2026-08-01 | fabric-whats-new |
@@ -36,6 +37,21 @@
 | [MSF-2026-08-123](../knowledge/2026/08/MSF-2026-08-123-publishing-business-events-from-fabric-workloads) | Publishing Business Events from Fabric workloads | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-08-124](../knowledge/2026/08/MSF-2026-08-124-sql-database-skills-preview) | SQL database skills (Preview) | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-08-125](../knowledge/2026/08/MSF-2026-08-125-workspace-monitoring-for-eventstreams) | Workspace monitoring for Eventstreams | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-140](../knowledge/2026/08/MSF-2026-08-140-anonymous-data-access-for-fabric-apps-preview) | Anonymous data access for Fabric Apps (Preview) | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-141](../knowledge/2026/08/MSF-2026-08-141-building-bronze-silver-and-gold-layers) | Building bronze, silver, and gold layers | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-142](../knowledge/2026/08/MSF-2026-08-142-connectivity-patterns-in-microsoft-fabric) | Connectivity patterns in Microsoft Fabric | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-143](../knowledge/2026/08/MSF-2026-08-143-using-custom-sql-pools-to-balance-performance-and-cost) | Using custom SQL pools to balance performance and cost | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-144](../knowledge/2026/08/MSF-2026-08-144-enhanced-data-agent-visualizations-with-fabric-visuals) | Enhanced data agent visualizations with Fabric visuals (Preview) | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-145](../knowledge/2026/08/MSF-2026-08-145-fabric-migration-assistant-for-sql-database) | Fabric Migration Assistant for SQL database | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-146](../knowledge/2026/08/MSF-2026-08-146-fabcon-sqlcon-2027-session-submission-guidance) | FabCon + SQLCon 2027 session submission guidance | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-147](../knowledge/2026/08/MSF-2026-08-147-mirroring-for-google-bigquery) | Mirroring for Google BigQuery | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-148](../knowledge/2026/08/MSF-2026-08-148-ten-things-to-know-about-gpu-powered-query-acceleration) | Ten things to know about GPU-powered query acceleration | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-149](../knowledge/2026/08/MSF-2026-08-149-identity-columns) | IDENTITY columns | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-150](../knowledge/2026/08/MSF-2026-08-150-billing-personas-for-powertable-in-fabric-planning-are) | Billing personas for PowerTable in Fabric Planning are generally available | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-151](../knowledge/2026/08/MSF-2026-08-151-workspace-customer-managed-key-apis-are-generally-available) | Workspace customer-managed key APIs are generally available | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-152](../knowledge/2026/08/MSF-2026-08-152-agentic-warehouse-development-with-mcp-and-agent-skills) | Agentic warehouse development with MCP and Agent Skills (Preview) | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-153](../knowledge/2026/08/MSF-2026-08-153-google-lakehouse-runtime-catalog-mirroring-preview) | Google Lakehouse Runtime Catalog mirroring (Preview) | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-154](../knowledge/2026/08/MSF-2026-08-154-the-kpi-visualization-in-real-time-dashboards-is-now) | The KPI visualization in Real-Time Dashboards is now generally available | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-07-022](../knowledge/2026/07/MSF-2026-07-022-change-event-streaming-overview) | Change event streaming overview | 2026-07-01 | fabric-whats-new |
 | [MSF-2026-07-023](../knowledge/2026/07/MSF-2026-07-023-fabric-data-agent-integration-in-copilot-in-power-bi) | Fabric data agent integration in Copilot in Power BI | 2026-07-01 | fabric-whats-new |
 | [MSF-2026-07-024](../knowledge/2026/07/MSF-2026-07-024-lakehouse-query-explorer) | Lakehouse Query Explorer | 2026-07-01 | fabric-whats-new |
@@ -62,6 +78,7 @@
 | [MSF-2026-07-045](../knowledge/2026/07/MSF-2026-07-045-native-execution-engine-optimizations) | Native Execution Engine optimizations | 2026-07-01 | fabric-whats-new |
 | [MSF-2026-07-046](../knowledge/2026/07/MSF-2026-07-046-onelake-item-size-reporting) | OneLake item-size reporting | 2026-07-01 | fabric-whats-new |
 | [MSF-2026-07-047](../knowledge/2026/07/MSF-2026-07-047-configure-the-dropped-item-retention-period-in-the-item) | configure the dropped item retention period in the Item Recovery tenant setting | 2026-07-01 | fabric-whats-new |
+| [MSF-2026-07-048](../knowledge/2026/07/MSF-2026-07-048-azure-event-hubs-source-workspace-identity-authentication) | Azure Event Hubs source workspace identity authentication | 2026-07-01 | fabric-whats-new |
 | [MSF-2026-06-054](../knowledge/2026/06/MSF-2026-06-054-rayfin-preview) | Rayfin (Preview) | 2026-06-01 | fabric-whats-new |
 | [MSF-2026-06-055](../knowledge/2026/06/MSF-2026-06-055-business-events-overview-preview) | Business events overview (Preview) | 2026-06-01 | fabric-whats-new |
 | [MSF-2026-06-056](../knowledge/2026/06/MSF-2026-06-056-extended-auto-partition-support-in-copy-job-preview) | Extended Auto partition support in Copy job (Preview) | 2026-06-01 | fabric-whats-new |
@@ -69,7 +86,6 @@
 | [MSF-2026-05-034](../knowledge/2026/05/MSF-2026-05-034-fabric-apps-preview) | Fabric Apps (preview) | 2026-05-01 | fabric-whats-new |
 | [MSF-2026-05-035](../knowledge/2026/05/MSF-2026-05-035-onelake-item-size-reporting-preview) | OneLake item-size reporting (Preview) | 2026-05-01 | fabric-whats-new |
 | [MSF-2026-05-036](../knowledge/2026/05/MSF-2026-05-036-event-file-target) | event_file target | — | fabric-whats-new |
-| [MSF-2026-08-107](../knowledge/2026/08/MSF-2026-08-107-mirroring-in-fabric) | Mirroring in Fabric | — | fabric-whats-new |
 | [MSF-2026-08-108](../knowledge/2026/08/MSF-2026-08-108-automatic-index-compaction) | Automatic index compaction | — | fabric-whats-new |
 | [MSF-2026-08-109](../knowledge/2026/08/MSF-2026-08-109-alter-database-set-options-transact-sql) | ALTER DATABASE SET options (Transact-SQL) | — | fabric-whats-new |
 | [MSF-2026-08-110](../knowledge/2026/08/MSF-2026-08-110-approval-activity-preview) | Approval activity (Preview) | — | fabric-whats-new |
@@ -277,7 +293,7 @@
 | [MSF-2026-08-104](../knowledge/2026/08/MSF-2026-08-104-folder-rest-api-preview) | workspace folders | — | fabric-whats-new-markdown |
 | [MSF-2026-08-106](../knowledge/2026/08/MSF-2026-08-106-upsert-to-delta-table-with-lakehouse-connector-preview) | Configure Lakehouse in a copy activity | — | fabric-whats-new-markdown |
 
-## powerbi-whats-new (14)
+## powerbi-whats-new (15)
 
 | ID | Title | Published | Source |
 |---|---|---|---|
@@ -295,6 +311,7 @@
 | [MSF-2026-08-137](../knowledge/2026/08/MSF-2026-08-137-customize-x-axis-and-y-axis-properties) | Customize x-axis and y-axis properties | — | powerbi-whats-new |
 | [MSF-2026-08-138](../knowledge/2026/08/MSF-2026-08-138-comments-in-power-bi-reports) | Comments in Power BI reports | — | powerbi-whats-new |
 | [MSF-2026-08-139](../knowledge/2026/08/MSF-2026-08-139-use-onelake-file-urls-in-power-bi-reports) | Use OneLake file URLs in Power BI reports | — | powerbi-whats-new |
+| [MSF-2026-08-155](../knowledge/2026/08/MSF-2026-08-155-create-calculated-columns-in-power-bi-desktop) | Create calculated columns in Power BI Desktop | — | powerbi-whats-new |
 
 ## powerbi-whats-new-markdown (14)
 

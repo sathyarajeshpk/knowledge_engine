@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-08-046
+slug: launched-generally-available-azure-bastion-shareable-link
+title: '[Launched] Generally Available: Azure Bastion shareable link expiration'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=570020
+announcement_url: https://azure.microsoft.com/updates?id=570020
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-26
+discovered_date: 2026-08-30
+date_confidence: exact
+date_precision: day
+content_hash: sha256:18ed5fde69fa1c6931752c851325f15f2f0778687128d3d2f3c23fa8358f667e
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:7e5d547f55a889620e30bd217076dc9589f1f973987102885907b0a22733c2f9
+  discovered_at: '2026-08-30T10:49:07.857411+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:7e5d547f55a889620e30bd217076dc9589f1f973987102885907b0a22733c2f9
+tier: 1
+learning_priority: low
+category: null
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:18ed5fde69fa1c6931752c851325f15f2f0778687128d3d2f3c23fa8358f667e
+  title_snapshot: '[Launched] Generally Available: Azure Bastion shareable link expiration'
+  summary_snapshot: Azure Bastion shareable link expiration is now generally available. When
+    creating a shareable link, administrators can specify the date and time when the link
+    should expire. After the configured expiration time, the link can no longer be used to
+    connect t
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

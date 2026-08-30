@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-08-045
+slug: in-preview-public-preview-ipv6-dual-stack-support-for-azure
+title: '[In preview] Public Preview: IPv6 dual-stack support for Azure Bastion'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=570025
+announcement_url: https://azure.microsoft.com/updates?id=570025
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-26
+discovered_date: 2026-08-30
+date_confidence: exact
+date_precision: day
+content_hash: sha256:11f9f434863f30187068b99fc03232fb00a0d4a11c3944dcd0466c5568779ced
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:36ea46d7ac65c3bda0efc3a78e5921e60685bc3d68a36880d799abbe91cdf3e3
+  discovered_at: '2026-08-30T10:49:07.857481+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:36ea46d7ac65c3bda0efc3a78e5921e60685bc3d68a36880d799abbe91cdf3e3
+tier: 2
+learning_priority: low
+category: null
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:11f9f434863f30187068b99fc03232fb00a0d4a11c3944dcd0466c5568779ced
+  title_snapshot: '[In preview] Public Preview: IPv6 dual-stack support for Azure Bastion'
+  summary_snapshot: Azure Bastion support for IPv4 and IPv6 dual-stack configurations is now
+    available in public preview. Customers can configure a newly created Bastion deployment
+    with both IPv4 and IPv6 public IP addresses. IPv6 is supported for connections between
+    the use
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

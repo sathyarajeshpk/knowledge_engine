@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-08-044
+slug: launched-generally-available-connect-to-aks-clusters-using
+title: '[Launched] Generally Available: Connect to AKS clusters using Azure Bastion'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=570030
+announcement_url: https://azure.microsoft.com/updates?id=570030
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-26
+discovered_date: 2026-08-30
+date_confidence: exact
+date_precision: day
+content_hash: sha256:3eed9159a65594b680130a4a9b7cbe7e529fa4047ad9f234a4f01befd70fc952
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:232b861137b2220e0ade01d45b46cfd724a4a0d9f3e1b7112d37334b757148eb
+  discovered_at: '2026-08-30T10:49:07.857543+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:232b861137b2220e0ade01d45b46cfd724a4a0d9f3e1b7112d37334b757148eb
+tier: 1
+learning_priority: high
+category: compute
+tags:
+- ga
+- kubernetes
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:3eed9159a65594b680130a4a9b7cbe7e529fa4047ad9f234a4f01befd70fc952
+  title_snapshot: '[Launched] Generally Available: Connect to AKS clusters using Azure Bastion'
+  summary_snapshot: Azure Bastion integration with Azure Kubernetes Service is now generally
+    available. Customers can establish a secure tunnel from their local machine through Azure
+    Bastion to an AKS cluster API server. The integration enables customers to use standard
+    Kube
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

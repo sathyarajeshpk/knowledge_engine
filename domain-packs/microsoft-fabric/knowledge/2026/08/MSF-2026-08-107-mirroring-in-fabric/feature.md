@@ -1,5 +1,5 @@
 # Mirroring in Fabric
 
-Mirroring for Azure Database for MySQL (Preview) Mirroring in Fabric provides an easy experience to avoid complex ETL (Extract, Transform, Load) processes and seamlessly integrate your existing Azure Database for MySQL data with the rest of your data in Fabric. For more information, see Mirroring Azure Database for MySQL.
+Mirroring for Google BigQuery (Generally Available) Mirroring in Fabric offers a simple, low-latency way to continuously replicate your Google BigQuery data into OneLake with no ETL pipelines, no data movement, and no proprietary formats. Once in Fabric, mirrored BigQuery data is queryable in near real time across Power BI Direct Lake, the SQL analytics endpoint, Data Engineering, Data Science, Real-Time Intelligence, and Copilot. For more information, see Mirrored databases from Google BigQuery and Tutorial: Set up mirroring for Google BigQuery.
 
 Source: [fabric-whats-new](https://learn.microsoft.com/en-us/fabric/mirroring/overview)

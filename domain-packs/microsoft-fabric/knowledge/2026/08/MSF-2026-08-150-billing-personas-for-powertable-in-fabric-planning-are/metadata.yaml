@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-150
+slug: billing-personas-for-powertable-in-fabric-planning-are
+title: Billing personas for PowerTable in Fabric Planning are generally available
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Billing-personas-for-PowerTable-within-Planning-in-Fabric-IQ/ba-p/5360168
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Billing-personas-for-PowerTable-within-Planning-in-Fabric-IQ/ba-p/5360168
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-08-30
+date_confidence: exact
+date_precision: month
+content_hash: sha256:4cabd06f66d2a6c2a30f014a3d041601da64a194d0a1f3e620c85ab69d63e9c3
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:e8596afb169994d748f7eedc157b3eaae2b7e2a4fa8b956e8adf65e9a124c389
+  discovered_at: '2026-08-30T10:49:09.645737+00:00'
+  source_role: primary
+  selector: h2[Generally available features] > table > tr (date from cell 0)
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:e8596afb169994d748f7eedc157b3eaae2b7e2a4fa8b956e8adf65e9a124c389
+tier: 1
+learning_priority: low
+category: platform
+tags:
+- ga
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:4cabd06f66d2a6c2a30f014a3d041601da64a194d0a1f3e620c85ab69d63e9c3
+  title_snapshot: Billing personas for PowerTable in Fabric Planning are generally available
+  summary_snapshot: PowerTable billing personas (Generally Available) Billing personas for
+    PowerTable in Fabric Planning are generally available, with role-based billing for Planners,
+    Stakeholders, and Viewers. For more information, see Billing and usage for Fabric Planning.
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

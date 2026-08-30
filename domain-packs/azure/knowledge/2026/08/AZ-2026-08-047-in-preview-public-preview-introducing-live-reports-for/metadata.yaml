@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-08-047
+slug: in-preview-public-preview-introducing-live-reports-for
+title: '[In preview] Public Preview: Introducing Live Reports for Azure SRE Agent'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=569690
+announcement_url: https://azure.microsoft.com/updates?id=569690
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-26
+discovered_date: 2026-08-30
+date_confidence: exact
+date_precision: day
+content_hash: sha256:397d525b3a4749e81630de9c2eff1a6b77496aabb4931e6bfb86d6524cb24792
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:8bfa8ad0a30e4b9c71fb5f563fb6c3bc09fb14c0e930e0c9abd8a16b3de35e62
+  discovered_at: '2026-08-30T10:49:07.857595+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:8bfa8ad0a30e4b9c71fb5f563fb6c3bc09fb14c0e930e0c9abd8a16b3de35e62
+tier: 2
+learning_priority: low
+category: null
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:397d525b3a4749e81630de9c2eff1a6b77496aabb4931e6bfb86d6524cb24792
+  title_snapshot: '[In preview] Public Preview: Introducing Live Reports for Azure SRE Agent'
+  summary_snapshot: We're excited to announce Live Reports, now in Public Preview for Azure
+    SRE Agent. Live Reports help operations teams create dynamic operational views directly
+    from SRE Agent conversations and keep them continuously up to date with the latest data
+    from co
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

@@ -1,0 +1,59 @@
+schema_version: 1
+id: MSF-2026-08-142
+slug: connectivity-patterns-in-microsoft-fabric
+title: Connectivity patterns in Microsoft Fabric
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Connectivity-patterns-in-Microsoft-Fabric-A-guide-for-data/ba-p/5360180
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Connectivity-patterns-in-Microsoft-Fabric-A-guide-for-data/ba-p/5360180
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-08-30
+date_confidence: exact
+date_precision: month
+content_hash: sha256:7e31bef6ca3bfe39eb1eb3b0a233fdbe07244c18f2db8d4931fa399ee1df9876
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:6bdc7f985996bcecf027c187b242ea72ef98586545fa9ce9985fdf32b2e4a07b
+  discovered_at: '2026-08-30T10:49:09.649223+00:00'
+  source_role: primary
+  selector: h2[Data Factory in Microsoft Fabric] > table > tr (date from cell 0)
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:6bdc7f985996bcecf027c187b242ea72ef98586545fa9ce9985fdf32b2e4a07b
+tier: 3
+learning_priority: low
+category: data-factory
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:7e31bef6ca3bfe39eb1eb3b0a233fdbe07244c18f2db8d4931fa399ee1df9876
+  title_snapshot: Connectivity patterns in Microsoft Fabric
+  summary_snapshot: Connectivity patterns for data integration workloads Connectivity patterns
+    in Microsoft Fabric compare public endpoints, managed virtual networks, virtual network
+    data gateways, and on-premises data gateways for data integration workloads. For more
+    information, see Managed virtual networks in Fabric and Virtual network data gateways.
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

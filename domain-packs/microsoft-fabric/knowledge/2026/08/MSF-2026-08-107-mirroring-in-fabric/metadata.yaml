@@ -7,11 +7,11 @@ source_url: https://learn.microsoft.com/en-us/fabric/mirroring/overview
 announcement_url: https://learn.microsoft.com/en-us/fabric/mirroring/overview
 identity_confidence: high
 source_authority: official-microsoft
-published_date: null
+published_date: 2026-08-01
 discovered_date: 2026-08-02
-date_confidence: inferred
-date_precision: day
-content_hash: sha256:97b6b0bacae841eb82afcd2ac6e029e8da94a451ea743753f6bc922b8d2526ac
+date_confidence: exact
+date_precision: month
+content_hash: sha256:bbf8a23b9925f1111a591c9739907519a983f7ab38856c66436e9931fa3b2cd7
 provenance:
   source_name: fabric-whats-new
   source_representation: html
@@ -30,7 +30,7 @@ learning_priority: medium
 category: data-factory
 tags:
 - preview
-difficulty: intermediate
+difficulty: beginner
 workload: moderate
 version: null
 reading_time: 1
@@ -57,4 +57,22 @@ revisions:
     integrate your existing Azure Database for MySQL data with the rest of your data in Fabric.
     For more information, see Mirroring Azure Database for MySQL.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 2
+  date: 2026-08-30
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:bbf8a23b9925f1111a591c9739907519a983f7ab38856c66436e9931fa3b2cd7
+  title_snapshot: Mirroring in Fabric
+  summary_snapshot: 'Mirroring for Google BigQuery (Generally Available) Mirroring in Fabric
+    offers a simple, low-latency way to continuously replicate your Google BigQuery data into
+    OneLake with no ETL pipelines, no data movement, and no proprietary formats. Once in Fabric,
+    mirrored BigQuery data is queryable in near real time across Power BI Direct Lake, the
+    SQL analytics endpoint, Data Engineering, Data Science, Real-Time Intelligence, and Copilot.
+    For more information, see Mirrored databases from Google BigQuery and Tutorial: Set up
+    mirroring for Google BigQuery.'
+  run_id: run-2026-08-30T10-49-07Z
 generation: {}

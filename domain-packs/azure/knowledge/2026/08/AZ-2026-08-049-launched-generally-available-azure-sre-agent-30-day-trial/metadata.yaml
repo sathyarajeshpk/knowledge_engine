@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-08-049
+slug: launched-generally-available-azure-sre-agent-30-day-trial
+title: '[Launched] Generally Available: Azure SRE Agent 30-Day Trial'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=569760
+announcement_url: https://azure.microsoft.com/updates?id=569760
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-26
+discovered_date: 2026-08-30
+date_confidence: exact
+date_precision: day
+content_hash: sha256:4334679cfcf4ae3a70bbe0cb202b9b2b85080ffcf550a6854516fd267a8b597a
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:f5310422e37bb5c726ec02d7a59522bcabcef850330ab121e87750493eec0a78
+  discovered_at: '2026-08-30T10:49:07.857718+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:f5310422e37bb5c726ec02d7a59522bcabcef850330ab121e87750493eec0a78
+tier: 1
+learning_priority: low
+category: null
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:4334679cfcf4ae3a70bbe0cb202b9b2b85080ffcf550a6854516fd267a8b597a
+  title_snapshot: '[Launched] Generally Available: Azure SRE Agent 30-Day Trial'
+  summary_snapshot: New customers can now get started with Azure SRE Agent through a 30-day
+    trial experience. During the trial, customers can create SRE Agents and connect them to
+    your operational tools and data sources, and explore capabilities at their own pace without
+    bas
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

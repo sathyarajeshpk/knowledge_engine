@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-08-043
+slug: announcing-aspire-13-5-has-shipped
+title: 'Announcing: Aspire 13.5 has shipped'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=569910
+announcement_url: https://azure.microsoft.com/updates?id=569910
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-25
+discovered_date: 2026-08-30
+date_confidence: exact
+date_precision: day
+content_hash: sha256:d326ce169e144d35f03c793b21d90c4aef2b2d2356a5c1ab4cec7231b8ce0e9c
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:e79f2a61cae93872306a27b78efbc633fc335a12d2fb903d489f78ef1389314d
+  discovered_at: '2026-08-30T10:49:07.857769+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:e79f2a61cae93872306a27b78efbc633fc335a12d2fb903d489f78ef1389314d
+tier: 2
+learning_priority: high
+category: compute
+tags:
+- kubernetes
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:d326ce169e144d35f03c793b21d90c4aef2b2d2356a5c1ab4cec7231b8ce0e9c
+  title_snapshot: 'Announcing: Aspire 13.5 has shipped'
+  summary_snapshot: Aspire 13.5 refreshes the dashboard and aspire.dev, expands the Interaction
+    Service, adds cross-scope Azure references and persistent Kubernetes volumes, and brings
+    live terminals into the apphost.Learn more.
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

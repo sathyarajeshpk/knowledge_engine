@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-08-042
+slug: launched-generally-available-azure-248-and-372-vcpu-sizes
+title: '[Launched] Generally Available: Azure 248 and 372 vCPU sizes for D/E v7 series VMs'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=569546
+announcement_url: https://azure.microsoft.com/updates?id=569546
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-25
+discovered_date: 2026-08-30
+date_confidence: exact
+date_precision: day
+content_hash: sha256:df56cd2d726d974971c3566a1cced9793dfaed763a9dc3357f76c775b71a9b42
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:a6751a89ffa722b9eccf9e0e4857f5582ddb1bf68ef426374f04150c64ffbd3d
+  discovered_at: '2026-08-30T10:49:07.857823+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:a6751a89ffa722b9eccf9e0e4857f5582ddb1bf68ef426374f04150c64ffbd3d
+tier: 1
+learning_priority: low
+category: compute
+tags:
+- ga
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:df56cd2d726d974971c3566a1cced9793dfaed763a9dc3357f76c775b71a9b42
+  title_snapshot: '[Launched] Generally Available: Azure 248 and 372 vCPU sizes for D/E v7
+    series VMs'
+  summary_snapshot: Azure announces the general availability of 248 and 372 vCPU Dl/D/E v7
+    VM sizes, powered by Intel® Xeon® 6 processors. These general-purpose and memory-optimized
+    VMs deliver up to 20% better compute performance than prior-generation Intel-based v6
+    VMs, wi
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

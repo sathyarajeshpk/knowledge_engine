@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-07-048
+slug: azure-event-hubs-source-workspace-identity-authentication
+title: Azure Event Hubs source workspace identity authentication
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Secure-Azure-Event-Hubs-Connections-in-Eventstream-with/ba-p/5359945
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Secure-Azure-Event-Hubs-Connections-in-Eventstream-with/ba-p/5359945
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-07-01
+discovered_date: 2026-08-30
+date_confidence: exact
+date_precision: month
+content_hash: sha256:566c7a8c4747ff4bc66f275851b266d7dd5538e05efa5bdb824316b42bdc8610
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:20128b0fe08500511fd677c1d9ee7aa690b80a2e4808bc12e387a11d8478cf02
+  discovered_at: '2026-08-30T10:49:09.652886+00:00'
+  source_role: primary
+  selector: h2[Real-Time Intelligence in Microsoft Fabric] > table > tr (date from cell 0)
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:20128b0fe08500511fd677c1d9ee7aa690b80a2e4808bc12e387a11d8478cf02
+tier: 2
+learning_priority: medium
+category: real-time-intelligence
+tags:
+- preview
+- real-time
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:566c7a8c4747ff4bc66f275851b266d7dd5538e05efa5bdb824316b42bdc8610
+  title_snapshot: Azure Event Hubs source workspace identity authentication
+  summary_snapshot: Azure Event Hubs source workspace identity authentication (Preview) Azure
+    Event Hubs source workspace identity authentication lets an Eventstream Azure Event Hubs
+    source use workspace identity instead of shared access keys for Microsoft Entra ID-based
+    access. For more information, see Add an Azure Event Hubs source to an eventstream.
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:36e40fadd4d37a1aca230e00f7e4a33f68510cf9994aeb7b3566b0e8b9a83612
+content_hash: sha256:4fd22c4d6cb608267428a9b32907185b4b9b80438281bd003938b64c4ab111df
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -70,4 +70,15 @@ revisions:
     now use the Python SDK to programmatically evaluate Fabric data agents. For more information,
     see Consume a Fabric Data Agent in Microsoft Copilot Studio (preview).
   run_id: run-2026-08-02T08-00-14Z
+- revision: 3
+  date: 2026-08-30
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:4fd22c4d6cb608267428a9b32907185b4b9b80438281bd003938b64c4ab111df
+  title_snapshot: the Python SDK to programmatically evaluate Fabric data agents
+  summary_snapshot: Fabric data agents evaluation with the Python SDK (Preview) You can now
+    use the Python SDK to programmatically evaluate Fabric data agents. For more information,
+    see Consume a Fabric Data Agent in Microsoft Copilot Studio (preview).
+  run_id: run-2026-08-30T10-49-07Z
 generation: {}

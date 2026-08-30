@@ -1,0 +1,65 @@
+schema_version: 1
+id: MSF-2026-08-155
+slug: create-calculated-columns-in-power-bi-desktop
+title: Create calculated columns in Power BI Desktop
+source_name: powerbi-whats-new
+source_url: https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-calculated-columns
+announcement_url: https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-calculated-columns
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-08-30
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:a8c94d7bc38e4368abe3f41ea8b44d8fec732b9e1ebf7e3d932be7cb9631b9c5
+provenance:
+  source_name: powerbi-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:490661149b62772c8065f8ecdcf28d81f47cd03e074a30ca4a5f9efc6696c6fb
+  discovered_at: '2026-08-30T10:49:09.956826+00:00'
+  source_role: primary
+  selector: h2[Modeling] > table > tr (no date cell)
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:490661149b62772c8065f8ecdcf28d81f47cd03e074a30ca4a5f9efc6696c6fb
+tier: 2
+learning_priority: high
+category: power-bi
+tags:
+- direct-lake
+- onelake
+- power-bi
+- preview
+- semantic-model
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:a8c94d7bc38e4368abe3f41ea8b44d8fec732b9e1ebf7e3d932be7cb9631b9c5
+  title_snapshot: Create calculated columns in Power BI Desktop
+  summary_snapshot: Direct Lake calculated columns (Preview) Calculated columns can be defined
+    using DAX in web modeling and Power BI Desktop on Direct Lake on OneLake semantic models
+    without changing storage mode. Columns are evaluated at query time and support user-context
+    functions such as USERCULTURE(). For more information, see Create calculated columns in
+    Power BI Desktop. ✔️
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

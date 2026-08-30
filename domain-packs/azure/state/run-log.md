@@ -9,3 +9,4 @@ Append-only. One line per harvest, including runs that found nothing.
 | run-2026-08-09T06-34-41Z | 200 | 0 | 0 | 0 | 200 |
 | run-2026-08-16T06-18-44Z | 200 | 10 | 0 | 0 | 190 |
 | run-2026-08-23T06-19-40Z | 200 | 14 | 1 | 0 | 186 |
+| run-2026-08-30T10-49-07Z | 200 | 14 | 0 | 0 | 186 |

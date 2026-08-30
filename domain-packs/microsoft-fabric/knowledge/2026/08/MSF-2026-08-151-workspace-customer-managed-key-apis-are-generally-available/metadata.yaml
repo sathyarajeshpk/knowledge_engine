@@ -1,0 +1,62 @@
+schema_version: 1
+id: MSF-2026-08-151
+slug: workspace-customer-managed-key-apis-are-generally-available
+title: Workspace customer-managed key APIs are generally available
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Customer-Managed-Key-CMK-APIs-for-Microsoft-Fabric-Workspaces/ba-p/5360035
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Customer-Managed-Key-CMK-APIs-for-Microsoft-Fabric-Workspaces/ba-p/5360035
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-08-30
+date_confidence: exact
+date_precision: month
+content_hash: sha256:6d9f91b2fd62c043c3beb9bf2b33e652be6ba5665114ef768c7fc9e5c6319200
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:eaef1768151d61ee5126878cb852d311d848cb0dc5daa1378343eda4b8de27c4
+  discovered_at: '2026-08-30T10:49:09.645781+00:00'
+  source_role: primary
+  selector: h2[Generally available features] > table > tr (date from cell 0)
+  run_id: run-2026-08-30T10-49-07Z
+url_hash: sha256:eaef1768151d61ee5126878cb852d311d848cb0dc5daa1378343eda4b8de27c4
+tier: 1
+learning_priority: low
+category: governance-security
+tags:
+- api
+- ga
+- security
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-08-30
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:6d9f91b2fd62c043c3beb9bf2b33e652be6ba5665114ef768c7fc9e5c6319200
+  title_snapshot: Workspace customer-managed key APIs are generally available
+  summary_snapshot: Workspace customer-managed key APIs (Generally Available) Workspace customer-managed
+    key APIs are generally available, so administrators can automate workspace encryption-key
+    assignment and removal. For more information, see Customer-managed keys for Fabric workspaces
+    and Assign workspace encryption.
+  run_id: run-2026-08-30T10-49-07Z
+generation: {}

@@ -5,7 +5,7 @@
     "2026-04": 1,
     "2026-06": 141,
     "2026-07": 57,
-    "2026-08": 37
+    "2026-08": 51
   },
   "paths": {
     "AZ-2025-09-001": "2025/09/AZ-2025-09-001-retirement-azure-vmware-solution-av36-node-retirement-now",
@@ -244,6 +244,20 @@
     "AZ-2026-08-034": "2026/08/AZ-2026-08-034-launched-generally-available-azure-sql-database",
     "AZ-2026-08-035": "2026/08/AZ-2026-08-035-launched-generally-available-azure-sql-updates-for-mid",
     "AZ-2026-08-036": "2026/08/AZ-2026-08-036-launched-generally-available-summarized-advertised-gateway",
-    "AZ-2026-08-037": "2026/08/AZ-2026-08-037-announcing-azure-copilot-introduces-direct-access-to-agents"
+    "AZ-2026-08-037": "2026/08/AZ-2026-08-037-announcing-azure-copilot-introduces-direct-access-to-agents",
+    "AZ-2026-08-038": "2026/08/AZ-2026-08-038-retirement-support-for-node-22-lts-ends-on-april-30-2027",
+    "AZ-2026-08-039": "2026/08/AZ-2026-08-039-launched-generally-available-custom-block-response-code-and",
+    "AZ-2026-08-040": "2026/08/AZ-2026-08-040-announcing-extended-support-for-azure-database-for",
+    "AZ-2026-08-041": "2026/08/AZ-2026-08-041-launched-generally-available-ebpf-host-routing-in-advanced",
+    "AZ-2026-08-042": "2026/08/AZ-2026-08-042-launched-generally-available-azure-248-and-372-vcpu-sizes",
+    "AZ-2026-08-043": "2026/08/AZ-2026-08-043-announcing-aspire-13-5-has-shipped",
+    "AZ-2026-08-044": "2026/08/AZ-2026-08-044-launched-generally-available-connect-to-aks-clusters-using",
+    "AZ-2026-08-045": "2026/08/AZ-2026-08-045-in-preview-public-preview-ipv6-dual-stack-support-for-azure",
+    "AZ-2026-08-046": "2026/08/AZ-2026-08-046-launched-generally-available-azure-bastion-shareable-link",
+    "AZ-2026-08-047": "2026/08/AZ-2026-08-047-in-preview-public-preview-introducing-live-reports-for",
+    "AZ-2026-08-048": "2026/08/AZ-2026-08-048-launched-generally-available-azure-sre-agent-vnet",
+    "AZ-2026-08-049": "2026/08/AZ-2026-08-049-launched-generally-available-azure-sre-agent-30-day-trial",
+    "AZ-2026-08-050": "2026/08/AZ-2026-08-050-launched-generally-available-azure-vm-image-builder-in",
+    "AZ-2026-08-051": "2026/08/AZ-2026-08-051-launched-generally-available-workload-identity-support-for"
   }
 }
