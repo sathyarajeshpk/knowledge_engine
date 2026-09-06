@@ -1,17 +1,17 @@
 schema_version: 1
 id: MSF-2026-06-012
 slug: time-travel-using-sql-analytics-endpoint-preview
-title: Time travel using the SQL analytics endpoint
+title: Time Travel using SQL analytics endpoint (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://learn.microsoft.com/en-us/fabric/data-warehouse/time-travel
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-warehouse/time-travel
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-06-01
+published_date: null
 discovered_date: 2026-08-01
-date_confidence: exact
-date_precision: month
-content_hash: sha256:293cf8b97fe922664c648c1a2b0fffa939bedf990e62c2c2d4fe9df490c2d047
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:f0b1e0975e97777436560d2b3f443eed0709437ae0b2fecb6cff40ed0ea16d5a
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -223,4 +223,20 @@ revisions:
     point in time by adding OPTION (FOR TIMESTAMP AS OF '...') once at the T-SQL statement
     level.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 13
+  date: 2026-09-06
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:f0b1e0975e97777436560d2b3f443eed0709437ae0b2fecb6cff40ed0ea16d5a
+  title_snapshot: Time Travel using SQL analytics endpoint (Preview)
+  summary_snapshot: Time Travel using SQL analytics endpoint (Preview) extends the Fabric
+    Data Warehouse time travel experience to the SQL analytics endpoint so you can query Lakehouse
+    data exactly as it looked at any prior point in time by adding OPTION (FOR TIMESTAMP AS
+    OF '...') once at the T-SQL statement level.
+  run_id: run-2026-09-06T09-47-41Z
 generation: {}

@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-09-001
+slug: launched-generally-available-confidential-vms-for-azure
+title: '[Launched] Generally Available: Confidential VMs for Azure Linux'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=570100
+announcement_url: https://azure.microsoft.com/updates?id=570100
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-01
+discovered_date: 2026-09-06
+date_confidence: exact
+date_precision: day
+content_hash: sha256:d2e09c1e9a012f7ef1f3f9f8b90ecd4d27dbb7915899a6363d8244d4e0ae3c43
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:062efe61e8462b253da662f38dee77b927e2697aee6e1d5ba7aff74b7d320673
+  discovered_at: '2026-09-06T09:47:41.731392+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-06T09-47-41Z
+url_hash: sha256:062efe61e8462b253da662f38dee77b927e2697aee6e1d5ba7aff74b7d320673
+tier: 1
+learning_priority: high
+category: compute
+tags:
+- ga
+- kubernetes
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-06
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:d2e09c1e9a012f7ef1f3f9f8b90ecd4d27dbb7915899a6363d8244d4e0ae3c43
+  title_snapshot: '[Launched] Generally Available: Confidential VMs for Azure Linux'
+  summary_snapshot: Confidential Virtual Machines (CVM) offer strong security and confidentiality
+    for tenants. CVM for Azure Linux in AKS is now generally available and enables node pools
+    with CVM to target the migration of highly sensitive container workloads to AKS without
+  run_id: run-2026-09-06T09-47-41Z
+generation: {}

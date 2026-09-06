@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-09-003
+slug: ci-cd-guidance-and-tutorials-for-microsoft-fabric
+title: CI/CD guidance and tutorials for Microsoft Fabric
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/New-CI-CD-resources-for-Microsoft-Fabric-from-concepts-to-end-to/ba-p/5358502
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/New-CI-CD-resources-for-Microsoft-Fabric-from-concepts-to-end-to/ba-p/5358502
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-01
+discovered_date: 2026-09-06
+date_confidence: exact
+date_precision: month
+content_hash: sha256:9cd6da1f0e2cccc5aa1628cfe4dcb8679c5adad8303d573dd0e6f4c381a7cdba
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:997df5c1aa95f7a6df9ac01fbca7de051a2175b3644601aef0e44670b8032ffb
+  discovered_at: '2026-09-06T09:47:44.054007+00:00'
+  source_role: primary
+  selector: h2[Continuous Integration/Continuous Delivery (CI/CD) in Microsoft Fabric] > table
+    > tr (date from cell 0)
+  run_id: run-2026-09-06T09-47-41Z
+url_hash: sha256:997df5c1aa95f7a6df9ac01fbca7de051a2175b3644601aef0e44670b8032ffb
+tier: 3
+learning_priority: low
+category: platform
+tags: []
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-06
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:9cd6da1f0e2cccc5aa1628cfe4dcb8679c5adad8303d573dd0e6f4c381a7cdba
+  title_snapshot: CI/CD guidance and tutorials for Microsoft Fabric
+  summary_snapshot: Microsoft Fabric CI/CD resources CI/CD guidance and tutorials for Microsoft
+    Fabric connect platform concepts, planning guidance, end-to-end automation tutorials,
+    dependency binding, and generic Git deployment into a guided path. For more information,
+    see Introduction to CI/CD in Microsoft Fabric and Fabric CI/CD concepts and best practices.
+  run_id: run-2026-09-06T09-47-41Z
+generation: {}

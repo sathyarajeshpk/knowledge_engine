@@ -5,7 +5,8 @@
     "2026-04": 1,
     "2026-06": 141,
     "2026-07": 57,
-    "2026-08": 51
+    "2026-08": 53,
+    "2026-09": 12
   },
   "paths": {
     "AZ-2025-09-001": "2025/09/AZ-2025-09-001-retirement-azure-vmware-solution-av36-node-retirement-now",
@@ -258,6 +259,20 @@
     "AZ-2026-08-048": "2026/08/AZ-2026-08-048-launched-generally-available-azure-sre-agent-vnet",
     "AZ-2026-08-049": "2026/08/AZ-2026-08-049-launched-generally-available-azure-sre-agent-30-day-trial",
     "AZ-2026-08-050": "2026/08/AZ-2026-08-050-launched-generally-available-azure-vm-image-builder-in",
-    "AZ-2026-08-051": "2026/08/AZ-2026-08-051-launched-generally-available-workload-identity-support-for"
+    "AZ-2026-08-051": "2026/08/AZ-2026-08-051-launched-generally-available-workload-identity-support-for",
+    "AZ-2026-08-052": "2026/08/AZ-2026-08-052-in-preview-public-preview-azure-multicloud-interconnect",
+    "AZ-2026-08-053": "2026/08/AZ-2026-08-053-in-preview-public-preview-per-disk-resiliency-for-azure-vms",
+    "AZ-2026-09-001": "2026/09/AZ-2026-09-001-launched-generally-available-confidential-vms-for-azure",
+    "AZ-2026-09-002": "2026/09/AZ-2026-09-002-launched-generally-available-azure-monitor-auxiliary-logs",
+    "AZ-2026-09-003": "2026/09/AZ-2026-09-003-launched-generally-available-azure-firewall-auto-learn-snat",
+    "AZ-2026-09-004": "2026/09/AZ-2026-09-004-launched-generally-available-azure-copilot-observability",
+    "AZ-2026-09-005": "2026/09/AZ-2026-09-005-launched-generally-available-purchase-order-mapping",
+    "AZ-2026-09-006": "2026/09/AZ-2026-09-006-launched-generally-available-microsoft-defender-for-cloud",
+    "AZ-2026-09-007": "2026/09/AZ-2026-09-007-launched-generally-available-artifact-streaming-on-aks",
+    "AZ-2026-09-008": "2026/09/AZ-2026-09-008-launched-generally-available-azure-monitor-auxiliary-logs",
+    "AZ-2026-09-009": "2026/09/AZ-2026-09-009-launched-generally-available-windows-server-2025-on-aks",
+    "AZ-2026-09-010": "2026/09/AZ-2026-09-010-in-preview-public-preview-azure-front-door-profile-and",
+    "AZ-2026-09-011": "2026/09/AZ-2026-09-011-in-preview-public-preview-reader-endpoint-for-azure",
+    "AZ-2026-09-012": "2026/09/AZ-2026-09-012-launched-generally-available-azure-virtual-network-manager"
   }
 }

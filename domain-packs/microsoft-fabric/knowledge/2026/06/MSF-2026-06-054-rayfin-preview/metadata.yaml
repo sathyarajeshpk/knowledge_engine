@@ -7,11 +7,11 @@ source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Introd
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Introducing-Rayfin-A-new-AI-first-way-to-build-deploy-and-govern/ba-p/5191676
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-06-01
+published_date: null
 discovered_date: 2026-08-02
-date_confidence: exact
-date_precision: month
-content_hash: sha256:974d53dddb35de4fa9b25e75120ce17dc500eebda737242b10e7b98400870746
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:392c3f2ceab436090f656d2273e4774e1ec798d8cb44a2e98ee7e593c79e9a09
 provenance:
   source_name: fabric-whats-new
   source_representation: html
@@ -61,4 +61,20 @@ revisions:
     and direct access to OneLake. For more information, see Fabric Apps, the Rayfin GitHub
     repo, and the Rayfin docs.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 2
+  date: 2026-09-06
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:392c3f2ceab436090f656d2273e4774e1ec798d8cb44a2e98ee7e593c79e9a09
+  title_snapshot: Rayfin (Preview)
+  summary_snapshot: Fabric Apps backend with the Rayfin SDK (Preview) Rayfin (Preview) is
+    an open-source SDK and CLI that lets developers and coding agents define a complete application
+    backend in code—data models, APIs, identity, access policies, and business logic—and deploy
+    it to Microsoft Fabric, where the resulting apps run as first-class items with built-in
+    governance and direct access to OneLake. For more information, see Fabric Apps.
+  run_id: run-2026-09-06T09-47-41Z
 generation: {}

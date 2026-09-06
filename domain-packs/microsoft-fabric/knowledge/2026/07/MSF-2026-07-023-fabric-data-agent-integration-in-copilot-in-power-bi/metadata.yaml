@@ -11,7 +11,7 @@ published_date: 2026-07-01
 discovered_date: 2026-08-08
 date_confidence: exact
 date_precision: month
-content_hash: sha256:f8d8dece180259c53777154a1dced3509a8324da8fa3767c95f6b74d0dc1d190
+content_hash: sha256:315ba54828ccced47895edf2fdd3565682eaac380f95542354bf8c316106a29e
 provenance:
   source_name: fabric-whats-new
   source_representation: html
@@ -59,4 +59,15 @@ revisions:
     to supported experiences. For more information, see Consume a data agent from Copilot
     in Power BI.
   run_id: run-2026-08-08T06-51-09Z
+- revision: 2
+  date: 2026-09-06
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:315ba54828ccced47895edf2fdd3565682eaac380f95542354bf8c316106a29e
+  title_snapshot: Fabric data agent integration in Copilot in Power BI
+  summary_snapshot: Data agent Copilot integration retirement Fabric data agent integration
+    in Copilot in Power BI retires on August 26, 2026, so you need to move data agent workflows
+    to supported experiences.
+  run_id: run-2026-09-06T09-47-41Z
 generation: {}

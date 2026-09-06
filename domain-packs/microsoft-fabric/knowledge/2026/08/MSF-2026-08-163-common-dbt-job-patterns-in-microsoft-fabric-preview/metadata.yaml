@@ -1,0 +1,62 @@
+schema_version: 1
+id: MSF-2026-08-163
+slug: common-dbt-job-patterns-in-microsoft-fabric-preview
+title: Common dbt job patterns in Microsoft Fabric (Preview)
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Common-dbt-job-patterns-in-Microsoft-Fabric-Preview/ba-p/5361480
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Common-dbt-job-patterns-in-Microsoft-Fabric-Preview/ba-p/5361480
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-09-06
+date_confidence: exact
+date_precision: month
+content_hash: sha256:bdb47db81a3c35292bd68aa1b7083c9fe4e9d40a694a4bc9bf55a43c6e6e52e5
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:ab5195a9f5f90ea25bb690633ba92bd495c528d5dace96ac63b2116550d6dbe6
+  discovered_at: '2026-09-06T09:47:44.054600+00:00'
+  source_role: primary
+  selector: h2[Data Factory in Microsoft Fabric] > table > tr (date from cell 0)
+  run_id: run-2026-09-06T09-47-41Z
+url_hash: sha256:ab5195a9f5f90ea25bb690633ba92bd495c528d5dace96ac63b2116550d6dbe6
+tier: 2
+learning_priority: high
+category: data-warehouse
+tags:
+- lakehouse
+- preview
+- warehouse
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-06
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:bdb47db81a3c35292bd68aa1b7083c9fe4e9d40a694a4bc9bf55a43c6e6e52e5
+  title_snapshot: Common dbt job patterns in Microsoft Fabric (Preview)
+  summary_snapshot: Common dbt job patterns (Preview) Common dbt job patterns in Microsoft
+    Fabric (Preview) describes warehouse-only, lakehouse-and-warehouse, and lakehouse-only
+    medallion designs for dbt jobs. For more information, see Common dbt job patterns in Microsoft
+    Fabric.
+  run_id: run-2026-09-06T09-47-41Z
+generation: {}

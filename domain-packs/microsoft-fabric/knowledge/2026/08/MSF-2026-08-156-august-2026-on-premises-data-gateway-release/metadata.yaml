@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-156
+slug: august-2026-on-premises-data-gateway-release
+title: August 2026 on-premises data gateway release
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/On-premises-data-gateway-August-2026-release/ba-p/5363026
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/On-premises-data-gateway-August-2026-release/ba-p/5363026
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-09-06
+date_confidence: exact
+date_precision: month
+content_hash: sha256:61274ce529d1e6f9e2731b0c118fc4b14cff659fa7ab58c84e9ccd87532b60cc
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:02cee034538b53d0ea69a06a1c3d6b40a1fb39e2a9bd83dead27c1413b1b16a0
+  discovered_at: '2026-09-06T09:47:44.054094+00:00'
+  source_role: primary
+  selector: h2[Data Factory in Microsoft Fabric] > table > tr (date from cell 0)
+  run_id: run-2026-09-06T09-47-41Z
+url_hash: sha256:02cee034538b53d0ea69a06a1c3d6b40a1fb39e2a9bd83dead27c1413b1b16a0
+tier: 3
+learning_priority: low
+category: data-factory
+tags:
+- power-bi
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-06
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:61274ce529d1e6f9e2731b0c118fc4b14cff659fa7ab58c84e9ccd87532b60cc
+  title_snapshot: August 2026 on-premises data gateway release
+  summary_snapshot: On-premises data gateway August 2026 release The August 2026 on-premises
+    data gateway release updates the gateway to version 3000.330 and aligns its query execution
+    with the August 2026 Power BI Desktop release. For more information, see Update an on-premises
+    data gateway.
+  run_id: run-2026-09-06T09-47-41Z
+generation: {}

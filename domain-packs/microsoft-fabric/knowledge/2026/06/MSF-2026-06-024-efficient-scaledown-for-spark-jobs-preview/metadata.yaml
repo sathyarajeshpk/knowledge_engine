@@ -7,11 +7,11 @@ source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/More-r
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/More-resilient-Spark-jobs-with-Efficient-Scaledown-Preview/ba-p/5212071
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-06-01
+published_date: null
 discovered_date: 2026-08-01
-date_confidence: exact
-date_precision: month
-content_hash: sha256:3e688edc2e3824319e5b8c9a0f508dd38ac91e47faa8cd40834b7c3c5976b1ac
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:0cc06271a2b4f5b3e1a5cab5739d774f494e0c7918ad7e77dd9588a6d8e53208
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -242,4 +242,21 @@ revisions:
     see Efficient scaledown and remote shuffle manager and Native execution engine for Fabric
     Data Engineering.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 13
+  date: 2026-09-06
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:0cc06271a2b4f5b3e1a5cab5739d774f494e0c7918ad7e77dd9588a6d8e53208
+  title_snapshot: Efficient Scaledown (Preview)
+  summary_snapshot: Efficient Scaledown for Spark jobs (Preview) Efficient Scaledown (Preview)
+    decouples Spark shuffle data from executor lifetime by routing shuffle output to Azure
+    Blob Storage, so clusters scale down faster and tolerate executor loss with no notebook
+    or query changes. It requires the Native Execution Engine on Fabric Spark Runtime 3.5
+    or later. For more information, see Efficient scaledown and Native execution engine for
+    Fabric Data Engineering.
+  run_id: run-2026-09-06T09-47-41Z
 generation: {}

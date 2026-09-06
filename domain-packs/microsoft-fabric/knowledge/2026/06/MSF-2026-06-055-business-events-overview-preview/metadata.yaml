@@ -7,11 +7,11 @@ source_url: https://learn.microsoft.com/en-us/fabric/real-time-hub/business-even
 announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-hub/business-events/business-events-overview
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-06-01
+published_date: null
 discovered_date: 2026-08-02
-date_confidence: exact
-date_precision: month
-content_hash: sha256:a95b0eec02ff77d53cf0cce592db1241ffa535beb69a17cc580ff0fe58d5d4ef
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:4f420066a5ddc52e63cbf9402efe51a785724c575f200cdd1277f7d7d1f54182
 provenance:
   source_name: fabric-whats-new
   source_representation: html
@@ -59,4 +59,19 @@ revisions:
     separate license. For more information, see Business events overview (Preview) and Microsoft
     Fabric Capacity Metrics app.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 2
+  date: 2026-09-06
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:4f420066a5ddc52e63cbf9402efe51a785724c575f200cdd1277f7d7d1f54182
+  title_snapshot: Business events overview (Preview)
+  summary_snapshot: Business events persisted into Eventhouse (Preview) Eventhouse is enabled
+    by default when you create a business event in Real-Time hub. Each business event maps
+    to a dedicated KQL table in your eventhouse database, and every published event is automatically
+    ingested and retained. For more information, see Business events overview (Preview).
+  run_id: run-2026-09-06T09-47-41Z
 generation: {}

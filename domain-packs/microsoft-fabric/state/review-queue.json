@@ -96,18 +96,6 @@
       "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
       "lifecycle": "queued"
     },
-    "sha256:4a5095bb9615baf0984d3bffa77b9bc88506105dd19176fd196d9852b15e6a70": {
-      "identity_key": "sha256:4a5095bb9615baf0984d3bffa77b9bc88506105dd19176fd196d9852b15e6a70",
-      "title": "CDC with SQL estates in Copy job (Generally Available)",
-      "summary": "Change data capture (CDC) for SQL estates in Copy job (Generally Available) brings native, low-latency replication of inserts, updates, and deletes from Azure SQL Database, SQL Server, and Azure SQL Managed Instance into Fabric destinations with no separate change tracking infrastructure. For more information, see Change data capture (CDC) in Copy Job.",
-      "source_name": "fabric-whats-new-markdown",
-      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Simplify-your-data-movement-with-Copy-job-CDC-with-SQL-estate/ba-p/5184211",
-      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Simplify-your-data-movement-with-Copy-job-CDC-with-SQL-estate/ba-p/5184211",
-      "first_discovered_date": "2026-08-01",
-      "confidence": "medium",
-      "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
-      "lifecycle": "queued"
-    },
     "sha256:50e619d1505923357161227a939454002d4acf336e7fa9dd63bae94e2d07e46c": {
       "identity_key": "sha256:50e619d1505923357161227a939454002d4acf336e7fa9dd63bae94e2d07e46c",
       "title": "Starting in October, users with Power BI Desktop versions from March 2026 or earlier will no longer be able to save and share files to OneDrive and SharePoint. Update Power BI Desktop to keep using this functionality.",

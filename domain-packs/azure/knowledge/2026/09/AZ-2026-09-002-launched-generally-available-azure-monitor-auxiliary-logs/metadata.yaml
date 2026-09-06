@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-09-002
+slug: launched-generally-available-azure-monitor-auxiliary-logs
+title: '[Launched] Generally Available: Azure Monitor Auxiliary Logs Plan in Azure Government
+  and China regions'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=569899
+announcement_url: https://azure.microsoft.com/updates?id=569899
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-01
+discovered_date: 2026-09-06
+date_confidence: exact
+date_precision: day
+content_hash: sha256:b08c98edf79b230695a041a89ae071eff0cacb6722642a82f0cda1f95be0f8bc
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:2ae670c7a791371d635c9bfccacbdcdeaaf21225ae182fd5352beee70b9e51d4
+  discovered_at: '2026-09-06T09:47:41.731628+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-06T09-47-41Z
+url_hash: sha256:2ae670c7a791371d635c9bfccacbdcdeaaf21225ae182fd5352beee70b9e51d4
+tier: 1
+learning_priority: medium
+category: monitoring
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-06
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:b08c98edf79b230695a041a89ae071eff0cacb6722642a82f0cda1f95be0f8bc
+  title_snapshot: '[Launched] Generally Available: Azure Monitor Auxiliary Logs Plan in Azure
+    Government and China regions'
+  summary_snapshot: 'The Auxiliary table plan in Azure Monitor Logs is a cost-effective option
+    for ingesting and retaining high-volume, verbose logs used for compliance and auditing.
+    Auxiliary Logs is now generally available in the sovereign clouds: Azure Government (Fairfax)'
+  run_id: run-2026-09-06T09-47-41Z
+generation: {}

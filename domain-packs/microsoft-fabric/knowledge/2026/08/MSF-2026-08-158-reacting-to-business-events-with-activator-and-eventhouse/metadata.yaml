@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-08-158
+slug: reacting-to-business-events-with-activator-and-eventhouse
+title: Reacting to Business Events with Activator and Eventhouse
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Reacting-to-Business-Events-with-Activator-and-Eventhouse/ba-p/5361410
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Reacting-to-Business-Events-with-Activator-and-Eventhouse/ba-p/5361410
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-09-06
+date_confidence: exact
+date_precision: month
+content_hash: sha256:2b903c83563ca8864af6d201f74f34d4ad9c3173d06ce6ba10a7acfa828033ee
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:24eb8208abbce2063dd7425fa55801cbf3f8a92984387cccca8cd7486f94265b
+  discovered_at: '2026-09-06T09:47:44.058791+00:00'
+  source_role: primary
+  selector: h2[Real-Time Intelligence in Microsoft Fabric] > table > tr (date from cell 0)
+  run_id: run-2026-09-06T09-47-41Z
+url_hash: sha256:24eb8208abbce2063dd7425fa55801cbf3f8a92984387cccca8cd7486f94265b
+tier: 3
+learning_priority: medium
+category: real-time-intelligence
+tags:
+- real-time
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-06
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:2b903c83563ca8864af6d201f74f34d4ad9c3173d06ce6ba10a7acfa828033ee
+  title_snapshot: Reacting to Business Events with Activator and Eventhouse
+  summary_snapshot: Business Event consumer guidance Reacting to Business Events with Activator
+    and Eventhouse explains when to use Activator for immediate action, Eventhouse for durable
+    analysis, or both for independent consumers. For more information, see Business events
+    overview.
+  run_id: run-2026-09-06T09-47-41Z
+generation: {}

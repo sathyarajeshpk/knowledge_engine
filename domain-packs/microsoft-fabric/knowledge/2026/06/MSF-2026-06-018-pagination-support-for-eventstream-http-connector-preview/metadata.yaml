@@ -7,10 +7,10 @@ source_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/even
 announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/add-source-http
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-06-01
+published_date: null
 discovered_date: 2026-08-01
-date_confidence: exact
-date_precision: month
+date_confidence: inferred
+date_precision: day
 content_hash: sha256:51f6ee27d0c72f8826b63aa8f59fe5e574a28cc90db755d296e85c9aa82c02c1
 provenance:
   source_name: fabric-whats-new-markdown
@@ -201,4 +201,18 @@ revisions:
     page-based or cursor-based pagination, eliminating custom orchestration when bringing
     activity logs, audit records, or operational events into Eventstream.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 13
+  date: 2026-09-06
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:51f6ee27d0c72f8826b63aa8f59fe5e574a28cc90db755d296e85c9aa82c02c1
+  title_snapshot: add an HTTP source to an eventstream (preview)
+  summary_snapshot: Pagination support for Eventstream HTTP connector (Preview) You can add
+    an HTTP source to an eventstream (preview) to ingest paginated REST API responses through
+    page-based or cursor-based pagination, eliminating custom orchestration when bringing
+    activity logs, audit records, or operational events into Eventstream.
+  run_id: run-2026-09-06T09-47-41Z
 generation: {}

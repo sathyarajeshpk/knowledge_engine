@@ -7,10 +7,10 @@ source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Build-
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Build-agent-with-AI-for-Data-Agent-Preview/ba-p/5351116
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-06-01
+published_date: null
 discovered_date: 2026-08-16
-date_confidence: exact
-date_precision: month
+date_confidence: inferred
+date_precision: day
 content_hash: sha256:85df87709946d32ae43f79841474da4a77640068fccf81415d815c61de5b0e6d
 provenance:
   source_name: fabric-whats-new
@@ -61,4 +61,20 @@ revisions:
     preview focuses on SQL and Eventhouse scenarios. For more information, see Fabric data
     agent concepts.
   run_id: run-2026-08-16T06-18-44Z
+- revision: 2
+  date: 2026-09-06
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:85df87709946d32ae43f79841474da4a77640068fccf81415d815c61de5b0e6d
+  title_snapshot: Build agent with AI (Preview)
+  summary_snapshot: Build Agent with AI (Preview) The Build agent with AI (Preview) feature
+    is an AI-assisted creation experience that generates and refines Fabric Data Agent configurations
+    through an interactive workflow, replacing manual setup with schema- and conversation-aware
+    recommendations for agent instructions, data source guidance, and example queries; the
+    preview focuses on SQL and Eventhouse scenarios. For more information, see Fabric data
+    agent concepts.
+  run_id: run-2026-09-06T09-47-41Z
 generation: {}

@@ -8,7 +8,8 @@
     "2026-05": 36,
     "2026-06": 57,
     "2026-07": 48,
-    "2026-08": 155
+    "2026-08": 165,
+    "2026-09": 5
   },
   "paths": {
     "MSF-2025-11-001": "2025/11/MSF-2025-11-001-cosmos-db-in-microsoft-fabric-ga",
@@ -315,6 +316,21 @@
     "MSF-2026-08-152": "2026/08/MSF-2026-08-152-agentic-warehouse-development-with-mcp-and-agent-skills",
     "MSF-2026-08-153": "2026/08/MSF-2026-08-153-google-lakehouse-runtime-catalog-mirroring-preview",
     "MSF-2026-08-154": "2026/08/MSF-2026-08-154-the-kpi-visualization-in-real-time-dashboards-is-now",
-    "MSF-2026-08-155": "2026/08/MSF-2026-08-155-create-calculated-columns-in-power-bi-desktop"
+    "MSF-2026-08-155": "2026/08/MSF-2026-08-155-create-calculated-columns-in-power-bi-desktop",
+    "MSF-2026-08-156": "2026/08/MSF-2026-08-156-august-2026-on-premises-data-gateway-release",
+    "MSF-2026-08-157": "2026/08/MSF-2026-08-157-fabric-maps-in-real-time-dashboards-preview",
+    "MSF-2026-08-158": "2026/08/MSF-2026-08-158-reacting-to-business-events-with-activator-and-eventhouse",
+    "MSF-2026-08-159": "2026/08/MSF-2026-08-159-identity-columns",
+    "MSF-2026-08-160": "2026/08/MSF-2026-08-160-bacpac-and-dacpac-guidance",
+    "MSF-2026-08-161": "2026/08/MSF-2026-08-161-five-business-event-scenarios",
+    "MSF-2026-08-162": "2026/08/MSF-2026-08-162-migration-assistant-to-sql-database",
+    "MSF-2026-08-163": "2026/08/MSF-2026-08-163-common-dbt-job-patterns-in-microsoft-fabric-preview",
+    "MSF-2026-08-164": "2026/08/MSF-2026-08-164-sqlcon-fabcon-europe-sql-team-sessions",
+    "MSF-2026-08-165": "2026/08/MSF-2026-08-165-private-eventstream-source-guidance",
+    "MSF-2026-09-001": "2026/09/MSF-2026-09-001-advanced-dax-generation-for-fabric-data-agents-preview",
+    "MSF-2026-09-002": "2026/09/MSF-2026-09-002-fabric-data-warehouse-ai-functions-and-power-bi",
+    "MSF-2026-09-003": "2026/09/MSF-2026-09-003-ci-cd-guidance-and-tutorials-for-microsoft-fabric",
+    "MSF-2026-09-004": "2026/09/MSF-2026-09-004-microsoft-fabric-in-gcc-high-building-the-data-foundation",
+    "MSF-2026-09-005": "2026/09/MSF-2026-09-005-extended-scd-type-2-support-in-copy-job-preview"
   }
 }

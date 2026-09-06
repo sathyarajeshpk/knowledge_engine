@@ -7,11 +7,11 @@ source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/A-new-
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/A-new-way-to-create-visuals-on-Real-Time-Dashboards-Preview/ba-p/5194484
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-06-01
+published_date: null
 discovered_date: 2026-08-01
-date_confidence: exact
-date_precision: month
-content_hash: sha256:6ac51ec4744f1b9902005e2514925706fcf89a1c4f1dd6dcfd2849f4ef1ae443
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:e4f8fc2976c89636a6fd183fe72280ea36c60b14d29f9fe9b6cc584aec34eade
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -232,4 +232,21 @@ revisions:
     for review without requiring KQL expertise. For more information, see Create a Real-Time
     Dashboard.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 13
+  date: 2026-09-06
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:e4f8fc2976c89636a6fd183fe72280ea36c60b14d29f9fe9b6cc584aec34eade
+  title_snapshot: The redesigned Real-Time Dashboard tile editor (Preview)
+  summary_snapshot: Real-Time Dashboards powered by Copilot AI (Preview) The redesigned Real-Time
+    Dashboard tile editor (Preview) is an AI-first experience where you choose a visual type
+    and describe what you need in natural language, and Copilot generates the visualization
+    for review without requiring KQL expertise. Every Copilot-generated iteration is preserved
+    in a per-visual chat history, and you can switch seamlessly between AI-assisted and manual
+    editing. For more information, see Create a Real-Time Dashboard.
+  run_id: run-2026-09-06T09-47-41Z
 generation: {}

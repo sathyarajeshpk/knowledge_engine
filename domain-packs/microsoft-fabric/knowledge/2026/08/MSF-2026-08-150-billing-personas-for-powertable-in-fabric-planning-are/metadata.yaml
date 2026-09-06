@@ -11,7 +11,7 @@ published_date: 2026-08-01
 discovered_date: 2026-08-30
 date_confidence: exact
 date_precision: month
-content_hash: sha256:4cabd06f66d2a6c2a30f014a3d041601da64a194d0a1f3e620c85ab69d63e9c3
+content_hash: sha256:755b67fcdd26693e0c79c704c83e8d57247d83cc178f03c8d3eee5c76ffccef3
 provenance:
   source_name: fabric-whats-new
   source_representation: html
@@ -56,4 +56,16 @@ revisions:
     PowerTable in Fabric Planning are generally available, with role-based billing for Planners,
     Stakeholders, and Viewers. For more information, see Billing and usage for Fabric Planning.
   run_id: run-2026-08-30T10-49-07Z
+- revision: 2
+  date: 2026-09-06
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:755b67fcdd26693e0c79c704c83e8d57247d83cc178f03c8d3eee5c76ffccef3
+  title_snapshot: Billing personas for PowerTable in Fabric Planning are generally available
+  summary_snapshot: PowerTable billing personas (Generally Available) Billing personas for
+    PowerTable in Fabric Planning are generally available, with role-based billing for Planners,
+    Stakeholders, and Viewers. For more information, see Billing and usage for planning in
+    Fabric.
+  run_id: run-2026-09-06T09-47-41Z
 generation: {}

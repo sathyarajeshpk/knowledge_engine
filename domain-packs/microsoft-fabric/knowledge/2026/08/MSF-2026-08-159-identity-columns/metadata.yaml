@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-08-159
+slug: identity-columns
+title: IDENTITY columns
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/IDENTITY-columns-support-for-Identity-Insert-Generally-Available/ba-p/5361138
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/IDENTITY-columns-support-for-Identity-Insert-Generally-Available/ba-p/5361138
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-09-06
+date_confidence: exact
+date_precision: month
+content_hash: sha256:4ce7b508d76d1fcc3ebae6310e839d8b1d5ea05fc250028f1d60d41e4bf5c7f3
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:34e82b2f1dcf321c49f546cbe84923ecbf7963e666fe3c7ecd3f41374de1345c
+  discovered_at: '2026-09-06T09:47:44.051825+00:00'
+  source_role: primary
+  selector: h2[Generally available features] > table > tr (date from cell 0)
+  run_id: run-2026-09-06T09-47-41Z
+url_hash: sha256:34e82b2f1dcf321c49f546cbe84923ecbf7963e666fe3c7ecd3f41374de1345c
+tier: 1
+learning_priority: high
+category: data-warehouse
+tags:
+- ga
+- warehouse
+difficulty: intermediate
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-06
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:4ce7b508d76d1fcc3ebae6310e839d8b1d5ea05fc250028f1d60d41e4bf5c7f3
+  title_snapshot: IDENTITY columns
+  summary_snapshot: Warehouse IDENTITY columns (Generally Available) IDENTITY columns are
+    now generally available in Fabric Data Warehouse. You can use IDENTITY_INSERT and reseed
+    operations for migration and controlled data loads. For more information, see IDENTITY
+    columns and Use IDENTITY columns to create surrogate keys.
+  run_id: run-2026-09-06T09-47-41Z
+generation: {}

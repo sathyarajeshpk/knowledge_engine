@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-09-005
+slug: launched-generally-available-purchase-order-mapping
+title: '[Launched] Generally Available: Purchase order mapping available in Microsoft Marketplace'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=569700
+announcement_url: https://azure.microsoft.com/updates?id=569700
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-01
+discovered_date: 2026-09-06
+date_confidence: exact
+date_precision: day
+content_hash: sha256:19ed9fb71ac36490466e4837f2cb8817f8878969a9b11993067f7e91315d6288
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:67da5880e37bef945544b798838f5c08471137110371d5c6395e8ca40bc19987
+  discovered_at: '2026-09-06T09:47:41.731451+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-06T09-47-41Z
+url_hash: sha256:67da5880e37bef945544b798838f5c08471137110371d5c6395e8ca40bc19987
+tier: 1
+learning_priority: low
+category: null
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-06
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:19ed9fb71ac36490466e4837f2cb8817f8878969a9b11993067f7e91315d6288
+  title_snapshot: '[Launched] Generally Available: Purchase order mapping available in Microsoft
+    Marketplace'
+  summary_snapshot: Align Microsoft Marketplace purchases to your business's accounting needs.
+    Purchase order mapping helps allocate your Microsoft invoice, including Marketplace purchases,
+    making it easier to reconcile your organization's cloud and AI spend. Get supplementa
+  run_id: run-2026-09-06T09-47-41Z
+generation: {}

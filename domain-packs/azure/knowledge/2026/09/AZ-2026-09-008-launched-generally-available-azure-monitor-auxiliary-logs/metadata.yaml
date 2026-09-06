@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-09-008
+slug: launched-generally-available-azure-monitor-auxiliary-logs
+title: '[Launched] Generally Available: Azure Monitor Auxiliary Logs Plan support for Azure
+  tables and plan switching'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=569904
+announcement_url: https://azure.microsoft.com/updates?id=569904
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-01
+discovered_date: 2026-09-06
+date_confidence: exact
+date_precision: day
+content_hash: sha256:3f00436efde24d8a7190e72899b6e302480aff37f4297ff2523d4f28a9cfb524
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:c1b095d130554757f8687e1f0f5d6e92fe477a32788f6b6926cee2eff8f716bc
+  discovered_at: '2026-09-06T09:47:41.731683+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-06T09-47-41Z
+url_hash: sha256:c1b095d130554757f8687e1f0f5d6e92fe477a32788f6b6926cee2eff8f716bc
+tier: 1
+learning_priority: medium
+category: monitoring
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-06
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:3f00436efde24d8a7190e72899b6e302480aff37f4297ff2523d4f28a9cfb524
+  title_snapshot: '[Launched] Generally Available: Azure Monitor Auxiliary Logs Plan support
+    for Azure tables and plan switching'
+  summary_snapshot: The Auxiliary table plan in Azure Monitor Logs gives you a cost-effective
+    way to ingest and retain high-volume, verbose logs that you keep for compliance and auditing
+    but rarely query. Two highly requested capabilities are now generally available.Auxiliar
+  run_id: run-2026-09-06T09-47-41Z
+generation: {}

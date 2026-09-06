@@ -11,7 +11,7 @@ published_date: 2026-06-02
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: day
-content_hash: sha256:5c25cafede02c2ea3c24e0da71963d741913791a9d52dfd6840350de8c1217b8
+content_hash: sha256:0af2e1a1612baf9735c32d5d0b0162ee0b63ca4a33d776e6c8bfd8a9c6fd0385
 provenance:
   source_name: azure-updates
   source_representation: rss
@@ -56,4 +56,16 @@ revisions:
     Azure SQL: Now you can use AES 256 symmetric keys to configure transparent data encryption
     (TDE) with customer-managed keys in Azure SQL Database. Learn more.'
   run_id: run-2026-08-01T21-26-58Z
+- revision: 2
+  date: 2026-09-06
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:0af2e1a1612baf9735c32d5d0b0162ee0b63ca4a33d776e6c8bfd8a9c6fd0385
+  title_snapshot: '[In preview] Public Preview: Azure SQL updates for early-June'
+  summary_snapshot: 'In early June 2026, the following update and enhancement was made to
+    Azure SQL: Now you can use post-quantum resilient AES 256 symmetric keys to configure
+    transparent data encryption (TDE) with customer-managed keys in Azure SQL Database. Learn
+    more.'
+  run_id: run-2026-09-06T09-47-41Z
 generation: {}

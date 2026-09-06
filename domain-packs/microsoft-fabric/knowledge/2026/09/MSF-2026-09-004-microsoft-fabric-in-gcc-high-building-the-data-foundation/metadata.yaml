@@ -1,0 +1,66 @@
+schema_version: 1
+id: MSF-2026-09-004
+slug: microsoft-fabric-in-gcc-high-building-the-data-foundation
+title: 'Microsoft Fabric in GCC High: Building the data foundation for AI'
+source_name: fabric-blog
+source_url: https://www.microsoft.com/en-us/microsoft-cloud/blog/us-government/2026/09/02/microsoft-fabric-in-gcc-high-building-the-data-foundation-for-ai
+announcement_url: https://www.microsoft.com/en-us/microsoft-cloud/blog/us-government/2026/09/02/microsoft-fabric-in-gcc-high-building-the-data-foundation-for-ai
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-02
+discovered_date: 2026-09-06
+date_confidence: exact
+date_precision: day
+content_hash: sha256:7e7a602a2f230d41735918bf62ae4b58979afe67e732ae031df771152a796911
+provenance:
+  source_name: fabric-blog
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:fe8d5b0d3b3b14157d8e4958a4e8e714505d1a499ccf09591e9bb1b0fbaa1d0b
+  discovered_at: '2026-09-06T09:47:44.469870+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-06T09-47-41Z
+url_hash: sha256:fe8d5b0d3b3b14157d8e4958a4e8e714505d1a499ccf09591e9bb1b0fbaa1d0b
+tier: 2
+learning_priority: low
+category: platform
+tags:
+- preview
+difficulty: advanced
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-06
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:7e7a602a2f230d41735918bf62ae4b58979afe67e732ae031df771152a796911
+  title_snapshot: 'Microsoft Fabric in GCC High: Building the data foundation for AI'
+  summary_snapshot: Government organizations are ready to move beyond using AI to answer questions
+    and toward intelligent systems and agents that can take action. However, data is often
+    distributed across clouds, databases, applications, and operational systems, limiting
+    access to the business context and organizational knowledge these systems need to make
+    informed decisions. Today, we are excited to announce the availability of Microsoft Fabric
+    in Microsoft 365 Government Community Cloud High (GCC High). Beginning September 2, 2026,
+    Microsoft Fabric will be available in public preview for GCC High customers, with general
+    availability starting October 1, 2026. Feature availability at public preview and general
+    availability will vary by workload and expand over time. Visit the Microsoft Fabric for
+    US Government GCC High customers Learn…
+  run_id: run-2026-09-06T09-47-41Z
+generation: {}

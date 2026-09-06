@@ -1,0 +1,58 @@
+schema_version: 1
+id: MSF-2026-08-164
+slug: sqlcon-fabcon-europe-sql-team-sessions
+title: SQLCon/FabCon Europe SQL team sessions
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Find-the-SQL-Team-at-SQLCon-FabCon-Europe-2026/ba-p/5359947
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Find-the-SQL-Team-at-SQLCon-FabCon-Europe-2026/ba-p/5359947
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-08-01
+discovered_date: 2026-09-06
+date_confidence: exact
+date_precision: month
+content_hash: sha256:c4cf2a0fee054c72215045324b0a4449dcd0eef415e0beff6628b31fff53ee88
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:b78be57cf4a87874dd63843015d741d00908c695061936adcfdfb19181dd0749
+  discovered_at: '2026-09-06T09:47:44.053033+00:00'
+  source_role: primary
+  selector: h2[Community] > table > tr (date from cell 0)
+  run_id: run-2026-09-06T09-47-41Z
+url_hash: sha256:b78be57cf4a87874dd63843015d741d00908c695061936adcfdfb19181dd0749
+tier: 3
+learning_priority: medium
+category: data-warehouse
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-06
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:c4cf2a0fee054c72215045324b0a4449dcd0eef415e0beff6628b31fff53ee88
+  title_snapshot: SQLCon/FabCon Europe SQL team sessions
+  summary_snapshot: SQLCon/FabCon Europe SQL team sessions take place in Barcelona from September
+    28 through October 1, 2026, with sessions on SQL Server, Azure SQL, and SQL database in
+    Fabric. For more information, see the conference program.
+  run_id: run-2026-09-06T09-47-41Z
+generation: {}

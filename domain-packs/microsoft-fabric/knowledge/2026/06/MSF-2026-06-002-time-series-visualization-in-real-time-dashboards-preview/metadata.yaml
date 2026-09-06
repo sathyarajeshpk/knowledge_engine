@@ -7,11 +7,11 @@ source_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/dash
 announcement_url: https://learn.microsoft.com/en-us/fabric/real-time-intelligence/dashboard-visuals
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-06-01
+published_date: null
 discovered_date: 2026-08-01
-date_confidence: exact
-date_precision: month
-content_hash: sha256:d2124cdfbfbdce0f52e1a081d1a4b6afacc70498e73b6fa23875948bfcfcd6d6
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:440969f43183ad03b1e74764d0ad9a5c1c625f57b7f431c6224145f97d7e54f4
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -211,4 +211,20 @@ revisions:
     for series comparison, multiple aligned-time panels, flexible Y-axis scaling, color assignment,
     and zoom with a time slider.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 13
+  date: 2026-09-06
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:440969f43183ad03b1e74764d0ad9a5c1c625f57b7f431c6224145f97d7e54f4
+  title_snapshot: Real-Time Dashboard-specific visuals
+  summary_snapshot: Real-Time Dashboards Time Series Visualization (Preview) Real-Time Dashboard-specific
+    visuals in Real-Time Dashboards adds dedicated capabilities for navigating, comparing,
+    and customizing time-based data, including a legend search bar, pin-and-overlay for series
+    comparison, multiple aligned-time panels, flexible Y-axis scaling, color assignment, and
+    zoom with a time slider.
+  run_id: run-2026-09-06T09-47-41Z
 generation: {}

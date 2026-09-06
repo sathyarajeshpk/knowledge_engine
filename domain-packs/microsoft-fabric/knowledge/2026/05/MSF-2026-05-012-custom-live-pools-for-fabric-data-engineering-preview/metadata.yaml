@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:76b3adc5f5bc94996bfd556ce30bceb768f6d1db79ce369584dd13ae0a712a0e
+content_hash: sha256:3846624fbeac28649ce02841f93cc3f576003630df75e0b5985edb952add8bec
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -224,4 +224,17 @@ revisions:
     library-publishing semantics, and support for workspaces with Managed Private Endpoints.
     For more information, see Configure custom live pools in Microsoft Fabric.
   run_id: run-2026-08-08T06-51-09Z
+- revision: 13
+  date: 2026-09-06
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:3846624fbeac28649ce02841f93cc3f576003630df75e0b5985edb952add8bec
+  title_snapshot: Custom Live Pools for Fabric Data Engineering (Preview)
+  summary_snapshot: Custom Live Pools for Fabric Data Engineering (Preview) let workspace
+    and capacity admins schedule ready-to-run Spark capacity tied to an Environment item,
+    with activation windows, lifecycle and hydration monitoring through Monitoring Hub, intentional
+    library-publishing semantics, and support for workspaces with Managed Private Endpoints.
+    For more information, see Configure custom live pools in Microsoft Fabric.
+  run_id: run-2026-09-06T09-47-41Z
 generation: {}

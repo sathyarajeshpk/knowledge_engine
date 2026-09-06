@@ -1,0 +1,63 @@
+schema_version: 1
+id: MSF-2026-09-001
+slug: advanced-dax-generation-for-fabric-data-agents-preview
+title: Advanced DAX generation for Fabric data agents (Preview)
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Advanced-DAX-generation-for-semantic-models-in-Fabric-data/ba-p/5363136
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Advanced-DAX-generation-for-semantic-models-in-Fabric-data/ba-p/5363136
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-01
+discovered_date: 2026-09-06
+date_confidence: exact
+date_precision: month
+content_hash: sha256:93ee044ca2421bbe3ed4a6d866d497cbc0c112516295cd182bd397da0c354d0e
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:4c88a5f821a240310b59c46c45bcebb63d5b8be12e3da7fc7abbd217dad002a6
+  discovered_at: '2026-09-06T09:47:44.055588+00:00'
+  source_role: primary
+  selector: h2[Fabric Data Science] > table > tr (date from cell 0)
+  run_id: run-2026-09-06T09-47-41Z
+url_hash: sha256:4c88a5f821a240310b59c46c45bcebb63d5b8be12e3da7fc7abbd217dad002a6
+tier: 2
+learning_priority: high
+category: power-bi
+tags:
+- ai
+- preview
+- semantic-model
+difficulty: advanced
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-06
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:93ee044ca2421bbe3ed4a6d866d497cbc0c112516295cd182bd397da0c354d0e
+  title_snapshot: Advanced DAX generation for Fabric data agents (Preview)
+  summary_snapshot: Advanced DAX generation for semantic models (Preview) Advanced DAX generation
+    for Fabric data agents (Preview) lets a data agent plan its approach, inspect semantic
+    model values and intermediate results, refine its reasoning, and execute a final DAX query
+    before answering. For more information, see Fabric data agent runtime and Semantic model
+    best practices for data agent.
+  run_id: run-2026-09-06T09-47-41Z
+generation: {}

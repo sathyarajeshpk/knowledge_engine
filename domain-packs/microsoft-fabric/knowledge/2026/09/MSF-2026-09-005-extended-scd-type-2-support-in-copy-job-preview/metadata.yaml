@@ -1,0 +1,62 @@
+schema_version: 1
+id: MSF-2026-09-005
+slug: extended-scd-type-2-support-in-copy-job-preview
+title: Extended SCD Type 2 support in Copy job (Preview)
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Simplify-your-data-movement-with-Copy-job-CDC-with-SQL-estate/ba-p/5184211
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Simplify-your-data-movement-with-Copy-job-CDC-with-SQL-estate/ba-p/5184211
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-09-06
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:8beaa1295a71623181020f14ceb651d64b16c3c407ebb064e45ff0fbe4ccf74e
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:4a5095bb9615baf0984d3bffa77b9bc88506105dd19176fd196d9852b15e6a70
+  discovered_at: '2026-09-06T09:47:44.046827+00:00'
+  source_role: primary
+  selector: h2[Features currently in preview] > table > tr (no date cell)
+  run_id: run-2026-09-06T09-47-41Z
+url_hash: sha256:4a5095bb9615baf0984d3bffa77b9bc88506105dd19176fd196d9852b15e6a70
+tier: 2
+learning_priority: high
+category: data-factory
+tags:
+- preview
+- warehouse
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-06
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:8beaa1295a71623181020f14ceb651d64b16c3c407ebb064e45ff0fbe4ccf74e
+  title_snapshot: Extended SCD Type 2 support in Copy job (Preview)
+  summary_snapshot: Extended SCD Type 2 support in Copy job for Fabric Data Warehouse (Preview)
+    Extended SCD Type 2 support in Copy job (Preview) brings native Slowly Changing Dimension
+    Type 2 with effective dating and soft-delete handling to Fabric Data Warehouse destinations,
+    giving you an audit-ready view of every record's lifecycle. For more information, see
+    Change data capture (CDC) in Copy Job.
+  run_id: run-2026-09-06T09-47-41Z
+generation: {}

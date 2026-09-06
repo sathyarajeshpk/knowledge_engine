@@ -11,7 +11,7 @@ published_date: 2026-07-30
 discovered_date: 2026-08-01
 date_confidence: exact
 date_precision: day
-content_hash: sha256:8aeb3c86c4539a57754119dee4a11e85135775f1b5eb1def59f493d69cfcad5b
+content_hash: sha256:5b308e4761eb639cc6719a3bf3d8045dc6d5c40563c9e03960bf0acabc2ba1f6
 provenance:
   source_name: azure-updates
   source_representation: rss
@@ -56,4 +56,16 @@ revisions:
     in public preview. This preview enables customers and partners to evaluate symmetric encryption
     capabilities using the oct-HSM key type and the Advanced Encryption Standard (AES)
   run_id: run-2026-08-01T21-26-58Z
+- revision: 2
+  date: 2026-09-06
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:5b308e4761eb639cc6719a3bf3d8045dc6d5c40563c9e03960bf0acabc2ba1f6
+  title_snapshot: '[In preview] Public Preview: Symmetric keys on Azure Key Vault Premium'
+  summary_snapshot: We’re announcing post-quantum resilient symmetric keys on Azure Key Vault
+    Premium are now available in public preview. This preview enables customers and partners
+    to evaluate symmetric encryption capabilities using the oct-HSM key type and the Advanced
+    En
+  run_id: run-2026-09-06T09-47-41Z
 generation: {}
