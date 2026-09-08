@@ -15,7 +15,7 @@ requires-python = ">=3.11"
 # html.parser, both standard library -- `requests` and BeautifulSoup were not
 # needed and so were not added.
 dependencies = [
-    "PyYAML>=6.0",
+    "PyYAML>=6.0.3",
     "feedparser>=6.0",
 ]
 
