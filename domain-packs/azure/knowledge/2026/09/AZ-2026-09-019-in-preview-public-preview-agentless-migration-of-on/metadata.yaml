@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-09-019
+slug: in-preview-public-preview-agentless-migration-of-on
+title: '[In preview] Public Preview: Agentless migration of on-premises SMB file shares to
+  Azure Files (SMB)'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=570910
+announcement_url: https://azure.microsoft.com/updates?id=570910
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-11
+discovered_date: 2026-09-13
+date_confidence: exact
+date_precision: day
+content_hash: sha256:0589ccffbf30a4da54ee838449070fa512518d648c04c89487d74ef71b1aed6e
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:1a429a7dadfabcb866b05f8f56629ed85b526987fd21f8e00d775f285929b916
+  discovered_at: '2026-09-13T10:42:53.347191+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-13T10-42-52Z
+url_hash: sha256:1a429a7dadfabcb866b05f8f56629ed85b526987fd21f8e00d775f285929b916
+tier: 2
+learning_priority: medium
+category: storage
+tags:
+- preview
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-13
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:0589ccffbf30a4da54ee838449070fa512518d648c04c89487d74ef71b1aed6e
+  title_snapshot: '[In preview] Public Preview: Agentless migration of on-premises SMB file
+    shares to Azure Files (SMB)'
+  summary_snapshot: Azure Storage Mover now supports agentless migration of on-premises SMB
+    file shares to Azure Files (SMB), in public preview. You can move file data from Windows
+    Server or NAS shares into Azure without deploying, registering, or maintaining a migration
+    age
+  run_id: run-2026-09-13T10-42-52Z
+generation: {}

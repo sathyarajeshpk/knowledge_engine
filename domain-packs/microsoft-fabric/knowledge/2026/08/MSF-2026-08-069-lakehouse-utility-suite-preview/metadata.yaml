@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:42d290695c30a51a6ad0cf205ed36fab365508d133692694b97300f47fedc7b2
+content_hash: sha256:20eb13854345d8e9678f92a96b78c7e748a22dee85be55f3e4a514944f1c8d36
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -72,4 +72,16 @@ revisions:
     and the Refresh SQL endpoint activity (Preview), to refresh the Lakehouse SQL analytics
     endpoint on demand or on a schedule within Fabric pipelines.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 3
+  date: 2026-09-13
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:20eb13854345d8e9678f92a96b78c7e748a22dee85be55f3e4a514944f1c8d36
+  title_snapshot: Lakehouse Utility Suite
+  summary_snapshot: Lakehouse utility suite (Preview) The Lakehouse Utility Suite now includes
+    the Lakehouse maintenance activity (Preview), to automate routine Lakehouse upkeep tasks,
+    and the Refresh SQL analytics endpoint activity, to refresh the Lakehouse SQL analytics
+    endpoint on demand or on a schedule within Fabric pipelines.
+  run_id: run-2026-09-13T10-42-52Z
 generation: {}

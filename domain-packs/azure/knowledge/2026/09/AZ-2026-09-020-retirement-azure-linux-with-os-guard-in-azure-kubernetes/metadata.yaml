@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-09-020
+slug: retirement-azure-linux-with-os-guard-in-azure-kubernetes
+title: 'Retirement: Azure Linux with OS Guard in Azure Kubernetes Service'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=571257
+announcement_url: https://azure.microsoft.com/updates?id=571257
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-11
+discovered_date: 2026-09-13
+date_confidence: exact
+date_precision: day
+content_hash: sha256:cd9587ed444e7e33bc5c422d627028d3d5678e609f611a8f14906170756ad9f8
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:51f9f97b2434f5439ce657d0ce3974b327fda4747881d8c41190c4600f31fa6b
+  discovered_at: '2026-09-13T10:42:53.347124+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-13T10-42-52Z
+url_hash: sha256:51f9f97b2434f5439ce657d0ce3974b327fda4747881d8c41190c4600f31fa6b
+tier: 1
+learning_priority: high
+category: compute
+tags:
+- kubernetes
+- preview
+- retirement
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-13
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:cd9587ed444e7e33bc5c422d627028d3d5678e609f611a8f14906170756ad9f8
+  title_snapshot: 'Retirement: Azure Linux with OS Guard in Azure Kubernetes Service'
+  summary_snapshot: Support for Azure Linux with OS Guard in Azure Kubernetes Service will
+    end on December 10, 2026. Azure Container Linux is the replacement for Azure Linux with
+    OS Guard (preview). Starting on December 10, 2026:Users won’t be able to create new Azure
+    Linux
+  run_id: run-2026-09-13T10-42-52Z
+generation: {}

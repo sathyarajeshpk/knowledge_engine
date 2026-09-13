@@ -48,6 +48,18 @@
       "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"
     },
+    "sha256:231fb8950acefdff499fbca8914b0a1580753e139070def359dc5cc3f62e9ca7": {
+      "identity_key": "sha256:231fb8950acefdff499fbca8914b0a1580753e139070def359dc5cc3f62e9ca7",
+      "title": "Activator rules in Eventstream",
+      "summary": "Activator rules in Eventstream (Generally Available) Activator rules in Eventstream let you create, edit, delete, and open alert rules without leaving Eventstream. For more information, see Add a Fabric Activator destination to an eventstream.",
+      "source_name": "fabric-whats-new",
+      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-August-2026-Feature-Summary/ba-p/5325824",
+      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-August-2026-Feature-Summary/ba-p/5325824",
+      "first_discovered_date": "2026-09-13",
+      "confidence": "medium",
+      "reason": "this announcement is cited by 11 distinct features, so the URL identifies the announcement rather than this feature",
+      "lifecycle": "queued"
+    },
     "sha256:25275bb1479e1892b630b8cbf25b4f85fe7e01092f4013c1e5855f3d5b9e1f86": {
       "identity_key": "sha256:25275bb1479e1892b630b8cbf25b4f85fe7e01092f4013c1e5855f3d5b9e1f86",
       "title": "Fabric Apps",
@@ -168,18 +180,6 @@
       "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
       "lifecycle": "queued"
     },
-    "sha256:83556f5faa1a7a5962ff12cfc4877fff420964941207b5a42bbe68cefe61f145": {
-      "identity_key": "sha256:83556f5faa1a7a5962ff12cfc4877fff420964941207b5a42bbe68cefe61f145",
-      "title": "Copy job support for change data capture (CDC) (Preview)",
-      "summary": "Change Data Capture (CDC) in Copy Job is a powerful capability in Data Factory Data pipelines that enables efficient and automated replication of changed data including inserted, updated, and deleted records from a source to a destination.",
-      "source_name": "fabric-whats-new-markdown",
-      "source_url": "https://blog.fabric.microsoft.com/blog/fabric-may-2025-feature-summary?ft=All",
-      "announcement_url": "https://blog.fabric.microsoft.com/blog/fabric-may-2025-feature-summary?ft=All",
-      "first_discovered_date": "2026-08-01",
-      "confidence": "medium",
-      "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
-      "lifecycle": "queued"
-    },
     "sha256:837e69e3b46593cc5f4b9df7e89065dece27178b59d202e30f5c9db3c4d13ee3": {
       "identity_key": "sha256:837e69e3b46593cc5f4b9df7e89065dece27178b59d202e30f5c9db3c4d13ee3",
       "title": "Third-party custom visuals",
@@ -250,6 +250,18 @@
       "first_discovered_date": "2026-08-01",
       "confidence": "medium",
       "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
+      "lifecycle": "queued"
+    },
+    "sha256:8cf0a81396c4902044cc7daa2cb506777116633c185c1cb349c80cc2b0f0dce8": {
+      "identity_key": "sha256:8cf0a81396c4902044cc7daa2cb506777116633c185c1cb349c80cc2b0f0dce8",
+      "title": "Workspace outbound access protection for Operations Agent",
+      "summary": "Workspace outbound access protection for Operations Agent (Preview) Workspace outbound access protection for Operations Agent applies workspace policies to outbound actions such as Teams notifications, workflow triggers, and cross-workspace operations. For more information, see Workspace outbound access protection for Operations Agent.",
+      "source_name": "fabric-whats-new",
+      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Workspace-Outbound-Access-Protection-OAP-for-Operations-Agent/ba-p/5363817",
+      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Workspace-Outbound-Access-Protection-OAP-for-Operations-Agent/ba-p/5363817",
+      "first_discovered_date": "2026-09-13",
+      "confidence": "medium",
+      "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"
     },
     "sha256:996c4f145eaa885e045ebb62757fb2e84e1a744313b71acb75a856aa971558b6": {
@@ -334,6 +346,18 @@
       "first_discovered_date": "2026-08-01",
       "confidence": "medium",
       "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
+      "lifecycle": "queued"
+    },
+    "sha256:db8bcc237d2b59fba91ad723ceaa839ae8f106f8eab0230cad02875a7ffb3438": {
+      "identity_key": "sha256:db8bcc237d2b59fba91ad723ceaa839ae8f106f8eab0230cad02875a7ffb3438",
+      "title": "SQL query editor enhancements",
+      "summary": "SQL query editor enhancements (Generally Available) SQL query editor enhancements add a faster results grid, scalable object explorer and IntelliSense, autosave controls, bulk query management, .sql file import and export, and integrations with OneLake analytics and semantic models. For more information, see SQL query editor.",
+      "source_name": "fabric-whats-new",
+      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Advancing-the-Microsoft-Fabric-SQL-Query-Editor/ba-p/5364033",
+      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Advancing-the-Microsoft-Fabric-SQL-Query-Editor/ba-p/5364033",
+      "first_discovered_date": "2026-09-13",
+      "confidence": "medium",
+      "reason": "this announcement is cited by 3 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"
     },
     "sha256:e4ce2bc843fe22eb0da30e2b3340d02ca05adf49a018c6a90a861abc8effc9f6": {

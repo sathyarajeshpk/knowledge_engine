@@ -1,17 +1,17 @@
 schema_version: 1
 id: MSF-2026-05-032
 slug: data-warehouse-monitor-preview
-title: Data Warehouse Monitor (Preview)
+title: Monitor for Fabric Data Warehouse (Preview)
 source_name: fabric-whats-new-markdown
 source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Data-Warehouse-Monitor-A-Unified-Monitoring-Experience-for/ba-p/5180024
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Data-Warehouse-Monitor-A-Unified-Monitoring-Experience-for/ba-p/5180024
 identity_confidence: high
 source_authority: official-microsoft
-published_date: null
+published_date: 2026-09-01
 discovered_date: 2026-08-01
-date_confidence: inferred
-date_precision: day
-content_hash: sha256:1a5d574506d0980baa406c331f1a9ab8cde63a28347496e7d254a7cabf3ab601
+date_confidence: exact
+date_precision: month
+content_hash: sha256:29c4b7e1a39ad9fa894eb41b0d33a0b67e2e8f48a395eb5ac9021d01df83bf02
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -224,4 +224,21 @@ revisions:
     lets you cancel long-running queries with one click. For more information, see Monitor
     T-SQL queries (Preview).
   run_id: run-2026-08-08T06-51-09Z
+- revision: 13
+  date: 2026-09-13
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:29c4b7e1a39ad9fa894eb41b0d33a0b67e2e8f48a395eb5ac9021d01df83bf02
+  title_snapshot: Monitor for Fabric Data Warehouse (Preview)
+  summary_snapshot: Monitor for Fabric Data Warehouse (Preview) (previously Query Activity)
+    is unified monitoring for Fabric Data Warehouse that shows active and historical queries
+    side by side, supports cross-execution performance analysis powered by Query Insights,
+    and lets you cancel long-running queries with one click. For more information, see Monitor
+    T-SQL queries in Fabric Data Warehouse (Preview).
+  run_id: run-2026-09-13T10-42-52Z
 generation: {}

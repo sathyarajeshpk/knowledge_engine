@@ -8,8 +8,8 @@
     "2026-05": 36,
     "2026-06": 57,
     "2026-07": 48,
-    "2026-08": 165,
-    "2026-09": 5
+    "2026-08": 166,
+    "2026-09": 13
   },
   "paths": {
     "MSF-2025-11-001": "2025/11/MSF-2025-11-001-cosmos-db-in-microsoft-fabric-ga",
@@ -327,10 +327,19 @@
     "MSF-2026-08-163": "2026/08/MSF-2026-08-163-common-dbt-job-patterns-in-microsoft-fabric-preview",
     "MSF-2026-08-164": "2026/08/MSF-2026-08-164-sqlcon-fabcon-europe-sql-team-sessions",
     "MSF-2026-08-165": "2026/08/MSF-2026-08-165-private-eventstream-source-guidance",
+    "MSF-2026-08-166": "2026/08/MSF-2026-08-166-fabric-data-agent-integration-with-microsoft-copilot-studio",
     "MSF-2026-09-001": "2026/09/MSF-2026-09-001-advanced-dax-generation-for-fabric-data-agents-preview",
     "MSF-2026-09-002": "2026/09/MSF-2026-09-002-fabric-data-warehouse-ai-functions-and-power-bi",
     "MSF-2026-09-003": "2026/09/MSF-2026-09-003-ci-cd-guidance-and-tutorials-for-microsoft-fabric",
     "MSF-2026-09-004": "2026/09/MSF-2026-09-004-microsoft-fabric-in-gcc-high-building-the-data-foundation",
-    "MSF-2026-09-005": "2026/09/MSF-2026-09-005-extended-scd-type-2-support-in-copy-job-preview"
+    "MSF-2026-09-005": "2026/09/MSF-2026-09-005-extended-scd-type-2-support-in-copy-job-preview",
+    "MSF-2026-09-006": "2026/09/MSF-2026-09-006-adbc-drivers-for-supported-power-bi-and-fabric-connectors",
+    "MSF-2026-09-007": "2026/09/MSF-2026-09-007-fabric-data-warehouse-medallion-architecture-best-practices",
+    "MSF-2026-09-008": "2026/09/MSF-2026-09-008-private-snowflake-connectivity-for-fabric-pipelines-and",
+    "MSF-2026-09-009": "2026/09/MSF-2026-09-009-capacity-operation-events-in-real-time-hub-preview",
+    "MSF-2026-09-010": "2026/09/MSF-2026-09-010-fabric-influencers-spotlight-august-2026",
+    "MSF-2026-09-011": "2026/09/MSF-2026-09-011-connection-recency-and-fabric-rest-apis",
+    "MSF-2026-09-012": "2026/09/MSF-2026-09-012-list-networking-communication-policies-admin-api",
+    "MSF-2026-09-013": "2026/09/MSF-2026-09-013-change-data-capture-cdc-in-copy-job"
   }
 }

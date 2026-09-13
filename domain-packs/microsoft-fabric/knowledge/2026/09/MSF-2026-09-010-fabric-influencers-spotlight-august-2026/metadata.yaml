@@ -1,0 +1,57 @@
+schema_version: 1
+id: MSF-2026-09-010
+slug: fabric-influencers-spotlight-august-2026
+title: Fabric Influencers Spotlight August 2026
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Influencers-Spotlight-August-2026/ba-p/5365378
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-Influencers-Spotlight-August-2026/ba-p/5365378
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-01
+discovered_date: 2026-09-13
+date_confidence: exact
+date_precision: month
+content_hash: sha256:c03609b8a3ac5d075672ed3cac4a9a2da151446486bb6d2dabb147f318af9aa3
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:8dc695a85fe17b142a869055c06ad5cdebfeed8f0f4002faf99055f5fc7c11e2
+  discovered_at: '2026-09-13T10:42:54.773363+00:00'
+  source_role: primary
+  selector: h2[Community] > table > tr (date from cell 0)
+  run_id: run-2026-09-13T10-42-52Z
+url_hash: sha256:8dc695a85fe17b142a869055c06ad5cdebfeed8f0f4002faf99055f5fc7c11e2
+tier: 3
+learning_priority: low
+category: platform
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-13
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:c03609b8a3ac5d075672ed3cac4a9a2da151446486bb6d2dabb147f318af9aa3
+  title_snapshot: Fabric Influencers Spotlight August 2026
+  summary_snapshot: Fabric Influencers Spotlight August 2026 highlights articles, videos,
+    tools, and podcasts from Microsoft MVPs and Fabric Super Users.
+  run_id: run-2026-09-13T10-42-52Z
+generation: {}

@@ -18,13 +18,20 @@
 | [MSF-2026-02-002](../knowledge/2026/02/MSF-2026-02-002-top-sessions-you-won-t-want-to-miss-at-the-microsoft-fabric) | Top sessions you won’t want to miss at the Microsoft Fabric Community Conference 2026 | 2026-02-03 | fabric-blog |
 | [MSF-2025-12-001](../knowledge/2025/12/MSF-2025-12-001-fabcon-and-sqlcon-from-workshops-and-keynotes-to-demos-and) | FabCon and SQLCon: From workshops and keynotes to demos and deep dives | 2025-12-17 | fabric-blog |
 
-## fabric-whats-new (82)
+## fabric-whats-new (91)
 
 | ID | Title | Published | Source |
 |---|---|---|---|
 | [MSF-2026-09-001](../knowledge/2026/09/MSF-2026-09-001-advanced-dax-generation-for-fabric-data-agents-preview) | Advanced DAX generation for Fabric data agents (Preview) | 2026-09-01 | fabric-whats-new |
 | [MSF-2026-09-002](../knowledge/2026/09/MSF-2026-09-002-fabric-data-warehouse-ai-functions-and-power-bi) | Fabric Data Warehouse AI functions and Power BI | 2026-09-01 | fabric-whats-new |
 | [MSF-2026-09-003](../knowledge/2026/09/MSF-2026-09-003-ci-cd-guidance-and-tutorials-for-microsoft-fabric) | CI/CD guidance and tutorials for Microsoft Fabric | 2026-09-01 | fabric-whats-new |
+| [MSF-2026-09-006](../knowledge/2026/09/MSF-2026-09-006-adbc-drivers-for-supported-power-bi-and-fabric-connectors) | ADBC drivers for supported Power BI and Fabric connectors | 2026-09-01 | fabric-whats-new |
+| [MSF-2026-09-007](../knowledge/2026/09/MSF-2026-09-007-fabric-data-warehouse-medallion-architecture-best-practices) | Fabric Data Warehouse medallion architecture best practices | 2026-09-01 | fabric-whats-new |
+| [MSF-2026-09-008](../knowledge/2026/09/MSF-2026-09-008-private-snowflake-connectivity-for-fabric-pipelines-and) | private Snowflake connectivity for Fabric pipelines and Copy Jobs | 2026-09-01 | fabric-whats-new |
+| [MSF-2026-09-009](../knowledge/2026/09/MSF-2026-09-009-capacity-operation-events-in-real-time-hub-preview) | Capacity Operation Events in Real-Time Hub (Preview) | 2026-09-01 | fabric-whats-new |
+| [MSF-2026-09-010](../knowledge/2026/09/MSF-2026-09-010-fabric-influencers-spotlight-august-2026) | Fabric Influencers Spotlight August 2026 | 2026-09-01 | fabric-whats-new |
+| [MSF-2026-09-011](../knowledge/2026/09/MSF-2026-09-011-connection-recency-and-fabric-rest-apis) | Connection recency and Fabric REST APIs | 2026-09-01 | fabric-whats-new |
+| [MSF-2026-09-012](../knowledge/2026/09/MSF-2026-09-012-list-networking-communication-policies-admin-api) | List Networking Communication Policies Admin API | 2026-09-01 | fabric-whats-new |
 | [MSF-2026-08-107](../knowledge/2026/08/MSF-2026-08-107-mirroring-in-fabric) | Mirroring in Fabric | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-08-111](../knowledge/2026/08/MSF-2026-08-111-medallion-architecture-patterns-for-fabric-data-warehouse) | Medallion architecture patterns for Fabric Data Warehouse | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-08-112](../knowledge/2026/08/MSF-2026-08-112-modern-evaluation-engine-for-vnet-data-gateways-preview) | modern evaluation engine for VNet data gateways (Preview) | 2026-08-01 | fabric-whats-new |
@@ -66,6 +73,7 @@
 | [MSF-2026-08-163](../knowledge/2026/08/MSF-2026-08-163-common-dbt-job-patterns-in-microsoft-fabric-preview) | Common dbt job patterns in Microsoft Fabric (Preview) | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-08-164](../knowledge/2026/08/MSF-2026-08-164-sqlcon-fabcon-europe-sql-team-sessions) | SQLCon/FabCon Europe SQL team sessions | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-08-165](../knowledge/2026/08/MSF-2026-08-165-private-eventstream-source-guidance) | Private Eventstream source guidance | 2026-08-01 | fabric-whats-new |
+| [MSF-2026-08-166](../knowledge/2026/08/MSF-2026-08-166-fabric-data-agent-integration-with-microsoft-copilot-studio) | Fabric Data Agent integration with Microsoft Copilot Studio | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-07-022](../knowledge/2026/07/MSF-2026-07-022-change-event-streaming-overview) | Change event streaming overview | 2026-07-01 | fabric-whats-new |
 | [MSF-2026-07-023](../knowledge/2026/07/MSF-2026-07-023-fabric-data-agent-integration-in-copilot-in-power-bi) | Fabric data agent integration in Copilot in Power BI | 2026-07-01 | fabric-whats-new |
 | [MSF-2026-07-024](../knowledge/2026/07/MSF-2026-07-024-lakehouse-query-explorer) | Lakehouse Query Explorer | 2026-07-01 | fabric-whats-new |
@@ -104,11 +112,13 @@
 | [MSF-2026-08-109](../knowledge/2026/08/MSF-2026-08-109-alter-database-set-options-transact-sql) | ALTER DATABASE SET options (Transact-SQL) | — | fabric-whats-new |
 | [MSF-2026-08-110](../knowledge/2026/08/MSF-2026-08-110-approval-activity-preview) | Approval activity (Preview) | — | fabric-whats-new |
 | [MSF-2026-09-005](../knowledge/2026/09/MSF-2026-09-005-extended-scd-type-2-support-in-copy-job-preview) | Extended SCD Type 2 support in Copy job (Preview) | — | fabric-whats-new |
+| [MSF-2026-09-013](../knowledge/2026/09/MSF-2026-09-013-change-data-capture-cdc-in-copy-job) | Change Data Capture (CDC) in Copy Job | — | fabric-whats-new |
 
 ## fabric-whats-new-markdown (198)
 
 | ID | Title | Published | Source |
 |---|---|---|---|
+| [MSF-2026-05-032](../knowledge/2026/05/MSF-2026-05-032-data-warehouse-monitor-preview) | Monitor for Fabric Data Warehouse (Preview) | 2026-09-01 | fabric-whats-new-markdown |
 | [MSF-2026-06-036](../knowledge/2026/06/MSF-2026-06-036-gpu-accelerated-fabric-data-warehouse-early-access-preview) | GPU-accelerated Fabric Data Warehouse (Early Access Preview) | 2026-08-01 | fabric-whats-new-markdown |
 | [MSF-2026-07-001](../knowledge/2026/07/MSF-2026-07-001-rayfin-ama-recap) | Rayfin AMA recap | 2026-07-01 | fabric-whats-new-markdown |
 | [MSF-2026-07-002](../knowledge/2026/07/MSF-2026-07-002-workspace-outbound-access-protection-for-real-time) | Workspace outbound access protection (OAP) for Real-Time Intelligence (Preview) | 2026-07-01 | fabric-whats-new-markdown |
@@ -205,7 +215,6 @@
 | [MSF-2026-05-023](../knowledge/2026/05/MSF-2026-05-023-my-queries-in-dataflow-gen2-preview) | My queries (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-05-026](../knowledge/2026/05/MSF-2026-05-026-alter-column-for-fabric-data-warehouse-preview) | ALTER TABLE ... ALTER COLUMN (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-05-027](../knowledge/2026/05/MSF-2026-05-027-excel-to-delta-tables-with-shortcut-transformations-preview) | Excel to Delta tables with shortcut transformations (Preview) | — | fabric-whats-new-markdown |
-| [MSF-2026-05-032](../knowledge/2026/05/MSF-2026-05-032-data-warehouse-monitor-preview) | Data Warehouse Monitor (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-05-033](../knowledge/2026/05/MSF-2026-05-033-high-concurrency-support-for-the-fabric-livy-api-preview) | High Concurrency (HC) sessions for the Fabric Livy API (Preview) | — | fabric-whats-new-markdown |
 | [MSF-2026-06-002](../knowledge/2026/06/MSF-2026-06-002-time-series-visualization-in-real-time-dashboards-preview) | Real-Time Dashboard-specific visuals | — | fabric-whats-new-markdown |
 | [MSF-2026-06-003](../knowledge/2026/06/MSF-2026-06-003-real-time-dashboards-powered-by-ai-preview) | The redesigned Real-Time Dashboard tile editor (Preview) | — | fabric-whats-new-markdown |

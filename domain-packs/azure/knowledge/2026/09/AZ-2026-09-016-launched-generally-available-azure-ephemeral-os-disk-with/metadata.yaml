@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-09-016
+slug: launched-generally-available-azure-ephemeral-os-disk-with
+title: '[Launched] Generally Available: Azure Ephemeral OS Disk with full caching for VM/VMSS'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=570551
+announcement_url: https://azure.microsoft.com/updates?id=570551
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-09
+discovered_date: 2026-09-13
+date_confidence: exact
+date_precision: day
+content_hash: sha256:2088408dc85a5dbae77a58789af5c8bbfc6542d4cd87fec459145f074cb0af66
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:df2e86ee0c0bafe9d290f103a54c004d30a748c3d8c378f344ee330f8d589b28
+  discovered_at: '2026-09-13T10:42:53.347370+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-13T10-42-52Z
+url_hash: sha256:df2e86ee0c0bafe9d290f103a54c004d30a748c3d8c378f344ee330f8d589b28
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-13
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:2088408dc85a5dbae77a58789af5c8bbfc6542d4cd87fec459145f074cb0af66
+  title_snapshot: '[Launched] Generally Available: Azure Ephemeral OS Disk with full caching
+    for VM/VMSS'
+  summary_snapshot: Azure Ephemeral OS Disk with full caching is now generally available for
+    new virtual machines and Virtual Machine Scale Sets. The capability caches the complete
+    OS image on a VM’s local storage, eliminating remote-storage reads after caching finishes.
+    Thi
+  run_id: run-2026-09-13T10-42-52Z
+generation: {}

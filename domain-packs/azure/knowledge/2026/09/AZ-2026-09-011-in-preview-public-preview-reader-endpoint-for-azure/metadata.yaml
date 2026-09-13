@@ -1,7 +1,7 @@
 schema_version: 1
 id: AZ-2026-09-011
 slug: in-preview-public-preview-reader-endpoint-for-azure
-title: '[In preview] Public Preview: Reader Endpoint for Azure Database for MySQL'
+title: '[In development] Private Preview: Reader Endpoint for Azure Database for MySQL'
 source_name: azure-updates
 source_url: https://azure.microsoft.com/updates?id=569653
 announcement_url: https://azure.microsoft.com/updates?id=569653
@@ -11,7 +11,7 @@ published_date: 2026-09-02
 discovered_date: 2026-09-06
 date_confidence: exact
 date_precision: day
-content_hash: sha256:f6cd272fd6d5e04076ad782371bd198b788a9b81407c059d809f097592b4075b
+content_hash: sha256:6fde0eaac9a1ff97f1fbbd90b19ffa199d236b315c0dce2ae4b46937f84f1be4
 provenance:
   source_name: azure-updates
   source_representation: rss
@@ -56,4 +56,17 @@ revisions:
     to simplify connection management when using multiple replicas in Azure Database for MySQL
     - Flexible Server. A reader endpoint enables automatic load balancing of read-only connection
   run_id: run-2026-09-06T09-47-41Z
+- revision: 2
+  date: 2026-09-13
+  changed_fields:
+  - content_hash
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:6fde0eaac9a1ff97f1fbbd90b19ffa199d236b315c0dce2ae4b46937f84f1be4
+  title_snapshot: '[In development] Private Preview: Reader Endpoint for Azure Database for
+    MySQL'
+  summary_snapshot: We’re happy to announce the public preview of reader endpoint support
+    to simplify connection management when using multiple replicas in Azure Database for MySQL
+    - Flexible Server. A reader endpoint enables automatic load balancing of read-only connection
+  run_id: run-2026-09-13T10-42-52Z
 generation: {}

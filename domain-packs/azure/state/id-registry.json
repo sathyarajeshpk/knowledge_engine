@@ -6,7 +6,7 @@
     "2026-06": 141,
     "2026-07": 57,
     "2026-08": 53,
-    "2026-09": 12
+    "2026-09": 20
   },
   "paths": {
     "AZ-2025-09-001": "2025/09/AZ-2025-09-001-retirement-azure-vmware-solution-av36-node-retirement-now",
@@ -273,6 +273,14 @@
     "AZ-2026-09-009": "2026/09/AZ-2026-09-009-launched-generally-available-windows-server-2025-on-aks",
     "AZ-2026-09-010": "2026/09/AZ-2026-09-010-in-preview-public-preview-azure-front-door-profile-and",
     "AZ-2026-09-011": "2026/09/AZ-2026-09-011-in-preview-public-preview-reader-endpoint-for-azure",
-    "AZ-2026-09-012": "2026/09/AZ-2026-09-012-launched-generally-available-azure-virtual-network-manager"
+    "AZ-2026-09-012": "2026/09/AZ-2026-09-012-launched-generally-available-azure-virtual-network-manager",
+    "AZ-2026-09-013": "2026/09/AZ-2026-09-013-launched-generally-available-azure-developer-cli-azd",
+    "AZ-2026-09-014": "2026/09/AZ-2026-09-014-launched-generally-available-playwright-workspaces-in",
+    "AZ-2026-09-015": "2026/09/AZ-2026-09-015-launched-generally-available-user-bound-user-delegation-sas",
+    "AZ-2026-09-016": "2026/09/AZ-2026-09-016-launched-generally-available-azure-ephemeral-os-disk-with",
+    "AZ-2026-09-017": "2026/09/AZ-2026-09-017-launched-generally-available-tls-ssl-certificate-and-end-to",
+    "AZ-2026-09-018": "2026/09/AZ-2026-09-018-launched-generally-available-azure-copilot-troubleshooting",
+    "AZ-2026-09-019": "2026/09/AZ-2026-09-019-in-preview-public-preview-agentless-migration-of-on",
+    "AZ-2026-09-020": "2026/09/AZ-2026-09-020-retirement-azure-linux-with-os-guard-in-azure-kubernetes"
   }
 }

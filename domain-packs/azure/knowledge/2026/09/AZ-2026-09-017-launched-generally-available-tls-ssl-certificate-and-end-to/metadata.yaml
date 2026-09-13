@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-09-017
+slug: launched-generally-available-tls-ssl-certificate-and-end-to
+title: '[Launched] Generally Available: TLS/SSL certificate and end-to-end TLS encryption
+  support for Azure Functions Flex Consumption'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=570940
+announcement_url: https://azure.microsoft.com/updates?id=570940
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-10
+discovered_date: 2026-09-13
+date_confidence: exact
+date_precision: day
+content_hash: sha256:924dd9de814664993f476917b4145f02467f1a78da25882f0b7a2688a0f2b315
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:24b9ba0f009d974381be689595e29b628ed83ce5840901db814077a26cebb257
+  discovered_at: '2026-09-13T10:42:53.347237+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-13T10-42-52Z
+url_hash: sha256:24b9ba0f009d974381be689595e29b628ed83ce5840901db814077a26cebb257
+tier: 1
+learning_priority: medium
+category: ai-machine-learning
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-13
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:924dd9de814664993f476917b4145f02467f1a78da25882f0b7a2688a0f2b315
+  title_snapshot: '[Launched] Generally Available: TLS/SSL certificate and end-to-end TLS
+    encryption support for Azure Functions Flex Consumption'
+  summary_snapshot: Azure Functions Flex Consumption support for TLS/SSL certificates is now
+    generally available through a new site-scoped certificate model. Each function app can
+    hold up to 3 private (.pfx) and 3 public (.cer) certificates uploaded directly, imported
+    from A
+  run_id: run-2026-09-13T10-42-52Z
+generation: {}

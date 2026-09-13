@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-09-006
+slug: adbc-drivers-for-supported-power-bi-and-fabric-connectors
+title: ADBC drivers for supported Power BI and Fabric connectors
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Start-validating-today-The-ODBC-to-ADBC-driver-transition-in/ba-p/5362917
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Start-validating-today-The-ODBC-to-ADBC-driver-transition-in/ba-p/5362917
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-01
+discovered_date: 2026-09-13
+date_confidence: exact
+date_precision: month
+content_hash: sha256:3360bc2dcd2f93f98a41d266f89a5e6dba18245e9856e3c9c215679cc8efcad9
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:1a0f2e2425005df907c8250f432f1897a269a8916674768779d0cc7bc8e8fe3e
+  discovered_at: '2026-09-13T10:42:54.772344+00:00'
+  source_role: primary
+  selector: h2[Generally available features] > table > tr (date from cell 0)
+  run_id: run-2026-09-13T10-42-52Z
+url_hash: sha256:1a0f2e2425005df907c8250f432f1897a269a8916674768779d0cc7bc8e8fe3e
+tier: 1
+learning_priority: low
+category: power-bi
+tags:
+- ga
+- power-bi
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-13
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:3360bc2dcd2f93f98a41d266f89a5e6dba18245e9856e3c9c215679cc8efcad9
+  title_snapshot: ADBC drivers for supported Power BI and Fabric connectors
+  summary_snapshot: ODBC to ADBC driver transition (Generally Available) ADBC drivers for
+    supported Power BI and Fabric connectors are available for validation before they become
+    the default and embedded ODBC drivers are disabled. For more information, see Transition
+    from ODBC to ADBC drivers.
+  run_id: run-2026-09-13T10-42-52Z
+generation: {}
