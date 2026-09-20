@@ -6,7 +6,7 @@
     "2026-06": 141,
     "2026-07": 57,
     "2026-08": 53,
-    "2026-09": 20
+    "2026-09": 36
   },
   "paths": {
     "AZ-2025-09-001": "2025/09/AZ-2025-09-001-retirement-azure-vmware-solution-av36-node-retirement-now",
@@ -281,6 +281,22 @@
     "AZ-2026-09-017": "2026/09/AZ-2026-09-017-launched-generally-available-tls-ssl-certificate-and-end-to",
     "AZ-2026-09-018": "2026/09/AZ-2026-09-018-launched-generally-available-azure-copilot-troubleshooting",
     "AZ-2026-09-019": "2026/09/AZ-2026-09-019-in-preview-public-preview-agentless-migration-of-on",
-    "AZ-2026-09-020": "2026/09/AZ-2026-09-020-retirement-azure-linux-with-os-guard-in-azure-kubernetes"
+    "AZ-2026-09-020": "2026/09/AZ-2026-09-020-retirement-azure-linux-with-os-guard-in-azure-kubernetes",
+    "AZ-2026-09-021": "2026/09/AZ-2026-09-021-in-preview-public-preview-http-3-over-quic-support-in-azure",
+    "AZ-2026-09-022": "2026/09/AZ-2026-09-022-announcing-new-windows-app-client-side-endpoints-for-azure",
+    "AZ-2026-09-023": "2026/09/AZ-2026-09-023-in-preview-public-preview-azure-red-hat-openshift-with",
+    "AZ-2026-09-024": "2026/09/AZ-2026-09-024-in-preview-public-preview-azure-sql-updates-for-mid",
+    "AZ-2026-09-025": "2026/09/AZ-2026-09-025-in-preview-public-preview-postgresql-skills-and-mcp-plugin",
+    "AZ-2026-09-026": "2026/09/AZ-2026-09-026-retirement-update-sap-container-images-removed-october-14",
+    "AZ-2026-09-027": "2026/09/AZ-2026-09-027-launched-generally-available-high-scale-mesh-in-azure",
+    "AZ-2026-09-028": "2026/09/AZ-2026-09-028-in-preview-public-preview-azure-payments-hsm-v2",
+    "AZ-2026-09-029": "2026/09/AZ-2026-09-029-launched-generally-available-publishing-microsoft-foundry",
+    "AZ-2026-09-030": "2026/09/AZ-2026-09-030-in-preview-public-preview-network-egress-controls-for",
+    "AZ-2026-09-031": "2026/09/AZ-2026-09-031-launched-generally-available-enable-and-disable-controls",
+    "AZ-2026-09-032": "2026/09/AZ-2026-09-032-in-preview-public-preview-foundry-routines-in-foundry-agent",
+    "AZ-2026-09-033": "2026/09/AZ-2026-09-033-launched-generally-available-pg18-support-for-azure",
+    "AZ-2026-09-034": "2026/09/AZ-2026-09-034-launched-generally-available-new-and-improved",
+    "AZ-2026-09-035": "2026/09/AZ-2026-09-035-launched-generally-available-logical-replication-slot-sync",
+    "AZ-2026-09-036": "2026/09/AZ-2026-09-036-in-preview-public-preview-mdsv4-and-msv4-series-virtual"
   }
 }

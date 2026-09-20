@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-09-025
+slug: in-preview-public-preview-postgresql-skills-and-mcp-plugin
+title: '[In preview] Public Preview: PostgreSQL skills and MCP plugin for Azure Database for
+  PostgreSQL'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=569664
+announcement_url: https://azure.microsoft.com/updates?id=569664
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-16
+discovered_date: 2026-09-20
+date_confidence: exact
+date_precision: day
+content_hash: sha256:6693353a3ff0ccc5973f4f782110c8f7684af3208b8fc1b5fd75468229d02e41
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:714506ad3a3cddcec4714890b8000b086945774a94e4c6998a1ce4a53c930331
+  discovered_at: '2026-09-20T10:11:52.270263+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-20T10-11-51Z
+url_hash: sha256:714506ad3a3cddcec4714890b8000b086945774a94e4c6998a1ce4a53c930331
+tier: 2
+learning_priority: high
+category: databases
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-20
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:6693353a3ff0ccc5973f4f782110c8f7684af3208b8fc1b5fd75468229d02e41
+  title_snapshot: '[In preview] Public Preview: PostgreSQL skills and MCP plugin for Azure
+    Database for PostgreSQL'
+  summary_snapshot: The PostgreSQL skills and MCP plugin turns supported AI coding assistants
+    into context-aware PostgreSQL experts that can both provide guidance and act on a connected
+    database. The bundled plugin combines expert-curated skills for PostgreSQL and Azure Data
+  run_id: run-2026-09-20T10-11-51Z
+generation: {}

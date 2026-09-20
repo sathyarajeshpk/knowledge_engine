@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-09-026
+slug: retirement-update-sap-container-images-removed-october-14
+title: 'Retirement Update: SAP container images removed October 14, 2026'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=571342
+announcement_url: https://azure.microsoft.com/updates?id=571342
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-16
+discovered_date: 2026-09-20
+date_confidence: exact
+date_precision: day
+content_hash: sha256:332ca5e162c1f2f25a5bf7d8fe06a6a37efb9908c6eddeefc40b04dddc5090a6
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:b4634cac2243006b4dc45b0117b6d1db420ad17fd6cb2996f6fe5d08cdc057c5
+  discovered_at: '2026-09-20T10:11:52.270096+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-20T10-11-51Z
+url_hash: sha256:b4634cac2243006b4dc45b0117b6d1db420ad17fd6cb2996f6fe5d08cdc057c5
+tier: 1
+learning_priority: medium
+category: null
+tags:
+- retirement
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-20
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:332ca5e162c1f2f25a5bf7d8fe06a6a37efb9908c6eddeefc40b04dddc5090a6
+  title_snapshot: 'Retirement Update: SAP container images removed October 14, 2026'
+  summary_snapshot: The containerized SAP data connector retired on September 14, 2026 and
+    is unsupported and unmaintained. Existing TLS-compliant agents may continue sending logs
+    through the retired HTTP Data Collector API. Container images will be removed on October
+    14, 20
+  run_id: run-2026-09-20T10-11-51Z
+generation: {}

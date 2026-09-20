@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-09-021
+slug: in-preview-public-preview-http-3-over-quic-support-in-azure
+title: '[In preview] Public Preview: HTTP/3 over QUIC support in Azure Application Gateway'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=571123
+announcement_url: https://azure.microsoft.com/updates?id=571123
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-14
+discovered_date: 2026-09-20
+date_confidence: exact
+date_precision: day
+content_hash: sha256:732115f383f3fc76768e6eab4700c70abef26019c3f93d02c56606ce5983b49d
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:9c4b0344ea7fab2c26403d418640d206f9c6a27f4c0c3f898343b00d5d4027fb
+  discovered_at: '2026-09-20T10:11:52.270367+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-20T10-11-51Z
+url_hash: sha256:9c4b0344ea7fab2c26403d418640d206f9c6a27f4c0c3f898343b00d5d4027fb
+tier: 2
+learning_priority: low
+category: networking
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-20
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:732115f383f3fc76768e6eab4700c70abef26019c3f93d02c56606ce5983b49d
+  title_snapshot: '[In preview] Public Preview: HTTP/3 over QUIC support in Azure Application
+    Gateway'
+  summary_snapshot: Announcing public preview support for HTTP/3 over QUIC on Azure Application
+    Gateway. HTTP/3 is the next evolution of HTTP and uses QUIC to improve connection setup
+    time, reduce latency, and provide better resiliency for modern web applications and APIs.
+    W
+  run_id: run-2026-09-20T10-11-51Z
+generation: {}

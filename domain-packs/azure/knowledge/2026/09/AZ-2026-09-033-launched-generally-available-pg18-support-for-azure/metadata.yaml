@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-09-033
+slug: launched-generally-available-pg18-support-for-azure
+title: '[Launched] Generally Available: PG18 support for Azure Database for PostgreSQL elastic
+  clusters'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=571047
+announcement_url: https://azure.microsoft.com/updates?id=571047
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-18
+discovered_date: 2026-09-20
+date_confidence: exact
+date_precision: day
+content_hash: sha256:0dfe39bde3eb9c15501ced9ac903fb51abe8e07646ce0d27409bf48f1278056d
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:7235d749827557a2b83dc7d89a4acae482764661be911fc540b4773b18f8d237
+  discovered_at: '2026-09-20T10:11:52.269915+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-20T10-11-51Z
+url_hash: sha256:7235d749827557a2b83dc7d89a4acae482764661be911fc540b4773b18f8d237
+tier: 1
+learning_priority: high
+category: databases
+tags:
+- ga
+difficulty: intermediate
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-20
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:0dfe39bde3eb9c15501ced9ac903fb51abe8e07646ce0d27409bf48f1278056d
+  title_snapshot: '[Launched] Generally Available: PG18 support for Azure Database for PostgreSQL
+    elastic clusters'
+  summary_snapshot: Azure Database for PostgreSQL elastic clusters now support PostgreSQL
+    18, bringing the latest PostgreSQL capabilities to distributed, cloud-scale workloads.
+    You can build new applications or modernize existing ones with the performance, reliability,
+    and d
+  run_id: run-2026-09-20T10-11-51Z
+generation: {}

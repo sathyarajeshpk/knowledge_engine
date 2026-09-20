@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-09-035
+slug: launched-generally-available-logical-replication-slot-sync
+title: '[Launched] Generally Available: Logical replication slot sync status metric for Azure
+  PostgreSQL Flexible Server'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=568414
+announcement_url: https://azure.microsoft.com/updates?id=568414
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-18
+discovered_date: 2026-09-20
+date_confidence: exact
+date_precision: day
+content_hash: sha256:537cedd76654ed86d1e63552357516b096403e048332a51828c4fa833bc683e9
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:c7071f1f355c7d97108f0e43ee27c0906d808343480d9a376e16ec2cf826a962
+  discovered_at: '2026-09-20T10:11:52.269732+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-20T10-11-51Z
+url_hash: sha256:c7071f1f355c7d97108f0e43ee27c0906d808343480d9a376e16ec2cf826a962
+tier: 1
+learning_priority: high
+category: databases
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-20
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:537cedd76654ed86d1e63552357516b096403e048332a51828c4fa833bc683e9
+  title_snapshot: '[Launched] Generally Available: Logical replication slot sync status metric
+    for Azure PostgreSQL Flexible Server'
+  summary_snapshot: You can now monitor the synchronization status of your logical replication
+    slots in Azure Database for PostgreSQL – Flexible Server using the new logical_replication_slot_sync_status
+    metric. This Azure Monitor metric shows whether each logical replication
+  run_id: run-2026-09-20T10-11-51Z
+generation: {}

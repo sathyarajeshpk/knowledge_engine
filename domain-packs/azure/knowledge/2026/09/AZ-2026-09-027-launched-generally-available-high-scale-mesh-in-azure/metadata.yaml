@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-09-027
+slug: launched-generally-available-high-scale-mesh-in-azure
+title: '[Launched] Generally Available: High-scale mesh in Azure Virtual Network Manager'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=571572
+announcement_url: https://azure.microsoft.com/updates?id=571572
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-17
+discovered_date: 2026-09-20
+date_confidence: exact
+date_precision: day
+content_hash: sha256:4e99e2a760f87d020c3d1502405087771f9cd8e5a84e15f4607104871afebc49
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:541074dc63074d33e42c1ef647be1bcbde420c7f6ca2bfdae8f1eb724dd625d8
+  discovered_at: '2026-09-20T10:11:52.270045+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-20T10-11-51Z
+url_hash: sha256:541074dc63074d33e42c1ef647be1bcbde420c7f6ca2bfdae8f1eb724dd625d8
+tier: 1
+learning_priority: low
+category: networking
+tags:
+- ga
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-20
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:4e99e2a760f87d020c3d1502405087771f9cd8e5a84e15f4607104871afebc49
+  title_snapshot: '[Launched] Generally Available: High-scale mesh in Azure Virtual Network
+    Manager'
+  summary_snapshot: High-scale mesh using connected group in Azure Virtual Network Manager
+    is now in general availability. In available regions, customers may connect up to 3,000
+    virtual networks in a single mesh connectivity configuration by default and higher scale
+    IP conn
+  run_id: run-2026-09-20T10-11-51Z
+generation: {}
