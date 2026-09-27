@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-09-043
+slug: retirement-support-for-net-8-and-net-9-ends-on-november-10
+title: 'Retirement: Support for .NET 8 and .NET 9 ends on November 10, 2026—upgrade your apps
+  to .NET 10'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=572838
+announcement_url: https://azure.microsoft.com/updates?id=572838
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-23
+discovered_date: 2026-09-27
+date_confidence: exact
+date_precision: day
+content_hash: sha256:349d31c0a7bae6f267e94d78bcb43c509e7a5659aed0b5960c97b479e53a2110
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:c4f0b6a92169b4c1355c28f0a070ee93137be0b1b78b6ad6e72b8446b7b7c921
+  discovered_at: '2026-09-27T10:56:13.253871+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-27T10-56-12Z
+url_hash: sha256:c4f0b6a92169b4c1355c28f0a070ee93137be0b1b78b6ad6e72b8446b7b7c921
+tier: 1
+learning_priority: low
+category: null
+tags:
+- retirement
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-27
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:349d31c0a7bae6f267e94d78bcb43c509e7a5659aed0b5960c97b479e53a2110
+  title_snapshot: 'Retirement: Support for .NET 8 and .NET 9 ends on November 10, 2026—upgrade
+    your apps to .NET 10'
+  summary_snapshot: Support for .NET 8 and .NET 9 will end on November 10, 2026. Please transition
+    to .NET 10 by that date. Your Azure Function Apps will continue to operate, but security
+    updates will no longer be provided, and support for .NET 8 and .NET 9 on Azure Function
+  run_id: run-2026-09-27T10-56-12Z
+generation: {}

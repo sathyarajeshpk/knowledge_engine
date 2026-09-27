@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-05-001
+slug: launched-generally-available-azure-container-apps-express
+title: '[Launched] Generally Available: Azure Container Apps Express'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=559242
+announcement_url: https://azure.microsoft.com/updates?id=559242
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-05-13
+discovered_date: 2026-09-27
+date_confidence: exact
+date_precision: day
+content_hash: sha256:34c059b64758b05e1dfd88b0f2ff1c3f4d06b5c3ce1e9c68a8f082d06a14ea2f
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:2fe1d86f00c52299e63a08fb5a697ab8d2844cfc846039fc9c9234999b04d0b0
+  discovered_at: '2026-09-27T10:56:13.253726+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-27T10-56-12Z
+url_hash: sha256:2fe1d86f00c52299e63a08fb5a697ab8d2844cfc846039fc9c9234999b04d0b0
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-27
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:34c059b64758b05e1dfd88b0f2ff1c3f4d06b5c3ce1e9c68a8f082d06a14ea2f
+  title_snapshot: '[Launched] Generally Available: Azure Container Apps Express'
+  summary_snapshot: Azure Container Apps Express is now generally available. It is the simplest
+    and fastest way to launch and scale powerful applications on Azure, from zero to hyperscale,
+    without infrastructure decisions. It represents the first Azure compute platform purpo
+  run_id: run-2026-09-27T10-56-12Z
+generation: {}

@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-09-044
+slug: retirement-azure-communication-services-acs-standalone
+title: 'Retirement: Azure Communication Services (ACS) standalone services will be retired
+  on September 30, 2028'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=557117
+announcement_url: https://azure.microsoft.com/updates?id=557117
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-24
+discovered_date: 2026-09-27
+date_confidence: exact
+date_precision: day
+content_hash: sha256:31c8e49d1183ac0e90eacf3e161f57160184c751e20c33df58b99d41f45e57c0
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:5a81deadbbec35fd769d18be5cc02f377935d61621caaab8640cec4568b51303
+  discovered_at: '2026-09-27T10:56:13.253497+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-27T10-56-12Z
+url_hash: sha256:5a81deadbbec35fd769d18be5cc02f377935d61621caaab8640cec4568b51303
+tier: 1
+learning_priority: low
+category: null
+tags:
+- retirement
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-27
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:31c8e49d1183ac0e90eacf3e161f57160184c751e20c33df58b99d41f45e57c0
+  title_snapshot: 'Retirement: Azure Communication Services (ACS) standalone services will
+    be retired on September 30, 2028'
+  summary_snapshot: Microsoft will retire several standalone Azure Communication Services
+    (ACS) offerings on September 30, 2028. After this date, the affected services will no
+    longer be available. Details Beginning September 30, 2028, the following ACS services
+    will be reti
+  run_id: run-2026-09-27T10-56-12Z
+generation: {}

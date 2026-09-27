@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-09-045
+slug: launched-generally-available-instant-access-for-vm-restore
+title: '[Launched] Generally Available: Instant Access for VM restore points'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=572573
+announcement_url: https://azure.microsoft.com/updates?id=572573
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-24
+discovered_date: 2026-09-27
+date_confidence: exact
+date_precision: day
+content_hash: sha256:315277da6e6339e6e9cc787c0dd7eb0c9d16f7fdaa7aff76b4ff7634b34a5e97
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:dc594d62f151b7fdfb508503f4e2acb687c5df9e41fcac055ca4d7991c103135
+  discovered_at: '2026-09-27T10:56:13.253577+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-27T10-56-12Z
+url_hash: sha256:dc594d62f151b7fdfb508503f4e2acb687c5df9e41fcac055ca4d7991c103135
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-27
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:315277da6e6339e6e9cc787c0dd7eb0c9d16f7fdaa7aff76b4ff7634b34a5e97
+  title_snapshot: '[Launched] Generally Available: Instant Access for VM restore points'
+  summary_snapshot: Instant Access for application-consistent restore points on virtual machines
+    (that have Premium v2 or Ultra disks as data disks) is now generally available. With Instant
+    Access, you can begin restoring a disk from a restore point as soon as the snapshot i
+  run_id: run-2026-09-27T10-56-12Z
+generation: {}

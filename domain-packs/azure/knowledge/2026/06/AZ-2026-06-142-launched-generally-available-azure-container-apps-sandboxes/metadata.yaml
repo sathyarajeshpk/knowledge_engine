@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-06-142
+slug: launched-generally-available-azure-container-apps-sandboxes
+title: '[Launched] Generally Available: Azure Container Apps Sandboxes'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=561262
+announcement_url: https://azure.microsoft.com/updates?id=561262
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-06-02
+discovered_date: 2026-09-27
+date_confidence: exact
+date_precision: day
+content_hash: sha256:21dce8a8bb95e82e0a2153da0a62c7a35d5af9b49999d46486b743d774ed633c
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:b982783a15a334900932f3a905359385aceb1703a0b6f00e5ad647bb8f3a88c0
+  discovered_at: '2026-09-27T10:56:13.253652+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-27T10-56-12Z
+url_hash: sha256:b982783a15a334900932f3a905359385aceb1703a0b6f00e5ad647bb8f3a88c0
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-27
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:21dce8a8bb95e82e0a2153da0a62c7a35d5af9b49999d46486b743d774ed633c
+  title_snapshot: '[Launched] Generally Available: Azure Container Apps Sandboxes'
+  summary_snapshot: Teams building agentic applications, multi-tenant platforms, development
+    environments, and CI/CD systems have often had to stitch together custom infrastructure
+    to run untrusted code safely, preserve state across sessions, and handle bursty demand
+    without
+  run_id: run-2026-09-27T10-56-12Z
+generation: {}

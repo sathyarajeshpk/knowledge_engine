@@ -1,0 +1,63 @@
+schema_version: 1
+id: AZ-2026-09-037
+slug: in-preview-public-preview-introducing-a-guided-copilot
+title: '[In preview] Public Preview: Introducing a Guided Copilot Experience for Building
+  Azure Apps in VS Code'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=572214
+announcement_url: https://azure.microsoft.com/updates?id=572214
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-21
+discovered_date: 2026-09-27
+date_confidence: exact
+date_precision: day
+content_hash: sha256:107e8370f9f79fdf8139c86739789f2281845aba4f4115feb76930450ab7983a
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:ac2ae740c4a12cd4908003317df3389bb579a6accb2976fbde5d81cfc789d31b
+  discovered_at: '2026-09-27T10:56:13.254180+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-27T10-56-12Z
+url_hash: sha256:ac2ae740c4a12cd4908003317df3389bb579a6accb2976fbde5d81cfc789d31b
+tier: 2
+learning_priority: high
+category: ai-machine-learning
+tags:
+- ai
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-27
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:107e8370f9f79fdf8139c86739789f2281845aba4f4115feb76930450ab7983a
+  title_snapshot: '[In preview] Public Preview: Introducing a Guided Copilot Experience for
+    Building Azure Apps in VS Code'
+  summary_snapshot: 'Today we''re previewing a new way to build cloud apps with GitHub Copilot
+    in VS Code: a guided Copilot experience that takes you from idea to a deployed Azure app
+    through a structured, predictable workflow instead of a free-form chat session that may
+    or ma'
+  run_id: run-2026-09-27T10-56-12Z
+generation: {}

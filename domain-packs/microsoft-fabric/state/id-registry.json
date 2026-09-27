@@ -9,7 +9,7 @@
     "2026-06": 57,
     "2026-07": 48,
     "2026-08": 166,
-    "2026-09": 13
+    "2026-09": 14
   },
   "paths": {
     "MSF-2025-11-001": "2025/11/MSF-2025-11-001-cosmos-db-in-microsoft-fabric-ga",
@@ -340,6 +340,7 @@
     "MSF-2026-09-010": "2026/09/MSF-2026-09-010-fabric-influencers-spotlight-august-2026",
     "MSF-2026-09-011": "2026/09/MSF-2026-09-011-connection-recency-and-fabric-rest-apis",
     "MSF-2026-09-012": "2026/09/MSF-2026-09-012-list-networking-communication-policies-admin-api",
-    "MSF-2026-09-013": "2026/09/MSF-2026-09-013-change-data-capture-cdc-in-copy-job"
+    "MSF-2026-09-013": "2026/09/MSF-2026-09-013-change-data-capture-cdc-in-copy-job",
+    "MSF-2026-09-014": "2026/09/MSF-2026-09-014-result-set-caching"
   }
 }

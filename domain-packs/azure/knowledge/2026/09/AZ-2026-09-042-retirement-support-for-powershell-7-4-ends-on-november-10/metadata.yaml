@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-09-042
+slug: retirement-support-for-powershell-7-4-ends-on-november-10
+title: 'Retirement: Support for PowerShell 7.4 ends on November 10, 2026'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=572770
+announcement_url: https://azure.microsoft.com/updates?id=572770
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-23
+discovered_date: 2026-09-27
+date_confidence: exact
+date_precision: day
+content_hash: sha256:f01b622bdd398b483d12ebf9ea200c58405f04bf85ed92e86e6a3d3794bc7d72
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:46250e03cde607a1524d89c7300c702c6def3b70929563ae42f1bacaf4a64d90
+  discovered_at: '2026-09-27T10:56:13.253801+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-09-27T10-56-12Z
+url_hash: sha256:46250e03cde607a1524d89c7300c702c6def3b70929563ae42f1bacaf4a64d90
+tier: 1
+learning_priority: low
+category: null
+tags:
+- retirement
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-09-27
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:f01b622bdd398b483d12ebf9ea200c58405f04bf85ed92e86e6a3d3794bc7d72
+  title_snapshot: 'Retirement: Support for PowerShell 7.4 ends on November 10, 2026'
+  summary_snapshot: Support for PowerShell 7.4 will end on November 10, 2026, please transition
+    to PowerShell 7.6. Your Azure Function apps will continue to run, but security patches
+    and updates will no longer be provided and customer support for PowerShell 7.4 will be
+    disco
+  run_id: run-2026-09-27T10-56-12Z
+generation: {}

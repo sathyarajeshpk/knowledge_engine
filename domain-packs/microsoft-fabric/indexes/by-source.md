@@ -18,7 +18,7 @@
 | [MSF-2026-02-002](../knowledge/2026/02/MSF-2026-02-002-top-sessions-you-won-t-want-to-miss-at-the-microsoft-fabric) | Top sessions you won’t want to miss at the Microsoft Fabric Community Conference 2026 | 2026-02-03 | fabric-blog |
 | [MSF-2025-12-001](../knowledge/2025/12/MSF-2025-12-001-fabcon-and-sqlcon-from-workshops-and-keynotes-to-demos-and) | FabCon and SQLCon: From workshops and keynotes to demos and deep dives | 2025-12-17 | fabric-blog |
 
-## fabric-whats-new (91)
+## fabric-whats-new (92)
 
 | ID | Title | Published | Source |
 |---|---|---|---|
@@ -32,6 +32,7 @@
 | [MSF-2026-09-010](../knowledge/2026/09/MSF-2026-09-010-fabric-influencers-spotlight-august-2026) | Fabric Influencers Spotlight August 2026 | 2026-09-01 | fabric-whats-new |
 | [MSF-2026-09-011](../knowledge/2026/09/MSF-2026-09-011-connection-recency-and-fabric-rest-apis) | Connection recency and Fabric REST APIs | 2026-09-01 | fabric-whats-new |
 | [MSF-2026-09-012](../knowledge/2026/09/MSF-2026-09-012-list-networking-communication-policies-admin-api) | List Networking Communication Policies Admin API | 2026-09-01 | fabric-whats-new |
+| [MSF-2026-09-014](../knowledge/2026/09/MSF-2026-09-014-result-set-caching) | Result set caching | 2026-09-01 | fabric-whats-new |
 | [MSF-2026-08-107](../knowledge/2026/08/MSF-2026-08-107-mirroring-in-fabric) | Mirroring in Fabric | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-08-111](../knowledge/2026/08/MSF-2026-08-111-medallion-architecture-patterns-for-fabric-data-warehouse) | Medallion architecture patterns for Fabric Data Warehouse | 2026-08-01 | fabric-whats-new |
 | [MSF-2026-08-112](../knowledge/2026/08/MSF-2026-08-112-modern-evaluation-engine-for-vnet-data-gateways-preview) | modern evaluation engine for VNet data gateways (Preview) | 2026-08-01 | fabric-whats-new |

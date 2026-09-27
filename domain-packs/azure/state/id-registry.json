@@ -3,14 +3,16 @@
   "counters": {
     "2025-09": 1,
     "2026-04": 1,
-    "2026-06": 141,
+    "2026-05": 1,
+    "2026-06": 142,
     "2026-07": 57,
     "2026-08": 53,
-    "2026-09": 36
+    "2026-09": 46
   },
   "paths": {
     "AZ-2025-09-001": "2025/09/AZ-2025-09-001-retirement-azure-vmware-solution-av36-node-retirement-now",
     "AZ-2026-04-001": "2026/04/AZ-2026-04-001-launched-update-minimum-billable-object-size-for-cooler",
+    "AZ-2026-05-001": "2026/05/AZ-2026-05-001-launched-generally-available-azure-container-apps-express",
     "AZ-2026-06-001": "2026/06/AZ-2026-06-001-in-preview-public-preview-azure-databricks-workspace-wide",
     "AZ-2026-06-002": "2026/06/AZ-2026-06-002-launched-generally-available-azure-documentdb-instant-free",
     "AZ-2026-06-003": "2026/06/AZ-2026-06-003-in-preview-public-preview-mcp-toolkit-for-azure-documentdb",
@@ -152,6 +154,7 @@
     "AZ-2026-06-139": "2026/06/AZ-2026-06-139-retirement-migrate-from-azure-blueprints-by-january-31-2027",
     "AZ-2026-06-140": "2026/06/AZ-2026-06-140-launched-generally-available-client-side-data-integrity",
     "AZ-2026-06-141": "2026/06/AZ-2026-06-141-launched-generally-available-toolboxes-in-microsoft-foundry",
+    "AZ-2026-06-142": "2026/06/AZ-2026-06-142-launched-generally-available-azure-container-apps-sandboxes",
     "AZ-2026-07-001": "2026/07/AZ-2026-07-001-launched-public-preview-azure-storage-mover-now-supports",
     "AZ-2026-07-002": "2026/07/AZ-2026-07-002-launched-generally-available-new-powershell-module-az",
     "AZ-2026-07-003": "2026/07/AZ-2026-07-003-launched-generally-available-document-pii-nextgen",
@@ -297,6 +300,16 @@
     "AZ-2026-09-033": "2026/09/AZ-2026-09-033-launched-generally-available-pg18-support-for-azure",
     "AZ-2026-09-034": "2026/09/AZ-2026-09-034-launched-generally-available-new-and-improved",
     "AZ-2026-09-035": "2026/09/AZ-2026-09-035-launched-generally-available-logical-replication-slot-sync",
-    "AZ-2026-09-036": "2026/09/AZ-2026-09-036-in-preview-public-preview-mdsv4-and-msv4-series-virtual"
+    "AZ-2026-09-036": "2026/09/AZ-2026-09-036-in-preview-public-preview-mdsv4-and-msv4-series-virtual",
+    "AZ-2026-09-037": "2026/09/AZ-2026-09-037-in-preview-public-preview-introducing-a-guided-copilot",
+    "AZ-2026-09-038": "2026/09/AZ-2026-09-038-launched-generally-available-azure-sphere-os-version-26-09",
+    "AZ-2026-09-039": "2026/09/AZ-2026-09-039-launched-generally-available-azure-functions-support-for",
+    "AZ-2026-09-040": "2026/09/AZ-2026-09-040-in-preview-public-preview-flex-nodes-for-aks",
+    "AZ-2026-09-041": "2026/09/AZ-2026-09-041-retirement-support-for-node-js-22-ends-on-april-30-2027",
+    "AZ-2026-09-042": "2026/09/AZ-2026-09-042-retirement-support-for-powershell-7-4-ends-on-november-10",
+    "AZ-2026-09-043": "2026/09/AZ-2026-09-043-retirement-support-for-net-8-and-net-9-ends-on-november-10",
+    "AZ-2026-09-044": "2026/09/AZ-2026-09-044-retirement-azure-communication-services-acs-standalone",
+    "AZ-2026-09-045": "2026/09/AZ-2026-09-045-launched-generally-available-instant-access-for-vm-restore",
+    "AZ-2026-09-046": "2026/09/AZ-2026-09-046-in-preview-public-preview-azure-horizondb-supports"
   }
 }
