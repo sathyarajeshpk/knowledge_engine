@@ -1,5 +1,5 @@
-# Workspace monitoring (preview)
+# Workspace monitoring
 
-Workspace monitoring (Preview) Workspace monitoring (preview) is a Microsoft Fabric database that collects data from a range of Fabric items in your workspace, and lets you access and analyze logs and metrics. For more information about this feature, see Announcing preview of workspace monitoring.
+Workspace monitoring (Preview) Workspace monitoring uses a monitoring item to collect logs and metrics from supported Fabric items. Centralize telemetry from multiple workspaces, query it with KQL, build dashboards and reports, create alerts, and use Operations Agent to investigate issues.
 
 Source: [fabric-whats-new-markdown](https://learn.microsoft.com/en-us/fabric/fundamentals/workspace-monitoring-overview)

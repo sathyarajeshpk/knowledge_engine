@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-10-002
+slug: refresh-sql-analytics-endpoint-activity-preview
+title: Refresh SQL analytics endpoint activity (Preview)
+source_name: fabric-whats-new
+source_url: https://aka.ms/RSQLDocs
+announcement_url: https://aka.ms/RSQLDocs
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-10-04
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:facea63ac2ba3ecd4d3ca8dcc50d0ae90baf3e3b9bf56c592fe623a87dc6a694
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:0ad9b4c4afed3f44abc4eb3fa3bd068bcb328f8b9c4c9ee2f85e5a4b96452b88
+  discovered_at: '2026-10-04T11:25:27.921119+00:00'
+  source_role: primary
+  selector: h2[Features currently in preview] > table > tr (no date cell)
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:0ad9b4c4afed3f44abc4eb3fa3bd068bcb328f8b9c4c9ee2f85e5a4b96452b88
+tier: 2
+learning_priority: high
+category: data-factory
+tags:
+- lakehouse
+- pipeline
+- preview
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:facea63ac2ba3ecd4d3ca8dcc50d0ae90baf3e3b9bf56c592fe623a87dc6a694
+  title_snapshot: Refresh SQL analytics endpoint activity (Preview)
+  summary_snapshot: The Refresh SQL analytics endpoint activity (Preview) refreshes a lakehouse
+    SQL analytics endpoint on demand or on a schedule within a Fabric pipeline.
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

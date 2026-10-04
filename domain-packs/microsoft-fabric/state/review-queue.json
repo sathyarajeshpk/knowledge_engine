@@ -12,6 +12,18 @@
       "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
       "lifecycle": "queued"
     },
+    "sha256:0c63d743317c2e3e788f6f09aa81ae6173a343d29f97b0f677ebfbb9aedb1416": {
+      "identity_key": "sha256:0c63d743317c2e3e788f6f09aa81ae6173a343d29f97b0f677ebfbb9aedb1416",
+      "title": "Capacity Metrics app enhancements",
+      "summary": "Capacity Metrics app enhancements (Generally Available) Capacity Metrics app enhancements add health-state duration, capacity-units-per-second views, heatmaps, contributor drilldowns, and chargeback integration. For more information, see Capacity Metrics app.",
+      "source_name": "fabric-whats-new",
+      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Build-deploy-and-govern-Microsoft-Fabric-at-scale/ba-p/5369145",
+      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Build-deploy-and-govern-Microsoft-Fabric-at-scale/ba-p/5369145",
+      "first_discovered_date": "2026-10-04",
+      "confidence": "medium",
+      "reason": "this announcement is cited by 3 distinct features, so the URL identifies the announcement rather than this feature",
+      "lifecycle": "queued"
+    },
     "sha256:1893eae9ad11b45edbb8518b133e4802281e896f4f032cdad3f403c9f3c2d6a2": {
       "identity_key": "sha256:1893eae9ad11b45edbb8518b133e4802281e896f4f032cdad3f403c9f3c2d6a2",
       "title": "Data Factory MCP (Preview)",
@@ -22,18 +34,6 @@
       "first_discovered_date": "2026-08-01",
       "confidence": "medium",
       "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
-      "lifecycle": "queued"
-    },
-    "sha256:1f31ed464193ab563d54b61b0565713eb83b5022100d0a29f5a266e8476b3f80": {
-      "identity_key": "sha256:1f31ed464193ab563d54b61b0565713eb83b5022100d0a29f5a266e8476b3f80",
-      "title": "AI-assisted Synapse to Fabric migration skills (Preview)",
-      "summary": "AI-assisted Synapse to Fabric migration skills (Preview) move Synapse Spark pools, lake databases, notebooks, Spark job definitions, and Data Factory pipelines to Microsoft Fabric from the command line by using REST APIs, with lift-and-shift and migrate-and-modernize paths and a read-only assessment step. For more information, see Skills for Microsoft Fabric.",
-      "source_name": "fabric-whats-new-markdown",
-      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/AI-assisted-Synapse-Spark-and-pipeline-migration-to-Microsoft/ba-p/5234478",
-      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/AI-assisted-Synapse-Spark-and-pipeline-migration-to-Microsoft/ba-p/5234478",
-      "first_discovered_date": "2026-08-01",
-      "confidence": "medium",
-      "reason": "this announcement is cited by 3 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"
     },
     "sha256:21721b0b7349b8542984813d5d0ba96223698318c13480c22d7a90a28e2c5064": {
@@ -108,6 +108,30 @@
       "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
       "lifecycle": "queued"
     },
+    "sha256:40e8abac907cc715f8072e25c925ad145b2e3f98c75ae14266d2de0b9e8f205e": {
+      "identity_key": "sha256:40e8abac907cc715f8072e25c925ad145b2e3f98c75ae14266d2de0b9e8f205e",
+      "title": "Fabric IQ in Microsoft 365 Copilot Chat and Copilot Cowork",
+      "summary": "Fabric IQ in Microsoft 365 Copilot (Generally Available) Fabric IQ in Microsoft 365 Copilot Chat and Copilot Cowork answers business questions with governed Power BI reports and semantic models. For more information, see Fabric IQ in Microsoft 365 Copilot.",
+      "source_name": "fabric-whats-new",
+      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Bringing-governed-analytics-into-the-flow-of-work-Fabric/ba-p/5368918",
+      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Bringing-governed-analytics-into-the-flow-of-work-Fabric/ba-p/5368918",
+      "first_discovered_date": "2026-10-04",
+      "confidence": "medium",
+      "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
+      "lifecycle": "queued"
+    },
+    "sha256:4f360e1b68050ec1e4e4c1f64e88a452bb2fed9c78268372e00a69011aefcd2b": {
+      "identity_key": "sha256:4f360e1b68050ec1e4e4c1f64e88a452bb2fed9c78268372e00a69011aefcd2b",
+      "title": "Atlan connector for Fabric",
+      "summary": "Atlan connector for Fabric (Generally Available) Atlan connector for Fabric adds business context and deeper lineage across Fabric items.",
+      "source_name": "fabric-whats-new",
+      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/FabCon-and-SQLCon-Barcelona-2026-What-s-new-in-Microsoft-OneLake/ba-p/5369146",
+      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/FabCon-and-SQLCon-Barcelona-2026-What-s-new-in-Microsoft-OneLake/ba-p/5369146",
+      "first_discovered_date": "2026-10-04",
+      "confidence": "medium",
+      "reason": "this announcement is cited by 8 distinct features, so the URL identifies the announcement rather than this feature",
+      "lifecycle": "queued"
+    },
     "sha256:50e619d1505923357161227a939454002d4acf336e7fa9dd63bae94e2d07e46c": {
       "identity_key": "sha256:50e619d1505923357161227a939454002d4acf336e7fa9dd63bae94e2d07e46c",
       "title": "Starting in October, users with Power BI Desktop versions from March 2026 or earlier will no longer be able to save and share files to OneDrive and SharePoint. Update Power BI Desktop to keep using this functionality.",
@@ -130,30 +154,6 @@
       "first_discovered_date": "2026-08-02",
       "confidence": "medium",
       "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
-      "lifecycle": "queued"
-    },
-    "sha256:5cef4940a5750d3d91ab246a89a8d0397209bf8afa3f8773d742273a0d74ccfd": {
-      "identity_key": "sha256:5cef4940a5750d3d91ab246a89a8d0397209bf8afa3f8773d742273a0d74ccfd",
-      "title": "Data protection: DLP restrict access for structured data in OneLake (Preview)",
-      "summary": "Expanded DLP restrict access (Preview) covers all structured data in OneLake including SQL databases, KQL databases, and warehouses. For more information, see DLP restrict access.",
-      "source_name": "fabric-whats-new-markdown",
-      "source_url": "https://blog.fabric.microsoft.com/blog/new-data-protection-capabilities-in-microsoft-fabric-native-security-for-the-modern-data-estate?ft=All",
-      "announcement_url": "https://blog.fabric.microsoft.com/blog/new-data-protection-capabilities-in-microsoft-fabric-native-security-for-the-modern-data-estate?ft=All",
-      "first_discovered_date": "2026-08-01",
-      "confidence": "medium",
-      "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
-      "lifecycle": "queued"
-    },
-    "sha256:64cc22e330fa3fa6059c81309c6d241be626235dac6ed3078a1e4ff17319a020": {
-      "identity_key": "sha256:64cc22e330fa3fa6059c81309c6d241be626235dac6ed3078a1e4ff17319a020",
-      "title": "Fabric Lakehouse support in dbt jobs",
-      "summary": "Fabric Lakehouse support in dbt job (Preview) Fabric Lakehouse support in dbt jobs lets you run dbt projects directly against a new or existing lakehouse and apply dbt models and tests where your data is stored. For more information, see dbt job in Microsoft Fabric.",
-      "source_name": "fabric-whats-new",
-      "source_url": "https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/introducing-fabric-lakehouse-support-in-dbt-job-for-microsoft-fabric-preview/5358240",
-      "announcement_url": "https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/introducing-fabric-lakehouse-support-in-dbt-job-for-microsoft-fabric-preview/5358240",
-      "first_discovered_date": "2026-08-23",
-      "confidence": "medium",
-      "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"
     },
     "sha256:6fd95601da942eee3b59c4c8cbc1f5a0da8b9c515631172a988a63ebf0cb498d": {
@@ -190,18 +190,6 @@
       "first_discovered_date": "2026-08-01",
       "confidence": "medium",
       "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
-      "lifecycle": "queued"
-    },
-    "sha256:86cc721657dd6c1a1ff07654bf61925c56d39d2ef1a5761c251f5ab0940f1394": {
-      "identity_key": "sha256:86cc721657dd6c1a1ff07654bf61925c56d39d2ef1a5761c251f5ab0940f1394",
-      "title": "Mirrored Azure Monitor and Mirrored AWS Glue catalog",
-      "summary": "Azure Monitor and AWS Glue mirroring (Preview) Mirrored Azure Monitor and Mirrored AWS Glue catalog bring Log Analytics workspace tables and AWS Glue Iceberg tables into OneLake for Fabric analysis without duplicating data. For more information, see Mirror Azure Monitor in Microsoft Fabric and Mirrored AWS Glue catalog.",
-      "source_name": "fabric-whats-new",
-      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Bring-Azure-Monitor-and-AWS-Glue-data-to-OneLake-Preview/ba-p/5326474",
-      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Bring-Azure-Monitor-and-AWS-Glue-data-to-OneLake-Preview/ba-p/5326474",
-      "first_discovered_date": "2026-08-08",
-      "confidence": "medium",
-      "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"
     },
     "sha256:879860dd685dded2e15dc13657403a101f9ef9d598606f9277599f24b24e37e4": {
@@ -324,6 +312,18 @@
       "reason": "this announcement is cited by 2 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"
     },
+    "sha256:ce6e61ab595c8e601bdc6b8b1a13507dcd66e72618bc6f659a034175d99f5718": {
+      "identity_key": "sha256:ce6e61ab595c8e601bdc6b8b1a13507dcd66e72618bc6f659a034175d99f5718",
+      "title": "SQL CDC custom capture names",
+      "summary": "SQL CDC custom capture names (Generally Available) SQL CDC custom capture names let Copy job use existing CDC tables that don't follow the default naming convention. For more information, see Change data capture in Copy job.",
+      "source_name": "fabric-whats-new",
+      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-September-2026-Feature-Summary/ba-p/5325825",
+      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-September-2026-Feature-Summary/ba-p/5325825",
+      "first_discovered_date": "2026-10-04",
+      "confidence": "medium",
+      "reason": "this announcement is cited by 98 distinct features, so the URL identifies the announcement rather than this feature",
+      "lifecycle": "queued"
+    },
     "sha256:d20312bc8022b58ed28b4eef916b298e6151cffb2e21c9c6359abb823ce35259": {
       "identity_key": "sha256:d20312bc8022b58ed28b4eef916b298e6151cffb2e21c9c6359abb823ce35259",
       "title": "Learn more",
@@ -334,6 +334,18 @@
       "first_discovered_date": "2026-08-02",
       "confidence": "medium",
       "reason": "identity rests on normalised-title-hash, which does not survive rewording; no announcement URL could be resolved",
+      "lifecycle": "queued"
+    },
+    "sha256:d627ce3048ee6f48bf1519aa9a5a3c83dda1889115335aa0a2c1f86d5667b41d": {
+      "identity_key": "sha256:d627ce3048ee6f48bf1519aa9a5a3c83dda1889115335aa0a2c1f86d5667b41d",
+      "title": "Fabric Observability Insights (Preview)",
+      "summary": "Fabric Observability Insights (Preview) uses an operations agent and Fabric-native context to investigate pipeline failures. For more information, see Workspace monitoring overview.",
+      "source_name": "fabric-whats-new",
+      "source_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Trusted-AI-starts-with-Microsoft-Fabric-Real-Time-Intelligence/ba-p/5369528",
+      "announcement_url": "https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Trusted-AI-starts-with-Microsoft-Fabric-Real-Time-Intelligence/ba-p/5369528",
+      "first_discovered_date": "2026-10-04",
+      "confidence": "medium",
+      "reason": "this announcement is cited by 3 distinct features, so the URL identifies the announcement rather than this feature",
       "lifecycle": "queued"
     },
     "sha256:da399a5f55a384b6b09af954b968eac7448b5f398b02deacd70db71fc59824db": {

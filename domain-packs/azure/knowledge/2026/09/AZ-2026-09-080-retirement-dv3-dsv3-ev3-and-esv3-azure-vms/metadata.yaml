@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-09-080
+slug: retirement-dv3-dsv3-ev3-and-esv3-azure-vms
+title: 'Retirement: Dv3, Dsv3, Ev3, and Esv3 Azure VMs'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=572346
+announcement_url: https://azure.microsoft.com/updates?id=572346
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-30
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:728bb1b18a0ee2e0455a1bbdaf0b8d26fbb6bed29cd77b4ff149da392d88fbff
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:3c504b3d770658d7231a6a022e5935d042bc6293af327b081452923dc34322b8
+  discovered_at: '2026-10-04T11:25:25.762930+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:3c504b3d770658d7231a6a022e5935d042bc6293af327b081452923dc34322b8
+tier: 1
+learning_priority: low
+category: compute
+tags:
+- retirement
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:728bb1b18a0ee2e0455a1bbdaf0b8d26fbb6bed29cd77b4ff149da392d88fbff
+  title_snapshot: 'Retirement: Dv3, Dsv3, Ev3, and Esv3 Azure VMs'
+  summary_snapshot: As part of the Microsoft Azure VM lifecycle policy, Microsoft is announcing
+    the retirement of the Dv3, Dsv3, Ev3, and Esv3 Azure VM series in public cloud Azure regions.
+    These VMs will enter the End-of-Life lifecycle stage and retire on November 15, 2029.
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

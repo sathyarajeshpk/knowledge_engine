@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-09-055
+slug: in-preview-public-preview-microsoft-sql-agent-skills
+title: '[In preview] Public Preview: Microsoft SQL Agent Skills'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=573003
+announcement_url: https://azure.microsoft.com/updates?id=573003
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-29
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:6d11dca766cab76d87a776b2a9154aff6a1ec8340252feeb752d681ed8888e04
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:3a14bd0bca418aacd77177fc4b808d452462b84e7884d5035e6f5be3ca57de34
+  discovered_at: '2026-10-04T11:25:25.763896+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:3a14bd0bca418aacd77177fc4b808d452462b84e7884d5035e6f5be3ca57de34
+tier: 2
+learning_priority: medium
+category: databases
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:6d11dca766cab76d87a776b2a9154aff6a1ec8340252feeb752d681ed8888e04
+  title_snapshot: '[In preview] Public Preview: Microsoft SQL Agent Skills'
+  summary_snapshot: Microsoft SQL Agent Skills help you get more accurate, product-specific
+    guidance when using AI agents to build, operate, and migrate SQL workloads. You can use
+    these skills with Azure SQL Database, Azure SQL Database container, SQL Server to Azure
+    migrati
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

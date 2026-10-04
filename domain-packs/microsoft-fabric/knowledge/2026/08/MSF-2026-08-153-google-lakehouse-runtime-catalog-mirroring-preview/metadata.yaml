@@ -7,10 +7,10 @@ source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Bring-
 announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Bring-your-Google-Lakehouse-Runtime-Catalog-data-to-OneLake/ba-p/5360492
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-08-01
+published_date: null
 discovered_date: 2026-08-30
-date_confidence: exact
-date_precision: month
+date_confidence: inferred
+date_precision: day
 content_hash: sha256:64009af93e8f6a73e6554339a9ffcce67326a12748480d8aae39c17c88e8158a
 provenance:
   source_name: fabric-whats-new
@@ -58,4 +58,17 @@ revisions:
     Iceberg catalog metadata into OneLake without copying data, so you can use the tables
     across Fabric workloads. For more information, see Google Lakehouse Runtime Catalog mirroring.
   run_id: run-2026-08-30T10-49-07Z
+- revision: 2
+  date: 2026-10-04
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:64009af93e8f6a73e6554339a9ffcce67326a12748480d8aae39c17c88e8158a
+  title_snapshot: Google Lakehouse Runtime Catalog mirroring (Preview)
+  summary_snapshot: Google Lakehouse Runtime Catalog mirroring (Preview) brings Google-managed
+    Iceberg catalog metadata into OneLake without copying data, so you can use the tables
+    across Fabric workloads. For more information, see Google Lakehouse Runtime Catalog mirroring.
+  run_id: run-2026-10-04T11-25-25Z
 generation: {}

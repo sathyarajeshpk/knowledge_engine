@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-09-056
+slug: launched-generally-available-sql-server-on-azure-local
+title: '[Launched] Generally Available: SQL Server on Azure Local Disconnected (ALDO)'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=571836
+announcement_url: https://azure.microsoft.com/updates?id=571836
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-29
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:fd6e6c3551b2de45f10e72fed48e179e69785deb1bd6fd9ab4d3d70f3c3b8180
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:42860300f32adff098386f0245b40cd0c8939166346f2d91564743c97028dbcc
+  discovered_at: '2026-10-04T11:25:25.763488+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:42860300f32adff098386f0245b40cd0c8939166346f2d91564743c97028dbcc
+tier: 1
+learning_priority: medium
+category: null
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:fd6e6c3551b2de45f10e72fed48e179e69785deb1bd6fd9ab4d3d70f3c3b8180
+  title_snapshot: '[Launched] Generally Available: SQL Server on Azure Local Disconnected
+    (ALDO)'
+  summary_snapshot: Now you can use ALDO to extend SQL Server support to environments that
+    can’t maintain continuous connectivity to Azure. ALDO is designed for operations in highly
+    regulated, secure, remote, or air-gapped environments, where internet connectivity is
+    restric
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

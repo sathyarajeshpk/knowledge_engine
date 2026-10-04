@@ -9,7 +9,8 @@
     "2026-06": 57,
     "2026-07": 48,
     "2026-08": 166,
-    "2026-09": 14
+    "2026-09": 20,
+    "2026-10": 18
   },
   "paths": {
     "MSF-2025-11-001": "2025/11/MSF-2025-11-001-cosmos-db-in-microsoft-fabric-ga",
@@ -341,6 +342,30 @@
     "MSF-2026-09-011": "2026/09/MSF-2026-09-011-connection-recency-and-fabric-rest-apis",
     "MSF-2026-09-012": "2026/09/MSF-2026-09-012-list-networking-communication-policies-admin-api",
     "MSF-2026-09-013": "2026/09/MSF-2026-09-013-change-data-capture-cdc-in-copy-job",
-    "MSF-2026-09-014": "2026/09/MSF-2026-09-014-result-set-caching"
+    "MSF-2026-09-014": "2026/09/MSF-2026-09-014-result-set-caching",
+    "MSF-2026-09-015": "2026/09/MSF-2026-09-015-sharepoint-list-mirroring",
+    "MSF-2026-09-016": "2026/09/MSF-2026-09-016-warehouse-operations-skill-sqldw-cli",
+    "MSF-2026-09-017": "2026/09/MSF-2026-09-017-dbt-job-in-microsoft-fabric",
+    "MSF-2026-09-018": "2026/09/MSF-2026-09-018-capacity-overage-in-microsoft-fabric",
+    "MSF-2026-09-019": "2026/09/MSF-2026-09-019-vector-indexes-and-vector-search-in-sql-database-in-fabric",
+    "MSF-2026-09-020": "2026/09/MSF-2026-09-020-fabcon-and-sqlcon-2026-in-barcelona-building-the-data",
+    "MSF-2026-10-001": "2026/10/MSF-2026-10-001-fabric-item-relations-api-preview",
+    "MSF-2026-10-002": "2026/10/MSF-2026-10-002-refresh-sql-analytics-endpoint-activity-preview",
+    "MSF-2026-10-003": "2026/10/MSF-2026-10-003-fabric-apps-functions-and-connectors-preview",
+    "MSF-2026-10-004": "2026/10/MSF-2026-10-004-ai-assisted-synapse-to-fabric-migration-skills-preview",
+    "MSF-2026-10-005": "2026/10/MSF-2026-10-005-database-hub-preview",
+    "MSF-2026-10-006": "2026/10/MSF-2026-10-006-native-planning-engine-preview",
+    "MSF-2026-10-007": "2026/10/MSF-2026-10-007-data-security-posture-management-dspm-for-ai-for-fabric",
+    "MSF-2026-10-008": "2026/10/MSF-2026-10-008-overview-of-onelake-table-apis",
+    "MSF-2026-10-009": "2026/10/MSF-2026-10-009-fabric-lakehouse-support-in-dbt-job-preview",
+    "MSF-2026-10-010": "2026/10/MSF-2026-10-010-fabric-data-engineering-agent-project-osmos",
+    "MSF-2026-10-011": "2026/10/MSF-2026-10-011-on-premises-data-gateway-soft-delete-preview",
+    "MSF-2026-10-012": "2026/10/MSF-2026-10-012-microsoft-fabric-policies",
+    "MSF-2026-10-013": "2026/10/MSF-2026-10-013-teradata-migration-to-fabric-data-warehouse-preview",
+    "MSF-2026-10-014": "2026/10/MSF-2026-10-014-mirrored-aws-glue-catalog",
+    "MSF-2026-10-015": "2026/10/MSF-2026-10-015-optimal-refresh-for-updates-and-deletes",
+    "MSF-2026-10-016": "2026/10/MSF-2026-10-016-onelake-catalog-table-discovery-preview",
+    "MSF-2026-10-017": "2026/10/MSF-2026-10-017-manage-surge-protection-for-fabric-capacities",
+    "MSF-2026-10-018": "2026/10/MSF-2026-10-018-native-execution-engine-json-acceleration-preview"
   }
 }

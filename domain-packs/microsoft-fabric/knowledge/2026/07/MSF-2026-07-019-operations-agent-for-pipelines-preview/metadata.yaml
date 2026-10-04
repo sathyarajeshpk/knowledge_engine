@@ -7,11 +7,11 @@ source_url: https://learn.microsoft.com/en-us/fabric/data-factory/operations-age
 announcement_url: https://learn.microsoft.com/en-us/fabric/data-factory/operations-agent-for-pipelines
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-07-01
+published_date: null
 discovered_date: 2026-08-01
-date_confidence: exact
-date_precision: month
-content_hash: sha256:60d04487ea1327a3fa579b2e91f66067ec3bb2f9dc990105594a3045bc4a47dd
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:d5d3d413320f7dcfede0cb6386106c3166d2c7d2352c12b788e1eea2c1fe804e
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -31,7 +31,7 @@ category: data-factory
 tags:
 - pipeline
 - preview
-difficulty: intermediate
+difficulty: advanced
 workload: moderate
 version: null
 reading_time: 1
@@ -238,4 +238,21 @@ revisions:
     to monitor specific scenarios such as all pipeline failures or runs exceeding expected
     durations. For more information, see Operations Agent for Pipelines (preview).
   run_id: run-2026-08-02T08-00-14Z
+- revision: 13
+  date: 2026-10-04
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:d5d3d413320f7dcfede0cb6386106c3166d2c7d2352c12b788e1eea2c1fe804e
+  title_snapshot: Operations Agent for Pipelines (preview)
+  summary_snapshot: Operations Agent for Pipelines (Preview) Operations Agent for Pipelines
+    is an AI-powered monitoring agent in Data Factory that continuously watches your pipeline
+    runs and proactively notifies you through Microsoft Teams when failures or anomalies occur.
+    You can configure the agent to monitor specific scenarios such as all pipeline failures
+    or runs exceeding expected durations, without writing custom alerting logic. For more
+    information, see Operations Agent for Pipelines (preview).
+  run_id: run-2026-10-04T11-25-25Z
 generation: {}

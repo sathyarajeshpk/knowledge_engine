@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-09-061
+slug: launched-generally-available-sql-migration-agent-skills-for
+title: '[Launched] Generally Available: SQL Migration Agent Skills for assessment, migration,
+  and validation'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=571899
+announcement_url: https://azure.microsoft.com/updates?id=571899
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-29
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:fd3ac4e8adfcc6c2232725c4a9ee6e08812aecf8d0fe9ae0ee50c03bce6b3f22
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:6eae9f86a2681dc41fe40f5b6344f64ab4160eef9c38bb5323b1c60be381150b
+  discovered_at: '2026-10-04T11:25:25.763760+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:6eae9f86a2681dc41fe40f5b6344f64ab4160eef9c38bb5323b1c60be381150b
+tier: 1
+learning_priority: medium
+category: null
+tags:
+- ga
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:fd3ac4e8adfcc6c2232725c4a9ee6e08812aecf8d0fe9ae0ee50c03bce6b3f22
+  title_snapshot: '[Launched] Generally Available: SQL Migration Agent Skills for assessment,
+    migration, and validation'
+  summary_snapshot: SQL Migration Agent Skills help you automate and streamline the end-to-end
+    migration journey from SQL Server to Azure. These reusable AI-powered skills help guide
+    you through assessment, target selection, migration execution, and post-migration validation
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

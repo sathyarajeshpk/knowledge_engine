@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-09-060
+slug: in-preview-public-preview-migrate-directly-from-azure-arc
+title: '[In preview] Public Preview: Migrate directly from Azure Arc to Azure SQL Database,
+  including Hyperscale'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=571795
+announcement_url: https://azure.microsoft.com/updates?id=571795
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-29
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:17f3a3495abb3a6fec8fd7b490ca6696d5d860a2ec52899d6f2b0081759e3139
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:58eab3d05fa9dccea59caf8a2a871aba5989a701a720ace176f42119eaa17a82
+  discovered_at: '2026-10-04T11:25:25.763850+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:58eab3d05fa9dccea59caf8a2a871aba5989a701a720ace176f42119eaa17a82
+tier: 2
+learning_priority: medium
+category: databases
+tags:
+- preview
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:17f3a3495abb3a6fec8fd7b490ca6696d5d860a2ec52899d6f2b0081759e3139
+  title_snapshot: '[In preview] Public Preview: Migrate directly from Azure Arc to Azure SQL
+    Database, including Hyperscale'
+  summary_snapshot: You can now select Azure SQL Database, including Hyperscale, as a migration
+    target directly from the database migration experience in Azure Arc. The workflow brings
+    Azure Database Migration Service and Self-hosted Integration Runtime setup into the guided
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

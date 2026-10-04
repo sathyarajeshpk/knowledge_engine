@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-09-078
+slug: retirement-nvv4-series-azure-virtual-machines
+title: 'Retirement: NVv4-series Azure Virtual Machines'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=573415
+announcement_url: https://azure.microsoft.com/updates?id=573415
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-30
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:d389b9e4150c7ba8acf1f4f9d06904be44964ee9a52ac2cab41ceaaf60d03045
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:11141247ba24aee99239f8c838d27837fbc9bfcd00b7ca539b29cdaf2da74f39
+  discovered_at: '2026-10-04T11:25:25.762743+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:11141247ba24aee99239f8c838d27837fbc9bfcd00b7ca539b29cdaf2da74f39
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- retirement
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:d389b9e4150c7ba8acf1f4f9d06904be44964ee9a52ac2cab41ceaaf60d03045
+  title_snapshot: 'Retirement: NVv4-series Azure Virtual Machines'
+  summary_snapshot: On September 30, 2026, Microsoft Azure retired the Standard_NV4as_v4,
+    Standard_NV4ahs_v4, Standard_NV8as_v4, Standard_NV8ahs_v4, Standard_NV16as_v4, Standard_NV16ahs_v4,
+    Standard_NV32as_v4, and Standard_NV32ahs_v4 virtual machines (VMs) in the NVv4-series
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

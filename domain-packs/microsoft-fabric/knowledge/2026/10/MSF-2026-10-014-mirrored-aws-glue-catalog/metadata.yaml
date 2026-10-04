@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-10-014
+slug: mirrored-aws-glue-catalog
+title: mirrored AWS Glue catalog
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Bring-Azure-Monitor-and-AWS-Glue-data-to-OneLake-Preview/ba-p/5326474
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Bring-Azure-Monitor-and-AWS-Glue-data-to-OneLake-Preview/ba-p/5326474
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-10-04
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:1378fd1123e50a593305e967a3be8993ea05fb4554c2b764a17d8c2d9f7528be
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:86cc721657dd6c1a1ff07654bf61925c56d39d2ef1a5761c251f5ab0940f1394
+  discovered_at: '2026-10-04T11:25:27.914401+00:00'
+  source_role: primary
+  selector: h2[Features currently in preview] > table > tr (no date cell)
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:86cc721657dd6c1a1ff07654bf61925c56d39d2ef1a5761c251f5ab0940f1394
+tier: 2
+learning_priority: high
+category: data-factory
+tags:
+- onelake
+- preview
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:1378fd1123e50a593305e967a3be8993ea05fb4554c2b764a17d8c2d9f7528be
+  title_snapshot: mirrored AWS Glue catalog
+  summary_snapshot: AWS Glue mirroring (Preview) A mirrored AWS Glue catalog brings AWS Glue
+    Iceberg tables into OneLake for Fabric analysis without duplicating data. For more information,
+    see Mirrored AWS Glue catalog.
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

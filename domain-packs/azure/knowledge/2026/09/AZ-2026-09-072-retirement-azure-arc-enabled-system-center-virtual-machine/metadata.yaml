@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-09-072
+slug: retirement-azure-arc-enabled-system-center-virtual-machine
+title: 'Retirement: Azure Arc enabled System Center Virtual Machine Manager will be retired
+  September 30, 2029'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=570283
+announcement_url: https://azure.microsoft.com/updates?id=570283
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-29
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:93627f66f8260fd3c92f21be0158bd924dbf5dae7f6432c986a1a38448d64f9c
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:cdc96a3d5bf7dbe5e1cb7697e5b66488077ba7ebdf50895a5659bd1cd3a7238c
+  discovered_at: '2026-10-04T11:25:25.763801+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:cdc96a3d5bf7dbe5e1cb7697e5b66488077ba7ebdf50895a5659bd1cd3a7238c
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- retirement
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:93627f66f8260fd3c92f21be0158bd924dbf5dae7f6432c986a1a38448d64f9c
+  title_snapshot: 'Retirement: Azure Arc enabled System Center Virtual Machine Manager will
+    be retired September 30, 2029'
+  summary_snapshot: Microsoft is retiring Azure Arc-enabled System Center Virtual Machine
+    Manager (SCVMM) in September 2029. Customers must plan and transition to alternative solutions.What
+    does this mean for you?If you are using Azure Arc-enabled SCVMM for:Azure services an
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

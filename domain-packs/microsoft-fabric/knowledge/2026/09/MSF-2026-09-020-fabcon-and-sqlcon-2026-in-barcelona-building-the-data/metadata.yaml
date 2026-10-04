@@ -1,0 +1,68 @@
+schema_version: 1
+id: MSF-2026-09-020
+slug: fabcon-and-sqlcon-2026-in-barcelona-building-the-data
+title: 'FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot
+  and agents'
+source_name: fabric-blog
+source_url: https://azure.microsoft.com/en-us/blog/fabcon-and-sqlcon-2026-in-barcelona-building-the-data-foundation-for-microsoft-copilot-and-agents
+announcement_url: https://azure.microsoft.com/en-us/blog/fabcon-and-sqlcon-2026-in-barcelona-building-the-data-foundation-for-microsoft-copilot-and-agents
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-29
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:cf43e134f8545a7da57c09e182c16ee0d3ae5922b32b75b04277001ed5f2052b
+provenance:
+  source_name: fabric-blog
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:bc3833189a0e686f0cac9cd1fc72ddfb46e7d1bd903179490028d51f45d910c7
+  discovered_at: '2026-10-04T11:25:28.373580+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:bc3833189a0e686f0cac9cd1fc72ddfb46e7d1bd903179490028d51f45d910c7
+tier: 3
+learning_priority: medium
+category: platform
+tags:
+- ai
+difficulty: advanced
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:cf43e134f8545a7da57c09e182c16ee0d3ae5922b32b75b04277001ed5f2052b
+  title_snapshot: 'FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft
+    Copilot and agents'
+  summary_snapshot: One of the defining strengths of the Fabric and SQL communities is how
+    openly people share what they are building and learning. This week, 5,000 data professionals
+    are coming together in Barcelona to do exactly that. Across more than 130 sessions, more
+    than 10 tutorials, community meetups, and roundtable discussions, attendees will exchange
+    practical insights and real-world experiences that others can apply in their own organizations.
+    The excitement in Barcelona mirrors the momentum we’re seeing throughout Microsoft’s data
+    portfolio. Microsoft Fabric now supports more than 40,000 customers worldwide, and for
+    decades Microsoft SQL Server has provided the backbone of enterprise workloads including
+    more than 90% of the Fortune 500. Customers like Levi Strauss, Australian Energy Market
+    Operator, and University of…
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

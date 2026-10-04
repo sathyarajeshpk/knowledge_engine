@@ -1,17 +1,17 @@
 schema_version: 1
 id: MSF-2026-08-125
 slug: workspace-monitoring-for-eventstreams
-title: Workspace monitoring for Eventstreams
+title: Workspace monitoring for Eventstreams (Preview)
 source_name: fabric-whats-new
 source_url: https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/monitor-your-eventstreams-with-workspace-monitoring-%E2%80%94-now-with-per-eventstream-c/5331185
 announcement_url: https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/monitor-your-eventstreams-with-workspace-monitoring-%E2%80%94-now-with-per-eventstream-c/5331185
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-08-01
+published_date: null
 discovered_date: 2026-08-23
-date_confidence: exact
-date_precision: month
-content_hash: sha256:ae4e0674bc3300a4473349fc53cf85c42f5cb213090f939fe5b62396006aad15
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:5db1ed41b075b4e36d567f42e273f208b7bcef979f097fd8481f2d90f99ac57e
 provenance:
   source_name: fabric-whats-new
   source_representation: html
@@ -59,4 +59,20 @@ revisions:
     For more information, see Eventstream monitoring in Workspace Monitoring and Workspace
     Monitoring overview.
   run_id: run-2026-08-23T06-19-40Z
+- revision: 2
+  date: 2026-10-04
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  - title
+  summary: Source retitled and rewrote the summary
+  content_hash: sha256:5db1ed41b075b4e36d567f42e273f208b7bcef979f097fd8481f2d90f99ac57e
+  title_snapshot: Workspace monitoring for Eventstreams (Preview)
+  summary_snapshot: Eventstream workspace monitoring (Preview) Workspace monitoring for Eventstreams
+    (Preview) lets you choose which eventstreams emit performance, error, and node-health
+    data to three KQL tables in the workspace monitoring Eventhouse. For more information,
+    see Eventstream monitoring in Workspace Monitoring and Workspace Monitoring overview.
+  run_id: run-2026-10-04T11-25-25Z
 generation: {}

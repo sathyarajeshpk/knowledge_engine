@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-09-058
+slug: launched-generally-available-sql-server-support-on-azure
+title: '[Launched] Generally Available: SQL Server support on Azure Local connected mode'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=571841
+announcement_url: https://azure.microsoft.com/updates?id=571841
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-29
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:9bdf09bd6e406c91837afea7465854f745e3e2b28c94c162d923e63c0b252a42
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:4df5f296d9b0f5bd5b36dde94eccefc51b1f2387553236ca1c7864d0f7060d4a
+  discovered_at: '2026-10-04T11:25:25.763524+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:4df5f296d9b0f5bd5b36dde94eccefc51b1f2387553236ca1c7864d0f7060d4a
+tier: 1
+learning_priority: high
+category: identity-security
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:9bdf09bd6e406c91837afea7465854f745e3e2b28c94c162d923e63c0b252a42
+  title_snapshot: '[Launched] Generally Available: SQL Server support on Azure Local connected
+    mode'
+  summary_snapshot: With SQL Server on Azure Local, you can run SQL Server workloads on Azure
+    Local infrastructure while leveraging Azure services for centralized management, governance,
+    monitoring, security, and licensing experiences. By connecting to Azure through Azure
+    Ar
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

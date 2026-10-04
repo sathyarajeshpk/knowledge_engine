@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-09-070
+slug: launched-generally-available-support-for-large-volume
+title: '[Launched] Generally Available: Support for large volume breakthrough mode'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=573027
+announcement_url: https://azure.microsoft.com/updates?id=573027
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-29
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:6d584850b316d6999436c4fdb3b17d1e674680c949398fe1c0a450f63b4fa44d
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:c5a17964a0f6c1a7370d17bf213af846f632b8e3291120a18a5d2fcd7ab79429
+  discovered_at: '2026-10-04T11:25:25.764058+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:c5a17964a0f6c1a7370d17bf213af846f632b8e3291120a18a5d2fcd7ab79429
+tier: 1
+learning_priority: low
+category: storage
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:6d584850b316d6999436c4fdb3b17d1e674680c949398fe1c0a450f63b4fa44d
+  title_snapshot: '[Launched] Generally Available: Support for large volume breakthrough mode'
+  summary_snapshot: Large volume breakthrough mode in Azure NetApp Files enables extreme performance
+    and scalability for demanding HPC and EDA workloads. It supports large volumes up to 2PiB,
+    delivering throughput up to 80 GiBps, depending on workload characteristics. Large
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

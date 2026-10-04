@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-10-008
+slug: overview-of-onelake-table-apis
+title: Overview of OneLake table APIs
+source_name: fabric-whats-new
+source_url: https://learn.microsoft.com/en-us/fabric/onelake/table-apis/table-apis-overview
+announcement_url: https://learn.microsoft.com/en-us/fabric/onelake/table-apis/table-apis-overview
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-10-04
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:e2045acb95d5bd2ebaec1b31f73013c85c64446f0e89e8543cc14b63a00c503c
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:63e7cefc645180e3efe88cc926f147b8d788ee5bf80db2d7c64d5a70afb38abd
+  discovered_at: '2026-10-04T11:25:27.920048+00:00'
+  source_role: primary
+  selector: h2[Features currently in preview] > table > tr (no date cell)
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:63e7cefc645180e3efe88cc926f147b8d788ee5bf80db2d7c64d5a70afb38abd
+tier: 2
+learning_priority: high
+category: data-engineering
+tags:
+- api
+- onelake
+- preview
+difficulty: advanced
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:e2045acb95d5bd2ebaec1b31f73013c85c64446f0e89e8543cc14b63a00c503c
+  title_snapshot: Overview of OneLake table APIs
+  summary_snapshot: OneLake table read API (Preview) Use the table read API to read rows from
+    a Delta Lake or Apache Iceberg table in OneLake. For more information, see Overview of
+    OneLake table APIs.
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

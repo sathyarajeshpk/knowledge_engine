@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-09-018
+slug: capacity-overage-in-microsoft-fabric
+title: Capacity overage in Microsoft Fabric
+source_name: fabric-whats-new
+source_url: https://learn.microsoft.com/en-us/fabric/enterprise/capacity-overage-overview
+announcement_url: https://learn.microsoft.com/en-us/fabric/enterprise/capacity-overage-overview
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-01
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: month
+content_hash: sha256:f296eb367c61f61c9f56a1aadebcf2bf6a98ad1193ad62417212e2dacbbaf301
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:84840982000c9b723736c4060a02cb336f4542543ce05987897ba16bc6ef7b27
+  discovered_at: '2026-10-04T11:25:27.925389+00:00'
+  source_role: primary
+  selector: h2[Generally available features] > table > tr (date from cell 0)
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:84840982000c9b723736c4060a02cb336f4542543ce05987897ba16bc6ef7b27
+tier: 1
+learning_priority: high
+category: administration
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:f296eb367c61f61c9f56a1aadebcf2bf6a98ad1193ad62417212e2dacbbaf301
+  title_snapshot: Capacity overage in Microsoft Fabric
+  summary_snapshot: Capacity overage (Generally Available) Capacity overage is now generally
+    available for Fabric F SKUs and is enabled by default when you create a capacity. It pays
+    for eligible excess capacity usage to help prevent throttling, up to a configurable rolling
+    24-hour threshold. For more information, see Capacity overage in Microsoft Fabric and
+    Enable capacity overage in Microsoft Fabric.
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

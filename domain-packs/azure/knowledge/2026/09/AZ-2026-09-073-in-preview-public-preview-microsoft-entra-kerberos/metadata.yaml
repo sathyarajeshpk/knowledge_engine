@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-09-073
+slug: in-preview-public-preview-microsoft-entra-kerberos
+title: '[In preview] Public Preview : Microsoft entra kerberos authentication for Azure NetApp
+  Files'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=573041
+announcement_url: https://azure.microsoft.com/updates?id=573041
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-29
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:0c8bb4c09f86e33a9342ca54110dd06869b895fa20e9708b1f2d9519701cf168
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:e428dff95a37c5281f85744e058f88e698084d44e7d06d913dbc468993c3346d
+  discovered_at: '2026-10-04T11:25:25.764142+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:e428dff95a37c5281f85744e058f88e698084d44e7d06d913dbc468993c3346d
+tier: 2
+learning_priority: high
+category: storage
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:0c8bb4c09f86e33a9342ca54110dd06869b895fa20e9708b1f2d9519701cf168
+  title_snapshot: '[In preview] Public Preview : Microsoft entra kerberos authentication for
+    Azure NetApp Files'
+  summary_snapshot: Azure NetApp Files now supports Microsoft Entra Kerberos authentication
+    for SMB volumes. The capability enables users with hybrid or cloud-only identities to
+    authenticate through Microsoft Entra ID using cloud-issued Kerberos tickets. This capability
+    remo
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

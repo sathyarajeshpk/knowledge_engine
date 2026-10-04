@@ -1,0 +1,62 @@
+schema_version: 1
+id: MSF-2026-10-012
+slug: microsoft-fabric-policies
+title: Microsoft Fabric policies
+source_name: fabric-whats-new
+source_url: https://learn.microsoft.com/en-us/fabric/governance/fabric-policies-overview
+announcement_url: https://learn.microsoft.com/en-us/fabric/governance/fabric-policies-overview
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-10-04
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:fedfff75ee77c103d4ed11baf4c8a9e1bd420a9c82008ab951c57453f6aa64a2
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:7a92f7622e194fa5803e6072513cae70dda544520c6a201be859d9f11f9abe06
+  discovered_at: '2026-10-04T11:25:27.919260+00:00'
+  source_role: primary
+  selector: h2[Features currently in preview] > table > tr (no date cell)
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:7a92f7622e194fa5803e6072513cae70dda544520c6a201be859d9f11f9abe06
+tier: 2
+learning_priority: high
+category: governance-security
+tags:
+- api
+- onelake
+- preview
+difficulty: advanced
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:fedfff75ee77c103d4ed11baf4c8a9e1bd420a9c82008ab951c57453f6aa64a2
+  title_snapshot: Microsoft Fabric policies
+  summary_snapshot: Microsoft Fabric policies (Preview) Microsoft Fabric policies let administrators
+    centrally define and enforce condition-based governance rules at tenant or capacity scope.
+    Policies support centralized management in the OneLake catalog, audit logging, REST APIs,
+    Git integration, and CI/CD automation.
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

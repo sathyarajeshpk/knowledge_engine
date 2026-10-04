@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-09-050
+slug: in-preview-public-preview-azure-sql-dev-hub
+title: '[In preview] Public Preview: Azure SQL Dev Hub'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=572998
+announcement_url: https://azure.microsoft.com/updates?id=572998
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-28
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:8ef4e07b4748990fde6e769aa475a458b3f4c311e091c834721da851c90534c4
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:b2de7fcfb1e831c35f54e71bc59469549807527d222e03a068352107fcc975a2
+  discovered_at: '2026-10-04T11:25:25.764222+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:b2de7fcfb1e831c35f54e71bc59469549807527d222e03a068352107fcc975a2
+tier: 2
+learning_priority: high
+category: identity-security
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:8ef4e07b4748990fde6e769aa475a458b3f4c311e091c834721da851c90534c4
+  title_snapshot: '[In preview] Public Preview: Azure SQL Dev Hub'
+  summary_snapshot: Azure SQL Dev Hub gives you a central starting point for building applications
+    with Azure SQL, whether you’re developing directly or using AI agents. You can find guidance
+    for connecting to Azure SQL from .NET, Python, Node.js, and Java, along with resour
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

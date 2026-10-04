@@ -11,7 +11,7 @@ published_date: null
 discovered_date: 2026-08-01
 date_confidence: inferred
 date_precision: day
-content_hash: sha256:fde0dcd8f1354cc717fab374fafea5f8dd282e51dbf1bad7dc760784b4b378a1
+content_hash: sha256:d8797e478c7eed723586abd5daf8308f5087079a6b0f285ff919b3363b0138e8
 provenance:
   source_name: fabric-whats-new-markdown
   source_representation: markdown
@@ -237,4 +237,17 @@ revisions:
     hub, making that signal discoverable, routable, and consumable by your entire organization.
     For more information, see What is Fabric Activator? and Business events overview (Preview).
   run_id: run-2026-09-06T09-47-41Z
+- revision: 14
+  date: 2026-10-04
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:d8797e478c7eed723586abd5daf8308f5087079a6b0f285ff919b3363b0138e8
+  title_snapshot: What is Fabric Activator?
+  summary_snapshot: Activator as business events publisher (Preview) Activator provides a
+    no-code way to publish business events in Microsoft Fabric. When Activator detects that
+    a condition is met in your data, it can emit a structured business event into Real-Time
+    hub, making that signal discoverable, routable, and consumable by your entire organization.
+    For more information, see What is Fabric Activator? and Business events overview.
+  run_id: run-2026-10-04T11-25-25Z
 generation: {}

@@ -7,10 +7,10 @@ source_url: https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/b
 announcement_url: https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/build-end-to-end-fabric-solutions-with-sql-database-skills-preview/5357234
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-08-01
+published_date: null
 discovered_date: 2026-08-23
-date_confidence: exact
-date_precision: month
+date_confidence: inferred
+date_precision: day
 content_hash: sha256:acef7d578ff4bc2493428d595a1ac6d3993236a672c62fe8d9757597cb8e62ad
 provenance:
   source_name: fabric-whats-new
@@ -57,4 +57,18 @@ revisions:
     broader Fabric solutions. For more information, see Work with SQL database skills in Microsoft
     Fabric.
   run_id: run-2026-08-23T06-19-40Z
+- revision: 2
+  date: 2026-10-04
+  changed_fields:
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source corrected the publication date
+  content_hash: sha256:acef7d578ff4bc2493428d595a1ac6d3993236a672c62fe8d9757597cb8e62ad
+  title_snapshot: SQL database skills (Preview)
+  summary_snapshot: SQL database skills (Preview) give AI coding agents workload-specific
+    guidance for authoring schemas, querying data, and operating SQL databases as part of
+    broader Fabric solutions. For more information, see Work with SQL database skills in Microsoft
+    Fabric.
+  run_id: run-2026-10-04T11-25-25Z
 generation: {}

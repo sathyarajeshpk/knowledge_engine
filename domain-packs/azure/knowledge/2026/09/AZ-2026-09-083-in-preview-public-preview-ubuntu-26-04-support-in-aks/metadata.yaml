@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-09-083
+slug: in-preview-public-preview-ubuntu-26-04-support-in-aks
+title: '[In preview] Public Preview: Ubuntu 26.04 support in AKS'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=573214
+announcement_url: https://azure.microsoft.com/updates?id=573214
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-30
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:dd72b2bc779fd60d26f147c373bd37c6087e43ff34bedd3ea1909e1f195d6fe6
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:a91d3a075b4298efbc75bb13dcf89988c929f3fc434abfd83ede20d2dd92de23
+  discovered_at: '2026-10-04T11:25:25.762796+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:a91d3a075b4298efbc75bb13dcf89988c929f3fc434abfd83ede20d2dd92de23
+tier: 2
+learning_priority: high
+category: compute
+tags:
+- kubernetes
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:dd72b2bc779fd60d26f147c373bd37c6087e43ff34bedd3ea1909e1f195d6fe6
+  title_snapshot: '[In preview] Public Preview: Ubuntu 26.04 support in AKS'
+  summary_snapshot: Teams running Ubuntu node pools on AKS need to stay current with Ubuntu
+    LTS releases, but each OS transition can introduce package footprint, security, and compatibility
+    concerns. Ubuntu 26.04 support introduces the Ubuntu2604 OS SKU using Ubuntu Minimal
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

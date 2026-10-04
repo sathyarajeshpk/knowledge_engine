@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-09-067
+slug: launched-generally-available-storage-with-cool-access
+title: '[Launched] Generally Available: Storage with cool access enhancement'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=573032
+announcement_url: https://azure.microsoft.com/updates?id=573032
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-29
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:94fdd61e3ddf0782d46aa8eb8248bb93a102cbb7d4e572f88ba44310b3b64f14
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:bd75fc82011eacf4fc88724d492615dd49e8801007bf2281d76cc6e26f3880ef
+  discovered_at: '2026-10-04T11:25:25.764102+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:bd75fc82011eacf4fc88724d492615dd49e8801007bf2281d76cc6e26f3880ef
+tier: 1
+learning_priority: medium
+category: storage
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:94fdd61e3ddf0782d46aa8eb8248bb93a102cbb7d4e572f88ba44310b3b64f14
+  title_snapshot: '[Launched] Generally Available: Storage with cool access enhancement'
+  summary_snapshot: QoS update with cool access enabled on Premium and Ultra service levels
+    improves how Azure NetApp Files balances performance and cost for mixed hot and cool workloads.
+    Throughput automatically adjusts as data moves to cool storage, maintaining hot‑tier pe
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

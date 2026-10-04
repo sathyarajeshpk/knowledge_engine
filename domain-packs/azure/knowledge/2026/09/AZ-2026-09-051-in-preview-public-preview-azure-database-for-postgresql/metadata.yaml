@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-09-051
+slug: in-preview-public-preview-azure-database-for-postgresql
+title: '[In preview] Public Preview: Azure Database for PostgreSQL Ultra Disk'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=571909
+announcement_url: https://azure.microsoft.com/updates?id=571909
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-29
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:28367f83c82315aff46800ae955eb6e07adf062b4fd2a648dc64a82f2454118d
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:156eafb95ad498975931687c798fa1454e67e32a45f1d9896f586e518ee92fd2
+  discovered_at: '2026-10-04T11:25:25.763234+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:156eafb95ad498975931687c798fa1454e67e32a45f1d9896f586e518ee92fd2
+tier: 2
+learning_priority: high
+category: databases
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:28367f83c82315aff46800ae955eb6e07adf062b4fd2a648dc64a82f2454118d
+  title_snapshot: '[In preview] Public Preview: Azure Database for PostgreSQL Ultra Disk'
+  summary_snapshot: Ultra Disk support is now available in public preview for Azure Database
+    for PostgreSQL flexible server. You can use Azure’s highest-performance managed disk option
+    for I/O-intensive and transaction-heavy PostgreSQL workloads that require consistently
+    low
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

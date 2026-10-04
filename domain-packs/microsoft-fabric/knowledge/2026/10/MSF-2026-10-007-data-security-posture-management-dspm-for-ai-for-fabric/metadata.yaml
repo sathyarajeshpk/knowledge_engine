@@ -1,0 +1,63 @@
+schema_version: 1
+id: MSF-2026-10-007
+slug: data-security-posture-management-dspm-for-ai-for-fabric
+title: Data Security Posture Management (DSPM) for AI for Fabric (Preview)
+source_name: fabric-whats-new
+source_url: https://blog.fabric.microsoft.com/blog/new-data-protection-capabilities-in-microsoft-fabric-native-security-for-the-modern-data-estate?ft=All
+announcement_url: https://blog.fabric.microsoft.com/blog/new-data-protection-capabilities-in-microsoft-fabric-native-security-for-the-modern-data-estate?ft=All
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-10-04
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:d0409383cbae76039f35640715c9a32cb856cf0fc1c2b73405210c309a1476d9
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:5cef4940a5750d3d91ab246a89a8d0397209bf8afa3f8773d742273a0d74ccfd
+  discovered_at: '2026-10-04T11:25:27.916200+00:00'
+  source_role: primary
+  selector: h2[Features currently in preview] > table > tr (no date cell)
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:5cef4940a5750d3d91ab246a89a8d0397209bf8afa3f8773d742273a0d74ccfd
+tier: 1
+learning_priority: low
+category: governance-security
+tags:
+- ai
+- preview
+- security
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:d0409383cbae76039f35640715c9a32cb856cf0fc1c2b73405210c309a1476d9
+  title_snapshot: Data Security Posture Management (DSPM) for AI for Fabric (Preview)
+  summary_snapshot: 'Data protection: DSPM for AI for Fabric Copilots and data agents (Preview)
+    Data Security Posture Management (DSPM) for AI for Fabric (Preview) monitors Copilot and
+    data agent interactions to detect sensitive information in AI prompts and responses, investigate
+    risky AI behavior, and apply governance through Purview Audit and eDiscovery. For more
+    information, see DSPM for AI in Fabric.'
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

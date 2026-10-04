@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-10-001
+slug: retirement-dcsv3-and-dcdsv3-series-azure-virtual-machines
+title: 'Retirement: DCsv3 and DCdsv3-series Azure Virtual Machines will be retired on October
+  31, 2029'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=569592
+announcement_url: https://azure.microsoft.com/updates?id=569592
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-01
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:bf0f0973d838b0ba5449f0ed079b9370ab5c7e752eeaa6e5da823b034d53ba06
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:012a850179f6acbba1fe9233eb170dadd85b6de395d040968e32ea64fa4d9dbc
+  discovered_at: '2026-10-04T11:25:25.762548+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:012a850179f6acbba1fe9233eb170dadd85b6de395d040968e32ea64fa4d9dbc
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- retirement
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:bf0f0973d838b0ba5449f0ed079b9370ab5c7e752eeaa6e5da823b034d53ba06
+  title_snapshot: 'Retirement: DCsv3 and DCdsv3-series Azure Virtual Machines will be retired
+    on October 31, 2029'
+  summary_snapshot: On October 31, 2029, DCsv3 and DCdsv3-series Azure Linux, Windows and
+    Dedicated Host virtual machines will be retired. After that date, they will no longer
+    be available for use or purchase. Before October 31, 2029, migrate your workloads to one
+    of the fo
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

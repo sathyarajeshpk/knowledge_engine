@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-09-062
+slug: in-preview-public-preview-azure-sql-database-hyperscale
+title: '[In preview] Public Preview: Azure SQL Database Hyperscale Serverless auto-pause and
+  auto-resume'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=571857
+announcement_url: https://azure.microsoft.com/updates?id=571857
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-29
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:d3a84e2e842e163798b973e1dddfb0900f09061d7cb129d636e9eecae4284aa9
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:7d8c2b3615f147a8717dfe1192d940b69b528590c96a897e7c4d259c4d25319c
+  discovered_at: '2026-10-04T11:25:25.763646+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:7d8c2b3615f147a8717dfe1192d940b69b528590c96a897e7c4d259c4d25319c
+tier: 2
+learning_priority: medium
+category: databases
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:d3a84e2e842e163798b973e1dddfb0900f09061d7cb129d636e9eecae4284aa9
+  title_snapshot: '[In preview] Public Preview: Azure SQL Database Hyperscale Serverless auto-pause
+    and auto-resume'
+  summary_snapshot: Auto-pause and auto-resume are now available in public preview for Azure
+    SQL Hyperscale databases using the Serverless compute tier. You can configure databases
+    to automatically pause during periods of inactivity and automatically resume when activity
+    ret
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

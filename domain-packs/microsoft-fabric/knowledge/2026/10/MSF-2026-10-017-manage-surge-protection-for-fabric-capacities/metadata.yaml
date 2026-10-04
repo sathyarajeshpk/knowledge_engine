@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-10-017
+slug: manage-surge-protection-for-fabric-capacities
+title: Manage surge protection for Fabric capacities
+source_name: fabric-whats-new
+source_url: https://learn.microsoft.com/en-us/fabric/enterprise/surge-protection
+announcement_url: https://learn.microsoft.com/en-us/fabric/enterprise/surge-protection
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-10-04
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:85a741895b1d4a5d3b6e0c256c1981e34171cb810d278305e73bae6157bfe66d
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:bdbe2032cbb641a3875637b5d162a7cd2c7a725cbf7f128ccea95ffcad0f9848
+  discovered_at: '2026-10-04T11:25:27.922275+00:00'
+  source_role: primary
+  selector: h2[Features currently in preview] > table > tr (no date cell)
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:bdbe2032cbb641a3875637b5d162a7cd2c7a725cbf7f128ccea95ffcad0f9848
+tier: 2
+learning_priority: high
+category: administration
+tags:
+- preview
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:85a741895b1d4a5d3b6e0c256c1981e34171cb810d278305e73bae6157bfe66d
+  title_snapshot: Manage surge protection for Fabric capacities
+  summary_snapshot: Workspace-level surge protection (Preview) Workspace-level surge protection
+    lets capacity admins cap a workspace's compute consumption, automatically or manually
+    block excessive consumers, exempt mission-critical workspaces, and restore blocked workspaces.
+    For more information, see Manage surge protection for Fabric capacities.
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

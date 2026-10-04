@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-09-047
+slug: launched-generally-available-vector-search-and-vector
+title: '[Launched] Generally Available: Vector search and vector indexes in Azure SQL'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=571800
+announcement_url: https://azure.microsoft.com/updates?id=571800
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-28
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:da498a5cbfb9651290135fc72d814614e2b70b7d07de5c2155b20a1da01a7a0a
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:5b38fadd41da68fd5f35997b8d75a8928353593267bb967dabb40fea93a34561
+  discovered_at: '2026-10-04T11:25:25.764180+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:5b38fadd41da68fd5f35997b8d75a8928353593267bb967dabb40fea93a34561
+tier: 1
+learning_priority: medium
+category: databases
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:da498a5cbfb9651290135fc72d814614e2b70b7d07de5c2155b20a1da01a7a0a
+  title_snapshot: '[Launched] Generally Available: Vector search and vector indexes in Azure
+    SQL'
+  summary_snapshot: Vector search and vector indexes are now generally available in Azure
+    SQL Database. Using the CREATE VECTOR INDEX and VECTOR_SEARCH T-SQL capabilities, you
+    can perform efficient approximate nearest neighbor (ANN) searches for AI scenarios such
+    as semantic
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

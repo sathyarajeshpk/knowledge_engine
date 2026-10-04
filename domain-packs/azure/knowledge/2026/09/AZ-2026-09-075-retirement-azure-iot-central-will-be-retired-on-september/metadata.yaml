@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-09-075
+slug: retirement-azure-iot-central-will-be-retired-on-september
+title: 'Retirement: Azure IoT Central will be retired on September 20, 2029'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=569914
+announcement_url: https://azure.microsoft.com/updates?id=569914
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-29
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:cb1aab9832148ec0b9115038d4f51fda51ad67b7236aa8dd5312209481ca6786
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:f7a54ea7b8e642ef34b355f96379829cedc12098b5c03ba808f2118701f03cf2
+  discovered_at: '2026-10-04T11:25:25.764018+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:f7a54ea7b8e642ef34b355f96379829cedc12098b5c03ba808f2118701f03cf2
+tier: 1
+learning_priority: high
+category: identity-security
+tags:
+- retirement
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:cb1aab9832148ec0b9115038d4f51fda51ad67b7236aa8dd5312209481ca6786
+  title_snapshot: 'Retirement: Azure IoT Central will be retired on September 20, 2029'
+  summary_snapshot: Azure IoT Central will be retired on September 20, 2029. You can continue
+    using Azure IoT Central until the retirement date, but we recommend starting your transition
+    planning early.Why is this happening?As Azure IoT evolves, Microsoft is focusing future
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

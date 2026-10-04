@@ -1,0 +1,65 @@
+schema_version: 1
+id: MSF-2026-10-004
+slug: ai-assisted-synapse-to-fabric-migration-skills-preview
+title: AI-assisted Synapse to Fabric migration skills (Preview)
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/AI-assisted-Synapse-Spark-and-pipeline-migration-to-Microsoft/ba-p/5234478
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/AI-assisted-Synapse-Spark-and-pipeline-migration-to-Microsoft/ba-p/5234478
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-10-04
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:a817b40da695af8b3dd4c181b7c4aede17ec7c67208f0bfa0a11508a46d2dd0c
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:1f31ed464193ab563d54b61b0565713eb83b5022100d0a29f5a266e8476b3f80
+  discovered_at: '2026-10-04T11:25:27.913917+00:00'
+  source_role: primary
+  selector: h2[Features currently in preview] > table > tr (no date cell)
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:1f31ed464193ab563d54b61b0565713eb83b5022100d0a29f5a266e8476b3f80
+tier: 2
+learning_priority: medium
+category: data-factory
+tags:
+- api
+- notebook
+- pipeline
+- preview
+- spark
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:a817b40da695af8b3dd4c181b7c4aede17ec7c67208f0bfa0a11508a46d2dd0c
+  title_snapshot: AI-assisted Synapse to Fabric migration skills (Preview)
+  summary_snapshot: AI-assisted Synapse to Fabric migration skills (Preview) move Synapse
+    Spark pools, lake databases, notebooks, Spark job definitions, and Data Factory pipelines
+    to Microsoft Fabric from the command line by using REST APIs, with lift-and-shift and
+    migrate-and-modernize paths and a read-only assessment step. For more information, see
+    Skills for Microsoft Fabric.
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

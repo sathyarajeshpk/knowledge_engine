@@ -7,11 +7,11 @@ source_url: https://learn.microsoft.com/en-us/sql/relational-databases/track-cha
 announcement_url: https://learn.microsoft.com/en-us/sql/relational-databases/track-changes/change-event-streaming/overview?preserve-view=true&view=fabric-sqldb
 identity_confidence: high
 source_authority: official-microsoft
-published_date: 2026-07-01
+published_date: null
 discovered_date: 2026-08-02
-date_confidence: exact
-date_precision: month
-content_hash: sha256:ae221073df323119d0af1ccde3ce02bd46f299245669d99ae9b1019dbf4eb938
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:27f7f490d578bff013523c8e609b54913088cfee8f5e2a9540d51ec7cb7d50e3
 provenance:
   source_name: fabric-whats-new
   source_representation: html
@@ -59,4 +59,20 @@ revisions:
     analytics and event-driven architectures with no ETL. For more information, see Change
     event streaming overview.
   run_id: run-2026-08-02T08-00-14Z
+- revision: 2
+  date: 2026-10-04
+  changed_fields:
+  - content_hash
+  - date_confidence
+  - date_precision
+  - published_date
+  summary: Source rewrote the summary
+  content_hash: sha256:27f7f490d578bff013523c8e609b54913088cfee8f5e2a9540d51ec7cb7d50e3
+  title_snapshot: Change event streaming overview
+  summary_snapshot: Change event streaming in SQL database in Fabric (Preview) Change event
+    streaming (CES) captures row-level DML changes (inserts, updates, and deletes) in SQL
+    database in Fabric and publishes each change to Fabric Eventstream or Azure Event Hubs
+    in near real time as a CloudEvent, enabling downstream analytics and event-driven architectures
+    with no ETL. For more information, see Change event streaming overview.
+  run_id: run-2026-10-04T11-25-25Z
 generation: {}

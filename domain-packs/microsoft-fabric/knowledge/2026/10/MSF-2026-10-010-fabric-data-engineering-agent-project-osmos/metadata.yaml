@@ -1,0 +1,62 @@
+schema_version: 1
+id: MSF-2026-10-010
+slug: fabric-data-engineering-agent-project-osmos
+title: Fabric data engineering agent (Project Osmos)
+source_name: fabric-whats-new
+source_url: https://learn.microsoft.com/en-us/fabric/data-engineering/data-engineering-agent-overview
+announcement_url: https://learn.microsoft.com/en-us/fabric/data-engineering/data-engineering-agent-overview
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-10-04
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:92442076dac0cc254b5fdda6f29da4d8a7585303f2d289879e0e1903c824cf88
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:69b120a42d9df5ced80798efe19a4fbda00b3f153e6eaba6faca7f3427edb163
+  discovered_at: '2026-10-04T11:25:27.917663+00:00'
+  source_role: primary
+  selector: h2[Features currently in preview] > table > tr (no date cell)
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:69b120a42d9df5ced80798efe19a4fbda00b3f153e6eaba6faca7f3427edb163
+tier: 2
+learning_priority: high
+category: data-engineering
+tags:
+- lakehouse
+- preview
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:92442076dac0cc254b5fdda6f29da4d8a7585303f2d289879e0e1903c824cf88
+  title_snapshot: Fabric data engineering agent (Project Osmos)
+  summary_snapshot: Fabric data engineering agent (Project Osmos) (Preview) Fabric data engineering
+    agent (Project Osmos) runs persistent, Fabric-hosted tasks that autonomously plan, execute,
+    and validate data engineering work against authorized lakehouse resources. Start tasks
+    from a supported command-line client, review operational settings, and monitor progress
+    and results in Fabric.
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

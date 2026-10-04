@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-09-068
+slug: launched-generally-available-azure-arc-enabled-sql-server
+title: '[Launched] Generally Available: Azure Arc-enabled SQL Server in Germany West Central'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=570696
+announcement_url: https://azure.microsoft.com/updates?id=570696
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-29
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:a60ee15a2c22045fd3f0f93dfe74c0aafce1256091b1514dc64ff9c5fce7c79b
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:bfc2d4ae0d7343093fb408559539a57927fb67fede01a11c7d07d8b05a5b5e82
+  discovered_at: '2026-10-04T11:25:25.763157+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:bfc2d4ae0d7343093fb408559539a57927fb67fede01a11c7d07d8b05a5b5e82
+tier: 1
+learning_priority: high
+category: identity-security
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:a60ee15a2c22045fd3f0f93dfe74c0aafce1256091b1514dc64ff9c5fce7c79b
+  title_snapshot: '[Launched] Generally Available: Azure Arc-enabled SQL Server in Germany
+    West Central'
+  summary_snapshot: Azure Arc-enabled SQL Server is now available in Germany West Central,
+    enabling you to connect SQL Server instances to Azure Arc and take advantage of Azure-based
+    inventory, governance, security, assessment, and license management capabilities. Learn
+    more
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

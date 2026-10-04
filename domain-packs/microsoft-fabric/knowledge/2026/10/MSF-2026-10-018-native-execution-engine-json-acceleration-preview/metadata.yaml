@@ -1,0 +1,61 @@
+schema_version: 1
+id: MSF-2026-10-018
+slug: native-execution-engine-json-acceleration-preview
+title: Native Execution Engine JSON acceleration (Preview)
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Accelerate-JSON-workloads-with-the-Native-Execution-Engine-in/ba-p/5364366
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Accelerate-JSON-workloads-with-the-Native-Execution-Engine-in/ba-p/5364366
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-10-04
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:8f3fa66ee67773fb6a340e37299fa59727fac2e0a799d429d20744ea96015973
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:ffe8f66d6b3e93633aa3dac1e8c100800c78d2060532fca7acf9ff8fbea5fcd6
+  discovered_at: '2026-10-04T11:25:27.919714+00:00'
+  source_role: primary
+  selector: h2[Features currently in preview] > table > tr (no date cell)
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:ffe8f66d6b3e93633aa3dac1e8c100800c78d2060532fca7acf9ff8fbea5fcd6
+tier: 2
+learning_priority: medium
+category: data-science
+tags:
+- preview
+- spark
+difficulty: intermediate
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:8f3fa66ee67773fb6a340e37299fa59727fac2e0a799d429d20744ea96015973
+  title_snapshot: Native Execution Engine JSON acceleration (Preview)
+  summary_snapshot: Native Execution Engine JSON acceleration (Preview) reads and parses JSON
+    through the vectorized native path so supported Spark transformations can stay columnar
+    without code changes. For more information, see Native execution engine for Fabric Data
+    Engineering and Apache Spark runtime in Fabric.
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

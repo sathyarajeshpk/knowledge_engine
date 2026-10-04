@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-09-076
+slug: retirement-functions-on-azure-container-apps-v1
+title: 'Retirement: Functions on Azure Container Apps V1'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=570800
+announcement_url: https://azure.microsoft.com/updates?id=570800
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-09-29
+discovered_date: 2026-10-04
+date_confidence: exact
+date_precision: day
+content_hash: sha256:ceee6208ddbca8930c561a4fea1ffa5261622b1f5452e024c16aadc46ec372ce
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:f7c4b2e8f177486c5000d9c7983a4e793e719802910a61073e9867fbbd8e77a9
+  discovered_at: '2026-10-04T11:25:25.763027+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:f7c4b2e8f177486c5000d9c7983a4e793e719802910a61073e9867fbbd8e77a9
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- retirement
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:ceee6208ddbca8930c561a4fea1ffa5261622b1f5452e024c16aadc46ec372ce
+  title_snapshot: 'Retirement: Functions on Azure Container Apps V1'
+  summary_snapshot: The Functions on Azure Container Apps (ACA) V1 will be retired on September
+    29, 2027. After this date, existing Functions on ACA V1 Apps will stop running and no
+    longer process requests or event-driven triggers. Action required Review your Azure environme
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}

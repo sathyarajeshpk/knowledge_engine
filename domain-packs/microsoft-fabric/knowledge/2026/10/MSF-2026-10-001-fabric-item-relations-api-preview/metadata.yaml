@@ -1,0 +1,60 @@
+schema_version: 1
+id: MSF-2026-10-001
+slug: fabric-item-relations-api-preview
+title: Fabric item relations API (Preview)
+source_name: fabric-whats-new
+source_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Lineage-aware-AI-with-the-Fabric-item-relations-API-Preview/ba-p/5366064
+announcement_url: https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Lineage-aware-AI-with-the-Fabric-item-relations-API-Preview/ba-p/5366064
+identity_confidence: high
+source_authority: official-microsoft
+published_date: null
+discovered_date: 2026-10-04
+date_confidence: inferred
+date_precision: day
+content_hash: sha256:bde49b5b464d4922dabe91b0e792f5802e6853e70c604239ed8ad8d275d9fe92
+provenance:
+  source_name: fabric-whats-new
+  source_representation: html
+  adapter_type: html
+  parser_version: 1
+  extraction_method: html-table-row
+  identity_basis: canonical-url
+  identity_key: sha256:000b07601d0197ff3f20d8ed424898fc4a3e305c0f5ed5589530a55f07c4b6e7
+  discovered_at: '2026-10-04T11:25:27.917940+00:00'
+  source_role: primary
+  selector: h2[Features currently in preview] > table > tr (no date cell)
+  run_id: run-2026-10-04T11-25-25Z
+url_hash: sha256:000b07601d0197ff3f20d8ed424898fc4a3e305c0f5ed5589530a55f07c4b6e7
+tier: 2
+learning_priority: low
+category: platform
+tags:
+- api
+- preview
+difficulty: advanced
+workload: moderate
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-04
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:bde49b5b464d4922dabe91b0e792f5802e6853e70c604239ed8ad8d275d9fe92
+  title_snapshot: Fabric item relations API (Preview)
+  summary_snapshot: Fabric item relations API (Preview) returns upstream and downstream item
+    dependencies, typed relation edges, and related workspaces for impact analysis, catalogs,
+    CI/CD checks, and AI agents. For more information, see Fabric REST API reference.
+  run_id: run-2026-10-04T11-25-25Z
+generation: {}
