@@ -10,7 +10,7 @@
     "2026-07": 57,
     "2026-08": 53,
     "2026-09": 83,
-    "2026-10": 2
+    "2026-10": 22
   },
   "paths": {
     "AZ-2023-09-001": "2023/09/AZ-2023-09-001-retirement-transition-to-using-standard-tests-for-single",
@@ -354,6 +354,26 @@
     "AZ-2026-09-082": "2026/09/AZ-2026-09-082-announcing-azure-canvases-for-github-copilot",
     "AZ-2026-09-083": "2026/09/AZ-2026-09-083-in-preview-public-preview-ubuntu-26-04-support-in-aks",
     "AZ-2026-10-001": "2026/10/AZ-2026-10-001-retirement-dcsv3-and-dcdsv3-series-azure-virtual-machines",
-    "AZ-2026-10-002": "2026/10/AZ-2026-10-002-in-preview-public-preview-major-version-upgrades-mvu-for"
+    "AZ-2026-10-002": "2026/10/AZ-2026-10-002-in-preview-public-preview-major-version-upgrades-mvu-for",
+    "AZ-2026-10-003": "2026/10/AZ-2026-10-003-in-preview-public-preview-ipv6-support-for-application",
+    "AZ-2026-10-004": "2026/10/AZ-2026-10-004-announcing-table-discovery-in-onelake-catalog-search",
+    "AZ-2026-10-005": "2026/10/AZ-2026-10-005-in-preview-public-preview-azure-backup-for-postgresql",
+    "AZ-2026-10-006": "2026/10/AZ-2026-10-006-in-preview-public-preview-azure-horizondb-expands-to",
+    "AZ-2026-10-007": "2026/10/AZ-2026-10-007-launched-generally-available-sql-server-on-azure-virtual",
+    "AZ-2026-10-008": "2026/10/AZ-2026-10-008-retirement-pod-name-dimension-in-aks-pod-platform-metrics",
+    "AZ-2026-10-009": "2026/10/AZ-2026-10-009-retirement-always-encrypted-with-intel-sgx-enclaves",
+    "AZ-2026-10-010": "2026/10/AZ-2026-10-010-retirement-support-for-java-8-11-and-17-will-end-on",
+    "AZ-2026-10-011": "2026/10/AZ-2026-10-011-in-preview-public-preview-aks-on-bare-metal-now-on-ubuntu",
+    "AZ-2026-10-012": "2026/10/AZ-2026-10-012-retirement-azure-app-service-on-azure-stack-hub",
+    "AZ-2026-10-013": "2026/10/AZ-2026-10-013-launched-generally-available-anyscale-on-azure",
+    "AZ-2026-10-014": "2026/10/AZ-2026-10-014-launched-generally-available-enabling-the-bulk-admin-role",
+    "AZ-2026-10-015": "2026/10/AZ-2026-10-015-retirement-azure-deployment-environments-will-be-retired-on",
+    "AZ-2026-10-016": "2026/10/AZ-2026-10-016-in-preview-public-preview-microsoft-agent-365-integration",
+    "AZ-2026-10-017": "2026/10/AZ-2026-10-017-launched-generally-available-managed-standardv2-nat-gateway",
+    "AZ-2026-10-018": "2026/10/AZ-2026-10-018-launched-generally-available-exceptions-in-waf-for-azure",
+    "AZ-2026-10-019": "2026/10/AZ-2026-10-019-launched-generally-available-azure-database-for-postgresql",
+    "AZ-2026-10-020": "2026/10/AZ-2026-10-020-announcing-multiparty-private-offers-in-microsoft",
+    "AZ-2026-10-021": "2026/10/AZ-2026-10-021-retirement-microsoft-dev-box-will-be-retired-on-september",
+    "AZ-2026-10-022": "2026/10/AZ-2026-10-022-retirement-azure-key-vault-secrets-provider-extension-for"
   }
 }

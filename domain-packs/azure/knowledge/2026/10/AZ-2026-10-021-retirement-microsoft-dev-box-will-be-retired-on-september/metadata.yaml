@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-10-021
+slug: retirement-microsoft-dev-box-will-be-retired-on-september
+title: 'Retirement: Microsoft Dev Box will be retired on September 18, 2028'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=567933
+announcement_url: https://azure.microsoft.com/updates?id=567933
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-08
+discovered_date: 2026-10-11
+date_confidence: exact
+date_precision: day
+content_hash: sha256:786689a2965352962a7a2a13526033a99beef327402ac59581681d844b3df9cf
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:f681e494ccf04bb12c185723ab6e42da62506a79bc7931c823ac4b78087710cd
+  discovered_at: '2026-10-11T11:42:10.248603+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-11T11-42-09Z
+url_hash: sha256:f681e494ccf04bb12c185723ab6e42da62506a79bc7931c823ac4b78087710cd
+tier: 1
+learning_priority: low
+category: null
+tags:
+- retirement
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-11
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:786689a2965352962a7a2a13526033a99beef327402ac59581681d844b3df9cf
+  title_snapshot: 'Retirement: Microsoft Dev Box will be retired on September 18, 2028'
+  summary_snapshot: Microsoft Dev Box will retire on September 18, 2028. Beginning on September
+    14, 2026, Microsoft Dev Box will begin the closing-down process. After retirement, Microsoft
+    Dev Box will no longer be available. Microsoft Dev Box is currently in maintenance mod
+  run_id: run-2026-10-11T11-42-09Z
+generation: {}

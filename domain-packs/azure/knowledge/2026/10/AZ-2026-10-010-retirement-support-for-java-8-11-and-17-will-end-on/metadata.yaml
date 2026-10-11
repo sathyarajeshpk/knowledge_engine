@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-10-010
+slug: retirement-support-for-java-8-11-and-17-will-end-on
+title: 'Retirement: Support for Java 8, 11 and 17 will end on September 1, 2027'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=568585
+announcement_url: https://azure.microsoft.com/updates?id=568585
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-06
+discovered_date: 2026-10-11
+date_confidence: exact
+date_precision: day
+content_hash: sha256:beb656c95cdd288c30e3635a5e0172b4fb6bba21323db8a42a66d96a7c8cff01
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:61da06d9b9ddb98fa0f76546325d92d303601b0a80213a7f7e82255adf6cc5e8
+  discovered_at: '2026-10-11T11:42:10.248990+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-11T11-42-09Z
+url_hash: sha256:61da06d9b9ddb98fa0f76546325d92d303601b0a80213a7f7e82255adf6cc5e8
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- retirement
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-11
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:beb656c95cdd288c30e3635a5e0172b4fb6bba21323db8a42a66d96a7c8cff01
+  title_snapshot: 'Retirement: Support for Java 8, 11 and 17 will end on September 1, 2027'
+  summary_snapshot: On September 1, 2027 support for Java 8, 11 and 17 will end. Your apps
+    that are hosted on App Service will continue to run, but security updates will no longer
+    be available, and we’ll no longer provide customer service for Java 8, 11 and 17.Required
+    actio
+  run_id: run-2026-10-11T11-42-09Z
+generation: {}

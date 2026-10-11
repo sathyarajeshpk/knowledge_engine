@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-10-004
+slug: announcing-table-discovery-in-onelake-catalog-search
+title: 'Announcing: Table discovery in OneLake Catalog search'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=573875
+announcement_url: https://azure.microsoft.com/updates?id=573875
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-05
+discovered_date: 2026-10-11
+date_confidence: exact
+date_precision: day
+content_hash: sha256:0d34249887a581b3ac0bbd9e2b330f68887be87ffcf57350b41a7ac1c0f81ba3
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:4125fba8b6d837847b7f55074e1a67edee9694d132d3f3ec4ca60d8d404c65cb
+  discovered_at: '2026-10-11T11:42:10.249142+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-11T11-42-09Z
+url_hash: sha256:4125fba8b6d837847b7f55074e1a67edee9694d132d3f3ec4ca60d8d404c65cb
+tier: 2
+learning_priority: low
+category: ai-machine-learning
+tags: []
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-11
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:0d34249887a581b3ac0bbd9e2b330f68887be87ffcf57350b41a7ac1c0f81ba3
+  title_snapshot: 'Announcing: Table discovery in OneLake Catalog search'
+  summary_snapshot: Starting October 15, 2026, Search in Microsoft Fabric will return tables
+    from semantic models, lakehouses, and mirrored databases as individual results. Users
+    can search by table name or description, or find a table by an exact column-name match.
+    More ob
+  run_id: run-2026-10-11T11-42-09Z
+generation: {}

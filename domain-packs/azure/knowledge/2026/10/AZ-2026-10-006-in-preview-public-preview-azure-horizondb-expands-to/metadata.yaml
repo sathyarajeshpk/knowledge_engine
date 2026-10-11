@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-10-006
+slug: in-preview-public-preview-azure-horizondb-expands-to
+title: '[In preview] Public Preview: Azure HorizonDB expands to additional regions'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=572940
+announcement_url: https://azure.microsoft.com/updates?id=572940
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-05
+discovered_date: 2026-10-11
+date_confidence: exact
+date_precision: day
+content_hash: sha256:26b2cc5d2f72a9c674ecacd1ac87d5767538ce5db6728cf92a80a0b0840a1490
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:8a3fb2dcc79de0da7545ac393828f88cc2d3b78b2cc4dd9b28b867deff4bfefd
+  discovered_at: '2026-10-11T11:42:10.249082+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-11T11-42-09Z
+url_hash: sha256:8a3fb2dcc79de0da7545ac393828f88cc2d3b78b2cc4dd9b28b867deff4bfefd
+tier: 2
+learning_priority: high
+category: databases
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-11
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:26b2cc5d2f72a9c674ecacd1ac87d5767538ce5db6728cf92a80a0b0840a1490
+  title_snapshot: '[In preview] Public Preview: Azure HorizonDB expands to additional regions'
+  summary_snapshot: Azure HorizonDB is expanding to additional Azure regions, giving you greater
+    flexibility to deploy PostgreSQL workloads closer to your applications and users.With
+    expanded regional availability, you have more options when choosing where to deploy Azure
+    Ho
+  run_id: run-2026-10-11T11-42-09Z
+generation: {}

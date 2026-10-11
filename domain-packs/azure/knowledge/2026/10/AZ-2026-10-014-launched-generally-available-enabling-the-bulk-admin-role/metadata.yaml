@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-10-014
+slug: launched-generally-available-enabling-the-bulk-admin-role
+title: '[Launched] Generally Available: Enabling the Bulk admin role for SQL Server on Linux'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=573443
+announcement_url: https://azure.microsoft.com/updates?id=573443
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-07
+discovered_date: 2026-10-11
+date_confidence: exact
+date_precision: day
+content_hash: sha256:e051f8f10a195baab97090e7bb193882b373a9b178529da1730da5fffd723ad4
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:42d2f1f8cc5e42ce75d106ef4a4944f3ef064100ea694aef970d645f7d25debc
+  discovered_at: '2026-10-11T11:42:10.248876+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-11T11-42-09Z
+url_hash: sha256:42d2f1f8cc5e42ce75d106ef4a4944f3ef064100ea694aef970d645f7d25debc
+tier: 1
+learning_priority: medium
+category: null
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-11
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:e051f8f10a195baab97090e7bb193882b373a9b178529da1730da5fffd723ad4
+  title_snapshot: '[Launched] Generally Available: Enabling the Bulk admin role for SQL Server
+    on Linux'
+  summary_snapshot: Starting with SQL Server 2025 CU9 and SQL Server 2022 CU27, SQL Server
+    on Linux supports the bulkadmin fixed server role and the ADMINISTER BULK OPERATIONS permission
+    for performing bulk data import operations without requiring users to be members of the
+  run_id: run-2026-10-11T11-42-09Z
+generation: {}

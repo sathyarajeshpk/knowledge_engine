@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-10-022
+slug: retirement-azure-key-vault-secrets-provider-extension-for
+title: 'Retirement: Azure Key Vault Secrets Provider Extension for Azure Arc enabled Kubernetes
+  clusters'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=570313
+announcement_url: https://azure.microsoft.com/updates?id=570313
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-09
+discovered_date: 2026-10-11
+date_confidence: exact
+date_precision: day
+content_hash: sha256:c8260f592b387859f1d649cbbe737a896d586ae8b12c9c07a1623db29c3649e4
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:7d5b280d89f1bb5a176557736250d10b87380d62150a81489859df9be1c54f28
+  discovered_at: '2026-10-11T11:42:10.248426+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-11T11-42-09Z
+url_hash: sha256:7d5b280d89f1bb5a176557736250d10b87380d62150a81489859df9be1c54f28
+tier: 1
+learning_priority: high
+category: compute
+tags:
+- kubernetes
+- retirement
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-11
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:c8260f592b387859f1d649cbbe737a896d586ae8b12c9c07a1623db29c3649e4
+  title_snapshot: 'Retirement: Azure Key Vault Secrets Provider Extension for Azure Arc enabled
+    Kubernetes clusters'
+  summary_snapshot: The Azure Key Vault Secrets Provider Extension for Azure Arc-enabled Kubernetes
+    will be retired on October 9, 2027.Customers currently using the extension should plan
+    to migrate to the Azure Key Vault Secret Store Extension before the retirement date. The
+  run_id: run-2026-10-11T11-42-09Z
+generation: {}

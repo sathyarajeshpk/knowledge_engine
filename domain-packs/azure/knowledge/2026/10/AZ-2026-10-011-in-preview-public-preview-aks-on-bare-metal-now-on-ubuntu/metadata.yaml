@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-10-011
+slug: in-preview-public-preview-aks-on-bare-metal-now-on-ubuntu
+title: '[In preview] Public Preview: AKS on bare metal now on Ubuntu'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=573782
+announcement_url: https://azure.microsoft.com/updates?id=573782
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-06
+discovered_date: 2026-10-11
+date_confidence: exact
+date_precision: day
+content_hash: sha256:32989f08c4954319e16c51515cdcef4d4ba5d0aef613ef8f43a9881ab1c3afcc
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:ac7922b7fa710b9eff061074164e6449010c46f4d0f3ec08842a34b7bae8e2fc
+  discovered_at: '2026-10-11T11:42:10.249052+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-11T11-42-09Z
+url_hash: sha256:ac7922b7fa710b9eff061074164e6449010c46f4d0f3ec08842a34b7bae8e2fc
+tier: 2
+learning_priority: high
+category: compute
+tags:
+- kubernetes
+- preview
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-11
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:32989f08c4954319e16c51515cdcef4d4ba5d0aef613ef8f43a9881ab1c3afcc
+  title_snapshot: '[In preview] Public Preview: AKS on bare metal now on Ubuntu'
+  summary_snapshot: Running Kubernetes on-premises often means adding a virtualization layer,
+    adapting to unfamiliar infrastructure, or giving up control over the hardware and software
+    your applications depend on. For AI workloads, these tradeoffs can limit access to local
+    d
+  run_id: run-2026-10-11T11-42-09Z
+generation: {}

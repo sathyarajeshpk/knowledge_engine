@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-10-013
+slug: launched-generally-available-anyscale-on-azure
+title: '[Launched] Generally Available: Anyscale on Azure'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=573744
+announcement_url: https://azure.microsoft.com/updates?id=573744
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-07
+discovered_date: 2026-10-11
+date_confidence: exact
+date_precision: day
+content_hash: sha256:0d33789e050ac0117282f138856de3dad7cb211e46abdbeee8e3211680325b4f
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:1657ad18568f7b2f420ae3fbf29aff344ce0f0fe17bd10932f1c1ac3a9d92c4a
+  discovered_at: '2026-10-11T11:42:10.248839+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-11T11-42-09Z
+url_hash: sha256:1657ad18568f7b2f420ae3fbf29aff344ce0f0fe17bd10932f1c1ac3a9d92c4a
+tier: 1
+learning_priority: high
+category: compute
+tags:
+- ga
+- kubernetes
+difficulty: advanced
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-11
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:0d33789e050ac0117282f138856de3dad7cb211e46abdbeee8e3211680325b4f
+  title_snapshot: '[Launched] Generally Available: Anyscale on Azure'
+  summary_snapshot: Anyscale on Azure is now Generally Available. Anyscale on Azure is a managed
+    platform for running distributed Python workloads on Ray. It deploys directly onto your
+    Azure Kubernetes Service (AKS) cluster and integrates with the Azure services your team
+    al
+  run_id: run-2026-10-11T11-42-09Z
+generation: {}

@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-10-017
+slug: launched-generally-available-managed-standardv2-nat-gateway
+title: '[Launched] Generally Available: Managed StandardV2 NAT Gateway for AKS'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=574430
+announcement_url: https://azure.microsoft.com/updates?id=574430
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-08
+discovered_date: 2026-10-11
+date_confidence: exact
+date_precision: day
+content_hash: sha256:164eec1af08e2d834932ab4fb2f63601c77058d93eda0276a34d8a25d2573143
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:4a990d6a0503fbf7f4b15f47d1f08669b295d4d6dd60032422b84920818cc3b9
+  discovered_at: '2026-10-11T11:42:10.248501+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-11T11-42-09Z
+url_hash: sha256:4a990d6a0503fbf7f4b15f47d1f08669b295d4d6dd60032422b84920818cc3b9
+tier: 1
+learning_priority: high
+category: compute
+tags:
+- ga
+- kubernetes
+difficulty: intermediate
+workload: heavy
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-11
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:164eec1af08e2d834932ab4fb2f63601c77058d93eda0276a34d8a25d2573143
+  title_snapshot: '[Launched] Generally Available: Managed StandardV2 NAT Gateway for AKS'
+  summary_snapshot: AKS will now provision and manage a StandardV2 NAT Gateway for clusters
+    using an AKS-managed virtual network.StandardV2 is now the default managed NAT Gateway
+    SKU for new clusters in supported regions when using the managedNATGateway outbound type.
+    Standa
+  run_id: run-2026-10-11T11-42-09Z
+generation: {}

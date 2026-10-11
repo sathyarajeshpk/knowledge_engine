@@ -1,0 +1,59 @@
+schema_version: 1
+id: AZ-2026-10-003
+slug: in-preview-public-preview-ipv6-support-for-application
+title: '[In preview] Public Preview: IPv6 Support for Application Gateway WAF'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=573861
+announcement_url: https://azure.microsoft.com/updates?id=573861
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-05
+discovered_date: 2026-10-11
+date_confidence: exact
+date_precision: day
+content_hash: sha256:310d970e393fa089385ee41854e87b3621caf09549a26d2c42240e0bfe21c76d
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:30ed772027bbdd9c87393cc04559c9f7d6f460e529ae6a1e38f36f2c01158a02
+  discovered_at: '2026-10-11T11:42:10.249211+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-11T11-42-09Z
+url_hash: sha256:30ed772027bbdd9c87393cc04559c9f7d6f460e529ae6a1e38f36f2c01158a02
+tier: 2
+learning_priority: low
+category: networking
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-11
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:310d970e393fa089385ee41854e87b3621caf09549a26d2c42240e0bfe21c76d
+  title_snapshot: '[In preview] Public Preview: IPv6 Support for Application Gateway WAF'
+  summary_snapshot: Announcing the Public Preview of IPv6 support for Application Gateway
+    WAF.Application Gateway Web Application Firewall (WAF) now supports inspection and enforcement
+    for IPv6 traffic in Public Preview, marking a major step forward in modernizing the platfo
+  run_id: run-2026-10-11T11-42-09Z
+generation: {}
