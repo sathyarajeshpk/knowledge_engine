@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-10-025
+slug: in-preview-public-preview-azure-files-cross-region-data
+title: '[In preview] Public Preview: Azure Files cross-region data copy and synchronization
+  with Azure Storage Mover'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=576542
+announcement_url: https://azure.microsoft.com/updates?id=576542
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-15
+discovered_date: 2026-10-18
+date_confidence: exact
+date_precision: day
+content_hash: sha256:f55d7747873daf5fae4a1146af243e7118c751ac913d6df2857dd14380139bfc
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:4f8d22009c20720f4534a07cd7248ca46ac067c7bdf60bc3c8c5c5c84aee1173
+  discovered_at: '2026-10-18T10:00:36.279723+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-18T10-00-35Z
+url_hash: sha256:4f8d22009c20720f4534a07cd7248ca46ac067c7bdf60bc3c8c5c5c84aee1173
+tier: 2
+learning_priority: medium
+category: storage
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-18
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:f55d7747873daf5fae4a1146af243e7118c751ac913d6df2857dd14380139bfc
+  title_snapshot: '[In preview] Public Preview: Azure Files cross-region data copy and synchronization
+    with Azure Storage Mover'
+  summary_snapshot: Azure Files customers can now copy and synchronize file share data across
+    storage accounts, Azure regions, and subscriptions within the same tenant using Azure
+    Storage Mover. Schedule incremental transfers to maintain secondary copies that can support
+    bus
+  run_id: run-2026-10-18T10-00-35Z
+generation: {}

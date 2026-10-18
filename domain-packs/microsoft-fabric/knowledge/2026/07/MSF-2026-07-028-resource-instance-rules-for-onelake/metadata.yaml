@@ -11,7 +11,7 @@ published_date: 2026-07-01
 discovered_date: 2026-08-08
 date_confidence: exact
 date_precision: month
-content_hash: sha256:73526c545f77dcf4f6147e87d4c1ff261548d33b3416fa7ddceab01fe1ca9612
+content_hash: sha256:0481628c0dde83f1c18bdfdab0f95fa51a287d07b021b5b677501002b3edffe9
 provenance:
   source_name: fabric-whats-new
   source_representation: html
@@ -59,4 +59,17 @@ revisions:
     resource instances to access OneLake over the public endpoint while Fabric still evaluates
     data permissions. For more information, see Resource Instance rules for Inbound access.
   run_id: run-2026-08-08T06-51-09Z
+- revision: 2
+  date: 2026-10-18
+  changed_fields:
+  - content_hash
+  summary: Source rewrote the summary
+  content_hash: sha256:0481628c0dde83f1c18bdfdab0f95fa51a287d07b021b5b677501002b3edffe9
+  title_snapshot: Resource Instance Rules for OneLake
+  summary_snapshot: Resource Instance Rules for OneLake Network Security for Azure Services
+    (Generally Available) Resource Instance Rules for OneLake let you allow specific Azure
+    resource instances to access OneLake over the public endpoint while Fabric still evaluates
+    data permissions. For more information, see Manage workspace inbound access with Resource
+    Instance Rules.
+  run_id: run-2026-10-18T10-00-35Z
 generation: {}

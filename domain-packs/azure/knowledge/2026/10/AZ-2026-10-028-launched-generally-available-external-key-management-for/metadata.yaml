@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-10-028
+slug: launched-generally-available-external-key-management-for
+title: '[Launched] Generally Available: External key management for Azure Key Vault Managed
+  HSM'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=574296
+announcement_url: https://azure.microsoft.com/updates?id=574296
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-16
+discovered_date: 2026-10-18
+date_confidence: exact
+date_precision: day
+content_hash: sha256:b968543fc1964e5f8b486ec2857553e6b5abaa1a3e32d6ef2b0cd57618577928
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:20df380b28c7941e2ab46089cc11ff21a4469d96166517d0f7f660f26087466f
+  discovered_at: '2026-10-18T10:00:36.279664+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-18T10-00-35Z
+url_hash: sha256:20df380b28c7941e2ab46089cc11ff21a4469d96166517d0f7f660f26087466f
+tier: 1
+learning_priority: low
+category: identity-security
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-18
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:b968543fc1964e5f8b486ec2857553e6b5abaa1a3e32d6ef2b0cd57618577928
+  title_snapshot: '[Launched] Generally Available: External key management for Azure Key Vault
+    Managed HSM'
+  summary_snapshot: External key management for Azure Key Vault Managed HSM is now generally
+    available in all Azure public regions. For organizations with regulatory or sovereignty
+    requirements to retain physical control of key-encryption keys, it lets Azure services
+    that su
+  run_id: run-2026-10-18T10-00-35Z
+generation: {}

@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-10-024
+slug: launched-generally-available-azure-cloud-hsm-hardware-audit
+title: '[Launched] Generally Available: Azure Cloud HSM hardware audit logging'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=576377
+announcement_url: https://azure.microsoft.com/updates?id=576377
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-14
+discovered_date: 2026-10-18
+date_confidence: exact
+date_precision: day
+content_hash: sha256:a60fb5102bcbfb2e9ad67dec85ec2358bac038f598163dfb19d750fbd560c361
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:dfc03c6b283ab4b55417f9a930fabfc7dde397a471afc8144fb366d2c8232adf
+  discovered_at: '2026-10-18T10:00:36.279903+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-18T10-00-35Z
+url_hash: sha256:dfc03c6b283ab4b55417f9a930fabfc7dde397a471afc8144fb366d2c8232adf
+tier: 1
+learning_priority: medium
+category: null
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: true
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-18
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:a60fb5102bcbfb2e9ad67dec85ec2358bac038f598163dfb19d750fbd560c361
+  title_snapshot: '[Launched] Generally Available: Azure Cloud HSM hardware audit logging'
+  summary_snapshot: Hardware Audit Logging for Azure Cloud HSM provides hardware-generated
+    audit records for supported HSM management operations, helping organizations strengthen
+    security monitoring, compliance reporting, governance, and forensic investigations. Customers
+    ca
+  run_id: run-2026-10-18T10-00-35Z
+generation: {}

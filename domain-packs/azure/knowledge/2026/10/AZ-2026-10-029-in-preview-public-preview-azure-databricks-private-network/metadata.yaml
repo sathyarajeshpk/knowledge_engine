@@ -1,0 +1,60 @@
+schema_version: 1
+id: AZ-2026-10-029
+slug: in-preview-public-preview-azure-databricks-private-network
+title: '[In preview] Public Preview: Azure Databricks Private network gateway'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=576556
+announcement_url: https://azure.microsoft.com/updates?id=576556
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-16
+discovered_date: 2026-10-18
+date_confidence: exact
+date_precision: day
+content_hash: sha256:c2658539694030301711f0c92dc8d8945eb81d9e54dde00978c8f248d9f95e44
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:ceaaba6541f0b50bb39b0304c1befa860db7c03a7db56aaaf79f1e93fbeb03cb
+  discovered_at: '2026-10-18T10:00:36.279580+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-18T10-00-35Z
+url_hash: sha256:ceaaba6541f0b50bb39b0304c1befa860db7c03a7db56aaaf79f1e93fbeb03cb
+tier: 2
+learning_priority: low
+category: networking
+tags:
+- preview
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-18
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:c2658539694030301711f0c92dc8d8945eb81d9e54dde00978c8f248d9f95e44
+  title_snapshot: '[In preview] Public Preview: Azure Databricks Private network gateway'
+  summary_snapshot: Private network gateway for Azure Databricks is now in Public Preview,
+    enabling serverless compute to connect to resources in your virtual network (VNet) and
+    transitively connected networks through a single managed gateway. Customers can use the
+    gateway t
+  run_id: run-2026-10-18T10-00-35Z
+generation: {}

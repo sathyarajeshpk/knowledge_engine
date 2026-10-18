@@ -10,7 +10,7 @@
     "2026-07": 57,
     "2026-08": 53,
     "2026-09": 83,
-    "2026-10": 22
+    "2026-10": 29
   },
   "paths": {
     "AZ-2023-09-001": "2023/09/AZ-2023-09-001-retirement-transition-to-using-standard-tests-for-single",
@@ -374,6 +374,13 @@
     "AZ-2026-10-019": "2026/10/AZ-2026-10-019-launched-generally-available-azure-database-for-postgresql",
     "AZ-2026-10-020": "2026/10/AZ-2026-10-020-announcing-multiparty-private-offers-in-microsoft",
     "AZ-2026-10-021": "2026/10/AZ-2026-10-021-retirement-microsoft-dev-box-will-be-retired-on-september",
-    "AZ-2026-10-022": "2026/10/AZ-2026-10-022-retirement-azure-key-vault-secrets-provider-extension-for"
+    "AZ-2026-10-022": "2026/10/AZ-2026-10-022-retirement-azure-key-vault-secrets-provider-extension-for",
+    "AZ-2026-10-023": "2026/10/AZ-2026-10-023-launched-generally-available-azure-site-recovery-support",
+    "AZ-2026-10-024": "2026/10/AZ-2026-10-024-launched-generally-available-azure-cloud-hsm-hardware-audit",
+    "AZ-2026-10-025": "2026/10/AZ-2026-10-025-in-preview-public-preview-azure-files-cross-region-data",
+    "AZ-2026-10-026": "2026/10/AZ-2026-10-026-launched-generally-available-standard-service-endpoint",
+    "AZ-2026-10-027": "2026/10/AZ-2026-10-027-launched-generally-availabile-automatic-zone-balance-for",
+    "AZ-2026-10-028": "2026/10/AZ-2026-10-028-launched-generally-available-external-key-management-for",
+    "AZ-2026-10-029": "2026/10/AZ-2026-10-029-in-preview-public-preview-azure-databricks-private-network"
   }
 }
