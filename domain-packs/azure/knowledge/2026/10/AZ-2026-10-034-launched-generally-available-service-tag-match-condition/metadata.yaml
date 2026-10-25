@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-10-034
+slug: launched-generally-available-service-tag-match-condition
+title: '[Launched] Generally Available: Service tag match condition for Azure Front Door Premium
+  WAF'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=577156
+announcement_url: https://azure.microsoft.com/updates?id=577156
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-20
+discovered_date: 2026-10-25
+date_confidence: exact
+date_precision: day
+content_hash: sha256:2961bec9fd1dc6ed96befde8ce6bd8dd144ad407bcb3622d4ffe6b2bef95b5e5
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:46b2adfbffba54cd772d1605beedade18346dc488d16a1057b9e90865a03fe92
+  discovered_at: '2026-10-25T10:16:26.296531+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-25T10-16-25Z
+url_hash: sha256:46b2adfbffba54cd772d1605beedade18346dc488d16a1057b9e90865a03fe92
+tier: 1
+learning_priority: low
+category: networking
+tags:
+- ga
+difficulty: beginner
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-25
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:2961bec9fd1dc6ed96befde8ce6bd8dd144ad407bcb3622d4ffe6b2bef95b5e5
+  title_snapshot: '[Launched] Generally Available: Service tag match condition for Azure Front
+    Door Premium WAF'
+  summary_snapshot: Announcing the general availability of the service tag match condition
+    for Azure Web Application Firewall (WAF) custom rules on Azure Front Door Premium. Service
+    tags represent groups of IP address prefixes used by Azure services, and Microsoft updates
+    th
+  run_id: run-2026-10-25T10-16-25Z
+generation: {}

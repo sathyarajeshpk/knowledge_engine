@@ -1,0 +1,62 @@
+schema_version: 1
+id: AZ-2026-10-039
+slug: launched-generally-available-item-level-recovery-for-azure
+title: '[Launched] Generally Available: Item Level Recovery for Azure VMs with Premium SSDv2
+  and Ultra Disks in Azure Backup'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=577963
+announcement_url: https://azure.microsoft.com/updates?id=577963
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-23
+discovered_date: 2026-10-25
+date_confidence: exact
+date_precision: day
+content_hash: sha256:e3c6d7163bbe99e5e73c8fce8482284337cfdaf1f36aa6e92dbdd3341c4e6043
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:20cf49de7d8df36537f9687b659d13bdc4aa9437bdf3c6605db4be9829320236
+  discovered_at: '2026-10-25T10:16:26.296118+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-25T10-16-25Z
+url_hash: sha256:20cf49de7d8df36537f9687b659d13bdc4aa9437bdf3c6605db4be9829320236
+tier: 1
+learning_priority: medium
+category: compute
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-25
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:e3c6d7163bbe99e5e73c8fce8482284337cfdaf1f36aa6e92dbdd3341c4e6043
+  title_snapshot: '[Launched] Generally Available: Item Level Recovery for Azure VMs with
+    Premium SSDv2 and Ultra Disks in Azure Backup'
+  summary_snapshot: Azure Backup now supports Item-Level Recovery (ILR) for Azure virtual
+    machines using Premium SSD v2 and Ultra disks with both 512 byte and 4KB logical sector
+    sizes. You can now recover individual files and folders from your Azure VMs with Premium
+    SSDv2 an
+  run_id: run-2026-10-25T10-16-25Z
+generation: {}

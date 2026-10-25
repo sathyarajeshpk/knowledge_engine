@@ -10,7 +10,7 @@
     "2026-07": 57,
     "2026-08": 53,
     "2026-09": 83,
-    "2026-10": 29
+    "2026-10": 39
   },
   "paths": {
     "AZ-2023-09-001": "2023/09/AZ-2023-09-001-retirement-transition-to-using-standard-tests-for-single",
@@ -381,6 +381,16 @@
     "AZ-2026-10-026": "2026/10/AZ-2026-10-026-launched-generally-available-standard-service-endpoint",
     "AZ-2026-10-027": "2026/10/AZ-2026-10-027-launched-generally-availabile-automatic-zone-balance-for",
     "AZ-2026-10-028": "2026/10/AZ-2026-10-028-launched-generally-available-external-key-management-for",
-    "AZ-2026-10-029": "2026/10/AZ-2026-10-029-in-preview-public-preview-azure-databricks-private-network"
+    "AZ-2026-10-029": "2026/10/AZ-2026-10-029-in-preview-public-preview-azure-databricks-private-network",
+    "AZ-2026-10-030": "2026/10/AZ-2026-10-030-launched-generally-available-metrics-usage-insights-for",
+    "AZ-2026-10-031": "2026/10/AZ-2026-10-031-launched-generally-available-azure-dns-enables-dns-based",
+    "AZ-2026-10-032": "2026/10/AZ-2026-10-032-in-preview-public-preview-disable-vnet-peering-route",
+    "AZ-2026-10-033": "2026/10/AZ-2026-10-033-launched-generally-available-keyless-tls-on-application",
+    "AZ-2026-10-034": "2026/10/AZ-2026-10-034-launched-generally-available-service-tag-match-condition",
+    "AZ-2026-10-035": "2026/10/AZ-2026-10-035-launched-generally-available-advanced-platform-metrics-for",
+    "AZ-2026-10-036": "2026/10/AZ-2026-10-036-announcing-choose-your-own-telephony-cyot-for-microsoft",
+    "AZ-2026-10-037": "2026/10/AZ-2026-10-037-launched-generally-available-azure-cosmos-db-safe-key",
+    "AZ-2026-10-038": "2026/10/AZ-2026-10-038-launched-generally-available-abfs-vectored-read-for-azure",
+    "AZ-2026-10-039": "2026/10/AZ-2026-10-039-launched-generally-available-item-level-recovery-for-azure"
   }
 }

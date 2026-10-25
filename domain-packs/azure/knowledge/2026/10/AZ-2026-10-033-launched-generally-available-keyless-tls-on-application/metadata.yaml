@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-10-033
+slug: launched-generally-available-keyless-tls-on-application
+title: '[Launched] Generally Available: Keyless TLS on Application Gateway with Azure Key
+  Vault Managed HSM'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=577130
+announcement_url: https://azure.microsoft.com/updates?id=577130
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-20
+discovered_date: 2026-10-25
+date_confidence: exact
+date_precision: day
+content_hash: sha256:86f883fba18049eca12efbe5123b144cb569b03dc15b4fa159f26c53ddf1384d
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:25e8e27dcb54bd297c272e81a36cec9436ae51161e1060b539b4dbf9e7bfc76f
+  discovered_at: '2026-10-25T10:16:26.296592+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-25T10-16-25Z
+url_hash: sha256:25e8e27dcb54bd297c272e81a36cec9436ae51161e1060b539b4dbf9e7bfc76f
+tier: 1
+learning_priority: low
+category: networking
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-25
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:86f883fba18049eca12efbe5123b144cb569b03dc15b4fa159f26c53ddf1384d
+  title_snapshot: '[Launched] Generally Available: Keyless TLS on Application Gateway with
+    Azure Key Vault Managed HSM'
+  summary_snapshot: Azure Application Gateway now supports keyless TLS termination using certificates
+    whose private keys stay in Azure Key Vault Managed HSM. Each TLS handshake signature is
+    performed inside the HSM, and the private key is never exported to the gateway. This
+  run_id: run-2026-10-25T10-16-25Z
+generation: {}

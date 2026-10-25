@@ -1,0 +1,61 @@
+schema_version: 1
+id: AZ-2026-10-030
+slug: launched-generally-available-metrics-usage-insights-for
+title: '[Launched] Generally Available: Metrics usage insights for Azure Monitor workspace'
+source_name: azure-updates
+source_url: https://azure.microsoft.com/updates?id=577165
+announcement_url: https://azure.microsoft.com/updates?id=577165
+identity_confidence: high
+source_authority: official-microsoft
+published_date: 2026-10-19
+discovered_date: 2026-10-25
+date_confidence: exact
+date_precision: day
+content_hash: sha256:7bbb2b9fe354cca7375ca4c06c898b2e4ce74133fcce660a750c678945741f9b
+provenance:
+  source_name: azure-updates
+  source_representation: rss
+  adapter_type: rss
+  parser_version: 1
+  extraction_method: feed-entry
+  identity_basis: canonical-url
+  identity_key: sha256:0d4ef772f199ea94946e83d29384e2b62ea13b4b9676987cbfd80ed2223634be
+  discovered_at: '2026-10-25T10:16:26.296743+00:00'
+  source_role: primary
+  selector: entry
+  run_id: run-2026-10-25T10-16-25Z
+url_hash: sha256:0d4ef772f199ea94946e83d29384e2b62ea13b4b9676987cbfd80ed2223634be
+tier: 1
+learning_priority: medium
+category: monitoring
+tags:
+- ga
+difficulty: intermediate
+workload: light
+version: null
+reading_time: 1
+learning_status: not-started
+notes: null
+prerequisites: []
+builds_on: []
+related_topics: []
+replaced_by: null
+replaces: null
+lifecycle: minted
+status: active
+needs_review: false
+overrides: []
+revisions:
+- revision: 1
+  date: 2026-10-25
+  changed_fields: []
+  summary: Initial ingestion
+  content_hash: sha256:7bbb2b9fe354cca7375ca4c06c898b2e4ce74133fcce660a750c678945741f9b
+  title_snapshot: '[Launched] Generally Available: Metrics usage insights for Azure Monitor
+    workspace'
+  summary_snapshot: Metrics usage insights is now generally available, giving you greater
+    visibility into what’s driving metrics usage across your Azure Monitor workspace. Monitor
+    workspace utilization, identify unused metrics, understand usage trends, and investigate
+    change
+  run_id: run-2026-10-25T10-16-25Z
+generation: {}
